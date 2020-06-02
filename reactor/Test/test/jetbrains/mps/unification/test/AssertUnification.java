@@ -80,6 +80,22 @@ public class AssertUnification {
         assertSameBindings(subs.bindings(), subs2.bindings());
     }
 
+    public static void assertUnifiesAllWithBindings(Term s, Term t, Substitution.Binding ... bindings) throws Exception{
+        Substitution subs = Unification.INSTANCE.unifyAll(s, t);
+
+        assertTrue(subs.isSuccessful());
+        assertSameBindings(
+                Arrays.asList(
+                        bindings
+                ),
+                subs.bindings());
+
+        Substitution subs2 = Unification.INSTANCE.unifyAll(t, s);
+
+        assertTrue(subs2.isSuccessful());
+        assertSameBindings(subs.bindings(), subs2.bindings());
+    }
+
     public static void assertUnifiesWithBindings(Term s, Term t, TermWrapper wrapper, Substitution.Binding ... bindings) throws Exception{
         Substitution subs = Unification.INSTANCE.unify(s, t, wrapper);
 

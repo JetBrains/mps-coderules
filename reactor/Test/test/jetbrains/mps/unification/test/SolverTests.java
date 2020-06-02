@@ -43,10 +43,10 @@ public class SolverTests {
     @Test
     public void test1() throws Exception {
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a"),
+                parseTerm("a"),
                 var("X"),
 
-                bind(var("X"), MockTermsParser.parseTerm("a"))
+                bind(var("X"), parseTerm("a"))
         );
         assertUnifiesWithBindings(
                 var("Y"),
@@ -55,8 +55,8 @@ public class SolverTests {
                 bind(var("X"), var("Y"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{Y}"),
-                MockTermsParser.parseTerm("a{X}"),
+                parseTerm("a{Y}"),
+                parseTerm("a{X}"),
 
                 bind(var("X"), var("Y"))
         );
@@ -65,56 +65,56 @@ public class SolverTests {
     @Test
     public void test2() throws Exception {
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{b c}"),
-                MockTermsParser.parseTerm("a{X Y}"),
+                parseTerm("a{b c}"),
+                parseTerm("a{X Y}"),
 
-                bind(var("X"), MockTermsParser.parseTerm("b")),
-                bind(var("Y"), MockTermsParser.parseTerm("c"))
+                bind(var("X"), parseTerm("b")),
+                bind(var("Y"), parseTerm("c"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{b Y}"),
-                MockTermsParser.parseTerm("a{X c}"),
+                parseTerm("a{b Y}"),
+                parseTerm("a{X c}"),
 
-                bind(var("X"), MockTermsParser.parseTerm("b")),
-                bind(var("Y"), MockTermsParser.parseTerm("c"))
+                bind(var("X"), parseTerm("b")),
+                bind(var("Y"), parseTerm("c"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{b{c} X Y Z}"),
-                MockTermsParser.parseTerm("a{X Y Z b{c}}"),
+                parseTerm("a{b{c} X Y Z}"),
+                parseTerm("a{X Y Z b{c}}"),
 
-                bind(var("X"), MockTermsParser.parseTerm("b{c}")),
-                bind(var("Y"), MockTermsParser.parseTerm("b{c}")),
-                bind(var("Z"), MockTermsParser.parseTerm("b{c}"))
+                bind(var("X"), parseTerm("b{c}")),
+                bind(var("Y"), parseTerm("b{c}")),
+                bind(var("Z"), parseTerm("b{c}"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{b{c} Z Y X}"),
-                MockTermsParser.parseTerm("a{Z Y X b{W}}"),
+                parseTerm("a{b{c} Z Y X}"),
+                parseTerm("a{Z Y X b{W}}"),
 
-                bind(var("X"), MockTermsParser.parseTerm("b{c}")),
-                bind(var("Y"), MockTermsParser.parseTerm("b{c}")),
-                bind(var("Z"), MockTermsParser.parseTerm("b{c}")),
-                bind(var("W"), MockTermsParser.parseTerm("c"))
+                bind(var("X"), parseTerm("b{c}")),
+                bind(var("Y"), parseTerm("b{c}")),
+                bind(var("Z"), parseTerm("b{c}")),
+                bind(var("W"), parseTerm("c"))
         );
     }
 
     @Test
     public void test3() throws Exception {
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{b{X} c{Y}}"),
-                MockTermsParser.parseTerm("a{V W}"),
+                parseTerm("a{b{X} c{Y}}"),
+                parseTerm("a{V W}"),
 
                 bind(var("V"), parseTerm("b{X}")),
                 bind(var("W"), parseTerm("c{Y}"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{X}"),
-                MockTermsParser.parseTerm("a{Y}"),
+                parseTerm("a{X}"),
+                parseTerm("a{Y}"),
 
                 bind(var("X"), var("Y"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{b{X} c{Y}}"),
-                MockTermsParser.parseTerm("a{b{V} c{W}}"),
+                parseTerm("a{b{X} c{Y}}"),
+                parseTerm("a{b{V} c{W}}"),
 
                 bind(var("V"), var("X")),
                 bind(var("W"), var("Y"))
@@ -124,8 +124,8 @@ public class SolverTests {
     @Test
     public void test4() throws Exception {
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{b{X} c{Y}}"),
-                MockTermsParser.parseTerm("a{Y Z}"),
+                parseTerm("a{b{X} c{Y}}"),
+                parseTerm("a{Y Z}"),
 
                 bind(var("Y"), parseTerm("b{X}")),
                 bind(var("Z"), parseTerm("c{Y}"))
@@ -139,7 +139,7 @@ public class SolverTests {
                 parseTerm("a{Y b{X}}"),
 
                 bind(var("Y"), parseTerm("b{c}")),
-                bind(var("X"), MockTermsParser.parseTerm("c"))
+                bind(var("X"), parseTerm("c"))
         );
     }
 
@@ -150,7 +150,7 @@ public class SolverTests {
                 parseTerm("a{Y c{b{d}}}"),
 
                 bind(var("Y"), parseTerm("b{X}")),
-                bind(var("X"), MockTermsParser.parseTerm("d"))
+                bind(var("X"), parseTerm("d"))
         );
     }
 
@@ -215,8 +215,8 @@ public class SolverTests {
     @Test
     public void test12() throws Exception {
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("node{name{foo} child{X}}"),
-                MockTermsParser.parseTerm("node{name{foo} child{Y}}"),
+                parseTerm("node{name{foo} child{X}}"),
+                parseTerm("node{name{foo} child{Y}}"),
 
                 bind(var("X"), var("Y"))
         );
@@ -225,8 +225,8 @@ public class SolverTests {
     @Test
     public void test13() throws Exception {
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("node{name{foo} child{node{name{bar}}}}"),
-                MockTermsParser.parseTerm("node{name{foo} child{X}}"),
+                parseTerm("node{name{foo} child{node{name{bar}}}}"),
+                parseTerm("node{name{foo} child{X}}"),
 
                 bind(var("X"), parseTerm("node{name{bar}}"))
         );
@@ -235,8 +235,8 @@ public class SolverTests {
     @Test
     public void test14() throws Exception {
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("f{X    g{a}}"),
-                MockTermsParser.parseTerm("f{g{Y} g{Y}}"),
+                parseTerm("f{X    g{a}}"),
+                parseTerm("f{g{Y} g{Y}}"),
 
                 bind(var("X"), parseTerm("g{Y}")),
                 bind(var("Y"), parseTerm("a"))
@@ -246,8 +246,8 @@ public class SolverTests {
     @Test
     public void test15() throws Exception {
         assertUnifiesWithBindingsAsymm(
-                MockTermsParser.parseTerm("h{X1       f{Y0 Y0} Y1}"),
-                MockTermsParser.parseTerm("h{f{X0 X0} Y1       X1}"),
+                parseTerm("h{X1       f{Y0 Y0} Y1}"),
+                parseTerm("h{f{X0 X0} Y1       X1}"),
 
                 bind(var("X0"), parseTerm("Y0")),
                 bind(var("X1"), parseTerm("f{Y0 Y0}")),
@@ -262,9 +262,9 @@ public class SolverTests {
         // substitution instead of the "triangular" form used here.
 
         assertUnifiesWithBindingsAsymm(
-                MockTermsParser.parseTerm("h{X1       X2       X3       X4       X5       X6       X7       X8       X9       " +
+                parseTerm("h{X1       X2       X3       X4       X5       X6       X7       X8       X9       " +
                         "f{Y0 Y0} f{Y1 Y1} f{Y2 Y2} f{Y3 Y3} f{Y4 Y4} f{Y5 Y5} f{Y6 Y6} f{Y7 Y7} f{Y8 Y8} Y9}"),
-                MockTermsParser.parseTerm("h{f{X0 X0} f{X1 X1} f{X2 X2} f{X3 X3} f{X4 X4} f{X5 X5} f{X6 X6} f{X7 X7} f{X8 X8} " +
+                parseTerm("h{f{X0 X0} f{X1 X1} f{X2 X2} f{X3 X3} f{X4 X4} f{X5 X5} f{X6 X6} f{X7 X7} f{X8 X8} " +
                         "Y1       Y2       Y3       Y4       Y5       Y6       Y7       Y8       Y9       X9}"),
 
                 bind(var("X0"), parseTerm("Y0")),
@@ -294,69 +294,69 @@ public class SolverTests {
     @Ignore
     public void testCyclicVar() throws Exception {
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("@1 a{b ^1}"),
-                MockTermsParser.parseTerm("X"),
+                parseTerm("@1 a{b ^1}"),
+                parseTerm("X"),
 
-                bind(var("X"), MockTermsParser.parseTerm("@1 a{b ^1}"))
+                bind(var("X"), parseTerm("@1 a{b ^1}"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("@1 a{^1 b c}"),
-                MockTermsParser.parseTerm("X"),
+                parseTerm("@1 a{^1 b c}"),
+                parseTerm("X"),
 
-                bind(var("X"), MockTermsParser.parseTerm("@1 a{^1 b c}"))
+                bind(var("X"), parseTerm("@1 a{^1 b c}"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{X     c{X}                }"),
-                MockTermsParser.parseTerm("a{b{Y}  c{@1 b{@2 c{b{^2}}}}}"),
+                parseTerm("a{X     c{X}                }"),
+                parseTerm("a{b{Y}  c{@1 b{@2 c{b{^2}}}}}"),
 
-                bind(var("X"), MockTermsParser.parseTerm("b{Y}")),
-                bind(var("Y"), MockTermsParser.parseTerm("@1 c{b{^1}}"))
+                bind(var("X"), parseTerm("b{Y}")),
+                bind(var("Y"), parseTerm("@1 c{b{^1}}"))
         );
     }
 
     @Test
     public void testVarRef() throws Exception {
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("^X"),
-                MockTermsParser.parseTerm("Y"),
+                parseTerm("^X"),
+                parseTerm("Y"),
 
                 bind(var("X"), var("Y"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("f{^X}"),
-                MockTermsParser.parseTerm("f{ Y}"),
+                parseTerm("f{^X}"),
+                parseTerm("f{ Y}"),
 
                 bind(var("X"), var("Y"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{b ^X}"),
-                MockTermsParser.parseTerm("a{b c{d}}"),
+                parseTerm("a{b ^X}"),
+                parseTerm("a{b c{d}}"),
 
-                bind(var("X"), MockTermsParser.parseTerm("c{d}"))
+                bind(var("X"), parseTerm("c{d}"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{b c{X} ^X}"),
-                MockTermsParser.parseTerm("a{b c{d} d}"),
+                parseTerm("a{b c{X} ^X}"),
+                parseTerm("a{b c{d} d}"),
 
-                bind(var("X"), MockTermsParser.parseTerm("d"))
+                bind(var("X"), parseTerm("d"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{b{d} c{X} ^X}"),
-                MockTermsParser.parseTerm("a{b{^X} c{d} d}"),
+                parseTerm("a{b{d} c{X} ^X}"),
+                parseTerm("a{b{^X} c{d} d}"),
 
-                bind(var("X"), MockTermsParser.parseTerm("d"))
+                bind(var("X"), parseTerm("d"))
         );
         assertUnifiesWithBindings(
-                MockTermsParser.parseTerm("a{b{d} c{X}}"),
-                MockTermsParser.parseTerm("a{b{^X} c{d}}"),
+                parseTerm("a{b{d} c{X}}"),
+                parseTerm("a{b{^X} c{d}}"),
 
-                bind(var("X"), MockTermsParser.parseTerm("d"))
+                bind(var("X"), parseTerm("d"))
         );
     }
 
     @Test
     public void testUnifyExternalRef() throws Exception {
-        Term termRef = ref(MockTermsParser.parseTerm("f {a f{b f{c d}}}"));
+        Term termRef = ref(parseTerm("f {a f{b f{c d}}}"));
         Term varRef = ref(var("TAIL"));
 
         Term a = term("g", termRef);
@@ -366,14 +366,40 @@ public class SolverTests {
                 a,
                 b,
 
-                bind(var("HEAD"), MockTermsParser.parseTerm("a")),
-                bind(var("TAIL"), MockTermsParser.parseTerm("f{b f{c d}}"))
+                bind(var("HEAD"), parseTerm("a")),
+                bind(var("TAIL"), parseTerm("f{b f{c d}}"))
+        );
+    }
+
+    @Test
+    public void testTrivialBindings() throws Exception {
+        Term a = parseTerm("f {a g{X h}}");
+        Term b = parseTerm("f {Y g{X Z}}");
+
+        assertUnifiesAllWithBindings(
+                a,
+                b,
+
+                bind(var("X"), var("X")),
+                bind(var("Y"), parseTerm("a")),
+                bind(var("Z"), parseTerm("h"))
+        );
+
+        Term c = parseTerm("f {a Y}");
+        Term d = parseTerm("X");
+
+        assertUnifiesAllWithBindings(
+                c,
+                d,
+
+                bind(var("X"), parseTerm("f {a Y}")),
+                bind(var("Y"), var("Y"))
         );
     }
 
     @Test
     public void testUnifyExternalRef2() throws Exception {
-        Term list = MockTermsParser.parseTerm("f {a f{b f{c d}}}");
+        Term list = parseTerm("f {a f{b f{c d}}}");
         Term termRef = ref(list);
         Term varRef = ref(var("TAIL"));
 
@@ -387,15 +413,15 @@ public class SolverTests {
                 aa,
                 bb,
 
-                bind(var("LIST"), MockTermsParser.parseTerm("f {a f{b f{c d}}}")),
-                bind(var("HEAD"), MockTermsParser.parseTerm("a")),
-                bind(var("TAIL"), MockTermsParser.parseTerm("f{b f{c d}}"))
+                bind(var("LIST"), parseTerm("f {a f{b f{c d}}}")),
+                bind(var("HEAD"), parseTerm("a")),
+                bind(var("TAIL"), parseTerm("f{b f{c d}}"))
         );
     }
 
     @Test
     public void testUnifyExternalRef3() throws Exception {
-        Term empty = MockTermsParser.parseTerm("f {nil}");
+        Term empty = parseTerm("f {nil}");
         Term varRef = ref(var("TAIL"));
 
         Term aa = term("g", empty);
@@ -405,16 +431,16 @@ public class SolverTests {
                 aa,
                 bb,
 
-                bind(var("TAIL"), MockTermsParser.parseTerm("nil"))
+                bind(var("TAIL"), parseTerm("nil"))
         );
     }
 
     @Test
     public void testWrapper() throws Exception {
-        Term t1 = MockTermsParser.parseTerm("a{b c{X}}");
-        Term t2 = MockTermsParser.parseTerm("a{X c{Y}}");
-        Term p1 = MockTermsParser.parseTerm("a{META c{d}}");
-        Term p2 = MockTermsParser.parseTerm("a{b c{META}}");
+        Term t1 = parseTerm("a{b c{X}}");
+        Term t2 = parseTerm("a{X c{Y}}");
+        Term p1 = parseTerm("a{META c{d}}");
+        Term p2 = parseTerm("a{b c{META}}");
 
         class Wrapper implements Term {
             Term wrapped;
@@ -464,34 +490,34 @@ public class SolverTests {
         };
 
         assertUnifiesWithBindings(t1, p1,
-                bind(var("META"), MockTermsParser.parseTerm("b")),
-                bind(var("X"), MockTermsParser.parseTerm("d"))
+                bind(var("META"), parseTerm("b")),
+                bind(var("X"), parseTerm("d"))
         );
         assertUnificationFails(t1, p1, wrapper);
 
         assertUnifiesWithBindings(t1, p2, wrapper,
-                bind(var("X"), MockTermsParser.parseTerm("META"))
+                bind(var("X"), parseTerm("META"))
         );
 
         assertUnifiesWithBindings(t2, p2, wrapper,
-                bind(var("X"), MockTermsParser.parseTerm("b")),
-                bind(var("Y"), MockTermsParser.parseTerm("META"))
+                bind(var("X"), parseTerm("b")),
+                bind(var("Y"), parseTerm("META"))
         );
     }
 
     @Test
     public void testFailConflict() throws Exception {
         assertUnificationFails(
-                MockTermsParser.parseTerm("a"),
-                MockTermsParser.parseTerm("b"),
+                parseTerm("a"),
+                parseTerm("b"),
 
                 SYMBOL_CLASH,
                 "a",
                 "b"
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("node{name{X} child{abc}}"),
-                MockTermsParser.parseTerm("node{name{foo} child{X}}"),
+                parseTerm("node{name{X} child{abc}}"),
+                parseTerm("node{name{foo} child{X}}"),
 
                 SYMBOL_CLASH,
                 "abc",
@@ -502,76 +528,76 @@ public class SolverTests {
     @Test
     public void testFailCard() throws Exception {
         assertUnificationFails(
-                MockTermsParser.parseTerm("a{b c}"),
-                MockTermsParser.parseTerm("a{X}")
+                parseTerm("a{b c}"),
+                parseTerm("a{X}")
         );
     }
 
     @Test
     public void testFailCyclic() throws Exception {
         assertUnificationFails(
-                term("g", ref(MockTermsParser.parseTerm("f {h X}"))),
+                term("g", ref(parseTerm("f {h X}"))),
                 term("g", var("X")),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("t {@1 f {h X} g {f {h X}}}"),
-                MockTermsParser.parseTerm("t {Y          g {X}}"),
+                parseTerm("t {@1 f {h X} g {f {h X}}}"),
+                parseTerm("t {Y          g {X}}"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("a{b X}"),
-                MockTermsParser.parseTerm("X"),
+                parseTerm("a{b X}"),
+                parseTerm("X"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("f{X}"),
-                MockTermsParser.parseTerm("X"),
+                parseTerm("f{X}"),
+                parseTerm("X"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("X"),
-                MockTermsParser.parseTerm("f{X}"),
+                parseTerm("X"),
+                parseTerm("f{X}"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("f{f{X}}"),
-                MockTermsParser.parseTerm("f{X}"),
+                parseTerm("f{f{X}}"),
+                parseTerm("f{X}"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("f{a{X} Y      }"),
-                MockTermsParser.parseTerm("f{Y    a{b{X}}}"),
+                parseTerm("f{a{X} Y      }"),
+                parseTerm("f{Y    a{b{X}}}"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("a{X     c{X}}"),
-                MockTermsParser.parseTerm("a{b{Y}  Y   }"),
+                parseTerm("a{X     c{X}}"),
+                parseTerm("a{b{Y}  Y   }"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("a{   b{c{b{c{b{c{^2}}}}}} @2 b{c{b{c{^2}}}}}"),
-                MockTermsParser.parseTerm("a{   b{Y}                    b{Y}          }"),
+                parseTerm("a{   b{c{b{c{b{c{^2}}}}}} @2 b{c{b{c{^2}}}}}"),
+                parseTerm("a{   b{Y}                    b{Y}          }"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("t {@1 f {h X} g {f {h X}}}"),
-                MockTermsParser.parseTerm("t {Y          g {X}}"),
+                parseTerm("t {@1 f {h X} g {f {h X}}}"),
+                parseTerm("t {Y          g {X}}"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("t {@1 f {h X} g {^1}}"),
-                MockTermsParser.parseTerm("t {Y          g {X}}"),
+                parseTerm("t {@1 f {h X} g {^1}}"),
+                parseTerm("t {Y          g {X}}"),
 
                 CYCLE_DETECTED
         );
@@ -580,56 +606,56 @@ public class SolverTests {
     @Test
     public void testFailCyclicVarRef() throws Exception {
         assertUnificationFails(
-                MockTermsParser.parseTerm("X"),
-                MockTermsParser.parseTerm("f{^X}"),
+                parseTerm("X"),
+                parseTerm("f{^X}"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("f{X}"),
-                MockTermsParser.parseTerm("f{f{^X}}"),
+                parseTerm("f{X}"),
+                parseTerm("f{f{^X}}"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("t {@1 f{X} g{^1}}"),
-                MockTermsParser.parseTerm("t {   f{X} X    }"),
+                parseTerm("t {@1 f{X} g{^1}}"),
+                parseTerm("t {   f{X} X    }"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("t {@1 f{X} g{^1}}"),
-                MockTermsParser.parseTerm("t {   f{Y} Y    }"),
+                parseTerm("t {@1 f{X} g{^1}}"),
+                parseTerm("t {   f{Y} Y    }"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("t { f{^X} X     }"),
-                MockTermsParser.parseTerm("t { Y     g{^Y} }"),
+                parseTerm("t { f{^X} X     }"),
+                parseTerm("t { Y     g{^Y} }"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("t { ^X Y    }"),
-                MockTermsParser.parseTerm("t {  Y f{X} }"),
+                parseTerm("t { ^X Y    }"),
+                parseTerm("t {  Y f{X} }"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("t { X     Y }"),
-                MockTermsParser.parseTerm("t { f{Y} ^X }"),
+                parseTerm("t { X     Y }"),
+                parseTerm("t { f{Y} ^X }"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("t { ^X    Y }"),
-                MockTermsParser.parseTerm("t { f{Y} ^X }"),
+                parseTerm("t { ^X    Y }"),
+                parseTerm("t { f{Y} ^X }"),
 
                 CYCLE_DETECTED
         );
         assertUnificationFails(
-                MockTermsParser.parseTerm("t { ^X ^Y    }"),
-                MockTermsParser.parseTerm("t {  Y f{X} }"),
+                parseTerm("t { ^X ^Y    }"),
+                parseTerm("t {  Y f{X} }"),
 
                 CYCLE_DETECTED
         );

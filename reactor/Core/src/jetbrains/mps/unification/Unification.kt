@@ -46,6 +46,18 @@ object Unification {
         return dagUnifier.unify(a, b)
     }
 
+    /**
+     * Returns also the trivial bindings.
+     * Example:
+     *      f{g{}, X} = f{Y, X} yields [Y->g{}, X->X]
+     *      f{Y} = X yields [X->f{Y}, Y->Y]
+     */
+    fun unifyAll(a: Term, b: Term): Substitution {
+        val dagUnifier = TermGraphUnifier(true)
+
+        return dagUnifier.unify(a, b)
+    }
+
     fun unify(a: Term, b: Term, wrapper: TermWrapper): Substitution {
         val dagUnifier = TermGraphUnifier(wrapper)
 

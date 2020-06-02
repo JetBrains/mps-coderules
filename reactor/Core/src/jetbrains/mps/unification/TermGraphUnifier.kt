@@ -55,32 +55,13 @@ import java.util.*
 typealias IntList = TIntArrayList
 typealias IntAnyHashMap<V> = TIntObjectHashMap<V>
 
-class TermGraphUnifier {
+class TermGraphUnifier(private val wrapper: TermWrapper = TermWrapper.ID,
+                       private val trivialBindings: Boolean = false) {
+
+    constructor(trivialBindings: Boolean) : this(TermWrapper.ID, trivialBindings) {}
 
     companion object {
         val EMPTY_LIST = TIntArrayList.wrap(kotlin.IntArray(0))
-    }
-
-    private var wrapper: TermWrapper
-
-    private var failureCause: Substitution.FailureCause = Substitution.FailureCause.UKNOWN
-    private var failureDetails = emptyArray<Any?>()
-
-    private val backref = IdentityHashMap<Any?, Int>()
-    private val origin = ArrayList<Term>()
-    private val innerClass = IntList()
-    private val innerSchema = IntList()
-    private val innerSize = IntList()
-    private val innerVars = IntAnyHashMap<IntList?>()
-    private val innerAcyclic = BitSet()
-    private val innerVisited = BitSet()
-
-    constructor() {
-        this.wrapper = TermWrapper.ID
-    }
-
-    constructor(wrapper: TermWrapper) {
-        this.wrapper = wrapper
     }
 
     fun unify(a: Term, b: Term): Substitution {
@@ -100,30 +81,29 @@ class TermGraphUnifier {
         val (_, z) = findSchema(s)
         val vars = innerVars[find(z)]
 
-        if (innerAcyclic[z]) { return defSubs } // not part of a cycle
-        if (innerVisited[z]) { return failedSubstitution(CYCLE_DETECTED) } // there exists a cycle
+        if (isAcyclic(z)) { return defSubs } // not part of a cycle
+        if (isVisited(z)) { return failedSubstitution(CYCLE_DETECTED) } // there exists a cycle
 
         var subs = defSubs
         if (origin[z].`is`(FUN)) {
-            innerVisited.set(z)
+            setVisited(z)
             for (c in origin[z].arguments()) {
-                val (_, zc) = findSchema(toInner(c))
-                subs = findSolution(zc, subs)
+                subs = findSolution(toInner(c), subs)
                 if (!subs.isSuccessful) break
             }
-            innerVisited.clear(z)
+            clearVisited(z)
         }
 
         if (subs.isSuccessful) {
-            innerAcyclic.set(z)
-
+            setAcyclic(z)
+            
             // avoid unnecessary instatiation
             val success = if (subs is SuccessfulSubstitution) subs as SuccessfulSubstitution
                             else SuccessfulSubstitution(subs)
 
             if (vars != null) {
                 for (v in vars) {
-                   if (v != z) {
+                   if (trivialBindings || v != z) {
                        // Keep the order of variables within a binding
                        if (origin[z].`is`(VAR) && origin[z].compareTo(origin[v]) < 0) {
                            success.addBinding(fromInner(z), fromInner(v))
@@ -188,8 +168,8 @@ class TermGraphUnifier {
 
         if (s == t) { return s }
 
-        val ssize = innerSize[s]
-        val tsize = innerSize[t]
+        val ssize = size(s)
+        val tsize = size(t)
 
         // keep the order: the smaller class gets inserted under the bigger one
         if (ssize < tsize) {
@@ -206,18 +186,18 @@ class TermGraphUnifier {
             }
         }
 
-        innerSize[s] = ssize + tsize
+        setSize(s, ssize + tsize)
         prependVars(s, innerVars[t])
-        innerClass[t] = s
-
+        setKlass(t, s)
+        
         // copy the schema
-        val zs = innerSchema[s]
-        val zt = innerSchema[t]
+        val zs = schema(s)
+        val zt = schema(t)
         if (origin[zs].`is`(REF)) {
-            innerSchema[s] = zt
+            setSchema(s, zt)
 
         } else if (origin[zs].`is`(VAR) && (origin[zt].`is`(FUN))) {
-            innerSchema[s] = zt
+            setSchema(s, zt)
         }
 
         return s
@@ -225,19 +205,15 @@ class TermGraphUnifier {
 
 
     private fun find(t: Int): Int  {
-        var repr = innerClass[t]
+        var repr = klass(t)
         if (repr == t) { return repr }
 
-        if (repr != innerClass[repr]) {
+        if (repr != klass(repr)) {
             // find representative and compress paths
-            val path = IntList()
-            path.add(t)
-            while (repr != innerClass[repr]) {
-                path.add(repr)
-                repr = innerClass[repr]
-            }
-            for (p in path) {
-                innerClass[p] = repr
+            while (repr != klass(repr)) {
+                val tmp = repr
+                repr = klass(repr)
+                setKlass(tmp, repr)
             }
         }
 
@@ -255,10 +231,10 @@ class TermGraphUnifier {
 
     private fun findSchema(s: Int): Pair<Int, Int> {
         var t = find(s)
-        var zt = innerSchema[t]
+        var zt = schema(t)
         while (origin[zt].`is`(REF)) {
             t = union(t, getRef(zt))
-            zt = innerSchema[t]
+            zt = schema(t)
         }
         return t to zt
     }
@@ -279,9 +255,14 @@ class TermGraphUnifier {
             val wrapped = wrapper.wrap(term)
             val next = origin.size
             origin.add(wrapped)
+
+            // initialize internal structures
             innerSchema.add(next)
             innerClass.add(next)
             innerSize.add(1)
+            innerAcyclic.add(0)
+            innerVisited.add(0)
+
             if (wrapped.`is`(VAR)) {
                 innerVars.put(next, IntList(intArrayOf(next)))
             }
@@ -305,4 +286,36 @@ class TermGraphUnifier {
         return if (this == null) that == null else this.equals(that)
     }
 
+    private fun klass(t: Int): Int = innerClass[t]
+
+    private fun setKlass(t: Int, klass: Int): Unit { innerClass[t] = klass }
+
+    private fun schema(t: Int): Int = innerSchema[t]
+
+    private fun setSchema(t: Int, schema: Int): Unit { innerSchema[t] = schema }
+
+    private fun size(t: Int): Int = innerSize[t]
+
+    private fun setSize(t: Int, size: Int): Unit { innerSize[t] = size }
+
+    private fun isAcyclic(t: Int): Boolean = innerAcyclic[t] != 0
+
+    private fun setAcyclic(t: Int): Unit { innerAcyclic[t] = 1 }
+
+    private fun isVisited(t: Int): Boolean = innerVisited[t] != 0
+
+    private fun setVisited(t: Int): Unit { innerVisited[t] = 1 }
+
+    private fun clearVisited(t: Int): Unit { innerVisited[t] = 0 }
+
+    private var failureCause: Substitution.FailureCause = Substitution.FailureCause.UKNOWN
+    private var failureDetails = emptyArray<Any?>()
+    private val backref = IdentityHashMap<Any?, Int>()
+    private val innerVars = IntAnyHashMap<IntList?>()
+    private val origin = ArrayList<Term>()
+    private val innerClass = IntList()
+    private val innerSchema = IntList()
+    private val innerSize = IntList()
+    private val innerAcyclic = IntList()
+    private val innerVisited = IntList()
 }
