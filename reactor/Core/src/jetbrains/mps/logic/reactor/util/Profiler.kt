@@ -81,7 +81,7 @@ class Profiler {
 
                         sb.append("\n    -- ${parentName}")
                             .append(" time %1\$Ts.%1\$TLs".format(millis(dur)))
-                            .append(" (%1\$d times)".format(data.parentFreqs[name] ?: 0)) }
+                            .append(" (%1\$d times)".format(data.parentFreqs[parentName] ?: 0)) }
 
                 name to sb.toString()
             }.toMap()
