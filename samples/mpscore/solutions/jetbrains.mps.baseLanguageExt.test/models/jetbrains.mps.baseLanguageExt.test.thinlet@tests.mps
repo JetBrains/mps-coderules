@@ -161,8 +161,18 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
   </registry>
@@ -241,26 +251,36 @@
       <node concept="3clFbS" id="1N_0WA5DT8I" role="3clF47">
         <node concept="3clFbJ" id="2rIdnPwwKoc" role="3cqZAp">
           <node concept="3clFbS" id="2rIdnPwwKoe" role="3clFbx">
-            <node concept="2Hmddi" id="27bTNFfbxko" role="3cqZAp">
-              <node concept="2OqwBi" id="27bTNFfbxkp" role="2Hmdds">
-                <node concept="2YIFZM" id="27bTNFfbxkq" role="2Oq$k0">
-                  <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-                  <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
-                  <node concept="2OqwBi" id="27bTNFfc4bs" role="37wK5m">
-                    <node concept="2WthIp" id="27bTNFfc4bt" role="2Oq$k0" />
-                    <node concept="2XshWL" id="27bTNFfc4bu" role="2OqNvi">
-                      <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
-                      <node concept="2tJFMh" id="27bTNFfc4bv" role="2XxRq1">
-                        <node concept="ZC_QK" id="27bTNFfc4bw" role="2tJFKM">
-                          <ref role="2aWVGs" to="bm3g:3489cc5$luO" resolve="Thinlet" />
+            <node concept="RRSsy" id="ssyHzE_NXn" role="3cqZAp">
+              <property role="RRSoG" value="gZ5fksE/warn" />
+              <node concept="Xl_RD" id="ssyHzE_NXo" role="RRSoy">
+                <property role="Xl_RC" value="*** Test is temporarily disabled as it's taking too long to complete ***" />
+              </node>
+            </node>
+            <node concept="1X3_iC" id="ssyHzE_YvH" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="2Hmddi" id="27bTNFfbxko" role="8Wnug">
+                <node concept="2OqwBi" id="27bTNFfbxkp" role="2Hmdds">
+                  <node concept="2YIFZM" id="27bTNFfbxkq" role="2Oq$k0">
+                    <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+                    <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+                    <node concept="2OqwBi" id="27bTNFfc4bs" role="37wK5m">
+                      <node concept="2WthIp" id="27bTNFfc4bt" role="2Oq$k0" />
+                      <node concept="2XshWL" id="27bTNFfc4bu" role="2OqNvi">
+                        <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                        <node concept="2tJFMh" id="27bTNFfc4bv" role="2XxRq1">
+                          <node concept="ZC_QK" id="27bTNFfc4bw" role="2tJFKM">
+                            <ref role="2aWVGs" to="bm3g:3489cc5$luO" resolve="Thinlet" />
+                          </node>
                         </node>
                       </node>
                     </node>
+                    <node concept="1jxXqW" id="27bTNFfc4ds" role="37wK5m" />
                   </node>
-                  <node concept="1jxXqW" id="27bTNFfc4ds" role="37wK5m" />
-                </node>
-                <node concept="liA8E" id="27bTNFfbxkt" role="2OqNvi">
-                  <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+                  <node concept="liA8E" id="27bTNFfbxkt" role="2OqNvi">
+                    <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+                  </node>
                 </node>
               </node>
             </node>
