@@ -290,6 +290,9 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
+      <concept id="1224414427926" name="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" flags="nn" index="kMnCb">
+        <child id="1224414456414" name="elementType" index="kMuH3" />
+      </concept>
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
@@ -301,10 +304,8 @@
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435807" name="elementType" index="HW$YZ" />
         <child id="1237731803878" name="copyFrom" index="I$8f6" />
-        <child id="1562299158920737514" name="initSize" index="3lWHg$" />
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
-      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
@@ -4415,11 +4416,17 @@
         <node concept="3clFbF" id="4e0TwrfE3LN" role="3cqZAp">
           <node concept="3nyPlj" id="4e0TwrfE3LO" role="3clFbG">
             <ref role="37wK5l" to="7ed7:1H_6AUSEEjh" resolve="doRun" />
-            <node concept="2ShNRf" id="4e0TwrfEJYu" role="37wK5m">
-              <node concept="Tc6Ow" id="4e0TwrfEKhZ" role="2ShVmc">
-                <node concept="3Tqbb2" id="4e0TwrfEKDx" role="HW$YZ" />
-                <node concept="3cmrfG" id="4e0TwrfELdP" role="3lWHg$">
-                  <property role="3cmrfH" value="0" />
+            <node concept="2ShNRf" id="WJTIInT2pR" role="37wK5m">
+              <node concept="kMnCb" id="WJTIInT43c" role="2ShVmc">
+                <node concept="3Tqbb2" id="4e0TwrfEKDx" role="kMuH3">
+                  <ref role="ehGHo" to="wq2x:5EDW3XE0OAL" resolve="QueryTable" />
+                </node>
+              </node>
+            </node>
+            <node concept="2ShNRf" id="WJTIInT46Y" role="37wK5m">
+              <node concept="kMnCb" id="WJTIInT46Z" role="2ShVmc">
+                <node concept="3Tqbb2" id="WJTIInT470" role="kMuH3">
+                  <ref role="ehGHo" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
                 </node>
               </node>
             </node>
