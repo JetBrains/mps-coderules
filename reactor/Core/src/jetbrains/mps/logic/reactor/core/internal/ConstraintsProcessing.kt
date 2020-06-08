@@ -235,7 +235,6 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             if (isFront() || !active.isPrincipal()) {
                 matches
             } else {
-                assert( matches.all { it.isPrincipal() } )
                 execQueue.postponeFutureMatches(matches)
             }
 
