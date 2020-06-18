@@ -16170,17 +16170,7 @@
                   </node>
                 </node>
               </node>
-              <node concept="1oi5UN" id="3qUnz9vhUyO" role="1oi5TL">
-                <node concept="22Ky0T" id="3qUnz9vhUyP" role="lGtFl">
-                  <node concept="2YIFZM" id="3qUnz9vhUyQ" role="22Ky0K">
-                    <ref role="1Pybhc" to="oy3s:7nPD14NOCSa" resolve="MetaLogicalFactory" />
-                    <ref role="37wK5l" to="oy3s:7nPD14NOHGU" resolve="wildcardMetaLogical" />
-                    <node concept="3VsKOn" id="3qUnz9vhUyR" role="37wK5m">
-                      <ref role="3VsUkX" to="6exd:3OPtF03lco4" resolve="ListNode" />
-                    </node>
-                  </node>
-                </node>
-              </node>
+              <node concept="KCUsM" id="4boCUQuFUFy" role="1oi5TL" />
             </node>
           </node>
         </node>
