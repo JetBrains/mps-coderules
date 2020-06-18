@@ -735,9 +735,6 @@
     <property role="3GE5qa" value="constraint" />
     <property role="TrG5h" value="PatternLogicalVariable" />
     <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
-    <node concept="PrWs8" id="JOGAOsIT9E" role="PzmwI">
-      <ref role="PrY4T" to="5j4j:JOGAOsIRhm" resolve="Capture" />
-    </node>
     <node concept="1TJgyj" id="4sSe4$p4oON" role="1TKVEi">
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="variable" />
@@ -1605,6 +1602,27 @@
     <property role="TrG5h" value="QueryParameter" />
     <property role="34LRSv" value="query" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+  </node>
+  <node concept="1TIwiD" id="4boCUQu22Oh">
+    <property role="EcuMT" value="4816779767548751121" />
+    <property role="3GE5qa" value="constraint" />
+    <property role="TrG5h" value="MatchConstraint" />
+    <property role="34LRSv" value="match" />
+    <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    <node concept="1TJgyj" id="4boCUQu22Oi" role="1TKVEi">
+      <property role="IQ2ns" value="4816779767548751122" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="instance" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+    <node concept="1TJgyj" id="4boCUQu22Ok" role="1TKVEi">
+      <property role="IQ2ns" value="4816779767548751124" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="pattern" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
   </node>
 </model>
 
