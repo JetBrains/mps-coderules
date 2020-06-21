@@ -65,6 +65,7 @@
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" kind="cl" />
           <module ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)" kind="cl" />
           <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" kind="cl" />
+          <module ref="f113d56b-63e3-4120-a89c-2f5dcb8c6290(jetbrains.mps.coderules.runtime)" kind="cl" />
           <module ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" kind="cl" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" kind="cl" />
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="cl" />
@@ -230,6 +231,7 @@
       <plugin path="${artifacts.mps}/plugins/mps-core" />
       <plugin path="${artifacts.mps}/plugins/mps-testing" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
@@ -418,6 +420,7 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
@@ -510,6 +513,7 @@
   <target name="test.demo" depends="assemble">
     <path id="mps.libraries.path">
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
+      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />

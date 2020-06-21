@@ -61,6 +61,7 @@
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" kind="cl" />
           <module ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)" kind="cl" />
           <module ref="c7d01124-66d5-486d-8b50-7fdccb60b839(jetbrains.mps.baseLanguage.util)" kind="cl" />
+          <module ref="f113d56b-63e3-4120-a89c-2f5dcb8c6290(jetbrains.mps.coderules.runtime)" kind="cl" />
           <module ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" kind="cl" />
           <module ref="517911e5-605f-4310-831b-10d44e0f5237(jetbrains.mps.controlflow)" kind="cl" />
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="cl" />
@@ -1412,6 +1413,7 @@
       <plugin path="${artifacts.mps}/plugins/mps-core" />
       <plugin path="${artifacts.mps}/plugins/mps-testing" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" />
@@ -1628,6 +1630,7 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.controlflow.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
@@ -2941,6 +2944,7 @@
   <target name="test.testconfig" depends="assemble">
     <path id="mps.libraries.path">
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
+      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" />

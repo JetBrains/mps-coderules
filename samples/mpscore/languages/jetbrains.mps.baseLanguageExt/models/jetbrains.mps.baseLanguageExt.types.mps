@@ -32,6 +32,7 @@
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="pz2c" ref="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" />
+    <import index="lehm" ref="r:464fcc95-fddb-47d1-b620-592cbf6b8bf2(jetbrains.mps.coderules.runtime.memoizer)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -1946,9 +1947,9 @@
             <node concept="3uibUv" id="3bgqfmm02cx" role="1tU5fm">
               <ref role="3uigEE" node="rZZ6H4Y2j" resolve="ClassHierarchyGraph.Vertex" />
             </node>
-            <node concept="2YIFZM" id="3bgqfmm02cy" role="33vP2m">
-              <ref role="1Pybhc" to="hano:2tjs8VC0K0m" resolve="Memoizer" />
-              <ref role="37wK5l" to="hano:2tjs8VC2Blb" resolve="getOrPut" />
+            <node concept="2YIFZM" id="5wYq9r5EDbK" role="33vP2m">
+              <ref role="37wK5l" to="lehm:2tjs8VC2Blb" resolve="getOrPut" />
+              <ref role="1Pybhc" to="lehm:2tjs8VC0K0m" resolve="Memoizer" />
               <node concept="2OqwBi" id="3bgqfmm02cz" role="37wK5m">
                 <node concept="3A2sRY" id="3bgqfmm02c$" role="2Oq$k0">
                   <ref role="3A2yKK" node="6_5E9TNz50W" resolve="cls" />
@@ -38078,9 +38079,9 @@
             <node concept="3uibUv" id="4JBuioHZ_Z3" role="1tU5fm">
               <ref role="3uigEE" node="rZZ6H4Y2j" resolve="ClassHierarchyGraph.Vertex" />
             </node>
-            <node concept="2YIFZM" id="4JBuioHZA$F" role="33vP2m">
-              <ref role="37wK5l" to="hano:2tjs8VC2Blb" resolve="getOrPut" />
-              <ref role="1Pybhc" to="hano:2tjs8VC0K0m" resolve="Memoizer" />
+            <node concept="2YIFZM" id="5wYq9r5EDbL" role="33vP2m">
+              <ref role="37wK5l" to="lehm:2tjs8VC2Blb" resolve="getOrPut" />
+              <ref role="1Pybhc" to="lehm:2tjs8VC0K0m" resolve="Memoizer" />
               <node concept="2OqwBi" id="4JBuioIcVWP" role="37wK5m">
                 <node concept="3A2sRY" id="4JBuioHZA$G" role="2Oq$k0">
                   <ref role="3A2yKK" node="29sKO70xfxm" resolve="cls" />

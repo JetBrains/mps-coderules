@@ -742,6 +742,7 @@
       <plugin path="${artifacts.mps}/plugins/mps-core" />
       <plugin path="${artifacts.mps}/plugins/mps-testing" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
@@ -1475,6 +1476,7 @@
   <target name="test.check" depends="assemble">
     <path id="mps.libraries.path">
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
+      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
