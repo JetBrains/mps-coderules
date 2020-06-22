@@ -43,11 +43,13 @@
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.tuplesExt/jetbrains.mps.baseLanguage.tuplesExt.mpl" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.lang.coderulesExt/jetbrains.mps.lang.coderulesExt.mpl" folder="samples.mpscore.ext.coderulesExt" />
+      <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.mpl" folder="samples.mpscore.ext.smodel" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.logicExt/jetbrains.mps.logicExt.mpl" folder="samples.mpscore.ext.coderulesExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguage.closuresExt.test/jetbrains.mps.baseLanguage.closuresExt.test.msd" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguage.collectionsExt.test/jetbrains.mps.baseLanguage.collectionsExt.test.msd" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguage.tuplesExt.test/jetbrains.mps.baseLanguage.tuplesExt.test.msd" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" folder="samples.mpscore.ext.baseLanguage" />
+      <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.test.msd" folder="samples.mpscore.ext.smodel" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/samples.mpscore.build/samples.mpscore.build.msd" folder="samples.mpscore.build" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/typechecking.samples.baseLanguage/typechecking.samples.baseLanguage.msd" folder="samples.mpscore" />
     </projectModules>
