@@ -31,9 +31,16 @@
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="11" />
     <language slang="l:443f4c36-fcf5-4eb6-9500-8d06ed259e3e:jetbrains.mps.baseLanguage.classifiers" version="0" />
     <language slang="l:fd392034-7849-419d-9071-12563d152375:jetbrains.mps.baseLanguage.closures" version="0" />
+    <language slang="l:9e36d2ee-c59c-4580-9e81-646748d0614b:jetbrains.mps.baseLanguage.closuresExt" version="0" />
     <language slang="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" version="1" />
+    <language slang="l:c1f5ad88-21f4-4e0e-927c-48b1ca0c2334:jetbrains.mps.baseLanguage.collectionsExt" version="0" />
+    <language slang="l:96eeb076-cd7e-4797-9c2a-348e3f826e65:jetbrains.mps.baseLanguage.function" version="0" />
     <language slang="l:f2801650-65d5-424e-bb1b-463a8781b786:jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <language slang="l:42d031fd-ccb3-45db-91ef-f9621eb0549e:jetbrains.mps.baseLanguage.javadocExt" version="0" />
     <language slang="l:760a0a8c-eabb-4521-8bfd-65db761a9ba3:jetbrains.mps.baseLanguage.logging" version="0" />
+    <language slang="l:88dcbb14-19c3-4776-8f81-33611ca4d87c:jetbrains.mps.baseLanguage.sequence" version="0" />
+    <language slang="l:a247e09e-2435-45ba-b8d2-07e93feba96a:jetbrains.mps.baseLanguage.tuples" version="0" />
+    <language slang="l:d351f235-67ad-4737-a13e-ec0ea46c55e2:jetbrains.mps.baseLanguage.tuplesExt" version="0" />
     <language slang="l:f61473f9-130f-42f6-b98d-6c438812c2f6:jetbrains.mps.baseLanguage.unitTest" version="1" />
     <language slang="l:0fda14cc-a416-4c81-869a-2175d8b3325d:jetbrains.mps.baseLanguageExt" version="0" />
     <language slang="l:df345b11-b8c7-4213-ac66-48d2a9b75d88:jetbrains.mps.baseLanguageInternal" version="0" />
@@ -42,6 +49,7 @@
     <language slang="l:446c26eb-2b7b-4bf0-9b35-f83fa582753e:jetbrains.mps.lang.modelapi" version="0" />
     <language slang="l:3a13115c-633c-4c5c-bbcc-75c4219e9555:jetbrains.mps.lang.quotation" version="5" />
     <language slang="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" version="17" />
+    <language slang="l:65e59b42-e7f3-45ec-8692-6c7829780afe:jetbrains.mps.lang.smodelExt" version="0" />
     <language slang="l:8585453e-6bfb-4d80-98de-b16074f1d86c:jetbrains.mps.lang.test" version="5" />
     <language slang="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" version="0" />
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
