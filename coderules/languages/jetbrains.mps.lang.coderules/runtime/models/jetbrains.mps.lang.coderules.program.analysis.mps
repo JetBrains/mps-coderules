@@ -57,6 +57,7 @@
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
@@ -132,6 +133,7 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -687,6 +689,62 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="1H_6AUT3qxj" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="5R9R5HilSbP" role="jymVt">
+      <property role="TrG5h" value="isWeakPrincipal" />
+      <node concept="3Tm1VV" id="5R9R5HilSbQ" role="1B3o_S" />
+      <node concept="10P_77" id="5R9R5HilSbR" role="3clF45" />
+      <node concept="37vLTG" id="5R9R5HilSbS" role="3clF46">
+        <property role="TrG5h" value="rule" />
+        <node concept="3uibUv" id="5R9R5HilSbT" role="1tU5fm">
+          <ref role="3uigEE" to="av0y:~Rule" resolve="Rule" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="5R9R5HilSbU" role="3clF47">
+        <node concept="3cpWs6" id="5R9R5HilSbV" role="3cqZAp">
+          <node concept="1Wc70l" id="5R9R5HilSbW" role="3cqZAk">
+            <node concept="1Wc70l" id="5R9R5HilXrI" role="3uHU7B">
+              <node concept="2ZW3vV" id="5R9R5HilSbX" role="3uHU7B">
+                <node concept="3uibUv" id="5R9R5HilSbY" role="2ZW6by">
+                  <ref role="3uigEE" to="i348:7nPD14OaO1O" resolve="RuleEx" />
+                </node>
+                <node concept="37vLTw" id="5R9R5HilSbZ" role="2ZW6bz">
+                  <ref role="3cqZAo" node="5R9R5HilSbS" resolve="rule" />
+                </node>
+              </node>
+              <node concept="3y3z36" id="5R9R5HilW6k" role="3uHU7w">
+                <node concept="10Nm6u" id="5R9R5HilWws" role="3uHU7w" />
+                <node concept="2OqwBi" id="5R9R5HilVyZ" role="3uHU7B">
+                  <node concept="1eOMI4" id="5R9R5HilURZ" role="2Oq$k0">
+                    <node concept="10QFUN" id="5R9R5HilURW" role="1eOMHV">
+                      <node concept="3uibUv" id="5R9R5HilVfa" role="10QFUM">
+                        <ref role="3uigEE" to="i348:7nPD14OaO1O" resolve="RuleEx" />
+                      </node>
+                      <node concept="37vLTw" id="5R9R5HilUGS" role="10QFUP">
+                        <ref role="3cqZAo" node="5R9R5HilSbS" resolve="rule" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="5R9R5HilVOI" role="2OqNvi">
+                    <ref role="37wK5l" to="i348:6tnA4677QqC" resolve="originRef" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="5R9R5HilTvo" role="3uHU7w">
+              <node concept="1rXfSq" id="5R9R5HilTOA" role="3fr31v">
+                <ref role="37wK5l" node="1H_6AUT3qxc" resolve="isPrincipal" />
+                <node concept="37vLTw" id="5R9R5HilU79" role="37wK5m">
+                  <ref role="3cqZAo" node="5R9R5HilSbS" resolve="rule" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5R9R5HilSc9" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
