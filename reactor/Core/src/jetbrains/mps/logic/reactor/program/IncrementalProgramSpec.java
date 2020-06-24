@@ -20,12 +20,15 @@ public interface IncrementalProgramSpec {
 
     boolean isPrincipal(Constraint ctr);
     boolean isPrincipal(Rule rule);
+    boolean isWeakPrincipal(Rule rule);
 
     class NonIncrSpec implements IncrementalProgramSpec {
         @Override
         public boolean isPrincipal(Constraint ctr) { return false; }
         @Override
         public boolean isPrincipal(Rule rule) { return false; }
+        @Override
+        public boolean isWeakPrincipal(Rule rule) { return false; }
     }
 
     NonIncrSpec DefaultSpec = new NonIncrSpec();

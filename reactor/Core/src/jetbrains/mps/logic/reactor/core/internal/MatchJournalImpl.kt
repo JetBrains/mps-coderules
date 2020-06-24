@@ -40,9 +40,13 @@ internal open class MatchJournalImpl(
     }
 
     private class MatchChunkImpl(override val evidence: Evidence, override val match: RuleMatch) : ChunkImpl(), MatchChunk {
+        override fun dependsOnRule(utag: Any): Boolean = rulesWithOrigin.contains(utag)
+
         override fun justifications(): Justifications = justifications
 
         private val justifications = match.collectJustifications(evidence)
+
+        val rulesWithOrigin = HashSet<Any>(4)
 
         override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().tag()}, $entries)"
     }
@@ -132,7 +136,7 @@ internal open class MatchJournalImpl(
     }
 
     private fun logJustificationsFrom(match: RuleMatch) {
-        val parent: Chunk = parentChunk()
+        val parent: MatchChunk = parentChunk()
 
         val moreJustified = match.allHeads().filter {
             // Filter to avoid justifying parent by its child!
@@ -142,6 +146,12 @@ internal open class MatchJournalImpl(
         if (moreJustified.isNotEmpty()) {
             forEachChunkFrom(parent.toPos()) { child ->
                 child.justifyByAll(moreJustified)
+            }
+        }
+
+        match.rule().let {
+            if (it.isWeakPrincipal()) {
+                (parent as MatchChunkImpl).rulesWithOrigin.add(it.uniqueTag())
             }
         }
     }
@@ -352,6 +362,7 @@ internal open class MatchJournalImpl(
     }
 
     private fun RuleMatch.isPrincipal() = ispec.isPrincipal(this.rule())
+    private fun Rule.isWeakPrincipal() = ispec.isWeakPrincipal(this)
     private fun Occurrence.isPrincipal() = ispec.isPrincipal(this.constraint())
 
     /**

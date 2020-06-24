@@ -22,4 +22,5 @@ import jetbrains.mps.logic.reactor.program.Rule
 class MockIncrProgSpec(val principalRuleTags: Set<Any>, val principalCtrSyms: Set<ConstraintSymbol>) : IncrementalProgramSpec {
     override fun isPrincipal(ctr: Constraint): Boolean = principalCtrSyms.contains(ctr.symbol())
     override fun isPrincipal(rule: Rule): Boolean = principalRuleTags.contains(rule.uniqueTag())
+    override fun isWeakPrincipal(rule: Rule): Boolean = false
 }

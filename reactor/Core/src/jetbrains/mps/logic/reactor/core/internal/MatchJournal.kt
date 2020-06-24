@@ -189,7 +189,17 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
      * [Chunk] corresponding to a [RuleMatch] of a principal [Rule].
      */
     interface MatchChunk : Chunk {
+        /**
+         * Returns true if this [Chunk] depends on changes to specified rule.
+         * Relevant for rules with origin. Doesn't include rule from [match].
+         */
+        fun dependsOnRule(utag: Any): Boolean
+
+        /**
+         * [RuleMatch] which defines this [Chunk]
+         */
         val match: RuleMatch
+
         val ruleUniqueTag: Any get() = match.rule().uniqueTag()
     }
 

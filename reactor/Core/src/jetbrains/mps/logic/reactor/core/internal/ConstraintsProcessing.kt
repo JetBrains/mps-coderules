@@ -86,7 +86,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         while (it.hasNext()) {
             val chunk = it.next()
 
-            if (chunk is MatchJournal.MatchChunk && ruleIds.contains(chunk.ruleUniqueTag)) {
+            if (chunk is MatchJournal.MatchChunk && chunk.dependsOnAny(ruleIds)) {
                 justificationRoots.add(chunk)
             }
 
@@ -341,4 +341,8 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
     private fun RuleMatch.isPrincipal() = ispec.isPrincipal(this.rule())
 
     private fun Occurrence.isPrincipal() = ispec.isPrincipal(this.constraint())
+
+    private fun MatchJournal.MatchChunk.dependsOnAny(utags: Iterable<Any>): Boolean =
+        utags.contains(this.ruleUniqueTag) || utags.any { utag -> dependsOnRule(utag) }
+
 }

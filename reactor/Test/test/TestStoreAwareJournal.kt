@@ -30,6 +30,7 @@ class TestStoreAwareJournal {
     private object LegacyMockIncrProgSpec : IncrementalProgramSpec {
         override fun isPrincipal(ctr: Constraint): Boolean = ctr.isPrincipal
         override fun isPrincipal(rule: Rule): Boolean = rule.all().any { it is Constraint && it.isPrincipal }
+        override fun isWeakPrincipal(rule: Rule): Boolean = false
     }
 
     private class JournalDispatcherHelper(
