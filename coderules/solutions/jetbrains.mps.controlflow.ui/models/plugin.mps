@@ -36,6 +36,7 @@
     <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
     <import index="ksgm" ref="r:6285678b-007f-4527-bcf5-6fd38ba8c969(jetbrains.mps.lang.coderules.program)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
+    <import index="psoy" ref="r:78313117-90ee-47a5-a91e-b5213df7f611(jetbrains.mps.coderules.runtime.result)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -1111,19 +1112,66 @@
                         <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                         <ref role="1Y3XeK" to="1yqb:3F6vMxqaxpm" resolve="CoderulesHelper.ProgressCallback" />
                         <node concept="3Tm1VV" id="7WKNeR8SQyF" role="1B3o_S" />
-                        <node concept="3clFb_" id="7WKNeR8SQyG" role="jymVt">
-                          <property role="TrG5h" value="ok" />
-                          <property role="1EzhhJ" value="false" />
-                          <node concept="37vLTG" id="7WKNeR8SQyH" role="3clF46">
+                        <node concept="3clFb_" id="3MwxBzG5UCa" role="jymVt">
+                          <property role="TrG5h" value="done" />
+                          <node concept="37vLTG" id="3MwxBzG5UCb" role="3clF46">
                             <property role="TrG5h" value="message" />
-                            <node concept="17QB3L" id="7WKNeR8SQyI" role="1tU5fm" />
+                            <node concept="17QB3L" id="3MwxBzG5UCc" role="1tU5fm" />
                           </node>
-                          <node concept="3cqZAl" id="7WKNeR8SQyJ" role="3clF45" />
-                          <node concept="3Tm1VV" id="7WKNeR8SQyK" role="1B3o_S" />
-                          <node concept="3clFbS" id="7WKNeR8SQyL" role="3clF47">
+                          <node concept="37vLTG" id="3MwxBzG5UCd" role="3clF46">
+                            <property role="TrG5h" value="result" />
+                            <node concept="3uibUv" id="3MwxBzG5UCe" role="1tU5fm">
+                              <ref role="3uigEE" to="psoy:7Oc59RSEjdb" resolve="Result" />
+                            </node>
+                          </node>
+                          <node concept="3cqZAl" id="3MwxBzG5UCf" role="3clF45" />
+                          <node concept="3Tm1VV" id="3MwxBzG5UCg" role="1B3o_S" />
+                          <node concept="3clFbS" id="3MwxBzG5UCj" role="3clF47">
                             <node concept="1QHqEQ" id="7WKNeR8SQyM" role="3cqZAp">
                               <node concept="1QHqEC" id="7WKNeR8SQyN" role="1QHqEI">
                                 <node concept="3clFbS" id="7WKNeR8SQyO" role="1bW5cS">
+                                  <node concept="3cpWs8" id="3MwxBzG5WQO" role="3cqZAp">
+                                    <node concept="3cpWsn" id="3MwxBzG5WQP" role="3cpWs9">
+                                      <property role="TrG5h" value="type" />
+                                      <node concept="3uibUv" id="3MwxBzG5WKh" role="1tU5fm">
+                                        <ref role="3uigEE" to="jkm4:~MessageType" resolve="MessageType" />
+                                      </node>
+                                      <node concept="3K4zz7" id="3MwxBzG5XUq" role="33vP2m">
+                                        <node concept="1eOMI4" id="3MwxBzG5Y8h" role="3K4E3e">
+                                          <node concept="3K4zz7" id="3MwxBzG5Z0d" role="1eOMHV">
+                                            <node concept="2OqwBi" id="3MwxBzG5YpR" role="3K4Cdx">
+                                              <node concept="37vLTw" id="3MwxBzG5Ydb" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="3MwxBzG5UCd" resolve="result" />
+                                              </node>
+                                              <node concept="liA8E" id="3MwxBzG5YFa" role="2OqNvi">
+                                                <ref role="37wK5l" to="psoy:2gw7OvgCNSM" resolve="hasErrors" />
+                                              </node>
+                                            </node>
+                                            <node concept="10M0yZ" id="3MwxBzG5Zes" role="3K4E3e">
+                                              <ref role="3cqZAo" to="jkm4:~MessageType.WARNING" resolve="WARNING" />
+                                              <ref role="1PxDUh" to="jkm4:~MessageType" resolve="MessageType" />
+                                            </node>
+                                            <node concept="10M0yZ" id="3MwxBzG5WQQ" role="3K4GZi">
+                                              <ref role="1PxDUh" to="jkm4:~MessageType" resolve="MessageType" />
+                                              <ref role="3cqZAo" to="jkm4:~MessageType.INFO" resolve="INFO" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="2OqwBi" id="3MwxBzG5Xhs" role="3K4Cdx">
+                                          <node concept="37vLTw" id="3MwxBzG5X50" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="3MwxBzG5UCd" resolve="result" />
+                                          </node>
+                                          <node concept="liA8E" id="3MwxBzG5Xyj" role="2OqNvi">
+                                            <ref role="37wK5l" to="psoy:7Oc59RS_hsj" resolve="isSuccessful" />
+                                          </node>
+                                        </node>
+                                        <node concept="10M0yZ" id="3MwxBzG5ZpH" role="3K4GZi">
+                                          <ref role="3cqZAo" to="jkm4:~MessageType.ERROR" resolve="ERROR" />
+                                          <ref role="1PxDUh" to="jkm4:~MessageType" resolve="MessageType" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
                                   <node concept="3clFbF" id="7WKNeR8SQyP" role="3cqZAp">
                                     <node concept="2OqwBi" id="7WKNeR8SQyQ" role="3clFbG">
                                       <node concept="2YIFZM" id="7WKNeR8SQyR" role="2Oq$k0">
@@ -1138,12 +1186,11 @@
                                         <node concept="Xl_RD" id="7WKNeR8SQyU" role="37wK5m">
                                           <property role="Xl_RC" value="Activation Trace" />
                                         </node>
-                                        <node concept="10M0yZ" id="7WKNeR8SQyV" role="37wK5m">
-                                          <ref role="1PxDUh" to="jkm4:~MessageType" resolve="MessageType" />
-                                          <ref role="3cqZAo" to="jkm4:~MessageType.INFO" resolve="INFO" />
+                                        <node concept="37vLTw" id="3MwxBzG5WQR" role="37wK5m">
+                                          <ref role="3cqZAo" node="3MwxBzG5WQP" resolve="type" />
                                         </node>
-                                        <node concept="37vLTw" id="7WKNeR8SQyW" role="37wK5m">
-                                          <ref role="3cqZAo" node="7WKNeR8SQyH" resolve="message" />
+                                        <node concept="37vLTw" id="3MwxBzG5WFQ" role="37wK5m">
+                                          <ref role="3cqZAo" node="3MwxBzG5UCb" resolve="message" />
                                         </node>
                                       </node>
                                     </node>
@@ -1160,55 +1207,8 @@
                               </node>
                             </node>
                           </node>
-                        </node>
-                        <node concept="3clFb_" id="7WKNeR8SQz0" role="jymVt">
-                          <property role="TrG5h" value="failed" />
-                          <property role="1EzhhJ" value="false" />
-                          <node concept="37vLTG" id="7WKNeR8SQz1" role="3clF46">
-                            <property role="TrG5h" value="message" />
-                            <node concept="17QB3L" id="7WKNeR8SQz2" role="1tU5fm" />
-                          </node>
-                          <node concept="3cqZAl" id="7WKNeR8SQz3" role="3clF45" />
-                          <node concept="3Tm1VV" id="7WKNeR8SQz4" role="1B3o_S" />
-                          <node concept="3clFbS" id="7WKNeR8SQz5" role="3clF47">
-                            <node concept="1QHqEQ" id="7WKNeR8SQz6" role="3cqZAp">
-                              <node concept="1QHqEC" id="7WKNeR8SQz7" role="1QHqEI">
-                                <node concept="3clFbS" id="7WKNeR8SQz8" role="1bW5cS">
-                                  <node concept="3clFbF" id="7WKNeR8SQz9" role="3cqZAp">
-                                    <node concept="2OqwBi" id="7WKNeR8SQza" role="3clFbG">
-                                      <node concept="2YIFZM" id="7WKNeR8SQzb" role="2Oq$k0">
-                                        <ref role="37wK5l" to="jkny:~ToolWindowManager.getInstance(com.intellij.openapi.project.Project)" resolve="getInstance" />
-                                        <ref role="1Pybhc" to="jkny:~ToolWindowManager" resolve="ToolWindowManager" />
-                                        <node concept="37vLTw" id="78H58oeurTN" role="37wK5m">
-                                          <ref role="3cqZAo" node="6hqFpWnfoA9" resolve="ideaProject" />
-                                        </node>
-                                      </node>
-                                      <node concept="liA8E" id="7WKNeR8SQzd" role="2OqNvi">
-                                        <ref role="37wK5l" to="jkny:~ToolWindowManager.notifyByBalloon(java.lang.String,com.intellij.openapi.ui.MessageType,java.lang.String)" resolve="notifyByBalloon" />
-                                        <node concept="Xl_RD" id="7WKNeR8SQze" role="37wK5m">
-                                          <property role="Xl_RC" value="Activation Trace" />
-                                        </node>
-                                        <node concept="10M0yZ" id="7WKNeR8SQzf" role="37wK5m">
-                                          <ref role="1PxDUh" to="jkm4:~MessageType" resolve="MessageType" />
-                                          <ref role="3cqZAo" to="jkm4:~MessageType.ERROR" resolve="ERROR" />
-                                        </node>
-                                        <node concept="37vLTw" id="7WKNeR8SQzg" role="37wK5m">
-                                          <ref role="3cqZAo" node="7WKNeR8SQz1" resolve="message" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="2OqwBi" id="7WKNeR8SQzh" role="ukAjM">
-                                <node concept="37vLTw" id="78H58oeurLc" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6hqFpWnfkNg" resolve="mpsProject" />
-                                </node>
-                                <node concept="liA8E" id="7WKNeR8SQzj" role="2OqNvi">
-                                  <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
-                                </node>
-                              </node>
-                            </node>
+                          <node concept="2AHcQZ" id="3MwxBzG5UCk" role="2AJF6D">
+                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                           </node>
                         </node>
                       </node>

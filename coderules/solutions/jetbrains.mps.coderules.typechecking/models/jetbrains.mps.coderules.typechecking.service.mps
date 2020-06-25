@@ -57,6 +57,7 @@
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="ksgm" ref="r:6285678b-007f-4527-bcf5-6fd38ba8c969(jetbrains.mps.lang.coderules.program)" />
+    <import index="psoy" ref="r:78313117-90ee-47a5-a91e-b5213df7f611(jetbrains.mps.coderules.runtime.result)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -10615,18 +10616,23 @@
                   </node>
                   <node concept="3clFbF" id="6nFpYluHTf0" role="3cqZAp">
                     <node concept="3vZ8ra" id="6nFpYluHTf1" role="3clFbG">
-                      <node concept="3fqX7Q" id="6nFpYluHTf2" role="37vLTx">
-                        <node concept="2OqwBi" id="6nFpYluHTf3" role="3fr31v">
-                          <node concept="37vLTw" id="6nFpYluHTf4" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6nFpYluGWA6" resolve="effect" />
-                          </node>
-                          <node concept="liA8E" id="6nFpYluHTf5" role="2OqNvi">
-                            <ref role="37wK5l" to="1yqb:19OC8ZN4Cn" resolve="hasFailed" />
-                          </node>
-                        </node>
-                      </node>
                       <node concept="37vLTw" id="6nFpYluHTf6" role="37vLTJ">
                         <ref role="3cqZAo" node="6nFpYluHz$n" resolve="ok" />
+                      </node>
+                      <node concept="3fqX7Q" id="7TC1Xce1WMg" role="37vLTx">
+                        <node concept="2OqwBi" id="7TC1Xce1WMi" role="3fr31v">
+                          <node concept="2OqwBi" id="7TC1Xce1WMj" role="2Oq$k0">
+                            <node concept="37vLTw" id="7TC1Xce1WMk" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6nFpYluGWA6" resolve="effect" />
+                            </node>
+                            <node concept="liA8E" id="7TC1Xce1WMl" role="2OqNvi">
+                              <ref role="37wK5l" to="1yqb:7TC1XcdSe_i" resolve="result" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="7TC1Xce1WMm" role="2OqNvi">
+                            <ref role="37wK5l" to="psoy:2gw7OvgCNSM" resolve="hasErrors" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
