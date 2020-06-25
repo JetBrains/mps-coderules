@@ -95,6 +95,7 @@
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
+      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -7627,6 +7628,89 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="2WtKs4u1ogL" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="5X1yxJHUo54">
+    <property role="TrG5h" value="TemplateApplicationException" />
+    <node concept="3Tm1VV" id="5X1yxJHUo55" role="1B3o_S" />
+    <node concept="3uibUv" id="5X1yxJHUo94" role="1zkMxy">
+      <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
+    </node>
+    <node concept="3clFbW" id="5X1yxJHUoaC" role="jymVt">
+      <property role="TrG5h" value="RuntimeException" />
+      <node concept="3cqZAl" id="5X1yxJHUoaD" role="3clF45" />
+      <node concept="3Tm1VV" id="5X1yxJHUoaE" role="1B3o_S" />
+      <node concept="3clFbS" id="5X1yxJHUoaG" role="3clF47">
+        <node concept="XkiVB" id="5X1yxJHUoaH" role="3cqZAp">
+          <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;()" resolve="RuntimeException" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbW" id="5X1yxJHUoaI" role="jymVt">
+      <property role="TrG5h" value="RuntimeException" />
+      <node concept="3cqZAl" id="5X1yxJHUoaJ" role="3clF45" />
+      <node concept="3Tm1VV" id="5X1yxJHUoaK" role="1B3o_S" />
+      <node concept="37vLTG" id="5X1yxJHUoaM" role="3clF46">
+        <property role="TrG5h" value="message" />
+        <node concept="3uibUv" id="5X1yxJHUoaN" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="5X1yxJHUoaO" role="3clF47">
+        <node concept="XkiVB" id="5X1yxJHUoaQ" role="3cqZAp">
+          <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+          <node concept="37vLTw" id="5X1yxJHUoaP" role="37wK5m">
+            <ref role="3cqZAo" node="5X1yxJHUoaM" resolve="message" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbW" id="5X1yxJHUoaR" role="jymVt">
+      <property role="TrG5h" value="RuntimeException" />
+      <node concept="3cqZAl" id="5X1yxJHUoaS" role="3clF45" />
+      <node concept="3Tm1VV" id="5X1yxJHUoaT" role="1B3o_S" />
+      <node concept="37vLTG" id="5X1yxJHUoaV" role="3clF46">
+        <property role="TrG5h" value="message" />
+        <node concept="3uibUv" id="5X1yxJHUoaW" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5X1yxJHUoaX" role="3clF46">
+        <property role="TrG5h" value="cause" />
+        <node concept="3uibUv" id="5X1yxJHUoaY" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="5X1yxJHUoaZ" role="3clF47">
+        <node concept="XkiVB" id="5X1yxJHUob2" role="3cqZAp">
+          <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="RuntimeException" />
+          <node concept="37vLTw" id="5X1yxJHUob0" role="37wK5m">
+            <ref role="3cqZAo" node="5X1yxJHUoaV" resolve="message" />
+          </node>
+          <node concept="37vLTw" id="5X1yxJHUob1" role="37wK5m">
+            <ref role="3cqZAo" node="5X1yxJHUoaX" resolve="cause" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbW" id="5X1yxJHUob3" role="jymVt">
+      <property role="TrG5h" value="RuntimeException" />
+      <node concept="3cqZAl" id="5X1yxJHUob4" role="3clF45" />
+      <node concept="3Tm1VV" id="5X1yxJHUob5" role="1B3o_S" />
+      <node concept="37vLTG" id="5X1yxJHUob7" role="3clF46">
+        <property role="TrG5h" value="cause" />
+        <node concept="3uibUv" id="5X1yxJHUob8" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="5X1yxJHUob9" role="3clF47">
+        <node concept="XkiVB" id="5X1yxJHUobb" role="3cqZAp">
+          <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.Throwable)" resolve="RuntimeException" />
+          <node concept="37vLTw" id="5X1yxJHUoba" role="37wK5m">
+            <ref role="3cqZAo" node="5X1yxJHUob7" resolve="cause" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
