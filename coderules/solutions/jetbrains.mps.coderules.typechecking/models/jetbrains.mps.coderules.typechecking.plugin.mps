@@ -11,6 +11,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
   </languages>
   <imports>
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
@@ -56,6 +57,9 @@
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="qqrq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.components(MPS.IDEA/)" />
     <import index="mpcv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.ref(JDK/)" />
+    <import index="2eq1" ref="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -90,6 +94,7 @@
       <concept id="481983775135178834" name="jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDeclaration" flags="ng" index="2uRRBy">
         <child id="481983775135178836" name="initBlock" index="2uRRB$" />
         <child id="481983775135178837" name="disposeBlock" index="2uRRB_" />
+        <child id="481983775135178838" name="fieldDeclaration" index="2uRRBA" />
       </concept>
       <concept id="481983775135178840" name="jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDeclaration" flags="ng" index="2uRRBC">
         <child id="481983775135178842" name="initBlock" index="2uRRBE" />
@@ -412,16 +417,130 @@
   <node concept="2uRRBy" id="443LGHBoF4R">
     <property role="TrG5h" value="TypesIndexCacheLifecycle" />
     <property role="3GE5qa" value="lifecycle" />
+    <node concept="2BZ0e9" id="2Qsys8b5KCW" role="2uRRBA">
+      <property role="TrG5h" value="reloadListener" />
+      <node concept="3Tm6S6" id="2Qsys8b5KCX" role="1B3o_S" />
+      <node concept="3uibUv" id="2Qsys8b5KWz" role="1tU5fm">
+        <ref role="3uigEE" to="2eq1:491od_XHIv7" resolve="ReloadListener" />
+      </node>
+    </node>
     <node concept="2uRRBT" id="443LGHBoF4U" role="2uRRB$">
       <node concept="3clFbS" id="443LGHBoF4V" role="2VODD2">
+        <node concept="3cpWs8" id="2Qsys8b4161" role="3cqZAp">
+          <node concept="3cpWsn" id="2Qsys8b4162" role="3cpWs9">
+            <property role="TrG5h" value="repository" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="2Qsys8b412R" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+            </node>
+            <node concept="2OqwBi" id="2Qsys8b4163" role="33vP2m">
+              <node concept="1KvdUw" id="2Qsys8b4164" role="2Oq$k0" />
+              <node concept="liA8E" id="2Qsys8b4165" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2Qsys8bCUjT" role="3cqZAp">
+          <node concept="1PaTwC" id="2Qsys8bCUjU" role="1aUNEU">
+            <node concept="3oM_SD" id="2Qsys8bCUjV" role="1PaTwD">
+              <property role="3oM_SC" value="initialize" />
+            </node>
+            <node concept="3oM_SD" id="2Qsys8bCUpX" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="2Qsys8bCUq_" role="1PaTwD">
+              <property role="3oM_SC" value="cache" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="443LGHBoGH8" role="3cqZAp">
           <node concept="2YIFZM" id="6$gg4k_t5t4" role="3clFbG">
             <ref role="37wK5l" to="tj24:4Z$O9mrQIG1" resolve="get" />
             <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingCache" />
-            <node concept="2OqwBi" id="443LGHBoGJY" role="37wK5m">
-              <node concept="1KvdUw" id="443LGHBoGJZ" role="2Oq$k0" />
-              <node concept="liA8E" id="443LGHBoGK0" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
+            <node concept="37vLTw" id="2Qsys8b4166" role="37wK5m">
+              <ref role="3cqZAo" node="2Qsys8b4162" resolve="repository" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2Qsys8b5SWt" role="3cqZAp">
+          <node concept="37vLTI" id="2Qsys8b5Tj5" role="3clFbG">
+            <node concept="2ShNRf" id="2Qsys8b5TkY" role="37vLTx">
+              <node concept="YeOm9" id="2Qsys8b5U4E" role="2ShVmc">
+                <node concept="1Y3b0j" id="2Qsys8b5U4H" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="2eq1:491od_XHIv7" resolve="ReloadListener" />
+                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                  <node concept="3Tm1VV" id="2Qsys8b5U4I" role="1B3o_S" />
+                  <node concept="3clFb_" id="2Qsys8b5U4N" role="jymVt">
+                    <property role="TrG5h" value="reloadStarted" />
+                    <node concept="3Tm1VV" id="2Qsys8b5U4O" role="1B3o_S" />
+                    <node concept="3cqZAl" id="2Qsys8b5U4P" role="3clF45" />
+                    <node concept="3clFbS" id="2Qsys8b5U4R" role="3clF47">
+                      <node concept="3clFbF" id="2Qsys8b5UbH" role="3cqZAp">
+                        <node concept="2YIFZM" id="2Qsys8b5UbI" role="3clFbG">
+                          <ref role="37wK5l" to="tj24:14$_tTxAmT8" resolve="dispose" />
+                          <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingCache" />
+                          <node concept="37vLTw" id="2Qsys8b5UbJ" role="37wK5m">
+                            <ref role="3cqZAo" node="2Qsys8b4162" resolve="repository" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="2Qsys8b5U4T" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                    </node>
+                  </node>
+                  <node concept="2tJIrI" id="2Qsys8b5U4U" role="jymVt" />
+                  <node concept="3clFb_" id="2Qsys8b5U4V" role="jymVt">
+                    <property role="TrG5h" value="reloadFinished" />
+                    <node concept="3Tm1VV" id="2Qsys8b5U4W" role="1B3o_S" />
+                    <node concept="3cqZAl" id="2Qsys8b5U4X" role="3clF45" />
+                    <node concept="3clFbS" id="2Qsys8b5U4Z" role="3clF47">
+                      <node concept="3SKdUt" id="2Qsys8b5UoN" role="3cqZAp">
+                        <node concept="1PaTwC" id="2Qsys8b5UoO" role="1aUNEU">
+                          <node concept="3oM_SD" id="2Qsys8b5UoP" role="1PaTwD">
+                            <property role="3oM_SC" value="NOP" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="2Qsys8b5U51" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="2Qsys8b5SWn" role="37vLTJ">
+              <node concept="2WthIp" id="2Qsys8b5SWq" role="2Oq$k0" />
+              <node concept="2BZ7hE" id="2Qsys8b5SWs" role="2OqNvi">
+                <ref role="2WH_rO" node="2Qsys8b5KCW" resolve="reloadListener" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2Qsys8b5QHR" role="3cqZAp">
+          <node concept="2OqwBi" id="2Qsys8b5SjJ" role="3clFbG">
+            <node concept="2OqwBi" id="2Qsys8b5Rc1" role="2Oq$k0">
+              <node concept="2YIFZM" id="2Qsys8b5QVZ" role="2Oq$k0">
+                <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication()" resolve="getApplication" />
+                <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+              </node>
+              <node concept="liA8E" id="2Qsys8b5ROc" role="2OqNvi">
+                <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class)" resolve="getComponent" />
+                <node concept="3VsKOn" id="2Qsys8b5RT6" role="37wK5m">
+                  <ref role="3VsUkX" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="2Qsys8b5SEj" role="2OqNvi">
+              <ref role="37wK5l" to="2eq1:491od_YVjMw" resolve="addReloadListener" />
+              <node concept="2OqwBi" id="2Qsys8b5SGK" role="37wK5m">
+                <node concept="2WthIp" id="2Qsys8b5SGN" role="2Oq$k0" />
+                <node concept="2BZ7hE" id="2Qsys8b5SGP" role="2OqNvi">
+                  <ref role="2WH_rO" node="2Qsys8b5KCW" resolve="reloadListener" />
+                </node>
               </node>
             </node>
           </node>
@@ -430,6 +549,31 @@
     </node>
     <node concept="2uRRBN" id="443LGHBoGMS" role="2uRRB_">
       <node concept="3clFbS" id="443LGHBoGMT" role="2VODD2">
+        <node concept="3clFbF" id="2Qsys8b5UOj" role="3cqZAp">
+          <node concept="2OqwBi" id="2Qsys8b5UOk" role="3clFbG">
+            <node concept="2OqwBi" id="2Qsys8b5UOl" role="2Oq$k0">
+              <node concept="2YIFZM" id="2Qsys8b5UOm" role="2Oq$k0">
+                <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication()" resolve="getApplication" />
+              </node>
+              <node concept="liA8E" id="2Qsys8b5UOn" role="2OqNvi">
+                <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class)" resolve="getComponent" />
+                <node concept="3VsKOn" id="2Qsys8b5UOo" role="37wK5m">
+                  <ref role="3VsUkX" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="2Qsys8b5UOp" role="2OqNvi">
+              <ref role="37wK5l" to="2eq1:491od_YVk7k" resolve="removeReloadListener" />
+              <node concept="2OqwBi" id="2Qsys8b5UOq" role="37wK5m">
+                <node concept="2WthIp" id="2Qsys8b5UOr" role="2Oq$k0" />
+                <node concept="2BZ7hE" id="2Qsys8b5UOs" role="2OqNvi">
+                  <ref role="2WH_rO" node="2Qsys8b5KCW" resolve="reloadListener" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="443LGHBoGNh" role="3cqZAp">
           <node concept="2YIFZM" id="6$gg4k_t5t6" role="3clFbG">
             <ref role="37wK5l" to="tj24:14$_tTxAmT8" resolve="dispose" />
