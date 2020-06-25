@@ -30,6 +30,7 @@
     <import index="7ed7" ref="r:48788b84-8ecd-41f5-ad03-cc8c09b1f186(jetbrains.mps.lang.coderules.analysis)" />
     <import index="zuft" ref="r:65f97255-4bb1-4783-acd6-a4ed5a1088e2(jetbrains.mps.typechecking.testlang.types)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
+    <import index="psoy" ref="r:78313117-90ee-47a5-a91e-b5213df7f611(jetbrains.mps.coderules.runtime.result)" />
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" implicit="true" />
@@ -508,7 +509,7 @@
                 <node concept="3cpWsn" id="tyIfzC4r6h" role="3cpWs9">
                   <property role="TrG5h" value="res" />
                   <node concept="3uibUv" id="tyIfzC4r6i" role="1tU5fm">
-                    <ref role="3uigEE" to="hano:7Oc59RSEjdb" resolve="Result" />
+                    <ref role="3uigEE" to="psoy:7Oc59RSEjdb" resolve="Result" />
                   </node>
                   <node concept="2OqwBi" id="tyIfzC4uHe" role="33vP2m">
                     <node concept="37vLTw" id="tyIfzC4uuB" role="2Oq$k0">
@@ -529,7 +530,7 @@
                     <ref role="3cqZAo" node="tyIfzC4r6h" resolve="res" />
                   </node>
                   <node concept="liA8E" id="tyIfzBIVZ3" role="2OqNvi">
-                    <ref role="37wK5l" to="hano:7Oc59RS_hsj" resolve="isSuccessful" />
+                    <ref role="37wK5l" to="psoy:7Oc59RS_hsj" resolve="isSuccessful" />
                   </node>
                 </node>
               </node>
