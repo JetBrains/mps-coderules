@@ -1656,28 +1656,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="23c4kVtm90u" role="3cqZAp">
-                    <node concept="3cpWsn" id="23c4kVtm90v" role="3cpWs9">
-                      <property role="TrG5h" value="checkGarbage" />
-                      <node concept="3uibUv" id="23c4kVtm90w" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
-                      </node>
-                      <node concept="2YIFZM" id="23c4kVtm90x" role="33vP2m">
-                        <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
-                        <ref role="37wK5l" to="wyt6:~Boolean.valueOf(java.lang.String)" resolve="valueOf" />
-                        <node concept="2YIFZM" id="23c4kVtm90y" role="37wK5m">
-                          <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                          <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String,java.lang.String)" resolve="getProperty" />
-                          <node concept="Xl_RD" id="23c4kVtm90z" role="37wK5m">
-                            <property role="Xl_RC" value="logic.checkGarbage" />
-                          </node>
-                          <node concept="Xl_RD" id="23c4kVtm90$" role="37wK5m">
-                            <property role="Xl_RC" value="false" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3cpWs8" id="Hg6Enc7CPR" role="3cqZAp">
                     <node concept="3cpWsn" id="Hg6Enc7CPS" role="3cpWs9">
                       <property role="TrG5h" value="result" />
@@ -1753,9 +1731,6 @@
                             <node concept="3Tm1VV" id="7WKNeR9ynVB" role="1B3o_S" />
                             <node concept="37vLTw" id="23c4kVtm7Iq" role="37wK5m">
                               <ref role="3cqZAo" node="23c4kVtm7Il" resolve="profile" />
-                            </node>
-                            <node concept="37vLTw" id="23c4kVtmfZ7" role="37wK5m">
-                              <ref role="3cqZAo" node="23c4kVtm90v" resolve="checkGarbage" />
                             </node>
                             <node concept="3clFb_" id="7WKNeR9yo$l" role="jymVt">
                               <property role="TrG5h" value="configure" />
