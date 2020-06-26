@@ -316,9 +316,6 @@
         </node>
         <node concept="2Hmddi" id="2i6cuYR69K6" role="3cqZAp">
           <node concept="2OqwBi" id="2i6cuYR69K7" role="2Hmdds">
-            <node concept="liA8E" id="2i6cuYR69Kf" role="2OqNvi">
-              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
-            </node>
             <node concept="2OqwBi" id="5BtuWK4VdWa" role="2Oq$k0">
               <node concept="2YIFZM" id="2i6cuYR69K8" role="2Oq$k0">
                 <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
@@ -339,6 +336,9 @@
               <node concept="liA8E" id="5BtuWK4Ve8A" role="2OqNvi">
                 <ref role="37wK5l" to="tj24:27bTNFfaVLW" resolve="skipLocal" />
               </node>
+            </node>
+            <node concept="liA8E" id="2i6cuYR69Kf" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
             </node>
           </node>
         </node>
@@ -462,23 +462,28 @@
       <node concept="3clFbS" id="2PEDwPSdjJj" role="3clF47">
         <node concept="2Hmddi" id="2PEDwPSdjJk" role="3cqZAp">
           <node concept="2OqwBi" id="2PEDwPSdjJl" role="2Hmdds">
-            <node concept="2YIFZM" id="2PEDwPSdjJm" role="2Oq$k0">
-              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
-              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-              <node concept="2OqwBi" id="2PEDwPSdjJn" role="37wK5m">
-                <node concept="2WthIp" id="2PEDwPSdjJo" role="2Oq$k0" />
-                <node concept="2XshWL" id="2PEDwPSdjJp" role="2OqNvi">
-                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
-                  <node concept="2tJFMh" id="2PEDwPSdjJq" role="2XxRq1">
-                    <node concept="ZC_QK" id="2PEDwPSdkaa" role="2tJFKM">
-                      <ref role="2aWVGs" to="wqtl:2PEDwPSdaaD" resolve="Containment" />
+            <node concept="2OqwBi" id="37RykZK7pCQ" role="2Oq$k0">
+              <node concept="2YIFZM" id="2PEDwPSdjJm" role="2Oq$k0">
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+                <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+                <node concept="2OqwBi" id="2PEDwPSdjJn" role="37wK5m">
+                  <node concept="2WthIp" id="2PEDwPSdjJo" role="2Oq$k0" />
+                  <node concept="2XshWL" id="2PEDwPSdjJp" role="2OqNvi">
+                    <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                    <node concept="2tJFMh" id="2PEDwPSdjJq" role="2XxRq1">
+                      <node concept="ZC_QK" id="2PEDwPSdkaa" role="2tJFKM">
+                        <ref role="2aWVGs" to="wqtl:2PEDwPSdaaD" resolve="Containment" />
+                      </node>
                     </node>
                   </node>
                 </node>
+                <node concept="1jxXqW" id="2PEDwPSdjJs" role="37wK5m" />
               </node>
-              <node concept="1jxXqW" id="2PEDwPSdjJs" role="37wK5m" />
+              <node concept="liA8E" id="37RykZK7q_R" role="2OqNvi">
+                <ref role="37wK5l" to="tj24:2hrSdN96927" resolve="ignoreErrorTypes" />
+              </node>
             </node>
-            <node concept="liA8E" id="2PEDwPSdjJt" role="2OqNvi">
+            <node concept="liA8E" id="37RykZK7qFK" role="2OqNvi">
               <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
             </node>
           </node>
@@ -623,9 +628,6 @@
         </node>
         <node concept="2Hmddi" id="1TH_SRmLuzl" role="3cqZAp">
           <node concept="2OqwBi" id="1TH_SRmLuzm" role="2Hmdds">
-            <node concept="liA8E" id="1TH_SRmLuzu" role="2OqNvi">
-              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
-            </node>
             <node concept="2OqwBi" id="5BtuWK4Veja" role="2Oq$k0">
               <node concept="2OqwBi" id="5o9$c3zUbSC" role="2Oq$k0">
                 <node concept="2YIFZM" id="1TH_SRmLuzn" role="2Oq$k0">
@@ -651,6 +653,9 @@
               <node concept="liA8E" id="5BtuWK4Vevi" role="2OqNvi">
                 <ref role="37wK5l" to="tj24:27bTNFfaVLW" resolve="skipLocal" />
               </node>
+            </node>
+            <node concept="liA8E" id="1TH_SRmLuzu" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
             </node>
           </node>
         </node>
