@@ -176,12 +176,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
          */
         fun discardedLog(): List<Occurrence> = entries().filter { it.discarded }.map { it.occ }
 
-        /**
-         * Returns the resulting collection of activated occurrences
-         * without discarded (only in this chunk!) occurrences.
-         */
-        fun activated(): List<Occurrence> = entries().allOccurrences()
-
         fun toPos(): Pos = Pos(this, entries().size)
     }
 

@@ -96,7 +96,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                 // Remove chunk from the journal
                 it.remove()
                 // 'Undo' all activated in this chunk occurrences
-                chunk.activated().forEach {
+                chunk.activatedLog().forEach {
                     dispatchingFront = dispatchingFront.forget(it)
                 }
 

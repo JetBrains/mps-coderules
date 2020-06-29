@@ -74,7 +74,6 @@ internal class ExecutionQueue(
 
                 // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
                 if (execPos.activeOcc.stored) {
-                    // fixme: parentChunk can also be tracked
                     status = processing.activateContinue(controller, execPos.activeOcc, processing.parentChunk())
                     // Leave journal processing as it was at the point of failure
                     if (!status.operational) return status
@@ -107,12 +106,13 @@ internal class ExecutionQueue(
 
             // if it is a future match
             if (pos != null && journalIndex.compare(lastIncrementalRootPos, pos) < 0) {
+                // TODO: Remove extra logic with 'postponedMatches'
+                //  when following Dispatcher contract is specified/checked:
+                //  Dispatcher returns unconsumed matches relevant for offered
+                //  activation on future calls to Dispatcher.matches().
+                //  With this there's no need to store them here.
 //                val idOcc = Id(occChunk.occ)
 //                postponedMatches[idOcc] = (postponedMatches[idOcc] ?: emptyList()) + listOf(m)
-                // TODO: Seems, Dispatcher will again return these unconsumed
-                //  future matches on this offered activation,
-                //  so there's no need to store them.
-                //  Remove extra logic with 'postponedMatches'.
                 offer(pos, occChunk)
             } else {
                 currentMatches.add(m)
