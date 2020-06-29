@@ -1161,6 +1161,16 @@
             <ref role="3bR37D" node="4NtT$ZxGTIW" resolve="jetbrains.mps.baseLanguage.collectionsExt" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5BtuWK4F$zT" role="3bR37C">
+          <node concept="3bR9La" id="5BtuWK4F$zU" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:7mB3viLwG3m" resolve="jetbrains.mps.coderules.typechecking.test" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5BtuWK4F$zV" role="3bR37C">
+          <node concept="3bR9La" id="5BtuWK4F$zW" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6KZG" resolve="jetbrains.mps.baseLanguage.closures" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="6$MmqWflyOZ" role="2G$12L">
         <property role="BnDLt" value="true" />
