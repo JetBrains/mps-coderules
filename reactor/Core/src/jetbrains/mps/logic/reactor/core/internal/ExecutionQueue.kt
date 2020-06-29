@@ -46,8 +46,6 @@ internal class ExecutionQueue(
     // Needed for pos comparison in postponeFutureMatches.
     private lateinit var lastIncrementalRootPos: MatchJournal.Pos
 
-    private val postponedMatches: MutableMap<Id<Occurrence>, List<RuleMatchEx>> = HashMap()
-
     private val execQueue: Queue<ExecPos> =
         PriorityQueue<ExecPos>(1 + journalIndex.size / 8) { // just an estimate
             lhs, rhs -> journalIndex.compare(lhs.pos, rhs.pos)
@@ -85,12 +83,6 @@ internal class ExecutionQueue(
         return status
     }
 
-    fun withPostponedMatches(active: Occurrence, matches: List<RuleMatchEx>): List<RuleMatchEx> =
-        postponedMatches.remove(Id(active))?.let { postponed ->
-            // Sort matches according to rule priorities
-            (matches + postponed).sortedBy { ruleOrdering.orderOf(it.rule()) }
-        } ?: matches
-
     /**
      * Determines, filters out and enqueues future matches.
      * Returns only current matches.
@@ -106,13 +98,6 @@ internal class ExecutionQueue(
 
             // if it is a future match
             if (pos != null && journalIndex.compare(lastIncrementalRootPos, pos) < 0) {
-                // TODO: Remove extra logic with 'postponedMatches'
-                //  when following Dispatcher contract is specified/checked:
-                //  Dispatcher returns unconsumed matches relevant for offered
-                //  activation on future calls to Dispatcher.matches().
-                //  With this there's no need to store them here.
-//                val idOcc = Id(occChunk.occ)
-//                postponedMatches[idOcc] = (postponedMatches[idOcc] ?: emptyList()) + listOf(m)
                 offer(pos, occChunk)
             } else {
                 currentMatches.add(m)
