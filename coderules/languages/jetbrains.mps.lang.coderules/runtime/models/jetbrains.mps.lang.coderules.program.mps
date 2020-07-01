@@ -10351,17 +10351,27 @@
                 <node concept="2ShNRf" id="2Z9ItkdaO4S" role="YScLw">
                   <node concept="1pGfFk" id="2Z9ItkdaO4T" role="2ShVmc">
                     <ref role="37wK5l" to="av0y:~InvalidRuleException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="InvalidRuleException" />
-                    <node concept="3cpWs3" id="2Z9ItkdaO4U" role="37wK5m">
-                      <node concept="2OqwBi" id="2Z9ItkdaO4V" role="3uHU7w">
+                    <node concept="2YIFZM" id="5BtuWK5vJ1r" role="37wK5m">
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...)" resolve="format" />
+                      <node concept="Xl_RD" id="2Z9ItkdaO4Y" role="37wK5m">
+                        <property role="Xl_RC" value="Invalid rule (%s): %s" />
+                      </node>
+                      <node concept="2OqwBi" id="5BtuWK5vJQi" role="37wK5m">
+                        <node concept="37vLTw" id="5BtuWK5vJz8" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2Z9ItkdaJNw" resolve="rule" />
+                        </node>
+                        <node concept="liA8E" id="5BtuWK5vJYH" role="2OqNvi">
+                          <ref role="37wK5l" to="av0y:~Rule.uniqueTag()" resolve="uniqueTag" />
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="2Z9ItkdaO4V" role="37wK5m">
                         <node concept="37vLTw" id="2Z9ItkdaO4W" role="2Oq$k0">
                           <ref role="3cqZAo" node="2Z9ItkdaNUy" resolve="e" />
                         </node>
                         <node concept="liA8E" id="2Z9ItkdaO4X" role="2OqNvi">
                           <ref role="37wK5l" to="wyt6:~Throwable.getMessage()" resolve="getMessage" />
                         </node>
-                      </node>
-                      <node concept="Xl_RD" id="2Z9ItkdaO4Y" role="3uHU7B">
-                        <property role="Xl_RC" value="Invalid rule/constraint: " />
                       </node>
                     </node>
                     <node concept="37vLTw" id="2Z9ItkdaO4Z" role="37wK5m">
