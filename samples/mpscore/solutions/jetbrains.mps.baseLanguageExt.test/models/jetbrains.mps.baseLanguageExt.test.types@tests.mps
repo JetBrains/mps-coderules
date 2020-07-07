@@ -853,11 +853,8 @@
                   <node concept="3clFbS" id="4pwDyRC1qWk" role="1wplMD">
                     <node concept="3clFbF" id="4pwDyRC1qWl" role="3cqZAp">
                       <node concept="2YIFZM" id="4pwDyRC1qWm" role="3clFbG">
-                        <ref role="37wK5l" to="tj24:14$_tTxAmT8" resolve="dispose" />
+                        <ref role="37wK5l" to="tj24:14$_tTxAmT8" resolve="clearAll" />
                         <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingCache" />
-                        <node concept="37vLTw" id="4pwDyRC1qWn" role="37wK5m">
-                          <ref role="3cqZAo" node="4pwDyRC1qV_" resolve="modelRepo" />
-                        </node>
                       </node>
                     </node>
                   </node>
