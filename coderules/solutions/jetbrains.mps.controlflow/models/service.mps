@@ -112,6 +112,7 @@
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
+      <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
         <child id="1109201940907" name="parameter" index="11_B2D" />
@@ -126,11 +127,6 @@
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
         <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
       </concept>
-      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
-        <child id="1163668914799" name="condition" index="3K4Cdx" />
-        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
-        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -143,7 +139,6 @@
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
-        <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
@@ -254,10 +249,11 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
       <node concept="3clFbS" id="6BMBBPCVNKf" role="3clF47">
-        <node concept="3clFbF" id="6BMBBPCVNKk" role="3cqZAp">
-          <node concept="2OqwBi" id="6BMBBPCVWyu" role="3clFbG">
-            <node concept="3nyPlj" id="6BMBBPCVNKj" role="2Oq$k0">
-              <ref role="37wK5l" to="1yqb:Hg6Enc2x8M" resolve="schedule" />
+        <node concept="3clFbF" id="51ek2rQQMMe" role="3cqZAp">
+          <node concept="1rXfSq" id="51ek2rQQMMc" role="3clFbG">
+            <ref role="37wK5l" to="1yqb:51ek2rQGEzN" resolve="composeEffect" />
+            <node concept="3nyPlj" id="6BMBBPCVNKj" role="37wK5m">
+              <ref role="37wK5l" to="1yqb:51ek2rQHqMS" resolve="schedule" />
               <node concept="37vLTw" id="6BMBBPCVNKg" role="37wK5m">
                 <ref role="3cqZAo" node="6BMBBPCVNEv" resolve="input" />
               </node>
@@ -265,65 +261,30 @@
                 <ref role="3cqZAo" node="6BMBBPCVNE$" resolve="subscribeScheduler" />
               </node>
             </node>
-            <node concept="liA8E" id="6BMBBPCVYwW" role="2OqNvi">
-              <ref role="37wK5l" to="unkn:~Single.map(io.reactivex.functions.Function)" resolve="map" />
-              <node concept="1bVj0M" id="6BMBBPCVZNV" role="37wK5m">
-                <node concept="37vLTG" id="6BMBBPCW0D1" role="1bW2Oz">
-                  <property role="TrG5h" value="superEff" />
-                  <node concept="3uibUv" id="6BMBBPCW1bg" role="1tU5fm">
-                    <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
-                  </node>
-                </node>
-                <node concept="3clFbS" id="6BMBBPCVZNW" role="1bW5cS">
-                  <node concept="3clFbH" id="q1hCixVxEE" role="3cqZAp" />
-                  <node concept="3clFbF" id="q1hCiy67Vq" role="3cqZAp">
-                    <node concept="3K4zz7" id="q1hCiy4KkS" role="3clFbG">
-                      <node concept="2OqwBi" id="q1hCiy4LJl" role="3K4E3e">
-                        <node concept="37vLTw" id="q1hCiy4Lee" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6BMBBPCW0D1" resolve="superEff" />
-                        </node>
-                        <node concept="liA8E" id="q1hCiy4Mgv" role="2OqNvi">
-                          <ref role="37wK5l" to="1yqb:2daneBOX0cV" resolve="combine" />
-                          <node concept="2YIFZM" id="q1hCiy4Mgy" role="37wK5m">
-                            <ref role="37wK5l" to="1yqb:6BMBBPCQBuH" resolve="of" />
-                            <ref role="1Pybhc" to="1yqb:2daneBOWXQd" resolve="Effect" />
-                            <node concept="Xl_RD" id="q1hCiy4Mgz" role="37wK5m">
-                              <property role="Xl_RC" value="evaluating controlflow" />
-                            </node>
-                            <node concept="2OqwBi" id="q1hCiy4Mg$" role="37wK5m">
-                              <node concept="37vLTw" id="q1hCiy67VG" role="2Oq$k0">
-                                <ref role="3cqZAo" node="2daneBP_Jiy" resolve="REPORT_ITEMS" />
-                              </node>
-                              <node concept="liA8E" id="q1hCiy4Mg_" role="2OqNvi">
-                                <ref role="37wK5l" to="1yqb:6BMBBPCRIcz" resolve="is" />
-                                <node concept="37vLTw" id="q1hCiy4MgA" role="37wK5m">
-                                  <ref role="3cqZAo" node="1FOQehx4tIV" resolve="reportItems" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
+            <node concept="1bVj0M" id="51ek2rQQNUn" role="37wK5m">
+              <node concept="3clFbS" id="51ek2rQQNUp" role="1bW5cS">
+                <node concept="3clFbH" id="51ek2rQQOMN" role="3cqZAp" />
+                <node concept="3clFbF" id="51ek2rQQOaf" role="3cqZAp">
+                  <node concept="2YIFZM" id="51ek2rQQOah" role="3clFbG">
+                    <ref role="37wK5l" to="1yqb:6BMBBPCQBuH" resolve="of" />
+                    <ref role="1Pybhc" to="1yqb:2daneBOWXQd" resolve="Effect" />
+                    <node concept="Xl_RD" id="51ek2rQQOai" role="37wK5m">
+                      <property role="Xl_RC" value="evaluating controlflow" />
+                    </node>
+                    <node concept="2OqwBi" id="51ek2rQQOaj" role="37wK5m">
+                      <node concept="37vLTw" id="51ek2rQQOaN" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2daneBP_Jiy" resolve="REPORT_ITEMS" />
                       </node>
-                      <node concept="37vLTw" id="q1hCiy4NE2" role="3K4GZi">
-                        <ref role="3cqZAo" node="6BMBBPCW0D1" resolve="superEff" />
-                      </node>
-                      <node concept="2OqwBi" id="q1hCiy4IPs" role="3K4Cdx">
-                        <node concept="2OqwBi" id="q1hCiy4I7M" role="2Oq$k0">
-                          <node concept="37vLTw" id="q1hCiy4HK_" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6BMBBPCW0D1" resolve="superEff" />
-                          </node>
-                          <node concept="liA8E" id="q1hCiy4IBs" role="2OqNvi">
-                            <ref role="37wK5l" to="1yqb:7TC1XcdSe_i" resolve="result" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="q1hCiy4Jze" role="2OqNvi">
-                          <ref role="37wK5l" to="psoy:7Oc59RS_hsj" resolve="isSuccessful" />
+                      <node concept="liA8E" id="51ek2rQQOak" role="2OqNvi">
+                        <ref role="37wK5l" to="1yqb:6BMBBPCRIcz" resolve="is" />
+                        <node concept="37vLTw" id="51ek2rQQOal" role="37wK5m">
+                          <ref role="3cqZAo" node="1FOQehx4tIV" resolve="reportItems" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbH" id="q1hCiy4XbE" role="3cqZAp" />
                 </node>
+                <node concept="3clFbH" id="51ek2rQQO50" role="3cqZAp" />
               </node>
             </node>
           </node>
