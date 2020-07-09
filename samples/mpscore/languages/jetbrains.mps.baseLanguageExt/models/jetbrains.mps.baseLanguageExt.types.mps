@@ -33,6 +33,7 @@
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="pz2c" ref="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" />
     <import index="lehm" ref="r:464fcc95-fddb-47d1-b620-592cbf6b8bf2(jetbrains.mps.coderules.runtime.memoizer)" />
+    <import index="tpdt" ref="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -29793,6 +29794,62 @@
     <property role="TrG5h" value="PrimitiveTypes" />
     <property role="3GE5qa" value="macro" />
     <ref role="3tg4Y$" node="E1U1n2RerB" resolve="Types" />
+    <node concept="3iyZe8" id="51ek2rQqYMK" role="0oKgB">
+      <ref role="3iRiWT" node="5itBwMau8m1" resolve="lift" />
+      <node concept="3clFbS" id="51ek2rQqYML" role="3iwQuN">
+        <node concept="3Aqczg" id="51ek2rQr028" role="3cqZAp">
+          <node concept="3A8Hvi" id="51ek2rQr025" role="3Aqpz8">
+            <node concept="a7P8L" id="51ek2rQr0hO" role="3A8wtg">
+              <ref role="a7OzE" node="51ek2rQqYMO" resolve="Type" />
+            </node>
+            <node concept="ns1u0" id="51ek2rQr0k4" role="3A8w4Q">
+              <ref role="ns1xF" node="JOGAOsVt2A" resolve="prim" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uniRu" id="51ek2rQqYMM" role="3tb1AD">
+        <node concept="32pEOW" id="51ek2rQqYMN" role="3vLBG7" />
+        <node concept="aZer4" id="51ek2rQqYMO" role="3XD1gS">
+          <property role="TrG5h" value="Type" />
+        </node>
+      </node>
+      <node concept="3ixlbQ" id="51ek2rQqYMP" role="3iweTQ">
+        <property role="3ixm6n" value="true" />
+        <ref role="3ixz9q" to="tpdt:gRDMI7h" resolve="PrimitiveTypeDescriptor" />
+        <node concept="3ixQyH" id="51ek2rQqYMQ" role="3ix8rx">
+          <property role="TrG5h" value="prim" />
+        </node>
+      </node>
+    </node>
+    <node concept="3iyZe8" id="51ek2rS1DWK" role="0oKgB">
+      <ref role="3iRiWT" node="5itBwMau8m1" resolve="lift" />
+      <node concept="3clFbS" id="51ek2rS1DWL" role="3iwQuN">
+        <node concept="3Aqczg" id="51ek2rS1DWM" role="3cqZAp">
+          <node concept="3A8Hvi" id="51ek2rS1DWN" role="3Aqpz8">
+            <node concept="a7P8L" id="51ek2rS1DWO" role="3A8wtg">
+              <ref role="a7OzE" node="51ek2rS1DWS" resolve="Type" />
+            </node>
+            <node concept="ns1u0" id="51ek2rS1DWP" role="3A8w4Q">
+              <ref role="ns1xF" node="JOGAOsVt2A" resolve="prim" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uniRu" id="51ek2rS1DWQ" role="3tb1AD">
+        <node concept="32pEOW" id="51ek2rS1DWR" role="3vLBG7" />
+        <node concept="aZer4" id="51ek2rS1DWS" role="3XD1gS">
+          <property role="TrG5h" value="Type" />
+        </node>
+      </node>
+      <node concept="3ixlbQ" id="51ek2rS1DWT" role="3iweTQ">
+        <property role="3ixm6n" value="true" />
+        <ref role="3ixz9q" to="tpee:gWaQbR$" resolve="PrimitiveType" />
+        <node concept="3ixQyH" id="51ek2rS1DWU" role="3ix8rx">
+          <property role="TrG5h" value="prim" />
+        </node>
+      </node>
+    </node>
     <node concept="3iyZe8" id="5itBwMa_Q60" role="0oKgB">
       <ref role="3iRiWT" node="5itBwMau8m1" resolve="lift" />
       <node concept="3clFbS" id="5itBwMa_Q61" role="3iwQuN">

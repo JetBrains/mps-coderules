@@ -2,9 +2,24 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.blTypesExt/jetbrains.mps.baseLanguage.blTypesExt.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.closuresExt/jetbrains.mps.baseLanguage.closuresExt.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.collectionsExt/jetbrains.mps.baseLanguage.collectionsExt.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.function/jetbrains.mps.baseLanguage.function.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.javadocExt/jetbrains.mps.baseLanguage.javadocExt.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.sequence/jetbrains.mps.baseLanguage.sequence.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.tuplesExt/jetbrains.mps.baseLanguage.tuplesExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/samples.mpscore.build/samples.mpscore.build.msd" folder="build" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.coderulesExt/jetbrains.mps.lang.coderulesExt.mpl" folder="ext.coderules" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.mpl" folder="ext.smodel" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logicExt/jetbrains.mps.logicExt.mpl" folder="ext.coderules" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.closuresExt.test/jetbrains.mps.baseLanguage.closuresExt.test.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.collectionsExt.test/jetbrains.mps.baseLanguage.collectionsExt.test.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.tuplesExt.test/jetbrains.mps.baseLanguage.tuplesExt.test.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.lang.coderulesExt.test/jetbrains.mps.lang.coderulesExt.test.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.test.msd" folder="ext.smodel" />
+      <modulePath path="$PROJECT_DIR$/solutions/samples.mpscore.build/samples.mpscore.build.msd" folder="build" />
       <modulePath path="$PROJECT_DIR$/solutions/typechecking.samples.baseLanguage/typechecking.samples.baseLanguage.msd" folder="" />
     </projectModules>
   </component>
