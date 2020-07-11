@@ -51,7 +51,7 @@
     <language slang="l:8585453e-6bfb-4d80-98de-b16074f1d86c:jetbrains.mps.lang.test" version="5" />
     <language slang="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" version="0" />
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
-    <language slang="l:35320f26-77cb-4c55-be9f-a97a27770af1:jetbrains.mps.logic" version="12" />
+    <language slang="l:35320f26-77cb-4c55-be9f-a97a27770af1:jetbrains.mps.logic" version="13" />
     <language slang="l:3a1f0f04-b5e0-43be-884e-b856bfdeca21:jetbrains.mps.typechecking.testlang" version="0" />
     <language slang="l:f2222c61-5f49-4d55-bb88-a14d6fed1be7:jetbrains.mps.typechecking.testlangCycle1" version="0" />
     <language slang="l:a32939ba-878b-4531-93ec-c5e14424159b:jetbrains.mps.typechecking.testlangCycle2" version="0" />

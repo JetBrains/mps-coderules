@@ -1365,29 +1365,21 @@
                       <node concept="a7P8L" id="7LI_gNNfeJx" role="1uarlU">
                         <ref role="a7OzE" node="7LI_gNNfeIX" resolve="TermType" />
                       </node>
-                      <node concept="37jhX" id="7LI_gNNfeJY" role="1uarlW">
-                        <node concept="1nq8_$" id="7LI_gNNfeKg" role="37jj2">
-                          <node concept="ns1u0" id="7LI_gNNfeKf" role="1nq8_t">
-                            <ref role="ns1xF" node="7LI_gNNfeK7" resolve="term" />
-                          </node>
-                        </node>
+                      <node concept="ns1u0" id="7LI_gNNfeKf" role="1uarlW">
+                        <ref role="ns1xF" node="7LI_gNNfeK7" resolve="term" />
                       </node>
                     </node>
                     <node concept="1HFMs5" id="7LI_gNNfeLf" role="3AunhB">
                       <node concept="a7P8L" id="7LI_gNNfeL2" role="1uarlU">
                         <ref role="a7OzE" node="7LI_gNNfeKu" resolve="ClsType" />
                       </node>
-                      <node concept="37jhX" id="7LI_gNNfeLD" role="1uarlW">
-                        <node concept="1nq8_$" id="7LI_gNNfeLC" role="37jj2">
-                          <node concept="ns1u0" id="7LI_gNNfeLB" role="1nq8_t">
-                            <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
-                            <node concept="nsMwS" id="7LI_gNNfeLL" role="ns1xD">
-                              <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                              <node concept="2tJFMh" id="7LI_gNNfeLX" role="nsMwV">
-                                <node concept="ZC_QK" id="7LI_gNNfeN5" role="2tJFKM">
-                                  <ref role="2aWVGs" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-                                </node>
-                              </node>
+                      <node concept="ns1u0" id="7LI_gNNfeLB" role="1uarlW">
+                        <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
+                        <node concept="nsMwS" id="7LI_gNNfeLL" role="ns1xD">
+                          <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
+                          <node concept="2tJFMh" id="7LI_gNNfeLX" role="nsMwV">
+                            <node concept="ZC_QK" id="7LI_gNNfeN5" role="2tJFKM">
+                              <ref role="2aWVGs" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                             </node>
                           </node>
                         </node>
@@ -1424,33 +1416,21 @@
                       <node concept="a7P8L" id="7LI_gNNfeNk" role="1uarlU">
                         <ref role="a7OzE" node="7LI_gNNfeNx" resolve="TermType" />
                       </node>
-                      <node concept="37jhX" id="7LI_gNNfeNl" role="1uarlW">
-                        <node concept="1nq8_$" id="7LI_gNNfeNm" role="37jj2">
-                          <node concept="37jhX" id="7LI_gNNfeQ9" role="1nq8_t">
-                            <node concept="1nq8_$" id="7LI_gNNfeQ8" role="37jj2">
-                              <node concept="ns1u0" id="7LI_gNNfeQ7" role="1nq8_t">
-                                <ref role="ns1xF" node="7LI_gNNfeOT" resolve="termList" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
+                      <node concept="ns1u0" id="7LI_gNNfeQ7" role="1uarlW">
+                        <ref role="ns1xF" node="7LI_gNNfeOT" resolve="termList" />
                       </node>
                     </node>
                     <node concept="1HFMs5" id="7LI_gNNfeNo" role="3AunhB">
                       <node concept="a7P8L" id="7LI_gNNfeNp" role="1uarlU">
                         <ref role="a7OzE" node="7LI_gNNfeNy" resolve="ClsType" />
                       </node>
-                      <node concept="37jhX" id="7LI_gNNfeNq" role="1uarlW">
-                        <node concept="1nq8_$" id="7LI_gNNfeNr" role="37jj2">
-                          <node concept="ns1u0" id="7LI_gNNfeNs" role="1nq8_t">
-                            <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
-                            <node concept="nsMwS" id="7LI_gNNfeNt" role="ns1xD">
-                              <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                              <node concept="2tJFMh" id="7LI_gNNfeNu" role="nsMwV">
-                                <node concept="ZC_QK" id="7LI_gNNfeQN" role="2tJFKM">
-                                  <ref role="2aWVGs" to="6exd:3OPtF03lco4" resolve="ListNode" />
-                                </node>
-                              </node>
+                      <node concept="ns1u0" id="7LI_gNNfeNs" role="1uarlW">
+                        <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
+                        <node concept="nsMwS" id="7LI_gNNfeNt" role="ns1xD">
+                          <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
+                          <node concept="2tJFMh" id="7LI_gNNfeNu" role="nsMwV">
+                            <node concept="ZC_QK" id="7LI_gNNfeQN" role="2tJFKM">
+                              <ref role="2aWVGs" to="6exd:3OPtF03lco4" resolve="ListNode" />
                             </node>
                           </node>
                         </node>

@@ -4,7 +4,7 @@
   <languages>
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="12" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="13" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -968,12 +968,8 @@
                 <node concept="3I6s7M" id="500mE4_upc7" role="3I6sU7">
                   <node concept="3Aqt3T" id="500mE4_upc8" role="3I6s78">
                     <ref role="3AqCNq" node="4E290qPZ$ob" resolve="tupleAccessImpl" />
-                    <node concept="37jhX" id="500mE4_upc9" role="3AunhB">
-                      <node concept="1nq8_$" id="500mE4_upm8" role="37jj2">
-                        <node concept="a7P8L" id="500mE4_upm7" role="1nq8_t">
-                          <ref role="a7OzE" node="500mE4_upiQ" resolve="Tuple" />
-                        </node>
-                      </node>
+                    <node concept="a7P8L" id="500mE4_upm7" role="3AunhB">
+                      <ref role="a7OzE" node="500mE4_upiQ" resolve="Tuple" />
                     </node>
                     <node concept="a7P8L" id="500mE4_upcb" role="3AunhB">
                       <ref role="a7OzE" node="500mE4_upcj" resolve="Index" />
@@ -1037,12 +1033,8 @@
                       <node concept="3Aqczg" id="500mE4_upcD" role="3cqZAp">
                         <node concept="3Aqt3T" id="500mE4_upcE" role="3Aqpz8">
                           <ref role="3AqCNq" to="kqnc:34$A1MfhdDv" resolve="typeOf" />
-                          <node concept="37jhX" id="500mE4_upcF" role="3AunhB">
-                            <node concept="1nq8_$" id="500mE4_upDg" role="37jj2">
-                              <node concept="a7P8L" id="500mE4_upDf" role="1nq8_t">
-                                <ref role="a7OzE" node="500mE4_upiQ" resolve="Tuple" />
-                              </node>
-                            </node>
+                          <node concept="a7P8L" id="500mE4_upDf" role="3AunhB">
+                            <ref role="a7OzE" node="500mE4_upiQ" resolve="Tuple" />
                           </node>
                           <node concept="a7P8L" id="500mE4_upcH" role="3AunhB">
                             <ref role="a7OzE" node="500mE4_upcg" resolve="IndexedCompT" />

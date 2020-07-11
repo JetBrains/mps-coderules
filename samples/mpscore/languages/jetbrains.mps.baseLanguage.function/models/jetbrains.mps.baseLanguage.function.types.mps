@@ -69,9 +69,6 @@
       </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
-      <concept id="8456919074574710634" name="jetbrains.mps.logic.structure.ExpressionItem" flags="ng" index="37jhX">
-        <child id="8456919074574710741" name="code" index="37jj2" />
-      </concept>
       <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ng" index="29MRiA">
         <child id="6399471711045617306" name="dataType" index="3vLBG7" />
         <child id="3063948360254832884" name="declaration" index="3XD1gS" />
@@ -527,12 +524,8 @@
               <node concept="nsMwS" id="6$MmqWfmpv5" role="ns1xD">
                 <ref role="nsMwP" node="6$MmqWflYdw" resolve="params" />
                 <node concept="1nq8_$" id="6$MmqWfmw1Q" role="nsMwV">
-                  <node concept="37jhX" id="2MpDLe9wpWf" role="1nq8_t">
-                    <node concept="1nq8_$" id="2MpDLe9wpWe" role="37jj2">
-                      <node concept="a7P8L" id="2MpDLe9wpWd" role="1nq8_t">
-                        <ref role="a7OzE" node="2MpDLe9worb" resolve="ParamTypesList" />
-                      </node>
-                    </node>
+                  <node concept="a7P8L" id="2MpDLe9wpWd" role="1nq8_t">
+                    <ref role="a7OzE" node="2MpDLe9worb" resolve="ParamTypesList" />
                   </node>
                 </node>
               </node>

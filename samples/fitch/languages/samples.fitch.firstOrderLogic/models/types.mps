@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="12" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="13" />
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
@@ -353,12 +353,8 @@
         </node>
         <node concept="3Aqczg" id="3w0n0hzlYj1" role="3cqZAp">
           <node concept="3A8Hvi" id="5TfjU0xtN57" role="3Aqpz8">
-            <node concept="37jhX" id="5HLeEcf2Uk4" role="3A8wtg">
-              <node concept="1nq8_$" id="5itBwMa8Rxc" role="37jj2">
-                <node concept="a7P8L" id="5itBwMa8Rxb" role="1nq8_t">
-                  <ref role="a7OzE" node="5itBwMa8PIe" resolve="Sent" />
-                </node>
-              </node>
+            <node concept="a7P8L" id="5itBwMa8Rxb" role="3A8wtg">
+              <ref role="a7OzE" node="5itBwMa8PIe" resolve="Sent" />
             </node>
             <node concept="ns1u0" id="7VBaGntKJ8V" role="3A8w4Q">
               <ref role="ns1xF" node="7VBaGntKJ6C" resolve="Equality" />
