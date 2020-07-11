@@ -193,7 +193,6 @@
       <concept id="8998492695583129991" name="jetbrains.mps.lang.editor.structure.SubstituteFeature_CanSubstitute" flags="ng" index="16NL3D">
         <child id="8998492695583129992" name="query" index="16NL3A" />
       </concept>
-      <concept id="2115302367868116903" name="jetbrains.mps.lang.editor.structure.GeneratedSubstituteMenuAttribute" flags="ng" index="382kZG" />
       <concept id="1154465273778" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ParentNode" flags="nn" index="3bvxqY" />
       <concept id="1838685759388685703" name="jetbrains.mps.lang.editor.structure.TransformationFeature_DescriptionText" flags="ng" index="3cqGtN">
         <child id="1838685759388685704" name="query" index="3cqGtW" />
@@ -6756,7 +6755,6 @@
     <node concept="3XHNnq" id="7L5omgeruEh" role="3ft7WO">
       <ref role="3XGfJA" to="wq2x:5itBwM6dfdw" resolve="applicableConcept" />
     </node>
-    <node concept="382kZG" id="7L5omgeruEj" role="lGtFl" />
   </node>
   <node concept="22mcaB" id="4hPXq9Jmem8">
     <ref role="aqKnT" to="wq2x:4EfgX2EvF4i" resolve="ExpressionConstraint" />

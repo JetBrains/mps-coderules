@@ -162,10 +162,6 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
-      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
-        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
-      </concept>
       <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
         <reference id="1154546997487" name="concept" index="3gnhBz" />
       </concept>
@@ -177,6 +173,9 @@
       <concept id="5944356402132808754" name="jetbrains.mps.lang.smodel.structure.SubconceptCase" flags="ng" index="1_3QMl">
         <child id="1163670677455" name="concept" index="3Kbmr1" />
         <child id="1163670683720" name="body" index="3Kbo56" />
+      </concept>
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
@@ -241,11 +240,8 @@
               </node>
               <node concept="liA8E" id="5OjpQKvZJmy" role="2OqNvi">
                 <ref role="37wK5l" to="jxwi:5OjpQKw2l7T" resolve="buildVertex" />
-                <node concept="2OqwBi" id="6$6scRbVXKj" role="37wK5m">
-                  <node concept="35c_gC" id="6$6scRbVW0h" role="2Oq$k0">
-                    <ref role="35c_gD" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
-                  </node>
-                  <node concept="FGMqu" id="6$6scRbVYTz" role="2OqNvi" />
+                <node concept="3B5_sB" id="6$6scRbVXKj" role="37wK5m">
+                  <ref role="3B5MYn" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
                 </node>
               </node>
             </node>
@@ -260,11 +256,8 @@
               </node>
               <node concept="liA8E" id="5OjpQKvZMfh" role="2OqNvi">
                 <ref role="37wK5l" to="jxwi:5OjpQKw2l7T" resolve="buildVertex" />
-                <node concept="2OqwBi" id="6$6scRbW1f3" role="37wK5m">
-                  <node concept="35c_gC" id="6$6scRbW03D" role="2Oq$k0">
-                    <ref role="35c_gD" to="tpee:fz12cDA" resolve="ClassConcept" />
-                  </node>
-                  <node concept="FGMqu" id="6$6scRbW2kx" role="2OqNvi" />
+                <node concept="3B5_sB" id="6$6scRbW1f3" role="37wK5m">
+                  <ref role="3B5MYn" to="tpee:fz12cDA" resolve="ClassConcept" />
                 </node>
               </node>
             </node>
@@ -345,11 +338,8 @@
             </node>
             <node concept="1uHKPH" id="6$6scRbT5HS" role="2OqNvi" />
           </node>
-          <node concept="2OqwBi" id="6$6scRbW511" role="JA92f">
-            <node concept="35c_gC" id="6$6scRbW49m" role="2Oq$k0">
-              <ref role="35c_gD" to="tpee:g96eOhU" resolve="GenericDeclaration" />
-            </node>
-            <node concept="FGMqu" id="6$6scRbW5DH" role="2OqNvi" />
+          <node concept="3B5_sB" id="6$6scRbW511" role="JA92f">
+            <ref role="3B5MYn" to="tpee:g96eOhU" resolve="GenericDeclaration" />
           </node>
         </node>
         <node concept="3clFbH" id="6$6scRbR3dN" role="3cqZAp" />
@@ -420,11 +410,8 @@
                 <node concept="2WthIp" id="5OjpQKwiyYl" role="2Oq$k0" />
                 <node concept="2XshWL" id="5OjpQKwiyYn" role="2OqNvi">
                   <ref role="2WH_rO" node="4JBuioGUNfv" resolve="nodeAsTerm" />
-                  <node concept="2OqwBi" id="6$6scRbWUpc" role="2XxRq1">
-                    <node concept="35c_gC" id="6$6scRbWUpd" role="2Oq$k0">
-                      <ref role="35c_gD" to="tpee:g96eOhU" resolve="GenericDeclaration" />
-                    </node>
-                    <node concept="FGMqu" id="6$6scRbWUpe" role="2OqNvi" />
+                  <node concept="3B5_sB" id="6$6scRbWUpc" role="2XxRq1">
+                    <ref role="3B5MYn" to="tpee:g96eOhU" resolve="GenericDeclaration" />
                   </node>
                 </node>
               </node>

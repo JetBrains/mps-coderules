@@ -2676,6 +2676,24 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
+        <node concept="3rtmxn" id="4XonyipwPR3" role="3bR31x">
+          <node concept="3LXTmp" id="4XonyipwPR4" role="3rtmxm">
+            <node concept="3qWCbU" id="4XonyipwPR5" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+            <node concept="55IIr" id="4XonyipwPR6" role="3LXTmr">
+              <node concept="2Ry0Ak" id="4XonyipwPR7" role="iGT6I">
+                <property role="2Ry0Am" value="coderules" />
+                <node concept="2Ry0Ak" id="4XonyipwPR8" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="4XonyipwPR9" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.coderules.runtime" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="NKt6yn9_8p" role="2G$12L">
         <property role="BnDLt" value="true" />

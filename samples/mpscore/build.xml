@@ -100,6 +100,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.baseLanguage.blTypesExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypesExt" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguage.blTypesExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.blTypesExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypesExt.jar" />
     </jar>
@@ -563,6 +564,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.baseLanguage.sequence.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguage.sequence" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.sequence/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.sequence.jar" />
     </jar>
@@ -701,6 +703,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.baseLanguage.function.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguage.function" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.function/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.function.jar" />
     </jar>
@@ -839,6 +842,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.baseLanguage.collectionsExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguage.collectionsExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.collectionsExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collectionsExt.jar" />
     </jar>
@@ -978,6 +982,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.baseLanguage.closuresExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closuresExt" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguage.closuresExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.closuresExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.closuresExt.jar" />
     </jar>
@@ -1240,6 +1245,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.baseLanguage.collectionsExt.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt.test" />
+      <fileset dir="${basedir}/solutions/jetbrains.mps.baseLanguage.collectionsExt.test" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.collectionsExt.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collectionsExt.test.jar" />
     </jar>
@@ -1303,6 +1309,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.baseLanguage.closuresExt.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closuresExt.test" />
+      <fileset dir="${basedir}/solutions/jetbrains.mps.baseLanguage.closuresExt.test" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.closuresExt.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.closuresExt.test.jar" />
     </jar>
@@ -1398,6 +1405,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.smodelExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.lang.smodelExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodelExt.jar" />
     </jar>
@@ -1611,6 +1619,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/typechecking.samples.baseLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/typechecking.samples.baseLanguage" />
+      <fileset dir="${basedir}/solutions/typechecking.samples.baseLanguage" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/typechecking.samples.baseLanguage.jar" />
     </jar>
@@ -1697,6 +1706,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.logicExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.logicExt" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.logicExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.logicExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.logicExt.jar" />
     </jar>
