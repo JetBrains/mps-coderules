@@ -27,6 +27,8 @@
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
+    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2100,6 +2102,20 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5itBwM7VoD8" role="jymVt" />
+    <node concept="3clFb_" id="61G6TdBpSf1" role="jymVt">
+      <property role="TrG5h" value="provideFeedback" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="37vLTG" id="61G6TdBsK75" role="3clF46">
+        <property role="TrG5h" value="feedback" />
+        <node concept="3uibUv" id="61G6TdBsKW2" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="61G6TdBpSf3" role="3clF45" />
+      <node concept="3Tm1VV" id="61G6TdBpSf4" role="1B3o_S" />
+      <node concept="3clFbS" id="61G6TdBpSf5" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="61G6TdBpQuz" role="jymVt" />
     <node concept="3clFb_" id="7DvO2M9IiMh" role="jymVt">
       <property role="TrG5h" value="putParameter" />
       <node concept="37vLTG" id="7DvO2M9IiMi" role="3clF46">
@@ -2435,7 +2451,6 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="6EY0p2w8wEJ" role="jymVt" />
     <node concept="312cEg" id="7DvO2M9IiOO" role="jymVt">
       <property role="TrG5h" value="requireHooks" />
       <node concept="3Tmbuc" id="7DvO2Ma1fZX" role="1B3o_S" />
@@ -2459,7 +2474,6 @@
         <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
       </node>
     </node>
-    <node concept="2tJIrI" id="4vBwiiV6bol" role="jymVt" />
     <node concept="3Tm1VV" id="18kNIl1vDQ0" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7nPD14OaO1O">
