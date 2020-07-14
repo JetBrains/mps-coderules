@@ -126,9 +126,6 @@ internal class ExecutionQueue(
         return (childChunksEnded || placeToInsertFound)
     }
 
-
-    // todo: do need to reactivate only the main, matching~activating match?
-    //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
     fun offerAll(occs: Iterable<Occurrence>): Boolean =
         execQueue.addAll(occs.mapNotNull { occ ->
             journalIndex.activatingChunkOf(occ)?.let { occChunk ->

@@ -106,19 +106,16 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
                     dispatchingFront = dispatchingFront.forget(chunk.match as RuleMatchEx)
 
-                    // Need to 'cancel' discarding.
-                    // These nodes may become valid and will be processed due to reactivation of needed occurrences.
-                    chunk.match.matchHeadReplaced().forEach {
-                        dispatchingFront = dispatchingFront.forget(it as Occurrence)
-                    }
-
-                    // We removed the match, so need to reactivate all still valid occurrences from the head.
+                    // Valid head occurrences could match more rules
+                    //  without this match, so need to reactivate them.
+                    // E.g. occurrences discarded in this match on
+                    //  previous run but revived here can match more rules.
                     val matchedOccs = chunk.match.allHeads().asIterable()
                     val validOccs = matchedOccs.filter { occ ->
                         !occ.justifiedByAny(justificationRoots)
                     }
                     // By definition of Chunk and principal rule, all occurrences from the head are principal
-                    assert(matchedOccs.all { it.isPrincipal() })
+                    assert(chunk.match.allHeads().all { it.isPrincipal() })
 
                     execQueue.offerAll(validOccs)
                 }
