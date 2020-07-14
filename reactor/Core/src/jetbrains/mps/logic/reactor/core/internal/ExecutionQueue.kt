@@ -55,8 +55,8 @@ internal class ExecutionQueue(
 
     fun run(controller: Controller, processing: ConstraintsProcessing): FeedbackStatus {
         var status: FeedbackStatus = FeedbackStatus.NORMAL()
+        processing.resetStore()
         if (execQueue.isNotEmpty()) {
-            processing.resetStore()
 
             var prevPos: MatchJournal.Pos? = null
             do {
