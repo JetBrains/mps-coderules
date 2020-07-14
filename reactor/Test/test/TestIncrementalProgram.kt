@@ -93,6 +93,67 @@ class TestIncrementalProgram {
 
 
     @Test
+    fun noChangesRelaunch() {
+        lateinit var storeSnapshot: Iterable<ConstraintSymbol>
+
+        val progSpec = MockIncrProgSpec(
+            setOf("main"),
+            setOf(sym0("foo"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    pconstraint("foo")
+                ))
+        ).launch("addRule", progSpec) { result ->
+            storeSnapshot = result.storeView().constraintSymbols()
+            storeSnapshot shouldBe setOf(sym0("foo"))
+
+        }.also { (builder, evalRes) ->
+            builder.relaunch("no changes", progSpec, evalRes.token()) { result ->
+                result.storeView().constraintSymbols() shouldBe storeSnapshot
+            }
+        }
+    }
+
+    @Test
+    fun rmUnusedRule() {
+        lateinit var storeSnapshot: Iterable<ConstraintSymbol>
+
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "bar"),
+            setOf(sym0("foo"), sym0("bar"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    pconstraint("foo")
+                )),
+            rule("bar",
+                headReplaced(
+                    pconstraint("bar")
+                ),
+                body( ))
+        ).launch("addRule", progSpec) { result ->
+            storeSnapshot = result.storeView().constraintSymbols()
+            storeSnapshot shouldBe setOf(sym0("foo"))
+
+        }.also { (builder, evalRes) ->
+            builder
+            .removeRules(listOf("bar"))
+            .relaunch("no changes", progSpec, evalRes.token()) { result ->
+                result.storeView().constraintSymbols() shouldBe storeSnapshot
+            }
+        }
+    }
+
+    @Test
     fun addNewMatchAtTheEnd() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "foo.bar"),
@@ -1477,4 +1538,315 @@ class TestIncrementalProgram {
             }
         }
     }
+
+    @Test
+    fun expectTypeGenericNonprincipal() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo"),
+            setOf(sym0("foo"), sym0("typeOf"), sym0("expectType"))
+        )
+
+        val fooRuleBuilder =
+            rule("foo",
+                headReplaced(
+                    pconstraint("foo")
+                ),
+                body(
+                    pconstraint("typeOf")
+                ))
+
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    pconstraint("foo"),
+                    pconstraint("expectType")
+                )),
+
+            fooRuleBuilder,
+
+            rule("expectType_ok",
+                headReplaced(
+                    pconstraint("expectType")
+                ),
+                headKept(
+                    pconstraint("typeOf")
+                ),
+                body(
+                    constraint("hasType")
+                )),
+            rule("expectType_default",
+                headReplaced(
+                    pconstraint("expectType")
+                ),
+                body(
+                    constraint("noType")
+                ))
+
+        ).launch("initial run with typeOf", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("typeOf"), sym0("hasType"))
+
+        }.also { (builder, evalRes) ->
+            builder
+                .removeRules(listOf("foo"))
+                .relaunch("removed typeOf", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("noType"))
+                }
+        }.also { (builder, evalRes) ->
+            builder
+                .insertRulesAt(1, fooRuleBuilder)
+                .relaunch("added typeOf again", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("typeOf"), sym0("hasType"))
+                }
+        }
+    }
+
+    // Substructural type system rules:
+    //  any number of resource reads are allowed
+    //  at most one write of resource is allowed
+
+    // Tests that if write-match is dropped, then read-matches preceding it mustn't be affected
+    @Test
+    fun substructuralTS_dropWrite() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "readResource", "writeResource", "process"),
+            setOf(sym0("resource"), sym0("read"), sym0("write"), sym0("doProcess"))
+        )
+
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    pconstraint("resource"),
+                    pconstraint("read"),
+                    pconstraint("read"),
+                    pconstraint("doProcess"),
+                    pconstraint("read")
+                )),
+            rule("readResource",
+                headReplaced(
+                    pconstraint("read")
+                ),
+                headKept(
+                    pconstraint("resource")
+                ),
+                body(
+                    constraint("hasRead")
+                )),
+            rule("writeResource",
+                headReplaced(
+                    pconstraint("write"),
+                    pconstraint("resource")
+                ),
+                body(
+                    constraint("hasWrite")
+                )),
+            rule("process",
+                headReplaced(
+                    pconstraint("doProcess")
+                ),
+                body(
+                    pconstraint("write")
+                )
+            )
+        ).launch("initial run with write", progSpec) { result ->
+
+            // one 'read' is left unprocessed because of exhausted resource
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("hasRead"), sym0("hasWrite"), sym0("read"))
+            result.storeView().occurrences(sym0("hasRead")).count() shouldBe 2
+
+        }.also { (builder, evalRes) ->
+            builder
+            .removeRules(listOf("process"))
+            .relaunch("removed write", progSpec, evalRes.token()) { result ->
+
+                // without 'write' resource isn't exhausted
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("hasRead"), sym0("resource"), sym0("doProcess"))
+                result.storeView().occurrences(sym0("hasRead")).count() shouldBe 3
+            }
+        }
+    }
+
+    @Test
+    fun substructuralTS_insertWriteBeforeRW() {
+        /* Expected test program execution:
+
+            writeA produced
+            => writeResourceA consumes resource
+            => readResource & writeResourceB can't match
+
+            writeA retracted
+            => resource appears again (internally 'resource' constraint is reexecuted)
+            => readResource & writeResourceB match again
+         */
+
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "readResource", "writeResourceA", "writeResourceB", "doWriteA"),
+            setOf(sym0("resource"), sym0("read"), sym0("writeA"), sym0("writeB"), sym0("doProcess"))
+        )
+
+        val doProcessRuleBuilder =
+            rule("doWriteA",
+                headReplaced(
+                    pconstraint("doProcess")
+                ),
+                body(
+                    pconstraint("writeA")
+                ))
+
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    pconstraint("resource"),
+                    pconstraint("doProcess"),
+                    pconstraint("read"),
+                    pconstraint("writeB")
+                )),
+            rule("writeResourceA",
+                headReplaced(
+                    pconstraint("writeA"),
+                    pconstraint("resource")
+                ),
+                body(
+                    constraint("hasWriteA")
+                )),
+            rule("readResource",
+                headReplaced(
+                    pconstraint("read")
+                ),
+                headKept(
+                    pconstraint("resource")
+                ),
+                body(
+                    constraint("hasRead")
+                )),
+            rule("writeResourceB",
+                headReplaced(
+                    pconstraint("writeB"),
+                    pconstraint("resource")
+                ),
+                body(
+                    constraint("hasWriteB")
+                ))
+        ).launch("initial run without writeA", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("hasRead"), sym0("hasWriteB"), sym0("doProcess"))
+
+        }.also { (builder, evalRes) ->
+            builder
+                .insertRulesAt(0, doProcessRuleBuilder)
+                .relaunch("inserted writeA", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("hasWriteA"), sym0("read"), sym0("writeB"))
+                }
+        }.also { (builder, evalRes) ->
+            builder
+                .removeRules(listOf("doWriteA"))
+                .relaunch("removed writeA", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("hasRead"), sym0("hasWriteB"), sym0("doProcess"))
+                }
+        }
+    }
+
+
+    @Test
+    fun substructuralTS_indirectResourceDependency() {
+        /* Expected test program execution:
+            Write of resource2 depends on write of resource1
+            so, when write1 can't happen, so write2 won't happen.
+
+            C1 consumes res1 before W1
+            => W1 match invalidated
+            => write2 isn't produced
+            => W2 match invalidated
+            => res1 remains intact (internally 'res1' constraint is reexecuted)
+            => R2 can match and matches
+         */
+
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "R2", "W1", "W2", "Consume1"),
+            setOf(
+                sym0("resource1"), sym0("write1"),
+                sym0("resource2"), sym0("read2"), sym0("write2")
+            )
+        )
+
+        val doConsumeRuleBuilder =
+            rule("Consume1",
+                headReplaced(
+                    pconstraint("write1"),
+                    pconstraint("resource1")
+                ),
+                body()
+            )
+
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    pconstraint("resource1"),
+                    pconstraint("resource2"),
+                    pconstraint("write1"),
+                    pconstraint("read2")
+                )),
+            rule("W1",
+                headReplaced(
+                    pconstraint("write1"),
+                    pconstraint("resource1")
+                ),
+                body(
+                    pconstraint("write2")
+                )),
+            rule("W2",
+                headReplaced(
+                    pconstraint("write2"),
+                    pconstraint("resource2")
+                ),
+                body(
+                    constraint("hasWrite2")
+                )),
+            rule("R2",
+                headReplaced(
+                    pconstraint("read2")
+                ),
+                headKept(
+                    pconstraint("resource2")
+                ),
+                body(
+                    constraint("hasRead2")
+                ))
+        ).launch("initial run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("hasWrite2"), sym0("read2"))
+
+        }.also { (builder, evalRes) ->
+            builder
+                .insertRulesAt(1, doConsumeRuleBuilder)
+                .relaunch("consume resource1 before anyone", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("resource2"), sym0("hasRead2"))
+                }
+        }.also { (builder, evalRes) ->
+            builder
+                .removeRules(listOf("Consume1"))
+                .relaunch("as initial run", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("hasWrite2"), sym0("read2"))
+                }
+        }
+    }
+
 }
