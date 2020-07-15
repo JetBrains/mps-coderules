@@ -34,7 +34,7 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="bs09" ref="r:28026be8-9bf8-4f54-9319-0ca8a6d1299d(typechecking.samples.baseLanguage.helloWorld)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -449,7 +449,24 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="4pwDyRC1qVH" role="3cqZAp" />
+              <node concept="3cpWs8" id="61G6TdBScAk" role="3cqZAp">
+                <node concept="3cpWsn" id="61G6TdBScAl" role="3cpWs9">
+                  <property role="TrG5h" value="typecheckingService" />
+                  <node concept="3uibUv" id="61G6TdBScq_" role="1tU5fm">
+                    <ref role="3uigEE" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
+                  </node>
+                  <node concept="2YIFZM" id="61G6TdBScAm" role="33vP2m">
+                    <ref role="37wK5l" to="tj24:1FOQehxzbI0" resolve="forRepository" />
+                    <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
+                    <node concept="2OqwBi" id="61G6TdBScAn" role="37wK5m">
+                      <node concept="1jxXqW" id="61G6TdBScAo" role="2Oq$k0" />
+                      <node concept="liA8E" id="61G6TdBScAp" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3J1_TO" id="4pwDyRC1qVT" role="3cqZAp">
                 <node concept="3clFbS" id="4pwDyRC1qVU" role="1zxBo7">
                   <node concept="9aQIb" id="4pwDyRC4NSn" role="3cqZAp">
@@ -525,11 +542,15 @@
                         <node concept="3cpWsn" id="4pwDyRC1qW9" role="3cpWs9">
                           <property role="TrG5h" value="typeofa" />
                           <node concept="3Tqbb2" id="4pwDyRC1qWa" role="1tU5fm" />
-                          <node concept="2YIFZM" id="4pwDyRC1qWb" role="33vP2m">
-                            <ref role="37wK5l" to="tj24:3IIf9O_u0Ck" resolve="typeOf" />
-                            <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
-                            <node concept="37vLTw" id="4pwDyRC1qWc" role="37wK5m">
-                              <ref role="3cqZAo" node="4pwDyRC1qVX" resolve="a" />
+                          <node concept="2OqwBi" id="61G6TdBShep" role="33vP2m">
+                            <node concept="37vLTw" id="61G6TdBSgUG" role="2Oq$k0">
+                              <ref role="3cqZAo" node="61G6TdBScAl" resolve="typecheckingService" />
+                            </node>
+                            <node concept="liA8E" id="61G6TdBShBM" role="2OqNvi">
+                              <ref role="37wK5l" to="tj24:3IIf9O_tkwF" resolve="getTypeOf" />
+                              <node concept="37vLTw" id="61G6TdBShBP" role="37wK5m">
+                                <ref role="3cqZAo" node="4pwDyRC1qVX" resolve="a" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -550,14 +571,18 @@
                         <node concept="3cpWsn" id="4pwDyRC1KSH" role="3cpWs9">
                           <property role="TrG5h" value="coercea" />
                           <node concept="3Tqbb2" id="4pwDyRC1KCj" role="1tU5fm" />
-                          <node concept="2YIFZM" id="4pwDyRC1KSI" role="33vP2m">
-                            <ref role="37wK5l" to="tj24:7Bx7XgEibEE" resolve="coerceTo" />
-                            <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
-                            <node concept="37vLTw" id="4pwDyRC1KSJ" role="37wK5m">
-                              <ref role="3cqZAo" node="4pwDyRC1qW9" resolve="typeofa" />
+                          <node concept="2OqwBi" id="61G6TdBToLU" role="33vP2m">
+                            <node concept="37vLTw" id="61G6TdBTotf" role="2Oq$k0">
+                              <ref role="3cqZAo" node="61G6TdBScAl" resolve="typecheckingService" />
                             </node>
-                            <node concept="35c_gC" id="4pwDyRC1KSK" role="37wK5m">
-                              <ref role="35c_gD" to="tpee:g7uibYu" resolve="ClassifierType" />
+                            <node concept="liA8E" id="61G6TdBTpbU" role="2OqNvi">
+                              <ref role="37wK5l" to="tj24:7Bx7XgEiqaI" resolve="getCoerceTo" />
+                              <node concept="37vLTw" id="4pwDyRC1KSJ" role="37wK5m">
+                                <ref role="3cqZAo" node="4pwDyRC1qW9" resolve="typeofa" />
+                              </node>
+                              <node concept="35c_gC" id="4pwDyRC1KSK" role="37wK5m">
+                                <ref role="35c_gD" to="tpee:g7uibYu" resolve="ClassifierType" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -660,11 +685,15 @@
                         <node concept="3cpWsn" id="4pwDyRC4$uj" role="3cpWs9">
                           <property role="TrG5h" value="typeofs" />
                           <node concept="3Tqbb2" id="4pwDyRC4$uk" role="1tU5fm" />
-                          <node concept="2YIFZM" id="4pwDyRC4$ul" role="33vP2m">
-                            <ref role="37wK5l" to="tj24:3IIf9O_u0Ck" resolve="typeOf" />
-                            <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
-                            <node concept="37vLTw" id="4pwDyRC4_R9" role="37wK5m">
-                              <ref role="3cqZAo" node="4pwDyRC4$uo" resolve="s" />
+                          <node concept="2OqwBi" id="61G6TdBS$JY" role="33vP2m">
+                            <node concept="37vLTw" id="61G6TdBS$JZ" role="2Oq$k0">
+                              <ref role="3cqZAo" node="61G6TdBScAl" resolve="typecheckingService" />
+                            </node>
+                            <node concept="liA8E" id="61G6TdBS$K0" role="2OqNvi">
+                              <ref role="37wK5l" to="tj24:3IIf9O_tkwF" resolve="getTypeOf" />
+                              <node concept="37vLTw" id="61G6TdBS_i5" role="37wK5m">
+                                <ref role="3cqZAo" node="4pwDyRC4$uo" resolve="s" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -685,14 +714,18 @@
                         <node concept="3cpWsn" id="4pwDyRC4$u7" role="3cpWs9">
                           <property role="TrG5h" value="coerces" />
                           <node concept="3Tqbb2" id="4pwDyRC4$u8" role="1tU5fm" />
-                          <node concept="2YIFZM" id="4pwDyRC4$u9" role="33vP2m">
-                            <ref role="37wK5l" to="tj24:7Bx7XgEibEE" resolve="coerceTo" />
-                            <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
-                            <node concept="37vLTw" id="4pwDyRC4MUC" role="37wK5m">
-                              <ref role="3cqZAo" node="4pwDyRC4$uj" resolve="typeofs" />
+                          <node concept="2OqwBi" id="61G6TdBTqwP" role="33vP2m">
+                            <node concept="37vLTw" id="61G6TdBTqeM" role="2Oq$k0">
+                              <ref role="3cqZAo" node="61G6TdBScAl" resolve="typecheckingService" />
                             </node>
-                            <node concept="35c_gC" id="4pwDyRC4$ub" role="37wK5m">
-                              <ref role="35c_gD" to="tpee:g7uibYu" resolve="ClassifierType" />
+                            <node concept="liA8E" id="61G6TdBTqS9" role="2OqNvi">
+                              <ref role="37wK5l" to="tj24:7Bx7XgEiqaI" resolve="getCoerceTo" />
+                              <node concept="37vLTw" id="4pwDyRC4MUC" role="37wK5m">
+                                <ref role="3cqZAo" node="4pwDyRC4$uj" resolve="typeofs" />
+                              </node>
+                              <node concept="35c_gC" id="4pwDyRC4$ub" role="37wK5m">
+                                <ref role="35c_gD" to="tpee:g7uibYu" resolve="ClassifierType" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -785,11 +818,15 @@
                         <node concept="3cpWsn" id="4pwDyRC1RnR" role="3cpWs9">
                           <property role="TrG5h" value="typeofm" />
                           <node concept="3Tqbb2" id="4pwDyRC1RnS" role="1tU5fm" />
-                          <node concept="2YIFZM" id="4pwDyRC1RnT" role="33vP2m">
-                            <ref role="37wK5l" to="tj24:3IIf9O_u0Ck" resolve="typeOf" />
-                            <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
-                            <node concept="37vLTw" id="4pwDyRC1SRa" role="37wK5m">
-                              <ref role="3cqZAo" node="4pwDyRC1RnW" resolve="m" />
+                          <node concept="2OqwBi" id="61G6TdBS_$8" role="33vP2m">
+                            <node concept="37vLTw" id="61G6TdBS_$9" role="2Oq$k0">
+                              <ref role="3cqZAo" node="61G6TdBScAl" resolve="typecheckingService" />
+                            </node>
+                            <node concept="liA8E" id="61G6TdBS_$a" role="2OqNvi">
+                              <ref role="37wK5l" to="tj24:3IIf9O_tkwF" resolve="getTypeOf" />
+                              <node concept="37vLTw" id="61G6TdBSA6n" role="37wK5m">
+                                <ref role="3cqZAo" node="4pwDyRC1RnW" resolve="m" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -815,14 +852,18 @@
                         <node concept="3cpWsn" id="4pwDyRC1RnG" role="3cpWs9">
                           <property role="TrG5h" value="coercem" />
                           <node concept="3Tqbb2" id="4pwDyRC1RnH" role="1tU5fm" />
-                          <node concept="2YIFZM" id="4pwDyRC1RnI" role="33vP2m">
-                            <ref role="37wK5l" to="tj24:7Bx7XgEibEE" resolve="coerceTo" />
-                            <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
-                            <node concept="37vLTw" id="4pwDyRC1ZNe" role="37wK5m">
-                              <ref role="3cqZAo" node="4pwDyRC1RnR" resolve="typeofm" />
+                          <node concept="2OqwBi" id="61G6TdBTs6_" role="33vP2m">
+                            <node concept="37vLTw" id="61G6TdBTrFw" role="2Oq$k0">
+                              <ref role="3cqZAo" node="61G6TdBScAl" resolve="typecheckingService" />
                             </node>
-                            <node concept="35c_gC" id="4pwDyRC1RnK" role="37wK5m">
-                              <ref role="35c_gD" to="tpee:g7uibYu" resolve="ClassifierType" />
+                            <node concept="liA8E" id="61G6TdBTszG" role="2OqNvi">
+                              <ref role="37wK5l" to="tj24:7Bx7XgEiqaI" resolve="getCoerceTo" />
+                              <node concept="37vLTw" id="4pwDyRC1ZNe" role="37wK5m">
+                                <ref role="3cqZAo" node="4pwDyRC1RnR" resolve="typeofm" />
+                              </node>
+                              <node concept="35c_gC" id="4pwDyRC1RnK" role="37wK5m">
+                                <ref role="35c_gD" to="tpee:g7uibYu" resolve="ClassifierType" />
+                              </node>
                             </node>
                           </node>
                         </node>
