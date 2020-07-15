@@ -19,7 +19,6 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
-import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
@@ -48,7 +47,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 {
     private val journalIndex: MatchJournal.Index = journal.index()
 
-    private val execQueue: ExecutionQueue = ExecutionQueue(journalIndex, RuleOrdering(ruleIndex))
+    private val activationQueue: ContinuedActivationQueue = ContinuedActivationQueue(journalIndex, RuleOrdering(ruleIndex))
 
     private val invalidatedRulesTags: MutableSet<Any> = mutableSetOf<Any>()
 
@@ -118,7 +117,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                     //  all occurrences from the head are principal.
                     assert(chunk.match.allHeads().all { it.isPrincipal })
 
-                    execQueue.offerAll(lastValidChunk.toPos(), validOccs.asIterable())
+                    activationQueue.offerAll(lastValidChunk.toPos(), validOccs.asIterable())
                 }
             } else {
                 lastValidChunk = chunk
@@ -158,7 +157,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                 val (candRule, occChunk) = aIt.next()
 
                 val pos =
-                    if (execQueue.canBeInserted(candRule, occChunk, chunk))
+                    if (activationQueue.canBeInserted(candRule, occChunk, chunk))
                         // We need the previous chunk as pos here (i.e. adding after it).
                         prevChunk.toPos()
                     else if (!it.hasNext())
@@ -167,7 +166,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                     else
                         continue
 
-                execQueue.offer(pos, occChunk)
+                activationQueue.offer(pos, occChunk)
                 trace.potentialMatch(occChunk.occ, candRule)
                 // Drop the candidate if appropriate activation place is found.
                 aIt.remove()
@@ -180,7 +179,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
     }
 
     fun launchQueue(controller: Controller): FeedbackStatus =
-        execQueue.run(controller, this)
+        activationQueue.run(controller, this)
 
     /**
      * Clears state unneeded between incremental sessions
@@ -230,13 +229,12 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             if (isFront() || !active.isPrincipal) {
                 matches
             } else {
-                execQueue.postponeFutureMatches(matches)
+                activationQueue.postponeFutureMatches(matches)
             }
 
         val outStatus = currentMatches.fold(inStatus) { status, match ->
             if (activationChunk != null && !isFront()) {
-                val discards = match.matchHeadReplaced().contains(active)
-                if (discards) {
+                if (match.discards(active)) {
                     dropDiscardingMatchesFor(activationChunk, invalidatedRulesTags)
                 }
             }
@@ -259,10 +257,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
     private fun dropDiscardingMatchesFor(ancestor: MatchJournal.OccChunk, droppedRuleTags: MutableSet<Any>) =
         this.dropDescendantsWhile(ancestor) { chunk ->
-
-            if (chunk is MatchJournal.MatchChunk
-                && chunk.match.matchHeadReplaced().contains(ancestor.occ))
-            {
+            if (chunk is MatchJournal.MatchChunk && chunk.match.discards(ancestor.occ)) {
                 droppedRuleTags.add(chunk.ruleUniqueTag)
                 true
             } else false

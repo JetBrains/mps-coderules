@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
@@ -43,6 +44,9 @@ interface RuleMatchEx : RuleMatch {
 
 inline fun RuleMatchEx.forEachReplaced(action: (Occurrence) -> Unit) =
     this.matchHeadReplaced().forEach(action)
+
+fun RuleMatch.discards(occurrence: ConstraintOccurrence): Boolean =
+    this.matchHeadReplaced().contains(occurrence)
 
 fun Rule.allHeads() = (headKept().asSequence() + headReplaced().asSequence())
 

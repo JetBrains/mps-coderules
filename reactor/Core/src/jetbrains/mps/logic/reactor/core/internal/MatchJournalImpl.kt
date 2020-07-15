@@ -245,7 +245,7 @@ internal open class MatchJournalImpl(
      * while applying [action] to each visited [Chunk].
      * No journal state is changed during operation (except by [action] effects).
      */
-    private fun forEachChunkFrom(from: Pos, action: (Chunk) -> Unit) {
+    private inline fun forEachChunkFrom(from: Pos, action: (Chunk) -> Unit) {
         val to = current
         do {
             // there's always at least initial chunk
@@ -260,7 +260,7 @@ internal open class MatchJournalImpl(
 
     override fun replay(futurePos: Pos) = replayWith(futurePos, {})
 
-    private fun replayWith(futurePos: MatchJournal.Pos, action: (Chunk) -> Unit) {
+    private inline fun replayWith(futurePos: MatchJournal.Pos, action: (Chunk) -> Unit) {
         do {
             if (futurePos.chunk === current) {
                 replayOccurrences(current.entries.take(futurePos.entriesCount))

@@ -20,7 +20,7 @@ import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.program.Rule
 import java.util.*
 
-internal class ExecutionQueue(
+internal class ContinuedActivationQueue(
     private val journalIndex: MatchJournal.Index,
     private val ruleOrdering: RuleOrdering
 ) {
