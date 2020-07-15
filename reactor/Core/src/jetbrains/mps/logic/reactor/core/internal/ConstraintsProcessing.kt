@@ -81,7 +81,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         val justificationRoots = mutableListOf<Justified>()
 
         val it = this.iterator()
-        var prevChunk = it.next() // skip initial chunk
+        var lastValidChunk = it.next() // skip initial chunk
 
         while (it.hasNext()) {
             val chunk = it.next()
@@ -118,11 +118,11 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                     //  all occurrences from the head are principal.
                     assert(chunk.match.allHeads().all { it.isPrincipal })
 
-                    execQueue.offerAll(prevChunk.toPos(), validOccs.asIterable())
+                    execQueue.offerAll(lastValidChunk.toPos(), validOccs.asIterable())
                 }
+            } else {
+                lastValidChunk = chunk
             }
-
-            prevChunk = chunk
         }
     }
 

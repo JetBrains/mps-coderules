@@ -128,9 +128,7 @@ internal class ExecutionQueue(
     fun offerAll(continueFromPos: MatchJournal.Pos, occs: Iterable<Occurrence>) =
         occs.forEach {
             journalIndex.activatingChunkOf(it)?.let { occChunk ->
-                // todo: ensure which is better
-//                 offer(continueFromPos, occChunk)
-                offer(occChunk.toPos(), occChunk)
+                 offer(continueFromPos, occChunk)
             }
         }
 
