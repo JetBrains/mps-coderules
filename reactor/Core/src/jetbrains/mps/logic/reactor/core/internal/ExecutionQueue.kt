@@ -16,11 +16,8 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.core.Controller
-import jetbrains.mps.logic.reactor.core.Occurrence
-import jetbrains.mps.logic.reactor.core.RuleMatchEx
+import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.program.Rule
-import jetbrains.mps.logic.reactor.util.Id
 import java.util.*
 
 internal class ExecutionQueue(
@@ -29,17 +26,18 @@ internal class ExecutionQueue(
 ) {
 
     /**
-     * Specifies position in [MatchJournal] for continuing Coderules program evaluation,
-     * where it's supposed that [pos] must be a descendant of [ancestor].
-     * (i.e. `pos.isDescendantOf(ancestor.id) == true`)
+     * Specifies position in [MatchJournal] for continuing program evaluation.
+     * Position of [reactivated] in journal must precede execution position [continueFrom].
+     * (see contract in [assertValid]).
      */
-    private data class ExecPos(val pos: MatchJournal.Pos, val ancestor: MatchJournal.OccChunk) {
-
-        constructor(active: MatchJournal.OccChunk) : this(active.toPos(), active)
-
-        val activeOcc: Occurrence
-            get() = ancestor.occ
+    private data class ExecPos(val continueFrom: MatchJournal.Pos, val reactivated: MatchJournal.OccChunk) {
+        val reactivatedOcc: Occurrence get() = reactivated.occ
     }
+
+    private fun ExecPos.assertValid() {
+        assert(continueFrom.chunk.justifiedBy(reactivated) || journalIndex.compare(continueFrom, reactivated.toPos()) >= 0)
+    }
+
 
     // It is a position in Journal from previous session,
     //  from which incremental execution continues.
@@ -48,7 +46,7 @@ internal class ExecutionQueue(
 
     private val execQueue: Queue<ExecPos> =
         PriorityQueue<ExecPos>(1 + journalIndex.size / 8) { // just an estimate
-            lhs, rhs -> journalIndex.compare(lhs.pos, rhs.pos)
+            lhs, rhs -> journalIndex.compare(lhs.continueFrom, rhs.continueFrom)
         }
 
     private val seen: MutableSet<ExecPos> = HashSet()
@@ -64,15 +62,15 @@ internal class ExecutionQueue(
 
                 // Handles the case when several matches are added to the same position.
                 //  Then shouldn't replay, because currentPos is valid and more recent (!) than execPos.
-                if (execPos.pos != prevPos) {
-                    processing.replay(execPos.pos)
-                    lastIncrementalRootPos = execPos.pos
+                if (execPos.continueFrom != prevPos) {
+                    processing.replay(execPos.continueFrom)
+                    lastIncrementalRootPos = execPos.continueFrom
                 }
-                prevPos = execPos.pos
+                prevPos = execPos.continueFrom
 
                 // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
-                if (execPos.activeOcc.stored) {
-                    status = processing.activateContinue(controller, execPos.activeOcc, processing.parentChunk())
+                if (execPos.reactivatedOcc.stored) {
+                    status = processing.activateContinue(controller, execPos.reactivatedOcc, processing.parentChunk())
                     // Leave journal processing as it was at the point of failure
                     if (!status.operational) return status
                 }
@@ -115,6 +113,7 @@ internal class ExecutionQueue(
         // Place to try activating candidate rule is:
         //  either according to the ordering between rules
         //  or as the last one, after all existing activations
+        assert(candidateRule.canMatch(parentChunk.occ.constraint))
 
         val placeToInsertFound = beforeChunk is MatchJournal.MatchChunk
             && ruleOrdering.isEarlierThan(candidateRule, beforeChunk.match.rule())
@@ -126,17 +125,18 @@ internal class ExecutionQueue(
         return (childChunksEnded || placeToInsertFound)
     }
 
-    fun offerAll(occs: Iterable<Occurrence>): Boolean =
-        execQueue.addAll(occs.mapNotNull { occ ->
-            journalIndex.activatingChunkOf(occ)?.let { occChunk ->
-                ExecPos(occChunk).let {
-                    if (seen.add(it)) it else null
-                }
+    fun offerAll(continueFromPos: MatchJournal.Pos, occs: Iterable<Occurrence>) =
+        occs.forEach {
+            journalIndex.activatingChunkOf(it)?.let { occChunk ->
+                // todo: ensure which is better
+//                 offer(continueFromPos, occChunk)
+                offer(occChunk.toPos(), occChunk)
             }
-        })
+        }
 
-    fun offer(posInJournal: MatchJournal.Pos, ancestor: MatchJournal.OccChunk): Boolean =
-        ExecPos(posInJournal, ancestor).let {
+    fun offer(continueFromPos: MatchJournal.Pos, ancestor: MatchJournal.OccChunk): Boolean =
+        ExecPos(continueFromPos, ancestor).let {
+            it.assertValid()
             if (seen.add(it)) execQueue.offer(it) else false
         }
 

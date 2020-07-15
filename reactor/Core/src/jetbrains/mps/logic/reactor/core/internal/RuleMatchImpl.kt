@@ -54,9 +54,6 @@ internal class RuleMatchImpl(private val rule: Rule,
 
    }
 
-   override fun forEachReplaced(action: (Occurrence) -> Unit) =
-       headReplaced.forEach(action)
-
     override fun signature(): ArrayList<Id<Occurrence>?> =
         ArrayList((headKept + headReplaced).map { Id(it) })
 
@@ -65,9 +62,9 @@ internal class RuleMatchImpl(private val rule: Rule,
 
     override fun rule(): Rule = rule
 
-   override fun matchHeadKept(): Iterable<ConstraintOccurrence?> = headKept
+   override fun matchHeadKept(): Iterable<Occurrence> = headKept
 
-   override fun matchHeadReplaced(): Iterable<ConstraintOccurrence?> = headReplaced
+   override fun matchHeadReplaced(): Iterable<Occurrence> = headReplaced
     
    override fun logicalContext(): LogicalContext = logicalContext
 

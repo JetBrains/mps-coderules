@@ -30,9 +30,9 @@ import java.util.*
 
 
 internal open class MatchJournalImpl(
-    private val ispec: IncrementalProgramSpec,
+    override val ispec: IncrementalProgramSpec,
     view: MatchJournal.View? = null
-) : MatchJournal {
+) : MatchJournal, IncrSpecHolder {
 
     private abstract class ChunkImpl : Chunk {
         var entries: MutableList<Chunk.Entry> = mutableListOf()
@@ -102,7 +102,7 @@ internal open class MatchJournalImpl(
     override fun logMatch(match: RuleMatch): MatchChunk? {
         val added: MatchChunk?
 
-        if (match.isPrincipal()) {
+        if (match.isPrincipal) {
             added = MatchChunkImpl(nextEvidence(), match)
             current = added
             posPtr.add(current)
@@ -140,7 +140,7 @@ internal open class MatchJournalImpl(
 
         val moreJustified = match.allHeads().filter {
             // Filter to avoid justifying parent by its child!
-            it.isPrincipal() && !it.justifiedBy(parent)
+            it.isPrincipal && !it.justifiedBy(parent)
         }.toList()
 
         if (moreJustified.isNotEmpty()) {
@@ -150,7 +150,7 @@ internal open class MatchJournalImpl(
         }
 
         match.rule().let {
-            if (it.isWeakPrincipal()) {
+            if (it.isWeakPrincipal) {
                 (parent as MatchChunkImpl).rulesWithOrigin.add(it.uniqueTag())
             }
         }
@@ -160,7 +160,7 @@ internal open class MatchJournalImpl(
         val added: OccChunk?
 
         trackAncestor(occ)
-        if (occ.isPrincipal()) {
+        if (occ.isPrincipal) {
             added = OccChunkImpl(occ)
             current = added
             posPtr.add(current)
@@ -360,10 +360,6 @@ internal open class MatchJournalImpl(
         }
         throw IllegalStateException()
     }
-
-    private fun RuleMatch.isPrincipal() = ispec.isPrincipal(this.rule())
-    private fun Rule.isWeakPrincipal() = ispec.isWeakPrincipal(this)
-    private fun Occurrence.isPrincipal() = ispec.isPrincipal(this.constraint())
 
     /**
      * Immutable view for MutableList that provides mutability only through its iterators

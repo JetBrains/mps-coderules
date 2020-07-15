@@ -41,10 +41,10 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                                      journal: MatchJournalImpl,
                                      private val ruleIndex: RuleIndex,
                                      val logicalState: LogicalState,
-                                     private val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
+                                     override val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
                                      val trace: EvaluationTrace = EvaluationTrace.NULL,
                                      val profiler: Profiler? = null)
-    : StoreAwareJournalImpl(journal, logicalState)
+    : StoreAwareJournalImpl(journal, logicalState), IncrSpecHolder
 {
     private val journalIndex: MatchJournal.Index = journal.index()
 
@@ -110,23 +110,21 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                     //  without this match, so need to reactivate them.
                     // E.g. occurrences discarded in this match on
                     //  previous run but revived here can match more rules.
-                    val matchedOccs = chunk.match.allHeads().asIterable()
+                    val matchedOccs = chunk.match.allHeads()
                     val validOccs = matchedOccs.filter { occ ->
                         !occ.justifiedByAny(justificationRoots)
                     }
-                    // By definition of Chunk and principal rule, all occurrences from the head are principal
-                    assert(chunk.match.allHeads().all { it.isPrincipal() })
+                    // By definition of Chunk and principal rule,
+                    //  all occurrences from the head are principal.
+                    assert(chunk.match.allHeads().all { it.isPrincipal })
 
-                    execQueue.offerAll(validOccs)
+                    execQueue.offerAll(prevChunk.toPos(), validOccs.asIterable())
                 }
             }
 
             prevChunk = chunk
         }
     }
-
-    private fun canMatch(rule: Rule, occ: Occurrence): Boolean =
-        (rule.headKept() + rule.headReplaced()).find { it.symbol() == occ.constraint.symbol() } != null
 
     fun addRuleMatches(rules: Iterable<Rule>) {
 
@@ -141,7 +139,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                 val allRuleCandidates = ruleIndex.forOccurrence(chunk.occ).map { it.uniqueTag() }.toHashSet()
 
                 for (rule in rules) {
-                    if (allRuleCandidates.contains(rule.uniqueTag()) && canMatch(rule, chunk.occ)) {
+                    if (allRuleCandidates.contains(rule.uniqueTag()) && rule.canMatch(chunk.occ.constraint)) {
                         // Can this rule be matched by principal occurrence?
                         // Then we will need to find the place among existing child chunks
                         //  (i.e. among some number of following ones)
@@ -195,7 +193,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         val rules = ArrayList<Rule>().apply { ruleIndex.forEach { add(it) } }
         // preserve only relevant and non-empty RuleMatchers
         val principalState = dispatchingFront.state().filterValues { ruleMatcher ->
-            ispec.isPrincipal(ruleMatcher.rule()) || ruleMatcher.probe().hasOccurrences()
+            ruleMatcher.rule().isPrincipal || ruleMatcher.probe().hasOccurrences()
         }
         return SessionTokenImpl(histView, rules, principalState, logicalState.clear())
     }
@@ -229,7 +227,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
         val matches = dispatchingFront.matches().toList()
         val currentMatches =
-            if (isFront() || !active.isPrincipal()) {
+            if (isFront() || !active.isPrincipal) {
                 matches
             } else {
                 execQueue.postponeFutureMatches(matches)
@@ -316,7 +314,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
             match.forEachReplaced { occ ->
                 // Principal occurrences must be preserved for future incremental evaluation sessions
-                if (!occ.isPrincipal()) {
+                if (!occ.isPrincipal) {
                     this.dispatchingFront = dispatchingFront.contract(occ)
                 }
 
@@ -333,11 +331,6 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
         }
     }
-
-
-    private fun RuleMatch.isPrincipal() = ispec.isPrincipal(this.rule())
-
-    private fun Occurrence.isPrincipal() = ispec.isPrincipal(this.constraint())
 
     private fun MatchJournal.MatchChunk.dependsOnAny(utags: Iterable<Any>): Boolean =
         utags.contains(this.ruleUniqueTag) || utags.any { utag -> dependsOnRule(utag) }

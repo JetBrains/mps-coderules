@@ -31,9 +31,9 @@ import jetbrains.mps.logic.reactor.util.profile
 internal class ControllerImpl (
     val supervisor: Supervisor,
     val processing: ConstraintsProcessing,
-    val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
+    override val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
-    val profiler: Profiler? = null) : Controller
+    val profiler: Profiler? = null) : Controller, IncrSpecHolder
 {
 
     /** For tests only */
@@ -158,7 +158,7 @@ internal class ControllerImpl (
             val savedPos = processing.currentPos()
             var newParent: MatchJournal.MatchChunk = parent
 
-            if (match.isPrincipal()) {
+            if (match.isPrincipal) {
                 // This match corresponds to the last added chunk
                 assert( (savedPos.chunk as? MatchJournal.MatchChunk)?.match === match )
                 newParent = savedPos.chunk as MatchJournal.MatchChunk
@@ -278,11 +278,6 @@ internal class ControllerImpl (
         (rule().headKept() + rule().headReplaced()).zip(matchHeadKept() + matchHeadReplaced()).flatMap {
             it.first.patternPredicates(it.second.arguments())
         }.toList()
-
-
-    private fun RuleMatch.isPrincipal() = ispec.isPrincipal(this.rule())
-
-    private fun Occurrence.isPrincipal() = ispec.isPrincipal(this.constraint())
 
 
     inner private class Context(inStatus: FeedbackStatus,
