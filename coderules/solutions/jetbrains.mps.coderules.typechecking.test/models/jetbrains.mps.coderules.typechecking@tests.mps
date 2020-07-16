@@ -598,6 +598,7 @@
                               <ref role="37wK5l" to="mhbf:~SNode.getReference()" resolve="getReference" />
                             </node>
                           </node>
+                          <node concept="3clFbT" id="61G6TdCxl7h" role="37wK5m" />
                           <node concept="1bVj0M" id="44XN1Jd6FDu" role="37wK5m">
                             <node concept="3clFbS" id="44XN1Jd6FDw" role="1bW5cS">
                               <node concept="3clFbF" id="44XN1Jd6GK5" role="3cqZAp">
@@ -2696,17 +2697,38 @@
                   <node concept="3clFbJ" id="1a$$29Aw7dF" role="3cqZAp">
                     <node concept="3clFbS" id="1a$$29Aw7dG" role="3clFbx">
                       <node concept="3cpWs6" id="1a$$29Aw7dH" role="3cqZAp">
-                        <node concept="3clFbT" id="1a$$29Aw7jO" role="3cqZAk" />
+                        <node concept="3clFbT" id="61G6TdCBaGi" role="3cqZAk">
+                          <property role="3clFbU" value="true" />
+                        </node>
                       </node>
                     </node>
                     <node concept="2OqwBi" id="1a$$29Aw7dJ" role="3clFbw">
-                      <node concept="10M0yZ" id="1a$$29Aw7h0" role="2Oq$k0">
-                        <ref role="3cqZAo" to="qox2:7iCybvTyVsX" resolve="OPTION_TYPECHECKING_INCREMENTAL" />
+                      <node concept="10M0yZ" id="61G6TdCanzv" role="2Oq$k0">
+                        <ref role="3cqZAo" to="qox2:5Qx6_65jytE" resolve="OPTION_TYPECHECKING_WATCHING" />
                         <ref role="1PxDUh" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
                       </node>
                       <node concept="liA8E" id="1a$$29Aw7dL" role="2OqNvi">
                         <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
                         <node concept="37vLTw" id="1a$$29Aw7dM" role="37wK5m">
+                          <ref role="3cqZAo" node="1a$$29Aw62z" resolve="key" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="61G6TdCanqi" role="3cqZAp">
+                    <node concept="3clFbS" id="61G6TdCanqj" role="3clFbx">
+                      <node concept="3cpWs6" id="61G6TdCanqk" role="3cqZAp">
+                        <node concept="3clFbT" id="61G6TdCBaNX" role="3cqZAk" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="61G6TdCanqm" role="3clFbw">
+                      <node concept="10M0yZ" id="61G6TdCanqn" role="2Oq$k0">
+                        <ref role="3cqZAo" to="qox2:7iCybvTyVsX" resolve="OPTION_TYPECHECKING_INCREMENTAL" />
+                        <ref role="1PxDUh" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      </node>
+                      <node concept="liA8E" id="61G6TdCanqo" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                        <node concept="37vLTw" id="61G6TdCanqp" role="37wK5m">
                           <ref role="3cqZAo" node="1a$$29Aw62z" resolve="key" />
                         </node>
                       </node>
