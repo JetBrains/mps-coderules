@@ -309,6 +309,27 @@ internal open class MatchJournalImpl(
         if (posPtr.hasNext()) posPtr.next()
     }
 
+    override fun dropDescendants(invalidated: Collection<Justified>, forEachDropped: (Chunk) -> Unit) {
+        if (invalidated.isEmpty()) return
+
+        val start = current
+        while (posPtr.hasNext()) {
+            current = posPtr.next()
+            if (current.justifiedByAny(invalidated)) {
+                // no need to 'resetOccurrences' because journal position is left intact
+                posPtr.remove()
+                forEachDropped(current)
+            }
+        }
+
+        // rollback to the start
+        while (current !== start) {
+            current = posPtr.previous()
+        }
+        // make ptr point right after 'current' in case we changed anything
+        if (posPtr.hasNext()) posPtr.next()
+    }
+
     private fun resetOccurrences(occSpecs: List<Chunk.Entry>) =
         // assume occSpecs are ordered in order of processing
         //  so, iterate over reversed list
@@ -433,13 +454,6 @@ internal open class MatchJournalImpl(
         }
     }
 }
-
-// NB: returns same collection of justifications, not copy
-fun MatchJournal.justifications() = this.currentPos().chunk.justifications()
-fun MatchJournal.evidence() = this.currentPos().chunk.evidence
-// todo: this should be more correct
-//fun MatchJournal.justifications() = this.parentChunk().justifications()
-//fun MatchJournal.evidence() = this.parentChunk().evidence
 
 // returns new collection of justifications
 fun RuleMatch.collectJustifications(vararg withEvidence: Evidence): Justifications =

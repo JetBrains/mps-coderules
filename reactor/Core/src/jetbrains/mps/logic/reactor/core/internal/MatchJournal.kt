@@ -82,7 +82,15 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
      * Transitively removes descendants of removed chunks.
      * Only erases future chunks and leaves journal [currentPos] intact.
      */
+    @Deprecated("obsolete machinery, superseded by [dropDescendants] & MPSCR-65")
     fun dropDescendantsWhile(ancestor: Chunk, dropIf: (Chunk) -> Boolean)
+
+    /**
+     * Removes [Chunk]s dependent on any of [invalidated],
+     * applying [forEachDropped] for each removed [Chunk].
+     * Only erases future chunks, leaving journal position [currentPos] intact.
+     */
+    fun dropDescendants(invalidated: Collection<Justified>, forEachDropped: (Chunk) -> Unit)
 
     /**
      * Replay activated and discarded occurrences logged in journal between current
@@ -131,6 +139,11 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
          * Length of the indexed [MatchJournal]
          */
         val size: Int
+
+        // some context functions
+        infix fun Pos.before(other: Pos): Boolean = compare(this, other) <= 0
+
+        infix fun Pos.after(other: Pos): Boolean = compare(this, other) >= 0
     }
 
     /**
@@ -242,4 +255,12 @@ private fun Iterable<MatchJournal.Chunk.Entry>.allOccurrences(): List<Occurrence
     }
     return set.map { it.wrapped }
 }
+
+
+// NB: returns same collection of justifications, not copy
+fun MatchJournal.justifications() = this.currentPos().chunk.justifications()
+fun MatchJournal.evidence() = this.currentPos().chunk.evidence
+// todo: this should be more correct
+//fun MatchJournal.justifications() = this.parentChunk().justifications()
+//fun MatchJournal.evidence() = this.parentChunk().evidence
 

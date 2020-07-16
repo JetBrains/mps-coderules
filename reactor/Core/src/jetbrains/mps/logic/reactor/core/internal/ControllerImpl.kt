@@ -80,7 +80,7 @@ internal class ControllerImpl (
         // FIXME noLogicalContext
         val context = Context(NORMAL(), noLogicalContext, null, trace)
 
-        activateConstraint(constraint, processing.initialChunk(), processing.evidence(), processing.justifications(), context)
+        activateConstraint(constraint, processing.initialChunk(), processing.JustifiedOccurrenceCreator(), context)
 
         return context.currentStatus()
     }
@@ -166,14 +166,13 @@ internal class ControllerImpl (
             // fixme: fails in lambdacalc because of reactivated occurrences
             //  (parents ain't tracked correctly in this case)
 //            assert(newParent === processing.parentChunk())
+            // todo: remove tracking parent in Controller once above issue is fixed
 
-            val currentJustifications = processing.justifications()
-            val currentEvidence = processing.evidence()
+            val occCreator = processing.JustifiedOccurrenceCreator()
 
             for (item in body) {
                 val itemOk = when (item) {
-                    // Occurrence just inherits evidence and justifications of its activating rule match
-                    is Constraint -> activateConstraint(item, newParent, currentEvidence, currentJustifications, context)
+                    is Constraint -> activateConstraint(item, newParent, occCreator, context)
                     is Predicate -> tellPredicate(item, context)
                     else -> throw IllegalArgumentException("unknown item ${item}")
                 }
@@ -229,15 +228,17 @@ internal class ControllerImpl (
         return context.currentStatus()
     }
     
-    private fun activateConstraint(constraint: Constraint, parent: MatchJournal.MatchChunk, evidence: Evidence, justifications: Justifications, context: Context) : Boolean {
+    private fun activateConstraint(constraint: Constraint, parent: MatchJournal.MatchChunk, creator: ConstraintsProcessing.JustifiedOccurrenceCreator, context: Context) : Boolean {
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
             profiler.profile<FeedbackStatus>("activate_${constraint.symbol()}") {
 
-                constraint.occurrence(logicalStateObservable(), args, evidence, justifications, context.logicalContext, context.ruleUniqueTag).let { occ ->
-                    trace.activate(occ)
-                    processing.processActivated(this, occ, parent, status)
+                with(creator) {
+                    constraint.occurrence(logicalStateObservable(), args, context.logicalContext, context.ruleUniqueTag).let { occ ->
+                        trace.activate(occ)
+                        processing.processActivated(this@ControllerImpl, occ, parent, status)
+                    }
                 }
 
             }

@@ -35,7 +35,9 @@ internal class ContinuedActivationQueue(
     }
 
     private fun ExecPos.assertValid() {
-        assert(continueFrom.chunk.justifiedBy(reactivated) || journalIndex.compare(continueFrom, reactivated.toPos()) >= 0)
+        val isAncestor = continueFrom.chunk.justifiedBy(reactivated)
+        val isPredecessor = journalIndex.compare(continueFrom, reactivated.toPos()) >= 0
+        assert(isAncestor || isPredecessor)
     }
 
 
