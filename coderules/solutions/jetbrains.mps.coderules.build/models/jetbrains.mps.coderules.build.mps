@@ -1742,6 +1742,11 @@
             <ref role="3bR37D" to="ffeo:7Kfy9QB6Lc2" resolve="jetbrains.mps.lang.typesystem" />
           </node>
         </node>
+        <node concept="1SiIV0" id="61G6TdCC7yR" role="3bR37C">
+          <node concept="3bR9La" id="61G6TdCC7yS" role="1SiIV1">
+            <ref role="3bR37D" node="NKt6yn9_8p" resolve="jetbrains.mps.coderules" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="78H58oeeFzd" role="3989C9">
