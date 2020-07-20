@@ -1542,7 +1542,7 @@ class TestIncrementalProgram {
     @Test
     fun expectTypeGenericNonprincipal() {
         val progSpec = MockIncrProgSpec(
-            setOf("main", "foo"),
+            setOf("main", "foo", "expectType_ok", "expectType_default"),
             setOf(sym0("foo"), sym0("typeOf"), sym0("expectType"))
         )
 
