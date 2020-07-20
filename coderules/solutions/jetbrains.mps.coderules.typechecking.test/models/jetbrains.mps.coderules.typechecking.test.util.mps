@@ -1315,7 +1315,7 @@
                 <ref role="3cqZAo" node="tyIfzC1aZ5" resolve="evaluator" />
               </node>
               <node concept="liA8E" id="WJTIIoYyhH" role="2OqNvi">
-                <ref role="37wK5l" to="hano:2yEnwsh70Nl" resolve="invalidatedTags" />
+                <ref role="37wK5l" to="hano:2yEnwsh70Nl" resolve="invalidFeedbackKeys" />
               </node>
             </node>
           </node>
@@ -1655,26 +1655,26 @@
       <node concept="3cqZAl" id="WJTIIoKBaU" role="3clF45" />
       <node concept="37vLTG" id="WJTIIoKCip" role="3clF46">
         <property role="TrG5h" value="typesDelta" />
-        <node concept="3uibUv" id="WJTIIp92tF" role="1tU5fm">
+        <node concept="3uibUv" id="1CI$Npxp20H" role="1tU5fm">
           <ref role="3uigEE" node="WJTIIp7lHu" resolve="IncrementalLauncher.TypesDelta" />
         </node>
       </node>
       <node concept="37vLTG" id="WJTIIoVwWa" role="3clF46">
         <property role="TrG5h" value="failuresDelta" />
-        <node concept="3uibUv" id="WJTIIp93NJ" role="1tU5fm">
+        <node concept="3uibUv" id="1CI$Npxp20I" role="1tU5fm">
           <ref role="3uigEE" node="WJTIIp7JnM" resolve="IncrementalLauncher.FailuresDelta" />
         </node>
       </node>
       <node concept="37vLTG" id="WJTIIoZqaS" role="3clF46">
         <property role="TrG5h" value="invalidNodes" />
-        <node concept="3vKaQO" id="WJTIIoZrCb" role="1tU5fm">
-          <node concept="2sp9CU" id="WJTIIp08Le" role="3O5elw" />
+        <node concept="3vKaQO" id="1CI$Npxp20J" role="1tU5fm">
+          <node concept="2sp9CU" id="1CI$Npxp20K" role="3O5elw" />
         </node>
       </node>
       <node concept="37vLTG" id="WJTIIoZtCI" role="3clF46">
-        <property role="TrG5h" value="invalidatedTags" />
-        <node concept="3vKaQO" id="WJTIIoZvq2" role="1tU5fm">
-          <node concept="3uibUv" id="WJTIIoZw9z" role="3O5elw">
+        <property role="TrG5h" value="invalidatedFeedbackKeys" />
+        <node concept="3vKaQO" id="1CI$Npxp20L" role="1tU5fm">
+          <node concept="3uibUv" id="1CI$Npxp20M" role="3O5elw">
             <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
@@ -2600,8 +2600,8 @@
                 <node concept="37vLTw" id="MSv3owkDVy" role="2Oq$k0">
                   <ref role="3cqZAo" node="MSv3owjg$y" resolve="item" />
                 </node>
-                <node concept="liA8E" id="MSv3owkGv6" role="2OqNvi">
-                  <ref role="37wK5l" to="tj24:5b5WPl4QD9T" resolve="getRuleTag" />
+                <node concept="liA8E" id="1CI$Npxu4$m" role="2OqNvi">
+                  <ref role="37wK5l" to="tj24:4ekZiHdePyA" resolve="getTemplate" />
                 </node>
               </node>
             </node>
@@ -4198,26 +4198,26 @@
       <node concept="3cqZAl" id="WJTIIoKK2l" role="3clF45" />
       <node concept="37vLTG" id="WJTIIoKK2m" role="3clF46">
         <property role="TrG5h" value="typesDelta" />
-        <node concept="3uibUv" id="WJTIIp963J" role="1tU5fm">
+        <node concept="3uibUv" id="1CI$Npxp20x" role="1tU5fm">
           <ref role="3uigEE" node="WJTIIp7lHu" resolve="IncrementalLauncher.TypesDelta" />
         </node>
       </node>
       <node concept="37vLTG" id="WJTIIoVSWY" role="3clF46">
         <property role="TrG5h" value="failuresDelta" />
-        <node concept="3uibUv" id="WJTIIp974_" role="1tU5fm">
+        <node concept="3uibUv" id="1CI$Npxp20y" role="1tU5fm">
           <ref role="3uigEE" node="WJTIIp7JnM" resolve="IncrementalLauncher.FailuresDelta" />
         </node>
       </node>
       <node concept="37vLTG" id="WJTIIoZDio" role="3clF46">
         <property role="TrG5h" value="invalidNodes" />
-        <node concept="3vKaQO" id="WJTIIoZDip" role="1tU5fm">
-          <node concept="2sp9CU" id="WJTIIp0xn4" role="3O5elw" />
+        <node concept="3vKaQO" id="1CI$Npxp20z" role="1tU5fm">
+          <node concept="2sp9CU" id="1CI$Npxp20$" role="3O5elw" />
         </node>
       </node>
       <node concept="37vLTG" id="WJTIIoZDir" role="3clF46">
-        <property role="TrG5h" value="invalidatedTags" />
-        <node concept="3vKaQO" id="WJTIIoZDis" role="1tU5fm">
-          <node concept="3uibUv" id="WJTIIoZDit" role="3O5elw">
+        <property role="TrG5h" value="invalidatedFeedbackKeys" />
+        <node concept="3vKaQO" id="1CI$Npxp20_" role="1tU5fm">
+          <node concept="3uibUv" id="1CI$Npxp20A" role="3O5elw">
             <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
@@ -4522,7 +4522,7 @@
             <node concept="liA8E" id="WJTIIp0Ec7" role="2OqNvi">
               <ref role="37wK5l" to="tj24:WJTIIoXnLi" resolve="invalidateReportItems" />
               <node concept="37vLTw" id="WJTIIp0EwL" role="37wK5m">
-                <ref role="3cqZAo" node="WJTIIoZGPL" resolve="invalidatedTags" />
+                <ref role="3cqZAo" node="WJTIIoZGPL" resolve="invalidatedFeedbackKeys" />
               </node>
               <node concept="37vLTw" id="WJTIIp0EXG" role="37wK5m">
                 <ref role="3cqZAo" node="5Qx6_65wuyf" resolve="typesIndex" />
@@ -4609,26 +4609,26 @@
       <node concept="3cqZAl" id="WJTIIoZGP_" role="3clF45" />
       <node concept="37vLTG" id="WJTIIoZGPA" role="3clF46">
         <property role="TrG5h" value="typesDelta" />
-        <node concept="3uibUv" id="WJTIIp9bKX" role="1tU5fm">
+        <node concept="3uibUv" id="1CI$Npxp20B" role="1tU5fm">
           <ref role="3uigEE" node="WJTIIp7lHu" resolve="IncrementalLauncher.TypesDelta" />
         </node>
       </node>
       <node concept="37vLTG" id="WJTIIoZGPE" role="3clF46">
         <property role="TrG5h" value="failuresDelta" />
-        <node concept="3uibUv" id="WJTIIp9c9h" role="1tU5fm">
+        <node concept="3uibUv" id="1CI$Npxp20C" role="1tU5fm">
           <ref role="3uigEE" node="WJTIIp7JnM" resolve="IncrementalLauncher.FailuresDelta" />
         </node>
       </node>
       <node concept="37vLTG" id="WJTIIoZGPI" role="3clF46">
         <property role="TrG5h" value="invalidNodes" />
-        <node concept="3vKaQO" id="WJTIIoZGPJ" role="1tU5fm">
-          <node concept="2sp9CU" id="WJTIIp06Xa" role="3O5elw" />
+        <node concept="3vKaQO" id="1CI$Npxp20D" role="1tU5fm">
+          <node concept="2sp9CU" id="1CI$Npxp20E" role="3O5elw" />
         </node>
       </node>
       <node concept="37vLTG" id="WJTIIoZGPL" role="3clF46">
-        <property role="TrG5h" value="invalidatedTags" />
-        <node concept="3vKaQO" id="WJTIIoZGPM" role="1tU5fm">
-          <node concept="3uibUv" id="WJTIIoZGPN" role="3O5elw">
+        <property role="TrG5h" value="invalidatedFeedbackKeys" />
+        <node concept="3vKaQO" id="1CI$Npxp20F" role="1tU5fm">
+          <node concept="3uibUv" id="1CI$Npxp20G" role="3O5elw">
             <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
