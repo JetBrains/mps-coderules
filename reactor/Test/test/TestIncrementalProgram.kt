@@ -1674,6 +1674,7 @@ class TestIncrementalProgram {
         }
     }
 
+    @Ignore("waiting for complete fix to MPSCR-65")
     @Test
     fun substructuralTS_insertWriteBeforeRW() {
         /* Expected test program execution:
