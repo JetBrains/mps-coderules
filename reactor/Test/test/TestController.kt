@@ -1,12 +1,10 @@
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.core.internal.LogicalState
 import jetbrains.mps.logic.reactor.core.internal.createController
 import jetbrains.mps.logic.reactor.core.internal.logical
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.Program
-import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.test.MockTerm.*
 import org.junit.After
@@ -70,7 +68,7 @@ class TestController {
                                                vararg occurrences: ConstraintOccurrence): Controller {
         val program = MockProgram("test", rulesLists, registry = MockConstraintRegistry())
         val supervisor = object : MockSupervisor() {
-            override fun handleFeedback(ruleMatch: RuleMatch, parentPrincipalMatch: RuleMatch, feedback: EvaluationFeedback): Boolean =
+            override fun handleFeedback(ruleMatch: RuleMatch, feedbackKey: Any, feedback: EvaluationFeedback): Boolean =
                 feedbackHandler(ruleMatch, feedback)
         }
         MockSession.init(program, supervisor)

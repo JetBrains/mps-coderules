@@ -29,6 +29,6 @@ public interface EvaluationResult {
     
     public EvaluationFeedback feedback();
 
-    public Collection<Object> invalidatedTags();
+    public Collection<Object> invalidFeedbackKeys();
 
 }

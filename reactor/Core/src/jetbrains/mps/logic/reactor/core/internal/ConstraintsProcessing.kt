@@ -51,7 +51,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
     private val activationQueue: ContinuedActivationQueue = ContinuedActivationQueue(journalIndex, RuleOrdering(ruleIndex))
 
-    private val invalidatedRulesTags: MutableSet<Any> = mutableSetOf<Any>()
+    private val invalidFeedbackKeys: MutableSet<Any> = mutableSetOf<Any>()
 
     private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
 
@@ -116,7 +116,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         val validOccs: Sequence<Occurrence>
         if (chunk is MatchJournal.MatchChunk) {
             trace.invalidate(chunk.match)
-            invalidatedRulesTags.add(chunk.ruleUniqueTag)
+            invalidFeedbackKeys.add(chunk.match.feedbackKey)
             dispatchingFront = dispatchingFront.forget(chunk.match as RuleMatchEx)
 
             // Valid head occurrences could match more rules
@@ -195,7 +195,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
      * and returns [SessionToken] with session results.
      */
     fun endSession(): SessionToken {
-        invalidatedRulesTags.clear()
+        invalidFeedbackKeys.clear()
         val histView = view()
         resetStore() // clear observers
         val rules = ArrayList<Rule>().apply { ruleIndex.forEach { add(it) } }
@@ -206,7 +206,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         return SessionTokenImpl(histView, rules, principalState, logicalState.clear())
     }
 
-    fun invalidatedRules(): Set<Any> = HashSet<Any>(invalidatedRulesTags)
+    fun invalidatedFeedback(): FeedbackKeySet = HashSet<Any>(invalidFeedbackKeys)
 
     /**
      * Called to update the state with the currently active constraint occurrence.

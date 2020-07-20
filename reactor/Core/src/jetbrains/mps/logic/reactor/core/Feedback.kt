@@ -40,8 +40,8 @@ abstract class Feedback : EvaluationFeedback() {
     /**
      * Returns true if the feedback has been handled.
      */
-    open fun handle(currentRuleMatch: RuleMatch, parentPrincipalMatch: RuleMatch, supervisor: Supervisor): Boolean {
-        if (!alreadyHandled() && supervisor.handleFeedback(currentRuleMatch, parentPrincipalMatch, this)) {
+    open fun handle(currentRuleMatch: RuleMatch, feedbackKey: Any, supervisor: Supervisor): Boolean {
+        if (!alreadyHandled() && supervisor.handleFeedback(currentRuleMatch, feedbackKey, this)) {
             setHandled()
         }
         return alreadyHandled()
@@ -54,3 +54,7 @@ abstract class Feedback : EvaluationFeedback() {
     }
 
 }
+
+typealias FeedbackKeySet = Set<Any>
+
+internal val RuleMatch.feedbackKey: Any get() = System.identityHashCode(this)

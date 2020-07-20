@@ -54,7 +54,7 @@ internal class ControllerImpl (
         return storeView()
     }
 
-    fun incrLaunch(constraint: Constraint, rulesDiff: RulesDiff): Pair<FeedbackStatus, Set<Any>> {
+    fun incrLaunch(constraint: Constraint, rulesDiff: RulesDiff): Pair<FeedbackStatus, FeedbackKeySet> {
 
         if (rulesDiff.removed.isNotEmpty()) {
             profiler.profile("invalidation") {
@@ -73,7 +73,7 @@ internal class ControllerImpl (
                 processing.launchQueue(this)
             }
 
-        return status to processing.invalidatedRules()
+        return status to processing.invalidatedFeedback()
     }
 
     fun activate(constraint: Constraint) : FeedbackStatus {
@@ -180,7 +180,7 @@ internal class ControllerImpl (
                 if (itemOk) {
                     context.withStatus { status ->
                         if (status.feedback?.alreadyHandled() == false) {
-                            status.feedback.handle(match, newParent.match, supervisor)
+                            status.feedback.handle(match, newParent.match.feedbackKey, supervisor)
                         }
                     }
 
@@ -201,7 +201,7 @@ internal class ControllerImpl (
 
                     // if failure can be handled here then recover
                     } else if (status.feedback?.alreadyHandled() == false
-                        && status.failure.handle(match, newParent.match, supervisor)) {
+                        && status.failure.handle(match, newParent.match.feedbackKey, supervisor)) {
 
                         status.recover()
 
@@ -279,7 +279,6 @@ internal class ControllerImpl (
         (rule().headKept() + rule().headReplaced()).zip(matchHeadKept() + matchHeadReplaced()).flatMap {
             it.first.patternPredicates(it.second.arguments())
         }.toList()
-
 
     inner private class Context(inStatus: FeedbackStatus,
                                 val checking: Boolean,

@@ -46,7 +46,7 @@ internal class EvaluationSessionImpl private constructor (
 
         val newToken: SessionToken
         val status: FeedbackStatus
-        val invalidatedTags: Set<Any>
+        val invalidFeedbackKeys: Set<Any>
 
         val ruleIndex = RuleIndex(program.rulesLists())
 
@@ -63,7 +63,7 @@ internal class EvaluationSessionImpl private constructor (
 
             status = controller.activate(main)
             newToken = processing.endSession()
-            invalidatedTags = emptySet()
+            invalidFeedbackKeys = emptySet()
 
         } else {
             val tkn = token as SessionTokenImpl
@@ -80,14 +80,14 @@ internal class EvaluationSessionImpl private constructor (
             val status2tags = controller.incrLaunch(main, rulesDiff)
             newToken = processing.endSession()
             status = status2tags.first
-            invalidatedTags = status2tags.second
+            invalidFeedbackKeys = status2tags.second
         }
 
         return object : EvaluationResult {
             override fun token(): SessionToken = newToken
             override fun storeView(): StoreView = newToken.journalView.storeView
             override fun feedback():  EvaluationFeedback? = if (status is FAILED) status.failure else null
-            override fun invalidatedTags(): Collection<Any> = invalidatedTags
+            override fun invalidFeedbackKeys(): Collection<Any> = invalidFeedbackKeys
         }
     }
 
