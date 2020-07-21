@@ -1571,6 +1571,9 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbT" id="61G6TdDXSDw" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
               <node concept="2YIFZM" id="5EDW3XEzxoX" role="37wK5m">
                 <ref role="37wK5l" to="tj24:5EDW3XDYggE" resolve="check" />
                 <ref role="1Pybhc" to="tj24:5EDW3XDYg8Y" resolve="TypecheckingQueries" />

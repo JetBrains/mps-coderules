@@ -715,6 +715,19 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="61G6TdE2my5" role="3cqZAp">
+          <node concept="37vLTI" id="61G6TdE2my7" role="3clFbG">
+            <node concept="2OqwBi" id="61G6TdE2pC2" role="37vLTJ">
+              <node concept="Xjq3P" id="61G6TdE2pH9" role="2Oq$k0" />
+              <node concept="2OwXpG" id="61G6TdE2pC5" role="2OqNvi">
+                <ref role="2Oxat5" node="61G6TdE2my1" resolve="recursive" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="61G6TdE2myb" role="37vLTx">
+              <ref role="3cqZAo" node="61G6TdE2izs" resolve="recursive" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="5EDW3XEoy5t" role="3cqZAp">
           <node concept="37vLTI" id="5EDW3XEoy5u" role="3clFbG">
             <node concept="2OqwBi" id="5EDW3XEoy5v" role="37vLTJ">
@@ -770,6 +783,10 @@
       <node concept="37vLTG" id="5EDW3XEoy5R" role="3clF46">
         <property role="TrG5h" value="inputNodes" />
         <node concept="2I9FWS" id="5EDW3XEoy5S" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="61G6TdE2izs" role="3clF46">
+        <property role="TrG5h" value="recursive" />
+        <node concept="10P_77" id="61G6TdE2lVn" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="5EDW3XEoy5T" role="3clF46">
         <property role="TrG5h" value="repository" />
@@ -1070,6 +1087,9 @@
                               <node concept="37vLTw" id="7kTeLbPtKEF" role="37wK5m">
                                 <ref role="3cqZAo" node="7kTeLbPt5$3" resolve="nodes" />
                               </node>
+                              <node concept="37vLTw" id="61G6TdE8ZuE" role="37wK5m">
+                                <ref role="3cqZAo" node="61G6TdE2my1" resolve="recursive" />
+                              </node>
                               <node concept="37vLTw" id="5EDW3XEu5SF" role="37wK5m">
                                 <ref role="3cqZAo" node="5EDW3XEoAmV" resolve="query" />
                               </node>
@@ -1322,6 +1342,12 @@
       <property role="TrG5h" value="nodes" />
       <node concept="3Tmbuc" id="6nFpYlurxZ8" role="1B3o_S" />
       <node concept="2I9FWS" id="7kTeLbPt5$6" role="1tU5fm" />
+    </node>
+    <node concept="312cEg" id="61G6TdE2my1" role="jymVt">
+      <property role="TrG5h" value="recursive" />
+      <node concept="3Tm6S6" id="61G6TdE2my2" role="1B3o_S" />
+      <node concept="10P_77" id="61G6TdE2my4" role="1tU5fm" />
+      <node concept="3clFbT" id="61G6TdE8Z5S" role="33vP2m" />
     </node>
     <node concept="312cEg" id="6kREIVkLEGt" role="jymVt">
       <property role="TrG5h" value="repository" />

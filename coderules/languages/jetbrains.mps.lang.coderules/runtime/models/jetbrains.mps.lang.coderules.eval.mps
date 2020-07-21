@@ -4139,6 +4139,10 @@
           <node concept="3Tqbb2" id="7kTeLbPolyb" role="A3Ik2" />
         </node>
       </node>
+      <node concept="37vLTG" id="61G6TdDXEdy" role="3clF46">
+        <property role="TrG5h" value="recursively" />
+        <node concept="10P_77" id="61G6TdDXIQo" role="1tU5fm" />
+      </node>
       <node concept="37vLTG" id="5EDW3XEu33d" role="3clF46">
         <property role="TrG5h" value="query" />
         <node concept="3uibUv" id="5EDW3XEu3xO" role="1tU5fm">
@@ -4244,6 +4248,9 @@
                             <ref role="37wK5l" to="ksgm:4QPCta1bMC1" resolve="processInput" />
                             <node concept="37vLTw" id="6OXbTDxOoZh" role="37wK5m">
                               <ref role="3cqZAo" node="7kTeLbPojCA" resolve="nodes" />
+                            </node>
+                            <node concept="37vLTw" id="61G6TdDXKQE" role="37wK5m">
+                              <ref role="3cqZAo" node="61G6TdDXEdy" resolve="recursively" />
                             </node>
                           </node>
                         </node>
