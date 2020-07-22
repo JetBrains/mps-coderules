@@ -22,6 +22,8 @@ public interface IncrementalProgramSpec {
     boolean isPrincipal(Rule rule);
     boolean isWeakPrincipal(Rule rule);
 
+    boolean assertContracts();
+
     class NonIncrSpec implements IncrementalProgramSpec {
         @Override
         public boolean isPrincipal(Constraint ctr) { return false; }
@@ -29,6 +31,9 @@ public interface IncrementalProgramSpec {
         public boolean isPrincipal(Rule rule) { return false; }
         @Override
         public boolean isWeakPrincipal(Rule rule) { return false; }
+
+        @Override
+        public boolean assertContracts() { return false; }
     }
 
     NonIncrSpec DefaultSpec = new NonIncrSpec();

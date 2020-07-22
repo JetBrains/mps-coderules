@@ -23,12 +23,18 @@ import jetbrains.mps.logic.reactor.program.Rule
 class MockIncrProgSpec(
     val principalRuleTags: Set<Any>,
     val principalCtrSyms: Set<ConstraintSymbol>,
-    val weakPrincipalRuleTags: Set<Any>
+    val weakPrincipalRuleTags: Set<Any>,
+    private var checkContracts: Boolean = false
 ) : IncrementalProgramSpec {
+
     constructor(principalRuleTags: Set<Any>, principalCtrSyms: Set<ConstraintSymbol>) :
         this(principalRuleTags, principalCtrSyms, emptySet())
+
+    fun withContractChecks() = this.also { checkContracts = true }
 
     override fun isPrincipal(ctr: Constraint): Boolean = principalCtrSyms.contains(ctr.symbol())
     override fun isPrincipal(rule: Rule): Boolean = principalRuleTags.contains(rule.uniqueTag())
     override fun isWeakPrincipal(rule: Rule): Boolean = weakPrincipalRuleTags.contains(rule.uniqueTag())
+
+    override fun assertContracts(): Boolean = checkContracts
 }

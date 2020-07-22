@@ -20,6 +20,7 @@ import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
+import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
@@ -220,6 +221,8 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             active.stored = true
             logActivation(active)
             active.revive(logicalState)
+
+            if (ispec.assertContracts()) active.addContractObservers(logicalState)
         }
         assert(active.alive)
 
@@ -287,7 +290,6 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             .also { accept(controller, match) }
             .then { controller.processBody(match, parent, it) }
             .also { trace.finish(match) }
-
 
     private fun continueReplacedHeads(match: RuleMatchEx, parent: MatchJournal.MatchChunk) {
         if (!isFront() && match.isPrincipal) {
@@ -374,6 +376,31 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         }
     }
 
+
+    private fun Occurrence.addContractObservers(observable: LogicalStateObservable) {
+        if (this.isPrincipal) {
+            UnmodifiableLogicalObserver(this, observable)
+        }
+    }
+
+    internal class UnmodifiableLogicalObserver(val source: Occurrence, observable: LogicalStateObservable): ForwardingLogicalObserver {
+        init {
+            for (a in HashSet(source.arguments)) { // avoid duplicate subscriptions
+                if (a is Logical<*>) {
+                    observable.addForwardingObserver(a, this)
+                }
+            }
+        }
+
+        override fun valueUpdated(logical: Logical<*>, controller: Controller) = doCheckContract(logical, controller)
+
+        override fun parentUpdated(logical: Logical<*>, controller: Controller) = doCheckContract(logical, controller)
+
+        private fun doCheckContract(logical: Logical<*>, controller: Controller) =
+            checkContract(false) {
+                "$logical can't be unified because it's used in principal occurrence $source"
+            }
+    }
 
     private fun MatchJournal.MatchChunk.dependsOnAny(utags: Iterable<Any>): Boolean =
         utags.contains(this.ruleUniqueTag) || utags.any { utag -> dependsOnRule(utag) }

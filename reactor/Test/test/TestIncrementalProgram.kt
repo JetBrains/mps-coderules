@@ -6,11 +6,14 @@ import jetbrains.mps.logic.reactor.core.internal.MatchJournal
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.evaluation.EvaluationResult
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
+import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.IncrementalContractViolationException
 import org.junit.*
 import org.junit.Assert.*
 import program.MockConstraint
+import solver.tellEquals
 
 /*
  * Copyright 2014-2019 JetBrains s.r.o.
@@ -90,6 +93,9 @@ class TestIncrementalProgram {
     private fun Iterable<Occurrence>.constraintSymbols() = this.map { it.constraint.symbol() }
 
     private fun EvaluationResult.lastChunkSymbols() = this.lastChunk().activatedLog().constraintSymbols()
+
+
+    private fun <T : Any> PredicateInvocation.eq(left: T, right: T) = invocationContext().tellEquals(left, right)
 
 
     @Test
@@ -1538,6 +1544,45 @@ class TestIncrementalProgram {
             }
         }
     }
+
+    @Test(expected = IncrementalContractViolationException::class)
+    fun violatePrincipalLogicalContract() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "produceBound"),
+            setOf(sym1("foo"))
+        ).withContractChecks()
+
+        val (X, Y) = metaLogical<Int>("X", "Y")
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    pconstraint("foo", X)
+                )),
+            rule("produceBound",
+                headKept(
+                    pconstraint("foo", X)
+                ),
+                body(
+                    statement({ x, y -> eq(x,y) }, X, Y),
+                    constraint("hasBound", Y)
+                )),
+            rule("bindVar",
+                headKept(
+                    constraint("hasBound", Y)
+                ),
+                body(
+                    statement({ y -> y.set(42) }, Y)
+                ))
+        ).launch("violate contract assertion", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
+
+        }
+    }
+
 
     @Test
     fun expectTypeGenericNonprincipal() {
