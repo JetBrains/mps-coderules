@@ -1079,12 +1079,6 @@
           <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
         </node>
       </node>
-      <node concept="37vLTG" id="61G6TdBKQNM" role="3clF46">
-        <property role="TrG5h" value="repository" />
-        <node concept="3uibUv" id="61G6TdBKUr3" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-        </node>
-      </node>
       <node concept="3clFbS" id="2ceN1hCDzsv" role="3clF47">
         <node concept="3cpWs8" id="2ceN1hCDzsO" role="3cqZAp">
           <node concept="3cpWsn" id="2ceN1hCDzsP" role="3cpWs9">
@@ -1147,6 +1141,12 @@
             </node>
             <node concept="ANE8D" id="2ceN1hCDztd" role="2OqNvi" />
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="61G6TdBKQNM" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="61G6TdBKUr3" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
         </node>
       </node>
     </node>
@@ -1562,7 +1562,6 @@
       <node concept="2tJIrI" id="siuT5mm_XX" role="jymVt" />
       <node concept="3clFbW" id="4duYm8_rntF" role="jymVt">
         <node concept="3cqZAl" id="4duYm8_rntG" role="3clF45" />
-        <node concept="3Tm6S6" id="61G6TdD0vqk" role="1B3o_S" />
         <node concept="3clFbS" id="4duYm8_rntI" role="3clF47">
           <node concept="3clFbF" id="61G6TdD0CdU" role="3cqZAp">
             <node concept="37vLTI" id="61G6TdD0CdW" role="3clFbG">
@@ -1633,6 +1632,7 @@
           <property role="TrG5h" value="root" />
           <node concept="3Tqbb2" id="4duYm8_rvDA" role="1tU5fm" />
         </node>
+        <node concept="3Tm6S6" id="61G6TdD0vqk" role="1B3o_S" />
         <node concept="37vLTG" id="61G6TdD047j" role="3clF46">
           <property role="TrG5h" value="flags" />
           <node concept="3uibUv" id="61G6TdD047k" role="1tU5fm">
@@ -2075,7 +2075,6 @@
         </node>
       </node>
       <node concept="2tJIrI" id="5BwsbZJE0Zx" role="jymVt" />
-      <node concept="3Tm1VV" id="61G6TdD0ZwH" role="1B3o_S" />
       <node concept="3uibUv" id="lvX$8VFC52" role="EKbjA">
         <ref role="3uigEE" to="1ka:~TypecheckingQueries" resolve="TypecheckingQueries" />
       </node>
@@ -2492,6 +2491,7 @@
           <ref role="3uigEE" to="1ka:~TypecheckingSession$Flags" resolve="TypecheckingSession.Flags" />
         </node>
       </node>
+      <node concept="3Tm1VV" id="61G6TdD0ZwH" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="6hpwxwisYIe" role="jymVt" />
     <node concept="2tJIrI" id="siuT5mmBCy" role="jymVt" />
@@ -2851,6 +2851,10 @@
       <property role="TrG5h" value="incrementalityEnabled" />
       <node concept="10P_77" id="14IknWHoSOk" role="1tU5fm" />
     </node>
+    <node concept="34jfKJ" id="1JkMMuhfeuh" role="34lFYf">
+      <property role="TrG5h" value="incrementalAssertionsEnabled" />
+      <node concept="10P_77" id="1JkMMuhfeui" role="1tU5fm" />
+    </node>
     <node concept="34jfKJ" id="7iCybvTnn8F" role="34lFYf">
       <property role="TrG5h" value="traceEnabled" />
       <node concept="10P_77" id="7iCybvTnn8G" role="1tU5fm" />
@@ -2934,6 +2938,31 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="1JkMMuhfrq_" role="3cqZAp">
+            <node concept="3cpWsn" id="1JkMMuhfrqA" role="3cpWs9">
+              <property role="TrG5h" value="incrAssertsMod" />
+              <node concept="10P_77" id="1JkMMuhfrqB" role="1tU5fm" />
+              <node concept="3y3z36" id="1JkMMuhfrqC" role="33vP2m">
+                <node concept="2OqwBi" id="1JkMMuhfrqD" role="3uHU7w">
+                  <node concept="3yMSdA" id="1JkMMuhfrqE" role="2Oq$k0" />
+                  <node concept="liA8E" id="1JkMMuhfukB" role="2OqNvi">
+                    <ref role="37wK5l" node="1JkMMuhevKK" resolve="isIncrementalityAssertionEnabled" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="1JkMMuhfrqG" role="3uHU7B">
+                  <node concept="2OqwBi" id="1JkMMuhfrqH" role="2Oq$k0">
+                    <node concept="2xqhHp" id="1JkMMuhfrqI" role="2Oq$k0" />
+                    <node concept="LR4Ub" id="1JkMMuhfrqJ" role="2OqNvi">
+                      <ref role="LR4Ua" node="uB9WAZagv8" resolve="Typechecking" />
+                    </node>
+                  </node>
+                  <node concept="34pFcN" id="1JkMMuhfsXS" role="2OqNvi">
+                    <ref role="2WH_rO" node="1JkMMuhfeuh" resolve="incrementalAssertionsEnabled" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3cpWs8" id="7iCybvTnpmp" role="3cqZAp">
             <node concept="3cpWsn" id="7iCybvTnpmq" role="3cpWs9">
               <property role="TrG5h" value="traceMod" />
@@ -2965,17 +2994,22 @@
               <node concept="37vLTw" id="7iCybvTnsbS" role="3uHU7w">
                 <ref role="3cqZAo" node="7iCybvTnpmq" resolve="traceMod" />
               </node>
-              <node concept="22lmx$" id="14IknWHqJHa" role="3uHU7B">
-                <node concept="22lmx$" id="5Qx6_65kWgd" role="3uHU7B">
-                  <node concept="37vLTw" id="5Qx6_65kWrX" role="3uHU7w">
-                    <ref role="3cqZAo" node="5Qx6_65kTEG" resolve="watchMod" />
-                  </node>
-                  <node concept="37vLTw" id="14IknWHqJpJ" role="3uHU7B">
-                    <ref role="3cqZAo" node="14IknWHqGsM" resolve="tcMod" />
-                  </node>
+              <node concept="22lmx$" id="1JkMMuhfuPy" role="3uHU7B">
+                <node concept="37vLTw" id="1JkMMuhfvvW" role="3uHU7w">
+                  <ref role="3cqZAo" node="1JkMMuhfrqA" resolve="incrAssertsMod" />
                 </node>
-                <node concept="37vLTw" id="14IknWHqK29" role="3uHU7w">
-                  <ref role="3cqZAo" node="14IknWHqHH1" resolve="incrMod" />
+                <node concept="22lmx$" id="14IknWHqJHa" role="3uHU7B">
+                  <node concept="22lmx$" id="5Qx6_65kWgd" role="3uHU7B">
+                    <node concept="37vLTw" id="5Qx6_65kWrX" role="3uHU7w">
+                      <ref role="3cqZAo" node="5Qx6_65kTEG" resolve="watchMod" />
+                    </node>
+                    <node concept="37vLTw" id="14IknWHqJpJ" role="3uHU7B">
+                      <ref role="3cqZAo" node="14IknWHqGsM" resolve="tcMod" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="14IknWHqK29" role="3uHU7w">
+                    <ref role="3cqZAo" node="14IknWHqHH1" resolve="incrMod" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -3036,6 +3070,25 @@
                   </node>
                   <node concept="34pFcN" id="14IknWHqEx_" role="2OqNvi">
                     <ref role="2WH_rO" node="14IknWHoSHp" resolve="incrementalityEnabled" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="1JkMMuhfcJ2" role="3cqZAp">
+            <node concept="2OqwBi" id="1JkMMuhfcJ3" role="3clFbG">
+              <node concept="3yMSdA" id="1JkMMuhfcJ4" role="2Oq$k0" />
+              <node concept="liA8E" id="1JkMMuhfcJ5" role="2OqNvi">
+                <ref role="37wK5l" node="1JkMMuheLw7" resolve="setIncrementalityAssertionEnabled" />
+                <node concept="2OqwBi" id="1JkMMuhfcJ6" role="37wK5m">
+                  <node concept="2OqwBi" id="1JkMMuhfcJ7" role="2Oq$k0">
+                    <node concept="2xqhHp" id="1JkMMuhfcJ8" role="2Oq$k0" />
+                    <node concept="LR4Ub" id="1JkMMuhfcJ9" role="2OqNvi">
+                      <ref role="LR4Ua" node="uB9WAZagv8" resolve="Typechecking" />
+                    </node>
+                  </node>
+                  <node concept="34pFcN" id="1JkMMuhff98" role="2OqNvi">
+                    <ref role="2WH_rO" node="1JkMMuhfeuh" resolve="incrementalAssertionsEnabled" />
                   </node>
                 </node>
               </node>
@@ -3123,6 +3176,27 @@
                 </node>
                 <node concept="34pFcN" id="14IknWHqF82" role="2OqNvi">
                   <ref role="2WH_rO" node="14IknWHoSHp" resolve="incrementalityEnabled" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="1JkMMuhffPS" role="3cqZAp">
+            <node concept="37vLTI" id="1JkMMuhffPT" role="3clFbG">
+              <node concept="2OqwBi" id="1JkMMuhffPU" role="37vLTx">
+                <node concept="3yMSdA" id="1JkMMuhffPV" role="2Oq$k0" />
+                <node concept="liA8E" id="1JkMMuhfhBj" role="2OqNvi">
+                  <ref role="37wK5l" node="1JkMMuhevKK" resolve="isIncrementalityAssertionEnabled" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="1JkMMuhffPX" role="37vLTJ">
+                <node concept="2OqwBi" id="1JkMMuhffPY" role="2Oq$k0">
+                  <node concept="2xqhHp" id="1JkMMuhffPZ" role="2Oq$k0" />
+                  <node concept="LR4Ub" id="1JkMMuhffQ0" role="2OqNvi">
+                    <ref role="LR4Ua" node="uB9WAZagv8" resolve="Typechecking" />
+                  </node>
+                </node>
+                <node concept="34pFcN" id="1JkMMuhfg_5" role="2OqNvi">
+                  <ref role="2WH_rO" node="1JkMMuhfeuh" resolve="incrementalAssertionsEnabled" />
                 </node>
               </node>
             </node>
@@ -3253,6 +3327,24 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1JkMMuhelbb" role="3cqZAp">
+          <node concept="37vLTI" id="1JkMMuhelbc" role="3clFbG">
+            <node concept="2OqwBi" id="1JkMMuhelbd" role="37vLTJ">
+              <node concept="Xjq3P" id="1JkMMuhelbe" role="2Oq$k0" />
+              <node concept="2OwXpG" id="1JkMMuheq0M" role="2OqNvi">
+                <ref role="2Oxat5" node="1JkMMuhenaD" resolve="enableIncrementalityAssertionCheckbox" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="1JkMMuhelbg" role="37vLTx">
+              <node concept="1pGfFk" id="1JkMMuhelbh" role="2ShVmc">
+                <ref role="37wK5l" to="qqrq:~JBCheckBox.&lt;init&gt;(java.lang.String)" resolve="JBCheckBox" />
+                <node concept="Xl_RD" id="1JkMMuhelbi" role="37wK5m">
+                  <property role="Xl_RC" value="Enable incremental contracts assertions" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7iCybvTmRjG" role="3cqZAp">
           <node concept="37vLTI" id="7iCybvTmRjH" role="3clFbG">
             <node concept="2OqwBi" id="7iCybvTmRjI" role="37vLTJ">
@@ -3345,6 +3437,47 @@
                         </node>
                       </node>
                       <node concept="2AHcQZ" id="5Qx6_65lPSq" role="2AJF6D">
+                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1JkMMuhf5hu" role="3cqZAp">
+          <node concept="2OqwBi" id="1JkMMuhf5hv" role="3clFbG">
+            <node concept="37vLTw" id="4s_lMmGjCTY" role="2Oq$k0">
+              <ref role="3cqZAo" node="14IknWHoWnA" resolve="enableIncrementalityCheckbox" />
+            </node>
+            <node concept="liA8E" id="1JkMMuhf5hx" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~AbstractButton.addItemListener(java.awt.event.ItemListener)" resolve="addItemListener" />
+              <node concept="2ShNRf" id="1JkMMuhf5hy" role="37wK5m">
+                <node concept="YeOm9" id="1JkMMuhf5hz" role="2ShVmc">
+                  <node concept="1Y3b0j" id="1JkMMuhf5h$" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                    <ref role="1Y3XeK" to="hyam:~ItemListener" resolve="ItemListener" />
+                    <node concept="3Tm1VV" id="1JkMMuhf5h_" role="1B3o_S" />
+                    <node concept="3clFb_" id="1JkMMuhf5hA" role="jymVt">
+                      <property role="TrG5h" value="itemStateChanged" />
+                      <node concept="3Tm1VV" id="1JkMMuhf5hB" role="1B3o_S" />
+                      <node concept="3cqZAl" id="1JkMMuhf5hC" role="3clF45" />
+                      <node concept="37vLTG" id="1JkMMuhf5hD" role="3clF46">
+                        <property role="TrG5h" value="e" />
+                        <node concept="3uibUv" id="1JkMMuhf5hE" role="1tU5fm">
+                          <ref role="3uigEE" to="hyam:~ItemEvent" resolve="ItemEvent" />
+                        </node>
+                      </node>
+                      <node concept="3clFbS" id="1JkMMuhf5hF" role="3clF47">
+                        <node concept="3clFbF" id="1JkMMuhf5hG" role="3cqZAp">
+                          <node concept="1rXfSq" id="1JkMMuhf5hH" role="3clFbG">
+                            <ref role="37wK5l" node="7iCybvTmrHH" resolve="updateEnabledState" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2AHcQZ" id="1JkMMuhf5hI" role="2AJF6D">
                         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                       </node>
                     </node>
@@ -3640,7 +3773,112 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3clFbH" id="5Qx6_65kKUm" role="3cqZAp" />
+                    <node concept="3clFbH" id="1JkMMuheqGK" role="3cqZAp" />
+                    <node concept="9aQIb" id="1JkMMuher1i" role="3cqZAp">
+                      <node concept="3clFbS" id="1JkMMuher1j" role="9aQI4">
+                        <node concept="3cpWs8" id="1JkMMuher1k" role="3cqZAp">
+                          <node concept="3cpWsn" id="1JkMMuher1l" role="3cpWs9">
+                            <property role="TrG5h" value="subpanel3" />
+                            <node concept="3uibUv" id="1JkMMuher1m" role="1tU5fm">
+                              <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
+                            </node>
+                            <node concept="2ShNRf" id="1JkMMuher1n" role="33vP2m">
+                              <node concept="1pGfFk" id="1JkMMuher1o" role="2ShVmc">
+                                <ref role="37wK5l" to="dxuu:~JPanel.&lt;init&gt;()" resolve="JPanel" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="1JkMMuher1p" role="3cqZAp">
+                          <node concept="2OqwBi" id="1JkMMuher1q" role="3clFbG">
+                            <node concept="37vLTw" id="1JkMMuher1r" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1JkMMuher1l" resolve="subpanel3" />
+                            </node>
+                            <node concept="liA8E" id="1JkMMuher1s" role="2OqNvi">
+                              <ref role="37wK5l" to="z60i:~Container.setLayout(java.awt.LayoutManager)" resolve="setLayout" />
+                              <node concept="2ShNRf" id="1JkMMuher1t" role="37wK5m">
+                                <node concept="1pGfFk" id="1JkMMuher1u" role="2ShVmc">
+                                  <ref role="37wK5l" to="dxuu:~BoxLayout.&lt;init&gt;(java.awt.Container,int)" resolve="BoxLayout" />
+                                  <node concept="37vLTw" id="1JkMMuher1v" role="37wK5m">
+                                    <ref role="3cqZAo" node="1JkMMuher1l" resolve="subpanel3" />
+                                  </node>
+                                  <node concept="10M0yZ" id="1JkMMuher1w" role="37wK5m">
+                                    <ref role="1PxDUh" to="dxuu:~BoxLayout" resolve="BoxLayout" />
+                                    <ref role="3cqZAo" to="dxuu:~BoxLayout.Y_AXIS" resolve="Y_AXIS" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="1JkMMuher1x" role="3cqZAp">
+                          <node concept="2OqwBi" id="1JkMMuher1y" role="3clFbG">
+                            <node concept="37vLTw" id="1JkMMuher1z" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1JkMMuher1l" resolve="subpanel3" />
+                            </node>
+                            <node concept="liA8E" id="1JkMMuher1$" role="2OqNvi">
+                              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component)" resolve="add" />
+                              <node concept="2YIFZM" id="1JkMMuher1_" role="37wK5m">
+                                <ref role="37wK5l" to="dxuu:~Box.createVerticalStrut(int)" resolve="createVerticalStrut" />
+                                <ref role="1Pybhc" to="dxuu:~Box" resolve="Box" />
+                                <node concept="3cmrfG" id="1JkMMuher1A" role="37wK5m">
+                                  <property role="3cmrfH" value="0" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="1JkMMuher1B" role="3cqZAp">
+                          <node concept="2OqwBi" id="1JkMMuher1C" role="3clFbG">
+                            <node concept="37vLTw" id="1JkMMuher1D" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1JkMMuher1l" resolve="subpanel3" />
+                            </node>
+                            <node concept="liA8E" id="1JkMMuher1E" role="2OqNvi">
+                              <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border)" resolve="setBorder" />
+                              <node concept="2YIFZM" id="1JkMMuher1F" role="37wK5m">
+                                <ref role="37wK5l" to="g1qu:~JBUI$Borders.emptyLeft(int)" resolve="emptyLeft" />
+                                <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="JBUI.Borders" />
+                                <node concept="3cmrfG" id="1JkMMuher1G" role="37wK5m">
+                                  <property role="3cmrfH" value="20" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbH" id="1JkMMuher1H" role="3cqZAp" />
+                        <node concept="3clFbF" id="1JkMMuher1I" role="3cqZAp">
+                          <node concept="2OqwBi" id="1JkMMuher1J" role="3clFbG">
+                            <node concept="37vLTw" id="1JkMMuher1K" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1JkMMuher1l" resolve="subpanel3" />
+                            </node>
+                            <node concept="liA8E" id="1JkMMuher1L" role="2OqNvi">
+                              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component)" resolve="add" />
+                              <node concept="2OqwBi" id="1JkMMuher1M" role="37wK5m">
+                                <node concept="Xjq3P" id="1JkMMuher1N" role="2Oq$k0" />
+                                <node concept="2OwXpG" id="1JkMMuheum5" role="2OqNvi">
+                                  <ref role="2Oxat5" node="1JkMMuhenaD" resolve="enableIncrementalityAssertionCheckbox" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbH" id="1JkMMuher1P" role="3cqZAp" />
+                        <node concept="3clFbF" id="1JkMMuher1Q" role="3cqZAp">
+                          <node concept="2OqwBi" id="1JkMMuher1R" role="3clFbG">
+                            <node concept="37vLTw" id="1JkMMuheuZn" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5Qx6_65kyBI" resolve="subpanel2" />
+                            </node>
+                            <node concept="liA8E" id="1JkMMuher1T" role="2OqNvi">
+                              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component)" resolve="add" />
+                              <node concept="37vLTw" id="1JkMMuher1U" role="37wK5m">
+                                <ref role="3cqZAo" node="1JkMMuher1l" resolve="subpanel3" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbH" id="1JkMMuher0C" role="3cqZAp" />
                     <node concept="3clFbF" id="5Qx6_65kLyV" role="3cqZAp">
                       <node concept="2OqwBi" id="5Qx6_65kLyW" role="3clFbG">
                         <node concept="37vLTw" id="5Qx6_65kOid" role="2Oq$k0">
@@ -3750,6 +3988,24 @@
               <ref role="3cqZAo" node="14IknWHoWnA" resolve="enableIncrementalityCheckbox" />
             </node>
             <node concept="liA8E" id="14IknWHqqN0" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~AbstractButton.isSelected()" resolve="isSelected" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1JkMMuheydc" role="jymVt" />
+    <node concept="3clFb_" id="1JkMMuhevKK" role="jymVt">
+      <property role="TrG5h" value="isIncrementalityAssertionEnabled" />
+      <node concept="10P_77" id="1JkMMuhevKL" role="3clF45" />
+      <node concept="3Tm1VV" id="1JkMMuhevKM" role="1B3o_S" />
+      <node concept="3clFbS" id="1JkMMuhevKN" role="3clF47">
+        <node concept="3clFbF" id="1JkMMuhevKO" role="3cqZAp">
+          <node concept="2OqwBi" id="1JkMMuhevKP" role="3clFbG">
+            <node concept="37vLTw" id="1JkMMuheL9F" role="2Oq$k0">
+              <ref role="3cqZAo" node="1JkMMuhenaD" resolve="enableIncrementalityAssertionCheckbox" />
+            </node>
+            <node concept="liA8E" id="1JkMMuhevKR" role="2OqNvi">
               <ref role="37wK5l" to="dxuu:~AbstractButton.isSelected()" resolve="isSelected" />
             </node>
           </node>
@@ -3866,6 +4122,39 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1JkMMuhf4w1" role="3cqZAp">
+          <node concept="1rXfSq" id="1JkMMuhf4w2" role="3clFbG">
+            <ref role="37wK5l" node="7iCybvTmrHH" resolve="updateEnabledState" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1JkMMuheNqV" role="jymVt" />
+    <node concept="3clFb_" id="1JkMMuheLw7" role="jymVt">
+      <property role="TrG5h" value="setIncrementalityAssertionEnabled" />
+      <node concept="37vLTG" id="1JkMMuheLw8" role="3clF46">
+        <property role="TrG5h" value="yes" />
+        <node concept="10P_77" id="1JkMMuheLw9" role="1tU5fm" />
+      </node>
+      <node concept="3cqZAl" id="1JkMMuheLwa" role="3clF45" />
+      <node concept="3Tm1VV" id="1JkMMuheLwb" role="1B3o_S" />
+      <node concept="3clFbS" id="1JkMMuheLwc" role="3clF47">
+        <node concept="3clFbF" id="1JkMMuheLwd" role="3cqZAp">
+          <node concept="2OqwBi" id="1JkMMuheLwe" role="3clFbG">
+            <node concept="2OqwBi" id="1JkMMuheLwf" role="2Oq$k0">
+              <node concept="Xjq3P" id="1JkMMuheLwg" role="2Oq$k0" />
+              <node concept="2OwXpG" id="1JkMMuheT5a" role="2OqNvi">
+                <ref role="2Oxat5" node="1JkMMuhenaD" resolve="enableIncrementalityAssertionCheckbox" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1JkMMuheLwi" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~AbstractButton.setSelected(boolean)" resolve="setSelected" />
+              <node concept="37vLTw" id="1JkMMuheLwj" role="37wK5m">
+                <ref role="3cqZAo" node="1JkMMuheLw8" resolve="yes" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="7iCybvTlGm0" role="jymVt" />
@@ -3963,6 +4252,56 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1JkMMuheTlY" role="3cqZAp">
+          <node concept="2OqwBi" id="1JkMMuheTlZ" role="3clFbG">
+            <node concept="2OqwBi" id="1JkMMuheTm0" role="2Oq$k0">
+              <node concept="Xjq3P" id="1JkMMuheTm1" role="2Oq$k0" />
+              <node concept="2OwXpG" id="1JkMMuheVXF" role="2OqNvi">
+                <ref role="2Oxat5" node="1JkMMuhenaD" resolve="enableIncrementalityAssertionCheckbox" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1JkMMuheTm3" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~AbstractButton.setEnabled(boolean)" resolve="setEnabled" />
+              <node concept="1Wc70l" id="1JkMMuheW_6" role="37wK5m">
+                <node concept="2OqwBi" id="1JkMMuhf1xK" role="3uHU7w">
+                  <node concept="2OqwBi" id="1JkMMuheZqP" role="2Oq$k0">
+                    <node concept="Xjq3P" id="1JkMMuheYxb" role="2Oq$k0" />
+                    <node concept="2OwXpG" id="1JkMMuhf0pF" role="2OqNvi">
+                      <ref role="2Oxat5" node="14IknWHoWnA" resolve="enableIncrementalityCheckbox" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1JkMMuhf318" role="2OqNvi">
+                    <ref role="37wK5l" to="dxuu:~AbstractButton.isSelected()" resolve="isSelected" />
+                  </node>
+                </node>
+                <node concept="1Wc70l" id="1JkMMuheTm4" role="3uHU7B">
+                  <node concept="2OqwBi" id="1JkMMuheTm5" role="3uHU7B">
+                    <node concept="2OqwBi" id="1JkMMuheTm6" role="2Oq$k0">
+                      <node concept="Xjq3P" id="1JkMMuheTm7" role="2Oq$k0" />
+                      <node concept="2OwXpG" id="1JkMMuheTm8" role="2OqNvi">
+                        <ref role="2Oxat5" node="14pL6xi8ySB" resolve="enableTypecheckingCheckbox" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="1JkMMuheTm9" role="2OqNvi">
+                      <ref role="37wK5l" to="dxuu:~AbstractButton.isSelected()" resolve="isSelected" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="1JkMMuheTma" role="3uHU7w">
+                    <node concept="2OqwBi" id="1JkMMuheTmb" role="2Oq$k0">
+                      <node concept="Xjq3P" id="1JkMMuheTmc" role="2Oq$k0" />
+                      <node concept="2OwXpG" id="1JkMMuheTmd" role="2OqNvi">
+                        <ref role="2Oxat5" node="5Qx6_65jMHg" resolve="enableWatchingCheckbox" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="1JkMMuheTme" role="2OqNvi">
+                      <ref role="37wK5l" to="dxuu:~AbstractButton.isSelected()" resolve="isSelected" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7iCybvTmT9P" role="3cqZAp">
           <node concept="2OqwBi" id="7iCybvTmT9Q" role="3clFbG">
             <node concept="2OqwBi" id="7iCybvTmT9R" role="2Oq$k0">
@@ -4008,6 +4347,13 @@
       <property role="TrG5h" value="enableIncrementalityCheckbox" />
       <node concept="3Tm6S6" id="14IknWHoWnB" role="1B3o_S" />
       <node concept="3uibUv" id="14IknWHoWnC" role="1tU5fm">
+        <ref role="3uigEE" to="dxuu:~JCheckBox" resolve="JCheckBox" />
+      </node>
+    </node>
+    <node concept="312cEg" id="1JkMMuhenaD" role="jymVt">
+      <property role="TrG5h" value="enableIncrementalityAssertionCheckbox" />
+      <node concept="3Tm6S6" id="1JkMMuhenaE" role="1B3o_S" />
+      <node concept="3uibUv" id="1JkMMuhenaF" role="1tU5fm">
         <ref role="3uigEE" to="dxuu:~JCheckBox" resolve="JCheckBox" />
       </node>
     </node>
@@ -4063,6 +4409,16 @@
       <node concept="17QB3L" id="7iCybvTyVsV" role="1tU5fm" />
       <node concept="Xl_RD" id="7iCybvTyVsW" role="33vP2m">
         <property role="Xl_RC" value="mps.coderules.typechecking.incremental" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1JkMMuhe5KG" role="jymVt" />
+    <node concept="Wx3nA" id="1JkMMuhe4_t" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="OPTION_TYPECHECKING_INCREMENTAL_ASSERTIONS" />
+      <node concept="3Tm1VV" id="1JkMMuhe4_u" role="1B3o_S" />
+      <node concept="17QB3L" id="1JkMMuhe4_v" role="1tU5fm" />
+      <node concept="Xl_RD" id="1JkMMuhe4_w" role="33vP2m">
+        <property role="Xl_RC" value="mps.coderules.typechecking.assertions" />
       </node>
     </node>
     <node concept="2tJIrI" id="7iCybvTyWhv" role="jymVt" />
@@ -4251,6 +4607,66 @@
               </node>
             </node>
             <node concept="3uibUv" id="7iCybvT_b5o" role="2Ghqu4">
+              <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="Wx3nA" id="1JkMMuhe8TT" role="jymVt">
+      <property role="TrG5h" value="TYPECHECKING_INCREMENTAL_ASSERTIONS" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="1JkMMuhe8TU" role="1tU5fm">
+        <ref role="3uigEE" to="31yc:7iCybvT$$S3" resolve="Config.Option" />
+        <node concept="3uibUv" id="1JkMMuhe8TV" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1JkMMuhe8TW" role="1B3o_S" />
+      <node concept="2ShNRf" id="1JkMMuhe8TX" role="33vP2m">
+        <node concept="YeOm9" id="1JkMMuhe8TY" role="2ShVmc">
+          <node concept="1Y3b0j" id="1JkMMuhe8TZ" role="YeSDq">
+            <property role="2bfB8j" value="true" />
+            <ref role="1Y3XeK" to="31yc:7iCybvT$$S3" resolve="Config.Option" />
+            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+            <node concept="3Tm1VV" id="1JkMMuhe8U0" role="1B3o_S" />
+            <node concept="3clFb_" id="1JkMMuhe8U1" role="jymVt">
+              <property role="TrG5h" value="get" />
+              <node concept="37vLTG" id="1JkMMuhe8U2" role="3clF46">
+                <property role="TrG5h" value="config" />
+                <node concept="3uibUv" id="1JkMMuhe8U3" role="1tU5fm">
+                  <ref role="3uigEE" to="31yc:7iCybvToiT5" resolve="Config" />
+                </node>
+              </node>
+              <node concept="3uibUv" id="1JkMMuhe8U4" role="3clF45">
+                <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+              </node>
+              <node concept="3Tm1VV" id="1JkMMuhe8U5" role="1B3o_S" />
+              <node concept="3clFbS" id="1JkMMuhe8U6" role="3clF47">
+                <node concept="3clFbF" id="1JkMMuhe8U7" role="3cqZAp">
+                  <node concept="10QFUN" id="1JkMMuhe8U8" role="3clFbG">
+                    <node concept="3uibUv" id="1JkMMuhe8U9" role="10QFUM">
+                      <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+                    </node>
+                    <node concept="2OqwBi" id="1JkMMuhe8Ua" role="10QFUP">
+                      <node concept="37vLTw" id="1JkMMuhe8Ub" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1JkMMuhe8U2" resolve="config" />
+                      </node>
+                      <node concept="liA8E" id="1JkMMuhe8Uc" role="2OqNvi">
+                        <ref role="37wK5l" to="31yc:7iCybvToiWV" resolve="getOption" />
+                        <node concept="37vLTw" id="1JkMMuhedVi" role="37wK5m">
+                          <ref role="3cqZAo" node="1JkMMuhe4_t" resolve="OPTION_TYPECHECKING_INCREMENTAL_ASSERTIONS" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2AHcQZ" id="1JkMMuhe8Ue" role="2AJF6D">
+                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+              </node>
+            </node>
+            <node concept="3uibUv" id="1JkMMuhe8Uf" role="2Ghqu4">
               <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
             </node>
           </node>
@@ -4703,6 +5119,39 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3clFbH" id="1JkMMuheend" role="3cqZAp" />
+                  <node concept="3clFbJ" id="1JkMMuhedZn" role="3cqZAp">
+                    <node concept="3clFbS" id="1JkMMuhedZo" role="3clFbx">
+                      <node concept="3cpWs6" id="1JkMMuhedZp" role="3cqZAp">
+                        <node concept="2YIFZM" id="1JkMMuhedZq" role="3cqZAk">
+                          <ref role="37wK5l" to="wyt6:~Boolean.valueOf(java.lang.String)" resolve="valueOf" />
+                          <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+                          <node concept="2YIFZM" id="1JkMMuhedZr" role="37wK5m">
+                            <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String,java.lang.String)" resolve="getProperty" />
+                            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                            <node concept="37vLTw" id="1JkMMuheeYw" role="37wK5m">
+                              <ref role="3cqZAo" node="1JkMMuhe4_t" resolve="OPTION_TYPECHECKING_INCREMENTAL_ASSERTIONS" />
+                            </node>
+                            <node concept="Xl_RD" id="1JkMMuhedZs" role="37wK5m">
+                              <property role="Xl_RC" value="false" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbH" id="1JkMMuhedZt" role="3cqZAp" />
+                    </node>
+                    <node concept="2OqwBi" id="1JkMMuhedZu" role="3clFbw">
+                      <node concept="37vLTw" id="1JkMMuheeDK" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1JkMMuhe4_t" resolve="OPTION_TYPECHECKING_INCREMENTAL_ASSERTIONS" />
+                      </node>
+                      <node concept="liA8E" id="1JkMMuhedZv" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                        <node concept="37vLTw" id="1JkMMuhedZw" role="37wK5m">
+                          <ref role="3cqZAo" node="7DmawKu61ZR" resolve="key" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbH" id="7DmawKu620g" role="3cqZAp" />
                   <node concept="3clFbJ" id="7DmawKu620h" role="3cqZAp">
                     <node concept="3clFbS" id="7DmawKu620i" role="3clFbx">
@@ -5038,6 +5487,32 @@
                           <node concept="liA8E" id="7iCybvTyFXv" role="2OqNvi">
                             <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
                             <node concept="37vLTw" id="7iCybvTyFXw" role="37wK5m">
+                              <ref role="3cqZAo" node="7iCybvTyBuB" resolve="key" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbH" id="1JkMMuhf$a7" role="3cqZAp" />
+                      <node concept="3clFbJ" id="1JkMMuhfzme" role="3cqZAp">
+                        <node concept="3clFbS" id="1JkMMuhfzmf" role="3clFbx">
+                          <node concept="3cpWs6" id="1JkMMuhfzmg" role="3cqZAp">
+                            <node concept="2OqwBi" id="1JkMMuhfzmh" role="3cqZAk">
+                              <node concept="37vLTw" id="1JkMMuhfzmi" role="2Oq$k0">
+                                <ref role="3cqZAo" node="5gVsyvEZeb_" resolve="pref" />
+                              </node>
+                              <node concept="34pFcN" id="1JkMMuhf$II" role="2OqNvi">
+                                <ref role="2WH_rO" node="1JkMMuhfeuh" resolve="incrementalAssertionsEnabled" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="1JkMMuhfzmk" role="3clFbw">
+                          <node concept="37vLTw" id="1JkMMuhf$qQ" role="2Oq$k0">
+                            <ref role="3cqZAo" node="1JkMMuhe4_t" resolve="OPTION_TYPECHECKING_INCREMENTAL_ASSERTIONS" />
+                          </node>
+                          <node concept="liA8E" id="1JkMMuhfzml" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                            <node concept="37vLTw" id="1JkMMuhfzmm" role="37wK5m">
                               <ref role="3cqZAo" node="7iCybvTyBuB" resolve="key" />
                             </node>
                           </node>
