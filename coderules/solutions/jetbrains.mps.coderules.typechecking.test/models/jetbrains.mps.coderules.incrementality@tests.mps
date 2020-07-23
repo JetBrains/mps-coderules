@@ -438,8 +438,8 @@
         <node concept="3cpWs8" id="4VntlICnIHB" role="3cqZAp">
           <node concept="3cpWsn" id="4VntlICnIHC" role="3cpWs9">
             <property role="TrG5h" value="spec" />
-            <node concept="3uibUv" id="4VntlICnIHD" role="1tU5fm">
-              <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
+            <node concept="3uibUv" id="scOg5xjfow" role="1tU5fm">
+              <ref role="3uigEE" to="av0y:~IncrementalSpec" resolve="IncrementalSpec" />
             </node>
           </node>
         </node>
@@ -565,7 +565,7 @@
               <ref role="3cqZAo" node="4VntlICnIHC" resolve="spec" />
             </node>
             <node concept="liA8E" id="2PLbMk5QWU3" role="2OqNvi">
-              <ref role="37wK5l" to="av0y:~IncrementalProgramSpec.isPrincipal(jetbrains.mps.logic.reactor.program.Constraint)" resolve="isPrincipal" />
+              <ref role="37wK5l" to="av0y:~IncrementalSpec.isPrincipal(jetbrains.mps.logic.reactor.program.Constraint)" resolve="isPrincipal" />
               <node concept="2OqwBi" id="2PLbMk5R0AT" role="37wK5m">
                 <node concept="2WthIp" id="2PLbMk5R0AW" role="2Oq$k0" />
                 <node concept="2XshWL" id="2PLbMk5R0AY" role="2OqNvi">
@@ -609,7 +609,7 @@
               <ref role="3cqZAo" node="4VntlICnIHC" resolve="spec" />
             </node>
             <node concept="liA8E" id="2PLbMk5R0Qo" role="2OqNvi">
-              <ref role="37wK5l" to="av0y:~IncrementalProgramSpec.isPrincipal(jetbrains.mps.logic.reactor.program.Constraint)" resolve="isPrincipal" />
+              <ref role="37wK5l" to="av0y:~IncrementalSpec.isPrincipal(jetbrains.mps.logic.reactor.program.Constraint)" resolve="isPrincipal" />
               <node concept="2OqwBi" id="2PLbMk5R0Qp" role="37wK5m">
                 <node concept="2WthIp" id="2PLbMk5R0Qq" role="2Oq$k0" />
                 <node concept="2XshWL" id="2PLbMk5R0Qr" role="2OqNvi">
@@ -656,7 +656,7 @@
                 <ref role="3cqZAo" node="4VntlICnIHC" resolve="spec" />
               </node>
               <node concept="liA8E" id="2PLbMk5R0Un" role="2OqNvi">
-                <ref role="37wK5l" to="av0y:~IncrementalProgramSpec.isPrincipal(jetbrains.mps.logic.reactor.program.Constraint)" resolve="isPrincipal" />
+                <ref role="37wK5l" to="av0y:~IncrementalSpec.isPrincipal(jetbrains.mps.logic.reactor.program.Constraint)" resolve="isPrincipal" />
                 <node concept="2OqwBi" id="2PLbMk5R0Uo" role="37wK5m">
                   <node concept="2WthIp" id="2PLbMk5R0Up" role="2Oq$k0" />
                   <node concept="2XshWL" id="2PLbMk5R0Uq" role="2OqNvi">
@@ -3356,7 +3356,7 @@
           <node concept="3cpWsn" id="2NnDL4GbW4z" role="3cpWs9">
             <property role="TrG5h" value="principals" />
             <node concept="3uibUv" id="2NnDL4GbW4$" role="1tU5fm">
-              <ref role="3uigEE" to="7ed7:1$LYeHxz7Lh" resolve="BasicProgramAnalysisGenImpl" />
+              <ref role="3uigEE" to="7ed7:1$LYeHxz7Lh" resolve="PrincipalsAnalysisGenImpl" />
             </node>
             <node concept="2ShNRf" id="2NnDL4GbW4_" role="33vP2m">
               <node concept="1pGfFk" id="4e0TwrfEQDD" role="2ShVmc">
@@ -4297,7 +4297,7 @@
                 <ref role="37wK5l" to="7ed7:2NnDL4G9WuG" resolve="FreeVarEscapeChecker" />
                 <node concept="2YIFZM" id="4e0TwrfGfWj" role="37wK5m">
                   <ref role="37wK5l" to="7ed7:4e0TwrfEkah" resolve="run" />
-                  <ref role="1Pybhc" to="7ed7:1$LYeHxz7Lh" resolve="BasicProgramAnalysisGenImpl" />
+                  <ref role="1Pybhc" to="7ed7:1$LYeHxz7Lh" resolve="PrincipalsAnalysisGenImpl" />
                   <node concept="37vLTw" id="4e0TwrfGfZR" role="37wK5m">
                     <ref role="3cqZAo" node="6V4Y$98oDwu" resolve="m" />
                   </node>
@@ -4356,7 +4356,7 @@
     </node>
     <node concept="3Tm1VV" id="4e0TwrfE2Gj" role="1B3o_S" />
     <node concept="3uibUv" id="4e0TwrfE2I4" role="1zkMxy">
-      <ref role="3uigEE" to="7ed7:1$LYeHxz7Lh" resolve="BasicProgramAnalysisGenImpl" />
+      <ref role="3uigEE" to="7ed7:1$LYeHxz7Lh" resolve="PrincipalsAnalysisGenImpl" />
     </node>
     <node concept="2tJIrI" id="4e0TwrfEQxy" role="jymVt" />
   </node>

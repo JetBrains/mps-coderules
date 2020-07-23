@@ -25,6 +25,7 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.coderules.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -58,6 +59,10 @@
       </concept>
       <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
         <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
@@ -2344,7 +2349,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1$LYeHxz7Lh">
-    <property role="TrG5h" value="BasicProgramAnalysisGenImpl" />
+    <property role="TrG5h" value="PrincipalsAnalysisGenImpl" />
     <node concept="2tJIrI" id="4e0TwrfE5tN" role="jymVt" />
     <node concept="2tJIrI" id="1$LYeHxz86J" role="jymVt" />
     <node concept="2YIFZL" id="4e0TwrfEkah" role="jymVt">
@@ -2413,11 +2418,11 @@
           <node concept="3cpWsn" id="4e0TwrfE$Tw" role="3cpWs9">
             <property role="TrG5h" value="analysis" />
             <node concept="3uibUv" id="4e0TwrfE$Tx" role="1tU5fm">
-              <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="BasicProgramAnalysisGenImpl" />
+              <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="PrincipalsAnalysisGenImpl" />
             </node>
             <node concept="2ShNRf" id="4e0TwrfEyFh" role="33vP2m">
               <node concept="1pGfFk" id="4e0TwrfEzd8" role="2ShVmc">
-                <ref role="37wK5l" node="1$LYeHxz8Ll" resolve="BasicProgramAnalysisGenImpl" />
+                <ref role="37wK5l" node="1$LYeHxz8Ll" resolve="PrincipalsAnalysisGenImpl" />
               </node>
             </node>
           </node>
@@ -2449,7 +2454,7 @@
       </node>
       <node concept="3Tm1VV" id="4e0TwrfEgKo" role="1B3o_S" />
       <node concept="3uibUv" id="4e0TwrfEmS5" role="3clF45">
-        <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="BasicProgramAnalysisGenImpl" />
+        <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="PrincipalsAnalysisGenImpl" />
       </node>
     </node>
     <node concept="2tJIrI" id="4e0TwrfEndU" role="jymVt" />
@@ -2548,6 +2553,21 @@
         <node concept="3Tqbb2" id="19q1ULB0x3a" role="2hN53Y">
           <ref role="ehGHo" to="wq2x:36tQV5AmIsB" resolve="ConstraintRule" />
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5RMo22OI0Dc" role="jymVt" />
+    <node concept="3clFb_" id="5RMo22OIec$" role="jymVt">
+      <property role="TrG5h" value="ability" />
+      <node concept="3clFbS" id="5RMo22OIecB" role="3clF47">
+        <node concept="3clFbF" id="5RMo22OIje4" role="3cqZAp">
+          <node concept="37vLTw" id="5RMo22OIje3" role="3clFbG">
+            <ref role="3cqZAo" node="5RMo22OHLRf" resolve="enabled" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5RMo22OI9lA" role="1B3o_S" />
+      <node concept="3uibUv" id="5RMo22OIdBe" role="3clF45">
+        <ref role="3uigEE" to="av0y:~IncrementalSpec$Enabled" resolve="IncrementalSpec.Enabled" />
       </node>
     </node>
     <node concept="2tJIrI" id="1$LYeHx_Au9" role="jymVt" />
@@ -4037,6 +4057,32 @@
                       </node>
                       <node concept="3clFbJ" id="6u6$XO9gyKo" role="3cqZAp">
                         <node concept="3clFbS" id="6u6$XO9gyKq" role="3clFbx">
+                          <node concept="3clFbH" id="5RMo22OI0xf" role="3cqZAp" />
+                          <node concept="3clFbF" id="5RMo22OHVd9" role="3cqZAp">
+                            <node concept="37vLTI" id="5RMo22OHX2H" role="3clFbG">
+                              <node concept="2OqwBi" id="5RMo22OHYup" role="37vLTx">
+                                <node concept="2OqwBi" id="5RMo22OHXRe" role="2Oq$k0">
+                                  <node concept="Xjq3P" id="5RMo22OHXIz" role="2Oq$k0" />
+                                  <node concept="2OwXpG" id="5RMo22OHY2t" role="2OqNvi">
+                                    <ref role="2Oxat5" node="5RMo22OHLRf" resolve="enabled" />
+                                  </node>
+                                </node>
+                                <node concept="liA8E" id="5RMo22OHZv3" role="2OqNvi">
+                                  <ref role="37wK5l" to="av0y:~IncrementalSpec$Enabled.min(jetbrains.mps.logic.reactor.program.IncrementalSpec$Enabled)" resolve="min" />
+                                  <node concept="Rm8GO" id="4s_lMmGjOWO" role="37wK5m">
+                                    <ref role="Rm8GQ" to="av0y:~IncrementalSpec$Enabled.No" resolve="No" />
+                                    <ref role="1Px2BO" to="av0y:~IncrementalSpec$Enabled" resolve="IncrementalSpec.Enabled" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="2OqwBi" id="5RMo22OHVrP" role="37vLTJ">
+                                <node concept="Xjq3P" id="5RMo22OHVd7" role="2Oq$k0" />
+                                <node concept="2OwXpG" id="5RMo22OHVBk" role="2OqNvi">
+                                  <ref role="2Oxat5" node="5RMo22OHLRf" resolve="enabled" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node concept="3SKdUt" id="6u6$XO9hy7i" role="3cqZAp">
                             <node concept="1PaTwC" id="6u6$XO9hy7j" role="1aUNEU">
                               <node concept="3oM_SD" id="6u6$XO9hy7k" role="1PaTwD">
@@ -4515,6 +4561,17 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1$LYeHxz86X" role="jymVt" />
+    <node concept="312cEg" id="5RMo22OHLRf" role="jymVt">
+      <property role="TrG5h" value="enabled" />
+      <node concept="3Tm6S6" id="5RMo22OHH9k" role="1B3o_S" />
+      <node concept="3uibUv" id="5RMo22OHRju" role="1tU5fm">
+        <ref role="3uigEE" to="av0y:~IncrementalSpec$Enabled" resolve="IncrementalSpec.Enabled" />
+      </node>
+      <node concept="Rm8GO" id="5RMo22OHTbX" role="33vP2m">
+        <ref role="Rm8GQ" to="av0y:~IncrementalSpec$Enabled.Yes" resolve="Yes" />
+        <ref role="1Px2BO" to="av0y:~IncrementalSpec$Enabled" resolve="IncrementalSpec.Enabled" />
+      </node>
+    </node>
     <node concept="3Tm1VV" id="1$LYeHxz7Li" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1$LYeHx_ZGW">
@@ -4839,7 +4896,7 @@
       <node concept="37vLTG" id="6V4Y$98xcpL" role="3clF46">
         <property role="TrG5h" value="principals" />
         <node concept="3uibUv" id="6V4Y$98xcLm" role="1tU5fm">
-          <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="BasicProgramAnalysisGenImpl" />
+          <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="PrincipalsAnalysisGenImpl" />
         </node>
       </node>
       <node concept="37vLTG" id="2NnDL4G6giA" role="3clF46">
@@ -6289,7 +6346,7 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="6V4Y$98xcOH" role="1B3o_S" />
       <node concept="3uibUv" id="6V4Y$98xdS7" role="1tU5fm">
-        <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="BasicProgramAnalysisGenImpl" />
+        <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="PrincipalsAnalysisGenImpl" />
       </node>
     </node>
     <node concept="2tJIrI" id="7qe1GumO9gA" role="jymVt" />
@@ -6330,7 +6387,7 @@
       <node concept="37vLTG" id="2NnDL4G9Wv5" role="3clF46">
         <property role="TrG5h" value="principalsAnalysis" />
         <node concept="3uibUv" id="2NnDL4G9Wv6" role="1tU5fm">
-          <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="BasicProgramAnalysisGenImpl" />
+          <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="PrincipalsAnalysisGenImpl" />
         </node>
       </node>
     </node>
@@ -6745,7 +6802,7 @@
       <property role="TrG5h" value="principals" />
       <node concept="3Tm6S6" id="2NnDL4Ga3uQ" role="1B3o_S" />
       <node concept="3uibUv" id="2NnDL4Ga3uR" role="1tU5fm">
-        <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="BasicProgramAnalysisGenImpl" />
+        <ref role="3uigEE" node="1$LYeHxz7Lh" resolve="PrincipalsAnalysisGenImpl" />
       </node>
     </node>
     <node concept="3Tm1VV" id="2NnDL4G9WdL" role="1B3o_S" />
