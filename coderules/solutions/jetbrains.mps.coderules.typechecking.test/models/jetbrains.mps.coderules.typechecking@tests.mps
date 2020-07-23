@@ -1448,6 +1448,14 @@
                           <node concept="37vLTw" id="7eQMSyzaBa7" role="37wK5m">
                             <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
                           </node>
+                          <node concept="2OqwBi" id="5tAk4yVPvtF" role="37wK5m">
+                            <node concept="37vLTw" id="5tAk4yVPuSd" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="session" />
+                            </node>
+                            <node concept="liA8E" id="5tAk4yVPvXG" role="2OqNvi">
+                              <ref role="37wK5l" to="hano:2WtKs4tZfgb" resolve="programSpec" />
+                            </node>
+                          </node>
                           <node concept="37vLTw" id="3o9wrC3u6jn" role="37wK5m">
                             <ref role="3cqZAo" node="3o9wrC3tYXa" resolve="supervisor" />
                           </node>

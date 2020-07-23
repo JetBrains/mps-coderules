@@ -3312,33 +3312,58 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="5tAk4yVTBui" role="3cqZAp">
+            <node concept="3cpWsn" id="5tAk4yVTBuj" role="3cpWs9">
+              <property role="TrG5h" value="tcStep" />
+              <property role="3TUv4t" value="true" />
+              <node concept="3uibUv" id="5tAk4yVTBuk" role="1tU5fm">
+                <ref role="3uigEE" to="tj24:NKt6yn81z$" resolve="TypecheckingStep" />
+              </node>
+              <node concept="3K4zz7" id="7WKNeR8TcYc" role="33vP2m">
+                <node concept="37vLTw" id="7WKNeR8TcYd" role="3K4Cdx">
+                  <ref role="3cqZAo" node="6hqFpWnjd0A" resolve="trace" />
+                </node>
+                <node concept="2ShNRf" id="7WKNeR8TcYe" role="3K4GZi">
+                  <node concept="1pGfFk" id="7WKNeR8TcYf" role="2ShVmc">
+                    <ref role="37wK5l" to="tj24:3KN3A4vHiEF" resolve="TypecheckingStep" />
+                    <node concept="37vLTw" id="7WKNeR8TiOp" role="37wK5m">
+                      <ref role="3cqZAo" node="7WKNeR8SQxI" resolve="repository" />
+                    </node>
+                    <node concept="10Nm6u" id="5gVsyvFbxl6" role="37wK5m" />
+                  </node>
+                </node>
+                <node concept="2ShNRf" id="7WKNeR8TcYh" role="3K4E3e">
+                  <node concept="1pGfFk" id="7WKNeR8TcYi" role="2ShVmc">
+                    <ref role="37wK5l" node="55Q$YFtIVZ9" resolve="TypecheckingWithTraceStep" />
+                    <node concept="37vLTw" id="7WKNeR8Ti$q" role="37wK5m">
+                      <ref role="3cqZAo" node="6hqFpWnfwwm" resolve="editorComponent" />
+                    </node>
+                    <node concept="37vLTw" id="7WKNeR8TcYk" role="37wK5m">
+                      <ref role="3cqZAo" node="6hqFpWnfkNg" resolve="mpsProject" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="7WKNeR8TcY8" role="3cqZAp">
             <node concept="2OqwBi" id="7WKNeR8TcY9" role="3clFbG">
               <node concept="37vLTw" id="7WKNeR8TcYa" role="2Oq$k0">
                 <ref role="3cqZAo" node="7WKNeR8TcXs" resolve="steps" />
               </node>
               <node concept="TSZUe" id="7WKNeR8TcYb" role="2OqNvi">
-                <node concept="3K4zz7" id="7WKNeR8TcYc" role="25WWJ7">
-                  <node concept="37vLTw" id="7WKNeR8TcYd" role="3K4Cdx">
-                    <ref role="3cqZAo" node="6hqFpWnjd0A" resolve="trace" />
+                <node concept="2OqwBi" id="5tAk4yVTE76" role="25WWJ7">
+                  <node concept="37vLTw" id="5tAk4yVTD2S" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5tAk4yVTBuj" resolve="tcStep" />
                   </node>
-                  <node concept="2ShNRf" id="7WKNeR8TcYe" role="3K4GZi">
-                    <node concept="1pGfFk" id="7WKNeR8TcYf" role="2ShVmc">
-                      <ref role="37wK5l" to="tj24:3KN3A4vHiEF" resolve="TypecheckingStep" />
-                      <node concept="37vLTw" id="7WKNeR8TiOp" role="37wK5m">
-                        <ref role="3cqZAo" node="7WKNeR8SQxI" resolve="repository" />
+                  <node concept="liA8E" id="5tAk4yVTxg2" role="2OqNvi">
+                    <ref role="37wK5l" to="tj24:5tAk4yVSZ1V" resolve="withProgramSpec" />
+                    <node concept="2OqwBi" id="5tAk4yVTy59" role="37wK5m">
+                      <node concept="37vLTw" id="5tAk4yVTxAu" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6nFpYluoeMV" resolve="session" />
                       </node>
-                      <node concept="10Nm6u" id="5gVsyvFbxl6" role="37wK5m" />
-                    </node>
-                  </node>
-                  <node concept="2ShNRf" id="7WKNeR8TcYh" role="3K4E3e">
-                    <node concept="1pGfFk" id="7WKNeR8TcYi" role="2ShVmc">
-                      <ref role="37wK5l" node="55Q$YFtIVZ9" resolve="TypecheckingWithTraceStep" />
-                      <node concept="37vLTw" id="7WKNeR8Ti$q" role="37wK5m">
-                        <ref role="3cqZAo" node="6hqFpWnfwwm" resolve="editorComponent" />
-                      </node>
-                      <node concept="37vLTw" id="7WKNeR8TcYk" role="37wK5m">
-                        <ref role="3cqZAo" node="6hqFpWnfkNg" resolve="mpsProject" />
+                      <node concept="liA8E" id="5tAk4yVTyvs" role="2OqNvi">
+                        <ref role="37wK5l" to="hano:2WtKs4tZfgb" resolve="programSpec" />
                       </node>
                     </node>
                   </node>

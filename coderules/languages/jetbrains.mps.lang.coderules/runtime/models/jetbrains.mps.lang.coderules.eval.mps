@@ -529,6 +529,12 @@
           <ref role="3uigEE" node="3GlpCDSxTG7" resolve="ProgramProducer" />
         </node>
       </node>
+      <node concept="37vLTG" id="5tAk4yVOEzr" role="3clF46">
+        <property role="TrG5h" value="programSpec" />
+        <node concept="3uibUv" id="5tAk4yVOG6V" role="1tU5fm">
+          <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
+        </node>
+      </node>
       <node concept="37vLTG" id="3o9wrC3sOnz" role="3clF46">
         <property role="TrG5h" value="supervisor" />
         <node concept="3uibUv" id="3o9wrC3sPQg" role="1tU5fm">
@@ -784,13 +790,8 @@
               </node>
               <node concept="liA8E" id="7eQMSyza5cw" role="2OqNvi">
                 <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withIncrSpec(jetbrains.mps.logic.reactor.program.IncrementalProgramSpec)" resolve="withIncrSpec" />
-                <node concept="2OqwBi" id="7eQMSyza5vp" role="37wK5m">
-                  <node concept="37vLTw" id="7eQMSyza5fZ" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7lt0LtQtD2v" resolve="programProducer" />
-                  </node>
-                  <node concept="liA8E" id="7eQMSyza5DB" role="2OqNvi">
-                    <ref role="37wK5l" node="1H_6AUT8p2f" resolve="getProgramSpec" />
-                  </node>
+                <node concept="37vLTw" id="5tAk4yVOGST" role="37wK5m">
+                  <ref role="3cqZAo" node="5tAk4yVOEzr" resolve="programSpec" />
                 </node>
               </node>
             </node>
@@ -4306,26 +4307,6 @@
             <ref role="3cqZAo" node="1pPth$lE8Xs" resolve="program" />
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1H_6AUT8pE9" role="jymVt" />
-    <node concept="3clFb_" id="1H_6AUT8p2f" role="jymVt">
-      <property role="TrG5h" value="getProgramSpec" />
-      <node concept="3clFbS" id="1H_6AUT8p2i" role="3clF47">
-        <node concept="3clFbF" id="3L0F0kb7I5C" role="3cqZAp">
-          <node concept="2OqwBi" id="3L0F0kb7IfV" role="3clFbG">
-            <node concept="37vLTw" id="3L0F0kb7I5A" role="2Oq$k0">
-              <ref role="3cqZAo" node="7WKNeR9bpBf" resolve="ruleProcessingSession" />
-            </node>
-            <node concept="liA8E" id="3L0F0kb7LCU" role="2OqNvi">
-              <ref role="37wK5l" node="2WtKs4tZfgb" resolve="programSpec" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="1H_6AUT8oyw" role="1B3o_S" />
-      <node concept="3uibUv" id="1H_6AUT8p0g" role="3clF45">
-        <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
       </node>
     </node>
     <node concept="2tJIrI" id="6OXbTDxQQYI" role="jymVt" />

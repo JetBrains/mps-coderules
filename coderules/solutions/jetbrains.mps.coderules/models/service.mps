@@ -2315,7 +2315,28 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbH" id="7WKNeR9AmNV" role="3cqZAp" />
+                <node concept="3cpWs8" id="5tAk4yVP0GG" role="3cqZAp">
+                  <node concept="3cpWsn" id="5tAk4yVP0GH" role="3cpWs9">
+                    <property role="TrG5h" value="programSpec" />
+                    <property role="3TUv4t" value="true" />
+                    <node concept="3uibUv" id="5tAk4yVP0GI" role="1tU5fm">
+                      <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
+                    </node>
+                    <node concept="2OqwBi" id="5tAk4yVP3fT" role="33vP2m">
+                      <node concept="37vLTw" id="5tAk4yVP2gX" role="2Oq$k0">
+                        <ref role="3cqZAo" node="51ek2rQHHIn" resolve="inEff" />
+                      </node>
+                      <node concept="liA8E" id="5tAk4yVP3RE" role="2OqNvi">
+                        <ref role="37wK5l" node="2daneBOX8cN" resolve="getValue" />
+                        <node concept="10M0yZ" id="5tAk4yVP6pz" role="37wK5m">
+                          <ref role="3cqZAo" node="5tAk4yVOMI9" resolve="PROGRAM_SPEC" />
+                          <ref role="1PxDUh" node="RZQG98UNsT" resolve="ConfigureEvalStep" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbH" id="5tAk4yVPasS" role="3cqZAp" />
                 <node concept="3clFbF" id="Hg6Enc7CQd" role="3cqZAp">
                   <node concept="37vLTI" id="Hg6Enc7CQe" role="3clFbG">
                     <node concept="37vLTw" id="Hg6Enc7CQf" role="37vLTJ">
@@ -2338,6 +2359,9 @@
                             </node>
                             <node concept="37vLTw" id="7WKNeR9AoxM" role="37wK5m">
                               <ref role="3cqZAo" node="7WKNeR9AoxI" resolve="programProducer" />
+                            </node>
+                            <node concept="37vLTw" id="5tAk4yVP86g" role="37wK5m">
+                              <ref role="3cqZAo" node="5tAk4yVP0GH" resolve="programSpec" />
                             </node>
                             <node concept="37vLTw" id="5DfcI9UuzgE" role="37wK5m">
                               <ref role="3cqZAo" node="3o9wrC3tl4w" resolve="supervisor" />
@@ -7409,6 +7433,23 @@
         </node>
       </node>
     </node>
+    <node concept="Wx3nA" id="5tAk4yVOMI9" role="jymVt">
+      <property role="TrG5h" value="PROGRAM_SPEC" />
+      <node concept="3Tm1VV" id="5tAk4yVOMIa" role="1B3o_S" />
+      <node concept="3uibUv" id="5tAk4yVOMIb" role="1tU5fm">
+        <ref role="3uigEE" node="2daneBOX7Tv" resolve="Effect.ValueKey" />
+        <node concept="3uibUv" id="5tAk4yVOOip" role="11_B2D">
+          <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
+        </node>
+      </node>
+      <node concept="2YIFZM" id="5tAk4yVOMId" role="33vP2m">
+        <ref role="1Pybhc" node="2daneBOWXQd" resolve="Effect" />
+        <ref role="37wK5l" node="6BMBBPD1Gnj" resolve="valueKey" />
+        <node concept="3VsKOn" id="5tAk4yVOO2l" role="37wK5m">
+          <ref role="3VsUkX" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="2j1FRbwZcsx" role="jymVt" />
     <node concept="3clFbW" id="RZQG98V8sL" role="jymVt">
       <node concept="3cqZAl" id="RZQG98V8sN" role="3clF45" />
@@ -7458,21 +7499,48 @@
             <node concept="1bVj0M" id="51ek2rQGYnn" role="37wK5m">
               <node concept="3clFbS" id="51ek2rQGYno" role="1bW5cS">
                 <node concept="3clFbF" id="q1hCixUuxf" role="3cqZAp">
-                  <node concept="2YIFZM" id="q1hCixUuxh" role="3clFbG">
-                    <ref role="37wK5l" node="6BMBBPCQBuH" resolve="of" />
-                    <ref role="1Pybhc" node="2daneBOWXQd" resolve="Effect" />
-                    <node concept="Xl_RD" id="q1hCixUuxi" role="37wK5m">
-                      <property role="Xl_RC" value="configuring" />
-                    </node>
-                    <node concept="2OqwBi" id="q1hCixUuxj" role="37wK5m">
-                      <node concept="37vLTw" id="q1hCixUuxw" role="2Oq$k0">
-                        <ref role="3cqZAo" node="RZQG98Ve3Q" resolve="TRACE" />
+                  <node concept="2OqwBi" id="5tAk4yVORJZ" role="3clFbG">
+                    <node concept="2YIFZM" id="q1hCixUuxh" role="2Oq$k0">
+                      <ref role="37wK5l" node="6BMBBPCQBuH" resolve="of" />
+                      <ref role="1Pybhc" node="2daneBOWXQd" resolve="Effect" />
+                      <node concept="Xl_RD" id="q1hCixUuxi" role="37wK5m">
+                        <property role="Xl_RC" value="configuring" />
                       </node>
-                      <node concept="liA8E" id="q1hCixUuxk" role="2OqNvi">
-                        <ref role="37wK5l" node="6BMBBPCRIcz" resolve="is" />
-                        <node concept="10M0yZ" id="q1hCixUuxl" role="37wK5m">
-                          <ref role="3cqZAo" to="hano:24Vro6cS5rK" resolve="NULL" />
-                          <ref role="1PxDUh" to="hano:qubcdtxBiR" resolve="EvaluationTraceExt" />
+                      <node concept="2OqwBi" id="q1hCixUuxj" role="37wK5m">
+                        <node concept="37vLTw" id="q1hCixUuxw" role="2Oq$k0">
+                          <ref role="3cqZAo" node="RZQG98Ve3Q" resolve="TRACE" />
+                        </node>
+                        <node concept="liA8E" id="q1hCixUuxk" role="2OqNvi">
+                          <ref role="37wK5l" node="6BMBBPCRIcz" resolve="is" />
+                          <node concept="10M0yZ" id="q1hCixUuxl" role="37wK5m">
+                            <ref role="3cqZAo" to="hano:24Vro6cS5rK" resolve="NULL" />
+                            <ref role="1PxDUh" to="hano:qubcdtxBiR" resolve="EvaluationTraceExt" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="5tAk4yVOSrN" role="2OqNvi">
+                      <ref role="37wK5l" node="51ek2rQD9Pw" resolve="compose" />
+                      <node concept="1bVj0M" id="5tAk4yVOT5b" role="37wK5m">
+                        <node concept="3clFbS" id="5tAk4yVOT5c" role="1bW5cS">
+                          <node concept="3clFbF" id="5tAk4yVOTqE" role="3cqZAp">
+                            <node concept="2YIFZM" id="5tAk4yVOTYi" role="3clFbG">
+                              <ref role="37wK5l" node="6BMBBPCUL2C" resolve="of" />
+                              <ref role="1Pybhc" node="2daneBOWXQd" resolve="Effect" />
+                              <node concept="2OqwBi" id="5tAk4yVOV2A" role="37wK5m">
+                                <node concept="37vLTw" id="5tAk4yVOUlf" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="5tAk4yVOMI9" resolve="PROGRAM_SPEC" />
+                                </node>
+                                <node concept="liA8E" id="5tAk4yVOVpe" role="2OqNvi">
+                                  <ref role="37wK5l" node="6BMBBPCRIcz" resolve="is" />
+                                  <node concept="10M0yZ" id="5tAk4yVOWRB" role="37wK5m">
+                                    <ref role="3cqZAo" to="av0y:~IncrementalProgramSpec.DefaultSpec" resolve="DefaultSpec" />
+                                    <ref role="1PxDUh" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
