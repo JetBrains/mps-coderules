@@ -14,27 +14,27 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.logic.reactor.core.allHeads
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
-import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
+import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.program.Rule
 
 class MockIncrProgSpec(
     val principalRuleTags: Set<Any>,
     val principalCtrSyms: Set<ConstraintSymbol>,
     val weakPrincipalRuleTags: Set<Any>,
-    private var checkContracts: Boolean = false
-) : IncrementalProgramSpec {
+    private var strictness: IncrementalSpec.AssertLevel = IncrementalSpec.AssertLevel.Normal
+) : IncrementalSpec {
 
     constructor(principalRuleTags: Set<Any>, principalCtrSyms: Set<ConstraintSymbol>) :
         this(principalRuleTags, principalCtrSyms, emptySet())
 
-    fun withContractChecks() = this.also { checkContracts = true }
+    fun withContractChecks() = this.also { strictness = IncrementalSpec.AssertLevel.AssertContracts }
 
     override fun isPrincipal(ctr: Constraint): Boolean = principalCtrSyms.contains(ctr.symbol())
     override fun isPrincipal(rule: Rule): Boolean = principalRuleTags.contains(rule.uniqueTag())
     override fun isWeakPrincipal(rule: Rule): Boolean = weakPrincipalRuleTags.contains(rule.uniqueTag())
 
-    override fun assertContracts(): Boolean = checkContracts
+    override fun ability(): IncrementalSpec.Enabled = IncrementalSpec.Enabled.Yes
+    override fun assertLevel(): IncrementalSpec.AssertLevel = strictness
 }

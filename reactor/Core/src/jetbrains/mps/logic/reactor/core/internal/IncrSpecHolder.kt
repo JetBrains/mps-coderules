@@ -19,11 +19,11 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.program.IncrementalContractViolationException
-import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
+import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.program.Rule
 
 interface IncrSpecHolder {
-    val ispec: IncrementalProgramSpec
+    val ispec: IncrementalSpec
 
     val Occurrence.isPrincipal get() = ispec.isPrincipal(this.constraint())
 
@@ -47,5 +47,5 @@ inline fun IncrSpecHolder.assertContract(lazyValue: () -> Boolean) {
     assertContract(lazyValue) { "Contract assertion failed" }
 }
 inline fun IncrSpecHolder.assertContract(lazyValue: () -> Boolean, noinline lazyMsg: () -> String) {
-    if (ispec.assertContracts()) checkContract(lazyValue(), lazyMsg)
+    if (ispec.assertLevel().assertContracts()) checkContract(lazyValue(), lazyMsg)
 }

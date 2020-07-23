@@ -18,7 +18,7 @@ package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
-import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
+import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
@@ -43,7 +43,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                                      journal: MatchJournalImpl,
                                      private val ruleIndex: RuleIndex,
                                      val logicalState: LogicalState,
-                                     override val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
+                                     override val ispec: IncrementalSpec = IncrementalSpec.DefaultSpec,
                                      val trace: EvaluationTrace = EvaluationTrace.NULL,
                                      val profiler: Profiler? = null)
     : StoreAwareJournalImpl(journal, logicalState), IncrSpecHolder
@@ -222,7 +222,9 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             logActivation(active)
             active.revive(logicalState)
 
-            if (ispec.assertContracts()) active.addContractObservers(logicalState)
+            if (ispec.assertLevel().assertContracts()) {
+                active.addContractObservers(logicalState)
+            }
         }
         assert(active.alive)
 

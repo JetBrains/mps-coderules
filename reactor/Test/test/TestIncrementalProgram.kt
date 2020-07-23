@@ -1,4 +1,4 @@
-import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
+import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.ReactorLifecycle
 import jetbrains.mps.logic.reactor.core.RulesDiff
@@ -51,7 +51,7 @@ class TestIncrementalProgram {
         }
     }
 
-    private fun Builder.launch(name: String, incrSpec: IncrementalProgramSpec, resultHandler: (EvaluationResult) -> Unit)
+    private fun Builder.launch(name: String, incrSpec: IncrementalSpec, resultHandler: (EvaluationResult) -> Unit)
         : Pair<Builder, EvaluationResult>
     {
         val result = EvaluationSession.newSession(program(name))
@@ -63,7 +63,7 @@ class TestIncrementalProgram {
         return this to result
     }
 
-    private fun Builder.relaunch(name: String, incrSpec: IncrementalProgramSpec, sessionToken: SessionToken, resultHandler: (EvaluationResult) -> Unit )
+    private fun Builder.relaunch(name: String, incrSpec: IncrementalSpec, sessionToken: SessionToken, resultHandler: (EvaluationResult) -> Unit )
         : Pair<Builder, EvaluationResult>
     {
         val prog = program(name).withRulesDiff(

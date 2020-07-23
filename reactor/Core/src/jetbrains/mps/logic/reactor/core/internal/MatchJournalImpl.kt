@@ -30,7 +30,7 @@ import java.util.*
 
 
 internal open class MatchJournalImpl(
-    override val ispec: IncrementalProgramSpec,
+    override val ispec: IncrementalSpec,
     view: MatchJournal.View? = null
 ) : MatchJournal, IncrSpecHolder {
 
@@ -87,7 +87,7 @@ internal open class MatchJournalImpl(
         ancestorChunksStack = mutableListOf(initialChunk())
     }
 
-    constructor(view: MatchJournal.View? = null) : this(IncrementalProgramSpec.DefaultSpec, view)
+    constructor(view: MatchJournal.View? = null) : this(IncrementalSpec.DefaultSpec, view)
 
 
     // pointer to current position in history where logging (chunk additions) and log erasing (chunk removals) happens

@@ -23,7 +23,7 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
-import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
+import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
@@ -31,7 +31,7 @@ import jetbrains.mps.logic.reactor.util.profile
 internal class ControllerImpl (
     val supervisor: Supervisor,
     val processing: ConstraintsProcessing,
-    override val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
+    override val ispec: IncrementalSpec = IncrementalSpec.DefaultSpec,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
     val profiler: Profiler? = null) : Controller, IncrSpecHolder
 {
@@ -369,11 +369,11 @@ fun createController(
             MatchJournalImpl(),
             ruleIndex,
             logicalState,
-            IncrementalProgramSpec.DefaultSpec,
+            IncrementalSpec.DefaultSpec,
             trace,
             profiler
         ),
-        IncrementalProgramSpec.DefaultSpec,
+        IncrementalSpec.DefaultSpec,
         trace,
         profiler
     )

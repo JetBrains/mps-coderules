@@ -17,7 +17,7 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.LogicalStateObservable
-import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
+import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import java.lang.IllegalArgumentException
 
 
@@ -34,7 +34,7 @@ interface StoreAwareJournal : MatchJournal, LogicalStateObservable {
     // for tests
     companion object {
         fun fromView(
-            ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
+            ispec: IncrementalSpec = IncrementalSpec.DefaultSpec,
             view: MatchJournal.View? = null
         ): StoreAwareJournal = StoreAwareJournalImpl(MatchJournalImpl(ispec, view))
     }

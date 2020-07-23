@@ -2,7 +2,7 @@ import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.*
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
-import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
+import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.program.Rule
 import org.junit.Test
 import org.junit.Assert.*
@@ -27,14 +27,15 @@ import org.junit.Ignore
 
 class TestStoreAwareJournal {
 
-    private object LegacyMockIncrProgSpec : IncrementalProgramSpec.NonIncrSpec() {
+    private object LegacyMockIncrProgSpec : IncrementalSpec.StubSpec() {
         override fun isPrincipal(ctr: Constraint): Boolean = ctr.isPrincipal
         override fun isPrincipal(rule: Rule): Boolean = rule.all().any { it is Constraint && it.isPrincipal }
+        override fun ability(): IncrementalSpec.Enabled = IncrementalSpec.Enabled.Yes
     }
 
     private class JournalDispatcherHelper(
         dispatcher: Dispatcher,
-        ispec: IncrementalProgramSpec = LegacyMockIncrProgSpec,
+        ispec: IncrementalSpec = LegacyMockIncrProgSpec,
         val hist: StoreAwareJournal = StoreAwareJournal.fromView(ispec)
     ) {
         var d: Dispatcher.DispatchingFront = dispatcher.front()
