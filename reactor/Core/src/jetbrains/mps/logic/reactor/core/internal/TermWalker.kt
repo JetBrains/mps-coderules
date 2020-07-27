@@ -30,7 +30,14 @@ class TermWalker(vararg visitors: TermVisitor<out Term>) {
 
         @Throws(Exception::class)
         abstract fun visit(t: T): MutableCollection<out Term>
+//        abstract fun visit(t: T): Collection<Term>
+    }
 
+    class SimpleVisitor<T : Term?>(
+        kind: Term.Kind,
+        private inline val f: (T) -> MutableCollection<out Term>
+    ) : TermVisitor<T>(kind) {
+        override fun visit(t: T) = f(t)
     }
 
     private val visitorMap: MutableMap<Term.Kind, TermVisitor<out Term>> = EnumMap(Term.Kind::class.java)
@@ -74,4 +81,30 @@ class TermWalker(vararg visitors: TermVisitor<out Term>) {
     companion object {
         private val SINGLETON = Any()
     }
+}
+
+internal fun Term.unboundLogicals(): Collection<Logical<*>> = logicalsWhere { !it.isBound }
+
+internal inline fun Term.logicalsWhere(crossinline where: (Logical<*>) -> Boolean): Collection<Logical<*>> {
+    val collected = arrayListOf<Logical<*>>()
+
+    TermWalker(
+        TermWalker.SimpleVisitor<Term>(Term.Kind.FUN) { t ->
+            t.arguments()
+        },
+        TermWalker.SimpleVisitor<Term>(Term.Kind.REF) { ref ->
+            if (ref.get() !== ref) {
+                Collections.singletonList(ref.get())
+            }
+            Collections.emptyList()
+        },
+        TermWalker.SimpleVisitor<Term>(Term.Kind.VAR) { v ->
+            if (v is LogicalOwner && where(v.logical())) {
+                collected.add(v.logical())
+            }
+            Collections.emptyList()
+        }
+    ).walk(this)
+
+    return collected
 }

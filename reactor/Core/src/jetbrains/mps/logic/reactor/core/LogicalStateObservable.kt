@@ -27,6 +27,9 @@ interface LogicalStateObservable {
     fun addForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver)
 
     fun removeForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver)
+        = removeForwardingObserversWhere(logical, observer::equals)
+
+    fun removeForwardingObserversWhere(logical: Logical<*>, where: (ForwardingLogicalObserver) -> Boolean)
 
 }
 

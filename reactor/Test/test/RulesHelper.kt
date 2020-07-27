@@ -230,6 +230,9 @@ class MockController : Controller {
 
         override fun removeForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
         }
+
+        override fun removeForwardingObserversWhere(logical: Logical<*>, where: (ForwardingLogicalObserver) -> Boolean) {
+        }
     }
 
     override fun storeView(): StoreView {

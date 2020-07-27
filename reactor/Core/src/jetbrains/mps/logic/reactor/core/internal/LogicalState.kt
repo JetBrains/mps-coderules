@@ -105,6 +105,13 @@ class LogicalState : LogicalStateObservable, LogicalObserver
         }
     }
 
+    override fun removeForwardingObserversWhere(logical: Logical<*>, where: (ForwardingLogicalObserver) -> Boolean) {
+        currentFrame().removeForwardingObserversWhere(logical, where)
+        if (!currentFrame().isObserving(logical)) {
+            logical.removeObserver(this)
+        }
+    }
+
     override fun valueUpdated(logical: Logical<*>) {
         // forward to the top frame with added transient state (Controller)
         currentFrame().valueUpdated(logical, controller!!)
@@ -159,6 +166,13 @@ class LogicalStateFrame : LogicalStateObservable, ForwardingLogicalObserver
 //        }
         observers[logical]?.apply {
             removeAll(singleton(observer))
+            if (isEmpty()) observers.remove(logical)
+        }
+    }
+
+    override fun removeForwardingObserversWhere(logical: Logical<*>, where: (ForwardingLogicalObserver) -> Boolean) {
+        observers[logical]?.apply {
+            removeIf(where)
             if (isEmpty()) observers.remove(logical)
         }
     }

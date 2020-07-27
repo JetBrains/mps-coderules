@@ -20,12 +20,13 @@ import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
-import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
+import kotlin.collections.ArrayList
+import kotlin.collections.HashSet
 
 
 /**
@@ -51,6 +52,9 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
     private val journalIndex: MatchJournal.Index = journal.index()
 
     private val activationQueue: ContinuedActivationQueue = ContinuedActivationQueue(journalIndex, RuleOrdering(ruleIndex))
+
+    private val occurrenceContractObserver: OccurrenceContractObserver? =
+        if (ispec.assertLevel().assertContracts()) OccurrenceContractObserver(logicalState, ispec) else null
 
     private val invalidFeedbackKeys: MutableSet<Any> = mutableSetOf<Any>()
 
@@ -110,6 +114,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
     private fun invalidateChunk(chunk: MatchJournal.Chunk, invalidJustifications: Collection<Justified>): Iterable<Occurrence> {
         // 'Undo' all activated in this chunk occurrences
+        // todo: need clearing observers in logicalState for occurrences we drop?
         chunk.activatedLog().forEach {
             dispatchingFront = dispatchingFront.forget(it)
         }
@@ -222,9 +227,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             logActivation(active)
             active.revive(logicalState)
 
-            if (ispec.assertLevel().assertContracts()) {
-                active.addContractObservers(logicalState)
-            }
+            occurrenceContractObserver?.onActivated(active)
         }
         assert(active.alive)
 
@@ -338,6 +341,8 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
                     occ.terminate(logicalState)
 
+                    occurrenceContractObserver?.onDiscarded(occ)
+
                 }
 
                 trace.discard(occ)
@@ -376,32 +381,6 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                 evidence, justifications, ruleUniqueTag
             )
         }
-    }
-
-
-    private fun Occurrence.addContractObservers(observable: LogicalStateObservable) {
-        if (this.isPrincipal) {
-            UnmodifiableLogicalObserver(this, observable)
-        }
-    }
-
-    internal class UnmodifiableLogicalObserver(val source: Occurrence, observable: LogicalStateObservable): ForwardingLogicalObserver {
-        init {
-            for (a in HashSet(source.arguments)) { // avoid duplicate subscriptions
-                if (a is Logical<*>) {
-                    observable.addForwardingObserver(a, this)
-                }
-            }
-        }
-
-        override fun valueUpdated(logical: Logical<*>, controller: Controller) = doCheckContract(logical, controller)
-
-        override fun parentUpdated(logical: Logical<*>, controller: Controller) = doCheckContract(logical, controller)
-
-        private fun doCheckContract(logical: Logical<*>, controller: Controller) =
-            checkContract(false) {
-                "$logical can't be unified because it's used in principal occurrence $source"
-            }
     }
 
     private fun MatchJournal.MatchChunk.dependsOnAny(utags: Iterable<Any>): Boolean =
