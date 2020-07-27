@@ -16,6 +16,7 @@
 
 package jetbrains.mps.unification.test;
 
+import jetbrains.mps.logic.reactor.core.internal.TermWalker;
 import jetbrains.mps.unification.Term;
 import static org.junit.Assert.*;
 
@@ -32,40 +33,40 @@ public class AssertStructurallyEquivalent {
         signature.setWalkers(
                 // first pass
                 new TermWalker(
-                    new TermVisitor<Term>(Term.Kind.FUN) {
+                    new TermWalker.TermVisitor<Term>(Term.Kind.FUN) {
                         @Override
                         public Collection<? extends Term> visit(Term term) throws Exception {
                             signature.label(term);
                             return term.arguments();
                         }
-                    }
-                        ,
-                new TermVisitor<Term>(Term.Kind.REF) {
-                    @Override
-                    public Collection<? extends Term> visit(Term ref) throws Exception {
-                        if (ref.get().is(Term.Kind.FUN)) {
-                            return Collections.singletonList(ref.get());
+                    },
+                    new TermWalker.TermVisitor<Term>(Term.Kind.REF) {
+                        @Override
+                        public Collection<? extends Term> visit(Term ref) throws Exception {
+                            if (ref.get().is(Term.Kind.FUN)) {
+                                return Collections.singletonList(ref.get());
+                            }
+                            return Collections.emptyList();
                         }
-                        return Collections.emptyList();
                     }
-                }
                 ),
                 // second pass
                 new TermWalker(
-                    new TermVisitor<Term>(Term.Kind.FUN) {
+                    new TermWalker.TermVisitor<Term>(Term.Kind.FUN) {
                         @Override
                         public Collection<? extends Term> visit(Term term) throws Exception {
                             signature.appendSignature("@").append(signature.getLabel(term)).append(term.symbol());
                             return term.arguments();
                         }
                     },
-                    new TermVisitor<Term>(Term.Kind.VAR) {
+                    new TermWalker.TermVisitor<Term>(Term.Kind.VAR) {
                         @Override
                         public Collection<? extends Term> visit(Term var) throws Exception {
                             signature.appendSignature("$").append(var.symbol());
                             return Collections.emptyList();
                         }
-                    }, new TermVisitor<Term>(Term.Kind.REF) {
+                    },
+                    new TermWalker.TermVisitor<Term>(Term.Kind.REF) {
                         @Override
                         public Collection<? extends Term> visit(Term ref) throws Exception {
                             if (ref.get().is(Term.Kind.FUN)) {
@@ -137,65 +138,6 @@ public class AssertStructurallyEquivalent {
         protected void setWalkers(TermWalker... walkers) {
             this.walkers = walkers;
         }
-    }
-
-    private static abstract class TermVisitor<T extends Term> {
-
-        private Term.Kind kind;
-
-        public TermVisitor(Term.Kind kind) {
-            this.kind = kind;
-        }
-
-        public Term.Kind applicableTo() {
-            return kind;
-        }
-
-
-
-        public abstract Collection<? extends Term> visit(T t) throws Exception ;
-
-    }
-
-    private static class TermWalker {
-
-        private static Object SINGLETON = new Object();
-
-        private Map<Term.Kind, TermVisitor<? extends Term>> visitorMap = new HashMap<Term.Kind, TermVisitor<? extends Term>>();
-
-        public TermWalker(TermVisitor<? extends Term>... visitors) {
-            for (TermVisitor<? extends Term> visitor : visitors) {
-                visitorMap.put(visitor.applicableTo(), visitor);
-            }
-        }
-
-        public void walk(Term term) throws Exception {
-            walk(term, new IdentityHashMap<Term, Object>());
-        }
-
-        private void walk(Term term, Map<Term, Object> visited) throws Exception {
-            if (term.is(Term.Kind.FUN)) {
-                visited.put(term, SINGLETON);
-            }
-            Collection<? extends Term> arguments = switchClass(term);
-            for (Term arg : arguments) {
-                if (visited.containsKey(arg)) {
-                    continue;
-                }
-                walk(arg, visited);
-            }
-        }
-
-        private Collection<? extends Term> switchClass(Term term) throws Exception {
-            for (Map.Entry<Term.Kind, TermVisitor<? extends Term>> e : visitorMap.entrySet()) {
-                if (term.is(e.getKey())) {
-                    TermVisitor<Term> value = (TermVisitor<Term>) e.getValue();
-                    return value.visit(term);
-                }
-            }
-            return Collections.emptyList();
-        }
-
     }
 
 }
