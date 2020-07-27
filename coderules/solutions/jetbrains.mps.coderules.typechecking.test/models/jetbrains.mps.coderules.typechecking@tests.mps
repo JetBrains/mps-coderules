@@ -531,11 +531,11 @@
                 <node concept="3cpWsn" id="6QH_LDtdTgs" role="3cpWs9">
                   <property role="TrG5h" value="tc" />
                   <node concept="3uibUv" id="6QH_LDtdTgp" role="1tU5fm">
-                    <ref role="3uigEE" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingCache" />
+                    <ref role="3uigEE" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingState" />
                   </node>
                   <node concept="2YIFZM" id="6$gg4k_t5t5" role="33vP2m">
                     <ref role="37wK5l" to="tj24:4Z$O9mrQIG1" resolve="get" />
-                    <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingCache" />
+                    <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingState" />
                     <node concept="37vLTw" id="14$_tTxzVwH" role="37wK5m">
                       <ref role="3cqZAo" node="14$_tTxzTDw" resolve="modelRepo" />
                     </node>
@@ -546,14 +546,14 @@
                 <node concept="3cpWsn" id="6QH_LDtdVHk" role="3cpWs9">
                   <property role="TrG5h" value="typesCache" />
                   <node concept="3uibUv" id="1FOQehxeuXN" role="1tU5fm">
-                    <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypesIndex" />
+                    <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypecheckingResultsCache" />
                   </node>
                   <node concept="2OqwBi" id="6QH_LDtdVHl" role="33vP2m">
                     <node concept="37vLTw" id="6QH_LDtdVHm" role="2Oq$k0">
                       <ref role="3cqZAo" node="6QH_LDtdTgs" resolve="tc" />
                     </node>
                     <node concept="liA8E" id="6QH_LDtdVHn" role="2OqNvi">
-                      <ref role="37wK5l" to="tj24:4Z$O9mrQJgp" resolve="cachedTypesIndex" />
+                      <ref role="37wK5l" to="tj24:4Z$O9mrQJgp" resolve="cachedTypecheckingResults" />
                       <node concept="2OqwBi" id="443LGHB5OH6" role="37wK5m">
                         <node concept="2JrnkZ" id="443LGHB5Olz" role="2Oq$k0">
                           <node concept="37vLTw" id="7mB3viLe3ou" role="2JrQYb">
@@ -580,14 +580,14 @@
                     <node concept="3cpWsn" id="6QH_LDtdXLK" role="3cpWs9">
                       <property role="TrG5h" value="typesIndex2" />
                       <node concept="3uibUv" id="1FOQehxevl5" role="1tU5fm">
-                        <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypesIndex" />
+                        <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypecheckingResultsCache" />
                       </node>
                       <node concept="2OqwBi" id="6QH_LDtdXLL" role="33vP2m">
                         <node concept="37vLTw" id="6QH_LDtdXLM" role="2Oq$k0">
                           <ref role="3cqZAo" node="6QH_LDtdTgs" resolve="tc" />
                         </node>
                         <node concept="liA8E" id="6QH_LDtdXLN" role="2OqNvi">
-                          <ref role="37wK5l" to="tj24:44XN1Jd1wRa" resolve="updateCachedTypesIndex" />
+                          <ref role="37wK5l" to="tj24:44XN1Jd1wRa" resolve="updateTypecheckingResults" />
                           <node concept="2OqwBi" id="4vBwiiVtLmA" role="37wK5m">
                             <node concept="2JrnkZ" id="4vBwiiVtKYf" role="2Oq$k0">
                               <node concept="37vLTw" id="7mB3viLe3zX" role="2JrQYb">
@@ -701,7 +701,7 @@
                                       <node concept="37vLTG" id="6$gg4kB7Byp" role="1bW2Oz">
                                         <property role="TrG5h" value="index" />
                                         <node concept="3uibUv" id="6$gg4kB7D7T" role="1tU5fm">
-                                          <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypesIndex" />
+                                          <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypecheckingResultsCache" />
                                         </node>
                                       </node>
                                     </node>
@@ -713,7 +713,7 @@
                             <node concept="37vLTG" id="44XN1Jd6FWm" role="1bW2Oz">
                               <property role="TrG5h" value="updatable" />
                               <node concept="3uibUv" id="44XN1Jd6G8I" role="1tU5fm">
-                                <ref role="3uigEE" to="tj24:4Dkptq1Qcxp" resolve="TypecheckingCache.TypeIndexUpdatable" />
+                                <ref role="3uigEE" to="tj24:4Dkptq1Qcxp" resolve="TypecheckingState.TypecheckingResultsUpdatable" />
                               </node>
                             </node>
                           </node>
@@ -732,14 +732,14 @@
                     <node concept="3cpWsn" id="6QH_LDtdZNu" role="3cpWs9">
                       <property role="TrG5h" value="typesIndex3" />
                       <node concept="3uibUv" id="1FOQehxesGr" role="1tU5fm">
-                        <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypesIndex" />
+                        <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypecheckingResultsCache" />
                       </node>
                       <node concept="2OqwBi" id="6QH_LDtdZNv" role="33vP2m">
                         <node concept="37vLTw" id="6QH_LDtdZNw" role="2Oq$k0">
                           <ref role="3cqZAo" node="6QH_LDtdTgs" resolve="tc" />
                         </node>
                         <node concept="liA8E" id="6QH_LDtdZNx" role="2OqNvi">
-                          <ref role="37wK5l" to="tj24:4Z$O9mrQJgp" resolve="cachedTypesIndex" />
+                          <ref role="37wK5l" to="tj24:4Z$O9mrQJgp" resolve="cachedTypecheckingResults" />
                           <node concept="2OqwBi" id="4vBwiiVuDf_" role="37wK5m">
                             <node concept="2JrnkZ" id="4vBwiiVuDfA" role="2Oq$k0">
                               <node concept="37vLTw" id="7mB3viLezeb" role="2JrQYb">
@@ -771,7 +771,7 @@
                         <node concept="1eOMI4" id="443LGHByrov" role="2Oq$k0">
                           <node concept="10QFUN" id="443LGHByros" role="1eOMHV">
                             <node concept="3uibUv" id="443LGHByrB9" role="10QFUM">
-                              <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypesIndex" />
+                              <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypecheckingResultsCache" />
                             </node>
                             <node concept="37vLTw" id="443LGHByrox" role="10QFUP">
                               <ref role="3cqZAo" node="6QH_LDtdZNu" resolve="typesIndex3" />
@@ -814,7 +814,7 @@
                     <node concept="3clFbF" id="14$_tTxAMey" role="3cqZAp">
                       <node concept="2YIFZM" id="6$gg4k_t5t7" role="3clFbG">
                         <ref role="37wK5l" to="tj24:14$_tTxAmT8" resolve="clearAll" />
-                        <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingCache" />
+                        <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingState" />
                       </node>
                     </node>
                   </node>
@@ -1703,7 +1703,7 @@
                     <node concept="3clFbF" id="14$_tTxAR_w" role="3cqZAp">
                       <node concept="2YIFZM" id="6$gg4k_t5t8" role="3clFbG">
                         <ref role="37wK5l" to="tj24:14$_tTxAmT8" resolve="clearAll" />
-                        <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingCache" />
+                        <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingState" />
                       </node>
                     </node>
                   </node>
@@ -1910,7 +1910,7 @@
                     <node concept="3clFbF" id="14$_tTxAQ_B" role="3cqZAp">
                       <node concept="2YIFZM" id="6$gg4k_t5t9" role="3clFbG">
                         <ref role="37wK5l" to="tj24:14$_tTxAmT8" resolve="clearAll" />
-                        <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingCache" />
+                        <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingState" />
                       </node>
                     </node>
                   </node>
@@ -2166,7 +2166,7 @@
                     <node concept="3clFbF" id="3IIf9OA4zNv" role="3cqZAp">
                       <node concept="2YIFZM" id="6$gg4k_t5ta" role="3clFbG">
                         <ref role="37wK5l" to="tj24:14$_tTxAmT8" resolve="clearAll" />
-                        <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingCache" />
+                        <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingState" />
                       </node>
                     </node>
                   </node>
@@ -2275,7 +2275,7 @@
           <node concept="3cpWsn" id="27bTNFfbxlN" role="3cpWs9">
             <property role="TrG5h" value="checkTypes" />
             <node concept="3uibUv" id="27bTNFfbxlO" role="1tU5fm">
-              <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypesIndex" />
+              <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypecheckingResultsCache" />
             </node>
             <node concept="2OqwBi" id="27bTNFfbxlP" role="33vP2m">
               <node concept="2YIFZM" id="27bTNFfbxlQ" role="2Oq$k0">
@@ -2654,7 +2654,7 @@
               <node concept="3clFbF" id="3KwBCAABxsP" role="3cqZAp">
                 <node concept="2YIFZM" id="6$gg4k_t5tb" role="3clFbG">
                   <ref role="37wK5l" to="tj24:14$_tTxAmT8" resolve="clearAll" />
-                  <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingCache" />
+                  <ref role="1Pybhc" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingState" />
                 </node>
               </node>
             </node>
