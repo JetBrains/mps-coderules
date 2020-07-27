@@ -17608,6 +17608,77 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="scOg5xCZzD" role="jymVt" />
+      <node concept="3clFb_" id="scOg5xBW3c" role="jymVt">
+        <property role="TrG5h" value="reportWarning" />
+        <node concept="37vLTG" id="scOg5xCdpl" role="3clF46">
+          <property role="TrG5h" value="msg" />
+          <node concept="17QB3L" id="scOg5xCs7g" role="1tU5fm" />
+        </node>
+        <node concept="3clFbS" id="scOg5xBW3f" role="3clF47">
+          <node concept="3cpWs8" id="scOg5xBpbs" role="3cqZAp">
+            <node concept="3cpWsn" id="scOg5xBpbt" role="3cpWs9">
+              <property role="TrG5h" value="msgHandler" />
+              <node concept="3uibUv" id="scOg5xBpbu" role="1tU5fm">
+                <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
+              </node>
+              <node concept="2OqwBi" id="scOg5xBpHI" role="33vP2m">
+                <node concept="37vLTw" id="scOg5xBpHJ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="61G6TdCj0F7" resolve="typecheckingService" />
+                </node>
+                <node concept="liA8E" id="scOg5xBpHK" role="2OqNvi">
+                  <ref role="37wK5l" node="61G6TdCnD3l" resolve="getMessageHandler" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="scOg5xBBvI" role="3cqZAp">
+            <node concept="3clFbS" id="scOg5xBBvJ" role="3clFbx">
+              <node concept="3clFbF" id="scOg5xBBvK" role="3cqZAp">
+                <node concept="2OqwBi" id="scOg5xBBvL" role="3clFbG">
+                  <node concept="37vLTw" id="scOg5xC9fN" role="2Oq$k0">
+                    <ref role="3cqZAo" node="scOg5xBpbt" resolve="msgHandler" />
+                  </node>
+                  <node concept="liA8E" id="scOg5xBBvN" role="2OqNvi">
+                    <ref role="37wK5l" to="et5u:~IMessageHandler.handle(jetbrains.mps.messages.IMessage)" resolve="handle" />
+                    <node concept="2YIFZM" id="scOg5xBBvO" role="37wK5m">
+                      <ref role="37wK5l" to="et5u:~Message.createMessage(jetbrains.mps.messages.MessageKind,java.lang.String,java.lang.String,java.lang.Throwable)" resolve="createMessage" />
+                      <ref role="1Pybhc" to="et5u:~Message" resolve="Message" />
+                      <node concept="Rm8GO" id="scOg5xCJ15" role="37wK5m">
+                        <ref role="Rm8GQ" to="et5u:~MessageKind.WARNING" resolve="WARNING" />
+                        <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
+                      </node>
+                      <node concept="2OqwBi" id="scOg5xBNcN" role="37wK5m">
+                        <node concept="2OqwBi" id="scOg5xBLKM" role="2Oq$k0">
+                          <node concept="Xjq3P" id="scOg5xBLwt" role="2Oq$k0" />
+                          <node concept="liA8E" id="scOg5xBM1k" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~Object.getClass()" resolve="getClass" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="scOg5xBOvu" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~Class.getSimpleName()" resolve="getSimpleName" />
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="scOg5xCxMR" role="37wK5m">
+                        <ref role="3cqZAo" node="scOg5xCdpl" resolve="msg" />
+                      </node>
+                      <node concept="10Nm6u" id="scOg5xCr$V" role="37wK5m" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="scOg5xBBvV" role="3clFbw">
+              <node concept="10Nm6u" id="scOg5xBBvW" role="3uHU7w" />
+              <node concept="37vLTw" id="scOg5xC8RF" role="3uHU7B">
+                <ref role="3cqZAo" node="scOg5xBpbt" resolve="msgHandler" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tmbuc" id="scOg5xBTy1" role="1B3o_S" />
+        <node concept="3cqZAl" id="scOg5xC37E" role="3clF45" />
+      </node>
       <node concept="2tJIrI" id="2xx8OBygaaT" role="jymVt" />
       <node concept="312cEg" id="5Qx6_65qW78" role="jymVt">
         <property role="TrG5h" value="collectedReportItems" />
@@ -18376,7 +18447,6 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbH" id="5tAk4yW0AEx" role="3cqZAp" />
           <node concept="3cpWs8" id="6nFpYluDJTo" role="3cqZAp">
             <node concept="3cpWsn" id="6nFpYluDJTp" role="3cpWs9">
               <property role="TrG5h" value="cachedSessionData" />
@@ -18439,6 +18509,34 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbH" id="scOg5xBngm" role="3cqZAp" />
+          <node concept="3clFbJ" id="scOg5xDdN2" role="3cqZAp">
+            <node concept="3clFbS" id="scOg5xDdN4" role="3clFbx">
+              <node concept="3clFbF" id="scOg5xDiix" role="3cqZAp">
+                <node concept="1rXfSq" id="scOg5xDiiv" role="3clFbG">
+                  <ref role="37wK5l" node="scOg5xBW3c" resolve="reportWarning" />
+                  <node concept="Xl_RD" id="scOg5xDiJI" role="37wK5m">
+                    <property role="Xl_RC" value="Incremental processing is requested, but program can't be executed incrementally!" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="scOg5xDhQA" role="3clFbw">
+              <node concept="2OqwBi" id="scOg5xDhQC" role="3fr31v">
+                <node concept="2OqwBi" id="scOg5xDhQD" role="2Oq$k0">
+                  <node concept="37vLTw" id="scOg5xDhQE" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5tAk4yVTd8M" resolve="incrProgSpec" />
+                  </node>
+                  <node concept="liA8E" id="scOg5xDhQF" role="2OqNvi">
+                    <ref role="37wK5l" to="av0y:~IncrementalSpec.ability()" resolve="ability" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="scOg5xDhQG" role="2OqNvi">
+                  <ref role="37wK5l" to="av0y:~IncrementalSpec$Enabled.allowed()" resolve="allowed" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbH" id="5tAk4yW0AV3" role="3cqZAp" />
           <node concept="3clFbF" id="7i3KM7gOQTj" role="3cqZAp">
             <node concept="2OqwBi" id="5tAk4yVTodK" role="3clFbG">
@@ -18481,7 +18579,7 @@
         </node>
         <node concept="3Tmbuc" id="5Qx6_65qTjx" role="1B3o_S" />
       </node>
-      <node concept="2tJIrI" id="5Qx6_65s5ZB" role="jymVt" />
+      <node concept="2tJIrI" id="scOg5xBOQ4" role="jymVt" />
       <node concept="3clFb_" id="5Qx6_65s9rp" role="jymVt">
         <property role="TrG5h" value="processEffect" />
         <node concept="37vLTG" id="5Qx6_65s9rq" role="3clF46">
