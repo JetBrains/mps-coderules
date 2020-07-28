@@ -2424,6 +2424,11 @@
             <ref role="3bR37D" node="7BVjoXzUxkQ" resolve="jetbrains.mps.logic" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5HVB6JRnetC" role="3bR37C">
+          <node concept="3bR9La" id="5HVB6JRnetD" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6KZG" resolve="jetbrains.mps.baseLanguage.closures" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="7BVjoXzUx9d" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -2517,6 +2522,11 @@
             <node concept="3qWCbU" id="7zIaasjWoUg" role="3LXTna">
               <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
             </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5HVB6JRneu0" role="3bR37C">
+          <node concept="3bR9La" id="5HVB6JRneu1" role="1SiIV1">
+            <ref role="3bR37D" node="5wYq9r5EBDN" resolve="jetbrains.mps.coderules.runtime" />
           </node>
         </node>
       </node>
