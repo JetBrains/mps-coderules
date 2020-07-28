@@ -64,9 +64,8 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
     fun activateContinue(controller: Controller, activeOcc: Occurrence, parent: MatchJournal.MatchChunk): FeedbackStatus {
         assert(activeOcc.stored)
 
-        // Forget that occ was seen. Otherwise it will be
+        // Forget that occurrence was seen. Otherwise it will be
         // processed as with reactivation through observers.
-        // Incremental reactivation should proceed more like usual activation.
         this.dispatchingFront = dispatchingFront.forgetExpanded(activeOcc)
 
         trace.activateContinue(activeOcc)
@@ -113,10 +112,10 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
     }
 
     private fun invalidateChunk(chunk: MatchJournal.Chunk, invalidJustifications: Collection<Justified>): Iterable<Occurrence> {
-        // 'Undo' all activated in this chunk occurrences
-        // todo: need clearing observers in logicalState for occurrences we drop?
+        // 'Undo' all activated in this chunk occurrences: clear Dispatcher & LogicalState
         chunk.activatedLog().forEach {
             dispatchingFront = dispatchingFront.forget(it)
+            it.clearLogicalState(logicalState)
         }
 
         val validOccs: Sequence<Occurrence>
@@ -339,15 +338,20 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
                 profiler.profile("terminateOccurrence") {
 
-                    occ.terminate(logicalState)
-
-                    occurrenceContractObserver?.onDiscarded(occ)
+                    occ.clearLogicalState(logicalState)
 
                 }
 
                 trace.discard(occ)
             }
 
+        }
+    }
+
+    private fun Occurrence.clearLogicalState(observable: LogicalStateObservable) {
+        terminate(logicalState)
+        if (occurrenceContractObserver != null && this.isPrincipal) {
+            occurrenceContractObserver.onDiscarded(this)
         }
     }
 
