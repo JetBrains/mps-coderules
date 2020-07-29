@@ -7319,6 +7319,7 @@
     </node>
     <node concept="1nLNMY" id="zb1Nk7a71S" role="1nK1Vg">
       <property role="TrG5h" value="checkReturnPoints" />
+      <property role="1nmhW7" value="true" />
       <node concept="2t___k" id="zb1Nk7a71T" role="1nLNMg">
         <ref role="2t_S0q" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
         <node concept="3A20r5" id="zb1Nk7a71U" role="2t_VXX">
