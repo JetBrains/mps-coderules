@@ -697,6 +697,10 @@
         <child id="1618328391714763070" name="macro" index="0oKgB" />
         <child id="6097203247162410403" name="prototype" index="3iTdIJ" />
       </concept>
+      <concept id="7889373009908939902" name="jetbrains.mps.lang.coderules.structure.MemoExpression" flags="ng" index="21kpad">
+        <child id="7889373009908940350" name="valueProvider" index="21kp3d" />
+        <child id="7889373009908940348" name="key" index="21kp3f" />
+      </concept>
       <concept id="1980609059169917031" name="jetbrains.mps.lang.coderules.structure.CopyItem" flags="ng" index="9KH4l">
         <child id="1980609059169917850" name="origin" index="9KHbC" />
       </concept>
@@ -1956,31 +1960,23 @@
             <node concept="3uibUv" id="3bgqfmm02cx" role="1tU5fm">
               <ref role="3uigEE" node="rZZ6H4Y2j" resolve="ClassHierarchyGraph.Vertex" />
             </node>
-            <node concept="2YIFZM" id="5wYq9r5EDbK" role="33vP2m">
-              <ref role="37wK5l" to="lehm:2tjs8VC2Blb" resolve="getOrPut" />
-              <ref role="1Pybhc" to="lehm:2tjs8VC0K0m" resolve="Memoizer" />
-              <node concept="2OqwBi" id="3bgqfmm02cz" role="37wK5m">
-                <node concept="3A2sRY" id="3bgqfmm02c$" role="2Oq$k0">
-                  <ref role="3A2yKK" node="6_5E9TNz50W" resolve="cls" />
-                </node>
-                <node concept="iZEcu" id="3bgqfmm02c_" role="2OqNvi" />
-              </node>
-              <node concept="1bVj0M" id="3bgqfmm02cA" role="37wK5m">
-                <node concept="3clFbS" id="3bgqfmm02cB" role="1bW5cS">
-                  <node concept="3clFbF" id="3bgqfmm02cC" role="3cqZAp">
-                    <node concept="2OqwBi" id="3bgqfmm02cD" role="3clFbG">
-                      <node concept="2YIFZM" id="3bgqfmm02cE" role="2Oq$k0">
+            <node concept="21kpad" id="5HVB6JRf8ic" role="33vP2m">
+              <node concept="1bVj0M" id="5HVB6JRf8id" role="21kp3d">
+                <node concept="3clFbS" id="5HVB6JRf8ie" role="1bW5cS">
+                  <node concept="3clFbF" id="5HVB6JRf6vx" role="3cqZAp">
+                    <node concept="2OqwBi" id="5HVB6JRf6vy" role="3clFbG">
+                      <node concept="2YIFZM" id="5HVB6JRf6vz" role="2Oq$k0">
                         <ref role="1Pybhc" node="74XSvywIK4w" resolve="ClassHierarchy" />
                         <ref role="37wK5l" node="74XSvywIN2p" resolve="parameterizedGraph" />
-                        <node concept="3clFbT" id="3bgqfmm02cF" role="37wK5m" />
+                        <node concept="3clFbT" id="5HVB6JRf6v$" role="37wK5m" />
                       </node>
-                      <node concept="liA8E" id="3bgqfmm02cG" role="2OqNvi">
+                      <node concept="liA8E" id="5HVB6JRf6v_" role="2OqNvi">
                         <ref role="37wK5l" node="rZZ6Haw83" resolve="buildVertex" />
-                        <node concept="2OqwBi" id="3bgqfmm02cH" role="37wK5m">
-                          <node concept="3A2sRY" id="3bgqfmm02cI" role="2Oq$k0">
+                        <node concept="2OqwBi" id="5HVB6JRf6vA" role="37wK5m">
+                          <node concept="3A2sRY" id="5HVB6JRf6vB" role="2Oq$k0">
                             <ref role="3A2yKK" node="6_5E9TNz50W" resolve="cls" />
                           </node>
-                          <node concept="2qgKlT" id="3bgqfmm02cJ" role="2OqNvi">
+                          <node concept="2qgKlT" id="5HVB6JRf6vC" role="2OqNvi">
                             <ref role="37wK5l" to="tpek:2RtWPFZ12w7" resolve="getThisType" />
                           </node>
                         </node>
@@ -1988,6 +1984,12 @@
                     </node>
                   </node>
                 </node>
+              </node>
+              <node concept="2OqwBi" id="5HVB6JRfab4" role="21kp3f">
+                <node concept="3A2sRY" id="5HVB6JRf9ir" role="2Oq$k0">
+                  <ref role="3A2yKK" node="6_5E9TNz50W" resolve="cls" />
+                </node>
+                <node concept="iZEcu" id="5HVB6JRfbH4" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -37076,31 +37078,23 @@
             <node concept="3uibUv" id="4JBuioHZ_Z3" role="1tU5fm">
               <ref role="3uigEE" node="rZZ6H4Y2j" resolve="ClassHierarchyGraph.Vertex" />
             </node>
-            <node concept="2YIFZM" id="5wYq9r5EDbL" role="33vP2m">
-              <ref role="37wK5l" to="lehm:2tjs8VC2Blb" resolve="getOrPut" />
-              <ref role="1Pybhc" to="lehm:2tjs8VC0K0m" resolve="Memoizer" />
-              <node concept="2OqwBi" id="4JBuioIcVWP" role="37wK5m">
-                <node concept="3A2sRY" id="4JBuioHZA$G" role="2Oq$k0">
-                  <ref role="3A2yKK" node="29sKO70xfxm" resolve="cls" />
-                </node>
-                <node concept="iZEcu" id="4JBuioIcXe2" role="2OqNvi" />
-              </node>
-              <node concept="1bVj0M" id="4JBuioHZA$H" role="37wK5m">
-                <node concept="3clFbS" id="4JBuioHZA$I" role="1bW5cS">
-                  <node concept="3clFbF" id="4JBuioHZA$J" role="3cqZAp">
-                    <node concept="2OqwBi" id="4JBuioHZA$K" role="3clFbG">
-                      <node concept="2YIFZM" id="4JBuioHZA$L" role="2Oq$k0">
+            <node concept="21kpad" id="5HVB6JRfiKh" role="33vP2m">
+              <node concept="1bVj0M" id="5HVB6JRfiKi" role="21kp3d">
+                <node concept="3clFbS" id="5HVB6JRfiKj" role="1bW5cS">
+                  <node concept="3clFbF" id="5HVB6JRfhJl" role="3cqZAp">
+                    <node concept="2OqwBi" id="5HVB6JRfhJm" role="3clFbG">
+                      <node concept="2YIFZM" id="5HVB6JRfhJn" role="2Oq$k0">
                         <ref role="37wK5l" node="74XSvywIN2p" resolve="parameterizedGraph" />
                         <ref role="1Pybhc" node="74XSvywIK4w" resolve="ClassHierarchy" />
-                        <node concept="3clFbT" id="4JBuioHZA$M" role="37wK5m" />
+                        <node concept="3clFbT" id="5HVB6JRfhJo" role="37wK5m" />
                       </node>
-                      <node concept="liA8E" id="4JBuioHZA$N" role="2OqNvi">
+                      <node concept="liA8E" id="5HVB6JRfhJp" role="2OqNvi">
                         <ref role="37wK5l" node="rZZ6Haw83" resolve="buildVertex" />
-                        <node concept="2OqwBi" id="4JBuioHZA$O" role="37wK5m">
-                          <node concept="3A2sRY" id="4JBuioHZA$P" role="2Oq$k0">
+                        <node concept="2OqwBi" id="5HVB6JRfhJq" role="37wK5m">
+                          <node concept="3A2sRY" id="5HVB6JRfhJr" role="2Oq$k0">
                             <ref role="3A2yKK" node="29sKO70xfxm" resolve="cls" />
                           </node>
-                          <node concept="2qgKlT" id="4JBuioHZA$Q" role="2OqNvi">
+                          <node concept="2qgKlT" id="5HVB6JRfhJs" role="2OqNvi">
                             <ref role="37wK5l" to="tpek:2RtWPFZ12w7" resolve="getThisType" />
                           </node>
                         </node>
@@ -37108,6 +37102,12 @@
                     </node>
                   </node>
                 </node>
+              </node>
+              <node concept="2OqwBi" id="5HVB6JRfkcY" role="21kp3f">
+                <node concept="3A2sRY" id="5HVB6JRfkcZ" role="2Oq$k0">
+                  <ref role="3A2yKK" node="29sKO70xfxm" resolve="cls" />
+                </node>
+                <node concept="iZEcu" id="5HVB6JRfkd0" role="2OqNvi" />
               </node>
             </node>
           </node>
