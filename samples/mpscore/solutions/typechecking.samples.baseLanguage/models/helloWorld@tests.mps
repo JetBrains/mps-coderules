@@ -331,25 +331,70 @@
       <property role="TrG5h" value="TestSubclassing" />
       <node concept="3cqZAl" id="1TH_SRmNfU7" role="3clF45" />
       <node concept="3clFbS" id="1TH_SRmNfU8" role="3clF47">
+        <node concept="3SKdUt" id="4s_lMmHvD72" role="3cqZAp">
+          <node concept="1PaTwC" id="4s_lMmHvD73" role="1aUNEU">
+            <node concept="3oM_SD" id="4s_lMmHvD74" role="1PaTwD">
+              <property role="3oM_SC" value="FIXME" />
+            </node>
+            <node concept="3oM_SD" id="4s_lMmHvD75" role="1PaTwD">
+              <property role="3oM_SC" value="runtime" />
+            </node>
+            <node concept="3oM_SD" id="4s_lMmHvD76" role="1PaTwD">
+              <property role="3oM_SC" value="errors" />
+            </node>
+            <node concept="3oM_SD" id="4s_lMmHvD77" role="1PaTwD">
+              <property role="3oM_SC" value="must" />
+            </node>
+            <node concept="3oM_SD" id="4s_lMmHvD78" role="1PaTwD">
+              <property role="3oM_SC" value="not" />
+            </node>
+            <node concept="3oM_SD" id="4s_lMmHvD79" role="1PaTwD">
+              <property role="3oM_SC" value="be" />
+            </node>
+            <node concept="3oM_SD" id="4s_lMmHvD7a" role="1PaTwD">
+              <property role="3oM_SC" value="ignored," />
+            </node>
+            <node concept="3oM_SD" id="4s_lMmHvD7b" role="1PaTwD">
+              <property role="3oM_SC" value="this" />
+            </node>
+            <node concept="3oM_SD" id="4s_lMmHvD7c" role="1PaTwD">
+              <property role="3oM_SC" value="is" />
+            </node>
+            <node concept="3oM_SD" id="4s_lMmHvD7d" role="1PaTwD">
+              <property role="3oM_SC" value="temporary" />
+            </node>
+            <node concept="3oM_SD" id="4s_lMmHvD7e" role="1PaTwD">
+              <property role="3oM_SC" value="test" />
+            </node>
+            <node concept="3oM_SD" id="4s_lMmHvD7f" role="1PaTwD">
+              <property role="3oM_SC" value="fix" />
+            </node>
+          </node>
+        </node>
         <node concept="2Hmddi" id="1TH_SRmNfU9" role="3cqZAp">
           <node concept="2OqwBi" id="1TH_SRmNfUa" role="2Hmdds">
-            <node concept="2YIFZM" id="1TH_SRmNfUb" role="2Oq$k0">
-              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
-              <node concept="2OqwBi" id="1TH_SRmNfUc" role="37wK5m">
-                <node concept="2WthIp" id="1TH_SRmNfUd" role="2Oq$k0" />
-                <node concept="2XshWL" id="1TH_SRmNfUe" role="2OqNvi">
-                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
-                  <node concept="2tJFMh" id="1TH_SRmNfUf" role="2XxRq1">
-                    <node concept="ZC_QK" id="1TH_SRmNgAr" role="2tJFKM">
-                      <ref role="2aWVGs" to="bs09:4M5CNSfDyo1" resolve="Subclassing" />
+            <node concept="2OqwBi" id="4s_lMmHvDAu" role="2Oq$k0">
+              <node concept="2YIFZM" id="1TH_SRmNfUb" role="2Oq$k0">
+                <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+                <node concept="2OqwBi" id="1TH_SRmNfUc" role="37wK5m">
+                  <node concept="2WthIp" id="1TH_SRmNfUd" role="2Oq$k0" />
+                  <node concept="2XshWL" id="1TH_SRmNfUe" role="2OqNvi">
+                    <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                    <node concept="2tJFMh" id="1TH_SRmNfUf" role="2XxRq1">
+                      <node concept="ZC_QK" id="1TH_SRmNgAr" role="2tJFKM">
+                        <ref role="2aWVGs" to="bs09:4M5CNSfDyo1" resolve="Subclassing" />
+                      </node>
                     </node>
                   </node>
                 </node>
+                <node concept="1jxXqW" id="1TH_SRmNfUh" role="37wK5m" />
               </node>
-              <node concept="1jxXqW" id="1TH_SRmNfUh" role="37wK5m" />
+              <node concept="liA8E" id="4s_lMmHvDLH" role="2OqNvi">
+                <ref role="37wK5l" to="tj24:2hrSdN96927" resolve="ignoreErrorTypes" />
+              </node>
             </node>
-            <node concept="liA8E" id="1TH_SRmNfUi" role="2OqNvi">
+            <node concept="liA8E" id="4s_lMmHvDQ7" role="2OqNvi">
               <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
             </node>
           </node>
