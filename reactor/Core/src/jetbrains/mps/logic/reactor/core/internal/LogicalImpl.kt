@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.LogicalObserver
+import jetbrains.mps.logic.reactor.logical.LogicalOwner
 import jetbrains.mps.logic.reactor.logical.MutableLogical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import java.util.ArrayList
@@ -36,6 +37,8 @@ internal class LogicalImpl<T> : MutableLogical<T> {
     var _value: T? = null
 
     var rank = 0
+
+    var usagesCount = 0
 
     val valueObservers = ArrayList<Pair<LogicalImpl<*>, LogicalObserver>>()
 
@@ -99,22 +102,22 @@ internal class LogicalImpl<T> : MutableLogical<T> {
 
         // invariant: thisRepr.rank > otherRepr.rank
         if (thisRepr.rank() < otherRepr.rank()) {
-            otherRepr.union(thisRepr, reconciler);
+            otherRepr.union(thisRepr, reconciler)
             return
 
         } else if (thisRepr.rank() == otherRepr.rank()) {
             if (thisRepr._value == null && otherRepr._value != null) {
-                otherRepr.union(thisRepr, reconciler);
+                otherRepr.union(thisRepr, reconciler)
                 return
 
             } else {
-                thisRepr.incRank();
+                thisRepr.incRank()
 
             }
         }
 
-        val thisVal = thisRepr.value();
-        val otherVal = otherRepr.value();
+        val thisVal = thisRepr.value()
+        val otherVal = otherRepr.value()
 
         // first copy the value
         if (thisVal == null && otherVal != null) {
@@ -139,8 +142,11 @@ internal class LogicalImpl<T> : MutableLogical<T> {
 
         } else if (thisVal != null && otherVal != null) {
             // ground ground
-            reconciler.reconcile(thisVal, otherVal);
+            reconciler.reconcile(thisVal, otherVal)
         }
+
+        // copy usages
+        thisRepr.usagesCount += otherRepr.usagesCount
     }
 
     override fun union(other: MutableLogical<T>) {
@@ -157,6 +163,14 @@ internal class LogicalImpl<T> : MutableLogical<T> {
         find().parentObservers.remove(this to observer)
     }
 
+    override fun incUsagesCount(logicalOwner: LogicalOwner?) {
+        incUsages()
+    }
+
+    override fun usagesCount(): Int {
+        return usagesCount
+    }
+
     private fun find(): LogicalImpl<T> {
         val tmp = _parent
         if (tmp == null) return this
@@ -170,6 +184,8 @@ internal class LogicalImpl<T> : MutableLogical<T> {
     private fun rank(): Int = rank
 
     private fun incRank() { rank++ }
+
+    private fun incUsages() { usagesCount++ }
 
     private fun setParent(parent: LogicalImpl<T>) {
         this._parent = parent
