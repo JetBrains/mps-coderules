@@ -45,6 +45,9 @@
         <child id="1206060619838" name="condition" index="3eO9$A" />
         <child id="1206060644605" name="statementList" index="3eOfB_" />
       </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
     </language>
     <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
       <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
@@ -970,7 +973,7 @@
               <node concept="3I6sU6" id="7LI_gNMpXVC" role="3Ip0Jz">
                 <node concept="3I6s7M" id="7LI_gNMpXVG" role="3I6sU7">
                   <node concept="3Aqt3T" id="7LI_gNMpXVF" role="3I6s78">
-                    <ref role="3AqCNq" to="kqnc:3Qp4N06bUPu" resolve="convertsTo" />
+                    <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsToAlt" />
                     <node concept="1HFMs5" id="7LI_gNMpYpE" role="3AunhB">
                       <node concept="a7P8L" id="7LI_gNMpYpC" role="1uarlU">
                         <ref role="a7OzE" node="7LI_gNMpXVr" resolve="Type" />
@@ -990,6 +993,9 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="a7P8L" id="4s_lMmH6CtM" role="3AunhB">
+                      <ref role="a7OzE" node="4s_lMmH6CtK" resolve="Options" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1008,7 +1014,7 @@
                 <node concept="3I6sU6" id="7LI_gNMpYoZ" role="3Ip0Jz">
                   <node concept="3I6s7M" id="7LI_gNMpYp8" role="3I6sU7">
                     <node concept="3Aqt3T" id="7LI_gNMpYp7" role="3I6s78">
-                      <ref role="3AqCNq" to="kqnc:3Qp4N06bUPu" resolve="convertsTo" />
+                      <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsToAlt" />
                       <node concept="a7P8L" id="7LI_gNMpYwI" role="3AunhB">
                         <ref role="a7OzE" node="7LI_gNMpXVr" resolve="Type" />
                       </node>
@@ -1035,9 +1041,20 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="a7P8L" id="4s_lMmH6CtN" role="3AunhB">
+                        <ref role="a7OzE" node="4s_lMmH6CtK" resolve="Options" />
+                      </node>
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="4s_lMmH6CtI" role="0Rg$4">
+              <node concept="3uibUv" id="4s_lMmH6CtJ" role="3vLBG7">
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
+              </node>
+              <node concept="aZer4" id="4s_lMmH6CtK" role="3XD1gS">
+                <property role="TrG5h" value="Options" />
               </node>
             </node>
           </node>
@@ -1053,7 +1070,7 @@
               <node concept="3I6sU6" id="7LI_gNMpYxL" role="3Ip0Jz">
                 <node concept="3I6s7M" id="7LI_gNMpYxP" role="3I6sU7">
                   <node concept="3Aqt3T" id="7LI_gNMpYxO" role="3I6s78">
-                    <ref role="3AqCNq" to="kqnc:3Qp4N06bUPu" resolve="convertsTo" />
+                    <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsToAlt" />
                     <node concept="ns1u0" id="7LI_gNMpYxU" role="3AunhB">
                       <ref role="ns1xF" node="7LI_gNMpUS4" resolve="multiLogical" />
                     </node>
@@ -1068,8 +1085,19 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="a7P8L" id="4s_lMmH6CtV" role="3AunhB">
+                      <ref role="a7OzE" node="4s_lMmH6CtT" resolve="Options" />
+                    </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="4s_lMmH6CtR" role="0Rg$4">
+              <node concept="3uibUv" id="4s_lMmH6CtS" role="3vLBG7">
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
+              </node>
+              <node concept="aZer4" id="4s_lMmH6CtT" role="3XD1gS">
+                <property role="TrG5h" value="Options" />
               </node>
             </node>
           </node>

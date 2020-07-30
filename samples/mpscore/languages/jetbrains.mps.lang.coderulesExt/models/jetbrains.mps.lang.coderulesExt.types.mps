@@ -49,6 +49,9 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -1360,7 +1363,7 @@
               <node concept="3I6sU6" id="7LI_gNNfeIL" role="3Ip0Jz">
                 <node concept="3I6s7M" id="7LI_gNNfeIP" role="3I6sU7">
                   <node concept="3Aqt3T" id="7LI_gNNfeIO" role="3I6s78">
-                    <ref role="3AqCNq" to="kqnc:3Qp4N06bUPu" resolve="convertsTo" />
+                    <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsToAlt" />
                     <node concept="1HFMs5" id="7LI_gNNfeJD" role="3AunhB">
                       <node concept="a7P8L" id="7LI_gNNfeJx" role="1uarlU">
                         <ref role="a7OzE" node="7LI_gNNfeIX" resolve="TermType" />
@@ -1385,6 +1388,9 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="a7P8L" id="4s_lMmH6Cty" role="3AunhB">
+                      <ref role="a7OzE" node="4s_lMmH6Ctw" resolve="Options" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1397,6 +1403,14 @@
                 <property role="TrG5h" value="ClsType" />
               </node>
               <node concept="32pEOW" id="7LI_gNNfeJ9" role="3vLBG7" />
+            </node>
+            <node concept="3NuqgR" id="4s_lMmH6Ctu" role="0Rg$4">
+              <node concept="3uibUv" id="4s_lMmH6Ctv" role="3vLBG7">
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
+              </node>
+              <node concept="aZer4" id="4s_lMmH6Ctw" role="3XD1gS">
+                <property role="TrG5h" value="Options" />
+              </node>
             </node>
           </node>
         </node>
@@ -1411,7 +1425,7 @@
               <node concept="3I6sU6" id="7LI_gNNfeNg" role="3Ip0Jz">
                 <node concept="3I6s7M" id="7LI_gNNfeNh" role="3I6sU7">
                   <node concept="3Aqt3T" id="7LI_gNNfeNi" role="3I6s78">
-                    <ref role="3AqCNq" to="kqnc:3Qp4N06bUPu" resolve="convertsTo" />
+                    <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsToAlt" />
                     <node concept="1HFMs5" id="7LI_gNNfeNj" role="3AunhB">
                       <node concept="a7P8L" id="7LI_gNNfeNk" role="1uarlU">
                         <ref role="a7OzE" node="7LI_gNNfeNx" resolve="TermType" />
@@ -1436,6 +1450,9 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="a7P8L" id="4s_lMmH6CtE" role="3AunhB">
+                      <ref role="a7OzE" node="4s_lMmH6CtC" resolve="Options" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1448,6 +1465,14 @@
                 <property role="TrG5h" value="ClsType" />
               </node>
               <node concept="32pEOW" id="7LI_gNNfeNz" role="3vLBG7" />
+            </node>
+            <node concept="3NuqgR" id="4s_lMmH6CtA" role="0Rg$4">
+              <node concept="3uibUv" id="4s_lMmH6CtB" role="3vLBG7">
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
+              </node>
+              <node concept="aZer4" id="4s_lMmH6CtC" role="3XD1gS">
+                <property role="TrG5h" value="Options" />
+              </node>
             </node>
           </node>
         </node>

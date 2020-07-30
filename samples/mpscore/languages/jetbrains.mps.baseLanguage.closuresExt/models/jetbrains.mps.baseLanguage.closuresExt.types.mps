@@ -3897,7 +3897,7 @@
               <node concept="3I6sU6" id="554EtBH_PpG" role="3Ip0Jz">
                 <node concept="3I6s7M" id="554EtBH_PpH" role="3I6sU7">
                   <node concept="3Aqt3T" id="554EtBH_PpI" role="3I6s78">
-                    <ref role="3AqCNq" to="kqnc:3Qp4N06bUPu" resolve="convertsTo" />
+                    <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsToAlt" />
                     <node concept="1HFMs5" id="554EtBH_PpJ" role="3AunhB">
                       <node concept="a7P8L" id="554EtBH_PpK" role="1uarlU">
                         <ref role="a7OzE" node="554EtBH_PpX" resolve="FunT" />
@@ -3913,6 +3913,9 @@
                       <node concept="ns1u0" id="554EtBH_PpO" role="1uarlW">
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                       </node>
+                    </node>
+                    <node concept="a7P8L" id="4s_lMmH6Cx5" role="3AunhB">
+                      <ref role="a7OzE" node="4s_lMmH6Cx3" resolve="Options" />
                     </node>
                   </node>
                 </node>
@@ -3946,16 +3949,27 @@
                   </node>
                   <node concept="3I6s7M" id="554EtBHA0dq" role="3I6sU7">
                     <node concept="3Aqt3T" id="554EtBH_PqE" role="3I6s78">
-                      <ref role="3AqCNq" to="kqnc:3Qp4N06bUPu" resolve="convertsTo" />
+                      <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsToAlt" />
                       <node concept="a7P8L" id="554EtBH_PqF" role="3AunhB">
                         <ref role="a7OzE" node="554EtBH_PpX" resolve="FunT" />
                       </node>
                       <node concept="a7P8L" id="554EtBH_PqG" role="3AunhB">
                         <ref role="a7OzE" node="554EtBH_PpZ" resolve="DeclFunT" />
                       </node>
+                      <node concept="a7P8L" id="4s_lMmH6Cx6" role="3AunhB">
+                        <ref role="a7OzE" node="4s_lMmH6Cx3" resolve="Options" />
+                      </node>
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="4s_lMmH6Cx1" role="0Rg$4">
+              <node concept="3uibUv" id="4s_lMmH6Cx2" role="3vLBG7">
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
+              </node>
+              <node concept="aZer4" id="4s_lMmH6Cx3" role="3XD1gS">
+                <property role="TrG5h" value="Options" />
               </node>
             </node>
           </node>
