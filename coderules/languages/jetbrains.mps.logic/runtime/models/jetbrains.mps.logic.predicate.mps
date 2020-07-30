@@ -38,6 +38,7 @@
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
+      <concept id="1153422305557" name="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" flags="nn" index="2dkUwp" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" flags="nn" index="AH0OO">
@@ -2616,6 +2617,70 @@
           </node>
           <node concept="3clFbJ" id="1POzLwyWxYj" role="3cqZAp">
             <node concept="3clFbS" id="1POzLwyWxYk" role="3clFbx">
+              <node concept="3clFbJ" id="5HVB6JS8Wei" role="3cqZAp">
+                <node concept="3clFbS" id="5HVB6JS8Wek" role="3clFbx">
+                  <node concept="3SKdUt" id="77mpfA3SDhE" role="3cqZAp">
+                    <node concept="1PaTwC" id="77mpfA3SDhF" role="1aUNEU">
+                      <node concept="3oM_SD" id="77mpfA3SDhG" role="1PaTwD">
+                        <property role="3oM_SC" value="shortcut:" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDi5" role="1PaTwD">
+                        <property role="3oM_SC" value="a" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDio" role="1PaTwD">
+                        <property role="3oM_SC" value="logical" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDiW" role="1PaTwD">
+                        <property role="3oM_SC" value="with" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDj1" role="1PaTwD">
+                        <property role="3oM_SC" value="1" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDjn" role="1PaTwD">
+                        <property role="3oM_SC" value="or" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDju" role="1PaTwD">
+                        <property role="3oM_SC" value="less" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDjA" role="1PaTwD">
+                        <property role="3oM_SC" value="usages" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDjZ" role="1PaTwD">
+                        <property role="3oM_SC" value="can't" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDkD" role="1PaTwD">
+                        <property role="3oM_SC" value="be" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDl4" role="1PaTwD">
+                        <property role="3oM_SC" value="contained" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDlo" role="1PaTwD">
+                        <property role="3oM_SC" value="in" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDm5" role="1PaTwD">
+                        <property role="3oM_SC" value="the" />
+                      </node>
+                      <node concept="3oM_SD" id="77mpfA3SDmj" role="1PaTwD">
+                        <property role="3oM_SC" value="RHS" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs6" id="77mpfA3$bpC" role="3cqZAp" />
+                </node>
+                <node concept="2dkUwp" id="77mpfA3$WAC" role="3clFbw">
+                  <node concept="2OqwBi" id="5HVB6JS8XsI" role="3uHU7B">
+                    <node concept="37vLTw" id="5HVB6JS8X60" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1POzLwyX6pI" resolve="repr" />
+                    </node>
+                    <node concept="liA8E" id="77mpfA3SaCv" role="2OqNvi">
+                      <ref role="37wK5l" to="bj13:~MutableLogical.usagesCount()" resolve="usagesCount" />
+                    </node>
+                  </node>
+                  <node concept="3cmrfG" id="77mpfA3$aX1" role="3uHU7w">
+                    <property role="3cmrfH" value="1" />
+                  </node>
+                </node>
+              </node>
               <node concept="3cpWs8" id="1POzLwyWxYl" role="3cqZAp">
                 <node concept="3cpWsn" id="1POzLwyWxYm" role="3cpWs9">
                   <property role="TrG5h" value="termLeftRepr" />
@@ -2690,11 +2755,11 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="10QFUN" id="1POzLwyWxYC" role="37wK5m">
-                        <node concept="16syzq" id="1POzLwyWT78" role="10QFUM">
+                      <node concept="10QFUN" id="77mpfA3SrXj" role="37wK5m">
+                        <node concept="16syzq" id="77mpfA3SrXk" role="10QFUM">
                           <ref role="16sUi3" node="5TfjU0xz4dl" resolve="TERM" />
                         </node>
-                        <node concept="37vLTw" id="1POzLwyWxZl" role="10QFUP">
+                        <node concept="37vLTw" id="77mpfA3SrXl" role="10QFUP">
                           <ref role="3cqZAo" node="1POzLwyWxZd" resolve="val" />
                         </node>
                       </node>

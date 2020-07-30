@@ -654,6 +654,9 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="77mpfA3OtwT" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="2tJIrI" id="5BGv8yzwRR2" role="jymVt" />
     <node concept="3clFb_" id="5JQSuNs$cd8" role="jymVt">
@@ -1520,6 +1523,48 @@
             </node>
           </node>
         </node>
+        <node concept="1DcWWT" id="77mpfA3RgQl" role="3cqZAp">
+          <node concept="3clFbS" id="77mpfA3RgQn" role="2LFqv$">
+            <node concept="3clFbJ" id="77mpfA3RhKn" role="3cqZAp">
+              <node concept="3clFbS" id="77mpfA3RhKp" role="3clFbx">
+                <node concept="3clFbF" id="77mpfA3Ri0z" role="3cqZAp">
+                  <node concept="2OqwBi" id="77mpfA3Ric$" role="3clFbG">
+                    <node concept="1eOMI4" id="77mpfA3Ri0w" role="2Oq$k0">
+                      <node concept="10QFUN" id="77mpfA3Ri0t" role="1eOMHV">
+                        <node concept="3uibUv" id="77mpfA3Ri0y" role="10QFUM">
+                          <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
+                        </node>
+                        <node concept="37vLTw" id="77mpfA3Ri6E" role="10QFUP">
+                          <ref role="3cqZAo" node="77mpfA3RgQo" resolve="arg" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="77mpfA3Rij$" role="2OqNvi">
+                      <ref role="37wK5l" to="oy3s:77mpfA3QGWK" resolve="notifyLogicalOwner" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2ZW3vV" id="77mpfA3RhVK" role="3clFbw">
+                <node concept="3uibUv" id="77mpfA3RhZC" role="2ZW6by">
+                  <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
+                </node>
+                <node concept="37vLTw" id="77mpfA3RhKX" role="2ZW6bz">
+                  <ref role="3cqZAo" node="77mpfA3RgQo" resolve="arg" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="77mpfA3RgQo" role="1Duv9x">
+            <property role="TrG5h" value="arg" />
+            <node concept="3uibUv" id="77mpfA3Rh0T" role="1tU5fm">
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="DataForm" />
+            </node>
+          </node>
+          <node concept="37vLTw" id="77mpfA3RhFS" role="1DdaDG">
+            <ref role="3cqZAo" node="1msb0mq9K2N" resolve="arguments" />
+          </node>
+        </node>
       </node>
       <node concept="3Tmbuc" id="5BGv8yzvxJu" role="1B3o_S" />
       <node concept="37vLTG" id="4p5Sefkca7w" role="3clF46">
@@ -1741,7 +1786,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="1OShD0HCtUD" role="jymVt" />
+    <node concept="2tJIrI" id="77mpfA3NWp4" role="jymVt" />
     <node concept="3clFb_" id="1mP5b6jP_HO" role="jymVt">
       <property role="TrG5h" value="equals" />
       <node concept="10P_77" id="1mP5b6jP_HP" role="3clF45" />
@@ -3351,7 +3396,7 @@
       <node concept="P$JXv" id="1sIKvV30Txg" role="lGtFl">
         <node concept="TZ5HA" id="1sIKvV30Txh" role="TZ5H$">
           <node concept="1dT_AC" id="1sIKvV30Txi" role="1dT_Ay">
-            <property role="1dT_AB" value="The number of logical (unification) variables contained by this node." />
+            <property role="1dT_AB" value="The number of logical (unification) (meta-)variables contained by this node." />
           </node>
         </node>
       </node>

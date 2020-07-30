@@ -586,19 +586,6 @@
         <node concept="XkiVB" id="4TCblo5MOl_" role="3cqZAp">
           <ref role="37wK5l" to="6exd:uNmovXiEVu" resolve="Variable" />
         </node>
-        <node concept="3SKdUt" id="4sSe4$pxIbF" role="3cqZAp">
-          <node concept="1PaTwC" id="589APehYy5X" role="1aUNEU">
-            <node concept="3oM_SD" id="589APehYy5Y" role="1PaTwD">
-              <property role="3oM_SC" value="TODO:" />
-            </node>
-            <node concept="3oM_SD" id="589APehYy5Z" role="1PaTwD">
-              <property role="3oM_SC" value="superfluous" />
-            </node>
-            <node concept="3oM_SD" id="589APehYy60" role="1PaTwD">
-              <property role="3oM_SC" value="field" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="4TCblo5MPbq" role="3cqZAp">
           <node concept="37vLTI" id="4TCblo5MPBG" role="3clFbG">
             <node concept="37vLTw" id="4TCblo5MPGO" role="37vLTx">
@@ -612,9 +599,27 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="77mpfA3R1EX" role="3cqZAp">
+          <node concept="1rXfSq" id="77mpfA3R1EV" role="3clFbG">
+            <ref role="37wK5l" node="77mpfA3QMzj" resolve="incLogicalUsages" />
+          </node>
+        </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="4TCblo5MPIA" role="jymVt" />
+    <node concept="2tJIrI" id="77mpfA3QFKG" role="jymVt" />
+    <node concept="3clFb_" id="77mpfA3QGWK" role="jymVt">
+      <property role="TrG5h" value="notifyLogicalOwner" />
+      <node concept="3cqZAl" id="77mpfA3QGWM" role="3clF45" />
+      <node concept="3Tm1VV" id="77mpfA3QGWN" role="1B3o_S" />
+      <node concept="3clFbS" id="77mpfA3QGWO" role="3clF47">
+        <node concept="3clFbF" id="77mpfA3QMzn" role="3cqZAp">
+          <node concept="1rXfSq" id="77mpfA3QMzm" role="3clFbG">
+            <ref role="37wK5l" node="77mpfA3QMzj" resolve="incLogicalUsages" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="77mpfA3QO2R" role="jymVt" />
     <node concept="3clFb_" id="7BhUeN7yuQZ" role="jymVt">
       <property role="TrG5h" value="symbol" />
       <node concept="3Tm1VV" id="7BhUeN7yuR0" role="1B3o_S" />
@@ -991,6 +996,55 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="77mpfA3R9pX" role="jymVt" />
+    <node concept="3clFb_" id="77mpfA3QMzj" role="jymVt">
+      <property role="TrG5h" value="incLogicalUsages" />
+      <node concept="3Tm6S6" id="77mpfA3QMzk" role="1B3o_S" />
+      <node concept="3cqZAl" id="77mpfA3QMzl" role="3clF45" />
+      <node concept="3clFbS" id="77mpfA3QMyY" role="3clF47">
+        <node concept="3clFbJ" id="77mpfA3QMyZ" role="3cqZAp">
+          <node concept="3clFbS" id="77mpfA3QMz0" role="3clFbx">
+            <node concept="3clFbF" id="77mpfA3QMz1" role="3cqZAp">
+              <node concept="2OqwBi" id="77mpfA3QMz2" role="3clFbG">
+                <node concept="1eOMI4" id="77mpfA3QMz3" role="2Oq$k0">
+                  <node concept="10QFUN" id="77mpfA3QMz4" role="1eOMHV">
+                    <node concept="3uibUv" id="77mpfA3QMz5" role="10QFUM">
+                      <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
+                      <node concept="3qTvmN" id="77mpfA3QMz6" role="11_B2D" />
+                    </node>
+                    <node concept="2OqwBi" id="77mpfA3QMz7" role="10QFUP">
+                      <node concept="37vLTw" id="77mpfA3QMz8" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
+                      </node>
+                      <node concept="liA8E" id="77mpfA3QMz9" role="2OqNvi">
+                        <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="77mpfA3QMza" role="2OqNvi">
+                  <ref role="37wK5l" to="bj13:~MutableLogical.incUsagesCount(jetbrains.mps.logic.reactor.logical.LogicalOwner)" resolve="incUsagesCount" />
+                  <node concept="Xjq3P" id="77mpfA3QMzb" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2ZW3vV" id="77mpfA3QMzc" role="3clFbw">
+            <node concept="3uibUv" id="77mpfA3QMzd" role="2ZW6by">
+              <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
+            </node>
+            <node concept="2OqwBi" id="77mpfA3QMze" role="2ZW6bz">
+              <node concept="37vLTw" id="77mpfA3QMzf" role="2Oq$k0">
+                <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
+              </node>
+              <node concept="liA8E" id="77mpfA3QMzg" role="2OqNvi">
+                <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3Tm1VV" id="4TCblo5MJ1n" role="1B3o_S" />
     <node concept="3uibUv" id="4TCblo5MK_c" role="1zkMxy">
       <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
@@ -1007,7 +1061,7 @@
     <node concept="3UR2Jj" id="1fvYCP_19C5" role="lGtFl">
       <node concept="TZ5HA" id="1fvYCP_19C6" role="TZ5H$">
         <node concept="1dT_AC" id="1fvYCP_19C7" role="1dT_Ay">
-          <property role="1dT_AB" value="Bridges any FUN dataform except Value and logical variable. " />
+          <property role="1dT_AB" value="Bridges any FUN dataform except Value, and logical variable. " />
         </node>
       </node>
       <node concept="TZ5HA" id="1fvYCP_1bzx" role="TZ5H$">
@@ -1497,6 +1551,9 @@
       <node concept="2AHcQZ" id="7BhUeN7ywbW" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
+      <node concept="2AHcQZ" id="77mpfA3OSXM" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
     </node>
     <node concept="2tJIrI" id="7BhUeN7ywf0" role="jymVt" />
     <node concept="3clFb_" id="3gNap3fNd$z" role="jymVt">
@@ -1607,7 +1664,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="3gNap3fNdBg" role="jymVt" />
+    <node concept="2tJIrI" id="77mpfA3OWnE" role="jymVt" />
     <node concept="3clFb_" id="3gNap3fNdG7" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="toString" />
