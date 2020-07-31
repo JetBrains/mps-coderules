@@ -413,9 +413,9 @@
                             <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                             <node concept="2tJFMh" id="5kd4gAC0X5C" role="37wK5m">
                               <node concept="ZC_QK" id="5kd4gAC0X5D" role="2tJFKM">
-                                <ref role="2aWVGs" to="kqnc:24Vro6cM_J$" resolve="ConversionMain" />
+                                <ref role="2aWVGs" to="kqnc:2i6cuYQZkwQ" resolve="Conversions" />
                                 <node concept="ZC_QK" id="5kd4gAC0X5E" role="2aWVGa">
-                                  <ref role="2aWVGs" to="kqnc:3Qp4N06bUPu" resolve="convertsTo" />
+                                  <ref role="2aWVGs" to="kqnc:3Qp4N06bUPu" resolve="defaultConvertsTo" />
                                 </node>
                               </node>
                             </node>
@@ -461,7 +461,7 @@
                             <node concept="ZC_QK" id="5kd4gAC0X5X" role="1QN54C">
                               <ref role="2aWVGs" to="kqnc:24Vro6cM_J$" resolve="ConversionMain" />
                               <node concept="ZC_QK" id="5kd4gAC0X5Y" role="2aWVGa">
-                                <ref role="2aWVGs" to="kqnc:3vTJNooZDgN" resolve="convertsToAlt" />
+                                <ref role="2aWVGs" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
                               </node>
                             </node>
                           </node>
@@ -511,7 +511,7 @@
                 <property role="3oM_SC" value="original" />
               </node>
               <node concept="3oM_SD" id="4s_lMmHgrXP" role="1PaTwD">
-                <property role="3oM_SC" value="ConvertsTo" />
+                <property role="3oM_SC" value="defaultConvertsTo" />
               </node>
               <node concept="3oM_SD" id="4s_lMmHgrZ0" role="1PaTwD">
                 <property role="3oM_SC" value="root" />
@@ -537,8 +537,8 @@
               <node concept="liA8E" id="4s_lMmHgpNF" role="2OqNvi">
                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                 <node concept="2tJFMh" id="4s_lMmHgpNG" role="37wK5m">
-                  <node concept="ZC_QK" id="4s_lMmHgpNH" role="2tJFKM">
-                    <ref role="2aWVGs" to="kqnc:24Vro6cM_J$" resolve="ConversionMain" />
+                  <node concept="ZC_QK" id="4s_lMmI579s" role="2tJFKM">
+                    <ref role="2aWVGs" to="kqnc:2i6cuYQZkwQ" resolve="Conversions" />
                   </node>
                 </node>
               </node>
@@ -675,9 +675,9 @@
                               <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                               <node concept="2tJFMh" id="5kd4gAC0X48" role="37wK5m">
                                 <node concept="ZC_QK" id="5kd4gAC0X49" role="2tJFKM">
-                                  <ref role="2aWVGs" to="kqnc:24Vro6cM_J$" resolve="ConversionMain" />
+                                  <ref role="2aWVGs" to="kqnc:2i6cuYQZkwQ" resolve="Conversions" />
                                   <node concept="ZC_QK" id="5kd4gAC0X4a" role="2aWVGa">
-                                    <ref role="2aWVGs" to="kqnc:3Qp4N06bUPu" resolve="convertsTo" />
+                                    <ref role="2aWVGs" to="kqnc:3Qp4N06bUPu" resolve="defaultConvertsTo" />
                                   </node>
                                 </node>
                               </node>
