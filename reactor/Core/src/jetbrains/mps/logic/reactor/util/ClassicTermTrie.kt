@@ -76,41 +76,43 @@ class ClassicTermTrie<T> : TermTrie<T> {
         val seen = IdentityHashMap<Term, Term>()
         val nodeStack = arrayListOf(root)
         val termStack = arrayListOf(matchTerm)
+        val argPool = arrayListOf<Term>()
         while (!termStack.isEmpty()) {
             val node = nodeStack.peek()
             val term = termStack.pop()
 
             // dereferece the term only if it hasn't been dereferenced before
             val deref = deref(term).let { dt -> seen[dt]?.run { term } ?: dt.apply { seen[dt] = term } }
-            val arguments = deref.arguments().toList()
-            for(i in 1..arguments.size) {
-                termStack.push(arguments[arguments.size - i])
+            argPool.addAll(deref.arguments())
+            for(i in 1..argPool.size) {
+                termStack.push(argPool[argPool.size - i])
             }
-
-            val nextNode = node.nextOrDefault(symbolOrWildcard(deref)) { sym -> PathNode(sym, arguments.size) }
+            val nextNode = node.nextOrDefault(symbolOrWildcard(deref)) { sym -> PathNode(sym, argPool.size) }
             nodeStack.push(nextNode)
+            argPool.clear()
         }
 
         val head = nodeStack.pop()
         head.addValue(value)
-        nodeStack.reverse()
-        nodeStack.fold(head) { nextNode, node -> node.putNext(nextNode) }
+        nodeStack.foldRight(head) { node, nextNode  -> node.putNext(nextNode) }
     }
 
     private fun removeValue(matchTerm: Term, value: T) {
         val seen = IdentityHashMap<Term, Term>()
         val nodeStack = arrayListOf(root)
         val termStack = arrayListOf(matchTerm)
+        val argPool = arrayListOf<Term>()
         while (!termStack.isEmpty()) {
             val node = nodeStack.peek()
-            val term = termStack.removeAt(termStack.size - 1)
+            val term = termStack.pop()
 
             // dereferece the term only if it hasn't been dereferenced before
             val deref = deref(term).let { dt -> seen[dt]?.run { term } ?: dt.apply { seen[dt] = term } }
-            val arguments = deref.arguments().toList()
-            for(i in 1..arguments.size) {
-                termStack.add(arguments[arguments.size - i])
+            argPool.addAll(deref.arguments())
+            for(i in 1..argPool.size) {
+                termStack.push(argPool[argPool.size - i])
             }
+            argPool.clear()
 
             val nextNode = node.next(symbolOrWildcard(deref))
             if (nextNode == null)  {
@@ -251,7 +253,7 @@ class ClassicTermTrie<T> : TermTrie<T> {
             val term = ArrayList<PathNode<T>>()
             val edge = ArrayList<PathNode<T>>()
 
-            val stack = ArrayList<Pair<PathNode<T>, Int>>()
+            val stack = arrayListOf<Pair<PathNode<T>, Int>>()
             for (n in allNext()) {
                 stack.push(n to 0)
             }
