@@ -16,6 +16,8 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import gnu.trove.TIntObjectHashMap
+import gnu.trove.TObjectIntHashMap
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -33,6 +35,17 @@ import kotlin.collections.HashMap
  */
 class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
 
+    private class IndexedRule {
+
+        constructor(idx: Int, rule: Rule) {
+            this.idx = idx
+            this.rule = rule
+        }
+
+        var idx: Int
+        val rule: Rule
+    }
+
     // Terminology:
     // ruleBit - rule's index in the rules list
     // headPos - constraint's position in the rule's head (all slots together)
@@ -42,21 +55,19 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
 
     private val tag2rule = LinkedHashMap<Any, Rule>()
 
-    // TODO replace with a trie? 
-    private val segmentPath2ruleBits = HashMap<List<Any>, BitSet>()
+    private val tag2bit = TObjectIntHashMap<Any>()
 
-    // rule's index is rule's position in this list
-    private val rulesList = ArrayList<Rule>()
+    var nextBit: Int = 0
 
-    // every rule has a slot mask
-    // invariant: rulesList.size == slotMasksList.size
-    private val slotMasksList = ArrayList<SlotMask>()
+    private val bit2ruleAndMask = TIntObjectHashMap<Pair<IndexedRule, SlotMask>>()
+
+    private val allRules = LinkedList<IndexedRule>()
 
     /** the bit set that is going to be reused for all calls to [select] */
-    private val ruleBits = BitSet(rulesList.size)
+    private val ruleBits = BitSet(allRules.size)
 
     /** the bit set to be used for temporary processing within [select]*/
-    private val andRuleIndices = BitSet(rulesList.size)
+    private val andRuleIndices = BitSet(allRules.size)
 
     init {
         buildIndex(ruleLists)
@@ -64,31 +75,18 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
 
     override fun lookupRuleByTag(tag: Any): Rule? = tag2rule[tag]
 
-    private fun List<Any>.isPrefixOf(that: List<Any>): Boolean {
-        val thisIt = this@isPrefixOf.iterator()
-        val thatIt = that.iterator()
-        while(thisIt.hasNext() && thatIt.hasNext()) {
-            if (thisIt.next() != thatIt.next()) return false
-        }
-        return thisIt.hasNext() == thatIt.hasNext() || thatIt.hasNext()
-    }
-
     /**
      * Returns instances of [Rule] that can potentially match the specified [ConstraintOccurrence].
      */
     fun forOccurrence(occ: ConstraintOccurrence): Iterable<Rule> {
         val (ruleBits, slotMasks) = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
-        tag2rule[occ.ruleUniqueTag()]?.segmentPath()?.let {
-            andRuleIndices.clear()
-            for ((path, bits) in segmentPath2ruleBits.entries) {
-                if (!it.isPrefixOf(path)) andRuleIndices.or(bits)
-            }
-            ruleBits.andNot(andRuleIndices)
-        }
-        val result = ArrayList<Rule>()
+        val result = ArrayList<IndexedRule>()
         val it = ruleBits.allSetBits()
-        while (it.hasNext()) result.add(rulesList[it.next()])
-        return result
+        while (it.hasNext()) bit2ruleAndMask[it.next()]?.let{
+            result.add(it.first)
+        }
+        result.sortBy { it.idx }
+        return result.map { it.rule }
     }
 
     /**
@@ -96,54 +94,89 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
      */
     fun forOccurrenceWithMask(occ: ConstraintOccurrence): Iterable<Pair<Rule, BitSet>> {
         val (ruleBits, argSlotMasks) = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
-        tag2rule[occ.ruleUniqueTag()]?.segmentPath()?.let {
-            andRuleIndices.clear()
-            for ((path, bits) in segmentPath2ruleBits.entries) {
-                if (!it.isPrefixOf(path)) andRuleIndices.or(bits)
-            }
-            ruleBits.andNot(andRuleIndices)
-        }
-        val result = ArrayList<Pair<Rule, BitSet>>()
+        val result = ArrayList<Pair<IndexedRule, BitSet>>()
         val it = ruleBits.allSetBits()
         while (it.hasNext()) {
             val ruleBit = it.next()
-            slotMasksList[ruleBit][occ]?.let { mask ->
-                val effMask = argSlotMasks[ruleBit]?.copyApply { and(mask) } ?: mask
-                result.add(rulesList[ruleBit] to effMask)
+            bit2ruleAndMask[ruleBit]?.let {(irule, slotMask) ->
+                slotMask[occ]?.let { mask ->
+                    val effMask = argSlotMasks[ruleBit]?.copyApply { and(mask) } ?: mask
+                    result.add(irule to effMask)
+                }
             }
-
-//            slotMasksList[ruleBit][occ]?.let { mask ->  result.add(rulesList[ruleBit] to mask) }
         }
-        return result
+        result.sortBy { it.first.idx }
+        return result.map { it.first.rule to it.second }
     }
 
-    override fun iterator(): Iterator<Rule> = rulesList.iterator()
+    override fun iterator(): Iterator<Rule> = allRules.map { it.rule }.iterator()
+
+    fun updateIndex(ruleLists: Iterable<RulesList>, removedTags: Set<Any>) {
+        val allRulesIt = allRules.listIterator()
+        var nextIdx = 0
+        ruleLists.flatMap { it.rules() }.forEach { rule ->
+            var skip = false
+            while (allRulesIt.hasNext()) {
+                val irule = allRulesIt.next()
+                if (removedTags.contains(irule.rule.uniqueTag())) {
+                    removeRuleFromIndex(irule)
+                    allRulesIt.remove()
+
+                } else if (!irule.rule.uniqueTag().equals(rule.uniqueTag())) {
+                    allRulesIt.previous()
+                    break
+                    
+                } else {
+                    irule.idx = nextIdx
+                    skip = true
+                    break
+                }
+            }
+            if (!skip) {
+                IndexedRule(nextIdx, rule).also {
+                    addRuleToIndex(it)
+                    allRulesIt.add(it)
+                }
+            }
+            nextIdx++
+        }
+        while (allRulesIt.hasNext()) {
+            val irule = allRulesIt.next()
+            removeRuleFromIndex(irule)
+            allRulesIt.remove()
+        }
+    }
 
     private fun buildIndex(ruleLists: Iterable<RulesList>) {
-        var ruleBit = 0
-        for (h in ruleLists) {
-            for (rule in h.rules()) {
-                if (tag2rule.containsKey(rule.uniqueTag())) throw IllegalStateException("duplicate rule tag ${rule.uniqueTag()}")
-                tag2rule[rule.uniqueTag()] = rule
-                rule.segmentPath()?.let { segmentPath ->
-                    if (segmentPath.isNotEmpty()) {
-                        segmentPath2ruleBits.getOrPut(segmentPath) { BitSet() }.set(ruleBit)
-                    }
-                }
-                rulesList.add(rule)
-
-                val head = rule.headKept() + rule.headReplaced()
-                val slotMask = SlotMask()
-                for ((headPos, cst) in head.withIndex()) {
-                    symbol2index.getOrPut(cst.symbol()) { ArgumentRuleIndex(cst.symbol()) }.update(cst, ruleBit, headPos)
-                    slotMask.update(cst, headPos)
-                }
-
-                slotMasksList.add(slotMask)
-
-                ruleBit += 1
-            }
+        ruleLists.flatMap { it.rules() }.forEachIndexed { idx, rule ->
+            val irule = IndexedRule(idx, rule)
+            addRuleToIndex(irule)
+            allRules.add(irule)
         }
+    }
+
+    private fun removeRuleFromIndex(irule: IndexedRule) {
+        val uniqueTag = irule.rule.uniqueTag()
+        tag2rule.remove(uniqueTag)
+        val bit = tag2bit.remove(uniqueTag)
+        bit2ruleAndMask.remove(bit)
+    }
+
+    private fun addRuleToIndex(irule: IndexedRule) {
+        val uniqueTag = irule.rule.uniqueTag()
+        if (tag2rule.containsKey(uniqueTag)) throw IllegalStateException("duplicate rule tag $uniqueTag")
+        val head = irule.rule.headKept() + irule.rule.headReplaced()
+        val slotMask = SlotMask()
+        for ((headPos, cst) in head.withIndex()) {
+            symbol2index.getOrPut(cst.symbol()) { ArgumentRuleIndex(cst.symbol()) }.update(cst, nextBit, headPos)
+            slotMask.update(cst, headPos)
+        }
+
+        tag2rule[uniqueTag] = irule.rule
+        tag2bit.put(uniqueTag, nextBit)
+        bit2ruleAndMask.put(nextBit, irule to  slotMask)
+
+        nextBit += 1
     }
 
     /**

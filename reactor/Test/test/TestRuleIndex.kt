@@ -15,16 +15,8 @@
  */
 
 import jetbrains.mps.logic.reactor.core.RuleIndex
-import jetbrains.mps.logic.reactor.core.internal.logical
-import jetbrains.mps.logic.reactor.util.bitSet
-import jetbrains.mps.unification.Term
-import jetbrains.mps.unification.test.MockTerm
-import jetbrains.mps.unification.test.MockTerm.*
-import jetbrains.mps.unification.test.MockTermsParser
-import jetbrains.mps.unification.test.MockTermsParser.*
-import org.jetbrains.kotlin.js.parser.parse
+import jetbrains.mps.unification.test.MockTermsParser.parseTerm
 import org.junit.Test
-import java.util.*
 
 /*
  * Copyright 2014-2019 JetBrains s.r.o.
@@ -49,74 +41,189 @@ import java.util.*
 class TestRuleIndex  {
 
     @Test
-    fun testProgramWithSegments() {
+    fun testUpdateRuleIndexReplaceSingle() {
         with(programWithRules(
-            rule("rule0", emptyList(),
-                headReplaced(
-                    constraint("main")
-                ),
-                body(
-                    constraint("bar")
-                )),
-            rule("rule1", listOf("segment1"),
-                headReplaced(
-                    constraint("foo", parseTerm("f{g h}"))
-                ),
-                body(
-                    constraint("qux")
-                )),
-            rule("rule2", listOf("segment2"),
-                headReplaced(
-                    constraint("foo", parseTerm("f{g h}"))
-                ),
-                body(
-                    constraint("blah")
-                )),
-            rule("rule3", listOf("segment1"),
-                headReplaced(
-                    constraint("blin")
-                ),
-                body(
-                    constraint("foo", parseTerm("f{g h}"))
-                )),
-            rule("rule4", listOf("segment2"),
-                headReplaced(
-                    constraint("fooblin")
-                ),
-                body(
-                    constraint("foo", parseTerm("f{g h}"))
-                ))
+            rule("rule0",
+                headReplaced(constraint("foo")), body())
+
+        ) to programWithRules(
+            rule("rule1",
+                headReplaced(constraint("bar")), body())
+
         ))
         {
-            val ruleIndex = RuleIndex(rulesLists)
-            // no segment
-            with (ruleIndex.forOccurrence(occurrence("main"))) {
-                map { it.tag() }.toSet() shouldBe setOf("rule0")
+            val ruleIndex = RuleIndex(first.rulesLists)
+            with (ruleIndex.forOccurrence(occurrence("foo"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule0")
             }
-            with (ruleIndex.forOccurrence(occurrence("foo", parseTerm("f{g h}")))) {
-                map { it.tag() }.toSet() shouldBe setOf("rule1", "rule2")
-            }
-
-            // segment1
-            with (ruleIndex.forOccurrence(taggedOccurrence("rule0", "foo", parseTerm("f{g h}")))) {
-                map { it.tag() }.toSet() shouldBe setOf("rule1", "rule2")
-            }
-            with (ruleIndex.forOccurrence(taggedOccurrence("rule0", "main"))) {
-                map { it.tag() }.toSet() shouldBe setOf("rule0")
-            }
-            with (ruleIndex.forOccurrence(taggedOccurrence("rule3", "foo", parseTerm("f{g h}")))) {
-                map { it.tag() }.toSet() shouldBe setOf("rule1")
-            }
-            with (ruleIndex.forOccurrence(taggedOccurrence("rule3", "main"))) {
-                map { it.tag() }.toSet() shouldBe setOf("rule0")
+            with (ruleIndex.forOccurrence(occurrence("bar"))) {
+                iterator().hasNext() shouldBe false
             }
 
-            // segment2
-            with (ruleIndex.forOccurrence(taggedOccurrence("rule4",  "foo", parseTerm("f{g h}")))) {
-                map { it.tag() }.toSet() shouldBe setOf("rule2")
+            ruleIndex.updateIndex(second.rulesLists, setOf("rule0"))
+            with (ruleIndex.forOccurrence(occurrence("foo"))) {
+                iterator().hasNext() shouldBe false
+            }
+            with (ruleIndex.forOccurrence(occurrence("bar"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule1")
             }
         }
         
+    }
+
+    @Test
+    fun testUpdateRuleIndexAddAtEnds() {
+        with(programWithRules(
+            rule("rule0",
+                headReplaced(constraint("foo")), body())
+
+        ) to programWithRules(
+            rule("rule1",
+                headReplaced(constraint("foo"), constraint("bar")), body()),
+            rule("rule0",
+                headReplaced(constraint("foo")), body()),
+            rule("rule2",
+                headReplaced(constraint("bar")), body())
+
+        ))
+        {
+            val ruleIndex = RuleIndex(first.rulesLists)
+            with (ruleIndex.forOccurrence(occurrence("foo"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule0")
+            }
+
+            ruleIndex.updateIndex(second.rulesLists, setOf())
+            with (ruleIndex.forOccurrence(occurrence("foo"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule0")
+            }
+            with (ruleIndex.forOccurrence(occurrence("bar"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule2")
+            }
+        }
+    }
+
+    @Test
+    fun testUpdateRuleIndexRemoveInTheMiddle() {
+        with(programWithRules(
+            rule("rule1",
+                headReplaced(constraint("foo"), constraint("bar")), body()),
+            rule("rule0",
+                headReplaced(constraint("foo")), body()),
+            rule("rule2",
+                headReplaced(constraint("bar")), body())
+
+        ) to programWithRules(
+            rule("rule1",
+                headReplaced(constraint("foo"), constraint("bar")), body()),
+            rule("rule2",
+                headReplaced(constraint("bar")), body())
+
+        ))
+        {
+            val ruleIndex = RuleIndex(first.rulesLists)
+            with (ruleIndex.forOccurrence(occurrence("foo"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule0")
+            }
+            with (ruleIndex.forOccurrence(occurrence("bar"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule2")
+            }
+
+            ruleIndex.updateIndex(second.rulesLists, setOf("rule0"))
+            with (ruleIndex.forOccurrence(occurrence("foo"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule1")
+            }
+        }
+    }
+
+    @Test
+    fun testUpdateRuleIndexRemoveFromEnds() {
+        with(programWithRules(
+            rule("rule1",
+                headReplaced(constraint("foo"), constraint("bar")), body()),
+            rule("rule0",
+                headReplaced(constraint("foo")), body()),
+            rule("rule2",
+                headReplaced(constraint("bar")), body())
+
+        ) to programWithRules(
+            rule("rule0",
+                headReplaced(constraint("foo")), body())
+
+        ))
+        {
+            val ruleIndex = RuleIndex(first.rulesLists)
+            with (ruleIndex.forOccurrence(occurrence("foo"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule0")
+            }
+            with (ruleIndex.forOccurrence(occurrence("bar"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule2")
+            }
+
+            ruleIndex.updateIndex(second.rulesLists, setOf("rule1", "rule2"))
+            with (ruleIndex.forOccurrence(occurrence("foo"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule0")
+            }
+            with (ruleIndex.forOccurrence(occurrence("bar"))) {
+                iterator().hasNext() shouldBe false
+            }
+        }
+    }
+
+    @Test
+    fun testUpdateRuleIndex() {
+        with(programWithRules(
+            rule("rule0",
+                headReplaced(constraint("foo")), body()),
+            rule("rule3",
+                headReplaced(constraint("foo"), constraint("bar")), body()),
+            rule("rule1",
+                headReplaced(constraint("baz")), body()),
+            rule("rule4",
+                headReplaced(constraint("qux")), body())
+
+        ) to programWithRules(
+            rule("rule5",
+                headReplaced(constraint("foo"), constraint("foo")), body()),
+            rule("rule0",
+                headReplaced(constraint("foo")), body()),
+            rule("rule2",
+                headReplaced(constraint("bar")), body()),
+            rule("rule4",
+                headReplaced(constraint("qux")), body()),
+            rule("rule6",
+                headReplaced(constraint("qux")), body())
+
+        ))
+        {
+            val ruleIndex = RuleIndex(first.rulesLists)
+            with (ruleIndex.forOccurrence(occurrence("foo"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule0", "rule3")
+            }
+            with (ruleIndex.forOccurrence(occurrence("bar"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule3")
+            }
+            with (ruleIndex.forOccurrence(occurrence("baz"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule1")
+            }
+            with (ruleIndex.forOccurrence(occurrence("qux"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule4")
+            }
+
+            ruleIndex.updateIndex(second.rulesLists, setOf("rule1", "rule3"))
+            with (ruleIndex.forOccurrence(occurrence("foo"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule5", "rule0")
+            }
+            with (ruleIndex.forOccurrence(occurrence("bar"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule2")
+            }
+            with (ruleIndex.forOccurrence(occurrence("baz"))) {
+                iterator().hasNext() shouldBe false
+            }
+            with (ruleIndex.forOccurrence(occurrence("qux"))) {
+                map { it.uniqueTag() }.toList() shouldBe listOf("rule4", "rule6")
+            }
+        }
+
     }
 
 }

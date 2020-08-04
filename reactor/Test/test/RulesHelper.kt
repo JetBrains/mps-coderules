@@ -131,14 +131,6 @@ fun rule(tag: String, vararg component: RuleBuilder.() -> Unit): () -> Rule = {
     rb.toRule()
 }
 
-fun rule(tag: String, segmentPath: List<Any>, vararg component: RuleBuilder.() -> Unit): () -> Rule = {
-    val rb = RuleBuilder(tag, segmentPath)
-    for (cmp in component) {
-        rb.cmp()
-    }
-    rb.toRule()
-}
-
 fun headKept(vararg content: ConjBuilder.() -> Unit): RuleBuilder.() -> Unit = {
     appendHeadKept(* buildConjunction(Constraint::class.java, content).toArray())
 }
