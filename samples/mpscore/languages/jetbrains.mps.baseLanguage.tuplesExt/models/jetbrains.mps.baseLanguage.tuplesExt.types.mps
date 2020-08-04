@@ -745,7 +745,7 @@
                           <node concept="3I6sU6" id="4E290qPZCr1" role="3Ip0Jz">
                             <node concept="3I6s7M" id="3sbALnU5QwA" role="3I6sU7">
                               <node concept="3Aqt3T" id="3sbALnU5Qw_" role="3I6s78">
-                                <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsToAlt" />
+                                <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
                                 <node concept="a7P8L" id="4O7HczOrN$c" role="3AunhB">
                                   <ref role="a7OzE" node="4E290qPZCaH" resolve="IndexT" />
                                 </node>
@@ -753,19 +753,9 @@
                                   <ref role="ns1xF" to="kqnc:JOGAOsVt2E" resolve="_int_" />
                                 </node>
                                 <node concept="37jhX" id="4O7HczOl7p$" role="3AunhB">
-                                  <node concept="2OqwBi" id="4O7HczOl80H" role="37jj2">
-                                    <node concept="2OqwBi" id="4O7HczOl7Mj" role="2Oq$k0">
-                                      <node concept="2YIFZM" id="4O7HczOl7A3" role="2Oq$k0">
-                                        <ref role="37wK5l" to="kqnc:4O7HczOeR2N" resolve="get" />
-                                        <ref role="1Pybhc" to="kqnc:4O7HczOeKN2" resolve="ConvertsContext" />
-                                      </node>
-                                      <node concept="liA8E" id="4O7HczOl7UH" role="2OqNvi">
-                                        <ref role="37wK5l" to="kqnc:4O7HczOifwt" resolve="allowNarrowing" />
-                                      </node>
-                                    </node>
-                                    <node concept="liA8E" id="4O7HczOl88B" role="2OqNvi">
-                                      <ref role="37wK5l" to="kqnc:4O7HczOeOsd" resolve="toOptions" />
-                                    </node>
+                                  <node concept="2YIFZM" id="6GOqnFkHL$b" role="37jj2">
+                                    <ref role="37wK5l" to="kqnc:6GOqnFkHi03" resolve="assignmentContext" />
+                                    <ref role="1Pybhc" to="kqnc:4O7HczOeKN2" resolve="ConvertsContext" />
                                   </node>
                                 </node>
                               </node>
@@ -893,7 +883,7 @@
                                 </node>
                                 <node concept="3Aqczg" id="4E290qPZxJD" role="3cqZAp">
                                   <node concept="3Aqt3T" id="4E290qPZxJB" role="3Aqpz8">
-                                    <ref role="3AqCNq" to="kqnc:3Qp4N06bUPu" resolve="convertsTo" />
+                                    <ref role="3AqCNq" to="kqnc:3Qp4N06bUPu" resolve="defaultConvertsTo" />
                                     <node concept="a7P8L" id="4E290qPZxME" role="3AunhB">
                                       <ref role="a7OzE" node="4E290qPZqQk" resolve="TupleType" />
                                     </node>
