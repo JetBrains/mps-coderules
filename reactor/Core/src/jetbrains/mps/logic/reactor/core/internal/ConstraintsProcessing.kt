@@ -208,7 +208,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         val principalState = dispatchingFront.state().filterValues { ruleMatcher ->
             ruleMatcher.rule().isPrincipal || ruleMatcher.probe().hasOccurrences()
         }
-        return SessionTokenImpl(histView, rules, principalState, logicalState.clear())
+        return SessionTokenImpl(histView, rules, principalState, logicalState.clear(), ruleIndex)
     }
 
     fun invalidatedFeedback(): FeedbackKeySet = HashSet<Any>(invalidFeedbackKeys)

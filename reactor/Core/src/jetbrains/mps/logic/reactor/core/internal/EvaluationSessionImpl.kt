@@ -47,10 +47,9 @@ internal class EvaluationSessionImpl private constructor (
         val newToken: SessionToken
         val status: FeedbackStatus
         val invalidFeedbackKeys: Set<Any>
-
-        val ruleIndex = RuleIndex(program.rulesLists())
-
+        
         if (!incrementality.ability().allowed() || token == null) {
+            val ruleIndex = RuleIndex(program.rulesLists())
             val logicalState = LogicalState()
 
             val processing = ConstraintsProcessing(
@@ -68,6 +67,8 @@ internal class EvaluationSessionImpl private constructor (
         } else {
             val tkn = token as SessionTokenImpl
             val logicalState = tkn.logicalState
+            val ruleIndex = tkn.ruleIndex
+            ruleIndex.updateIndex(program.rulesLists(), rulesDiff.removed)
 
             val processing = ConstraintsProcessing(
                 Dispatcher(ruleIndex, tkn.getFrontState()).front(),

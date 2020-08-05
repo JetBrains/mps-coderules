@@ -17,16 +17,17 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.DispatchingFrontState
+import jetbrains.mps.logic.reactor.core.RuleIndex
 import jetbrains.mps.logic.reactor.evaluation.MatchJournalView
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.program.Rule
 
 data class SessionTokenImpl(
-    private val journalView: MatchJournal.View,
-    private val rules: Iterable<Rule>,
-    private val frontState: DispatchingFrontState,
-    val logicalState: LogicalState
-) : SessionToken
+                            private val journalView: MatchJournal.View,
+                            private val rules: Iterable<Rule>,
+                            private val frontState: DispatchingFrontState,
+                            val logicalState: LogicalState,
+                            val ruleIndex: RuleIndex) : SessionToken
 {
     override fun getJournalView(): MatchJournalView = journalView
     override fun getRules(): Iterable<Rule> = rules
