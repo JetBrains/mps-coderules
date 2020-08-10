@@ -549,7 +549,7 @@ class TestIncrementalProgram {
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"))
 
             // Add single rule and relaunch
-        }.also { (builder, evalRes) ->
+        }.let { (builder, evalRes) ->
             builder.programWithRules(
                 rule("foo.baz",
                     headKept(
@@ -562,22 +562,22 @@ class TestIncrementalProgram {
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("baz"))
 
-            }.also { (builder, evalRes) ->
-                builder.programWithRules(
-                    rule("baz.lax",
-                        headReplaced(
-                            pconstraint("foo")
-                        ),
-                        headKept(
-                            pconstraint("baz")
-                        ),
-                        body(
-                            constraint("lax")
-                        )
+            }
+        }.let { (builder, evalRes) ->
+            builder.programWithRules(
+                rule("baz.lax",
+                    headReplaced(
+                        pconstraint("foo")
+                    ),
+                    headKept(
+                        pconstraint("baz")
+                    ),
+                    body(
+                        constraint("lax")
                     )
-                ).relaunch("test2", progSpec, evalRes.token()) { result ->
-                    result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("lax"))
-                }
+                )
+            ).relaunch("test2", progSpec, evalRes.token()) { result ->
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("lax"))
             }
         }
     }
@@ -1078,13 +1078,14 @@ class TestIncrementalProgram {
         }.also { (builder, evalRes) ->
             val oldChunksView = evalRes.chunksSymbolView()
             val oldLastChunk = evalRes.lastChunk()
+
             builder.removeRules(listOf("foo.baz"))
                 .relaunch("removed", progSpec, evalRes.token()) { result ->
 
                     // ensure something changed
                     result.lastChunkSymbols() shouldBe listOf(sym0("foo"))
 
-                }.also { (builder, evalRes) ->
+                }.let { (builder, evalRes) ->
                     builder.insertRulesAt(1, readdedRule)
                         .relaunch("readded", progSpec, evalRes.token()) { result ->
 
@@ -1634,14 +1635,14 @@ class TestIncrementalProgram {
 
             result.storeView().constraintSymbols() shouldBe setOf(sym0("typeOf"), sym0("hasType"))
 
-        }.also { (builder, evalRes) ->
+        }.let { (builder, evalRes) ->
             builder
                 .removeRules(listOf("foo"))
                 .relaunch("removed typeOf", progSpec, evalRes.token()) { result ->
 
                     result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("noType"))
                 }
-        }.also { (builder, evalRes) ->
+        }.let { (builder, evalRes) ->
             builder
                 .insertRulesAt(1, fooRuleBuilder)
                 .relaunch("added typeOf again", progSpec, evalRes.token()) { result ->
@@ -1719,7 +1720,6 @@ class TestIncrementalProgram {
         }
     }
 
-    @Ignore("waiting for complete fix to MPSCR-65")
     @Test
     fun substructuralTS_insertWriteBeforeRW() {
         /* Expected test program execution:
@@ -1788,14 +1788,14 @@ class TestIncrementalProgram {
 
             result.storeView().constraintSymbols() shouldBe setOf(sym0("hasRead"), sym0("hasWriteB"), sym0("doProcess"))
 
-        }.also { (builder, evalRes) ->
+        }.let { (builder, evalRes) ->
             builder
                 .insertRulesAt(0, doProcessRuleBuilder)
                 .relaunch("inserted writeA", progSpec, evalRes.token()) { result ->
 
                     result.storeView().constraintSymbols() shouldBe setOf(sym0("hasWriteA"), sym0("read"), sym0("writeB"))
                 }
-        }.also { (builder, evalRes) ->
+        }.let { (builder, evalRes) ->
             builder
                 .removeRules(listOf("doWriteA"))
                 .relaunch("removed writeA", progSpec, evalRes.token()) { result ->
@@ -1807,7 +1807,6 @@ class TestIncrementalProgram {
 
 
     @Test
-    @Ignore("Test is broken")
     fun substructuralTS_indirectResourceDependency() {
         /* Expected test program execution:
             Write of resource2 depends on write of resource1

@@ -87,10 +87,11 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
 
     /**
      * Removes [Chunk]s dependent on any of [invalidated],
-     * applying [forEachDropped] for each removed [Chunk].
-     * Only erases future chunks, leaving journal position [currentPos] intact.
+     * applying [forEachDropped] for each removed [Chunk] (2nd arg)
+     * and providing it a last valid [Chunk] position (1st arg)
+     * Only erases future chunks, leaving [currentPos] intact.
      */
-    fun dropDescendants(invalidated: Collection<Justified>, forEachDropped: (Chunk) -> Unit)
+    fun dropDescendants(invalidated: Collection<Justified>, forEachDropped: (Chunk, Chunk) -> Unit)
 
     /**
      * Replay activated and discarded occurrences logged in journal between current

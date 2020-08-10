@@ -309,16 +309,20 @@ internal open class MatchJournalImpl(
         if (posPtr.hasNext()) posPtr.next()
     }
 
-    override fun dropDescendants(invalidated: Collection<Justified>, forEachDropped: (Chunk) -> Unit) {
+    override fun dropDescendants(invalidated: Collection<Justified>, forEachDropped: (Chunk, Chunk) -> Unit) {
         if (invalidated.isEmpty()) return
 
         val start = current
+        var lastValidChunk = start
+
         while (posPtr.hasNext()) {
             current = posPtr.next()
             if (current.justifiedByAny(invalidated)) {
                 // no need to 'resetOccurrences' because journal position is left intact
                 posPtr.remove()
-                forEachDropped(current)
+                forEachDropped(lastValidChunk, current)
+            } else {
+                lastValidChunk = current
             }
         }
 

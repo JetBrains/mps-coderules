@@ -302,10 +302,9 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                 val invalidJustifications = match.matchHeadReplaced().filter { it.isPrincipal }
                 if (invalidJustifications.isNotEmpty()) {
 
-                    val pos = currentPos()
-                    dropDescendants(invalidJustifications) {
-                        val validOccs = invalidateChunk(it, invalidJustifications)
-                        activationQueue.offerAll(pos, validOccs)
+                    dropDescendants(invalidJustifications) { lastValidChunk, currentChunk ->
+                        val validOccs = invalidateChunk(currentChunk, invalidJustifications)
+                        activationQueue.offerAll(lastValidChunk.toPos(), validOccs)
                     }
 
                 }
