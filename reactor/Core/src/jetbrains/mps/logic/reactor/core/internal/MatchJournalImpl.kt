@@ -322,6 +322,7 @@ internal open class MatchJournalImpl(
                 posPtr.remove()
                 forEachDropped(lastValidChunk, current)
             } else {
+                break // fixme: shortcuts traverse, but breaks 2 test of MPSCR-65 feature
                 lastValidChunk = current
             }
         }
