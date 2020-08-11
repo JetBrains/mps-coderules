@@ -16,10 +16,13 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
+import jetbrains.mps.logic.reactor.core.Occurrence
+import jetbrains.mps.logic.reactor.core.canMatch
+import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.program.Rule
 
 
-internal class RuleOrdering(order: Iterable<Rule>): Comparator<Rule> {
+internal class RuleOrdering(order: Iterable<Rule>): ComparatorExt<Rule> {
 
     private val ruleOrder: Map<Any, Int> = HashMap<Any, Int>().apply {
         put(MatchJournalImpl.InitRuleMatch.rule().uniqueTag(), -1) // less than anything
@@ -28,20 +31,37 @@ internal class RuleOrdering(order: Iterable<Rule>): Comparator<Rule> {
 
     val ruleTags: Set<Any> = order.map { it.uniqueTag() }.toHashSet() // NB: without initial rule
 
-    fun orderOf(rule: Rule): Int? = ruleOrder[rule.uniqueTag()]
+    override fun compare(lhs: Rule, rhs: Rule): Int = compareBy<Rule>(this::orderOfThrow).compare(lhs, rhs)
 
-    override fun compare(lhs: Rule, rhs: Rule): Int {
-        val lhsRuleOrder = orderOf(lhs)
-        val rhsRuleOrder = orderOf(rhs)
+    val matchComparator: Comparator<RuleMatch> get() = compareBy<RuleMatch>{ orderOfThrow(it.rule()) }
 
-        if (lhsRuleOrder == null || rhsRuleOrder == null) {
-            throw(IllegalStateException("Rules compared must be present in the rule index!"))
-        }
-        return lhsRuleOrder.compareTo(rhsRuleOrder)
+
+    private fun orderOf(rule: Rule): Int? = ruleOrder[rule.uniqueTag()]
+
+    private fun orderOfThrow(rule: Rule): Int = when (val res = orderOf(rule)) {
+        null -> throw IllegalStateException("Compared rule ($rule) must be present in rule index!")
+        else -> res
     }
+}
 
-    fun isEarlierThan(lhs: Rule, rhs: Rule): Boolean = compare(lhs, rhs) < 0
 
-    fun isLaterThan(lhs: Rule, rhs: Rule): Boolean = compare(lhs, rhs) > 0
+/**
+ * Checks whether [candidateRule] can be inserted in journal as a child
+ * of [parentChunk] before one of its child chunks, [beforeChunk].
+ * It is assumed that [candidateRule] can be matched by [Occurrence] from [parentChunk].
+ */
+internal fun RuleOrdering.canBeInserted(candidateRule: Rule, parentChunk: MatchJournal.OccChunk, beforeChunk: MatchJournal.Chunk): Boolean {
+    // Place to try activating candidate rule is:
+    //  either according to the ordering between rules
+    //  or as the last one, after all existing activations
+    assert(candidateRule.canMatch(parentChunk.occ.constraint))
 
+    val placeToInsertFound = beforeChunk is MatchJournal.MatchChunk
+        && candidateRule before beforeChunk.match.rule()
+
+    val isDescendant = beforeChunk.justifiedBy(parentChunk)
+    val isSibling = beforeChunk.evidence == parentChunk.evidence && beforeChunk != parentChunk
+    val childChunksEnded = !isDescendant || isSibling
+
+    return (childChunksEnded || placeToInsertFound)
 }

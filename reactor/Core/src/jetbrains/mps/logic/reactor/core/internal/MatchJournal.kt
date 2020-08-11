@@ -21,6 +21,7 @@ import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.program.*
 import jetbrains.mps.logic.reactor.util.Id
 import java.util.*
+import kotlin.Comparator
 
 
 interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
@@ -118,11 +119,22 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
     fun index(): Index
 
 
+    interface ChunkReader {
+        val current: Chunk get
+        val previous: Chunk get
+        val reachedEnd: Boolean get
+    }
+
     /**
      * Simplifies some search operations on [MatchJournal].
      * Also serves as a comparator for positions: later in journal means greater.
      */
-    interface Index : Comparator<Pos> {
+    interface Index : ComparatorExt<Pos> {
+
+        val chunkComparator: Comparator<Chunk> get
+
+        fun isKnown(chunk: Chunk): Boolean
+
         /**
          * Returns [Chunk] where provided principal occurrence was activated.
          * Returns null for non-principal occurrences.
@@ -141,10 +153,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
          */
         val size: Int
 
-        // some context functions
-        infix fun Pos.before(other: Pos): Boolean = compare(this, other) <= 0
-
-        infix fun Pos.after(other: Pos): Boolean = compare(this, other) >= 0
     }
 
     /**

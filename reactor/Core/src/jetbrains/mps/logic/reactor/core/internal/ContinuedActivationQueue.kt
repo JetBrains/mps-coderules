@@ -17,13 +17,18 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.program.Rule
 import java.util.*
 
+internal interface ContinuedActivationSink {
+
+    fun offerAll(continueFromPos: MatchJournal.Pos, occs: Iterable<Occurrence>)
+
+    fun offer(continueFromPos: MatchJournal.Pos, ancestor: MatchJournal.OccChunk): Boolean
+}
+
 internal class ContinuedActivationQueue(
-    private val journalIndex: MatchJournal.Index,
-    private val ruleOrdering: RuleOrdering
-) {
+    private val journalIndex: MatchJournal.Index
+): ContinuedActivationSink {
 
     /**
      * Specifies position in [MatchJournal] for continuing program evaluation.
@@ -96,8 +101,7 @@ internal class ContinuedActivationQueue(
             val occChunk = journalIndex.activationPos(m)
             val pos = occChunk?.toPos()
 
-            // if it is a future match
-            if (pos != null && journalIndex.compare(lastIncrementalRootPos, pos) < 0) {
+            if (pos != null && isFuturePos(pos)) {
                 offer(pos, occChunk)
             } else {
                 currentMatches.add(m)
@@ -106,35 +110,17 @@ internal class ContinuedActivationQueue(
         return currentMatches
     }
 
-    /**
-     * Checks whether [candidateRule] can be inserted in journal as a child
-     * of [parentChunk] before one of its child chunks, [beforeChunk].
-     * It is assumed that [candidateRule] can be matched by [Occurrence] from [parentChunk].
-     */
-    fun canBeInserted(candidateRule: Rule, parentChunk: MatchJournal.OccChunk, beforeChunk: MatchJournal.Chunk): Boolean {
-        // Place to try activating candidate rule is:
-        //  either according to the ordering between rules
-        //  or as the last one, after all existing activations
-        assert(candidateRule.canMatch(parentChunk.occ.constraint))
+    private fun isFuturePos(pos: MatchJournal.Pos): Boolean =
+        with(journalIndex) { pos after lastIncrementalRootPos }
 
-        val placeToInsertFound = beforeChunk is MatchJournal.MatchChunk
-            && ruleOrdering.isEarlierThan(candidateRule, beforeChunk.match.rule())
-
-        val isDescendant = beforeChunk.justifiedBy(parentChunk)
-        val isSibling = beforeChunk.evidence == parentChunk.evidence && beforeChunk != parentChunk
-        val childChunksEnded = !isDescendant || isSibling
-
-        return (childChunksEnded || placeToInsertFound)
-    }
-
-    fun offerAll(continueFromPos: MatchJournal.Pos, occs: Iterable<Occurrence>) =
+    override fun offerAll(continueFromPos: MatchJournal.Pos, occs: Iterable<Occurrence>) =
         occs.forEach {
             journalIndex.activatingChunkOf(it)?.let { occChunk ->
                  offer(continueFromPos, occChunk)
             }
         }
 
-    fun offer(continueFromPos: MatchJournal.Pos, ancestor: MatchJournal.OccChunk): Boolean =
+    override fun offer(continueFromPos: MatchJournal.Pos, ancestor: MatchJournal.OccChunk) =
         ExecPos(continueFromPos, ancestor).let {
             it.assertValid()
             if (seen.add(it)) execQueue.offer(it) else false

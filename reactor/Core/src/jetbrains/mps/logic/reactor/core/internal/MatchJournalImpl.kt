@@ -415,6 +415,8 @@ internal open class MatchJournalImpl(
 
         override val size: Int = chunks.count()
 
+        override fun isKnown(chunk: Chunk): Boolean = chunkOrder.containsKey(Id(chunk))
+
         override fun activatingChunkOf(occ: Occurrence) = occChunks[occ.identity]
 
         override fun activationPos(match: RuleMatchEx): OccChunk? =
@@ -424,13 +426,19 @@ internal open class MatchJournalImpl(
                 occSig?.let { activatingChunkOf(it.wrapped) }
             }.maxBy { orderOf(it)!! } // compare positions: find latest
 
-        // todo: throw for invalid positions?
+        override val chunkComparator: Comparator<Chunk> get() = compareBy<Chunk>(this::orderOfThrow)
+
         override fun compare(lhs: Pos, rhs: Pos): Int =
-            compareBy<Pos>{ orderOf(it.chunk) }
+            compareBy<Pos>{ orderOfThrow(it.chunk) }
                 .thenComparingInt { it.entriesCount }
                 .compare(lhs, rhs)
 
         private fun orderOf(chunk: Chunk): Int? = chunkOrder[Id(chunk)]
+
+        private fun orderOfThrow(chunk: Chunk): Int = when (val ord = orderOf(chunk)) {
+            null -> throw IllegalStateException("Chunk (${chunk.evidence}) must be known by journal index!")
+            else -> ord
+        }
     }
 
 

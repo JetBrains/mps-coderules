@@ -26,7 +26,6 @@ import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
 import kotlin.collections.ArrayList
-import kotlin.collections.HashSet
 
 
 /**
@@ -39,26 +38,73 @@ import kotlin.collections.HashSet
  *
  * @author Fedor Isakov
  */
+internal class ConstraintsProcessing(
+    private var dispatchingFront: Dispatcher.DispatchingFront,
+    journal: MatchJournalImpl,
+    private val ruleIndex: RuleIndex,
+    val logicalState: LogicalState,
+    override val ispec: IncrementalSpec = IncrementalSpec.DefaultSpec,
+    val trace: EvaluationTrace = EvaluationTrace.NULL,
+    val profiler: Profiler? = null
 
-internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.DispatchingFront,
-                                     journal: MatchJournalImpl,
-                                     private val ruleIndex: RuleIndex,
-                                     val logicalState: LogicalState,
-                                     override val ispec: IncrementalSpec = IncrementalSpec.DefaultSpec,
-                                     val trace: EvaluationTrace = EvaluationTrace.NULL,
-                                     val profiler: Profiler? = null)
-    : StoreAwareJournalImpl(journal, logicalState), IncrSpecHolder
-{
+) : StoreAwareJournalImpl(journal, logicalState), IncrSpecHolder {
+
     private val journalIndex: MatchJournal.Index = journal.index()
-
-    private val activationQueue: ContinuedActivationQueue = ContinuedActivationQueue(journalIndex, RuleOrdering(ruleIndex))
 
     private val occurrenceContractObserver: OccurrenceContractObserver? =
         if (ispec.assertLevel().assertContracts()) OccurrenceContractObserver(logicalState, ispec) else null
 
-    private val invalidFeedbackKeys: MutableSet<Any> = mutableSetOf<Any>()
 
-    private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
+    inner class ProgramStateCleaner{
+        fun erase(occurrence: Occurrence) {
+            dispatchingFront = dispatchingFront.forget(occurrence)
+            occurrence.clearLogicalState(logicalState)
+        }
+
+        fun erase(match: RuleMatchEx) {
+            dispatchingFront = dispatchingFront.forget(match)
+        }
+    }
+    val stateCleaner = ProgramStateCleaner()
+
+
+    //TODO: move to MatchJournal
+    /**
+     * Preserves last valid [Chunk] while iterating on Chunks and removing them through [nextOrRemove].
+     */
+    private class ChunkRemover(private val it: MutableIterator<MatchJournal.Chunk>): MatchJournal.ChunkReader {
+        private var _current_: MatchJournal.Chunk
+        private var _previous_: MatchJournal.Chunk
+
+        init {
+            assert(it.hasNext()) {"initial chunk must be always present"}
+            _current_ = it.next()
+            _previous_ = _current_
+        }
+
+        /**
+         * Removes next [Chunk] if [action] returns [true], else just advances.
+         * @return [true] if iterator advanced (i.e. next [Chunk] wasn't removed), [false] otherwise.
+         */
+        inline fun nextOrRemove(action: (MatchJournal.ChunkReader) -> Boolean): Boolean {
+            val lastPrev = _previous_
+            _previous_ = _current_
+            _current_ = it.next()
+
+            val toRemove = action(this)
+            if (toRemove) {
+                it.remove()
+                // don't advance
+                _current_ = _previous_
+                _previous_ = lastPrev
+            }
+            return !toRemove
+        }
+
+        override val current: MatchJournal.Chunk get() = _current_
+        override val previous: MatchJournal.Chunk get() = _previous_
+        override val reachedEnd: Boolean get() = !it.hasNext()
+    }
 
 
     fun activateContinue(controller: Controller, activeOcc: Occurrence, parent: MatchJournal.MatchChunk): FeedbackStatus {
@@ -73,145 +119,73 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         return processActivated(controller, activeOcc, parent, FeedbackStatus.NORMAL())
     }
 
-    /**
-     * Invalidation includes several activities:
-     *  - removing chunks (i.e. principal matches) corresponding to
-     *      removed rules and chunks depending on them from journal
-     *  - reactivating occurrences that led to invalidated matches
-     *  - pruning invalidated occurrences and matches from Dispatcher's state
-     */
-    fun invalidateRuleMatches(ruleIds: Set<Any>) {
-        // Track only root invalidated entities for invalidation,
-        // relying on transitivity of Justified.justifiedBy relation.
-        val justificationRoots = mutableListOf<Justified>()
+    private lateinit var invalidator: InvalidationStage
+    private lateinit var adder: AdditionStage
+    private lateinit var postponer: PostponeMatchesStage
+    private lateinit var continuator: ContinueOccurrencesStage
 
-        val it = this.iterator()
-        var lastValidChunk = it.next() // skip initial chunk
+    fun invalidateAndAddRules(controller: Controller, rulesDiff: RulesDiff): FeedbackStatus {
+        val ruleOrdering = RuleOrdering(ruleIndex)
 
-        while (it.hasNext()) {
-            val chunk = it.next()
+        continuator = ContinueOccurrencesStage(ispec, journalIndex)
+        invalidator = InvalidationStage(ispec, rulesDiff.removed, continuator, stateCleaner, trace)
+        adder = AdditionStage(ispec, rulesDiff.added, continuator, ruleOrdering, ruleIndex, trace)
+        postponer = PostponeMatchesStage(ispec, this, journalIndex, ruleOrdering)
 
-            if (chunk is MatchJournal.MatchChunk && chunk.dependsOnAny(ruleIds)) {
-                justificationRoots.add(chunk)
-            }
+        val chunkReader = ChunkRemover(this.iterator())
 
-            // Invalidating dependent chunks
-            if (chunk.justifiedByAny(justificationRoots)) {
+        var status: FeedbackStatus = FeedbackStatus.NORMAL()
+        while (!chunkReader.reachedEnd) {
+            val advanced = chunkReader.nextOrRemove(invalidator::onNext)
+            if (!advanced) continue
 
-                // Remove chunk from the journal
-                it.remove()
+            adder.onNext(chunkReader)
 
-                val validOccs = invalidateChunk(chunk, justificationRoots)
+            postponer.onNext(chunkReader)
 
-                activationQueue.offerAll(lastValidChunk.toPos(), validOccs)
-
-            } else {
-                lastValidChunk = chunk
-            }
+            status = continuator.run(controller, chunkReader)
+            if (!status.operational) break
         }
+        return status
     }
 
-    private fun invalidateChunk(chunk: MatchJournal.Chunk, invalidJustifications: Collection<Justified>): Iterable<Occurrence> {
-        // 'Undo' all activated in this chunk occurrences: clear Dispatcher & LogicalState
-        chunk.activatedLog().forEach {
-            dispatchingFront = dispatchingFront.forget(it)
-            it.clearLogicalState(logicalState)
+    private fun ContinueOccurrencesStage.run(controller: Controller, chunkReader: MatchJournal.ChunkReader): FeedbackStatus {
+        var status: FeedbackStatus = FeedbackStatus.NORMAL()
+        val parentChunk = parentChunk()
+
+        for (continuedOcc in this.onNext(chunkReader)) {
+            if (continuedOcc.stored) {
+                status = activateContinue(controller, continuedOcc, parentChunk)
+
+                if (!status.operational) break
+            }
         }
-
-        val validOccs: Sequence<Occurrence>
-        if (chunk is MatchJournal.MatchChunk) {
-            trace.invalidate(chunk.match)
-            invalidFeedbackKeys.add(chunk.match.feedbackKey)
-            dispatchingFront = dispatchingFront.forget(chunk.match as RuleMatchEx)
-
-            // Valid head occurrences could match more rules
-            //  without this match, so need to reactivate them.
-            // E.g. occurrences discarded in this match on
-            //  previous run but revived here can match more rules.
-            validOccs = chunk.match.allHeads().filter { occ ->
-                !occ.justifiedByAny(invalidJustifications)
-            }
-            // By definition of Chunk and principal rule,
-            //  all occurrences from the head are principal.
-            assert(chunk.match.allHeads().all { it.isPrincipal })
-
-        } else validOccs = emptySequence()
-        return validOccs.asIterable()
+        return status
     }
-
-    fun addRuleMatches(rules: Iterable<Rule>) {
-
-        val activationCandidates = mutableListOf<MatchCandidate>()
-        val it = this.iterator()
-        var chunk = it.next() // initial chunk
-        var prevChunk = chunk
-
-        while (true) {
-            if (chunk is MatchJournal.OccChunk) {
-                // filters out rules using occurrence's arguments
-                val allRuleCandidates = ruleIndex.forOccurrence(chunk.occ).map { it.uniqueTag() }.toHashSet()
-
-                for (rule in rules) {
-                    if (allRuleCandidates.contains(rule.uniqueTag()) && rule.canMatch(chunk.occ.constraint)) {
-                        // Can this rule be matched by principal occurrence?
-                        // Then we will need to find the place among existing child chunks
-                        //  (i.e. among some number of following ones)
-                        //  to activate this occurrence, to (possibly) match this rule.
-                        // Also remember the parent justification of this rule candidate
-                        //  to drop it from monitoring when child chunks end.
-                        activationCandidates.add(MatchCandidate(rule, chunk))
-                        // todo: also use the rule to help Dispatcher in future?
-                        //  i.e. try matching only on the candidate rule
-                    }
-                }
-            }
-
-            val aIt = activationCandidates.listIterator()
-            while (aIt.hasNext()) {
-                val (candRule, occChunk) = aIt.next()
-
-                val pos =
-                    if (activationQueue.canBeInserted(candRule, occChunk, chunk))
-                        // We need the previous chunk as pos here (i.e. adding after it).
-                        prevChunk.toPos()
-                    else if (!it.hasNext())
-                        // Case when adding at the very end
-                        chunk.toPos()
-                    else
-                        continue
-
-                activationQueue.offer(pos, occChunk)
-                trace.potentialMatch(occChunk.occ, candRule)
-                // Drop the candidate if appropriate activation place is found.
-                aIt.remove()
-            }
-
-            if (!it.hasNext()) break
-            prevChunk = chunk
-            chunk = it.next()
-        }
-    }
-
-    fun launchQueue(controller: Controller): FeedbackStatus =
-        activationQueue.run(controller, this)
 
     /**
      * Clears state unneeded between incremental sessions
      * and returns [SessionToken] with session results.
      */
     fun endSession(): SessionToken {
-        invalidFeedbackKeys.clear()
         val histView = view()
         resetStore() // clear observers
+        // todo: need clearing occurrenceContractObservers? (MPSCR-66)
         val rules = ArrayList<Rule>().apply { ruleIndex.forEach { add(it) } }
-        // preserve only relevant and non-empty RuleMatchers
-        val principalState = dispatchingFront.state().filterValues { ruleMatcher ->
-            ruleMatcher.rule().isPrincipal || ruleMatcher.probe().hasOccurrences()
-        }
+        val principalState = dispatchingFront.sessionState()
         return SessionTokenImpl(histView, rules, principalState, logicalState.clear(), ruleIndex)
     }
 
-    fun invalidatedFeedback(): FeedbackKeySet = HashSet<Any>(invalidFeedbackKeys)
+    /**
+     * Preserve data needed between sessions:
+     * preserve only relevant and non-empty RuleMatchers
+     */
+    private fun Dispatcher.DispatchingFront.sessionState() =
+        this.state().filterValues { ruleMatcher ->
+            ruleMatcher.rule().isPrincipal || ruleMatcher.probe().hasOccurrences()
+        }
+
+    fun invalidatedFeedback(): FeedbackKeySet = invalidator.invalidatedFeedback()
 
     /**
      * Called to update the state with the currently active constraint occurrence.
@@ -237,12 +211,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         }
 
         val matches = dispatchingFront.matches().toList()
-        val currentMatches =
-            if (isFront() || !active.isPrincipal) {
-                matches
-            } else {
-                activationQueue.postponeFutureMatches(matches)
-            }
+        val currentMatches = postponeFutureMatches(active, matches)
 
         val outStatus = currentMatches.fold(inStatus) { status, match ->
             // TODO: paranoid check. should be isAlive() instead
@@ -260,6 +229,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
         return outStatus
     }
+
 
     @Deprecated("obsolete machinery, superseded by MPSCR-65")
     private fun dropDiscardingMatchesFor(ancestor: MatchJournal.OccChunk, droppedRuleTags: MutableSet<Any>) =
@@ -296,21 +266,34 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             .also { trace.finish(match) }
 
     private fun continueReplacedHeads(match: RuleMatchEx, parent: MatchJournal.MatchChunk) {
-        if (!isFront() && match.isPrincipal) {
-            profiler.profile("continueReplaced") {
-
-                val invalidJustifications = match.matchHeadReplaced().filter { it.isPrincipal }
-                if (invalidJustifications.isNotEmpty()) {
-
-                    dropDescendants(invalidJustifications) { lastValidChunk, currentChunk ->
-                        val validOccs = invalidateChunk(currentChunk, invalidJustifications)
-                        activationQueue.offerAll(lastValidChunk.toPos(), validOccs)
-                    }
-
-                }
-            }
+        if (requiresIncrementalProcessing(match)) {
+            val invalidJustifications = match.matchHeadReplaced().filter { it.isPrincipal }
+            invalidator.receive(invalidJustifications)
         }
     }
+//    private fun continueReplacedHeads(match: RuleMatchEx, parent: MatchJournal.MatchChunk) {
+//        if (!isFront() && match.isPrincipal) {
+//            profiler.profile("continueReplaced") {
+//
+//                val invalidJustifications = match.matchHeadReplaced().filter { it.isPrincipal }
+//                if (invalidJustifications.isNotEmpty()) {
+//
+//                    dropDescendants(invalidJustifications) { lastValidChunk, currentChunk ->
+//                        val validOccs = invalidator.invalidateChunk(currentChunk, invalidJustifications)
+//                        activationQueue.offerAll(lastValidChunk.toPos(), validOccs)
+//                    }
+//
+//                }
+//            }
+//        }
+//    }
+
+    private fun postponeFutureMatches(active: Occurrence, matches: List<RuleMatchEx>) =
+        if (requiresIncrementalProcessing(active)) {
+            postponer.process(active, matches)
+//            activationQueue.postponeFutureMatches(matches)
+        } else matches
+
 
     private fun accept(controller: Controller, match: RuleMatchEx) {
         profiler.profile("logMatch") {
@@ -348,7 +331,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
     }
 
     private fun Occurrence.clearLogicalState(observable: LogicalStateObservable) {
-        terminate(logicalState)
+        terminate(observable)
         if (occurrenceContractObserver != null && this.isPrincipal) {
             occurrenceContractObserver.onDiscarded(this)
         }
@@ -385,6 +368,10 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             )
         }
     }
+
+    private fun requiresIncrementalProcessing(match: RuleMatchEx) = ispec.ability().allowed() && match.isPrincipal
+
+    private fun requiresIncrementalProcessing(occ: Occurrence) = ispec.ability().allowed() && occ.isPrincipal
 
     private fun MatchJournal.MatchChunk.dependsOnAny(utags: Iterable<Any>): Boolean =
         utags.contains(this.ruleUniqueTag) || utags.any { utag -> dependsOnRule(utag) }
