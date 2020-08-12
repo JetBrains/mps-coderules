@@ -2626,59 +2626,54 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3cpWs8" id="1z4$59iLPYJ" role="3cqZAp">
+                  <node concept="3cpWsn" id="1z4$59iLPYK" role="3cpWs9">
+                    <property role="TrG5h" value="typecheckingService" />
+                    <node concept="3uibUv" id="1z4$59iLOH4" role="1tU5fm">
+                      <ref role="3uigEE" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
+                    </node>
+                    <node concept="2YIFZM" id="1z4$59iLRGn" role="33vP2m">
+                      <ref role="37wK5l" to="tj24:1z4$59iHmYH" resolve="create" />
+                      <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
+                      <node concept="37vLTw" id="1z4$59iLRGo" role="37wK5m">
+                        <ref role="3cqZAo" node="2cnGCY$rO2g" resolve="repository" />
+                      </node>
+                      <node concept="2YIFZM" id="1z4$59iLTYN" role="37wK5m">
+                        <ref role="37wK5l" to="31yc:7iCybvTs3lI" resolve="getInstance" />
+                        <ref role="1Pybhc" to="31yc:7iCybvToiT5" resolve="Config" />
+                      </node>
+                      <node concept="2YIFZM" id="1z4$59iLPYY" role="37wK5m">
+                        <ref role="1Pybhc" to="31yc:4MaHsBDdlvx" resolve="MessageLog" />
+                        <ref role="37wK5l" to="31yc:2mhJggjuVj0" resolve="get" />
+                        <node concept="37vLTw" id="1z4$59iLPYZ" role="37wK5m">
+                          <ref role="3cqZAo" node="6hqFpWnfkNg" resolve="mpsProject" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbH" id="1z4$59iLRgW" role="3cqZAp" />
                 <node concept="3cpWs8" id="2cnGCY$o4N4" role="3cqZAp">
                   <node concept="3cpWsn" id="2cnGCY$o4N5" role="3cpWs9">
                     <property role="TrG5h" value="typeNode" />
                     <node concept="3Tqbb2" id="2cnGCY$o4BH" role="1tU5fm" />
-                    <node concept="2OqwBi" id="2cnGCY$rSBu" role="33vP2m">
-                      <node concept="2OqwBi" id="61G6TdDEvB7" role="2Oq$k0">
-                        <node concept="2OqwBi" id="61G6TdDEuyK" role="2Oq$k0">
-                          <node concept="2OqwBi" id="61G6TdDF0xn" role="2Oq$k0">
-                            <node concept="2YIFZM" id="2cnGCY$rQEE" role="2Oq$k0">
-                              <ref role="37wK5l" to="tj24:1FOQehxzbI0" resolve="forRepository" />
-                              <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
-                              <node concept="37vLTw" id="2cnGCY$rSlc" role="37wK5m">
-                                <ref role="3cqZAo" node="2cnGCY$rO2g" resolve="repository" />
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="61G6TdDF1oc" role="2OqNvi">
-                              <ref role="37wK5l" to="tj24:2xx8OBydcrE" resolve="withArgs" />
-                              <node concept="2OqwBi" id="61G6TdDF3eG" role="37wK5m">
-                                <node concept="37vLTw" id="61G6TdDF1Yt" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6hqFpWnfpcc" resolve="nodes" />
-                                </node>
-                                <node concept="1uHKPH" id="61G6TdDF5cr" role="2OqNvi" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="61G6TdCY3U2" role="2OqNvi">
-                            <ref role="37wK5l" to="tj24:1G9Y_Qvby8B" resolve="withTraceObject" />
-                            <node concept="2ShNRf" id="61G6TdCY3U3" role="37wK5m">
-                              <node concept="HV5vD" id="61G6TdCY3U4" role="2ShVmc">
-                                <ref role="HV5vE" to="1yqb:1G9Y_Qvb1CP" resolve="TraceObject" />
-                              </node>
-                            </node>
-                          </node>
+                    <node concept="2OqwBi" id="1z4$59iTR9q" role="33vP2m">
+                      <node concept="2OqwBi" id="2cnGCY$rSBu" role="2Oq$k0">
+                        <node concept="37vLTw" id="1z4$59iLPZ0" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1z4$59iLPYK" resolve="typecheckingService" />
                         </node>
-                        <node concept="liA8E" id="61G6TdCY3TT" role="2OqNvi">
-                          <ref role="37wK5l" to="tj24:2Y70AYEd10O" resolve="withMessageHandler" />
-                          <node concept="2YIFZM" id="61G6TdCY3TU" role="37wK5m">
-                            <ref role="1Pybhc" to="31yc:4MaHsBDdlvx" resolve="MessageLog" />
-                            <ref role="37wK5l" to="31yc:2mhJggjuVj0" resolve="get" />
-                            <node concept="37vLTw" id="61G6TdCY3TV" role="37wK5m">
-                              <ref role="3cqZAo" node="6hqFpWnfkNg" resolve="mpsProject" />
+                        <node concept="liA8E" id="2cnGCY$rT84" role="2OqNvi">
+                          <ref role="37wK5l" to="tj24:1z4$59iIgeQ" resolve="localTypeOf" />
+                          <node concept="2OqwBi" id="2cnGCY$rUzz" role="37wK5m">
+                            <node concept="37vLTw" id="2cnGCY$rTTO" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6hqFpWnfpcc" resolve="nodes" />
                             </node>
+                            <node concept="1uHKPH" id="2cnGCY$rVKS" role="2OqNvi" />
                           </node>
                         </node>
                       </node>
-                      <node concept="liA8E" id="2cnGCY$rT84" role="2OqNvi">
-                        <ref role="37wK5l" to="tj24:1FOQehxnxRH" resolve="calcTypeLocally" />
-                        <node concept="2OqwBi" id="2cnGCY$rUzz" role="37wK5m">
-                          <node concept="37vLTw" id="2cnGCY$rTTO" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6hqFpWnfpcc" resolve="nodes" />
-                          </node>
-                          <node concept="1uHKPH" id="2cnGCY$rVKS" role="2OqNvi" />
-                        </node>
+                      <node concept="liA8E" id="1z4$59iTRP0" role="2OqNvi">
+                        <ref role="37wK5l" to="tj24:1z4$59ivhO1" resolve="get" />
                       </node>
                     </node>
                   </node>
