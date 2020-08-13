@@ -182,106 +182,6 @@
       </node>
     </node>
   </node>
-  <node concept="AVZre" id="3MFPGC50Any">
-    <property role="TrG5h" value="ConversionMainSeq" />
-    <ref role="2YbDB9" to="kqnc:24Vro6cM_J$" resolve="ConversionMain" />
-    <node concept="1nLNMY" id="3MFPGC50KDp" role="1nK1Vg">
-      <property role="TrG5h" value="converts_sequence_covariance" />
-      <node concept="3clFbS" id="3MFPGC50KDq" role="1nLNMH">
-        <node concept="1nLNNL" id="3MFPGC50KDr" role="3cqZAp">
-          <node concept="1nLNMm" id="3MFPGC50KDs" role="1nLNNK">
-            <node concept="3Aq93q" id="3MFPGC50KDt" role="1nLNMb">
-              <node concept="3I6sU6" id="3MFPGC50KDu" role="3Ip0Jz">
-                <node concept="3I6s7M" id="3MFPGC50KDv" role="3I6sU7">
-                  <node concept="3Aqt3T" id="3MFPGC50KDw" role="3I6s78">
-                    <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
-                    <node concept="1HFMs5" id="3MFPGC50KDx" role="3AunhB">
-                      <node concept="a7P8L" id="3MFPGC50KDy" role="1uarlU">
-                        <ref role="a7OzE" node="3MFPGC50KDJ" resolve="T" />
-                      </node>
-                      <node concept="ns1u0" id="3MFPGC50KDz" role="1uarlW">
-                        <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
-                        <node concept="nsMwS" id="3MFPGC50KD$" role="ns1xD">
-                          <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="3MFPGC50KD_" role="nsMwV">
-                            <node concept="a7P8L" id="3MFPGC50KDA" role="1nq8_t">
-                              <ref role="a7OzE" node="3MFPGC50KDL" resolve="TElem" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="1HFMs5" id="3MFPGC50KDB" role="3AunhB">
-                      <node concept="a7P8L" id="3MFPGC50KDC" role="1uarlU">
-                        <ref role="a7OzE" node="3MFPGC50KDI" resolve="S" />
-                      </node>
-                      <node concept="ns1u0" id="3MFPGC50KDD" role="1uarlW">
-                        <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
-                        <node concept="nsMwS" id="3MFPGC50KDE" role="ns1xD">
-                          <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="3MFPGC50KDF" role="nsMwV">
-                            <node concept="a7P8L" id="3MFPGC50KDG" role="1nq8_t">
-                              <ref role="a7OzE" node="3MFPGC50KDK" resolve="SElem" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="a7P8L" id="4s_lMmH6Cxe" role="3AunhB">
-                      <ref role="a7OzE" node="4s_lMmH6Cxc" resolve="Options" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3NuqgR" id="3MFPGC50KDH" role="0Rg$4">
-              <node concept="aZer4" id="3MFPGC50KDI" role="3XD1gS">
-                <property role="TrG5h" value="S" />
-              </node>
-              <node concept="aZer4" id="3MFPGC50KDJ" role="3XD1gS">
-                <property role="TrG5h" value="T" />
-              </node>
-              <node concept="aZer4" id="3MFPGC50KDK" role="3XD1gS">
-                <property role="TrG5h" value="SElem" />
-              </node>
-              <node concept="aZer4" id="3MFPGC50KDL" role="3XD1gS">
-                <property role="TrG5h" value="TElem" />
-              </node>
-              <node concept="32pEOW" id="3MFPGC50KDM" role="3vLBG7" />
-            </node>
-            <node concept="3xSepi" id="3MFPGC50KDN" role="3xSepv">
-              <node concept="3Aq9E8" id="3MFPGC50KDO" role="3xSepj">
-                <node concept="3I6sU6" id="3MFPGC50KDP" role="3Ip0Jz">
-                  <node concept="3I6s7M" id="3MFPGC50KYx" role="3I6sU7">
-                    <node concept="3Aqt3T" id="3MFPGC50KYw" role="3I6s78">
-                      <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
-                      <node concept="a7P8L" id="3MFPGC50L02" role="3AunhB">
-                        <ref role="a7OzE" node="3MFPGC50KDL" resolve="TElem" />
-                      </node>
-                      <node concept="a7P8L" id="3MFPGC50L0U" role="3AunhB">
-                        <ref role="a7OzE" node="3MFPGC50KDK" resolve="SElem" />
-                      </node>
-                      <node concept="a7P8L" id="4s_lMmH6Cxf" role="3AunhB">
-                        <ref role="a7OzE" node="4s_lMmH6Cxc" resolve="Options" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3NuqgR" id="4s_lMmH6Cxa" role="0Rg$4">
-              <node concept="3uibUv" id="4s_lMmH6Cxb" role="3vLBG7">
-                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
-              </node>
-              <node concept="aZer4" id="4s_lMmH6Cxc" role="3XD1gS">
-                <property role="TrG5h" value="Options" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="0oKg$" id="1oUE7CXmlxI">
     <property role="TrG5h" value="SequenceTypeMacro" />
     <node concept="3hwh0R" id="1oUE7CX4dOb" role="0oKgB">
@@ -487,6 +387,106 @@
           <property role="TrG5h" value="Elem" />
         </node>
         <node concept="32pEOW" id="3Z1xyIvRM6R" role="3vLBG7" />
+      </node>
+    </node>
+  </node>
+  <node concept="AVZre" id="3MFPGC50Any">
+    <property role="TrG5h" value="ConversionMainSeq" />
+    <ref role="2YbDB9" to="kqnc:24Vro6cM_J$" resolve="ConversionMain" />
+    <node concept="1nLNMY" id="3MFPGC50KDp" role="1nK1Vg">
+      <property role="TrG5h" value="converts_sequence_covariance" />
+      <node concept="3clFbS" id="3MFPGC50KDq" role="1nLNMH">
+        <node concept="1nLNNL" id="3MFPGC50KDr" role="3cqZAp">
+          <node concept="1nLNMm" id="3MFPGC50KDs" role="1nLNNK">
+            <node concept="3Aq93q" id="3MFPGC50KDt" role="1nLNMb">
+              <node concept="3I6sU6" id="3MFPGC50KDu" role="3Ip0Jz">
+                <node concept="3I6s7M" id="3MFPGC50KDv" role="3I6sU7">
+                  <node concept="3Aqt3T" id="3MFPGC50KDw" role="3I6s78">
+                    <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
+                    <node concept="1HFMs5" id="3MFPGC50KDx" role="3AunhB">
+                      <node concept="a7P8L" id="3MFPGC50KDy" role="1uarlU">
+                        <ref role="a7OzE" node="3MFPGC50KDJ" resolve="T" />
+                      </node>
+                      <node concept="ns1u0" id="3MFPGC50KDz" role="1uarlW">
+                        <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
+                        <node concept="nsMwS" id="3MFPGC50KD$" role="ns1xD">
+                          <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
+                          <node concept="1nq8_$" id="3MFPGC50KD_" role="nsMwV">
+                            <node concept="a7P8L" id="3MFPGC50KDA" role="1nq8_t">
+                              <ref role="a7OzE" node="3MFPGC50KDL" resolve="TElem" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="1HFMs5" id="3MFPGC50KDB" role="3AunhB">
+                      <node concept="a7P8L" id="3MFPGC50KDC" role="1uarlU">
+                        <ref role="a7OzE" node="3MFPGC50KDI" resolve="S" />
+                      </node>
+                      <node concept="ns1u0" id="3MFPGC50KDD" role="1uarlW">
+                        <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
+                        <node concept="nsMwS" id="3MFPGC50KDE" role="ns1xD">
+                          <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
+                          <node concept="1nq8_$" id="3MFPGC50KDF" role="nsMwV">
+                            <node concept="a7P8L" id="3MFPGC50KDG" role="1nq8_t">
+                              <ref role="a7OzE" node="3MFPGC50KDK" resolve="SElem" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="a7P8L" id="4s_lMmH6Cxe" role="3AunhB">
+                      <ref role="a7OzE" node="4s_lMmH6Cxc" resolve="Options" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="3MFPGC50KDH" role="0Rg$4">
+              <node concept="aZer4" id="3MFPGC50KDI" role="3XD1gS">
+                <property role="TrG5h" value="S" />
+              </node>
+              <node concept="aZer4" id="3MFPGC50KDJ" role="3XD1gS">
+                <property role="TrG5h" value="T" />
+              </node>
+              <node concept="aZer4" id="3MFPGC50KDK" role="3XD1gS">
+                <property role="TrG5h" value="SElem" />
+              </node>
+              <node concept="aZer4" id="3MFPGC50KDL" role="3XD1gS">
+                <property role="TrG5h" value="TElem" />
+              </node>
+              <node concept="32pEOW" id="3MFPGC50KDM" role="3vLBG7" />
+            </node>
+            <node concept="3xSepi" id="3MFPGC50KDN" role="3xSepv">
+              <node concept="3Aq9E8" id="3MFPGC50KDO" role="3xSepj">
+                <node concept="3I6sU6" id="3MFPGC50KDP" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="3MFPGC50KYx" role="3I6sU7">
+                    <node concept="3Aqt3T" id="3MFPGC50KYw" role="3I6s78">
+                      <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
+                      <node concept="a7P8L" id="3MFPGC50L02" role="3AunhB">
+                        <ref role="a7OzE" node="3MFPGC50KDL" resolve="TElem" />
+                      </node>
+                      <node concept="a7P8L" id="3MFPGC50L0U" role="3AunhB">
+                        <ref role="a7OzE" node="3MFPGC50KDK" resolve="SElem" />
+                      </node>
+                      <node concept="a7P8L" id="4s_lMmH6Cxf" role="3AunhB">
+                        <ref role="a7OzE" node="4s_lMmH6Cxc" resolve="Options" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="4s_lMmH6Cxa" role="0Rg$4">
+              <node concept="3uibUv" id="4s_lMmH6Cxb" role="3vLBG7">
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
+              </node>
+              <node concept="aZer4" id="4s_lMmH6Cxc" role="3XD1gS">
+                <property role="TrG5h" value="Options" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
