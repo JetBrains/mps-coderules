@@ -865,6 +865,16 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="7gMIJIy1fG2" role="3bR37C">
+          <node concept="1Busua" id="7gMIJIy1fG3" role="1SiIV1">
+            <ref role="1Busuk" node="69UmpDmJW26" resolve="jetbrains.mps.baseLanguageExt" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7gMIJIy1fG4" role="3bR37C">
+          <node concept="1Busua" id="7gMIJIy1fG5" role="1SiIV1">
+            <ref role="1Busuk" to="ffeo:7Kfy9QB6KZ0" resolve="jetbrains.mps.baseLanguageInternal" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="2n$L_Zi7QGo" role="2G$12L">
         <property role="BnDLt" value="true" />
