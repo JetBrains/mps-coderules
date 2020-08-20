@@ -51,7 +51,7 @@ internal class EvaluationSessionImpl private constructor (
         if (!incrementality.ability().allowed() || token == null) {
             val ruleIndex = token
                 ?.let { (it as SessionTokenImpl).ruleIndex }
-                ?.also { it.updateIndex(program.rulesLists(), rulesDiff.removed) }
+                ?.also { it.updateIndex(program.rulesLists()) }
                 ?: RuleIndex(program.rulesLists())
             val logicalState = LogicalState()
 
@@ -71,7 +71,7 @@ internal class EvaluationSessionImpl private constructor (
             val tkn = token as SessionTokenImpl
             val logicalState = tkn.logicalState
             val ruleIndex = tkn.ruleIndex
-            ruleIndex.updateIndex(program.rulesLists(), rulesDiff.removed)
+            ruleIndex.updateIndex(program.rulesLists())
 
             val processing = ConstraintsProcessing(
                 Dispatcher(ruleIndex, tkn.getFrontState()).front(),

@@ -111,7 +111,10 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
 
     override fun iterator(): Iterator<Rule> = allRules.map { it.rule }.iterator()
 
-    fun updateIndex(ruleLists: Iterable<RulesList>, removedTags: Set<Any>) {
+    fun updateIndex(ruleLists: Iterable<RulesList>) {
+        val removedTags = allRules.map { it.rule.uniqueTag() }.toHashSet()
+        ruleLists.flatMap { it.rules() }.map { it.uniqueTag() }.forEach{ removedTags.remove(it) }
+
         val allRulesIt = allRules.listIterator()
         var nextIdx = 0
         ruleLists.flatMap { it.rules() }.forEach { rule ->

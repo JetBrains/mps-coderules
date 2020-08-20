@@ -60,7 +60,7 @@ class TestRuleIndex  {
                 iterator().hasNext() shouldBe false
             }
 
-            ruleIndex.updateIndex(second.rulesLists, setOf("rule0"))
+            ruleIndex.updateIndex(second.rulesLists)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 iterator().hasNext() shouldBe false
             }
@@ -92,7 +92,7 @@ class TestRuleIndex  {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule0")
             }
 
-            ruleIndex.updateIndex(second.rulesLists, setOf())
+            ruleIndex.updateIndex(second.rulesLists)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule0")
             }
@@ -128,7 +128,7 @@ class TestRuleIndex  {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule2")
             }
 
-            ruleIndex.updateIndex(second.rulesLists, setOf("rule0"))
+            ruleIndex.updateIndex(second.rulesLists)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule1")
             }
@@ -159,7 +159,7 @@ class TestRuleIndex  {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule2")
             }
 
-            ruleIndex.updateIndex(second.rulesLists, setOf("rule1", "rule2"))
+            ruleIndex.updateIndex(second.rulesLists)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule0")
             }
@@ -209,7 +209,7 @@ class TestRuleIndex  {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule4")
             }
 
-            ruleIndex.updateIndex(second.rulesLists, setOf("rule1", "rule3"))
+            ruleIndex.updateIndex(second.rulesLists)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule5", "rule0")
             }
