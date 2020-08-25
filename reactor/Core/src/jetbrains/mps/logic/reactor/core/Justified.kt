@@ -95,6 +95,6 @@ interface Justified {
 
 
 interface EvidenceSource {
-    val initEvidence: Evidence
+    val nullEvidence: Evidence
     fun nextEvidence(): Evidence
 }

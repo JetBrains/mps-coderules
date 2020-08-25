@@ -60,7 +60,7 @@ internal open class StoreAwareJournalImpl(private val journal: MatchJournal,
     // Reset only store & history position, don't modify history
     override fun resetStore() {
         logicalState.reset()
-        this.resetPos()
+        this.resetCursor()
     }
 
 

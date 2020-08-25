@@ -65,46 +65,8 @@ internal class ConstraintsProcessing(
             dispatchingFront = dispatchingFront.forget(match)
         }
     }
-    val stateCleaner = ProgramStateCleaner()
 
-
-    //TODO: move to MatchJournal
-    /**
-     * Preserves last valid [Chunk] while iterating on Chunks and removing them through [nextOrRemove].
-     */
-    private class ChunkRemover(private val it: MutableIterator<MatchJournal.Chunk>): MatchJournal.ChunkReader {
-        private var _current_: MatchJournal.Chunk
-        private var _previous_: MatchJournal.Chunk
-
-        init {
-            assert(it.hasNext()) {"initial chunk must be always present"}
-            _current_ = it.next()
-            _previous_ = _current_
-        }
-
-        /**
-         * Removes next [Chunk] if [action] returns [true], else just advances.
-         * @return [true] if iterator advanced (i.e. next [Chunk] wasn't removed), [false] otherwise.
-         */
-        inline fun nextOrRemove(action: (MatchJournal.ChunkReader) -> Boolean): Boolean {
-            val lastPrev = _previous_
-            _previous_ = _current_
-            _current_ = it.next()
-
-            val toRemove = action(this)
-            if (toRemove) {
-                it.remove()
-                // don't advance
-                _current_ = _previous_
-                _previous_ = lastPrev
-            }
-            return !toRemove
-        }
-
-        override val current: MatchJournal.Chunk get() = _current_
-        override val previous: MatchJournal.Chunk get() = _previous_
-        override val reachedEnd: Boolean get() = !it.hasNext()
-    }
+    private val stateCleaner = ProgramStateCleaner()
 
 
     fun activateContinue(controller: Controller, activeOcc: Occurrence, parent: MatchJournal.MatchChunk): FeedbackStatus {
@@ -132,24 +94,38 @@ internal class ConstraintsProcessing(
         adder = AdditionStage(ispec, rulesDiff.added, continuator, ruleOrdering, ruleIndex, trace)
         postponer = PostponeMatchesStage(ispec, this, journalIndex, ruleOrdering)
 
-        val chunkReader = ChunkRemover(this.iterator())
+        val cursor = this.cursor
 
         var status: FeedbackStatus = FeedbackStatus.NORMAL()
-        while (!chunkReader.reachedEnd) {
-            val advanced = chunkReader.nextOrRemove(invalidator::onNext)
-            if (!advanced) continue
+        while (true) {
+            invalidator.run(cursor)
 
-            adder.onNext(chunkReader)
+            val postponedMatches = postponer.onNext(cursor)
+            adder.receive(postponedMatches)
+            adder.onNext(cursor)
 
-            postponer.onNext(chunkReader)
-
-            status = continuator.run(controller, chunkReader)
+            status = continuator.run(controller, cursor)
             if (!status.operational) break
+
+            // continuator may request invalidating more chunks
+            val haveChanges = invalidator.run(cursor)
+
+            if (cursor.atEnd()) break
+            if (!haveChanges) cursor.next()
         }
         return status
     }
 
-    private fun ContinueOccurrencesStage.run(controller: Controller, chunkReader: MatchJournal.ChunkReader): FeedbackStatus {
+    private fun InvalidationStage.run(cursor: RemovingJournalIterator): Boolean {
+        var haveChanges = false
+        while (this.onNext(cursor)) {
+            cursor.removeNext()
+            haveChanges = true
+        }
+        return haveChanges
+    }
+
+    private fun ContinueOccurrencesStage.run(controller: Controller, chunkReader: ChunkReader): FeedbackStatus {
         var status: FeedbackStatus = FeedbackStatus.NORMAL()
         val parentChunk = parentChunk()
 
@@ -231,15 +207,6 @@ internal class ConstraintsProcessing(
     }
 
 
-    @Deprecated("obsolete machinery, superseded by MPSCR-65")
-    private fun dropDiscardingMatchesFor(ancestor: MatchJournal.OccChunk, droppedRuleTags: MutableSet<Any>) =
-        this.dropDescendantsWhile(ancestor) { chunk ->
-            if (chunk is MatchJournal.MatchChunk && chunk.match.discards(ancestor.occ)) {
-                droppedRuleTags.add(chunk.ruleUniqueTag)
-                true
-            } else false
-        }
-
     private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
         if (operational) action(this) else this
 
@@ -271,27 +238,10 @@ internal class ConstraintsProcessing(
             invalidator.receive(invalidJustifications)
         }
     }
-//    private fun continueReplacedHeads(match: RuleMatchEx, parent: MatchJournal.MatchChunk) {
-//        if (!isFront() && match.isPrincipal) {
-//            profiler.profile("continueReplaced") {
-//
-//                val invalidJustifications = match.matchHeadReplaced().filter { it.isPrincipal }
-//                if (invalidJustifications.isNotEmpty()) {
-//
-//                    dropDescendants(invalidJustifications) { lastValidChunk, currentChunk ->
-//                        val validOccs = invalidator.invalidateChunk(currentChunk, invalidJustifications)
-//                        activationQueue.offerAll(lastValidChunk.toPos(), validOccs)
-//                    }
-//
-//                }
-//            }
-//        }
-//    }
 
     private fun postponeFutureMatches(active: Occurrence, matches: List<RuleMatchEx>) =
         if (requiresIncrementalProcessing(active)) {
-            postponer.process(active, matches)
-//            activationQueue.postponeFutureMatches(matches)
+            postponer.postponeFutureMatches(matches)
         } else matches
 
 
@@ -339,7 +289,7 @@ internal class ConstraintsProcessing(
 
 
     /**
-     * Incapsulates logic for deriving [Evidence] and [Justifications] for a new [Occurrence].
+     * Encapsulates logic for deriving [Evidence] and [Justifications] for a new [Occurrence].
      */
     inner class JustifiedOccurrenceCreator {
         val savedEvidence: Evidence = evidence()
@@ -369,9 +319,9 @@ internal class ConstraintsProcessing(
         }
     }
 
-    private fun requiresIncrementalProcessing(match: RuleMatchEx) = ispec.ability().allowed() && match.isPrincipal
+    private fun requiresIncrementalProcessing(match: RuleMatchEx) = !isFront() && ispec.ability().allowed() && match.isPrincipal
 
-    private fun requiresIncrementalProcessing(occ: Occurrence) = ispec.ability().allowed() && occ.isPrincipal
+    private fun requiresIncrementalProcessing(occ: Occurrence) = !isFront() && ispec.ability().allowed() && occ.isPrincipal
 
     private fun MatchJournal.MatchChunk.dependsOnAny(utags: Iterable<Any>): Boolean =
         utags.contains(this.ruleUniqueTag) || utags.any { utag -> dependsOnRule(utag) }

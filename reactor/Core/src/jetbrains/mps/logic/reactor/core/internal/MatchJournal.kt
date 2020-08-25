@@ -24,7 +24,7 @@ import java.util.*
 import kotlin.Comparator
 
 
-interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
+interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
 
     /**
      * Add new [Chunk] for matches of principal rules.
@@ -66,9 +66,19 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
 
 
     /**
+     * Returns read-only [JournalIterator] that allows to remove future [Chunk]s.
+     */
+    override fun iterator(): JournalIterator
+
+    /**
+     * Returns internal [JournalIterator] that allows to remove future [Chunk]s.
+     */
+    val cursor: RemovingJournalIterator
+
+    /**
      * Reset journal's position to the beginning, don't modify journal.
      */
-    fun resetPos()
+    fun resetCursor()
 
     /**
      * Erase part of the journal between [currentPos] and [pastPos].
@@ -77,22 +87,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
      * @throws IllegalStateException when position is not from the past (relative to current pos).
      */
     fun reset(pastPos: Pos)
-
-    /**
-     * Removes [Chunk]s among descendants of [ancestor] if they satisfy [dropIf] predicate.
-     * Transitively removes descendants of removed chunks.
-     * Only erases future chunks and leaves journal [currentPos] intact.
-     */
-    @Deprecated("obsolete machinery, superseded by [dropDescendants] & MPSCR-65")
-    fun dropDescendantsWhile(ancestor: Chunk, dropIf: (Chunk) -> Boolean)
-
-    /**
-     * Removes [Chunk]s dependent on any of [invalidated],
-     * applying [forEachDropped] for each removed [Chunk] (2nd arg)
-     * and providing it a last valid [Chunk] position (1st arg)
-     * Only erases future chunks, leaving [currentPos] intact.
-     */
-    fun dropDescendants(invalidated: Collection<Justified>, forEachDropped: (Chunk, Chunk) -> Unit)
 
     /**
      * Replay activated and discarded occurrences logged in journal between current
@@ -119,32 +113,33 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
     fun index(): Index
 
 
-    interface ChunkReader {
-        val current: Chunk get
-        val previous: Chunk get
-        val reachedEnd: Boolean get
-    }
-
     /**
      * Simplifies some search operations on [MatchJournal].
      * Also serves as a comparator for positions: later in journal means greater.
      */
     interface Index : ComparatorExt<Pos> {
 
+        /**
+         * Returns [Comparator] for [Chunk]s based on their [Pos] in this [Index].
+         */
         val chunkComparator: Comparator<Chunk> get
 
+        /**
+         * Returns [true] for indexed [Chunk]s.
+         * [Index] is a snapshot of [MatchJournal],
+         * so new additions to journal aren't indexed.
+         */
         fun isKnown(chunk: Chunk): Boolean
 
         /**
-         * Returns [Chunk] where provided principal occurrence was activated.
-         * Returns null for non-principal occurrences.
+         * Returns [Chunk] where [occ] was activated.
+         * Returns null for non-principal occurrences & those not from indexed session.
          */
         fun activatingChunkOf(occ: Occurrence): OccChunk?
 
         /**
-         * Returns [Pos] at which provided [RuleMatch] is triggered
-         * according to its indexed head [Occurrence]s.
-         * May return null for matches of non-principal rules.
+         * Returns [Pos] at which provided [RuleMatch] was triggered.
+         * Returns null for non-principal rules & those not from indexed session.
          */
         fun activationPos(match: RuleMatchEx): OccChunk?
 
