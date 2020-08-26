@@ -79,14 +79,15 @@ class TestIncrementalProgram {
         return this to result
     }
 
-    private fun SessionToken.chunks(): Collection<MatchJournal.Chunk> =
+    private fun SessionToken.chunks(): List<MatchJournal.Chunk> =
         (this.journalView as MatchJournal.View).chunks
 
     private fun EvaluationResult.chunksSymbolView() = this.token().chunks().map {
         it.entries().map { entry -> !entry.discarded to entry.occ.constraint().symbol() }
     }
 
-    private fun EvaluationResult.lastChunk() = this.token().chunks().last() as MatchJournal.Chunk
+//    private fun EvaluationResult.lastChunk() = this.token().chunks().last()
+    private fun EvaluationResult.lastChunk() = this.token().chunks().let { it[it.size-2] }
 
     private fun EvaluationResult.countChunks() = this.token().chunks().size
 
@@ -281,6 +282,8 @@ class TestIncrementalProgram {
 
     @Test
     fun addAtStartMatch() {
+        var nPrincipalMatches: Int = 0
+
         val progSpec = MockIncrProgSpec(
             setOf("main.foo", "main.bar"),
             setOf(sym0("main"))
@@ -295,9 +298,9 @@ class TestIncrementalProgram {
                     constraint("foo")
                 ))
         ).launch("addRule", progSpec) { result ->
+            nPrincipalMatches = result.countChunks()
 
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"))
-            result.countChunks() shouldBe 3
             result.lastChunkSymbols() shouldBe listOf(sym0("foo"))
 
         }.also { (builder, evalRes) ->
@@ -313,7 +316,7 @@ class TestIncrementalProgram {
             ).relaunch("atStart", progSpec, evalRes.token()) { result ->
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"), sym0("bar"))
-                result.countChunks() shouldBe 3+1
+                result.countChunks() shouldBe nPrincipalMatches+1
                 result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
             }
         }
@@ -414,7 +417,6 @@ class TestIncrementalProgram {
     }
 
     @Test
-    @Ignore("Shouldn't pass by design. Requires removal-phase before such additions.")
     fun addReplacedBeforeReplaced() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "foo.bar", "foo.baz", "baz.dummy"),
@@ -451,7 +453,6 @@ class TestIncrementalProgram {
             result.lastChunkSymbols() shouldBe listOf(sym0("dummy"))
 
         }.also { (builder, evalRes) ->
-            val nPrincipalMatches = evalRes.countChunks()
 
             builder.insertRulesAt(1,
                 rule("foo.bar",
@@ -466,7 +467,6 @@ class TestIncrementalProgram {
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"))
                 result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
-                result.countChunks() shouldBe (nPrincipalMatches + 1 - 2)
             }
         }
     }
@@ -761,10 +761,9 @@ class TestIncrementalProgram {
 
     // Same as 'completePartialMatch' test, except it discards 'foo' at the end.
     @Test
-    @Ignore("Shouldn't pass by design. Incrementality-enabled programs are not supposed to have such rule sequences.")
     fun completePartialMatchBeforeReplaced() {
         val progSpec = MockIncrProgSpec(
-            setOf(".foo", ".bar", "foobar"),
+            setOf(".foo", ".bar", "foobar", "rmfoo"),
             setOf(sym0("start"), sym0("foo"), sym0("bar"))
         )
         programWithRules(
@@ -818,8 +817,7 @@ class TestIncrementalProgram {
 
                 // if "foobar" happens too early, "1st" occ won't be produced
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("marker"))
-                result.lastChunkSymbols() shouldBe listOf(sym0("marker"))
-                result.countChunks() shouldBe (2 + nPrincipalMatches) // +[.bar, foobar]
+                result.countChunks() shouldBe (3 + nPrincipalMatches) // +[.bar, foobar, rmfoo]
             }
         }
     }
@@ -1721,7 +1719,6 @@ class TestIncrementalProgram {
     }
 
     @Test
-    @Ignore("waiting for complete fix for MPSCR-65")
     fun substructuralTS_insertWriteBeforeRW() {
         /* Expected test program execution:
 
@@ -1808,7 +1805,7 @@ class TestIncrementalProgram {
 
 
     @Test
-    @Ignore("waiting for complete fix for MPSCR-65")
+//    @Ignore("waiting for complete fix for MPSCR-65")
     fun substructuralTS_indirectResourceDependency() {
         /* Expected test program execution:
             Write of resource2 depends on write of resource1

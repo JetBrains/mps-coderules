@@ -38,6 +38,8 @@ class TestStoreAwareJournal {
         ispec: IncrementalSpec = LegacyMockIncrProgSpec,
         val hist: StoreAwareJournal = StoreAwareJournal.fromView(ispec)
     ) {
+        val initialJournalSize = hist.view().chunks.size
+
         var d: Dispatcher.DispatchingFront = dispatcher.front()
 
         fun logExpand(occ: Occurrence) {
@@ -53,6 +55,7 @@ class TestStoreAwareJournal {
         // log and expand occurrence while tracking its justifications
         fun logExpandJustified(id: String, vararg args: Any) =
             logExpand(principalOccurrence(id, hist, * args))
+
     }
 
     @Test
@@ -163,7 +166,7 @@ class TestStoreAwareJournal {
 
                     storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("lax"))
                     val nchunks = view().chunks.size
-                    nchunks shouldBe 4 * 2 // 4 rules, each activates 1 principal occurrence
+                    nchunks shouldBe 2 + 4 * 2 // 4 rules, each activates 1 principal occurrence + 2 corner chunks
 
                     // try replay the last chunk
                     replay(lastPos)
@@ -444,7 +447,7 @@ class TestStoreAwareJournal {
             with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
                 with(hist) {
-                    view().chunks.size shouldBe 1 // only initial chunk
+                    view().chunks.size shouldBe initialJournalSize // only initial chunk
                     storeView().allOccurrences().count() shouldBe 0
                 }
                 val initialPos = hist.currentPos()
@@ -462,14 +465,14 @@ class TestStoreAwareJournal {
 
 
                 with(hist) {
-                    view().chunks.size shouldBe 5
+                    view().chunks.size shouldBe 4 + initialJournalSize
                     storeView().allOccurrences().count() shouldBe 1 // only "qux"
 
                     // reset to the very beginning
                     reset(initialPos)
 
                     currentPos().chunk shouldBeSame initialPos.chunk
-                    view().chunks.size shouldBe 1
+                    view().chunks.size shouldBe initialJournalSize
                     storeView().allOccurrences().count() shouldBe 0
                 }
             }
@@ -534,10 +537,10 @@ class TestStoreAwareJournal {
 
 
                 // rule4
-                hist.view().chunks.size shouldBe 4
+                hist.view().chunks.size shouldBe 3 + initialJournalSize
                 logFirstMatch()
                 // match on the principal constraint must add the chunk
-                hist.view().chunks.size shouldBe 5
+                hist.view().chunks.size shouldBe 4 + initialJournalSize
 
 
                 val oldState = hist.view()
@@ -547,7 +550,7 @@ class TestStoreAwareJournal {
                 hist.testPush()
                 logExpandJustified("last")
 
-                hist.view().chunks.size shouldBe 6
+                hist.view().chunks.size shouldBe 5 + initialJournalSize
                 assertNotEquals(oldStore, hist.storeView().allOccurrences())
 
 
@@ -561,128 +564,4 @@ class TestStoreAwareJournal {
         }
     }
 
-
-    @Ignore("manipulating journal without controller is too fragile. not a good test.")
-    @Test
-    fun testRmAddInMiddle() {
-        val mockController = MockController()
-        with(programWithRules(
-            rule("rule1",
-                headReplaced(
-                    pconstraint("foo")
-                ),
-                body(
-                    // 'bar' occurrences are activated manually, see test code
-//                    pconstraint("bar1"),
-//                    pconstraint("bar2"),
-                    pconstraint("bazz")
-                )),
-
-            rule("rule2a",
-                headReplaced(
-                    pconstraint("bar1")
-                ),
-                headKept(
-                    pconstraint("bazz")
-                ),
-                body()),
-            rule("rule2b",
-                headReplaced(
-                    pconstraint("bar2")
-                ),
-                headKept(
-                    pconstraint("bazz")
-                ),
-                body(
-                    constraint("marker")
-                )),
-
-            rule("rule3",
-                headReplaced(
-                    pconstraint("bazz")
-                ),
-                body(
-                    constraint("qux")
-                ))
-        ))
-        {
-            // Test outline:
-            //  1) exec program
-            //  2) rm chunk (rule match) from the history middle
-            //  3) add something instead of removed rule match
-            //  4) replay the still valid future, that's left from the first exec
-
-            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
-
-                logExpand(principalOccurrenceInit("foo"))
-
-                // rule1
-                logFirstMatch()
-                logExpandJustified("bar1")
-                logExpandJustified("bazz")
-
-                val rule1matches = d.matches()
-                rule1matches.count() shouldBe 2
-
-                // rule2a
-                hist.logMatch(rule1matches.first())
-                //no productions in rule2a
-
-                // rule3, this rule match will remain in history untouched
-                hist.logMatch(rule1matches.last())
-                logExpand("qux")
-
-                // execution ended
-
-                val lastPos = hist.currentPos()
-                with(hist) {
-                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"))
-
-                    // walk by history, remove the third chunk (i.e. match of rule2a)
-                    //  continue from the second chunk (match of rule1)
-                    val rmIt = iterator()
-                    rmIt.next() // skip initial chunk
-                    rmIt.next() // 'foo' activation
-                    val continueFrom = rmIt.next().toPos() // 'rule1' activation
-                    rmIt.next() // 'bar1' activation
-                    rmIt.next() // 'bazz' activation
-                    rmIt.next() // 'rule2a' match
-                    rmIt.remove() // rm rule2a match
-
-                    // store is not longer valid after removing chunks from history, so reset it
-                    resetStore()
-                    // move to the point where we want to insert new rule
-                    replay(continueFrom)
-
-                    // according to the history 'qux' wasn't activated at this point & 'bar1' wasn't discarded
-                    storeView().constraintSymbols() shouldBe setOf<ConstraintSymbol>()
-                }
-
-                // add another instance of bar (i.e. bar2) and trigger another rule, rule2b
-                //  (bar2 plays a role of the reactivation of original bar)
-                logExpandJustified("bar2")
-                // 'bazz' is already expanded from the first execution
-                hist.justifications() shouldBe justsOf(1,2,7) // dependency is only the first chunk, the first activation + new id
-
-                // we have only a single _new_ match; rule3 has been matched already and remains in the history, in future
-                d.matches().count() shouldBe 1
-                // rule2b, this rule match is added at the place of rule2a match
-                logFirstMatch()
-                logExpand("marker")
-
-                // reexecution ended
-
-                with(hist) {
-                    storeView().constraintSymbols() shouldBe setOf(sym0("bazz"), sym0("bar1"), sym0("marker"))
-                    assertNotEquals(lastPos, currentPos())
-
-                    // finally, purely go the the end, applying the rest of the history to the store
-                    replay(lastPos)
-
-                    currentPos().chunk shouldBeSame lastPos.chunk // we inserted in the middle -- the last chunk should remain the same
-                    storeView().constraintSymbols() shouldBe setOf(sym0("bar1"), sym0("qux"), sym0("marker"))
-                }
-            }
-        }
-    }
 }
