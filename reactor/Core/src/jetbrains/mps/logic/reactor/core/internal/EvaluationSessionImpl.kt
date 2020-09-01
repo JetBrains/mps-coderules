@@ -81,7 +81,7 @@ internal class EvaluationSessionImpl private constructor (
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
             logicalState.init(controller)
 
-            val status2tags = controller.incrLaunch(main, rulesDiff)
+            val status2tags = controller.incrLaunch(rulesDiff)
             newToken = processing.endSession()
             status = status2tags.first
             invalidFeedbackKeys = status2tags.second

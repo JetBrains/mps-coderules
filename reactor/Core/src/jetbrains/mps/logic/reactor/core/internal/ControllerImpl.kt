@@ -54,14 +54,8 @@ internal class ControllerImpl (
         return storeView()
     }
 
-    fun incrLaunch(constraint: Constraint, rulesDiff: RulesDiff): Pair<FeedbackStatus, FeedbackKeySet> {
-
-        val status = profiler.profile<FeedbackStatus>("journalTraverse") {
-            processing.invalidateAndAddRules(this, rulesDiff)
-        }
-
-        return status to processing.invalidatedFeedback()
-    }
+    fun incrLaunch(rulesDiff: RulesDiff): Pair<FeedbackStatus, FeedbackKeySet> =
+        processing.runIncrementally(this, rulesDiff)
 
     fun activate(constraint: Constraint) : FeedbackStatus {
         // FIXME noLogicalContext

@@ -49,24 +49,10 @@ internal class ConstraintsProcessing(
 
 ) : StoreAwareJournalImpl(journal, logicalState), IncrSpecHolder {
 
-    private val journalIndex: MatchJournal.Index = journal.index()
+    private var incrementalProcessing: IncrementalProcessing = NonIncrementalProcessing()
 
     private val occurrenceContractObserver: OccurrenceContractObserver? =
         if (ispec.assertLevel().assertContracts()) OccurrenceContractObserver(logicalState, ispec) else null
-
-
-    inner class ProgramStateCleaner{
-        fun erase(occurrence: Occurrence) {
-            dispatchingFront = dispatchingFront.forget(occurrence)
-            occurrence.clearLogicalState(logicalState)
-        }
-
-        fun erase(match: RuleMatchEx) {
-            dispatchingFront = dispatchingFront.forget(match)
-        }
-    }
-
-    private val stateCleaner = ProgramStateCleaner()
 
 
     fun activateContinue(controller: Controller, activeOcc: Occurrence, parent: MatchJournal.MatchChunk): FeedbackStatus {
@@ -81,62 +67,10 @@ internal class ConstraintsProcessing(
         return processActivated(controller, activeOcc, parent, FeedbackStatus.NORMAL())
     }
 
-    private lateinit var invalidator: InvalidationStage
-    private lateinit var adder: AdditionStage
-    private lateinit var postponer: PostponeMatchesStage
-    private lateinit var continuator: ContinueOccurrencesStage
-
-    fun invalidateAndAddRules(controller: Controller, rulesDiff: RulesDiff): FeedbackStatus {
-        val ruleOrdering = RuleOrdering(ruleIndex)
-
-        continuator = ContinueOccurrencesStage(ispec, journalIndex)
-        invalidator = InvalidationStage(ispec, rulesDiff.removed, continuator, stateCleaner, trace)
-        adder = AdditionStage(ispec, rulesDiff.added, continuator, ruleOrdering, ruleIndex, trace)
-        postponer = PostponeMatchesStage(ispec, this, journalIndex, ruleOrdering)
-
-        val cursor = this.cursor
-
-        var status: FeedbackStatus = FeedbackStatus.NORMAL()
-        while (true) {
-            invalidator.run(cursor)
-
-            val postponedMatches = postponer.onNext(cursor)
-            adder.receive(postponedMatches)
-            adder.onNext(cursor)
-
-            status = continuator.run(controller, cursor)
-            if (!status.operational) break
-
-            // continuator may request invalidating more chunks
-            val haveChanges = invalidator.run(cursor)
-
-            if (cursor.atEnd()) break
-            if (!haveChanges) cursor.next()
-        }
-        return status
-    }
-
-    private fun InvalidationStage.run(cursor: RemovingJournalIterator): Boolean {
-        var haveChanges = false
-        while (this.onNext(cursor)) {
-            cursor.removeNext()
-            haveChanges = true
-        }
-        return haveChanges
-    }
-
-    private fun ContinueOccurrencesStage.run(controller: Controller, chunkReader: ChunkReader): FeedbackStatus {
-        var status: FeedbackStatus = FeedbackStatus.NORMAL()
-        val parentChunk = parentChunk()
-
-        for (continuedOcc in this.onNext(chunkReader)) {
-            if (continuedOcc.stored) {
-                status = activateContinue(controller, continuedOcc, parentChunk)
-
-                if (!status.operational) break
-            }
-        }
-        return status
+    fun runIncrementally(controller: Controller, rulesDiff: RulesDiff): Pair<FeedbackStatus, FeedbackKeySet> {
+        incrementalProcessing = IncrementalProcessingImpl(ispec, this, rulesDiff, ProgramStateCleaner(), ruleIndex, trace)
+        val status = incrementalProcessing.run(this, controller)
+        return status to incrementalProcessing.invalidatedFeedback()
     }
 
     /**
@@ -161,8 +95,6 @@ internal class ConstraintsProcessing(
             ruleMatcher.rule().isPrincipal || ruleMatcher.probe().hasOccurrences()
         }
 
-    fun invalidatedFeedback(): FeedbackKeySet = invalidator.invalidatedFeedback()
-
     /**
      * Called to update the state with the currently active constraint occurrence.
      * Calls the controller to process matches (if any) that were triggered.
@@ -176,6 +108,7 @@ internal class ConstraintsProcessing(
             logActivation(active)
             active.revive(logicalState)
 
+            // fixme: move to incremental facade
             occurrenceContractObserver?.onActivated(active)
         }
         assert(active.alive)
@@ -187,7 +120,7 @@ internal class ConstraintsProcessing(
         }
 
         val matches = dispatchingFront.matches().toList()
-        val currentMatches = postponeFutureMatches(active, matches)
+        val currentMatches = incrementalProcessing.processOccurrenceMatches(active, matches)
 
         val outStatus = currentMatches.fold(inStatus) { status, match ->
             // TODO: paranoid check. should be isAlive() instead
@@ -227,23 +160,10 @@ internal class ConstraintsProcessing(
                 }
             }
             .also { trace.trigger(match) }
-            .also { continueReplacedHeads(match, parent) }
+            .also { incrementalProcessing.processMatch(match) }
             .also { accept(controller, match) }
             .then { controller.processBody(match, parent, it) }
             .also { trace.finish(match) }
-
-    private fun continueReplacedHeads(match: RuleMatchEx, parent: MatchJournal.MatchChunk) {
-        if (requiresIncrementalProcessing(match)) {
-            val invalidJustifications = match.matchHeadReplaced().filter { it.isPrincipal }
-            invalidator.receive(invalidJustifications)
-        }
-    }
-
-    private fun postponeFutureMatches(active: Occurrence, matches: List<RuleMatchEx>) =
-        if (requiresIncrementalProcessing(active)) {
-            postponer.postponeFutureMatches(matches)
-        } else matches
-
 
     private fun accept(controller: Controller, match: RuleMatchEx) {
         profiler.profile("logMatch") {
@@ -288,6 +208,17 @@ internal class ConstraintsProcessing(
     }
 
 
+    inner class ProgramStateCleaner{
+        fun erase(occurrence: Occurrence) {
+            dispatchingFront = dispatchingFront.forget(occurrence)
+            occurrence.clearLogicalState(logicalState)
+        }
+
+        fun erase(match: RuleMatchEx) {
+            dispatchingFront = dispatchingFront.forget(match)
+        }
+    }
+
     /**
      * Encapsulates logic for deriving [Evidence] and [Justifications] for a new [Occurrence].
      */
@@ -318,12 +249,5 @@ internal class ConstraintsProcessing(
             )
         }
     }
-
-    private fun requiresIncrementalProcessing(match: RuleMatchEx) = !isFront() && ispec.ability().allowed() && match.isPrincipal
-
-    private fun requiresIncrementalProcessing(occ: Occurrence) = !isFront() && ispec.ability().allowed() && occ.isPrincipal
-
-    private fun MatchJournal.MatchChunk.dependsOnAny(utags: Iterable<Any>): Boolean =
-        utags.contains(this.ruleUniqueTag) || utags.any { utag -> dependsOnRule(utag) }
 
 }
