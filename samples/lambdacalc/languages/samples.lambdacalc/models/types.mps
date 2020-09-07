@@ -10423,6 +10423,27 @@
         </node>
       </node>
     </node>
+    <node concept="1nLNMY" id="2GIrmkQ9dll" role="1nK1Vg">
+      <property role="TrG5h" value="require_typeDecls" />
+      <node concept="3clFbS" id="2GIrmkQ9dlm" role="1nLNMH">
+        <node concept="1mebxG" id="2GIrmkQ9dK2" role="3cqZAp">
+          <node concept="2OqwBi" id="2GIrmkQ9dU8" role="1mebXD">
+            <node concept="3A2sRY" id="2GIrmkQ9dKb" role="2Oq$k0">
+              <ref role="3A2yKK" node="2GIrmkQ9dJH" resolve="varRef" />
+            </node>
+            <node concept="3TrEf2" id="2GIrmkQ9e6u" role="2OqNvi">
+              <ref role="3Tt5mk" to="8tt8:48ZGLP8$3cj" resolve="def" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2t___k" id="2GIrmkQ9dJG" role="1nLNMg">
+        <ref role="2t_S0q" to="8tt8:48ZGLP8$3c6" resolve="VarTypeRef" />
+        <node concept="3A20r5" id="2GIrmkQ9dJH" role="2t_VXX">
+          <property role="TrG5h" value="varRef" />
+        </node>
+      </node>
+    </node>
     <node concept="1nLNMY" id="3gP95ZIu6HH" role="1nK1Vg">
       <property role="TrG5h" value="require_annotations" />
       <node concept="3clFbS" id="3gP95ZIu6HI" role="1nLNMH">
@@ -12476,6 +12497,27 @@
     </node>
     <node concept="3AqmO8" id="47tET_WlK9C" role="8PkJo">
       <property role="TrG5h" value="reproduceTypeConstraints" />
+    </node>
+    <node concept="1nLNMY" id="2GIrmkQ9bUP" role="1nK1Vg">
+      <property role="TrG5h" value="typeConstraints_require" />
+      <node concept="3clFbS" id="2GIrmkQ9bUQ" role="1nLNMH">
+        <node concept="1mebxG" id="2GIrmkQ9clD" role="3cqZAp">
+          <node concept="2OqwBi" id="2GIrmkQ9cuX" role="1mebXD">
+            <node concept="3A2sRY" id="2GIrmkQ9clM" role="2Oq$k0">
+              <ref role="3A2yKK" node="2GIrmkQ9c8h" resolve="ctr" />
+            </node>
+            <node concept="3TrEf2" id="2GIrmkQ9cDu" role="2OqNvi">
+              <ref role="3Tt5mk" to="8tt8:2O9ahh6mHvj" resolve="typeclass" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2t___k" id="2GIrmkQ9c8a" role="1nLNMg">
+        <ref role="2t_S0q" to="8tt8:2O9ahh6mHvg" resolve="Constraint" />
+        <node concept="3A20r5" id="2GIrmkQ9c8h" role="2t_VXX">
+          <property role="TrG5h" value="ctr" />
+        </node>
+      </node>
     </node>
     <node concept="1nLNMY" id="47tET_W4RYO" role="1nK1Vg">
       <property role="TrG5h" value="typeConstraints_mergeSets" />

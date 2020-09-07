@@ -5398,6 +5398,62 @@
     <node concept="1nLNMY" id="1oUE7CX4MWv" role="1nK1Vg">
       <property role="TrG5h" value="baseCollection_toRuntimeType" />
       <node concept="3clFbS" id="1oUE7CX4MWw" role="1nLNMH">
+        <node concept="1mebxG" id="5HxDM7C3EPB" role="3cqZAp">
+          <node concept="2tJFMh" id="5HxDM7C3EVx" role="1mebXD">
+            <node concept="ZC_QK" id="5HxDM7C3EVQ" role="2tJFKM">
+              <ref role="2aWVGs" to="33ny:~Collection" resolve="Collection" />
+            </node>
+          </node>
+        </node>
+        <node concept="1mebxG" id="5HxDM7C3EXs" role="3cqZAp">
+          <node concept="2tJFMh" id="5HxDM7C3FrJ" role="1mebXD">
+            <node concept="ZC_QK" id="5HxDM7C3FrK" role="2tJFKM">
+              <ref role="2aWVGs" to="33ny:~List" resolve="List" />
+            </node>
+          </node>
+        </node>
+        <node concept="1mebxG" id="5HxDM7C3F3H" role="3cqZAp">
+          <node concept="2tJFMh" id="5HxDM7C3Ftm" role="1mebXD">
+            <node concept="ZC_QK" id="5HxDM7C3Ftn" role="2tJFKM">
+              <ref role="2aWVGs" to="33ny:~LinkedList" resolve="LinkedList" />
+            </node>
+          </node>
+        </node>
+        <node concept="1mebxG" id="5HxDM7C3F9y" role="3cqZAp">
+          <node concept="2tJFMh" id="5HxDM7C3Fv2" role="1mebXD">
+            <node concept="ZC_QK" id="5HxDM7C3Fv3" role="2tJFKM">
+              <ref role="2aWVGs" to="33ny:~Deque" resolve="Deque" />
+            </node>
+          </node>
+        </node>
+        <node concept="1mebxG" id="5HxDM7C3Ffo" role="3cqZAp">
+          <node concept="2tJFMh" id="5HxDM7C3FwD" role="1mebXD">
+            <node concept="ZC_QK" id="5HxDM7C3FwE" role="2tJFKM">
+              <ref role="2aWVGs" to="33ny:~Set" resolve="Set" />
+            </node>
+          </node>
+        </node>
+        <node concept="1mebxG" id="5HxDM7C3Flf" role="3cqZAp">
+          <node concept="2tJFMh" id="5HxDM7C3FwX" role="1mebXD">
+            <node concept="ZC_QK" id="5HxDM7C3Fxh" role="2tJFKM">
+              <ref role="2aWVGs" to="33ny:~SortedSet" resolve="SortedSet" />
+            </node>
+          </node>
+        </node>
+        <node concept="1mebxG" id="5HxDM7C3FyR" role="3cqZAp">
+          <node concept="2tJFMh" id="5HxDM7C3FyS" role="1mebXD">
+            <node concept="ZC_QK" id="5HxDM7C3FLe" role="2tJFKM">
+              <ref role="2aWVGs" to="33ny:~Map" resolve="Map" />
+            </node>
+          </node>
+        </node>
+        <node concept="1mebxG" id="5HxDM7C3FEO" role="3cqZAp">
+          <node concept="2tJFMh" id="5HxDM7C3FEP" role="1mebXD">
+            <node concept="ZC_QK" id="5HxDM7C3FEQ" role="2tJFKM">
+              <ref role="2aWVGs" to="33ny:~SortedMap" resolve="SortedMap" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="1oUE7CX4NRc" role="3cqZAp" />
         <node concept="1nLNNL" id="1oUE7CX4NnZ" role="3cqZAp">
           <node concept="1nLNMm" id="1oUE7CX4No0" role="1nLNNK">
@@ -6265,6 +6321,14 @@
     <node concept="1nLNMY" id="1oUE7CX4O8_" role="1nK1Vg">
       <property role="TrG5h" value="iterator_toRuntimeType" />
       <node concept="3clFbS" id="1oUE7CX4O8A" role="1nLNMH">
+        <node concept="1mebxG" id="5HxDM7C3FSQ" role="3cqZAp">
+          <node concept="2tJFMh" id="5HxDM7C3FSR" role="1mebXD">
+            <node concept="ZC_QK" id="5HxDM7C3FVC" role="2tJFKM">
+              <ref role="2aWVGs" to="33ny:~Iterator" resolve="Iterator" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5HxDM7C3FV1" role="3cqZAp" />
         <node concept="1nLNNL" id="1oUE7CX4O8C" role="3cqZAp">
           <node concept="1nLNMm" id="1oUE7CX4O8D" role="1nLNNK">
             <node concept="3Aq93q" id="1oUE7CX4O8E" role="1nLNMb">
@@ -6352,6 +6416,14 @@
     <node concept="1nLNMY" id="3Z1xyIwARfv" role="1nK1Vg">
       <property role="TrG5h" value="modIterator_toRuntimeType" />
       <node concept="3clFbS" id="3Z1xyIwARfw" role="1nLNMH">
+        <node concept="1mebxG" id="5HxDM7C3FXe" role="3cqZAp">
+          <node concept="2tJFMh" id="5HxDM7C3FXf" role="1mebXD">
+            <node concept="ZC_QK" id="5HxDM7C3FXg" role="2tJFKM">
+              <ref role="2aWVGs" to="33ny:~Iterator" resolve="Iterator" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5HxDM7C3FY6" role="3cqZAp" />
         <node concept="1nLNNL" id="3Z1xyIwARfx" role="3cqZAp">
           <node concept="1nLNMm" id="3Z1xyIwARfy" role="1nLNNK">
             <node concept="3Aq93q" id="3Z1xyIwARfz" role="1nLNMb">
