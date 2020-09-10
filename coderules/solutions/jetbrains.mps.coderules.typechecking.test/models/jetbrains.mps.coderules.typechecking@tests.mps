@@ -2826,15 +2826,8 @@
                         </node>
                         <node concept="liA8E" id="6QH_LDtdXLN" role="2OqNvi">
                           <ref role="37wK5l" to="tj24:4Dkptq1OPR7" resolve="getOrUpdateTypecheckingResults" />
-                          <node concept="2OqwBi" id="7gMIJIxPLpa" role="37wK5m">
-                            <node concept="2JrnkZ" id="7gMIJIxPLpb" role="2Oq$k0">
-                              <node concept="37vLTw" id="7gMIJIxPLpc" role="2JrQYb">
-                                <ref role="3cqZAo" node="7mB3viLe1a2" resolve="demo" />
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="7gMIJIxPLpd" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SNode.getReference()" resolve="getReference" />
-                            </node>
+                          <node concept="37vLTw" id="7gMIJIxPLpc" role="37wK5m">
+                            <ref role="3cqZAo" node="7mB3viLe1a2" resolve="demo" />
                           </node>
                           <node concept="3clFbT" id="7gMIJIxPLSu" role="37wK5m">
                             <property role="3clFbU" value="true" />
