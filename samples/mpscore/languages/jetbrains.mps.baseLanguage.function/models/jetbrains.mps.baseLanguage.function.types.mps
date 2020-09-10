@@ -259,7 +259,7 @@
               <node concept="3I6sU6" id="6$MmqWfm_Uw" role="3Ip0Jz">
                 <node concept="3I6s7M" id="6$MmqWfmA9c" role="3I6sU7">
                   <node concept="3Aqt3T" id="6$MmqWfmA9b" role="3I6s78">
-                    <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsToAlt" />
+                    <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
                     <node concept="1HFMs5" id="6$MmqWfmA9k" role="3AunhB">
                       <node concept="a7P8L" id="6$MmqWfmA9h" role="1uarlU">
                         <ref role="a7OzE" node="6$MmqWfm_Qu" resolve="FunL" />
@@ -684,7 +684,7 @@
                 <node concept="3I6sU6" id="6$MmqWfmAYG" role="3Ip0Jz">
                   <node concept="3I6s7M" id="6$MmqWfmBa2" role="3I6sU7">
                     <node concept="3Aqt3T" id="6$MmqWfmBa1" role="3I6s78">
-                      <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsToAlt" />
+                      <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
                       <node concept="a7P8L" id="6$MmqWfmBa7" role="3AunhB">
                         <ref role="a7OzE" node="6$MmqWfmB71" resolve="LHead" />
                       </node>
