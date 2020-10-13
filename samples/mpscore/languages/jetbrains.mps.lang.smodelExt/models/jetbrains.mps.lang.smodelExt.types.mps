@@ -428,10 +428,6 @@
         <child id="6097203247182937145" name="input" index="3jbY8P" />
         <child id="6097203247182937143" name="logical" index="3jbY8V" />
       </concept>
-      <concept id="6097203247184206287" name="jetbrains.mps.lang.coderules.structure.CallMacroConstraint" flags="ng" index="3jm4v3">
-        <reference id="6097203247184207800" name="template" index="3jm46O" />
-        <child id="6097203247184212024" name="logical" index="3jm6SO" />
-      </concept>
       <concept id="4957570047287105024" name="jetbrains.mps.lang.coderules.structure.FailConstraint" flags="ng" index="1lpGmL">
         <child id="4957570047287138243" name="message" index="1lp$hM" />
       </concept>
@@ -18437,9 +18433,6 @@
               <node concept="aZer4" id="7gMIJIxUaxA" role="3XD1gS">
                 <property role="TrG5h" value="CType" />
               </node>
-              <node concept="aZer4" id="6HZdmne$$JX" role="3XD1gS">
-                <property role="TrG5h" value="ListType" />
-              </node>
               <node concept="aZer4" id="6HZdmne$EaW" role="3XD1gS">
                 <property role="TrG5h" value="EType" />
               </node>
@@ -18472,22 +18465,19 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3I6s7M" id="6HZdmne$wKi" role="3I6sU7">
-                    <node concept="3jm4v3" id="6HZdmne$wKg" role="3I6s78">
-                      <ref role="3jm46O" to="wi9y:3Z1xyIvU0Gw" resolve="listTerm" />
-                      <node concept="a7P8L" id="6HZdmne$$ZQ" role="3jm6SO">
-                        <ref role="a7OzE" node="6HZdmne$$JX" resolve="ListType" />
-                      </node>
-                      <node concept="a7P8L" id="6HZdmne$EQD" role="3jm6SO">
-                        <ref role="a7OzE" node="6HZdmne$EaW" resolve="EType" />
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3I6s7M" id="7gMIJIxUaxJ" role="3I6sU7">
                     <node concept="3Aqt3T" id="7gMIJIxUaxK" role="3I6s78">
                       <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
-                      <node concept="a7P8L" id="6HZdmne$F3P" role="3AunhB">
-                        <ref role="a7OzE" node="6HZdmne$$JX" resolve="ListType" />
+                      <node concept="ns1u0" id="2GIrmkQ3cMe" role="3AunhB">
+                        <ref role="ns1xF" to="wi9y:1oUE7CX3tx9" resolve="list" />
+                        <node concept="nsMwS" id="2GIrmkQ3cQb" role="ns1xD">
+                          <ref role="nsMwP" to="wi9y:1oUE7CX3Xc1" resolve="elem" />
+                          <node concept="1nq8_$" id="2GIrmkQ3cQC" role="nsMwV">
+                            <node concept="a7P8L" id="2GIrmkQ3cQB" role="1nq8_t">
+                              <ref role="a7OzE" node="6HZdmne$EaW" resolve="EType" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
                       <node concept="a7P8L" id="7gMIJIxUaVV" role="3AunhB">
                         <ref role="a7OzE" node="7gMIJIxUaxA" resolve="CType" />

@@ -21,6 +21,7 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
@@ -87,7 +88,6 @@
         <child id="861509610434243105" name="contents" index="ns1xc" />
       </concept>
       <concept id="861509610434243081" name="jetbrains.mps.lang.coderules.structure.TermDeclaration" flags="ng" index="ns1x$">
-        <reference id="861509610434243089" name="prototype" index="ns1xW" />
         <child id="861509610434243084" name="template" index="ns1xx" />
       </concept>
       <concept id="861509610434276450" name="jetbrains.mps.lang.coderules.structure.TermTemplate" flags="ng" index="nspSf">
@@ -174,7 +174,6 @@
     <ref role="2efqH6" to="kqnc:JOGAOsVt29" resolve="Terms" />
     <node concept="ns1x$" id="3MFPGC50Ab3" role="ns1xc">
       <property role="TrG5h" value="sequence" />
-      <ref role="ns1xW" to="kqnc:3Z1xyIvO9F3" resolve="runtimeType" />
       <node concept="nspSf" id="3MFPGC50Ab4" role="ns1xx">
         <node concept="nstbe" id="3MFPGC50Aiu" role="nspSe">
           <property role="TrG5h" value="elem" />
@@ -302,14 +301,21 @@
             </node>
           </node>
         </node>
-        <node concept="3Aqczg" id="3Z1xyIvRM8Q" role="3cqZAp">
-          <node concept="3jm4v3" id="3Z1xyIvRM8N" role="3Aqpz8">
-            <ref role="3jm46O" node="3Z1xyIvRM2K" resolve="sequenceTerm" />
-            <node concept="a7P8L" id="3Z1xyIvRM93" role="3jm6SO">
+        <node concept="3Aqczg" id="2GIrmkQ2LZ9" role="3cqZAp">
+          <node concept="3A8Hvi" id="2GIrmkQ2LZo" role="3Aqpz8">
+            <node concept="a7P8L" id="2GIrmkQ2M02" role="3A8wtg">
               <ref role="a7OzE" node="1oUE7CXmlxS" resolve="Type" />
             </node>
-            <node concept="a7P8L" id="3Z1xyIvRM9b" role="3jm6SO">
-              <ref role="a7OzE" node="1oUE7CXmmkR" resolve="Elem" />
+            <node concept="ns1u0" id="2GIrmkQ2LR7" role="3A8w4Q">
+              <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
+              <node concept="nsMwS" id="2GIrmkQ2LRi" role="ns1xD">
+                <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
+                <node concept="1nq8_$" id="2GIrmkQ2LRn" role="nsMwV">
+                  <node concept="a7P8L" id="2GIrmkQ2LZQ" role="1nq8_t">
+                    <ref role="a7OzE" node="1oUE7CXmmkR" resolve="Elem" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -325,68 +331,6 @@
           <property role="TrG5h" value="Elem" />
         </node>
         <node concept="32pEOW" id="1oUE7CXmml0" role="3vLBG7" />
-      </node>
-    </node>
-    <node concept="3hwh0R" id="3Z1xyIvRM2K" role="0oKgB">
-      <property role="TrG5h" value="sequenceTerm" />
-      <node concept="3clFbS" id="3Z1xyIvRM2M" role="3hEL4E">
-        <node concept="3Aqczg" id="1oUE7CXmn82" role="3cqZAp">
-          <node concept="3A8Hvi" id="1oUE7CXmn8h" role="3Aqpz8">
-            <node concept="a7P8L" id="1oUE7CXmn8n" role="3A8wtg">
-              <ref role="a7OzE" node="3Z1xyIvRM6F" resolve="Type" />
-            </node>
-            <node concept="ns1u0" id="1oUE7CXmn8t" role="3A8w4Q">
-              <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
-              <node concept="nsMwS" id="1oUE7CXmn8u" role="ns1xD">
-                <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                <node concept="1nq8_$" id="1oUE7CXmn8x" role="nsMwV">
-                  <node concept="a7P8L" id="1oUE7CXmn8w" role="1nq8_t">
-                    <ref role="a7OzE" node="3Z1xyIvRM78" resolve="Elem" />
-                  </node>
-                </node>
-              </node>
-              <node concept="nsMwS" id="3Z1xyIvO9Q_" role="ns1xD">
-                <ref role="nsMwP" to="kqnc:3Z1xyIvO9Gw" resolve="runtime" />
-                <node concept="1nq8_$" id="3Z1xyIvO9QH" role="nsMwV">
-                  <node concept="ns1u0" id="3Z1xyIvO9QG" role="1nq8_t">
-                    <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
-                    <node concept="nsMwS" id="3Z1xyIvO9QO" role="ns1xD">
-                      <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                      <node concept="2tJFMh" id="3Z1xyIvO9R0" role="nsMwV">
-                        <node concept="ZC_QK" id="3Z1xyIvO9R8" role="2tJFKM">
-                          <ref role="2aWVGs" to="wyt6:~Iterable" resolve="Iterable" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="nsMwS" id="3Z1xyIvOa9j" role="ns1xD">
-                      <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
-                      <node concept="1nq8_$" id="3Z1xyIvOa9z" role="nsMwV">
-                        <node concept="Hz6ka" id="3Z1xyIvOa9y" role="1nq8_t">
-                          <node concept="KCUsM" id="3Z1xyIvOa9E" role="Hz6kd">
-                            <node concept="3wAshV" id="3Z1xyIvOa9L" role="KCVpo">
-                              <node concept="a7P8L" id="3Z1xyIvOa9K" role="3wAq21">
-                                <ref role="a7OzE" node="3Z1xyIvRM78" resolve="Elem" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3uniRu" id="3Z1xyIvRM6E" role="3h32gL">
-        <node concept="aZer4" id="3Z1xyIvRM6F" role="3XD1gS">
-          <property role="TrG5h" value="Type" />
-        </node>
-        <node concept="aZer4" id="3Z1xyIvRM78" role="3XD1gS">
-          <property role="TrG5h" value="Elem" />
-        </node>
-        <node concept="32pEOW" id="3Z1xyIvRM6R" role="3vLBG7" />
       </node>
     </node>
   </node>
@@ -483,6 +427,216 @@
               </node>
               <node concept="aZer4" id="4s_lMmH6Cxc" role="3XD1gS">
                 <property role="TrG5h" value="Options" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1nLNMY" id="3MFPGC50D1T" role="1nK1Vg">
+      <property role="TrG5h" value="converts_sequence_Iterable" />
+      <node concept="3clFbS" id="3MFPGC50D1U" role="1nLNMH">
+        <node concept="1nLNNL" id="3MFPGC50D1V" role="3cqZAp">
+          <node concept="1nLNMm" id="3MFPGC50D1W" role="1nLNNK">
+            <node concept="3Aq93q" id="3MFPGC50D1X" role="1nLNMb">
+              <node concept="3I6sU6" id="3MFPGC50D1Y" role="3Ip0Jz">
+                <node concept="3I6s7M" id="3MFPGC50D1Z" role="3I6sU7">
+                  <node concept="3Aqt3T" id="3MFPGC50D20" role="3I6s78">
+                    <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
+                    <node concept="1HFMs5" id="3MFPGC50D21" role="3AunhB">
+                      <node concept="a7P8L" id="3MFPGC50D22" role="1uarlU">
+                        <ref role="a7OzE" node="3MFPGC50D2f" resolve="T" />
+                      </node>
+                      <node concept="ns1u0" id="3MFPGC50D9n" role="1uarlW">
+                        <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
+                      </node>
+                    </node>
+                    <node concept="1HFMs5" id="3MFPGC50D27" role="3AunhB">
+                      <node concept="a7P8L" id="3MFPGC50D28" role="1uarlU">
+                        <ref role="a7OzE" node="3MFPGC50D2e" resolve="S" />
+                      </node>
+                      <node concept="ns1u0" id="3MFPGC50D29" role="1uarlW">
+                        <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
+                        <node concept="nsMwS" id="2GIrmkQ2JlQ" role="ns1xD">
+                          <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
+                          <node concept="1nq8_$" id="2GIrmkQ2JlV" role="nsMwV">
+                            <node concept="a7P8L" id="2GIrmkQ2JlU" role="1nq8_t">
+                              <ref role="a7OzE" node="3MFPGC50D2g" resolve="SElem" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="a7P8L" id="2GIrmkQ2Jec" role="3AunhB">
+                      <ref role="a7OzE" node="2GIrmkQ2JdD" resolve="Options" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="3MFPGC50D2d" role="0Rg$4">
+              <node concept="aZer4" id="3MFPGC50D2e" role="3XD1gS">
+                <property role="TrG5h" value="S" />
+              </node>
+              <node concept="aZer4" id="3MFPGC50D2f" role="3XD1gS">
+                <property role="TrG5h" value="T" />
+              </node>
+              <node concept="aZer4" id="3MFPGC50D2g" role="3XD1gS">
+                <property role="TrG5h" value="SElem" />
+              </node>
+              <node concept="32pEOW" id="3MFPGC50D2i" role="3vLBG7" />
+            </node>
+            <node concept="3NuqgR" id="2GIrmkQ2JdB" role="0Rg$4">
+              <node concept="3uibUv" id="2GIrmkQ2JdC" role="3vLBG7">
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
+              </node>
+              <node concept="aZer4" id="2GIrmkQ2JdD" role="3XD1gS">
+                <property role="TrG5h" value="Options" />
+              </node>
+            </node>
+            <node concept="3xSepi" id="3MFPGC50D2j" role="3xSepv">
+              <node concept="3Aq9E8" id="3MFPGC50D2k" role="3xSepj">
+                <node concept="3I6sU6" id="3MFPGC50D2l" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="3MFPGC50DX3" role="3I6sU7">
+                    <node concept="3Aqt3T" id="3MFPGC50DX2" role="3I6s78">
+                      <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
+                      <node concept="a7P8L" id="3MFPGC50DZl" role="3AunhB">
+                        <ref role="a7OzE" node="3MFPGC50D2f" resolve="T" />
+                      </node>
+                      <node concept="ns1u0" id="3MFPGC50E0b" role="3AunhB">
+                        <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
+                        <node concept="nsMwS" id="3MFPGC50E0W" role="ns1xD">
+                          <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
+                          <node concept="2tJFMh" id="3MFPGC50E3a" role="nsMwV">
+                            <node concept="ZC_QK" id="3MFPGC50E40" role="2tJFKM">
+                              <ref role="2aWVGs" to="wyt6:~Iterable" resolve="Iterable" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="nsMwS" id="3MFPGC50Eol" role="ns1xD">
+                          <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
+                          <node concept="1nq8_$" id="3MFPGC50Erl" role="nsMwV">
+                            <node concept="Hz6ka" id="4NtT$ZxGOeo" role="1nq8_t">
+                              <node concept="KCUsM" id="4NtT$ZxGOeI" role="Hz6kd">
+                                <node concept="3wAshV" id="4NtT$ZxGOf7" role="KCVpo">
+                                  <node concept="a7P8L" id="4NtT$ZxGOf6" role="3wAq21">
+                                    <ref role="a7OzE" node="3MFPGC50D2g" resolve="SElem" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="a7P8L" id="2GIrmkQ2Jqv" role="3AunhB">
+                        <ref role="a7OzE" node="2GIrmkQ2JdD" resolve="Options" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3MFPGC50F5O" role="3cqZAp" />
+        <node concept="1nLNNL" id="3MFPGC50F9P" role="3cqZAp">
+          <node concept="1nLNMm" id="3MFPGC50F9Q" role="1nLNNK">
+            <node concept="3Aq93q" id="3MFPGC50F9R" role="1nLNMb">
+              <node concept="3I6sU6" id="3MFPGC50F9S" role="3Ip0Jz">
+                <node concept="3I6s7M" id="3MFPGC50F9T" role="3I6sU7">
+                  <node concept="3Aqt3T" id="3MFPGC50F9U" role="3I6s78">
+                    <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
+                    <node concept="1HFMs5" id="3MFPGC50F9Y" role="3AunhB">
+                      <node concept="a7P8L" id="3MFPGC50FoC" role="1uarlU">
+                        <ref role="a7OzE" node="3MFPGC50Fa6" resolve="T" />
+                      </node>
+                      <node concept="ns1u0" id="3MFPGC50Fa0" role="1uarlW">
+                        <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
+                        <node concept="nsMwS" id="2GIrmkQ2Jmk" role="ns1xD">
+                          <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
+                          <node concept="1nq8_$" id="2GIrmkQ2Jmp" role="nsMwV">
+                            <node concept="a7P8L" id="2GIrmkQ2Jmo" role="1nq8_t">
+                              <ref role="a7OzE" node="3MFPGC50Fa8" resolve="TElem" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="1HFMs5" id="3MFPGC50FtO" role="3AunhB">
+                      <node concept="a7P8L" id="3MFPGC50FtM" role="1uarlU">
+                        <ref role="a7OzE" node="3MFPGC50Fa5" resolve="S" />
+                      </node>
+                      <node concept="ns1u0" id="3MFPGC50Fwi" role="1uarlW">
+                        <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
+                      </node>
+                    </node>
+                    <node concept="a7P8L" id="2GIrmkQ2Jjo" role="3AunhB">
+                      <ref role="a7OzE" node="2GIrmkQ2Jj5" resolve="Options" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="3MFPGC50Fa4" role="0Rg$4">
+              <node concept="aZer4" id="3MFPGC50Fa5" role="3XD1gS">
+                <property role="TrG5h" value="S" />
+              </node>
+              <node concept="aZer4" id="3MFPGC50Fa6" role="3XD1gS">
+                <property role="TrG5h" value="T" />
+              </node>
+              <node concept="aZer4" id="3MFPGC50Fa8" role="3XD1gS">
+                <property role="TrG5h" value="TElem" />
+              </node>
+              <node concept="32pEOW" id="3MFPGC50Fa9" role="3vLBG7" />
+            </node>
+            <node concept="3NuqgR" id="2GIrmkQ2Jj3" role="0Rg$4">
+              <node concept="3uibUv" id="2GIrmkQ2Jj4" role="3vLBG7">
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
+              </node>
+              <node concept="aZer4" id="2GIrmkQ2Jj5" role="3XD1gS">
+                <property role="TrG5h" value="Options" />
+              </node>
+            </node>
+            <node concept="3xSepi" id="3MFPGC50Faa" role="3xSepv">
+              <node concept="3Aq9E8" id="3MFPGC50Fab" role="3xSepj">
+                <node concept="3I6sU6" id="3MFPGC50Fac" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="3MFPGC50Fad" role="3I6sU7">
+                    <node concept="3Aqt3T" id="3MFPGC50Fae" role="3I6s78">
+                      <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
+                      <node concept="ns1u0" id="3MFPGC50Fag" role="3AunhB">
+                        <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
+                        <node concept="nsMwS" id="3MFPGC50Fah" role="ns1xD">
+                          <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
+                          <node concept="2tJFMh" id="3MFPGC50Fai" role="nsMwV">
+                            <node concept="ZC_QK" id="3MFPGC50Faj" role="2tJFKM">
+                              <ref role="2aWVGs" to="wyt6:~Iterable" resolve="Iterable" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="nsMwS" id="3MFPGC50Fak" role="ns1xD">
+                          <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
+                          <node concept="1nq8_$" id="4NtT$ZxGOm4" role="nsMwV">
+                            <node concept="Hz6ka" id="4NtT$ZxGOm3" role="1nq8_t">
+                              <node concept="KCUsM" id="4NtT$ZxGOm9" role="Hz6kd">
+                                <node concept="3wAshV" id="4NtT$ZxGOmf" role="KCVpo">
+                                  <node concept="a7P8L" id="4NtT$ZxGOme" role="3wAq21">
+                                    <ref role="a7OzE" node="3MFPGC50Fa8" resolve="TElem" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="a7P8L" id="3MFPGC52BAL" role="3AunhB">
+                        <ref role="a7OzE" node="3MFPGC50Fa5" resolve="S" />
+                      </node>
+                      <node concept="a7P8L" id="2GIrmkQ2JtE" role="3AunhB">
+                        <ref role="a7OzE" node="2GIrmkQ2Jj5" resolve="Options" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

@@ -3754,9 +3754,6 @@
             <node concept="37vLTw" id="3Z1xyIwB8eJ" role="37vLTJ">
               <ref role="3cqZAo" node="3Z1xyIwAZ4L" resolve="jitB" />
             </node>
-            <node concept="1U20sH" id="3Z1xyIwBaVh" role="lGtFl">
-              <property role="1U20sK" value="error" />
-            </node>
           </node>
         </node>
         <node concept="3clFbH" id="3Z1xyIwB5gM" role="3cqZAp" />
