@@ -3,8 +3,6 @@ configurations {
 }
 
 dependencies {
-    logicTest 'org.objenesis:objenesis:2.1@jar'
-    logicTest 'org.mockito:mockito-core:2.0.3-beta@jar'
 }
 
 task copyDependencies (type: Copy) {

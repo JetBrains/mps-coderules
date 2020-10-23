@@ -753,50 +753,6 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="2telgBuBczr" role="3bR37C">
-          <node concept="1BurEX" id="2telgBuBczs" role="1SiIV1">
-            <node concept="398BVA" id="2telgBuBczf" role="1BurEY">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-              <node concept="2Ry0Ak" id="2telgBuBczg" role="iGT6I">
-                <property role="2Ry0Am" value="coderules" />
-                <node concept="2Ry0Ak" id="2telgBuBczh" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="2telgBuBczi" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.test" />
-                    <node concept="2Ry0Ak" id="2telgBuBczj" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="2telgBuBczk" role="2Ry0An">
-                        <property role="2Ry0Am" value="mockito-core-2.0.3-beta.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2telgBuBczD" role="3bR37C">
-          <node concept="1BurEX" id="2telgBuBczE" role="1SiIV1">
-            <node concept="398BVA" id="2telgBuBczt" role="1BurEY">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-              <node concept="2Ry0Ak" id="2telgBuBczu" role="iGT6I">
-                <property role="2Ry0Am" value="coderules" />
-                <node concept="2Ry0Ak" id="2telgBuBczv" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="2telgBuBczw" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.test" />
-                    <node concept="2Ry0Ak" id="2telgBuBczx" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="2telgBuBczy" role="2Ry0An">
-                        <property role="2Ry0Am" value="objenesis-2.1.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="1SiIV0" id="1POzLwzdJ2H" role="3bR37C">
           <node concept="3bR9La" id="1POzLwzdJ2I" role="1SiIV1">
             <ref role="3bR37D" to="ffeo:1xb0AuwN7WS" resolve="JUnit" />
@@ -3215,23 +3171,6 @@
           <node concept="3_J27D" id="7Ant4WkHLmS" role="Nbhlr">
             <node concept="3Mxwew" id="7Ant4WkHLmT" role="3MwsjC">
               <property role="3MwjfP" value="lib" />
-            </node>
-          </node>
-          <node concept="2HvfSZ" id="7Ant4WkHLmU" role="39821P">
-            <node concept="398BVA" id="46o4wsH3plp" role="2HvfZ0">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-              <node concept="2Ry0Ak" id="46o4wsH3plv" role="iGT6I">
-                <property role="2Ry0Am" value="coderules" />
-                <node concept="2Ry0Ak" id="46o4wsH3plw" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="46o4wsH3plx" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.test" />
-                    <node concept="2Ry0Ak" id="46o4wsH3ply" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                    </node>
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
           <node concept="2HvfSZ" id="46o4wsHoMT0" role="39821P">
