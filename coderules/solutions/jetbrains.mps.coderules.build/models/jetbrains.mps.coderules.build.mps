@@ -753,28 +753,6 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="2telgBuBczr" role="3bR37C">
-          <node concept="1BurEX" id="2telgBuBczs" role="1SiIV1">
-            <node concept="398BVA" id="2telgBuBczf" role="1BurEY">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-              <node concept="2Ry0Ak" id="2telgBuBczg" role="iGT6I">
-                <property role="2Ry0Am" value="coderules" />
-                <node concept="2Ry0Ak" id="2telgBuBczh" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="2telgBuBczi" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.test" />
-                    <node concept="2Ry0Ak" id="2telgBuBczj" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="2telgBuBczk" role="2Ry0An">
-                        <property role="2Ry0Am" value="mockito-core-2.0.3-beta.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="1SiIV0" id="2telgBuBczD" role="3bR37C">
           <node concept="1BurEX" id="2telgBuBczE" role="1SiIV1">
             <node concept="398BVA" id="2telgBuBczt" role="1BurEY">
@@ -824,6 +802,50 @@
             </node>
             <node concept="3qWCbU" id="7zIaasjWoQu" role="3LXTna">
               <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1LBj9wAY88D" role="3bR37C">
+          <node concept="1BurEX" id="1LBj9wAY88E" role="1SiIV1">
+            <node concept="398BVA" id="1LBj9wAY88t" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+              <node concept="2Ry0Ak" id="1LBj9wAY88u" role="iGT6I">
+                <property role="2Ry0Am" value="coderules" />
+                <node concept="2Ry0Ak" id="1LBj9wAY88v" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="1LBj9wAY88w" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.logic.test" />
+                    <node concept="2Ry0Ak" id="1LBj9wAY88x" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="1LBj9wAY88y" role="2Ry0An">
+                        <property role="2Ry0Am" value="byte-buddy-1.10.17.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1LBj9wB2B9E" role="3bR37C">
+          <node concept="1BurEX" id="1LBj9wB2B9F" role="1SiIV1">
+            <node concept="398BVA" id="1LBj9wB2B9u" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+              <node concept="2Ry0Ak" id="1LBj9wB2B9v" role="iGT6I">
+                <property role="2Ry0Am" value="coderules" />
+                <node concept="2Ry0Ak" id="1LBj9wB2B9w" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="1LBj9wB2B9x" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.logic.test" />
+                    <node concept="2Ry0Ak" id="1LBj9wB2B9y" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="1LBj9wB2B9z" role="2Ry0An">
+                        <property role="2Ry0Am" value="mockito-core-2.24.0.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
