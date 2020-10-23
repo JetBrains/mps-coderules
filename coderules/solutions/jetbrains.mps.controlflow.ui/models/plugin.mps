@@ -106,9 +106,6 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
-      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
-        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -1110,8 +1107,8 @@
                       <ref role="3cqZAo" node="7WKNeR8SQxI" resolve="repository" />
                     </node>
                     <node concept="2ShNRf" id="6nFpYlur12C" role="37wK5m">
-                      <node concept="HV5vD" id="6nFpYlur2oF" role="2ShVmc">
-                        <ref role="HV5vE" to="ksgm:7DvO2M9Uago" resolve="RulesListTable" />
+                      <node concept="1pGfFk" id="1LBj9w_EVRM" role="2ShVmc">
+                        <ref role="37wK5l" to="ksgm:1LBj9w_EhDG" resolve="RulesPlanHandler" />
                       </node>
                     </node>
                     <node concept="37vLTw" id="7WKNeR9foS9" role="37wK5m">

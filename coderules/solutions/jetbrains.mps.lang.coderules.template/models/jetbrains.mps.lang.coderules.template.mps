@@ -30,6 +30,7 @@
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="lehm" ref="r:464fcc95-fddb-47d1-b620-592cbf6b8bf2(jetbrains.mps.coderules.runtime.memoizer)" />
+    <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -7869,6 +7870,56 @@
     <property role="3GE5qa" value="rule" />
     <property role="TrG5h" value="AbstractRuleTable" />
     <property role="1sVAO0" value="true" />
+    <node concept="2tJIrI" id="1LBj9w_9RBB" role="jymVt" />
+    <node concept="3clFbW" id="1LBj9w_9RIX" role="jymVt">
+      <node concept="37vLTG" id="1LBj9w_9RJS" role="3clF46">
+        <property role="TrG5h" value="manifest" />
+        <node concept="3uibUv" id="1LBj9w_9RLv" role="1tU5fm">
+          <ref role="3uigEE" to="fqlx:5EDW3XF5Z95" resolve="AbstractCoderulesManifest" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="1LBj9w_9RIZ" role="3clF45" />
+      <node concept="3Tm1VV" id="1LBj9w_9RJ0" role="1B3o_S" />
+      <node concept="3clFbS" id="1LBj9w_9RJ1" role="3clF47">
+        <node concept="3clFbF" id="1LBj9w_9RN6" role="3cqZAp">
+          <node concept="37vLTI" id="1LBj9w_9RN8" role="3clFbG">
+            <node concept="2OqwBi" id="1LBj9w_9RUg" role="37vLTJ">
+              <node concept="Xjq3P" id="1LBj9w_9RUS" role="2Oq$k0" />
+              <node concept="2OwXpG" id="1LBj9w_9RUj" role="2OqNvi">
+                <ref role="2Oxat5" node="1LBj9w_9RN2" resolve="manifest" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="1LBj9w_9RNc" role="37vLTx">
+              <ref role="3cqZAo" node="1LBj9w_9RJS" resolve="manifest" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1LBj9w_9RIi" role="jymVt" />
+    <node concept="3clFb_" id="1LBj9w_9RCi" role="jymVt">
+      <property role="TrG5h" value="manifest" />
+      <node concept="3uibUv" id="1LBj9w_9REs" role="3clF45">
+        <ref role="3uigEE" to="fqlx:5EDW3XF5Z95" resolve="AbstractCoderulesManifest" />
+      </node>
+      <node concept="3Tm1VV" id="1LBj9w_9RCl" role="1B3o_S" />
+      <node concept="3clFbS" id="1LBj9w_9RCm" role="3clF47">
+        <node concept="3clFbF" id="1LBj9w_9RWP" role="3cqZAp">
+          <node concept="37vLTw" id="1LBj9w_9RWO" role="3clFbG">
+            <ref role="3cqZAo" node="1LBj9w_9RN2" resolve="manifest" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1LBj9w_9RBG" role="jymVt" />
+    <node concept="312cEg" id="1LBj9w_9RN2" role="jymVt">
+      <property role="TrG5h" value="manifest" />
+      <node concept="3Tm6S6" id="1LBj9w_9RN3" role="1B3o_S" />
+      <node concept="3uibUv" id="1LBj9w_9RN5" role="1tU5fm">
+        <ref role="3uigEE" to="fqlx:5EDW3XF5Z95" resolve="AbstractCoderulesManifest" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1LBj9w_9RYl" role="jymVt" />
     <node concept="3Tm1VV" id="5EDW3XF5Zh7" role="1B3o_S" />
     <node concept="3uibUv" id="5EDW3XF5ZiM" role="EKbjA">
       <ref role="3uigEE" node="4MqhgXU9fm3" resolve="RuleTable" />

@@ -35,6 +35,7 @@
     <import index="psoy" ref="r:78313117-90ee-47a5-a91e-b5213df7f611(jetbrains.mps.coderules.runtime.result)" />
     <import index="lehm" ref="r:464fcc95-fddb-47d1-b620-592cbf6b8bf2(jetbrains.mps.coderules.runtime.memoizer)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -453,15 +454,20 @@
         <child id="1201654602639" name="key" index="38cxEo" />
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1205679737078" name="jetbrains.mps.baseLanguage.collections.structure.SortOperation" flags="nn" index="2S7cBI">
+        <child id="1205679832066" name="ascending" index="2S7zOq" />
+      </concept>
       <concept id="1237909114519" name="jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation" flags="nn" index="T8wYR" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
+      <concept id="1171391069720" name="jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation" flags="nn" index="2WmjW8" />
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1240151247486" name="jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType" flags="in" index="2YL$Hu" />
       <concept id="1240151544672" name="jetbrains.mps.baseLanguage.collections.structure.RemoveOperation" flags="nn" index="2YMH90" />
       <concept id="1240216724530" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator" flags="nn" index="32Fmki" />
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1201872418428" name="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" flags="nn" index="3lbrtF" />
+      <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
       <concept id="1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" flags="in" index="3rvAFt">
         <child id="1197683466920" name="keyType" index="3rvQeY" />
         <child id="1197683475734" name="valueType" index="3rvSg0" />
@@ -487,6 +493,7 @@
       </concept>
       <concept id="5686963296372475025" name="jetbrains.mps.baseLanguage.collections.structure.QueueType" flags="in" index="3O6Q9H" />
       <concept id="1178894719932" name="jetbrains.mps.baseLanguage.collections.structure.DistinctOperation" flags="nn" index="1VAtEI" />
+      <concept id="599357942184015200" name="jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation" flags="nn" index="1XvEQZ" />
     </language>
   </registry>
   <node concept="312cEu" id="7eGEHDlcEJ0">
@@ -848,7 +855,7 @@
                       <ref role="37wK5l" to="33ny:~List.add(java.lang.Object)" resolve="add" />
                       <node concept="2ShNRf" id="2jxMt58$_az" role="37wK5m">
                         <node concept="1pGfFk" id="2jxMt58$_Lf" role="2ShVmc">
-                          <ref role="37wK5l" node="4MqhgXUM$CT" resolve="RulesListTable.RulesListImpl" />
+                          <ref role="37wK5l" node="4MqhgXUM$CT" resolve="RulesPlanHandler.RulesPlanImpl" />
                           <node concept="2OqwBi" id="2jxMt58$A3k" role="37wK5m">
                             <node concept="37vLTw" id="2jxMt58$_Vz" role="2Oq$k0">
                               <ref role="3cqZAo" node="2jxMt58zFQE" resolve="rulesList" />
@@ -965,7 +972,51 @@
     <node concept="3Tm1VV" id="7nPD14O5B_4" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7DvO2M9Uago">
-    <property role="TrG5h" value="RulesListTable" />
+    <property role="TrG5h" value="RulesPlanHandler" />
+    <node concept="2tJIrI" id="1LBj9w_9Df1" role="jymVt" />
+    <node concept="3clFbW" id="1LBj9w_Ebf5" role="jymVt">
+      <node concept="37vLTG" id="1LBj9w_EkRF" role="3clF46">
+        <property role="TrG5h" value="aspectClique" />
+        <node concept="3uibUv" id="1LBj9w_Elaj" role="1tU5fm">
+          <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+          <node concept="3qUE_q" id="1LBj9w_ElbX" role="11_B2D">
+            <node concept="3uibUv" id="1LBj9w_ElcK" role="3qUE_r">
+              <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="1LBj9w_Ebf7" role="3clF45" />
+      <node concept="3Tm1VV" id="1LBj9w_Ebf8" role="1B3o_S" />
+      <node concept="3clFbS" id="1LBj9w_Ebf9" role="3clF47">
+        <node concept="3clFbF" id="1LBj9w_Elev" role="3cqZAp">
+          <node concept="37vLTI" id="1LBj9w_Elex" role="3clFbG">
+            <node concept="2OqwBi" id="1LBj9w_EoSG" role="37vLTJ">
+              <node concept="Xjq3P" id="1LBj9w_EpcK" role="2Oq$k0" />
+              <node concept="2OwXpG" id="1LBj9w_EoSJ" role="2OqNvi">
+                <ref role="2Oxat5" node="1LBj9w_Elep" resolve="aspectClique" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="1LBj9w_Ele_" role="37vLTx">
+              <ref role="3cqZAo" node="1LBj9w_EkRF" resolve="aspectClique" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1LBj9w_EetB" role="jymVt" />
+    <node concept="3clFbW" id="1LBj9w_EhDG" role="jymVt">
+      <node concept="3cqZAl" id="1LBj9w_EhDI" role="3clF45" />
+      <node concept="3Tm1VV" id="1LBj9w_EhDJ" role="1B3o_S" />
+      <node concept="3clFbS" id="1LBj9w_EhDK" role="3clF47" />
+      <node concept="P$JXv" id="1LBj9w_EpeU" role="lGtFl">
+        <node concept="TZ5HA" id="1LBj9w_EpeV" role="TZ5H$">
+          <node concept="1dT_AC" id="1LBj9w_EpeW" role="1dT_Ay">
+            <property role="1dT_AB" value="Only for tests." />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="7DvO2M9Uagp" role="jymVt" />
     <node concept="3clFb_" id="7DvO2M9Uagq" role="jymVt">
       <property role="TrG5h" value="update" />
@@ -1083,7 +1134,7 @@
         <node concept="3clFbF" id="7DvO2M9UagD" role="3cqZAp">
           <node concept="2OqwBi" id="7DvO2M9UagE" role="3clFbG">
             <node concept="1rXfSq" id="7DvO2M9UagF" role="2Oq$k0">
-              <ref role="37wK5l" node="7DvO2M9Uahp" resolve="rulesListBuilder" />
+              <ref role="37wK5l" node="7DvO2M9Uahp" resolve="rulesPlanBuilder" />
               <node concept="2OqwBi" id="7DvO2M9UagG" role="37wK5m">
                 <node concept="37vLTw" id="7DvO2M9UagH" role="2Oq$k0">
                   <ref role="3cqZAo" node="7DvO2M9Uagr" resolve="ruleTemplate" />
@@ -1266,7 +1317,7 @@
         <node concept="3clFbF" id="cmlg9Ov5u4" role="3cqZAp">
           <node concept="2OqwBi" id="cmlg9Ow9om" role="3clFbG">
             <node concept="1rXfSq" id="cmlg9Ov5u6" role="2Oq$k0">
-              <ref role="37wK5l" node="7DvO2M9Uahp" resolve="rulesListBuilder" />
+              <ref role="37wK5l" node="7DvO2M9Uahp" resolve="rulesPlanBuilder" />
               <node concept="2OqwBi" id="cmlg9Ov5u7" role="37wK5m">
                 <node concept="37vLTw" id="cmlg9Ov5u8" role="2Oq$k0">
                   <ref role="3cqZAo" node="cmlg9Ov1RK" resolve="ruleTemplate" />
@@ -1332,7 +1383,7 @@
     </node>
     <node concept="2tJIrI" id="6OXbTDy0F6L" role="jymVt" />
     <node concept="3clFb_" id="7DvO2M9UagU" role="jymVt">
-      <property role="TrG5h" value="allLists" />
+      <property role="TrG5h" value="allPlans" />
       <node concept="A3Dl8" id="7DvO2M9UagV" role="3clF45">
         <node concept="3uibUv" id="7DvO2M9UagW" role="A3Ik2">
           <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
@@ -1342,7 +1393,7 @@
       <node concept="3clFbS" id="7DvO2M9UagY" role="3clF47">
         <node concept="3cpWs8" id="7DvO2M9UagZ" role="3cqZAp">
           <node concept="3cpWsn" id="7DvO2M9Uah0" role="3cpWs9">
-            <property role="TrG5h" value="allHandlers" />
+            <property role="TrG5h" value="allPlans" />
             <node concept="_YKpA" id="7DvO2M9Uah1" role="1tU5fm">
               <node concept="3uibUv" id="7DvO2M9Uah2" role="_ZDj9">
                 <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
@@ -1362,19 +1413,19 @@
             <node concept="3clFbF" id="7DvO2M9Uah8" role="3cqZAp">
               <node concept="2OqwBi" id="7DvO2M9Uah9" role="3clFbG">
                 <node concept="37vLTw" id="7DvO2M9Uaha" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7DvO2M9Uah0" resolve="allHandlers" />
+                  <ref role="3cqZAo" node="7DvO2M9Uah0" resolve="allPlans" />
                 </node>
                 <node concept="TSZUe" id="7DvO2M9Uahb" role="2OqNvi">
                   <node concept="2OqwBi" id="7DvO2M9Uahc" role="25WWJ7">
                     <node concept="liA8E" id="7DvO2M9Uahe" role="2OqNvi">
-                      <ref role="37wK5l" node="4MqhgXUNDLG" resolve="toRulesList" />
+                      <ref role="37wK5l" node="4MqhgXUNDLG" resolve="toRulesPlan" />
                     </node>
                     <node concept="3EllGN" id="2$$Q_FeVdfK" role="2Oq$k0">
                       <node concept="2GrUjf" id="2$$Q_FeVdhk" role="3ElVtu">
                         <ref role="2Gs0qQ" node="2$$Q_FeVcey" resolve="tpl" />
                       </node>
                       <node concept="37vLTw" id="2$$Q_FeVcOg" role="3ElQJh">
-                        <ref role="3cqZAo" node="7DvO2M9Uaig" resolve="ruleTableBuilders" />
+                        <ref role="3cqZAo" node="7DvO2M9Uaig" resolve="rulePlanBuilders" />
                       </node>
                     </node>
                   </node>
@@ -1386,7 +1437,7 @@
             <ref role="37wK5l" node="2$$Q_FeUpFv" resolve="topoSort" />
             <node concept="2OqwBi" id="2$$Q_FeVb$4" role="37wK5m">
               <node concept="37vLTw" id="2$$Q_FeVb$5" role="2Oq$k0">
-                <ref role="3cqZAo" node="7DvO2M9Uaig" resolve="ruleTableBuilders" />
+                <ref role="3cqZAo" node="7DvO2M9Uaig" resolve="rulePlanBuilders" />
               </node>
               <node concept="3lbrtF" id="2$$Q_FeVb$6" role="2OqNvi" />
             </node>
@@ -1417,15 +1468,15 @@
             <node concept="3clFbF" id="6OXbTDzHkqn" role="3cqZAp">
               <node concept="2OqwBi" id="6OXbTDzHkqo" role="3clFbG">
                 <node concept="37vLTw" id="6OXbTDzHkqp" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7DvO2M9Uah0" resolve="allHandlers" />
+                  <ref role="3cqZAo" node="7DvO2M9Uah0" resolve="allPlans" />
                 </node>
                 <node concept="TSZUe" id="6OXbTDzHkqq" role="2OqNvi">
                   <node concept="2OqwBi" id="6OXbTDzHkqr" role="25WWJ7">
                     <node concept="37vLTw" id="6OXbTDzHkqs" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6OXbTDzHkqu" resolve="rulesListBuilder" />
+                      <ref role="3cqZAo" node="6OXbTDzHkqu" resolve="builder" />
                     </node>
                     <node concept="liA8E" id="cmlg9Nhb9$" role="2OqNvi">
-                      <ref role="37wK5l" node="4MqhgXUNDLG" resolve="toRulesList" />
+                      <ref role="37wK5l" node="4MqhgXUNDLG" resolve="toRulesPlan" />
                     </node>
                   </node>
                 </node>
@@ -1433,14 +1484,14 @@
             </node>
           </node>
           <node concept="3cpWsn" id="6OXbTDzHkqu" role="1Duv9x">
-            <property role="TrG5h" value="rulesListBuilder" />
+            <property role="TrG5h" value="builder" />
             <node concept="3uibUv" id="6OXbTDzHkqv" role="1tU5fm">
-              <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesListTable.RuleTableBuilder" />
+              <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesPlanHandler.PlanBuilder" />
             </node>
           </node>
           <node concept="2OqwBi" id="6OXbTDzHkqw" role="1DdaDG">
             <node concept="37vLTw" id="6OXbTDzHkPF" role="2Oq$k0">
-              <ref role="3cqZAo" node="6OXbTDy15hb" resolve="queryHandlerBuilders" />
+              <ref role="3cqZAo" node="6OXbTDy15hb" resolve="queryPlanBuilders" />
             </node>
             <node concept="T8wYR" id="6OXbTDzHkqy" role="2OqNvi" />
           </node>
@@ -1448,7 +1499,7 @@
         <node concept="3clFbF" id="7DvO2M9Uahk" role="3cqZAp">
           <node concept="2OqwBi" id="7DvO2M9Uahl" role="3clFbG">
             <node concept="37vLTw" id="7DvO2M9Uahm" role="2Oq$k0">
-              <ref role="3cqZAo" node="7DvO2M9Uah0" resolve="allHandlers" />
+              <ref role="3cqZAo" node="7DvO2M9Uah0" resolve="allPlans" />
             </node>
             <node concept="26Dbio" id="7DvO2M9Uahn" role="2OqNvi" />
           </node>
@@ -1474,7 +1525,7 @@
     </node>
     <node concept="2tJIrI" id="7DvO2M9Uaho" role="jymVt" />
     <node concept="3clFb_" id="7DvO2M9Uahp" role="jymVt">
-      <property role="TrG5h" value="rulesListBuilder" />
+      <property role="TrG5h" value="rulesPlanBuilder" />
       <node concept="37vLTG" id="7DvO2M9Uahq" role="3clF46">
         <property role="TrG5h" value="ruleTable" />
         <node concept="3uibUv" id="7DvO2M9Uahr" role="1tU5fm">
@@ -1482,7 +1533,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="7DvO2M9Uahs" role="3clF45">
-        <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesListTable.RuleTableBuilder" />
+        <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesPlanHandler.PlanBuilder" />
       </node>
       <node concept="3Tm6S6" id="7DvO2M9Uaht" role="1B3o_S" />
       <node concept="3clFbS" id="7DvO2M9Uahu" role="3clF47">
@@ -1490,14 +1541,14 @@
           <node concept="3cpWsn" id="7DvO2M9Uahw" role="3cpWs9">
             <property role="TrG5h" value="builder" />
             <node concept="3uibUv" id="7DvO2M9Uahx" role="1tU5fm">
-              <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesListTable.RuleTableBuilder" />
+              <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesPlanHandler.PlanBuilder" />
             </node>
             <node concept="3EllGN" id="7DvO2M9Uahy" role="33vP2m">
               <node concept="37vLTw" id="7DvO2M9Uahz" role="3ElVtu">
                 <ref role="3cqZAo" node="7DvO2M9Uahq" resolve="ruleTable" />
               </node>
               <node concept="37vLTw" id="7DvO2M9Uah$" role="3ElQJh">
-                <ref role="3cqZAo" node="7DvO2M9Uaig" resolve="ruleTableBuilders" />
+                <ref role="3cqZAo" node="7DvO2M9Uaig" resolve="rulePlanBuilders" />
               </node>
             </node>
           </node>
@@ -1508,7 +1559,7 @@
               <node concept="37vLTI" id="7DvO2M9UahC" role="3clFbG">
                 <node concept="2ShNRf" id="7DvO2M9UahD" role="37vLTx">
                   <node concept="1pGfFk" id="7DvO2M9UahE" role="2ShVmc">
-                    <ref role="37wK5l" node="4MqhgXUMb4h" resolve="RulesListTable.RuleTableBuilder" />
+                    <ref role="37wK5l" node="4MqhgXUMb4h" resolve="RulesPlanHandler.PlanBuilder" />
                     <node concept="2OqwBi" id="7DvO2M9UahF" role="37wK5m">
                       <node concept="37vLTw" id="7DvO2M9UahG" role="2Oq$k0">
                         <ref role="3cqZAo" node="7DvO2M9Uahq" resolve="ruleTable" />
@@ -1545,7 +1596,7 @@
                     <ref role="3cqZAo" node="7DvO2M9Uahq" resolve="ruleTable" />
                   </node>
                   <node concept="37vLTw" id="7DvO2M9Uai9" role="3ElQJh">
-                    <ref role="3cqZAo" node="7DvO2M9Uaig" resolve="ruleTableBuilders" />
+                    <ref role="3cqZAo" node="7DvO2M9Uaig" resolve="rulePlanBuilders" />
                   </node>
                 </node>
               </node>
@@ -1576,7 +1627,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="6OXbTDzvEX_" role="3clF45">
-        <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesListTable.RuleTableBuilder" />
+        <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesPlanHandler.PlanBuilder" />
       </node>
       <node concept="3Tm6S6" id="6OXbTDy166v" role="1B3o_S" />
       <node concept="3clFbS" id="6OXbTDy166w" role="3clF47">
@@ -1584,14 +1635,14 @@
           <node concept="3cpWsn" id="6OXbTDy166y" role="3cpWs9">
             <property role="TrG5h" value="handlerBuilder" />
             <node concept="3uibUv" id="6OXbTDzvoxW" role="1tU5fm">
-              <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesListTable.RuleTableBuilder" />
+              <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesPlanHandler.PlanBuilder" />
             </node>
             <node concept="3EllGN" id="6OXbTDy166$" role="33vP2m">
               <node concept="37vLTw" id="6OXbTDy166_" role="3ElVtu">
                 <ref role="3cqZAo" node="6OXbTDy166s" resolve="queryTemplate" />
               </node>
               <node concept="37vLTw" id="6OXbTDy19TR" role="3ElQJh">
-                <ref role="3cqZAo" node="6OXbTDy15hb" resolve="queryHandlerBuilders" />
+                <ref role="3cqZAo" node="6OXbTDy15hb" resolve="queryPlanBuilders" />
               </node>
             </node>
           </node>
@@ -1602,7 +1653,7 @@
               <node concept="37vLTI" id="6OXbTDzvpOb" role="3clFbG">
                 <node concept="2ShNRf" id="6OXbTDzvnFP" role="37vLTx">
                   <node concept="1pGfFk" id="6OXbTDzvnFQ" role="2ShVmc">
-                    <ref role="37wK5l" node="4MqhgXUMb4h" resolve="RulesListTable.RuleTableBuilder" />
+                    <ref role="37wK5l" node="4MqhgXUMb4h" resolve="RulesPlanHandler.PlanBuilder" />
                     <node concept="2OqwBi" id="6OXbTDzvnFR" role="37wK5m">
                       <node concept="37vLTw" id="6OXbTD$xJB6" role="2Oq$k0">
                         <ref role="3cqZAo" node="6OXbTDy166s" resolve="queryTemplate" />
@@ -1641,7 +1692,7 @@
                     <ref role="3cqZAo" node="6OXbTDy166s" resolve="queryTemplate" />
                   </node>
                   <node concept="37vLTw" id="6OXbTDy1aJG" role="3ElQJh">
-                    <ref role="3cqZAo" node="6OXbTDy15hb" resolve="queryHandlerBuilders" />
+                    <ref role="3cqZAo" node="6OXbTDy15hb" resolve="queryPlanBuilders" />
                   </node>
                 </node>
               </node>
@@ -1700,22 +1751,21 @@
                 <ref role="3uigEE" to="wyt6:~String" resolve="String" />
               </node>
               <node concept="3uibUv" id="2$$Q_FeUrSl" role="3rvSg0">
-                <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+                <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
               </node>
             </node>
             <node concept="2ShNRf" id="2$$Q_FeUrVB" role="33vP2m">
-              <node concept="3rGOSV" id="2$$Q_FeUrU4" role="2ShVmc">
-                <node concept="3uibUv" id="2$$Q_FeUDuF" role="3rHrn6">
+              <node concept="3rGOSV" id="1LBj9wAAVsv" role="2ShVmc">
+                <node concept="3uibUv" id="1LBj9wAAVsx" role="3rHrn6">
                   <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
-                <node concept="3uibUv" id="2$$Q_FeUrU6" role="3rHtpV">
-                  <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+                <node concept="3uibUv" id="1LBj9wAAVsy" role="3rHtpV">
+                  <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="2$$Q_FeUrVH" role="3cqZAp" />
         <node concept="2Gpval" id="2$$Q_FeV0AR" role="3cqZAp">
           <node concept="3clFbS" id="2$$Q_FeV0gm" role="2LFqv$">
             <node concept="3clFbJ" id="2$$Q_FeV0EM" role="3cqZAp">
@@ -1741,11 +1791,11 @@
                   <node concept="3cpWsn" id="2$$Q_FeV42W" role="3cpWs9">
                     <property role="TrG5h" value="vtx" />
                     <node concept="3uibUv" id="2$$Q_FeV42L" role="1tU5fm">
-                      <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+                      <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
                     </node>
                     <node concept="2ShNRf" id="2$$Q_FeV42X" role="33vP2m">
                       <node concept="1pGfFk" id="2$$Q_FeV42Y" role="2ShVmc">
-                        <ref role="37wK5l" node="2$$Q_FeUj7r" resolve="RulesListTable.Vtx" />
+                        <ref role="37wK5l" node="2$$Q_FeUj7r" resolve="RulesPlanHandler.Vtx" />
                         <node concept="2GrUjf" id="2$$Q_FeV42Z" role="37wK5m">
                           <ref role="2Gs0qQ" node="2$$Q_FeV0Bf" resolve="tpl" />
                         </node>
@@ -1796,7 +1846,7 @@
             <property role="TrG5h" value="tpl" />
           </node>
         </node>
-        <node concept="3clFbH" id="2$$Q_FeV07y" role="3cqZAp" />
+        <node concept="3clFbH" id="1LBj9wAij9$" role="3cqZAp" />
         <node concept="3SKdUt" id="NKt6ynosm7" role="3cqZAp">
           <node concept="1PaTwC" id="589APehYxP$" role="1aUNEU">
             <node concept="3oM_SD" id="589APehYxP_" role="1PaTwD">
@@ -1873,13 +1923,13 @@
             <property role="TrG5h" value="stack" />
             <node concept="oyxx6" id="NKt6ynosmb" role="1tU5fm">
               <node concept="3uibUv" id="2$$Q_FeUywA" role="3O5elw">
-                <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+                <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
               </node>
             </node>
             <node concept="2ShNRf" id="NKt6ynosmd" role="33vP2m">
               <node concept="2Jqq0_" id="NKt6ynosme" role="2ShVmc">
                 <node concept="3uibUv" id="2$$Q_FeUywJ" role="HW$YZ">
-                  <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+                  <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
                 </node>
               </node>
             </node>
@@ -1890,13 +1940,13 @@
             <property role="TrG5h" value="sorted" />
             <node concept="2BANLN" id="NKt6ynosmi" role="1tU5fm">
               <node concept="3uibUv" id="2$$Q_FeUywS" role="_ZDj9">
-                <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+                <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
               </node>
             </node>
             <node concept="2ShNRf" id="NKt6ynosmk" role="33vP2m">
               <node concept="2Jqq0_" id="NKt6ynosml" role="2ShVmc">
                 <node concept="3uibUv" id="2$$Q_FeUyx1" role="HW$YZ">
-                  <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+                  <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
                 </node>
               </node>
             </node>
@@ -1907,15 +1957,87 @@
             <property role="TrG5h" value="visited" />
             <node concept="2hMVRd" id="NKt6ynosmp" role="1tU5fm">
               <node concept="3uibUv" id="2$$Q_FeUyxa" role="2hN53Y">
-                <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+                <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
               </node>
             </node>
             <node concept="2ShNRf" id="NKt6ynosmr" role="33vP2m">
               <node concept="2i4dXS" id="NKt6ynosms" role="2ShVmc">
                 <node concept="3uibUv" id="2$$Q_FeUyxj" role="HW$YZ">
-                  <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+                  <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1LBj9wAigdF" role="3cqZAp">
+          <node concept="3cpWsn" id="1LBj9wAigdG" role="3cpWs9">
+            <property role="TrG5h" value="orderedVts" />
+            <node concept="_YKpA" id="1LBj9wAigca" role="1tU5fm">
+              <node concept="3uibUv" id="1LBj9wAigcd" role="_ZDj9">
+                <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1LBj9wAigdH" role="33vP2m">
+              <node concept="2OqwBi" id="1LBj9wACj3l" role="2Oq$k0">
+                <node concept="2OqwBi" id="1LBj9wA$iXz" role="2Oq$k0">
+                  <node concept="2OqwBi" id="1LBj9wAigdJ" role="2Oq$k0">
+                    <node concept="37vLTw" id="1LBj9wAigdK" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2$$Q_FeUrRn" resolve="graph" />
+                    </node>
+                    <node concept="T8wYR" id="1LBj9wAigdL" role="2OqNvi" />
+                  </node>
+                  <node concept="2S7cBI" id="1LBj9wACig5" role="2OqNvi">
+                    <node concept="1bVj0M" id="1LBj9wACig7" role="23t8la">
+                      <node concept="3clFbS" id="1LBj9wACig8" role="1bW5cS">
+                        <node concept="3clFbF" id="1LBj9wACig9" role="3cqZAp">
+                          <node concept="2OqwBi" id="1LBj9wAF4t5" role="3clFbG">
+                            <node concept="37vLTw" id="1LBj9wAF3HR" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1LBj9wACigf" resolve="it" />
+                            </node>
+                            <node concept="2OwXpG" id="1LBj9wAF5h7" role="2OqNvi">
+                              <ref role="2Oxat5" node="1LBj9wAhQd1" resolve="priority" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Rh6nW" id="1LBj9wACigf" role="1bW2Oz">
+                        <property role="TrG5h" value="it" />
+                        <node concept="2jxLKc" id="1LBj9wACigg" role="1tU5fm" />
+                      </node>
+                    </node>
+                    <node concept="1nlBCl" id="1LBj9wAF5PP" role="2S7zOq" />
+                  </node>
+                </node>
+                <node concept="1XvEQZ" id="1LBj9wACjYg" role="2OqNvi">
+                  <node concept="1bVj0M" id="1LBj9wACjYi" role="23t8la">
+                    <node concept="3clFbS" id="1LBj9wACjYj" role="1bW5cS">
+                      <node concept="3clFbF" id="1LBj9wACkxP" role="3cqZAp">
+                        <node concept="2OqwBi" id="1LBj9wAF7uu" role="3clFbG">
+                          <node concept="2OqwBi" id="1LBj9wAClar" role="2Oq$k0">
+                            <node concept="37vLTw" id="1LBj9wACkxO" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1LBj9wACjYk" resolve="it" />
+                            </node>
+                            <node concept="2OwXpG" id="1LBj9wAF6Jc" role="2OqNvi">
+                              <ref role="2Oxat5" node="2$$Q_FeUj83" resolve="ruleTemplateTable" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="1LBj9wAF894" role="2OqNvi">
+                            <ref role="37wK5l" to="i348:4MqhgXUN1Pe" resolve="name" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Rh6nW" id="1LBj9wACjYk" role="1bW2Oz">
+                      <property role="TrG5h" value="it" />
+                      <node concept="2jxLKc" id="1LBj9wACjYl" role="1tU5fm" />
+                    </node>
+                  </node>
+                  <node concept="1nlBCl" id="1LBj9wAQ0Sr" role="2S7zOq">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node concept="ANE8D" id="1LBj9wAigdW" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -1955,7 +2077,7 @@
                   <node concept="3cpWsn" id="NKt6ynosmK" role="3cpWs9">
                     <property role="TrG5h" value="v" />
                     <node concept="3uibUv" id="2$$Q_FeUyx_" role="1tU5fm">
-                      <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+                      <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
                     </node>
                     <node concept="2OqwBi" id="NKt6ynosmM" role="33vP2m">
                       <node concept="37vLTw" id="NKt6ynosmN" role="2Oq$k0">
@@ -1999,7 +2121,7 @@
                   <node concept="3cpWsn" id="NKt6ynosn3" role="1Duv9x">
                     <property role="TrG5h" value="e" />
                     <node concept="3uibUv" id="2$$Q_FeUyxI" role="1tU5fm">
-                      <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+                      <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="NKt6ynosn5" role="1DdaDG">
@@ -2070,14 +2192,11 @@
           <node concept="3cpWsn" id="NKt6ynosnw" role="1Duv9x">
             <property role="TrG5h" value="vtx" />
             <node concept="3uibUv" id="2$$Q_FeUyxs" role="1tU5fm">
-              <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+              <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
             </node>
           </node>
-          <node concept="2OqwBi" id="NKt6ynosny" role="1DdaDG">
-            <node concept="37vLTw" id="NKt6ynosnz" role="2Oq$k0">
-              <ref role="3cqZAo" node="2$$Q_FeUrRn" resolve="graph" />
-            </node>
-            <node concept="T8wYR" id="NKt6ynosn$" role="2OqNvi" />
+          <node concept="37vLTw" id="1LBj9wAii$b" role="1DdaDG">
+            <ref role="3cqZAo" node="1LBj9wAigdG" resolve="orderedVts" />
           </node>
         </node>
         <node concept="3clFbH" id="2$$Q_FeUz57" role="3cqZAp" />
@@ -2096,7 +2215,7 @@
                           <ref role="3cqZAo" node="2$$Q_FeUByx" resolve="it" />
                         </node>
                         <node concept="2OwXpG" id="2$$Q_FeUC7u" role="2OqNvi">
-                          <ref role="2Oxat5" node="2$$Q_FeUj83" resolve="ruleTable" />
+                          <ref role="2Oxat5" node="2$$Q_FeUj83" resolve="ruleTemplateTable" />
                         </node>
                       </node>
                     </node>
@@ -2115,11 +2234,11 @@
     </node>
     <node concept="2tJIrI" id="2$$Q_FeUp9c" role="jymVt" />
     <node concept="312cEu" id="2$$Q_FeUi_7" role="jymVt">
-      <property role="2bfB8j" value="false" />
+      <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="Vtx" />
       <node concept="3clFbW" id="2$$Q_FeUj7r" role="jymVt">
         <node concept="37vLTG" id="2$$Q_FeUj7B" role="3clF46">
-          <property role="TrG5h" value="handlerTemplate" />
+          <property role="TrG5h" value="ruleTemplateTable" />
           <node concept="3uibUv" id="2$$Q_FeUj7R" role="1tU5fm">
             <ref role="3uigEE" to="i348:4MqhgXU9fm3" resolve="RuleTable" />
           </node>
@@ -2132,11 +2251,11 @@
               <node concept="2OqwBi" id="2$$Q_FeUowV" role="37vLTJ">
                 <node concept="Xjq3P" id="2$$Q_FeUoxS" role="2Oq$k0" />
                 <node concept="2OwXpG" id="2$$Q_FeUowY" role="2OqNvi">
-                  <ref role="2Oxat5" node="2$$Q_FeUj83" resolve="ruleTable" />
+                  <ref role="2Oxat5" node="2$$Q_FeUj83" resolve="ruleTemplateTable" />
                 </node>
               </node>
               <node concept="37vLTw" id="2$$Q_FeUj8d" role="37vLTx">
-                <ref role="3cqZAo" node="2$$Q_FeUj7B" resolve="handlerTemplate" />
+                <ref role="3cqZAo" node="2$$Q_FeUj7B" resolve="ruleTemplateTable" />
               </node>
             </node>
           </node>
@@ -2151,13 +2270,89 @@
               <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
             <node concept="3uibUv" id="2$$Q_FeUoz3" role="3rvSg0">
-              <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+              <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
             </node>
           </node>
         </node>
         <node concept="3cqZAl" id="2$$Q_FeUoy3" role="3clF45" />
         <node concept="3Tm6S6" id="2$$Q_FeUoy4" role="1B3o_S" />
         <node concept="3clFbS" id="2$$Q_FeUoy5" role="3clF47">
+          <node concept="3clFbH" id="1LBj9w_E6bv" role="3cqZAp" />
+          <node concept="3clFbJ" id="1LBj9wAm8Oe" role="3cqZAp">
+            <node concept="3clFbS" id="1LBj9wAm8Og" role="3clFbx">
+              <node concept="3cpWs8" id="1LBj9w_E7ht" role="3cqZAp">
+                <node concept="3cpWsn" id="1LBj9w_E7hu" role="3cpWs9">
+                  <property role="TrG5h" value="mf" />
+                  <node concept="3uibUv" id="1LBj9w_E7gU" role="1tU5fm">
+                    <ref role="3uigEE" to="fqlx:5EDW3XF5Z95" resolve="AbstractCoderulesManifest" />
+                  </node>
+                  <node concept="2OqwBi" id="1LBj9w_E7hv" role="33vP2m">
+                    <node concept="1eOMI4" id="1LBj9w_E7hw" role="2Oq$k0">
+                      <node concept="10QFUN" id="1LBj9w_E7hx" role="1eOMHV">
+                        <node concept="37vLTw" id="1LBj9w_E7hy" role="10QFUP">
+                          <ref role="3cqZAo" node="2$$Q_FeUj83" resolve="ruleTemplateTable" />
+                        </node>
+                        <node concept="3uibUv" id="1LBj9w_E7hz" role="10QFUM">
+                          <ref role="3uigEE" to="i348:5EDW3XF5Zh6" resolve="AbstractRuleTable" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="1LBj9w_E7h$" role="2OqNvi">
+                      <ref role="37wK5l" to="i348:1LBj9w_9RCi" resolve="manifest" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="1LBj9w_Eb1j" role="3cqZAp">
+                <node concept="3cpWsn" id="1LBj9w_Eb1k" role="3cpWs9">
+                  <property role="TrG5h" value="asp" />
+                  <node concept="3uibUv" id="1LBj9w_EaZk" role="1tU5fm">
+                    <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+                  </node>
+                  <node concept="2OqwBi" id="1LBj9w_Eb1l" role="33vP2m">
+                    <node concept="37vLTw" id="1LBj9w_Eb1m" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1LBj9w_E7hu" resolve="mf" />
+                    </node>
+                    <node concept="liA8E" id="1LBj9w_Eb1n" role="2OqNvi">
+                      <ref role="37wK5l" to="fqlx:1LBj9w_9VAl" resolve="coderulesAspect" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="1LBj9wAhSpn" role="3cqZAp">
+                <node concept="37vLTI" id="1LBj9wAhTZL" role="3clFbG">
+                  <node concept="2OqwBi" id="1LBj9wAhUhZ" role="37vLTx">
+                    <node concept="2OqwBi" id="1LBj9wAhUi0" role="2Oq$k0">
+                      <node concept="37vLTw" id="1LBj9wAhUi1" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1LBj9w_Elep" resolve="aspectClique" />
+                      </node>
+                      <node concept="liA8E" id="1LBj9wAhUi2" role="2OqNvi">
+                        <ref role="37wK5l" to="fqlx:3KN3A4uUhpW" resolve="aspects" />
+                      </node>
+                    </node>
+                    <node concept="2WmjW8" id="1LBj9wAhUi3" role="2OqNvi">
+                      <node concept="37vLTw" id="1LBj9wAhUi4" role="25WWJ7">
+                        <ref role="3cqZAo" node="1LBj9w_Eb1k" resolve="asp" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="1LBj9wAhSOb" role="37vLTJ">
+                    <node concept="Xjq3P" id="1LBj9wAhSpl" role="2Oq$k0" />
+                    <node concept="2OwXpG" id="1LBj9wAhT0K" role="2OqNvi">
+                      <ref role="2Oxat5" node="1LBj9wAhQd1" resolve="priority" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="1LBj9wAm9Md" role="3clFbw">
+              <node concept="10Nm6u" id="1LBj9wAmaiN" role="3uHU7w" />
+              <node concept="37vLTw" id="1LBj9wAm9bh" role="3uHU7B">
+                <ref role="3cqZAo" node="1LBj9w_Elep" resolve="aspectClique" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="1LBj9wAgE2G" role="3cqZAp" />
           <node concept="3clFbJ" id="2$$Q_FeUIf_" role="3cqZAp">
             <node concept="3clFbS" id="2$$Q_FeUIfB" role="3clFbx">
               <node concept="3clFbF" id="2$$Q_FeUJlu" role="3cqZAp">
@@ -2172,7 +2367,7 @@
                     <node concept="3EllGN" id="2$$Q_FeUN34" role="25WWJ7">
                       <node concept="2OqwBi" id="2$$Q_FeUZOL" role="3ElVtu">
                         <node concept="37vLTw" id="2$$Q_FeUZOM" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2$$Q_FeUj83" resolve="ruleTable" />
+                          <ref role="3cqZAo" node="2$$Q_FeUj83" resolve="ruleTemplateTable" />
                         </node>
                         <node concept="liA8E" id="2$$Q_FeUZON" role="2OqNvi">
                           <ref role="37wK5l" to="i348:7P_FdVQoGPt" resolve="extendedFqName" />
@@ -2193,7 +2388,7 @@
               <node concept="2Nt0df" id="2$$Q_FeUJf_" role="2OqNvi">
                 <node concept="2OqwBi" id="2$$Q_FeUZOO" role="38cxEo">
                   <node concept="37vLTw" id="2$$Q_FeUZOP" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2$$Q_FeUj83" resolve="ruleTable" />
+                    <ref role="3cqZAo" node="2$$Q_FeUj83" resolve="ruleTemplateTable" />
                   </node>
                   <node concept="liA8E" id="2$$Q_FeUZOQ" role="2OqNvi">
                     <ref role="37wK5l" to="i348:7P_FdVQoGPt" resolve="extendedFqName" />
@@ -2226,7 +2421,7 @@
                 <node concept="2OqwBi" id="2$$Q_FeUWsc" role="3clFbw">
                   <node concept="2OqwBi" id="2$$Q_FeUVRe" role="2Oq$k0">
                     <node concept="37vLTw" id="2$$Q_FeUVFy" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2$$Q_FeUj83" resolve="ruleTable" />
+                      <ref role="3cqZAo" node="2$$Q_FeUj83" resolve="ruleTemplateTable" />
                     </node>
                     <node concept="liA8E" id="2$$Q_FeUW5M" role="2OqNvi">
                       <ref role="37wK5l" to="i348:7P_FdVQoZmr" resolve="fqName" />
@@ -2240,7 +2435,7 @@
                           <ref role="2Gs0qQ" node="2$$Q_FeUQBF" resolve="v" />
                         </node>
                         <node concept="2OwXpG" id="2$$Q_FeUUAO" role="2OqNvi">
-                          <ref role="2Oxat5" node="2$$Q_FeUj83" resolve="ruleTable" />
+                          <ref role="2Oxat5" node="2$$Q_FeUj83" resolve="ruleTemplateTable" />
                         </node>
                       </node>
                       <node concept="liA8E" id="2$$Q_FeUV50" role="2OqNvi">
@@ -2263,10 +2458,10 @@
           </node>
         </node>
       </node>
-      <node concept="2tJIrI" id="2$$Q_FeUj7b" role="jymVt" />
+      <node concept="2tJIrI" id="1LBj9wAi8_5" role="jymVt" />
       <node concept="3Tm6S6" id="2$$Q_FeUj73" role="1B3o_S" />
       <node concept="312cEg" id="2$$Q_FeUj83" role="jymVt">
-        <property role="TrG5h" value="ruleTable" />
+        <property role="TrG5h" value="ruleTemplateTable" />
         <node concept="3Tm6S6" id="2$$Q_FeUj84" role="1B3o_S" />
         <node concept="3uibUv" id="2$$Q_FeUj86" role="1tU5fm">
           <ref role="3uigEE" to="i348:4MqhgXU9fm3" resolve="RuleTable" />
@@ -2277,21 +2472,29 @@
         <node concept="3Tm6S6" id="2$$Q_FeUozB" role="1B3o_S" />
         <node concept="_YKpA" id="2$$Q_FeUo$c" role="1tU5fm">
           <node concept="3uibUv" id="2$$Q_FeUo$m" role="_ZDj9">
-            <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+            <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
           </node>
         </node>
         <node concept="2ShNRf" id="2$$Q_FeUoAS" role="33vP2m">
           <node concept="Tc6Ow" id="2$$Q_FeUo_G" role="2ShVmc">
             <node concept="3uibUv" id="2$$Q_FeUo_H" role="HW$YZ">
-              <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesListTable.Vtx" />
+              <ref role="3uigEE" node="2$$Q_FeUi_7" resolve="RulesPlanHandler.Vtx" />
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="312cEg" id="1LBj9wAhQd1" role="jymVt">
+        <property role="TrG5h" value="priority" />
+        <node concept="3Tm6S6" id="1LBj9wAhQd2" role="1B3o_S" />
+        <node concept="10Oyi0" id="1LBj9wAhRRj" role="1tU5fm" />
+        <node concept="3cmrfG" id="1LBj9wAm81W" role="33vP2m">
+          <property role="3cmrfH" value="0" />
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="cmlg9NgZ6M" role="jymVt" />
     <node concept="312cEu" id="4MqhgXUMauK" role="jymVt">
-      <property role="TrG5h" value="RuleTableBuilder" />
+      <property role="TrG5h" value="PlanBuilder" />
       <node concept="2tJIrI" id="4MqhgXUMb3v" role="jymVt" />
       <node concept="3clFbW" id="4MqhgXUMb4h" role="jymVt">
         <node concept="3cqZAl" id="4MqhgXUMb4j" role="3clF45" />
@@ -2856,7 +3059,7 @@
       </node>
       <node concept="2tJIrI" id="4MqhgXUNBTW" role="jymVt" />
       <node concept="3clFb_" id="4MqhgXUNDLG" role="jymVt">
-        <property role="TrG5h" value="toRulesList" />
+        <property role="TrG5h" value="toRulesPlan" />
         <node concept="3uibUv" id="4MqhgXUNEFF" role="3clF45">
           <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
         </node>
@@ -3028,7 +3231,7 @@
           <node concept="3clFbF" id="4MqhgXUNKmT" role="3cqZAp">
             <node concept="2ShNRf" id="4MqhgXUNKmP" role="3clFbG">
               <node concept="1pGfFk" id="4MqhgXUNKOX" role="2ShVmc">
-                <ref role="37wK5l" node="4MqhgXUM$CT" resolve="RulesListTable.RulesListImpl" />
+                <ref role="37wK5l" node="4MqhgXUM$CT" resolve="RulesPlanHandler.RulesPlanImpl" />
                 <node concept="37vLTw" id="2jxMt584R0F" role="37wK5m">
                   <ref role="3cqZAo" node="4MqhgXUMb9p" resolve="name" />
                 </node>
@@ -3036,6 +3239,28 @@
                   <ref role="3cqZAo" node="4MqhgXUCPqM" resolve="allRules" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="P$JXv" id="1LBj9w_7moG" role="lGtFl">
+          <node concept="TZ5HA" id="1LBj9w_7moH" role="TZ5H$">
+            <node concept="1dT_AC" id="1LBj9w_7moI" role="1dT_Ay">
+              <property role="1dT_AB" value="Collects the resulting rules plan from the rules collected so far." />
+            </node>
+          </node>
+          <node concept="TZ5HA" id="1LBj9w_7po1" role="TZ5H$">
+            <node concept="1dT_AC" id="1LBj9w_7po2" role="1dT_Ay">
+              <property role="1dT_AB" value="The ordering of rules in the plan correspond to partial ordering of rule templates according to " />
+            </node>
+          </node>
+          <node concept="TZ5HA" id="1LBj9w_7pqv" role="TZ5H$">
+            <node concept="1dT_AC" id="1LBj9w_7pqw" role="1dT_Ay">
+              <property role="1dT_AB" value="extends relation, and also takes into account the extended languages. " />
+            </node>
+          </node>
+          <node concept="TZ5HA" id="1LBj9w_7psZ" role="TZ5H$">
+            <node concept="1dT_AC" id="1LBj9w_7pt0" role="1dT_Ay">
+              <property role="1dT_AB" value="Otherwise, ordering of rules withing the rule template is kept." />
             </node>
           </node>
         </node>
@@ -3135,7 +3360,7 @@
     </node>
     <node concept="2tJIrI" id="cmlg9NhRb0" role="jymVt" />
     <node concept="312cEu" id="4MqhgXUMzTQ" role="jymVt">
-      <property role="TrG5h" value="RulesListImpl" />
+      <property role="TrG5h" value="RulesPlanImpl" />
       <node concept="2tJIrI" id="4MqhgXUM$3u" role="jymVt" />
       <node concept="3clFbW" id="4MqhgXUM$CT" role="jymVt">
         <node concept="37vLTG" id="2jxMt584M2F" role="3clF46">
@@ -3250,16 +3475,15 @@
       </node>
     </node>
     <node concept="2tJIrI" id="cmlg9NhRlY" role="jymVt" />
-    <node concept="2tJIrI" id="7DvO2M9$xQ6" role="jymVt" />
     <node concept="312cEg" id="7DvO2M9Uaig" role="jymVt">
-      <property role="TrG5h" value="ruleTableBuilders" />
+      <property role="TrG5h" value="rulePlanBuilders" />
       <node concept="3Tm6S6" id="7DvO2M9Uaih" role="1B3o_S" />
       <node concept="3rvAFt" id="7DvO2M9Uaii" role="1tU5fm">
         <node concept="3uibUv" id="7DvO2M9Uaij" role="3rvQeY">
           <ref role="3uigEE" to="i348:4MqhgXU9fm3" resolve="RuleTable" />
         </node>
         <node concept="3uibUv" id="7DvO2M9Uaik" role="3rvSg0">
-          <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesListTable.RuleTableBuilder" />
+          <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesPlanHandler.PlanBuilder" />
         </node>
       </node>
       <node concept="2ShNRf" id="7DvO2M9Uail" role="33vP2m">
@@ -3268,13 +3492,13 @@
             <ref role="3uigEE" to="i348:4MqhgXU9fm3" resolve="RuleTable" />
           </node>
           <node concept="3uibUv" id="7DvO2M9Uaio" role="3rHtpV">
-            <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesListTable.RuleTableBuilder" />
+            <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesPlanHandler.PlanBuilder" />
           </node>
         </node>
       </node>
     </node>
     <node concept="312cEg" id="6OXbTDy15hb" role="jymVt">
-      <property role="TrG5h" value="queryHandlerBuilders" />
+      <property role="TrG5h" value="queryPlanBuilders" />
       <node concept="3Tm6S6" id="6OXbTDy15hc" role="1B3o_S" />
       <node concept="3rvAFt" id="6OXbTDy15UP" role="1tU5fm">
         <node concept="3uibUv" id="6OXbTD$xHLp" role="3rvQeY">
@@ -3282,7 +3506,7 @@
           <node concept="3qTvmN" id="6OXbTD$xIpJ" role="11_B2D" />
         </node>
         <node concept="3uibUv" id="6OXbTDzvogx" role="3rvSg0">
-          <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesListTable.RuleTableBuilder" />
+          <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesPlanHandler.PlanBuilder" />
         </node>
       </node>
       <node concept="2ShNRf" id="6OXbTDy164P" role="33vP2m">
@@ -3292,7 +3516,19 @@
             <node concept="3qTvmN" id="6OXbTD$xJlQ" role="11_B2D" />
           </node>
           <node concept="3uibUv" id="6OXbTDzvor7" role="3rHtpV">
-            <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesListTable.RuleTableBuilder" />
+            <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesPlanHandler.PlanBuilder" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="1LBj9w_Elep" role="jymVt">
+      <property role="TrG5h" value="aspectClique" />
+      <node concept="3Tm6S6" id="1LBj9w_Eleq" role="1B3o_S" />
+      <node concept="3uibUv" id="1LBj9w_Eles" role="1tU5fm">
+        <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+        <node concept="3qUE_q" id="1LBj9w_Elet" role="11_B2D">
+          <node concept="3uibUv" id="1LBj9w_Eleu" role="3qUE_r">
+            <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
           </node>
         </node>
       </node>
@@ -4858,12 +5094,12 @@
         <node concept="3clFbF" id="cmlg9OLkT2" role="3cqZAp">
           <node concept="37vLTI" id="cmlg9OLpE7" role="3clFbG">
             <node concept="37vLTw" id="cmlg9OLrFS" role="37vLTx">
-              <ref role="3cqZAo" node="cmlg9OLhb5" resolve="rulesListTable" />
+              <ref role="3cqZAo" node="cmlg9OLhb5" resolve="planHandler" />
             </node>
             <node concept="2OqwBi" id="cmlg9OLl2O" role="37vLTJ">
               <node concept="Xjq3P" id="cmlg9OLkT0" role="2Oq$k0" />
               <node concept="2OwXpG" id="cmlg9OLn_U" role="2OqNvi">
-                <ref role="2Oxat5" node="6tPOoeT4XhE" resolve="rulesListTable" />
+                <ref role="2Oxat5" node="6tPOoeT4XhE" resolve="planHandler" />
               </node>
             </node>
           </node>
@@ -4922,9 +5158,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="cmlg9OLhb5" role="3clF46">
-        <property role="TrG5h" value="rulesListTable" />
+        <property role="TrG5h" value="planHandler" />
         <node concept="3uibUv" id="cmlg9OLiZ1" role="1tU5fm">
-          <ref role="3uigEE" node="7DvO2M9Uago" resolve="RulesListTable" />
+          <ref role="3uigEE" node="7DvO2M9Uago" resolve="RulesPlanHandler" />
         </node>
       </node>
       <node concept="37vLTG" id="cmlg9OJCww" role="3clF46">
@@ -5006,7 +5242,7 @@
                       <node concept="liA8E" id="4MqhgXUSMpw" role="2OqNvi">
                         <ref role="37wK5l" node="4MqhgXUQoOL" resolve="addRulesList" />
                         <node concept="37vLTw" id="6tPOoeTbvfq" role="37wK5m">
-                          <ref role="3cqZAo" node="4MqhgXUSKVP" resolve="handler" />
+                          <ref role="3cqZAo" node="4MqhgXUSKVP" resolve="plan" />
                         </node>
                       </node>
                     </node>
@@ -5019,17 +5255,17 @@
             </node>
           </node>
           <node concept="3cpWsn" id="4MqhgXUSKVP" role="1Duv9x">
-            <property role="TrG5h" value="handler" />
+            <property role="TrG5h" value="plan" />
             <node concept="3uibUv" id="4MqhgXUSKVT" role="1tU5fm">
               <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
             </node>
           </node>
           <node concept="2OqwBi" id="6tPOoeTbtQC" role="1DdaDG">
             <node concept="37vLTw" id="6tPOoeTbtQD" role="2Oq$k0">
-              <ref role="3cqZAo" node="6tPOoeT4XhE" resolve="rulesListTable" />
+              <ref role="3cqZAo" node="6tPOoeT4XhE" resolve="planHandler" />
             </node>
             <node concept="liA8E" id="6tPOoeTbtQE" role="2OqNvi">
-              <ref role="37wK5l" node="7DvO2M9UagU" resolve="allLists" />
+              <ref role="37wK5l" node="7DvO2M9UagU" resolve="allPlans" />
             </node>
           </node>
         </node>
@@ -5140,7 +5376,7 @@
                 <property role="TrG5h" value="mainRulesListBuilder" />
                 <node concept="2ShNRf" id="4MqhgXUQinw" role="33vP2m">
                   <node concept="1pGfFk" id="4MqhgXUQinx" role="2ShVmc">
-                    <ref role="37wK5l" node="4MqhgXUMb4h" resolve="RulesListTable.RuleTableBuilder" />
+                    <ref role="37wK5l" node="4MqhgXUMb4h" resolve="RulesPlanHandler.PlanBuilder" />
                     <node concept="Xl_RD" id="4MqhgXUQiny" role="37wK5m">
                       <property role="Xl_RC" value="finish" />
                     </node>
@@ -5157,7 +5393,7 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="4MqhgXUQinf" role="1tU5fm">
-                  <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesListTable.RuleTableBuilder" />
+                  <ref role="3uigEE" node="4MqhgXUMauK" resolve="RulesPlanHandler.PlanBuilder" />
                 </node>
               </node>
               <node concept="15s5l7" id="1H_6AUT6WmZ" role="lGtFl">
@@ -5205,7 +5441,7 @@
                             <ref role="3cqZAo" node="4MqhgXUQinv" resolve="mainRulesListBuilder" />
                           </node>
                           <node concept="liA8E" id="cmlg9NhrJf" role="2OqNvi">
-                            <ref role="37wK5l" node="4MqhgXUNDLG" resolve="toRulesList" />
+                            <ref role="37wK5l" node="4MqhgXUNDLG" resolve="toRulesPlan" />
                           </node>
                         </node>
                       </node>
@@ -7145,7 +7381,7 @@
                           <node concept="2OqwBi" id="6nFpYltF$g1" role="2Oq$k0">
                             <node concept="Xjq3P" id="6nFpYltF$g2" role="2Oq$k0" />
                             <node concept="2OwXpG" id="6nFpYltF$g3" role="2OqNvi">
-                              <ref role="2Oxat5" node="6tPOoeT4XhE" resolve="rulesListTable" />
+                              <ref role="2Oxat5" node="6tPOoeT4XhE" resolve="planHandler" />
                             </node>
                           </node>
                           <node concept="liA8E" id="6nFpYltF$g4" role="2OqNvi">
@@ -7712,7 +7948,7 @@
                     <node concept="2OqwBi" id="6tPOoeT52Fu" role="2Oq$k0">
                       <node concept="Xjq3P" id="6tPOoeT524B" role="2Oq$k0" />
                       <node concept="2OwXpG" id="6tPOoeT538g" role="2OqNvi">
-                        <ref role="2Oxat5" node="6tPOoeT4XhE" resolve="rulesListTable" />
+                        <ref role="2Oxat5" node="6tPOoeT4XhE" resolve="planHandler" />
                       </node>
                     </node>
                     <node concept="liA8E" id="6tPOoeT544o" role="2OqNvi">
@@ -9846,10 +10082,10 @@
       </node>
     </node>
     <node concept="312cEg" id="6tPOoeT4XhE" role="jymVt">
-      <property role="TrG5h" value="rulesListTable" />
+      <property role="TrG5h" value="planHandler" />
       <node concept="3Tm6S6" id="6tPOoeT4XhF" role="1B3o_S" />
       <node concept="3uibUv" id="6tPOoeT51Qn" role="1tU5fm">
-        <ref role="3uigEE" node="7DvO2M9Uago" resolve="RulesListTable" />
+        <ref role="3uigEE" node="7DvO2M9Uago" resolve="RulesPlanHandler" />
       </node>
     </node>
     <node concept="312cEg" id="6i42QSsj_y2" role="jymVt">
@@ -10769,7 +11005,7 @@
             </node>
             <node concept="2ShNRf" id="2Z9ItkdbsEW" role="33vP2m">
               <node concept="1pGfFk" id="2Z9Itkdbt2w" role="2ShVmc">
-                <ref role="37wK5l" node="4MqhgXUM$CT" resolve="RulesListTable.RulesListImpl" />
+                <ref role="37wK5l" node="4MqhgXUM$CT" resolve="RulesPlanHandler.RulesPlanImpl" />
                 <node concept="2OqwBi" id="2Z9Itkdbtcw" role="37wK5m">
                   <node concept="37vLTw" id="2Z9Itkdbt6J" role="2Oq$k0">
                     <ref role="3cqZAo" node="4MqhgXUQrZn" resolve="rulesList" />
