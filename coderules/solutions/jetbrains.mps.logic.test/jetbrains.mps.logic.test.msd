@@ -4,9 +4,7 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
-    <modelRoot contentPath="${module}" type="java_classes">
-      <sourceRoot location="lib/mockito-core-2.24.0.jar" />
-    </modelRoot>
+    <modelRoot contentPath="${module}" type="java_classes" />
   </models>
   <facets>
     <facet type="tests" />
@@ -14,11 +12,6 @@
       <classes generated="true" path="${module}/classes_gen" />
     </facet>
   </facets>
-  <stubModelEntries>
-    <stubModelEntry path="${module}/lib/objenesis-2.1.jar" />
-    <stubModelEntry path="${module}/lib/byte-buddy-1.10.17.jar" />
-    <stubModelEntry path="${module}/lib/mockito-core-2.24.0.jar" />
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="true">a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)</dependency>
