@@ -263,6 +263,38 @@
         <node concept="10P_77" id="5tAk4yVVZ5z" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="57Rdq$NuGTN" role="jymVt" />
+    <node concept="3clFb_" id="57Rdq$NuMzc" role="jymVt">
+      <property role="TrG5h" value="setLevel" />
+      <node concept="3clFbS" id="57Rdq$NuMzf" role="3clF47">
+        <node concept="3clFbF" id="57Rdq$NuQxx" role="3cqZAp">
+          <node concept="37vLTI" id="57Rdq$NuRkX" role="3clFbG">
+            <node concept="37vLTw" id="57Rdq$NuRta" role="37vLTx">
+              <ref role="3cqZAo" node="57Rdq$NuNW$" resolve="incrLevel" />
+            </node>
+            <node concept="2OqwBi" id="57Rdq$NuQEU" role="37vLTJ">
+              <node concept="Xjq3P" id="57Rdq$NuQxw" role="2Oq$k0" />
+              <node concept="2OwXpG" id="57Rdq$NuQPB" role="2OqNvi">
+                <ref role="2Oxat5" node="57Rdq$NuEja" resolve="incrLevel" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="57Rdq$NuRF6" role="3cqZAp">
+          <node concept="Xjq3P" id="57Rdq$NuRF4" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="57Rdq$NuJKy" role="1B3o_S" />
+      <node concept="3uibUv" id="57Rdq$NuMuS" role="3clF45">
+        <ref role="3uigEE" node="1H_6AUT30JE" resolve="IncrProgramSpecBuilder" />
+      </node>
+      <node concept="37vLTG" id="57Rdq$NuNW$" role="3clF46">
+        <property role="TrG5h" value="incrLevel" />
+        <node concept="3uibUv" id="57Rdq$NuNWz" role="1tU5fm">
+          <ref role="3uigEE" to="av0y:~IncrementalSpec$IncrLevel" resolve="IncrementalSpec.IncrLevel" />
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="5tAk4yW1et6" role="jymVt" />
     <node concept="3clFb_" id="5tAk4yW1cEZ" role="jymVt">
       <property role="TrG5h" value="enable" />
@@ -332,6 +364,9 @@
               <ref role="37wK5l" node="1H_6AUT3r6M" resolve="SimpleSpec" />
               <node concept="37vLTw" id="5tAk4yW2au6" role="37wK5m">
                 <ref role="3cqZAo" node="5tAk4yW1EFq" resolve="ability" />
+              </node>
+              <node concept="37vLTw" id="57Rdq$NuGuI" role="37wK5m">
+                <ref role="3cqZAo" node="57Rdq$NuEja" resolve="incrLevel" />
               </node>
               <node concept="37vLTw" id="5tAk4yW2bCB" role="37wK5m">
                 <ref role="3cqZAo" node="5tAk4yVVXPf" resolve="assertLevel" />
@@ -456,6 +491,29 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="57Rdq$Nv5RQ" role="3cqZAp">
+          <node concept="37vLTI" id="57Rdq$Nv7Pi" role="3clFbG">
+            <node concept="2OqwBi" id="57Rdq$Nv8nO" role="37vLTx">
+              <node concept="37vLTw" id="57Rdq$Nv7Y3" role="2Oq$k0">
+                <ref role="3cqZAo" node="57Rdq$NuEja" resolve="incrLevel" />
+              </node>
+              <node concept="liA8E" id="57Rdq$Nv8Rx" role="2OqNvi">
+                <ref role="37wK5l" to="av0y:~IncrementalSpec$IncrLevel.min(jetbrains.mps.logic.reactor.program.IncrementalSpec$IncrLevel)" resolve="min" />
+                <node concept="2OqwBi" id="57Rdq$Nv95v" role="37wK5m">
+                  <node concept="37vLTw" id="57Rdq$Nv8Ui" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5tAk4yVWWQz" resolve="otherBuilder" />
+                  </node>
+                  <node concept="2OwXpG" id="57Rdq$Nv9lD" role="2OqNvi">
+                    <ref role="2Oxat5" node="57Rdq$NuEja" resolve="incrLevel" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="57Rdq$Nv5RO" role="37vLTJ">
+              <ref role="3cqZAo" node="57Rdq$NuEja" resolve="incrLevel" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="5tAk4yVXaLg" role="3cqZAp">
           <node concept="37vLTI" id="5tAk4yW1JLR" role="3clFbG">
             <node concept="37vLTw" id="5tAk4yW1JLW" role="37vLTJ">
@@ -536,6 +594,17 @@
         <ref role="1Px2BO" to="av0y:~IncrementalSpec$Enabled" resolve="IncrementalSpec.Enabled" />
       </node>
     </node>
+    <node concept="312cEg" id="57Rdq$NuEja" role="jymVt">
+      <property role="TrG5h" value="incrLevel" />
+      <node concept="3Tm6S6" id="57Rdq$NuCFz" role="1B3o_S" />
+      <node concept="3uibUv" id="57Rdq$NuEfr" role="1tU5fm">
+        <ref role="3uigEE" to="av0y:~IncrementalSpec$IncrLevel" resolve="IncrementalSpec.IncrLevel" />
+      </node>
+      <node concept="Rm8GO" id="57Rdq$NuFId" role="33vP2m">
+        <ref role="Rm8GQ" to="av0y:~IncrementalSpec$IncrLevel.Full" resolve="Full" />
+        <ref role="1Px2BO" to="av0y:~IncrementalSpec$IncrLevel" resolve="IncrementalSpec.IncrLevel" />
+      </node>
+    </node>
     <node concept="312cEg" id="5tAk4yVVXPf" role="jymVt">
       <property role="TrG5h" value="assertLevel" />
       <node concept="3Tm6S6" id="5tAk4yVVX$N" role="1B3o_S" />
@@ -559,6 +628,12 @@
         <property role="TrG5h" value="enabled" />
         <node concept="3uibUv" id="5tAk4yW10mE" role="1tU5fm">
           <ref role="3uigEE" to="av0y:~IncrementalSpec$Enabled" resolve="IncrementalSpec.Enabled" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="57Rdq$Nuy3T" role="3clF46">
+        <property role="TrG5h" value="incrLevel" />
+        <node concept="3uibUv" id="57Rdq$Nuyvy" role="1tU5fm">
+          <ref role="3uigEE" to="av0y:~IncrementalSpec$IncrLevel" resolve="IncrementalSpec.IncrLevel" />
         </node>
       </node>
       <node concept="37vLTG" id="5tAk4yW10y3" role="3clF46">
@@ -595,6 +670,19 @@
               <node concept="Xjq3P" id="5tAk4yW16Sw" role="2Oq$k0" />
               <node concept="2OwXpG" id="5tAk4yW17pv" role="2OqNvi">
                 <ref role="2Oxat5" node="5tAk4yW0Zt3" resolve="enabled" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="57Rdq$NuyMW" role="3cqZAp">
+          <node concept="37vLTI" id="57Rdq$NuzU6" role="3clFbG">
+            <node concept="37vLTw" id="57Rdq$Nu$3B" role="37vLTx">
+              <ref role="3cqZAo" node="57Rdq$Nuy3T" resolve="incrLevel" />
+            </node>
+            <node concept="2OqwBi" id="57Rdq$NuzbM" role="37vLTJ">
+              <node concept="Xjq3P" id="57Rdq$NuyMU" role="2Oq$k0" />
+              <node concept="2OwXpG" id="57Rdq$Nuzq_" role="2OqNvi">
+                <ref role="2Oxat5" node="57Rdq$NuvYt" resolve="incrLevel" />
               </node>
             </node>
           </node>
@@ -802,6 +890,23 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="3clFb_" id="57Rdq$NuwKy" role="jymVt">
+      <property role="TrG5h" value="incrLevel" />
+      <node concept="3Tm1VV" id="57Rdq$NuwKz" role="1B3o_S" />
+      <node concept="3uibUv" id="57Rdq$NuwKA" role="3clF45">
+        <ref role="3uigEE" to="av0y:~IncrementalSpec$IncrLevel" resolve="IncrementalSpec.IncrLevel" />
+      </node>
+      <node concept="3clFbS" id="57Rdq$NuwKB" role="3clF47">
+        <node concept="3clFbF" id="57Rdq$NuxPY" role="3cqZAp">
+          <node concept="37vLTw" id="57Rdq$NuxPX" role="3clFbG">
+            <ref role="3cqZAo" node="57Rdq$NuvYt" resolve="incrLevel" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="57Rdq$NuwKC" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3clFb_" id="1JkMMuhf_MF" role="jymVt">
       <property role="TrG5h" value="assertLevel" />
       <node concept="3Tm1VV" id="1JkMMuhf_MG" role="1B3o_S" />
@@ -825,6 +930,13 @@
       <node concept="3Tm6S6" id="5tAk4yW0Zt4" role="1B3o_S" />
       <node concept="3uibUv" id="5tAk4yW0ZEe" role="1tU5fm">
         <ref role="3uigEE" to="av0y:~IncrementalSpec$Enabled" resolve="IncrementalSpec.Enabled" />
+      </node>
+    </node>
+    <node concept="312cEg" id="57Rdq$NuvYt" role="jymVt">
+      <property role="TrG5h" value="incrLevel" />
+      <node concept="3Tm6S6" id="57Rdq$NuvDw" role="1B3o_S" />
+      <node concept="3uibUv" id="57Rdq$NuvTj" role="1tU5fm">
+        <ref role="3uigEE" to="av0y:~IncrementalSpec$IncrLevel" resolve="IncrementalSpec.IncrLevel" />
       </node>
     </node>
     <node concept="312cEg" id="5tAk4yW0YB3" role="jymVt">
