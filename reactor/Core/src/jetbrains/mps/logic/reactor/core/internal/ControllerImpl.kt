@@ -54,10 +54,7 @@ internal class ControllerImpl (
         return storeView()
     }
 
-    fun incrLaunch(rulesDiff: RulesDiff): Pair<FeedbackStatus, FeedbackKeySet> =
-        processing.runIncrementally(this, rulesDiff)
-
-    fun activate(constraint: Constraint) : FeedbackStatus {
+    override fun activate(constraint: Constraint) : FeedbackStatus {
         // FIXME noLogicalContext
         val context = Context(NORMAL(), noLogicalContext, null, trace)
 
@@ -348,7 +345,6 @@ fun createController(
         ConstraintsProcessing(
             Dispatcher(ruleIndex).front(),
             MatchJournalImpl(),
-            ruleIndex,
             logicalState,
             IncrementalSpec.DefaultSpec,
             trace,

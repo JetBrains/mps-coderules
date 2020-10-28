@@ -105,6 +105,8 @@ class MockRule(
 class MockProgram(val name: String, val rulesLists: List<RulesList>, val registry: MockConstraintRegistry) : Program() {
     private var rulesDiff: RulesDiff = RulesDiff.emptyDiff()
 
+    override fun preambleInfo(): PreambleInfo = PreambleInfo.EMPTY
+
     override fun incrementalDiff(): RulesDiff = rulesDiff
 
     override fun withRulesDiff(diff: RulesDiff): MockProgram {

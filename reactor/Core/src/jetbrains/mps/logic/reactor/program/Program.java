@@ -31,6 +31,9 @@ public abstract class Program {
 
     public abstract Iterable<RulesList> rulesLists();
 
+    public abstract PreambleInfo preambleInfo();
+
+
     public Program withRulesDiff(RulesDiff diff) { return this; };
 
     public RulesDiff incrementalDiff() { return RulesDiff.emptyDiff(); };

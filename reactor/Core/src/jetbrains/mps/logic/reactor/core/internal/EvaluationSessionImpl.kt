@@ -19,9 +19,7 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus.FAILED
 import jetbrains.mps.logic.reactor.evaluation.*
-import jetbrains.mps.logic.reactor.program.Constraint
-import jetbrains.mps.logic.reactor.program.IncrementalSpec
-import jetbrains.mps.logic.reactor.program.Program
+import jetbrains.mps.logic.reactor.program.*
 import jetbrains.mps.logic.reactor.util.Profiler
 import java.util.*
 
@@ -29,71 +27,217 @@ import java.util.*
  * @author Fedor Isakov
  */
 
+
+internal interface ProcessingSession {
+
+    fun firstSession(): SessionParts
+
+    fun nextSession(token: SessionToken): SessionParts
+
+    /**
+     * Clears state unneeded between sessions and
+     * returns [SessionToken] with session results.
+     */
+    fun endSession(session: SessionParts): SessionToken
+
+    fun runSession(session: SessionParts, main: Constraint): EvaluationResult
+}
+
+internal data class SessionParts(
+    val preambleInfo: PreambleInfo,
+    val ruleIndex: RuleIndex,
+    val journal: MatchJournal,
+    val logicalState: LogicalState,
+    val dispatchingFront: Dispatcher.DispatchingFront,
+    val controller: ControllerImpl,
+    val processing: ConstraintsProcessing,
+    val strategy: ProcessingStrategy
+)
+
+
 internal class EvaluationSessionImpl private constructor (
+    val incrementality: IncrementalSpec,
     val program: Program,
     val supervisor: Supervisor,
     val trace: EvaluationTrace,
+    val profiler: Profiler?,
     val params: Map<ParameterKey<*>, *>?) : EvaluationSession()
 {
-
     @Suppress("UNCHECKED_CAST")
     override fun <T : Any> parameter(key: ParameterKey<T>): T? = params ?.get(key) as T
 
-    private fun launch(
-        main: Constraint, profiler: Profiler?,
-        token: SessionToken?, rulesDiff: RulesDiff, incrementality: IncrementalSpec
-    ) : EvaluationResult {
+    private fun launch(token: SessionToken?, main: Constraint): EvaluationResult {
+        val sessionProccessing: ProcessingSession =
+            with(incrementality) {
+                when {
+                    ability().allowed() && incrLevel() == IncrementalSpec.IncrLevel.Full ->
+                        IncrementalProcessingSession()
+                    ability().allowed() && incrLevel() == IncrementalSpec.IncrLevel.Preamble ->
+                        PreambleProcessingSession()
+                    else ->
+                        DefaultProcessingSession()
+                }
+            }
 
-        val newToken: SessionToken
-        val status: FeedbackStatus
-        val invalidFeedbackKeys: Set<Any>
-        
-        if (!incrementality.ability().allowed() || token == null) {
+        with (sessionProccessing) {
+            val session =
+                if (token != null)
+                    nextSession(token)
+                else
+                    firstSession()
+
+            return runSession(session, main)
+        }
+    }
+
+    open inner class DefaultProcessingSession: ProcessingSession {
+
+        override fun firstSession(): SessionParts = getSession(null)
+
+        override fun nextSession(token: SessionToken): SessionParts = getSession(token)
+
+        private fun getSession(token: SessionToken?): SessionParts {
             val ruleIndex = token
                 ?.let { (it as SessionTokenImpl).ruleIndex }
                 ?.also { it.updateIndex(program.rulesLists()) }
                 ?: RuleIndex(program.rulesLists())
-            val logicalState = LogicalState()
 
-            val processing = ConstraintsProcessing(
-                Dispatcher(ruleIndex).front(),
-                MatchJournalImpl(incrementality),
-                ruleIndex, logicalState, incrementality, trace, profiler
-            )
+            val journal = MatchJournalImpl(incrementality)
+            val logicalState = LogicalState()
+            val dispatchingFront = Dispatcher(ruleIndex).front()
+
+            val processingStrategy = NonIncrementalProcessing()
+            val processing = ConstraintsProcessing(dispatchingFront, journal, logicalState, incrementality, trace, profiler)
+            processing.setStrategy(processingStrategy)
+
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
             logicalState.init(controller)
 
-            status = controller.activate(main)
-            newToken = processing.endSession()
-            invalidFeedbackKeys = emptySet()
+            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, dispatchingFront, controller, processing, processingStrategy)
+        }
 
-        } else {
+        override fun endSession(session: SessionParts): SessionToken = with(session) {
+            SessionTokenImpl(
+                journal.view(),
+                ruleIndex.toRules(),
+                emptyFrontState(),
+                logicalState.clear(),
+                ruleIndex
+            )
+        }
+
+        override fun runSession(session: SessionParts, main: Constraint): EvaluationResult = with(session) {
+            val status = run(main)
+            val newToken = endSession(session)
+            return EvaluationResultImpl(newToken, status, strategy.invalidatedFeedback())
+        }
+
+        private fun SessionParts.run(main: Constraint): FeedbackStatus = strategy.run(processing, controller, main)
+    }
+
+    open inner class IncrementalProcessingSession(): DefaultProcessingSession() {
+        override fun nextSession(token: SessionToken): SessionParts {
             val tkn = token as SessionTokenImpl
             val logicalState = tkn.logicalState
-            val ruleIndex = tkn.ruleIndex
-            ruleIndex.updateIndex(program.rulesLists())
 
-            val processing = ConstraintsProcessing(
-                Dispatcher(ruleIndex, tkn.getFrontState()).front(),
-                MatchJournalImpl(incrementality, tkn.journalView as MatchJournal.View),
-                ruleIndex, logicalState, incrementality, trace, profiler
+            val ruleIndex = tkn.ruleIndex.apply { updateIndex(program.rulesLists()) }
+            val journal = MatchJournalImpl(incrementality, tkn.journalView as MatchJournal.View)
+            val front = Dispatcher(ruleIndex, tkn.getFrontState()).front()
+            val processing = ConstraintsProcessing(front, journal, logicalState, incrementality, trace, profiler)
+
+            val processingStrategy = IncrementalProcessing(
+                incrementality, journal, program.incrementalDiff(), processing.getStateCleaner(), ruleIndex, trace
             )
+            processing.setStrategy(processingStrategy)
+
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
             logicalState.init(controller)
 
-            val status2tags = controller.incrLaunch(rulesDiff)
-            newToken = processing.endSession()
-            status = status2tags.first
-            invalidFeedbackKeys = status2tags.second
+            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, front, controller, processing, processingStrategy)
         }
 
-        return object : EvaluationResult {
-            override fun token(): SessionToken = newToken
-            override fun storeView(): StoreView = newToken.journalView.storeView
-            override fun feedback():  EvaluationFeedback? = if (status is FAILED) status.failure else null
-            override fun invalidFeedbackKeys(): Collection<Any> = invalidFeedbackKeys
+        override fun endSession(session: SessionParts): SessionToken = with(session) {
+            val histView = journal.view()
+            processing.resetStore() // clear observers
+            // todo: need clearing occurrenceContractObservers? (MPSCR-66)
+            val principalState = dispatchingFront.sessionState()
+            return SessionTokenImpl(histView, ruleIndex.toRules(), principalState, logicalState.clear(), ruleIndex)
+        }
+
+        /**
+         * Preserve data needed between sessions:
+         * preserve only relevant and non-empty RuleMatchers
+         */
+        protected fun Dispatcher.DispatchingFront.sessionState() =
+            this.state().filterValues { ruleMatcher ->
+                incrementality.isPrincipal(ruleMatcher.rule()) || ruleMatcher.probe().hasOccurrences()
+            }
+    }
+
+    inner class PreambleProcessingSession(): IncrementalProcessingSession() {
+        private var tkn: SessionToken? = null
+
+        override fun nextSession(token: SessionToken): SessionParts {
+            val tkn = token as SessionTokenImpl
+            val logicalState = LogicalState()
+
+            val ruleIndex = RuleIndex(program.rulesLists())
+            val journal = MatchJournalImpl(incrementality, tkn.journalView as MatchJournal.View)
+            val front = Dispatcher(ruleIndex, tkn.getFrontState()).front()
+            val processing = ConstraintsProcessing(front, journal, logicalState, incrementality, trace, profiler)
+
+            val processingStrategy = PreambleProcessing(
+                incrementality, journal, program.incrementalDiff(), ruleIndex, trace
+            )
+            processing.setStrategy(processingStrategy)
+
+            val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
+            logicalState.init(controller)
+
+            this.tkn = tkn
+            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, front, controller, processing, processingStrategy)
+        }
+
+        // Compute Preamble token only once, after firstSession()
+        override fun endSession(session: SessionParts): SessionToken = with(session) {
+            if (tkn == null) { // if it is a first run
+
+                val histView = getPreamble(session)
+
+                processing.resetStore() // clear observers
+                // todo: need clearing occurrenceContractObservers? (MPSCR-66)
+
+                val principalState = dispatchingFront.sessionState().filterValues {
+                    preambleInfo.inPreamble(it.rule())
+                }
+
+                val rules = ruleIndex.toRules().filter(preambleInfo::inPreamble)
+
+                logicalState.reset()
+                tkn = SessionTokenImpl(histView, rules, principalState, logicalState.clear(), ruleIndex)
+            }
+            return tkn!!
+        }
+
+        // get preamble and clear
+        private fun getPreamble(session: SessionParts): MatchJournal.View = with(session) {
+            val journalView = journal.view()
+            val preambleView = journalView.getPreamble(preambleInfo)
+
+            val cleaner = processing.getStateCleaner()
+            val preambleSet = preambleView.chunks.toSet()
+
+            journalView.chunks.asSequence().filterNot(preambleSet::contains).forEach {
+                it.activatedLog().forEach(cleaner::erase)
+
+                if (it is MatchJournal.MatchChunk)
+                    cleaner.erase(it.match as RuleMatchEx)
+            }
+
+            return preambleView
         }
     }
+
 
     private class Config(val program: Program) : EvaluationSession.Config() {
 
@@ -138,11 +282,11 @@ internal class EvaluationSessionImpl private constructor (
                 as MutableMap<String, String>?
             val profiler = durations?.let { Profiler() }
 
-            session = EvaluationSessionImpl(program, supervisor, evaluationTrace, parameters)
+            session = EvaluationSessionImpl(ispec, program, supervisor, evaluationTrace, profiler, parameters)
             Backend.ourBackend.ourSession.set(session)
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-                return session.launch(main, profiler, token, program.incrementalDiff(), ispec)
+                return session.launch(token, main)
             }
             finally {
                 try {
@@ -182,5 +326,19 @@ internal class EvaluationSessionImpl private constructor (
         }
 
     }
+
+    private class EvaluationResultImpl(
+        val token: SessionToken,
+        val status: FeedbackStatus,
+        val invalidFeedbackKeys: FeedbackKeySet
+    ): EvaluationResult {
+        override fun token() = token
+        override fun storeView(): StoreView = token.journalView.storeView
+        override fun feedback(): EvaluationFeedback? = if (status is FAILED) status.failure else null
+        override fun invalidFeedbackKeys(): Collection<Any> = invalidFeedbackKeys
+    }
+
+
+    private fun RuleIndex.toRules() = ArrayList<Rule>().also { l -> forEach { l.add(it) }}
 
 }

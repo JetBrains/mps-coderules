@@ -27,7 +27,18 @@ public interface IncrementalSpec {
     @NotNull
     Enabled ability();
     @NotNull
+    IncrLevel incrLevel();
+    @NotNull
     AssertLevel assertLevel();
+
+
+    enum IncrLevel {
+        Preamble, Full;
+
+        public IncrLevel min(IncrLevel other) {
+            return this.compareTo(other) <= 0 ? this : other;
+        }
+    }
 
     enum Enabled {
         No, Unsafe, Yes;
@@ -68,6 +79,9 @@ public interface IncrementalSpec {
         @Override
         @NotNull
         public Enabled ability() { return Enabled.No; }
+        @NotNull
+        @Override
+        public IncrLevel incrLevel() { return IncrLevel.Full; }
         @NotNull
         @Override
         public AssertLevel assertLevel() { return AssertLevel.Normal; }

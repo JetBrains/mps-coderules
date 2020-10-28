@@ -36,5 +36,6 @@ class MockIncrProgSpec(
     override fun isWeakPrincipal(rule: Rule): Boolean = weakPrincipalRuleTags.contains(rule.uniqueTag())
 
     override fun ability(): IncrementalSpec.Enabled = IncrementalSpec.Enabled.Yes
+    override fun incrLevel(): IncrementalSpec.IncrLevel = IncrementalSpec.IncrLevel.Full
     override fun assertLevel(): IncrementalSpec.AssertLevel = strictness
 }

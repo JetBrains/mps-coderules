@@ -33,8 +33,8 @@ import kotlin.collections.HashMap
  *
  * @author Fedor Isakov
  */
-class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
-
+class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup
+{
     private class IndexedRule {
 
         constructor(idx: Int, rule: Rule) {

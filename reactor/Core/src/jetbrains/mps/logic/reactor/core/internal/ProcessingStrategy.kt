@@ -18,16 +18,17 @@ package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
+import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.IncrementalSpec
 
 /**
  * Facade for incremental processing
  */
-internal interface IncrementalProcessing {
+internal interface ProcessingStrategy {
 
     fun invalidatedFeedback(): FeedbackKeySet
 
-    fun run(processing: ConstraintsProcessing, controller: Controller): FeedbackStatus
+    fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint): FeedbackStatus
 
     fun processMatch(match: RuleMatchEx)
 
@@ -35,11 +36,12 @@ internal interface IncrementalProcessing {
 }
 
 
-internal class NonIncrementalProcessing: IncrementalProcessing {
+internal class NonIncrementalProcessing: ProcessingStrategy {
 
     override fun invalidatedFeedback(): FeedbackKeySet = emptySet()
 
-    override fun run(processing: ConstraintsProcessing, controller: Controller): FeedbackStatus = FeedbackStatus.NORMAL()
+    override fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint) =
+        controller.activate(main)
 
     override fun processMatch(match: RuleMatchEx) {}
 
@@ -47,14 +49,14 @@ internal class NonIncrementalProcessing: IncrementalProcessing {
 }
 
 
-internal class IncrementalProcessingImpl(
+internal class IncrementalProcessing(
     override val ispec: IncrementalSpec,
     val journal: MatchJournal,
     rulesDiff: RulesDiff,
     stateCleaner: ConstraintsProcessing.ProgramStateCleaner,
     ruleIndex: RuleIndex,
     trace: EvaluationTrace
-): IncrementalProcessing, IncrSpecHolder {
+): ProcessingStrategy, IncrSpecHolder {
 
     private val journalIndex = journal.index()
     private val ruleOrdering = RuleOrdering(ruleIndex)
@@ -73,7 +75,7 @@ internal class IncrementalProcessingImpl(
     override fun processOccurrenceMatches(active: Occurrence, matches: List<RuleMatchEx>) =
         postponeFutureMatchesImpl(active, matches)
 
-    override fun run(processing: ConstraintsProcessing, controller: Controller): FeedbackStatus {
+    override fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint): FeedbackStatus {
         var status: FeedbackStatus = FeedbackStatus.NORMAL()
         val cursor = journal.cursor
         while (true) {
@@ -83,7 +85,7 @@ internal class IncrementalProcessingImpl(
             adder.receive(postponedMatches)
             adder.onNext(cursor)
 
-            status = runContinued(processing, controller, cursor)
+            status = continuator.runContinued(processing, controller, cursor)
             if (!status.operational) break
 
             // continuator may request invalidating more chunks
@@ -118,23 +120,61 @@ internal class IncrementalProcessingImpl(
         return haveChanges
     }
 
-    private fun runContinued(processing: ConstraintsProcessing, controller: Controller, chunkReader: ChunkReader): FeedbackStatus {
-        var status: FeedbackStatus = FeedbackStatus.NORMAL()
-        val parentChunk = journal.parentChunk()
-
-        for (continuedOcc in continuator.onNext(chunkReader)) {
-            if (continuedOcc.stored) {
-                status = processing.activateContinue(controller, continuedOcc, parentChunk)
-
-                if (!status.operational) break
-            }
-        }
-        return status
-    }
-
     private fun requiresIncrementalProcessing(match: RuleMatchEx) = !journal.isFront() && ispec.ability().allowed() && match.isPrincipal
 
     private fun requiresIncrementalProcessing(occ: Occurrence) = !journal.isFront() && ispec.ability().allowed() && occ.isPrincipal
 
 }
 
+
+internal class PreambleProcessing(
+    override val ispec: IncrementalSpec,
+    val journal: MatchJournal,
+    rulesDiff: RulesDiff,
+    ruleIndex: RuleIndex,
+    trace: EvaluationTrace
+): ProcessingStrategy, IncrSpecHolder {
+
+    private val journalIndex = journal.index()
+    private val ruleOrdering = RuleOrdering(ruleIndex)
+
+    private val continuator = ContinueOccurrencesStage(ispec, journalIndex)
+    private val adder = AdditionStage(ispec, rulesDiff.added, continuator, ruleOrdering, ruleIndex, trace)
+
+
+    override fun invalidatedFeedback(): FeedbackKeySet = emptySet()
+
+    override fun processMatch(match: RuleMatchEx) = Unit
+
+    override fun processOccurrenceMatches(active: Occurrence, matches: List<RuleMatchEx>) = matches
+
+
+    override fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint): FeedbackStatus {
+        var status: FeedbackStatus = FeedbackStatus.NORMAL()
+        val cursor = journal.cursor
+        while (true) {
+            adder.onNext(cursor)
+
+            status = continuator.runContinued(processing, controller, cursor)
+            if (!status.operational) break
+            if (cursor.atEnd()) break
+
+            cursor.next()
+        }
+        return status
+    }
+}
+
+private fun ContinueOccurrencesStage.runContinued(processing: ConstraintsProcessing, controller: Controller, chunkReader: ChunkReader): FeedbackStatus {
+    var status: FeedbackStatus = FeedbackStatus.NORMAL()
+    val parentChunk = processing.parentChunk()
+
+    for (continuedOcc in this.onNext(chunkReader)) {
+        if (continuedOcc.stored) {
+            status = processing.activateContinue(controller, continuedOcc, parentChunk)
+
+            if (!status.operational) break
+        }
+    }
+    return status
+}

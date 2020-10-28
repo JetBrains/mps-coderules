@@ -20,6 +20,7 @@ import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
 import jetbrains.mps.logic.reactor.core.internal.MatchJournal
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.StoreView
+import jetbrains.mps.logic.reactor.program.Constraint
 
 /**
  * Allows access to the internal mechanics of the reactor.
@@ -31,6 +32,8 @@ interface Controller {
     fun ask(invocation: PredicateInvocation): Boolean
 
     fun tell(invocation: PredicateInvocation)
+
+    fun activate(constraint: Constraint): FeedbackStatus
 
     fun reactivate(occ: Occurrence): FeedbackStatus
 

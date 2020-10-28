@@ -19,13 +19,10 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.program.IncrementalSpec
-import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
-import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
-import kotlin.collections.ArrayList
 
 
 /**
@@ -41,7 +38,6 @@ import kotlin.collections.ArrayList
 internal class ConstraintsProcessing(
     private var dispatchingFront: Dispatcher.DispatchingFront,
     journal: MatchJournalImpl,
-    private val ruleIndex: RuleIndex,
     val logicalState: LogicalState,
     override val ispec: IncrementalSpec = IncrementalSpec.DefaultSpec,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
@@ -49,10 +45,16 @@ internal class ConstraintsProcessing(
 
 ) : StoreAwareJournalImpl(journal, logicalState), IncrSpecHolder {
 
-    private var incrementalProcessing: IncrementalProcessing = NonIncrementalProcessing()
+    private var incrementalProcessing: ProcessingStrategy = NonIncrementalProcessing()
 
+    // todo: move to IncrementalProcessing
     private val occurrenceContractObserver: OccurrenceContractObserver? =
         if (ispec.assertLevel().assertContracts()) OccurrenceContractObserver(logicalState, ispec) else null
+
+
+    fun setStrategy(strategy: ProcessingStrategy) { this.incrementalProcessing = strategy }
+
+    fun getStateCleaner(): ProgramStateCleaner = ProgramStateCleaner()
 
 
     fun activateContinue(controller: Controller, activeOcc: Occurrence, parent: MatchJournal.MatchChunk): FeedbackStatus {
@@ -66,34 +68,6 @@ internal class ConstraintsProcessing(
 
         return processActivated(controller, activeOcc, parent, FeedbackStatus.NORMAL())
     }
-
-    fun runIncrementally(controller: Controller, rulesDiff: RulesDiff): Pair<FeedbackStatus, FeedbackKeySet> {
-        incrementalProcessing = IncrementalProcessingImpl(ispec, this, rulesDiff, ProgramStateCleaner(), ruleIndex, trace)
-        val status = incrementalProcessing.run(this, controller)
-        return status to incrementalProcessing.invalidatedFeedback()
-    }
-
-    /**
-     * Clears state unneeded between incremental sessions
-     * and returns [SessionToken] with session results.
-     */
-    fun endSession(): SessionToken {
-        val histView = view()
-        resetStore() // clear observers
-        // todo: need clearing occurrenceContractObservers? (MPSCR-66)
-        val rules = ArrayList<Rule>().apply { ruleIndex.forEach { add(it) } }
-        val principalState = dispatchingFront.sessionState()
-        return SessionTokenImpl(histView, rules, principalState, logicalState.clear(), ruleIndex)
-    }
-
-    /**
-     * Preserve data needed between sessions:
-     * preserve only relevant and non-empty RuleMatchers
-     */
-    private fun Dispatcher.DispatchingFront.sessionState() =
-        this.state().filterValues { ruleMatcher ->
-            ruleMatcher.rule().isPrincipal || ruleMatcher.probe().hasOccurrences()
-        }
 
     /**
      * Called to update the state with the currently active constraint occurrence.

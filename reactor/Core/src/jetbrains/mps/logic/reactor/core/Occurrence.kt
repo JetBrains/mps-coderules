@@ -99,8 +99,10 @@ class Occurrence (observable: LogicalStateObservable,
         }
     }
     override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
-    
+
 }
+
+fun Occurrence.arity() = constraint().symbol().arity()
 
 fun Constraint.occurrence(observable: LogicalStateObservable,
                           arguments: List<*>,

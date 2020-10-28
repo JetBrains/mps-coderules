@@ -21,12 +21,14 @@ import gnu.trove.map.hash.TIntObjectHashMap
 
 typealias DispatchingFrontState = Map<Any, RuleMatcher>
 
+internal fun emptyFrontState(): DispatchingFrontState = emptyMap()
+
 /**
  * A front-end interface to [RuleMatcher].
  * 
  * @author Fedor Isakov
  */
-class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = emptyMap()) {
+class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = emptyFrontState()) {
 
     private val ruletag2matcher = HashMap<Any, RuleMatcher>()
 
