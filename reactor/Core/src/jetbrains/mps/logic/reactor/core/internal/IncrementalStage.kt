@@ -60,6 +60,11 @@ internal class InvalidationStage(
 
     fun receive(invalid: Iterable<Justified>) { invalidJustifications.addAll(invalid) }
 
+    /**
+     * Invalidates next chunk, if needed.
+     * Doesn't remove the [Chunk] from the [Journal].
+     * Returns [true] if chunk is invalidated and must be removed.
+     */
     fun onNext(reader: ChunkReader): Boolean {
         val chunk = reader.next
         if (chunk is MatchJournal.MatchChunk && chunk.dependsOnAny(invalidRuleIds)) {

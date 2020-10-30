@@ -22,24 +22,45 @@ import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.IncrementalSpec
 
 /**
- * Facade for incremental processing
+ * Facade interface for incremental processing.
+ * Designates points in program evaluation where incremental processing
+ * must be injected. It also provides an entry point for evaluation.
  */
 internal interface ProcessingStrategy {
 
+    /**
+     * Information returned back from incremental processing session.
+     */
     fun invalidatedFeedback(): FeedbackKeySet
 
+    /**
+     * Entry point for processing session.
+     */
     fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint): FeedbackStatus
 
+    /**
+     * Pre-process accepted match before general processing in [Controller.processBody].
+     */
     fun processMatch(match: RuleMatchEx)
 
+    /**
+     * Processes list of matches on active [Occurrence].
+     * Should return a filtered [matches] list.
+     */
     fun processOccurrenceMatches(active: Occurrence, matches: List<RuleMatchEx>): List<RuleMatchEx>
 }
 
 
+/**
+ * Default non-incremental processing with stubs.
+ */
 internal class NonIncrementalProcessing: ProcessingStrategy {
 
     override fun invalidatedFeedback(): FeedbackKeySet = emptySet()
 
+    /**
+     * Simply redirects evaluation to [Controller].
+     */
     override fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint) =
         controller.activate(main)
 
@@ -49,6 +70,24 @@ internal class NonIncrementalProcessing: ProcessingStrategy {
 }
 
 
+/**
+ * Facade implementation for incremental processing algorithm.
+ *
+ * It includes 4 stages that operate on [MatchJournalImpl.Cursor].
+ * Stages are:
+ *  - [InvalidationStage]
+ *  - [AdditionStage]
+ *  - [PostponeMatchesStage]
+ *  - [ContinueOccurrencesStage]
+ *
+ * Main loop [run] defines relations between stages.
+ * After invalidation and addition control flow is passed to
+ * general processing in [Controller] & [ConstraintsProcessing].
+ *
+ * Methods [processMatch] & [processOccurrenceMatches] serve as
+ * a bridge back from [ConstraintsProcessing] to specific stages
+ * in [IncrementalProcessing].
+ */
 internal class IncrementalProcessing(
     override val ispec: IncrementalSpec,
     val journal: MatchJournal,
@@ -127,6 +166,17 @@ internal class IncrementalProcessing(
 }
 
 
+/**
+ * Very restricted incremental strategy for processing program preamble.
+ *
+ * Includes 2 stages:
+ * - [AdditionStage] which adds potential matches given occurrences from preamble
+ * - [ContinueOccurrencesStage] which actually evaluates them
+ *
+ * Journal invalidation and injected intermediate processing with
+ * [processMatch] & [processOccurrenceMatches] are not needed for this.
+ * So this strategy is very close to the default [NonIncrementalProcessing].
+ */
 internal class PreambleProcessing(
     override val ispec: IncrementalSpec,
     val journal: MatchJournal,
@@ -164,6 +214,7 @@ internal class PreambleProcessing(
         return status
     }
 }
+
 
 private fun ContinueOccurrencesStage.runContinued(processing: ConstraintsProcessing, controller: Controller, chunkReader: ChunkReader): FeedbackStatus {
     var status: FeedbackStatus = FeedbackStatus.NORMAL()

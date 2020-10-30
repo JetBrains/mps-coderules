@@ -39,7 +39,7 @@ internal class RuleOrdering(order: Iterable<Rule>): ComparatorExt<Rule> {
     private fun orderOf(rule: Rule): Int? = ruleOrder[rule.uniqueTag()]
 
     private fun orderOfThrow(rule: Rule): Int = when (val res = orderOf(rule)) {
-        null -> throw IllegalStateException("Compared rule ($rule) must be present in rule index!")
+        null -> throw IllegalStateException("Compared rule (${rule.uniqueTag()}) must be present in rule index!")
         else -> res
     }
 }
