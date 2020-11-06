@@ -3,10 +3,7 @@ import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.ReactorLifecycle
 import jetbrains.mps.logic.reactor.core.RulesDiff
 import jetbrains.mps.logic.reactor.core.internal.MatchJournal
-import jetbrains.mps.logic.reactor.evaluation.SessionToken
-import jetbrains.mps.logic.reactor.evaluation.EvaluationResult
-import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
-import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
+import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.IncrementalContractViolationException
@@ -1544,7 +1541,7 @@ class TestIncrementalProgram {
         }
     }
 
-    @Test(expected = IncrementalContractViolationException::class)
+    @Test(expected = EvaluationFailureException::class)
     fun violatePrincipalLogicalContract() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "produceBound"),

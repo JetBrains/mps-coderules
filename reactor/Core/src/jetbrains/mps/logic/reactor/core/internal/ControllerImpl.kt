@@ -301,8 +301,12 @@ internal class ControllerImpl (
                 try {
                     this.status = block.invoke(status)
 
-                } catch (ex: EvaluationFailureException) {
-                    this.status = status.fail(EvaluationFailure(ex))
+                } catch (ex: RuntimeException) {
+                    val failure = if (ex is EvaluationFailureException)
+                                        EvaluationFailure(ex)
+                                    else
+                                        EvaluationFailure(EvaluationFailureException(ex))
+                    this.status = status.fail(failure)
                 }
             }
             return status.operational
@@ -313,11 +317,14 @@ internal class ControllerImpl (
                 try {
                     block()
 
-                } catch (ex: EvaluationFailureException) {
-                    val failure = EvaluationFailure(ex)
+                } catch (ex: RuntimeException) {
+                    val failure = if (ex is EvaluationFailureException)
+                                        EvaluationFailure(ex)
+                                      else
+                                        EvaluationFailure(EvaluationFailureException(ex))
                     if (checking) {
                         this.status = status.abort(failure)
-                        
+
                     } else {
                         trace.feedback(failure)
                         this.status = status.fail(failure)
