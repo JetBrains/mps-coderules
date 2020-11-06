@@ -278,6 +278,72 @@
         </node>
       </node>
     </node>
+    <node concept="1nLNMY" id="6zber0NS20m" role="1nK1Vg">
+      <property role="TrG5h" value="internalPartialInstanceMethodCall" />
+      <node concept="3clFbS" id="6zber0NS20n" role="1nLNMH">
+        <node concept="1nLNNL" id="6zber0NS23t" role="3cqZAp">
+          <node concept="1nLNMm" id="6zber0NS23u" role="1nLNNK">
+            <node concept="3Aq93q" id="6zber0NS23v" role="1nLNMb">
+              <property role="3ArMco" value="true" />
+              <node concept="3I6sU6" id="6zber0NS23w" role="3Ip0Jz">
+                <node concept="3I6s7M" id="6zber0NS23x" role="3I6sU7">
+                  <node concept="3Aqt3T" id="6zber0NS23y" role="3I6s78">
+                    <ref role="3AqCNq" to="kqnc:34$A1MfabR$" resolve="checkAll" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="6zber0NS23z" role="0Rg$4">
+              <node concept="aZer4" id="6zber0NS23$" role="3XD1gS">
+                <property role="TrG5h" value="Type" />
+              </node>
+              <node concept="32pEOW" id="6zber0NS23_" role="3vLBG7" />
+            </node>
+            <node concept="3xSepi" id="6zber0NS23A" role="3xSepv">
+              <node concept="3Aq9E8" id="6zber0NS23B" role="3xSepj">
+                <node concept="3I6sU6" id="6zber0NS23C" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="6zber0NS23D" role="3I6sU7">
+                    <node concept="3jbYBd" id="6zber0NS23E" role="3I6s78">
+                      <ref role="3jbY9l" to="kqnc:5itBwMau8m1" resolve="lift" />
+                      <node concept="2OqwBi" id="6zber0NS23F" role="3jbY8P">
+                        <node concept="3A2sRY" id="6zber0NS26C" role="2Oq$k0">
+                          <ref role="3A2yKK" node="6zber0NS20p" resolve="ipimc" />
+                        </node>
+                        <node concept="3TrEf2" id="6zber0NS2jx" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tp68:h5Ez5gb" resolve="returnType" />
+                        </node>
+                      </node>
+                      <node concept="a7P8L" id="6zber0NS23I" role="3jbY8V">
+                        <ref role="a7OzE" node="6zber0NS23$" resolve="Type" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3I6s7M" id="6zber0NS23J" role="3I6sU7">
+                    <node concept="3Aqt3T" id="6zber0NS23K" role="3I6s78">
+                      <ref role="3AqCNq" to="kqnc:34$A1MfhdDv" resolve="typeOf" />
+                      <node concept="37jhX" id="6zber0NS23L" role="3AunhB">
+                        <node concept="3A2sRY" id="6zber0NS2lF" role="37jj2">
+                          <ref role="3A2yKK" node="6zber0NS20p" resolve="ipimc" />
+                        </node>
+                      </node>
+                      <node concept="a7P8L" id="6zber0NS23N" role="3AunhB">
+                        <ref role="a7OzE" node="6zber0NS23$" resolve="Type" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2t___k" id="6zber0NS20o" role="1nLNMg">
+        <ref role="2t_S0q" to="tp68:h5DoJDC" resolve="InternalPartialInstanceMethodCall" />
+        <node concept="3A20r5" id="6zber0NS20p" role="2t_VXX">
+          <property role="TrG5h" value="ipimc" />
+        </node>
+      </node>
+    </node>
     <node concept="1nLNMY" id="7gMIJIxWsHO" role="1nK1Vg">
       <property role="TrG5h" value="internalStaticMethodCall" />
       <node concept="3clFbS" id="7gMIJIxWsHP" role="1nLNMH">
