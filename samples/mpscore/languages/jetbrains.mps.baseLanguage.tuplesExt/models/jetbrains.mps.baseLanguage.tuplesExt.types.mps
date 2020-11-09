@@ -152,7 +152,6 @@
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -466,7 +465,7 @@
       <property role="TrG5h" value="tupleAccessImpl" />
       <node concept="1zAUYm" id="1PW9iVES6h8" role="1zAUyy">
         <property role="TrG5h" value="tuple" />
-        <node concept="2sp9CU" id="500mE4_uhvH" role="3gTf24" />
+        <node concept="3Tqbb2" id="3CulEO2ic5P" role="3gTf24" />
       </node>
       <node concept="1zAUYm" id="500mE4_uhc0" role="1zAUyy">
         <property role="TrG5h" value="index" />
@@ -1006,7 +1005,7 @@
               <node concept="aZer4" id="500mE4_upiQ" role="3XD1gS">
                 <property role="TrG5h" value="Tuple" />
               </node>
-              <node concept="2sp9CU" id="500mE4_uplQ" role="3vLBG7" />
+              <node concept="3Tqbb2" id="3CulEO26Uye" role="3vLBG7" />
             </node>
             <node concept="3xSepi" id="500mE4_upcm" role="3xSepv">
               <node concept="3Aq9E8" id="500mE4_upcn" role="3xSepj">

@@ -12,6 +12,7 @@
     <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.baseLanguageExt.types)" />
     <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -28,13 +29,16 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="8356039341262087992" name="line" index="1aUNEU" />
       </concept>
     </language>
-    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
-      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
-        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+    <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
+      <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
+        <child id="1196350785114" name="quotedNode" index="2c44tc" />
       </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
@@ -60,9 +64,6 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
-        <child id="7400021826774799510" name="ref" index="2tJFKM" />
-      </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -1150,9 +1151,14 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="7gMIJIxWlC0" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="2tJFMh" id="7gMIJIxWlGH" role="nsMwV">
-                            <node concept="ZC_QK" id="7gMIJIxWlGP" role="2tJFKM">
-                              <ref role="2aWVGs" to="wyt6:~Class" resolve="Class" />
+                          <node concept="2OqwBi" id="3CulEO1Y7_o" role="nsMwV">
+                            <node concept="2c44tf" id="3CulEO1Y7_p" role="2Oq$k0">
+                              <node concept="3uibUv" id="3CulEO1Y7_q" role="2c44tc">
+                                <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="3CulEO1Y7_r" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                             </node>
                           </node>
                         </node>

@@ -34,9 +34,9 @@
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
     </language>
-    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
-      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
-        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+    <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
+      <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
+        <child id="1196350785114" name="quotedNode" index="2c44tc" />
       </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
@@ -62,12 +62,12 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
-        <child id="7400021826774799510" name="ref" index="2tJFKM" />
-      </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
+      </concept>
+      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
+        <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -507,9 +507,14 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="3MFPGC50E0W" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="2tJFMh" id="3MFPGC50E3a" role="nsMwV">
-                            <node concept="ZC_QK" id="3MFPGC50E40" role="2tJFKM">
-                              <ref role="2aWVGs" to="wyt6:~Iterable" resolve="Iterable" />
+                          <node concept="2OqwBi" id="3CulEO1Y7_g" role="nsMwV">
+                            <node concept="2c44tf" id="3CulEO1Y7_h" role="2Oq$k0">
+                              <node concept="3uibUv" id="3CulEO1Y7_i" role="2c44tc">
+                                <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="3CulEO1Y7_j" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                             </node>
                           </node>
                         </node>
@@ -607,9 +612,14 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="3MFPGC50Fah" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="2tJFMh" id="3MFPGC50Fai" role="nsMwV">
-                            <node concept="ZC_QK" id="3MFPGC50Faj" role="2tJFKM">
-                              <ref role="2aWVGs" to="wyt6:~Iterable" resolve="Iterable" />
+                          <node concept="2OqwBi" id="3CulEO1Y7_k" role="nsMwV">
+                            <node concept="2c44tf" id="3CulEO1Y7_l" role="2Oq$k0">
+                              <node concept="3uibUv" id="3CulEO1Y7_m" role="2c44tc">
+                                <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="3CulEO1Y7_n" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                             </node>
                           </node>
                         </node>
