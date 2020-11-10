@@ -517,8 +517,21 @@
                     </node>
                     <node concept="liA8E" id="tyIfzC4y1T" role="2OqNvi">
                       <ref role="37wK5l" to="hfva:tyIfzC3x3f" resolve="produceProgram" />
-                      <node concept="37vLTw" id="tyIfzC4Axv" role="37wK5m">
-                        <ref role="3cqZAo" node="tyIfzC3L6g" resolve="demo" />
+                      <node concept="2ShNRf" id="3j46jeGDMzS" role="37wK5m">
+                        <node concept="2HTt$P" id="3j46jeGDOff" role="2ShVmc">
+                          <node concept="3Tqbb2" id="3j46jeGDOmu" role="2HTBi0" />
+                          <node concept="37vLTw" id="3j46jeGDOqh" role="2HTEbv">
+                            <ref role="3cqZAo" node="tyIfzC3L6g" resolve="demo" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="3j46jeGQWxf" role="37wK5m">
+                        <node concept="37vLTw" id="3j46jeGQWoa" role="2Oq$k0">
+                          <ref role="3cqZAo" node="tyIfzC3OTC" resolve="launcher" />
+                        </node>
+                        <node concept="liA8E" id="3j46jeGQWI$" role="2OqNvi">
+                          <ref role="37wK5l" to="hfva:3j46jeGMWII" resolve="getCheckQuery" />
+                        </node>
                       </node>
                     </node>
                   </node>

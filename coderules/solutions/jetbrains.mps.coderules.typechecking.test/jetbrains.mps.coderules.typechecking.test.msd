@@ -29,6 +29,7 @@
     <dependency reexport="false">f113d56b-63e3-4120-a89c-2f5dcb8c6290(jetbrains.mps.coderules.runtime)</dependency>
     <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</dependency>
     <dependency reexport="false">f97d84b2-8bad-4fdd-8ede-da17b3eacf4c(jetbrains.mps.coderules)</dependency>
+    <dependency reexport="false">bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="11" />
