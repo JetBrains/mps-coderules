@@ -93,6 +93,7 @@
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -4444,6 +4445,27 @@
         </node>
         <node concept="2AHcQZ" id="5wYq9r4vujg" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="6tFa8SpXioY" role="jymVt" />
+      <node concept="3clFb_" id="6tFa8SpXk55" role="jymVt">
+        <property role="TrG5h" value="hashCode" />
+        <node concept="3Tm1VV" id="6tFa8SpXk56" role="1B3o_S" />
+        <node concept="10Oyi0" id="6tFa8SpXk57" role="3clF45" />
+        <node concept="2AHcQZ" id="6tFa8SpXk5d" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+        <node concept="3clFbS" id="6tFa8SpXk5e" role="3clF47">
+          <node concept="3clFbF" id="6tFa8SpXlvK" role="3cqZAp">
+            <node concept="2OqwBi" id="6tFa8SpXlXy" role="3clFbG">
+              <node concept="37vLTw" id="6tFa8SpXlvM" role="2Oq$k0">
+                <ref role="3cqZAo" node="5wYq9r4vq2x" resolve="text" />
+              </node>
+              <node concept="liA8E" id="6tFa8SpXmmB" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.hashCode()" resolve="hashCode" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="2tJIrI" id="5wYq9r4vwh9" role="jymVt" />
