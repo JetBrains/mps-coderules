@@ -10,6 +10,7 @@
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="upz5" ref="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -51,6 +52,7 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -84,6 +86,7 @@
       </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -565,7 +568,72 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1PW9iVESaZu" role="jymVt" />
-    <node concept="2tJIrI" id="4E290qQ0eHJ" role="jymVt" />
+    <node concept="3clFb_" id="5cBWTAdFJnw" role="jymVt">
+      <property role="TrG5h" value="convertsToClassifier" />
+      <node concept="37vLTG" id="5cBWTAdFK3N" role="3clF46">
+        <property role="TrG5h" value="t0" />
+        <node concept="1LlUBW" id="5cBWTAdFKhq" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="5cBWTAdFLfd" role="3clF46">
+        <property role="TrG5h" value="t1" />
+        <node concept="1LlUBW" id="5cBWTAdFL_b" role="1tU5fm">
+          <node concept="17QB3L" id="5cBWTAdFMfd" role="1Lm7xW" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5cBWTAdFPCk" role="3clF46">
+        <property role="TrG5h" value="t2" />
+        <node concept="1LlUBW" id="5cBWTAdFPCl" role="1tU5fm">
+          <node concept="10Oyi0" id="5cBWTAdFPCm" role="1Lm7xW" />
+          <node concept="17QB3L" id="5cBWTAdFPCn" role="1Lm7xW" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="5cBWTAdFJny" role="3clF45" />
+      <node concept="3Tm1VV" id="5cBWTAdFJnz" role="1B3o_S" />
+      <node concept="3clFbS" id="5cBWTAdFJn$" role="3clF47">
+        <node concept="3cpWs8" id="5cBWTAdFOA8" role="3cqZAp">
+          <node concept="3cpWsn" id="5cBWTAdFOA9" role="3cpWs9">
+            <property role="TrG5h" value="runtimeT0" />
+            <node concept="3uibUv" id="5cBWTAdFOAa" role="1tU5fm">
+              <ref role="3uigEE" to="upz5:44mPrYlYtK2" resolve="Tuples._0" />
+            </node>
+            <node concept="37vLTw" id="5cBWTAdFOHU" role="33vP2m">
+              <ref role="3cqZAo" node="5cBWTAdFK3N" resolve="t0" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5cBWTAdFOZc" role="3cqZAp">
+          <node concept="3cpWsn" id="5cBWTAdFOZd" role="3cpWs9">
+            <property role="TrG5h" value="runtimeT1" />
+            <node concept="3uibUv" id="5cBWTAdFPhm" role="1tU5fm">
+              <ref role="3uigEE" to="upz5:44mPrYlYtKn" resolve="Tuples._1" />
+              <node concept="3uibUv" id="5cBWTAdFQND" role="11_B2D">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="5cBWTAdFQTh" role="33vP2m">
+              <ref role="3cqZAo" node="5cBWTAdFLfd" resolve="t1" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5cBWTAdFRe_" role="3cqZAp">
+          <node concept="3cpWsn" id="5cBWTAdFReA" role="3cpWs9">
+            <property role="TrG5h" value="runtimeT2" />
+            <node concept="3uibUv" id="5cBWTAdFReB" role="1tU5fm">
+              <ref role="3uigEE" to="upz5:44mPrYlYtKV" resolve="Tuples._2" />
+              <node concept="3uibUv" id="5cBWTAdGQrj" role="11_B2D">
+                <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
+              </node>
+              <node concept="3uibUv" id="5cBWTAdFReC" role="11_B2D">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="5cBWTAdFRQg" role="33vP2m">
+              <ref role="3cqZAo" node="5cBWTAdFPCk" resolve="t2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="4E290qQ0eIp" role="jymVt" />
     <node concept="2tJIrI" id="4E290qQ09Do" role="jymVt" />
     <node concept="2tJIrI" id="4E290qQ09D$" role="jymVt" />
