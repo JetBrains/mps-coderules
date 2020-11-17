@@ -442,7 +442,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="logical" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7E86$tK_OxQ" resolve="LogicalVariable" />
+      <ref role="20lvS9" node="7E86$tKsl45" resolve="LogicalItem" />
     </node>
   </node>
   <node concept="PlHQZ" id="7zIaasjACyh">
