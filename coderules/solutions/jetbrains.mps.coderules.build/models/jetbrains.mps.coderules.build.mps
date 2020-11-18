@@ -1561,10 +1561,10 @@
         </node>
       </node>
       <node concept="1E1JtA" id="7mB3viLwG3m" role="2G$12L">
-        <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.coderules.typechecking.test" />
         <property role="3LESm3" value="c9670c16-a215-41fb-8784-04b14329799d" />
         <property role="aoJFB" value="eYcmk9QOlj/sources_and_tests" />
+        <property role="BnDLt" value="true" />
         <node concept="55IIr" id="7mB3viLwG3p" role="3LF7KH">
           <node concept="2Ry0Ak" id="7mB3viLwGj2" role="iGT6I">
             <property role="2Ry0Am" value="coderules" />
@@ -1701,6 +1701,11 @@
         <node concept="1SiIV0" id="61G6TdCC7yR" role="3bR37C">
           <node concept="3bR9La" id="61G6TdCC7yS" role="1SiIV1">
             <ref role="3bR37D" node="NKt6yn9_8p" resolve="jetbrains.mps.coderules" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6tFa8SpTmLh" role="3bR37C">
+          <node concept="3bR9La" id="6tFa8SpTmLi" role="1SiIV1">
+            <ref role="3bR37D" node="7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
           </node>
         </node>
       </node>

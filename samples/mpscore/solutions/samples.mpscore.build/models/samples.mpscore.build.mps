@@ -1189,6 +1189,11 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
+        <node concept="1SiIV0" id="6tFa8SpSDbV" role="3bR37C">
+          <node concept="3bR9La" id="6tFa8SpSDbW" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:5wYq9r5EBDN" resolve="jetbrains.mps.coderules.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="69UmpDmJW3w" role="2G$12L">
         <property role="TrG5h" value="typechecking.samples.baseLanguage" />
