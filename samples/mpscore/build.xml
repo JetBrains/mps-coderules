@@ -1225,6 +1225,7 @@
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" kind="cl" />
+          <module ref="f113d56b-63e3-4120-a89c-2f5dcb8c6290(jetbrains.mps.coderules.runtime)" kind="cl" />
           <module ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" kind="cl" />
           <module ref="c9670c16-a215-41fb-8784-04b14329799d(jetbrains.mps.coderules.typechecking.test)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
@@ -1882,6 +1883,7 @@
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
           <language id="l:fd392034-7849-419d-9071-12563d152375:jetbrains.mps.baseLanguage.closures" />
+          <language id="l:9e36d2ee-c59c-4580-9e81-646748d0614b:jetbrains.mps.baseLanguage.closuresExt" />
           <language id="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" />
           <language id="l:f2801650-65d5-424e-bb1b-463a8781b786:jetbrains.mps.baseLanguage.javadoc" />
           <language id="l:760a0a8c-eabb-4521-8bfd-65db761a9ba3:jetbrains.mps.baseLanguage.logging" />
@@ -3050,6 +3052,7 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
@@ -3073,8 +3076,6 @@
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.14.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="mockito-core-2.0.3-beta.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="objenesis-2.1.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
@@ -3138,6 +3139,7 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
@@ -3161,8 +3163,6 @@
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.14.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="mockito-core-2.0.3-beta.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="objenesis-2.1.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
