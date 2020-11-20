@@ -1393,6 +1393,16 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="6U_Or2DGPxB" role="3bR37C">
+          <node concept="3bR9La" id="6U_Or2DGPxC" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6U_Or2DGPxD" role="3bR37C">
+          <node concept="3bR9La" id="6U_Or2DGPxE" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6L2N" resolve="jetbrains.mps.baseLanguage.tuples.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="3mSr9E04JGq" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -1469,6 +1479,11 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6U_Or2DGPxX" role="3bR37C">
+          <node concept="3bR9La" id="6U_Or2DGPxY" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6L2N" resolve="jetbrains.mps.baseLanguage.tuples.runtime" />
           </node>
         </node>
       </node>
