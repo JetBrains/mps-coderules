@@ -31,4 +31,6 @@ public interface EvaluationResult {
 
     public Collection<Object> invalidFeedbackKeys();
 
+    public Collection<Object> invalidRules();
+
 }

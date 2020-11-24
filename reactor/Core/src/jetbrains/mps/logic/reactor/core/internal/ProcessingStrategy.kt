@@ -35,6 +35,11 @@ internal interface ProcessingStrategy {
     fun invalidatedFeedback(): FeedbackKeySet
 
     /**
+     * Unique tags of principal rules which matches where invalidated.
+     */
+    fun invalidatedRules(): List<Any>
+
+    /**
      * Entry point for processing session.
      */
     fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint): FeedbackStatus
@@ -58,6 +63,8 @@ internal interface ProcessingStrategy {
 internal class NonIncrementalProcessing: ProcessingStrategy {
 
     override fun invalidatedFeedback(): FeedbackKeySet = emptySet()
+
+    override fun invalidatedRules(): List<Any> = emptyList()
 
     /**
      * Simply redirects evaluation to [Controller].
@@ -108,7 +115,11 @@ internal class IncrementalProcessing(
     private val postponer = PostponeMatchesStage(ispec, journal, journalIndex, ruleOrdering)
 
 
-    override fun invalidatedFeedback(): FeedbackKeySet = invalidator.invalidatedFeedback()
+    override fun invalidatedFeedback(): FeedbackKeySet =
+        invalidator.invalidatedFeedback()
+
+    override fun invalidatedRules(): List<Any> =
+        invalidator.invalidatedRules()
 
     override fun processMatch(match: RuleMatchEx) =
         continueReplacedHeadsImpl(match)
@@ -195,6 +206,8 @@ internal class PreambleProcessing(
 
 
     override fun invalidatedFeedback(): FeedbackKeySet = emptySet()
+
+    override fun invalidatedRules(): List<Any> = emptyList()
 
     override fun processMatch(match: RuleMatchEx) = Unit
 

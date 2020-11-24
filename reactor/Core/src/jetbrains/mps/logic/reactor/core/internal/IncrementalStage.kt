@@ -55,7 +55,12 @@ internal class InvalidationStage(
 
     private val invalidFeedbackKeys: MutableSet<Any> = mutableSetOf<Any>()
 
-    fun invalidatedFeedback(): FeedbackKeySet = HashSet<Any>(invalidFeedbackKeys)
+    private val invalidRuleIdsAll: MutableList<Any> = mutableListOf<Any>()
+
+
+    fun invalidatedFeedback(): FeedbackKeySet = invalidFeedbackKeys.toHashSet()
+
+    fun invalidatedRules(): List<Any> = invalidRuleIdsAll.toList()
 
 
     fun receive(invalid: Iterable<Justified>) { invalidJustifications.addAll(invalid) }
@@ -89,28 +94,31 @@ internal class InvalidationStage(
 
         val validOccs: Sequence<Occurrence>
         if (chunk is MatchJournal.MatchChunk) {
-            trace.invalidate(chunk.match)
+            with (chunk.match) {
+                trace.invalidate(this)
 
-            invalidFeedbackKeys.add(chunk.match.feedbackKey)
-            stateCleaner.erase(chunk.match as RuleMatchEx)
+                invalidFeedbackKeys.add(feedbackKey)
+                invalidRuleIdsAll.add(rule().uniqueTag())
 
-            // Valid head occurrences could match more rules
-            //  without this match, so need to reactivate them.
-            // E.g. occurrences discarded in this match on
-            //  previous run but revived here can match more rules.
-            validOccs = chunk.match.allHeads().filter { occ ->
-                !occ.justifiedByAny(invalidJustifications)
+                stateCleaner.erase(this as RuleMatchEx)
+
+                // Valid head occurrences could match more rules
+                //  without this match, so need to reactivate them.
+                // E.g. occurrences discarded in this match on
+                //  previous run but revived here can match more rules.
+                validOccs = allHeads().filter { occ ->
+                    !occ.justifiedByAny(invalidJustifications)
+                }
+                // By definition of Chunk and principal rule,
+                //  all occurrences from the head are principal.
+                assert(allHeads().all { it.isPrincipal })
             }
-            // By definition of Chunk and principal rule,
-            //  all occurrences from the head are principal.
-            assert(chunk.match.allHeads().all { it.isPrincipal })
-
         } else validOccs = emptySequence()
         return validOccs.asIterable()
     }
 
     private fun MatchJournal.MatchChunk.dependsOnAny(utags: Iterable<Any>): Boolean =
-        utags.contains(this.ruleUniqueTag) || utags.any { utag -> dependsOnRule(utag) }
+        utags.contains(ruleUniqueTag) || utags.any(::dependsOnRule)
 
 }
 

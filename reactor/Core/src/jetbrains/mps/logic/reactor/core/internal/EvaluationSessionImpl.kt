@@ -129,7 +129,7 @@ internal class EvaluationSessionImpl private constructor (
             val status = run(main)
             controller.shutDown()
             val newToken = endSession(session)
-            return EvaluationResultImpl(newToken, status, strategy.invalidatedFeedback())
+            return EvaluationResultImpl(newToken, status, strategy.invalidatedFeedback(), strategy.invalidatedRules())
         }
 
         private fun SessionParts.run(main: Constraint): FeedbackStatus = strategy.run(processing, controller, main)
@@ -329,12 +329,14 @@ internal class EvaluationSessionImpl private constructor (
     private class EvaluationResultImpl(
         val token: SessionToken,
         val status: FeedbackStatus,
-        val invalidFeedbackKeys: FeedbackKeySet
+        val invalidFeedbackKeys: FeedbackKeySet,
+        val invalidRules: Collection<Any>
     ): EvaluationResult {
         override fun token() = token
         override fun storeView(): StoreView = token.journalView.storeView
         override fun feedback(): EvaluationFeedback? = if (status is FAILED) status.failure else null
         override fun invalidFeedbackKeys(): Collection<Any> = invalidFeedbackKeys
+        override fun invalidRules(): Collection<Any> = invalidRules
     }
 
 
