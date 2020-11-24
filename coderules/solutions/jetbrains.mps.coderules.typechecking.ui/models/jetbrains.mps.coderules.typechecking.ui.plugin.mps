@@ -3386,10 +3386,10 @@
               </node>
               <node concept="TSZUe" id="2j1FRbwVbRl" role="2OqNvi">
                 <node concept="2ShNRf" id="2j1FRbwVc6W" role="25WWJ7">
-                  <node concept="1pGfFk" id="2j1FRbwVdcq" role="2ShVmc">
-                    <ref role="37wK5l" to="1yqb:799SgOKgMym" resolve="ConfigureEvalStep" />
-                    <node concept="37vLTw" id="799SgOKhcWa" role="37wK5m">
-                      <ref role="3cqZAo" node="6hqFpWnjd0A" resolve="trace" />
+                  <node concept="1pGfFk" id="1T5MAgPvrhs" role="2ShVmc">
+                    <ref role="37wK5l" to="tj24:1T5MAgPvrd7" resolve="ConfigureTypecheckingStep" />
+                    <node concept="3clFbT" id="1T5MAgPvv8F" role="37wK5m">
+                      <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
