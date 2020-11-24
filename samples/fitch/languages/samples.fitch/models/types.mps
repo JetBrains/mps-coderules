@@ -564,6 +564,35 @@
         </node>
       </node>
     </node>
+    <node concept="2bWyPT" id="1T5MAgPFQZV" role="KEEm1">
+      <property role="TrG5h" value="typeOf" />
+      <ref role="KG3u5" to="tj24:1T5MAgP$8dd" resolve="TypeOfQuery" />
+      <node concept="3clFbS" id="1T5MAgPFQZW" role="fHCRw">
+        <node concept="1nLNNL" id="1T5MAgPFQZX" role="3cqZAp">
+          <node concept="1nLNMm" id="1T5MAgPFQZY" role="1nLNNK">
+            <node concept="3xSepi" id="1T5MAgPFQZZ" role="3xSepv">
+              <node concept="3Aq9E8" id="1T5MAgPFR00" role="3xSepj">
+                <node concept="3I6sU6" id="1T5MAgPFR01" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="1T5MAgPFR02" role="3I6sU7">
+                    <node concept="3Aqt3T" id="1T5MAgPFR03" role="3I6s78">
+                      <ref role="3AqCNq" node="2aBGSFge6lJ" resolve="checkAll" />
+                      <node concept="37jhX" id="1T5MAgPFR04" role="3AunhB">
+                        <node concept="2OqwBi" id="1T5MAgPFR05" role="37jj2">
+                          <node concept="KwDlU" id="1T5MAgPFR06" role="2Oq$k0" />
+                          <node concept="liA8E" id="1T5MAgPFR07" role="2OqNvi">
+                            <ref role="37wK5l" to="tj24:5EDW3XDYOgY" resolve="getTypesCollector" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
