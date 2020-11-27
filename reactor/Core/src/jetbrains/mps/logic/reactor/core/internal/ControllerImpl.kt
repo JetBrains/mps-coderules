@@ -36,6 +36,14 @@ internal class ControllerImpl (
     val profiler: Profiler? = null) : Controller, IncrSpecHolder
 {
 
+    init {
+        processing.engage(this)
+    }
+
+    fun shutDown() {
+        processing.disengage(this)
+    }
+
     /** For tests only */
     override fun storeView(): StoreView = processing.storeView()
 
@@ -361,6 +369,5 @@ fun createController(
         trace,
         profiler
     )
-    logicalState.init(controller)
     return controller
 }

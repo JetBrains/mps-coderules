@@ -56,6 +56,13 @@ internal class ConstraintsProcessing(
 
     fun getStateCleaner(): ProgramStateCleaner = ProgramStateCleaner()
 
+    fun engage(controller: Controller) {
+        logicalState.setController(controller)
+    }
+
+    fun disengage(controller: Controller) {
+        logicalState.clearController(controller)
+    }
 
     fun activateContinue(controller: Controller, activeOcc: Occurrence, parent: MatchJournal.MatchChunk): FeedbackStatus {
         assert(activeOcc.stored)

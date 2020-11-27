@@ -111,7 +111,6 @@ internal class EvaluationSessionImpl private constructor (
             processing.setStrategy(processingStrategy)
 
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
-            logicalState.init(controller)
 
             return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, dispatchingFront, controller, processing, processingStrategy)
         }
@@ -121,18 +120,20 @@ internal class EvaluationSessionImpl private constructor (
                 journal.view(),
                 ruleIndex.toRules(),
                 emptyFrontState(),
-                logicalState.clear(),
+                logicalState,
                 ruleIndex
             )
         }
 
         override fun runSession(session: SessionParts, main: Constraint): EvaluationResult = with(session) {
             val status = run(main)
+            controller.shutDown()
             val newToken = endSession(session)
             return EvaluationResultImpl(newToken, status, strategy.invalidatedFeedback())
         }
 
         private fun SessionParts.run(main: Constraint): FeedbackStatus = strategy.run(processing, controller, main)
+
     }
 
     open inner class IncrementalProcessingSession(): DefaultProcessingSession() {
@@ -151,7 +152,6 @@ internal class EvaluationSessionImpl private constructor (
             processing.setStrategy(processingStrategy)
 
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
-            logicalState.init(controller)
 
             return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, front, controller, processing, processingStrategy)
         }
@@ -161,7 +161,7 @@ internal class EvaluationSessionImpl private constructor (
             processing.resetStore() // clear observers
             // todo: need clearing occurrenceContractObservers? (MPSCR-66)
             val principalState = dispatchingFront.sessionState()
-            return SessionTokenImpl(histView, ruleIndex.toRules(), principalState, logicalState.clear(), ruleIndex)
+            return SessionTokenImpl(histView, ruleIndex.toRules(), principalState, logicalState, ruleIndex)
         }
 
         /**
@@ -192,7 +192,6 @@ internal class EvaluationSessionImpl private constructor (
             processing.setStrategy(processingStrategy)
 
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
-            logicalState.init(controller)
 
             this.tkn = tkn
             return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, front, controller, processing, processingStrategy)
@@ -214,7 +213,7 @@ internal class EvaluationSessionImpl private constructor (
                 val rules = ruleIndex.toRules().filter(preambleInfo::inPreamble)
 
                 logicalState.reset()
-                tkn = SessionTokenImpl(histView, rules, principalState, logicalState.clear(), ruleIndex)
+                tkn = SessionTokenImpl(histView, rules, principalState, logicalState, ruleIndex)
             }
             return tkn!!
         }

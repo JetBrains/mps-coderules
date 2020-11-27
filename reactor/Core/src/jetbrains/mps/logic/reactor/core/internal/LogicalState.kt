@@ -50,13 +50,13 @@ class LogicalState : LogicalStateObservable, LogicalObserver
         stateFrames.push(LogicalStateFrame())
     }
 
-    fun init(controller: Controller) {
+    internal fun setController(controller: Controller) {
         assert(this.controller === null)
         this.controller = controller
     }
 
-    fun clear() : LogicalState {
-        assert(this.controller !== null)
+    internal fun clearController(currController: Controller) : LogicalState {
+        assert(this.controller == currController)
         this.controller = null
         return this
     }
