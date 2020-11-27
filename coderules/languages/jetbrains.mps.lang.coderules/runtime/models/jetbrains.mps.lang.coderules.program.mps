@@ -4826,6 +4826,7 @@
         </node>
       </node>
     </node>
+    <node concept="3Tm1VV" id="cmlg9OLXEa" role="1B3o_S" />
     <node concept="312cEg" id="2hQbw6HSS4K" role="jymVt">
       <property role="TrG5h" value="lastResult" />
       <node concept="3Tm6S6" id="2hQbw6HSS4L" role="1B3o_S" />
@@ -4834,7 +4835,6 @@
       </node>
       <node concept="10Nm6u" id="2hQbw6HT6iu" role="33vP2m" />
     </node>
-    <node concept="3Tm1VV" id="cmlg9OLXEa" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="12yN8DyNqdl">
     <property role="TrG5h" value="NodeWalker" />
@@ -12740,6 +12740,17 @@
       <node concept="3clFbS" id="6nFpYlue$oF" role="3clF47">
         <node concept="1DcWWT" id="6nFpYlueVGs" role="3cqZAp">
           <node concept="3clFbS" id="6nFpYlueVGv" role="2LFqv$">
+            <node concept="3clFbJ" id="6KCGZaSvRGn" role="3cqZAp">
+              <node concept="3clFbS" id="6KCGZaSvRGp" role="3clFbx">
+                <node concept="3N13vt" id="6KCGZaSvWMg" role="3cqZAp" />
+              </node>
+              <node concept="3clFbC" id="6KCGZaSvWJS" role="3clFbw">
+                <node concept="37vLTw" id="6KCGZaSvRIJ" role="3uHU7B">
+                  <ref role="3cqZAo" node="6nFpYlueVGw" resolve="n" />
+                </node>
+                <node concept="10Nm6u" id="6KCGZaSvWHs" role="3uHU7w" />
+              </node>
+            </node>
             <node concept="3cpWs8" id="6nFpYlueYAi" role="3cqZAp">
               <node concept="3cpWsn" id="6nFpYlueYAj" role="3cpWs9">
                 <property role="TrG5h" value="updates" />
@@ -12987,6 +12998,16 @@
               <ref role="3cqZAo" node="6nFpYlu6n2t" resolve="changedSet" />
             </node>
             <node concept="2EZike" id="6nFpYlu7w9R" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="7ItWvj6Y$KL" role="3cqZAp">
+          <node concept="2OqwBi" id="7ItWvj6YAxH" role="3clFbG">
+            <node concept="37vLTw" id="7ItWvj6Y$KJ" role="2Oq$k0">
+              <ref role="3cqZAo" node="6nFpYlu7tZj" resolve="changeSetClosure" />
+            </node>
+            <node concept="3dhRuq" id="7ItWvj6YB2M" role="2OqNvi">
+              <node concept="10Nm6u" id="7ItWvj6YC40" role="25WWJ7" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="6nFpYlu7s$p" role="3cqZAp">
