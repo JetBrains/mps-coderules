@@ -14530,14 +14530,38 @@
                 </node>
               </node>
               <node concept="3clFbH" id="7WFMSEvhd5r" role="3cqZAp" />
-              <node concept="3clFbF" id="6VRLMeOezub" role="3cqZAp">
-                <node concept="2OqwBi" id="6VRLMeOezKr" role="3clFbG">
-                  <node concept="37vLTw" id="6VRLMeOezu9" role="2Oq$k0">
+              <node concept="3clFbF" id="5NUR$Nyqhj" role="3cqZAp">
+                <node concept="2OqwBi" id="5NUR$Nyqhk" role="3clFbG">
+                  <node concept="37vLTw" id="5NUR$Nyqhl" role="2Oq$k0">
                     <ref role="3cqZAo" node="5itBwM6VIn8" resolve="builder" />
                   </node>
-                  <node concept="liA8E" id="6VRLMeOfp9t" role="2OqNvi">
+                  <node concept="liA8E" id="5NUR$Nyqhm" role="2OqNvi">
                     <ref role="37wK5l" to="i348:6VRLMeOeOlh" resolve="processMacroInput" />
-                    <node concept="37vLTw" id="6VRLMeOfpcV" role="37wK5m">
+                    <node concept="35c_gC" id="5NUR$NyqRu" role="37wK5m">
+                      <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                      <node concept="1ZhdrF" id="5NUR$NyqXa" role="lGtFl">
+                        <property role="2qtEX8" value="conceptDeclaration" />
+                        <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474300074836/2644386474300074837" />
+                        <node concept="3$xsQk" id="5NUR$NyqXb" role="3$ytzL">
+                          <node concept="3clFbS" id="5NUR$NyqXc" role="2VODD2">
+                            <node concept="3clFbF" id="5NUR$Nyr0I" role="3cqZAp">
+                              <node concept="2OqwBi" id="5NUR$Nysst" role="3clFbG">
+                                <node concept="2OqwBi" id="5NUR$NyrgS" role="2Oq$k0">
+                                  <node concept="30H73N" id="5NUR$Nyrw8" role="2Oq$k0" />
+                                  <node concept="3TrEf2" id="5NUR$Nysb6" role="2OqNvi">
+                                    <ref role="3Tt5mk" to="wq2x:5itBwM67n1U" resolve="inputSpec" />
+                                  </node>
+                                </node>
+                                <node concept="3TrEf2" id="5NUR$NysA8" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="wq2x:5itBwM66ULm" resolve="applicableConcept" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="5NUR$Nyqhn" role="37wK5m">
                       <ref role="3cqZAo" node="5itBwM6XBIn" resolve="input" />
                     </node>
                   </node>
