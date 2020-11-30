@@ -88,6 +88,16 @@ internal class RuleMatcherImpl(private var ruleLookup: RuleLookup,
                             seenOccurrences,
                             consumedSignatures.without(ruleMatch.signatureArray().toSignature()))
 
+        override fun forget(occ: Occurrence): RuleMatchingProbe = with(this.contract(occ)) {
+            val newConsumed = Sets.copyOf(consumedSignatures.filter{ !it.contains(occ.identity) })
+            val newSeen = seenOccurrences.without(occ.identity)
+            RuleMatchFront(trunkNodes,
+                            leafNodes,
+                            leafSignatures,
+                            newSeen,
+                            newConsumed)
+        }
+
         override fun expand(occ: Occurrence): RuleMatchingProbe =
             expand(occ, bitSetOfOnes(head.size))
 

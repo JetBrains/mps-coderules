@@ -355,7 +355,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
             }
         }
 
-        inner class DropBlock (occurrence: Occurrence) : UpdateBlock(occurrence) {
+        open inner class DropBlock (occurrence: Occurrence) : UpdateBlock(occurrence) {
 
             override fun reset() {
                 // NOP
@@ -368,6 +368,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                     }
                 }
                 introTrail.remove(occurrence.identity)
+                // [nodes] are cleared from invalidated nodes later lazily
                 return false
             }
 
@@ -454,7 +455,21 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 for (layer in layers) {
                     layer.forgetContains(occurrence)
                 }
+                if (lastIntroduced === occurrence) lastIntroduced = null
                 return nextGeneration()
+            }
+
+            fun erase(occurrence: Occurrence): Generation {
+                if (lastIntroduced === occurrence) lastIntroduced = null
+                return drop(occurrence).clearInvalidNodes()
+            }
+
+            private fun clearInvalidNodes(): Generation {
+                while (nodesIt.hasNext()) {
+                    val n = nodesIt.next()
+                    if (n.isInvalid()) nodesIt.remove()
+                }
+                return this.reset()
             }
 
             fun nextGeneration(): Generation = Generation(this)
@@ -518,6 +533,11 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
         override fun forgetConsumed(occ: Occurrence): ReteNetwork {
             consumedSignatures.removeAllWith(occ.identity)
+            return this
+        }
+
+        override fun forget(occ: Occurrence): RuleMatchingProbe {
+            this.lastGeneration = lastGeneration.erase(occ)
             return this
         }
 

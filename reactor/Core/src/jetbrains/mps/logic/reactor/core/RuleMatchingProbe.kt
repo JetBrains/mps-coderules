@@ -56,8 +56,16 @@ interface RuleMatchingProbe {
 
     /**
      * Clears all internal state related to [ruleMatch].
+     * Effect is as if [ruleMatch] was never seen.
      */
     fun forget(ruleMatch: RuleMatchEx): RuleMatchingProbe
+
+    /**
+     * Clears all state related to [Occurrence] [occ].
+     * Same as [contract], but also clears internal state.
+     * Effect is as if [occ] was never seen.
+     */
+    fun forget(occ: Occurrence): RuleMatchingProbe
 
     fun expand(occ: Occurrence): RuleMatchingProbe
 
