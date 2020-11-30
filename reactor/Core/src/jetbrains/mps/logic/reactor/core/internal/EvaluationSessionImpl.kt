@@ -48,11 +48,12 @@ internal data class SessionParts(
     val ruleIndex: RuleIndex,
     val journal: MatchJournal,
     val logicalState: LogicalState,
-    val dispatchingFront: Dispatcher.DispatchingFront,
     val controller: ControllerImpl,
     val processing: ConstraintsProcessing,
     val strategy: ProcessingStrategy
-)
+) {
+    val frontState: DispatchingFrontState get() = processing.getFrontState()
+}
 
 
 internal class EvaluationSessionImpl private constructor (
@@ -67,7 +68,7 @@ internal class EvaluationSessionImpl private constructor (
     override fun <T : Any> parameter(key: ParameterKey<T>): T? = params ?.get(key) as T
 
     private fun launch(token: SessionToken?, main: Constraint): EvaluationResult {
-        val sessionProccessing: ProcessingSession =
+        val sessionProcessing: ProcessingSession =
             with(incrementality) {
                 when {
                     ability().allowed() && incrLevel() == IncrementalSpec.IncrLevel.Full ->
@@ -79,7 +80,7 @@ internal class EvaluationSessionImpl private constructor (
                 }
             }
 
-        with (sessionProccessing) {
+        with (sessionProcessing) {
             val session =
                 if (token != null)
                     nextSession(token)
@@ -112,7 +113,7 @@ internal class EvaluationSessionImpl private constructor (
 
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
 
-            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, dispatchingFront, controller, processing, processingStrategy)
+            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy)
         }
 
         override fun endSession(session: SessionParts): SessionToken = with(session) {
@@ -153,14 +154,14 @@ internal class EvaluationSessionImpl private constructor (
 
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
 
-            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, front, controller, processing, processingStrategy)
+            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy)
         }
 
         override fun endSession(session: SessionParts): SessionToken = with(session) {
             val histView = journal.view()
             processing.resetStore() // clear observers
             // todo: need clearing occurrenceContractObservers? (MPSCR-66)
-            val principalState = dispatchingFront.sessionState()
+            val principalState = sessionState(frontState)
             return SessionTokenImpl(histView, ruleIndex.toRules(), principalState, logicalState, ruleIndex)
         }
 
@@ -168,8 +169,8 @@ internal class EvaluationSessionImpl private constructor (
          * Preserve data needed between sessions:
          * preserve only relevant and non-empty RuleMatchers
          */
-        protected fun Dispatcher.DispatchingFront.sessionState() =
-            this.state().filterValues { ruleMatcher ->
+        protected fun sessionState(frontState: DispatchingFrontState) =
+            frontState.filterValues { ruleMatcher ->
                 incrementality.isPrincipal(ruleMatcher.rule()) || ruleMatcher.probe().hasOccurrences()
             }
     }
@@ -194,7 +195,7 @@ internal class EvaluationSessionImpl private constructor (
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
 
             this.tkn = tkn
-            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, front, controller, processing, processingStrategy)
+            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy)
         }
 
         // Compute Preamble token only once, after firstSession()
@@ -206,8 +207,8 @@ internal class EvaluationSessionImpl private constructor (
                 processing.resetStore() // clear observers
                 // todo: need clearing occurrenceContractObservers? (MPSCR-66)
 
-                val principalState = dispatchingFront.sessionState().filterValues {
-                    preambleInfo.inPreamble(it.rule())
+                val principalState = sessionState(frontState).filterValues { ruleMatcher ->
+                    preambleInfo.inPreamble(ruleMatcher.rule())
                 }
 
                 val rules = ruleIndex.toRules().filter(preambleInfo::inPreamble)

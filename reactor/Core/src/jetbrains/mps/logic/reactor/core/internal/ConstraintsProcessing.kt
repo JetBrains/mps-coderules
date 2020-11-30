@@ -56,6 +56,8 @@ internal class ConstraintsProcessing(
 
     fun getStateCleaner(): ProgramStateCleaner = ProgramStateCleaner()
 
+    fun getFrontState(): DispatchingFrontState = dispatchingFront.state()
+
     fun engage(controller: Controller) {
         logicalState.setController(controller)
     }
