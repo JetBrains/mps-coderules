@@ -369,7 +369,7 @@ class TestRuleMatcher {
             val bar0 = occurrence("bar")
 
 //            with(ruleMatcher().probe()) {
-            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+            with(Dispatcher(RuleIndex(rules)).front()) {
 
                 expand(foo1)                                            }.apply {
                 matches().count() shouldBe 0                               }.run {
@@ -796,7 +796,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+            with(Dispatcher(RuleIndex(rules)).front()) {
 
                 expand(occurrence("foo"))                                    }.apply {
                 matches().count() shouldBe 0                                        }.run {
@@ -838,7 +838,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+            with(Dispatcher(RuleIndex(rules)).front()) {
 
                 expand(occurrence("foo"))                                    }.apply {
                 matches().count() shouldBe 0                                        }.run {
@@ -908,7 +908,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+            with(Dispatcher(RuleIndex(rules)).front()) {
 
                 expand(occurrence("blin"))                                   }.apply {
                 matches().count() shouldBe 0                                        }.run {
@@ -958,7 +958,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+            with(Dispatcher(RuleIndex(rules)).front()) {
 
                 expand(occurrence("foo"))                                }.apply {
                 matches().count() shouldBe 0                                    }.run {
@@ -1010,7 +1010,7 @@ class TestRuleMatcher {
                 ))))
         {
             val bar = occurrence("bar")
-            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+            with(Dispatcher(RuleIndex(rules)).front()) {
 
                 expand(occurrence("foo"))                                }.apply {
                 matches().count() shouldBe 0                                    }.run {

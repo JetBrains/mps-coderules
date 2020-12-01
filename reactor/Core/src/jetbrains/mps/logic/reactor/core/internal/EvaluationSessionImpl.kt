@@ -99,8 +99,8 @@ internal class EvaluationSessionImpl private constructor (
         private fun getSession(token: SessionToken?): SessionParts {
             val ruleIndex = token
                 ?.let { (it as SessionTokenImpl).ruleIndex }
-                ?.also { it.updateIndex(program.rulesLists()) }
-                ?: RuleIndex(program.rulesLists())
+                ?.also { it.updateIndexFromRules(program.rules()) }
+                ?: RuleIndex(program.rules())
 
             val journal = MatchJournalImpl(incrementality)
             val logicalState = LogicalState()
@@ -141,7 +141,7 @@ internal class EvaluationSessionImpl private constructor (
             val tkn = token as SessionTokenImpl
             val logicalState = tkn.logicalState
 
-            val ruleIndex = tkn.ruleIndex.apply { updateIndex(program.rulesLists()) }
+            val ruleIndex = tkn.ruleIndex.apply { updateIndexFromRules(program.rules()) }
             val journal = MatchJournalImpl(incrementality, tkn.journalView as MatchJournal.View)
             val front = Dispatcher(ruleIndex, tkn.getFrontState()).front()
             val processing = ConstraintsProcessing(front, journal, logicalState, incrementality, trace, profiler)
@@ -181,7 +181,7 @@ internal class EvaluationSessionImpl private constructor (
             val tkn = token as SessionTokenImpl
             val logicalState = LogicalState()
 
-            val ruleIndex = RuleIndex(program.rulesLists())
+            val ruleIndex = RuleIndex(program.rules())
             val journal = MatchJournalImpl(incrementality, tkn.journalView as MatchJournal.View)
             val front = Dispatcher(ruleIndex, tkn.getFrontState()).front()
             val processing = ConstraintsProcessing(front, journal, logicalState, incrementality, trace, profiler)
@@ -338,6 +338,6 @@ internal class EvaluationSessionImpl private constructor (
     }
 
 
-    private fun RuleIndex.toRules() = ArrayList<Rule>().also { l -> forEach { l.add(it) }}
+    private fun RuleIndex.toRules() = ArrayList<Rule>().also { l -> this.forEach { l.add(it) }}
 
 }

@@ -17,7 +17,7 @@ import kotlin.collections.HashMap
 
 class Builder(var rulesLists: List<RulesList>) : RuleLookup {
 
-    val tag2rule = HashMap<Any, Rule>()
+    val tag2rule = LinkedHashMap<Any, Rule>()
 
     val programBuilder = ProgramBuilder(MockConstraintRegistry())
 

@@ -83,7 +83,7 @@ class TestStoreAwareJournal {
                 body()
                 )))
         {
-            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rules)))) {
 
                 hist.justifications() shouldBe justsOf(0) // initial chunk
 
@@ -142,7 +142,7 @@ class TestStoreAwareJournal {
                 ))
         ))
         {
-            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rules)))) {
 
                 val initPos = hist.currentPos()
 
@@ -224,7 +224,7 @@ class TestStoreAwareJournal {
                 ))
         ))
         {
-            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rules)))) {
 
                 val initPos = hist.currentPos()
 
@@ -313,7 +313,7 @@ class TestStoreAwareJournal {
                 ))
         ))
         {
-            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rules)))) {
 
                 val initPos = hist.currentPos()
 
@@ -394,7 +394,7 @@ class TestStoreAwareJournal {
                 ))
             ))
         {
-            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rules)))) {
 
                 logExpand(principalOccurrenceInit("foo"))
 
@@ -444,7 +444,7 @@ class TestStoreAwareJournal {
                 ))
         ))
         {
-            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rules)))) {
 
                 with(hist) {
                     view().chunks.size shouldBe initialJournalSize // only initial chunk
@@ -510,7 +510,7 @@ class TestStoreAwareJournal {
             ))
         ))
         {
-            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rules)))) {
 
                 logExpand(principalOccurrenceInit("foo"))
 

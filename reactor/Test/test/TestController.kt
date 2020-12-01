@@ -59,7 +59,7 @@ class TestController {
     private fun Builder.controller(vararg occurrences: ConstraintOccurrence): Controller {
         val program = MockProgram("test", rulesLists, registry = MockConstraintRegistry())
         MockSession.init(program, MockSupervisor())
-        val controller = createController(MockSupervisor(), RuleIndex(program.rulesLists))
+        val controller = createController(MockSupervisor(), RuleIndex(program.rules()))
         MockSession.ourBackend.session.controller = controller
         return controller
     }
@@ -72,7 +72,7 @@ class TestController {
                 feedbackHandler(ruleMatch, feedback)
         }
         MockSession.init(program, supervisor)
-        val controller = createController(supervisor, RuleIndex(program.rulesLists))
+        val controller = createController(supervisor, RuleIndex(program.rules()))
         MockSession.ourBackend.session.controller = controller
         return controller
     }

@@ -52,7 +52,7 @@ class TestRuleIndex  {
 
         ))
         {
-            val ruleIndex = RuleIndex(first.rulesLists)
+            val ruleIndex = RuleIndex(first.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule0")
             }
@@ -60,7 +60,7 @@ class TestRuleIndex  {
                 iterator().hasNext() shouldBe false
             }
 
-            ruleIndex.updateIndex(second.rulesLists)
+            ruleIndex.updateIndexFromRules(second.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 iterator().hasNext() shouldBe false
             }
@@ -87,12 +87,12 @@ class TestRuleIndex  {
 
         ))
         {
-            val ruleIndex = RuleIndex(first.rulesLists)
+            val ruleIndex = RuleIndex(first.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule0")
             }
 
-            ruleIndex.updateIndex(second.rulesLists)
+            ruleIndex.updateIndexFromRules(second.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule0")
             }
@@ -120,7 +120,7 @@ class TestRuleIndex  {
 
         ))
         {
-            val ruleIndex = RuleIndex(first.rulesLists)
+            val ruleIndex = RuleIndex(first.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule0")
             }
@@ -128,7 +128,7 @@ class TestRuleIndex  {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule2")
             }
 
-            ruleIndex.updateIndex(second.rulesLists)
+            ruleIndex.updateIndexFromRules(second.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule1")
             }
@@ -151,7 +151,7 @@ class TestRuleIndex  {
 
         ))
         {
-            val ruleIndex = RuleIndex(first.rulesLists)
+            val ruleIndex = RuleIndex(first.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule0")
             }
@@ -159,7 +159,7 @@ class TestRuleIndex  {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule2")
             }
 
-            ruleIndex.updateIndex(second.rulesLists)
+            ruleIndex.updateIndexFromRules(second.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule0")
             }
@@ -195,7 +195,7 @@ class TestRuleIndex  {
 
         ))
         {
-            val ruleIndex = RuleIndex(first.rulesLists)
+            val ruleIndex = RuleIndex(first.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule0", "rule3")
             }
@@ -209,7 +209,7 @@ class TestRuleIndex  {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule4")
             }
 
-            ruleIndex.updateIndex(second.rulesLists)
+            ruleIndex.updateIndexFromRules(second.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
                 map { it.uniqueTag() }.toList() shouldBe listOf("rule5", "rule0")
             }

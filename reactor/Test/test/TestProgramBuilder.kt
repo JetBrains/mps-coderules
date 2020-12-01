@@ -44,7 +44,7 @@ class TestProgramBuilder {
                 )
             )
         ).run {
-            assertEquals(program("test").rulesLists().flatMap { it.rules() }.count(), 2)
+            assertEquals(program("test").rules().count(), 2)
         }
     }
 

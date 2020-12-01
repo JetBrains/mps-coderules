@@ -33,7 +33,7 @@ import kotlin.collections.HashMap
  *
  * @author Fedor Isakov
  */
-class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup
+class RuleIndex(): Iterable<Rule>, RuleLookup
 {
     private class IndexedRule {
 
@@ -69,8 +69,8 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup
     /** the bit set to be used for temporary processing within [select]*/
     private val andRuleIndices = BitSet(allRules.size)
 
-    init {
-        buildIndex(ruleLists)
+    constructor(rules: Iterable<Rule>) : this() {
+        buildIndexFromRules(rules)
     }
 
     override fun lookupRuleByTag(tag: Any): Rule? = tag2rule[tag]
@@ -111,13 +111,25 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup
 
     override fun iterator(): Iterator<Rule> = allRules.map { it.rule }.iterator()
 
+    fun buildIndexFromRules(rules: Iterable<Rule>) {
+        rules.forEachIndexed { idx, rule ->
+            val irule = IndexedRule(idx, rule)
+            addRuleToIndex(irule)
+            allRules.add(irule)
+        }
+    }
+
     fun updateIndex(ruleLists: Iterable<RulesList>) {
+        updateIndexFromRules(ruleLists.flatMap { it.rules() })
+    }
+
+    fun updateIndexFromRules(rules: Iterable<Rule>) {
         val removedTags = allRules.map { it.rule.uniqueTag() }.toHashSet()
-        ruleLists.flatMap { it.rules() }.map { it.uniqueTag() }.forEach{ removedTags.remove(it) }
+        rules.map { it.uniqueTag() }.forEach{ removedTags.remove(it) }
 
         val allRulesIt = allRules.listIterator()
         var nextIdx = 0
-        ruleLists.flatMap { it.rules() }.forEach { rule ->
+        rules.forEach { rule ->
             var skip = false
             while (allRulesIt.hasNext()) {
                 val irule = allRulesIt.next()
@@ -128,7 +140,7 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup
                 } else if (!irule.rule.uniqueTag().equals(rule.uniqueTag())) {
                     allRulesIt.previous()
                     break
-                    
+
                 } else {
                     irule.idx = nextIdx
                     skip = true
@@ -151,11 +163,8 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup
     }
 
     private fun buildIndex(ruleLists: Iterable<RulesList>) {
-        ruleLists.flatMap { it.rules() }.forEachIndexed { idx, rule ->
-            val irule = IndexedRule(idx, rule)
-            addRuleToIndex(irule)
-            allRules.add(irule)
-        }
+        val rules = ruleLists.flatMap { it.rules() }
+        buildIndexFromRules(rules)
     }
 
     private fun removeRuleFromIndex(irule: IndexedRule) {
