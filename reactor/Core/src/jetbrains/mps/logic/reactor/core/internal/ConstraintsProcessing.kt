@@ -78,6 +78,23 @@ internal class ConstraintsProcessing(
         return processActivated(controller, activeOcc, parent, FeedbackStatus.NORMAL())
     }
 
+    fun evaluate(controller: Controller, prototype: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus =
+        profiler.profile<FeedbackStatus>("activate_${prototype.constraint().symbol()}") {
+            // fixme: ensure justifications are tracked (incremented) correctly in processing & creator
+            // NB: provide new justifications instead of occ.justifications
+            with(JustifiedOccurrenceCreator(evidence(), initialChunk().justifications())) {
+
+                prototype.constraint.occurrence(
+                    controller.logicalStateObservable(), prototype.arguments(), prototype.logicalContext(), prototype.ruleUniqueTag()
+                ).let { occ ->
+                    trace.activate(occ)
+                    processActivated(controller, occ, initialChunk(), inStatus)
+                }
+
+            }
+        }
+
+
     /**
      * Called to update the state with the currently active constraint occurrence.
      * Calls the controller to process matches (if any) that were triggered.
@@ -105,14 +122,7 @@ internal class ConstraintsProcessing(
         val matches = dispatchingFront.matches().toList()
         val currentMatches = incrementalProcessing.processOccurrenceMatches(active, matches)
 
-        val outStatus = currentMatches.fold(inStatus) { status, match ->
-            // TODO: paranoid check. should be isAlive() instead
-            // FIXME: move this check elsewhere
-            if (status.operational && active.stored && match.allStored()) {
-                assert(match.allHeads().contains(active))
-                processMatch(controller, match, parent, status)
-            } else status
-        }
+        val outStatus = processMatches(controller, active, currentMatches, parent, inStatus)
 
         // TODO: should be isAlive()
         if (active.stored) {
@@ -121,6 +131,16 @@ internal class ConstraintsProcessing(
 
         return outStatus
     }
+
+    fun processMatches(controller: Controller, active: Occurrence, matches: List<RuleMatchEx>, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus =
+        matches.fold(inStatus) { status, match ->
+            // TODO: paranoid check. should be isAlive() instead
+            // FIXME: move this check elsewhere
+            if (status.operational && active.stored && match.allStored()) {
+                assert(match.allHeads().contains(active))
+                processMatch(controller, match, parent, status)
+            } else status
+        }
 
 
     private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
@@ -205,10 +225,10 @@ internal class ConstraintsProcessing(
     /**
      * Encapsulates logic for deriving [Evidence] and [Justifications] for a new [Occurrence].
      */
-    inner class JustifiedOccurrenceCreator {
-        val savedEvidence: Evidence = evidence()
-        val savedJustifications: Justifications = justifications()
-
+    inner class JustifiedOccurrenceCreator(
+        private val savedEvidence: Evidence = evidence(),
+        private val savedJustifications: Justifications = justifications()
+    ) {
         fun Constraint.occurrence(
             observable: LogicalStateObservable,
             arguments: List<*>,

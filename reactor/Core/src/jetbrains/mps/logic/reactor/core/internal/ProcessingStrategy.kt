@@ -231,6 +231,77 @@ internal class PreambleProcessing(
 }
 
 
+/**
+ * Strategy that works with occurrence store.
+ * Doesn't directly work with [MatchJournal] except for default logging.
+ * Strategy simply activates [Occurrence]s passed as input store
+ *
+ * Caller is responsible for handling new computed principal [Occurrences]:
+ * it can get them from [MatchJournal] and output for putting into cache.
+ *
+ * It requires that program in question adheres to incremental contracts.
+ * Importantly, one ensured by [OccurrenceContractObserver].
+ */
+internal class CachedOccurrencesProcessing(
+    override val ispec: IncrementalSpec,
+    private val occurrences: OccurrenceStore
+): ProcessingStrategy, IncrSpecHolder {
+
+    private var inPreamble = true
+
+    private val postponedMatches: MutableList<Pair<Occurrence, List<RuleMatchEx>>> = mutableListOf()
+
+
+    override fun invalidatedFeedback(): FeedbackKeySet = emptySet()
+
+    override fun invalidatedRules(): List<Any> = emptyList()
+
+    override fun processMatch(match: RuleMatchEx) = Unit
+
+    override fun processOccurrenceMatches(active: Occurrence, matches: List<RuleMatchEx>) =
+        if (inPreamble && matches.isNotEmpty()) {
+            postponedMatches.add(active to matches)
+            emptyList<RuleMatchEx>()
+        } else matches
+
+
+    override fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint): FeedbackStatus {
+        var status: FeedbackStatus = FeedbackStatus.NORMAL()
+
+        // NB: assume evaluation order doesn't matter for these occurrences
+
+        // first activate cached occurrences,
+        // but don't process their matches right away
+        this.inPreamble = true
+        for (occ in occurrences) {
+            if (occ.constraint().symbol() == main.symbol())
+                continue
+            status = processing.evaluate(controller, occ, status)
+            if (!status.operational)
+                return status
+        }
+        this.inPreamble = false
+
+        // then continue matches caused by cached occurrences
+        status = continueMatches(processing, controller, status)
+
+        // then proceed with normal execution
+        if (status.operational)
+            status = controller.activate(main)
+
+        return status
+    }
+
+    private fun continueMatches(processing: ConstraintsProcessing, controller: Controller, inStatus: FeedbackStatus): FeedbackStatus {
+        val parentChunk = processing.initialChunk() // fixme: get activation chunk of active occ?
+        val status = postponedMatches.fold(inStatus) { status, (active, matches) ->
+            processing.processMatches(controller, active, matches, parentChunk, status)
+        }
+        return status
+    }
+}
+
+
 private fun ContinueOccurrencesStage.runContinued(processing: ConstraintsProcessing, controller: Controller, chunkReader: ChunkReader): FeedbackStatus {
     var status: FeedbackStatus = FeedbackStatus.NORMAL()
     val parentChunk = processing.parentChunk()

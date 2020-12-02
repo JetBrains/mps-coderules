@@ -19,6 +19,7 @@ package jetbrains.mps.logic.reactor.evaluation;
 
 import jetbrains.mps.logic.reactor.program.IncrementalSpec;
 import jetbrains.mps.logic.reactor.program.Program;
+import java.util.Collection;
 
 /**
  * The starting point to evaluate a program.
@@ -82,6 +83,8 @@ public abstract class EvaluationSession {
          */
         @Deprecated
         public abstract Config withStoreView(StoreView storeView);
+
+        public Config withStore(Collection<ConstraintOccurrence> store) { return this; }
 
         public Config withSessionToken(SessionToken token) { return this; }
 

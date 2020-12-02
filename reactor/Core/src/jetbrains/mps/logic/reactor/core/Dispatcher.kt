@@ -23,6 +23,8 @@ typealias DispatchingFrontState = Map<Any, RuleMatcher>
 
 internal fun emptyFrontState(): DispatchingFrontState = emptyMap()
 
+internal fun DispatchingFrontState.resetLookup() = apply { values.forEach(RuleMatcher::resetRuleLookup) }
+
 /**
  * A front-end interface to [RuleMatcher].
  * 

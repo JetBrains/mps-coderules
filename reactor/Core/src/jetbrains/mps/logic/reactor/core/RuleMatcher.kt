@@ -41,6 +41,8 @@ interface RuleMatcher {
 
     fun setRuleLookup(ruleLookup: RuleLookup): Unit
 
+    fun resetRuleLookup(): Unit
+
 }
 
 fun createRuleMatcher(lookup: RuleLookup, tag: Any): RuleMatcher = ReteRuleMatcherImpl(lookup, tag)

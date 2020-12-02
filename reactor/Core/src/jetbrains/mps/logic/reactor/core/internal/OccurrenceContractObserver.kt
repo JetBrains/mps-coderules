@@ -26,6 +26,13 @@ import jetbrains.mps.unification.Term
 import kotlin.collections.HashSet
 
 
+/**
+ * Ensures important contract of incremental algorithm.
+ *
+ * Contract states that arguments of principal [Occurrence]s
+ * must be immutable, that is, logicals can't be unified
+ * with either ground or free other logicals.
+ */
 internal class OccurrenceContractObserver(private val observable: LogicalStateObservable, override val ispec: IncrementalSpec): IncrSpecHolder {
     private val observers: HashMap<Int, UnmodifiableLogicalObserver> = hashMapOf()
 

@@ -213,11 +213,14 @@ internal class ControllerImpl (
 
         return context.currentStatus()
     }
-    
+
     private fun activateConstraint(constraint: Constraint, parent: MatchJournal.MatchChunk, creator: ConstraintsProcessing.JustifiedOccurrenceCreator, context: Context) : Boolean {
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
-        return context.eval { status ->
+        return activateConstraint(constraint, args, parent, creator, context)
+    }
 
+    private fun activateConstraint(constraint: Constraint, args: List<*>, parent: MatchJournal.MatchChunk, creator: ConstraintsProcessing.JustifiedOccurrenceCreator, context: Context) : Boolean =
+        context.eval { status ->
             profiler.profile<FeedbackStatus>("activate_${constraint.symbol()}") {
 
                 with(creator) {
@@ -229,7 +232,6 @@ internal class ControllerImpl (
 
             }
         }
-    }
 
     private fun askPredicate(predicate: Predicate, context: Context) : Boolean =
         profiler.profile<Boolean>("ask_${predicate.symbol()}") {

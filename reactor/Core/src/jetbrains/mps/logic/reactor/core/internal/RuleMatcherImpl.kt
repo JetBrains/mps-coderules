@@ -33,7 +33,7 @@ import kotlin.collections.ArrayList
  *
  * @author Fedor Isakov
  */
-internal class RuleMatcherImpl(private var ruleLookup: RuleLookup,
+internal class RuleMatcherImpl(private var ruleLookup: RuleLookup?,
                                private val tag: Any) : RuleMatcher
 {
 
@@ -41,11 +41,13 @@ internal class RuleMatcherImpl(private var ruleLookup: RuleLookup,
 
     val propagation = lookupRule().headReplaced().count() == 0
 
-    fun lookupRule(): Rule = ruleLookup.lookupRuleByTag(tag) ?: throw IllegalStateException("can't lookup rule by tag: '${tag}'")
+    fun lookupRule(): Rule = ruleLookup?.lookupRuleByTag(tag) ?: throw IllegalStateException("can't lookup rule by tag: '${tag}'")
 
     override fun rule() = lookupRule()
 
     override fun setRuleLookup(ruleLookup: RuleLookup) { this.ruleLookup = ruleLookup }
+
+    override fun resetRuleLookup() { this.ruleLookup = null }
 
     override fun newProbe(): RuleMatchingProbe =
         RuleMatchFront(emptyList(),

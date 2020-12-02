@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.DispatchingFrontState
+import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.RuleIndex
 import jetbrains.mps.logic.reactor.evaluation.MatchJournalView
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
@@ -24,6 +25,7 @@ import jetbrains.mps.logic.reactor.program.Rule
 
 data class SessionTokenImpl(
                             private val journalView: MatchJournal.View,
+                            private var store: Collection<Occurrence>,
                             private val rules: Iterable<Rule>,
                             private val frontState: DispatchingFrontState,
                             val logicalState: LogicalState,
@@ -31,5 +33,8 @@ data class SessionTokenImpl(
 {
     override fun getJournalView(): MatchJournalView = journalView
     override fun getRules(): Iterable<Rule> = rules
+    override fun getPrincipalStore(): Collection<Occurrence> = store
+
     fun getFrontState(): DispatchingFrontState = frontState
+    fun setStore(newStore: Collection<Occurrence>) { this.store = newStore }
 }
