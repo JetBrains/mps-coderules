@@ -3524,6 +3524,11 @@
                       <node concept="37vLTw" id="6OXbTD_ouEx" role="37wK5m">
                         <ref role="3cqZAo" node="6OXbTD_oqui" resolve="queryTemplate" />
                       </node>
+                      <node concept="2ShNRf" id="1imVejVAmxY" role="37wK5m">
+                        <node concept="HV5vD" id="1imVejVAn7b" role="2ShVmc">
+                          <ref role="HV5vE" to="i348:1imVejVtN6P" resolve="PrincipalStore" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
