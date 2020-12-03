@@ -16,9 +16,11 @@
 
 package jetbrains.mps.logic.reactor.program;
 
+import javaslang.collection.Stream;
 import jetbrains.mps.logic.reactor.core.RulesDiff;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * A collection of rulesLists that constitute a constraint rules program.
@@ -29,10 +31,10 @@ public abstract class Program {
 
     public abstract String name();
 
+    @Deprecated
     public abstract Iterable<RulesList> rulesLists();
 
     public abstract PreambleInfo preambleInfo();
-
 
     public Program withRulesDiff(RulesDiff diff) { return this; };
 

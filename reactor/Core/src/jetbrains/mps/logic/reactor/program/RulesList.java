@@ -18,9 +18,9 @@ package jetbrains.mps.logic.reactor.program;
 
 /**
  * A container for rules.
- * 
  * @author Fedor Isakov
  */
+@Deprecated
 public abstract class RulesList {
 
     public abstract String name();
