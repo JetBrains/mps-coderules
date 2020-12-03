@@ -22,6 +22,7 @@ import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.program.Rule
 
 
 /**
@@ -35,7 +36,7 @@ class Occurrence (observable: LogicalStateObservable,
                   val arguments: List<*>,
                   override val evidence: Evidence,
                   private val justifications: Justifications,
-                  val ruleUniqueTag: Any? = null):
+                  val sourceRule: Rule.Tag? = null):
     ConstraintOccurrence, ForwardingLogicalObserver, Justified
 {
 
@@ -55,7 +56,7 @@ class Occurrence (observable: LogicalStateObservable,
 
     override fun logicalContext(): LogicalContext = logicalContext
 
-    override fun ruleUniqueTag(): Any? = ruleUniqueTag
+    override fun sourceRule(): Rule.Tag? = sourceRule
 
     override fun justifications(): Justifications = justifications
 
@@ -109,5 +110,5 @@ fun Constraint.occurrence(observable: LogicalStateObservable,
                           evidence: Evidence,
                           justifications: Justifications,
                           logicalContext: LogicalContext,
-                          ruleUniqueTag: Any? = null): Occurrence =
+                          ruleUniqueTag: Rule.Tag? = null): Occurrence =
     Occurrence(observable, this, logicalContext, arguments, evidence, justifications, ruleUniqueTag)

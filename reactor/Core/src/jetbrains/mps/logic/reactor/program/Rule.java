@@ -43,12 +43,7 @@ public abstract class Rule {
     /**
      * A tag uniquely identifies the rule.
      */
-    public abstract Object uniqueTag();
-
-    /**
-     * Human-readable identifier, not guaranteed to be unique.
-     */
-    public abstract String tag();
+    public abstract Tag uniqueTag();
 
     public abstract Iterable<Constraint> headKept();
 
@@ -60,10 +55,60 @@ public abstract class Rule {
 
     public abstract Iterable<AndItem> all();
 
+
     public enum Kind {
         SIMPLIFICATION(),
         PROPAGATION(),
         SIMPAGATION()
+    }
+
+    public static final class Tag {
+
+        public String groupName() { return group; }
+
+        public String name() { return name; }
+
+        public Object uniqueTag() { return utag; }
+
+        /**
+         * Rule is "stable" if it has no unique part
+         * and its name coincides with unique tag.
+         * @return true if rule has no unique part
+         */
+        public boolean stable() { return utag.length() == name.length(); }
+
+        public Tag(String groupPrefix, String commonPart, Object uniquePart) {
+            if (!commonPart.startsWith(groupPrefix)) {
+                throw new IllegalArgumentException();
+            }
+            StringBuilder utagSb = new StringBuilder(commonPart);
+            if (uniquePart != null) {
+                utagSb.append('_').append(uniquePart);
+            }
+            this.group = groupPrefix;
+            this.name = commonPart;
+            this.utag = utagSb.toString();
+        }
+
+        public Tag(String commonPart, Object uniquePart) { this(commonPart, commonPart, uniquePart); }
+
+        public Tag(String tag) { this(tag, tag, null); }
+
+        @Override
+        public int hashCode() { return utag.hashCode(); }
+
+        @Override
+        public boolean equals(Object obj) {
+            // NB: allow equality to String
+            return this.toString().equals(obj.toString());
+        }
+
+        @Override
+        public String toString() { return utag; }
+
+        private final String group;
+        private final String name;
+        private final String utag;
     }
 
 }

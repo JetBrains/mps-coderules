@@ -54,7 +54,7 @@ class TestRuleIndex  {
         {
             val ruleIndex = RuleIndex(first.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule0")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule0")
             }
             with (ruleIndex.forOccurrence(occurrence("bar"))) {
                 iterator().hasNext() shouldBe false
@@ -65,7 +65,7 @@ class TestRuleIndex  {
                 iterator().hasNext() shouldBe false
             }
             with (ruleIndex.forOccurrence(occurrence("bar"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule1")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule1")
             }
         }
         
@@ -89,15 +89,15 @@ class TestRuleIndex  {
         {
             val ruleIndex = RuleIndex(first.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule0")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule0")
             }
 
             ruleIndex.updateIndexFromRules(second.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule0")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule1","rule0")
             }
             with (ruleIndex.forOccurrence(occurrence("bar"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule2")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule1","rule2")
             }
         }
     }
@@ -122,15 +122,15 @@ class TestRuleIndex  {
         {
             val ruleIndex = RuleIndex(first.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule0")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule1","rule0")
             }
             with (ruleIndex.forOccurrence(occurrence("bar"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule2")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule1","rule2")
             }
 
             ruleIndex.updateIndexFromRules(second.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule1")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule1")
             }
         }
     }
@@ -153,15 +153,15 @@ class TestRuleIndex  {
         {
             val ruleIndex = RuleIndex(first.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule0")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule1","rule0")
             }
             with (ruleIndex.forOccurrence(occurrence("bar"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule1","rule2")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule1","rule2")
             }
 
             ruleIndex.updateIndexFromRules(second.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule0")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule0")
             }
             with (ruleIndex.forOccurrence(occurrence("bar"))) {
                 iterator().hasNext() shouldBe false
@@ -197,30 +197,30 @@ class TestRuleIndex  {
         {
             val ruleIndex = RuleIndex(first.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule0", "rule3")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule0", "rule3")
             }
             with (ruleIndex.forOccurrence(occurrence("bar"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule3")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule3")
             }
             with (ruleIndex.forOccurrence(occurrence("baz"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule1")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule1")
             }
             with (ruleIndex.forOccurrence(occurrence("qux"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule4")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule4")
             }
 
             ruleIndex.updateIndexFromRules(second.rules)
             with (ruleIndex.forOccurrence(occurrence("foo"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule5", "rule0")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule5", "rule0")
             }
             with (ruleIndex.forOccurrence(occurrence("bar"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule2")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule2")
             }
             with (ruleIndex.forOccurrence(occurrence("baz"))) {
                 iterator().hasNext() shouldBe false
             }
             with (ruleIndex.forOccurrence(occurrence("qux"))) {
-                map { it.uniqueTag() }.toList() shouldBe listOf("rule4", "rule6")
+                map { it.uniqueTag().toString() }.toList() shouldBe listOf("rule4", "rule6")
             }
         }
 

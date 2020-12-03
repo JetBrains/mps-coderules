@@ -1326,7 +1326,7 @@ class TestIncrementalProgram {
         ).launch("launch", progSpec) { result ->
 
             result.storeView().constraintSymbols() shouldBe setOf(sym0("important"))
-            assertTrue( result.lastChunk().let { it is MatchJournal.MatchChunk && it.match.rule().tag() == "foo" } )
+            assertTrue( result.lastChunk().let { it is MatchJournal.MatchChunk && it.match.rule().uniqueTag().name() == "foo" } )
 
         }.also { (builder, evalRes) ->
 

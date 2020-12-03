@@ -61,7 +61,7 @@ class RuleBuilder(val tag: String, val segmentPath: List<Any>) {
         if (alt || body.isEmpty()) body.add(ArrayList<AndItem>())
         body.last().addAll(andItem)
     }
-    fun toRule(): Rule = MockRule(tag, segmentPath, kept, replaced, guard, body)
+    fun toRule(): Rule = MockRule(Rule.Tag(tag), segmentPath, kept, replaced, guard, body)
 }
 
 class MockHandler(
@@ -74,7 +74,7 @@ class MockHandler(
 }
 
 class MockRule(
-    val tag: String,
+    val tag: Rule.Tag,
     val segmentPath: List<Any>,
     val kept: Collection<Constraint>,
     val replaced: Collection<Constraint>,
@@ -86,8 +86,6 @@ class MockRule(
     override fun segmentPath(): List<Any> = segmentPath
 
     override fun uniqueTag() = tag
-
-    override fun tag(): String = tag
 
     override fun headKept(): Iterable<Constraint> = kept
 

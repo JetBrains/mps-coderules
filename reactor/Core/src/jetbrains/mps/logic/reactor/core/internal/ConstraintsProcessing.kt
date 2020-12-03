@@ -21,6 +21,7 @@ import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
 
@@ -85,7 +86,7 @@ internal class ConstraintsProcessing(
             with(JustifiedOccurrenceCreator(evidence(), initialChunk().justifications())) {
 
                 prototype.constraint.occurrence(
-                    controller.logicalStateObservable(), prototype.arguments(), prototype.logicalContext(), prototype.ruleUniqueTag()
+                    controller.logicalStateObservable(), prototype.arguments(), prototype.logicalContext(), prototype.sourceRule()
                 ).let { occ ->
                     trace.activate(occ)
                     processActivated(controller, occ, initialChunk(), inStatus)
@@ -233,7 +234,7 @@ internal class ConstraintsProcessing(
             observable: LogicalStateObservable,
             arguments: List<*>,
             logicalContext: LogicalContext,
-            ruleUniqueTag: Any? = null
+            ruleUniqueTag: Rule.Tag? = null
         ): Occurrence {
 
             // By default share justifications (as a small optimization)

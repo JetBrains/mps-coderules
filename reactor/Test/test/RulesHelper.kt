@@ -168,9 +168,9 @@ fun occurrence(id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
         .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(0), noLogicalContext)
 
-fun taggedOccurrence(ruleUniqueTag: Any, id: String, vararg args: Any): Occurrence =
+fun taggedOccurrence(ruleUniqueTag: String, id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
-        .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(0), noLogicalContext, ruleUniqueTag)
+        .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(0), noLogicalContext, Rule.Tag(ruleUniqueTag))
 
 fun justifiedOccurrence(id: String, evidence: Evidence, justifications: Justifications, principal: Boolean, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size), principal)

@@ -550,7 +550,7 @@ class TestRuleMatcher {
                 expand(occurrence("bar", x, y))             }.apply {
 
                 matches().size shouldBe 1
-                matches().first().rule().tag() shouldBe "rule1"
+                matches().first().rule().uniqueTag().name() shouldBe "rule1"
                 
             }
         }

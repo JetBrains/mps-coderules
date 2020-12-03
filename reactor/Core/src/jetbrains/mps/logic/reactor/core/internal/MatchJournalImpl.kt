@@ -48,7 +48,7 @@ internal open class MatchJournalImpl(
 
         val rulesWithOrigin = HashSet<Any>(4)
 
-        override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().tag()}, $entries)"
+        override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().uniqueTag().name()}, $entries)"
     }
 
     private class OccChunkImpl(override val occ: Occurrence) : ChunkImpl(), Justified by occ, OccChunk {
@@ -442,8 +442,7 @@ internal open class MatchJournalImpl(
 
         object EmptyRule : Rule() {
             override fun kind(): Kind = Kind.PROPAGATION
-            override fun uniqueTag(): Any = tag().hashCode()
-            override fun tag(): String = "__initialrule__"
+            override fun uniqueTag(): Tag = Rule.Tag("__initial_rule__")
             override fun headKept(): Iterable<Constraint> = emptyList()
             override fun headReplaced(): Iterable<Constraint> = emptyList()
             override fun guard(): Iterable<Predicate> = emptyList()

@@ -25,6 +25,7 @@ import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.program.Predicate
+import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
 
@@ -271,7 +272,7 @@ internal class ControllerImpl (
     inner private class Context(inStatus: FeedbackStatus,
                                 val checking: Boolean,
                                 val logicalContext: LogicalContext,
-                                val ruleUniqueTag: Any? = null,
+                                val ruleUniqueTag: Rule.Tag? = null,
                                 val trace: EvaluationTrace = EvaluationTrace.NULL) : InvocationContext
     {
 
@@ -279,7 +280,7 @@ internal class ControllerImpl (
 
         constructor(inStatus: FeedbackStatus,
                     logicalContext: LogicalContext,
-                    ruleUniqueTag: Any?  = null,
+                    ruleUniqueTag: Rule.Tag?  = null,
                     trace: EvaluationTrace = EvaluationTrace.NULL) :
         this(inStatus, false, logicalContext, ruleUniqueTag, trace) { }
 
