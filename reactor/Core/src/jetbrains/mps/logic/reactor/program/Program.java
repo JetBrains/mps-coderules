@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.program;
 
+import javaslang.collection.List;
 import javaslang.collection.Stream;
 import jetbrains.mps.logic.reactor.core.RulesDiff;
 
@@ -36,8 +37,10 @@ public abstract class Program {
 
     public abstract PreambleInfo preambleInfo();
 
+    @Deprecated
     public Program withRulesDiff(RulesDiff diff) { return this; };
 
+    @Deprecated
     public RulesDiff incrementalDiff() { return RulesDiff.emptyDiff(); };
 
     public Iterable<Rule> rules() {
@@ -49,4 +52,19 @@ public abstract class Program {
         }
         return allRules;
     };
+
+    /**
+     * Returns rules that have been created since the last evaluation of this program.
+     */
+    public Iterable<Rule> newRules () {
+        return incrementalDiff().getAdded();
+    }
+
+    /**
+     * Returns objects that identify rules removed from the previous invocation.
+     */
+    public Iterable<Object> droppedRules() {
+        return incrementalDiff().getRemoved();
+    }
+
 }

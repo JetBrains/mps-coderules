@@ -19,6 +19,7 @@ package jetbrains.mps.logic.reactor.core
 import jetbrains.mps.logic.reactor.program.Rule
 
 
+@Deprecated("superfluous")
 class RulesDiff(
     preserved: Iterable<Rule>,
     val added: Iterable<Rule>,

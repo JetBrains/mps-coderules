@@ -147,7 +147,7 @@ internal class EvaluationSessionImpl private constructor (
             val processing = ConstraintsProcessing(front, journal, logicalState, incrementality, trace, profiler)
 
             val processingStrategy = IncrementalProcessing(
-                incrementality, journal, program.incrementalDiff(), processing.getStateCleaner(), ruleIndex, trace
+                incrementality, journal, program.newRules(), program.droppedRules(), processing.getStateCleaner(), ruleIndex, trace
             )
             processing.setStrategy(processingStrategy)
 
@@ -187,7 +187,7 @@ internal class EvaluationSessionImpl private constructor (
             val processing = ConstraintsProcessing(front, journal, logicalState, incrementality, trace, profiler)
 
             val processingStrategy = PreambleProcessing(
-                incrementality, journal, program.incrementalDiff(), ruleIndex, trace
+                incrementality, journal, program.newRules(), ruleIndex, trace
             )
             processing.setStrategy(processingStrategy)
 

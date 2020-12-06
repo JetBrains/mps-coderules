@@ -20,6 +20,7 @@ import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.IncrementalSpec
+import jetbrains.mps.logic.reactor.program.Rule
 
 /**
  * Facade interface for incremental processing.
@@ -91,7 +92,8 @@ internal class NonIncrementalProcessing: ProcessingStrategy {
 internal class IncrementalProcessing(
     override val ispec: IncrementalSpec,
     val journal: MatchJournal,
-    rulesDiff: RulesDiff,
+    newRules: Iterable<Rule>,
+    droppedRules: Iterable<Any>,
     stateCleaner: ConstraintsProcessing.ProgramStateCleaner,
     ruleIndex: RuleIndex,
     trace: EvaluationTrace
@@ -101,8 +103,8 @@ internal class IncrementalProcessing(
     private val ruleOrdering = RuleOrdering(ruleIndex)
 
     private val continuator = ContinueOccurrencesStage(ispec, journalIndex)
-    private val invalidator = InvalidationStage(ispec, rulesDiff.removed, continuator, stateCleaner, trace)
-    private val adder = AdditionStage(ispec, rulesDiff.added, continuator, ruleOrdering, ruleIndex, trace)
+    private val invalidator = InvalidationStage(ispec, droppedRules.toSet(), continuator, stateCleaner, trace)
+    private val adder = AdditionStage(ispec, newRules, continuator, ruleOrdering, ruleIndex, trace)
     private val postponer = PostponeMatchesStage(ispec, journal, journalIndex, ruleOrdering)
 
 
@@ -180,7 +182,7 @@ internal class IncrementalProcessing(
 internal class PreambleProcessing(
     override val ispec: IncrementalSpec,
     val journal: MatchJournal,
-    rulesDiff: RulesDiff,
+    newRules: Iterable<Rule>,
     ruleIndex: RuleIndex,
     trace: EvaluationTrace
 ): ProcessingStrategy, IncrSpecHolder {
@@ -189,7 +191,7 @@ internal class PreambleProcessing(
     private val ruleOrdering = RuleOrdering(ruleIndex)
 
     private val continuator = ContinueOccurrencesStage(ispec, journalIndex)
-    private val adder = AdditionStage(ispec, rulesDiff.added, continuator, ruleOrdering, ruleIndex, trace)
+    private val adder = AdditionStage(ispec, newRules, continuator, ruleOrdering, ruleIndex, trace)
 
 
     override fun invalidatedFeedback(): FeedbackKeySet = emptySet()
