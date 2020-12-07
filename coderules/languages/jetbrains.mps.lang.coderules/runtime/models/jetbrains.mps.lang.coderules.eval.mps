@@ -45,11 +45,6 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
-    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
-      <concept id="1238852151516" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" flags="in" index="1LlUBW">
-        <child id="1238852204892" name="componentType" index="1Lm7xW" />
-      </concept>
-    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
@@ -4181,16 +4176,6 @@
         <property role="TrG5h" value="updatesRecorder" />
         <node concept="3uibUv" id="6nFpYluWDln" role="1tU5fm">
           <ref role="3uigEE" to="ksgm:6nFpYlu02jD" resolve="UpdatesRecorder" />
-          <node concept="1LlUBW" id="6nFpYluWDlo" role="11_B2D">
-            <node concept="3uibUv" id="6nFpYluWDlp" role="1Lm7xW">
-              <ref role="3uigEE" to="i348:1ffsG7bW_V4" resolve="RuleTemplate" />
-            </node>
-            <node concept="3vKaQO" id="6nFpYluWDlq" role="1Lm7xW">
-              <node concept="3uibUv" id="6nFpYluWDlr" role="3O5elw">
-                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-              </node>
-            </node>
-          </node>
         </node>
       </node>
       <node concept="3cqZAl" id="6nFpYluW_In" role="3clF45" />
@@ -5842,16 +5827,6 @@
       <node concept="3Tm6S6" id="6nFpYlu8ju6" role="1B3o_S" />
       <node concept="3uibUv" id="6nFpYlu8jSS" role="1tU5fm">
         <ref role="3uigEE" to="ksgm:6nFpYlu02jD" resolve="UpdatesRecorder" />
-        <node concept="1LlUBW" id="6nFpYlujG_w" role="11_B2D">
-          <node concept="3uibUv" id="6nFpYlujHxV" role="1Lm7xW">
-            <ref role="3uigEE" to="i348:1ffsG7bW_V4" resolve="RuleTemplate" />
-          </node>
-          <node concept="3vKaQO" id="6nFpYlujHPS" role="1Lm7xW">
-            <node concept="3uibUv" id="6nFpYlujI37" role="3O5elw">
-              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node concept="312cEg" id="6nFpYluW$vz" role="jymVt">
