@@ -221,6 +221,7 @@
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
+      <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="3648723375513868532" name="jetbrains.mps.lang.smodel.structure.NodePointer_ResolveOperation" flags="ng" index="Vyspw" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
@@ -499,6 +500,12 @@
                           <ref role="3cqZAo" node="tyIfzC3L6g" resolve="demo" />
                         </node>
                         <node concept="I4A8Y" id="tyIfzC40_M" role="2OqNvi" />
+                      </node>
+                      <node concept="2OqwBi" id="1XKnVQyDWb" role="37wK5m">
+                        <node concept="37vLTw" id="1XKnVQdS8f" role="2Oq$k0">
+                          <ref role="3cqZAo" node="tyIfzC3L6g" resolve="demo" />
+                        </node>
+                        <node concept="2Rxl7S" id="1XKnVQyFn0" role="2OqNvi" />
                       </node>
                     </node>
                   </node>
