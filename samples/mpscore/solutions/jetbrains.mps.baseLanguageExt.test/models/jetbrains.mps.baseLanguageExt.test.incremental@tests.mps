@@ -945,16 +945,16 @@
         <node concept="3clFbH" id="3FGJ5nvmXbU" role="3cqZAp" />
         <node concept="3cpWs8" id="3FGJ5nvmNZr" role="3cqZAp">
           <node concept="3cpWsn" id="3FGJ5nvmNZs" role="3cpWs9">
-            <property role="TrG5h" value="rdiff" />
-            <node concept="3uibUv" id="3FGJ5nvmNZt" role="1tU5fm">
-              <ref role="3uigEE" to="zx3l:~RulesDiff" resolve="RulesDiff" />
+            <property role="TrG5h" value="program" />
+            <node concept="3uibUv" id="4J__M6NkyJ" role="1tU5fm">
+              <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
             </node>
             <node concept="2OqwBi" id="3FGJ5nvmOk8" role="33vP2m">
               <node concept="37vLTw" id="3FGJ5nvmOfE" role="2Oq$k0">
                 <ref role="3cqZAo" node="3FGJ5nvmG16" resolve="launcher" />
               </node>
-              <node concept="liA8E" id="3FGJ5nvmOs6" role="2OqNvi">
-                <ref role="37wK5l" to="hfva:4VntlICr0sg" resolve="getRulesDiff" />
+              <node concept="liA8E" id="4J__M6NksE" role="2OqNvi">
+                <ref role="37wK5l" to="hfva:55idZnEz6lV" resolve="getProgram" />
               </node>
             </node>
           </node>
@@ -1011,10 +1011,10 @@
           </node>
           <node concept="2OqwBi" id="3FGJ5nvmUbs" role="1DdaDG">
             <node concept="37vLTw" id="3FGJ5nvmU0o" role="2Oq$k0">
-              <ref role="3cqZAo" node="3FGJ5nvmNZs" resolve="rdiff" />
+              <ref role="3cqZAo" node="3FGJ5nvmNZs" resolve="program" />
             </node>
-            <node concept="liA8E" id="3FGJ5nvmUpH" role="2OqNvi">
-              <ref role="37wK5l" to="zx3l:~RulesDiff.getAdded()" resolve="getAdded" />
+            <node concept="liA8E" id="4J__M6NkCU" role="2OqNvi">
+              <ref role="37wK5l" to="av0y:~Program.newRules()" resolve="newRules" />
             </node>
           </node>
         </node>
