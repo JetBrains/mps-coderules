@@ -5774,11 +5774,27 @@
             <node concept="3Tqbb2" id="3DgB4rOyEsl" role="1tU5fm">
               <ref role="ehGHo" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
             </node>
-            <node concept="2YIFZM" id="3DgB4rOyEWt" role="33vP2m">
-              <ref role="37wK5l" node="3DgB4rOynJm" resolve="functionalMethod" />
-              <ref role="1Pybhc" node="3DgB4rOynmN" resolve="FunctionalTypeUtil" />
-              <node concept="3A2sRY" id="3DgB4rOyEXK" role="37wK5m">
-                <ref role="3A2yKK" node="554EtBH_$E2" resolve="cls" />
+            <node concept="21kpad" id="2hQbw6GLqLS" role="33vP2m">
+              <node concept="1bVj0M" id="2hQbw6GLqLT" role="21kp3d">
+                <node concept="3clFbS" id="2hQbw6GLqLU" role="1bW5cS">
+                  <node concept="3clFbF" id="2hQbw6GLqLV" role="3cqZAp">
+                    <node concept="2YIFZM" id="2hQbw6GLqLW" role="3clFbG">
+                      <ref role="37wK5l" node="3DgB4rOynJm" resolve="functionalMethod" />
+                      <ref role="1Pybhc" node="3DgB4rOynmN" resolve="FunctionalTypeUtil" />
+                      <node concept="3A2sRY" id="2hQbw6GLqLX" role="37wK5m">
+                        <ref role="3A2yKK" node="554EtBH_$E2" resolve="cls" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1Ls8ON" id="2hQbw6GLqLY" role="21kp3f">
+                <node concept="3A2sRY" id="2hQbw6GLqLZ" role="1Lso8e">
+                  <ref role="3A2yKK" node="554EtBH_$E2" resolve="cls" />
+                </node>
+                <node concept="Xl_RD" id="2hQbw6GLqM0" role="1Lso8e">
+                  <property role="Xl_RC" value="funmethod" />
+                </node>
               </node>
             </node>
           </node>
