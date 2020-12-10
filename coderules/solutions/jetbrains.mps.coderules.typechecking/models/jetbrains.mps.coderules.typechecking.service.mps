@@ -867,6 +867,30 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="8aYibnfYOE" role="jymVt" />
+      <node concept="3clFb_" id="8aYibng9mM" role="jymVt">
+        <property role="TrG5h" value="withoutIncremental" />
+        <node concept="3clFbS" id="8aYibng9mP" role="3clF47">
+          <node concept="3clFbF" id="8aYibngeFZ" role="3cqZAp">
+            <node concept="37vLTI" id="8aYibngLuc" role="3clFbG">
+              <node concept="3clFbT" id="8aYibngL$6" role="37vLTx" />
+              <node concept="2OqwBi" id="8aYibngeMH" role="37vLTJ">
+                <node concept="Xjq3P" id="8aYibngeFY" role="2Oq$k0" />
+                <node concept="2OwXpG" id="8aYibngKVP" role="2OqNvi">
+                  <ref role="2Oxat5" node="8aYibngo_I" resolve="incremental" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="8aYibngLPv" role="3cqZAp">
+            <node concept="Xjq3P" id="8aYibngLPt" role="3clFbG" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="8aYibng4l7" role="1B3o_S" />
+        <node concept="3uibUv" id="8aYibng8NF" role="3clF45">
+          <ref role="3uigEE" node="27bTNFfaJxq" resolve="TypecheckingTestHelper.Checker" />
+        </node>
+      </node>
       <node concept="2tJIrI" id="4ZGicUYVMR_" role="jymVt" />
       <node concept="3clFb_" id="27bTNFfaYS2" role="jymVt">
         <property role="TrG5h" value="checkTypes" />
@@ -996,8 +1020,8 @@
                         <node concept="3clFbJ" id="53SlZu3VvPF" role="3cqZAp">
                           <node concept="3clFbS" id="53SlZu3VvPG" role="3clFbx">
                             <node concept="3cpWs6" id="53SlZu3VvPH" role="3cqZAp">
-                              <node concept="3clFbT" id="53SlZu3VvPI" role="3cqZAk">
-                                <property role="3clFbU" value="true" />
+                              <node concept="37vLTw" id="8aYibngBNL" role="3cqZAk">
+                                <ref role="3cqZAo" node="8aYibngo_I" resolve="incremental" />
                               </node>
                             </node>
                           </node>
@@ -2779,6 +2803,14 @@
         <node concept="3Tm6S6" id="pupwRqjrHp" role="1B3o_S" />
         <node concept="10P_77" id="pupwRqjuwd" role="1tU5fm" />
         <node concept="3clFbT" id="pupwRqjwZ5" role="33vP2m">
+          <property role="3clFbU" value="true" />
+        </node>
+      </node>
+      <node concept="312cEg" id="8aYibngo_I" role="jymVt">
+        <property role="TrG5h" value="incremental" />
+        <node concept="3Tm6S6" id="8aYibngk6d" role="1B3o_S" />
+        <node concept="10P_77" id="8aYibngohi" role="1tU5fm" />
+        <node concept="3clFbT" id="8aYibngsLg" role="33vP2m">
           <property role="3clFbU" value="true" />
         </node>
       </node>
