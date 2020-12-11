@@ -37105,6 +37105,58 @@
         </node>
       </node>
     </node>
+    <node concept="1nLNMY" id="2hQbw6HgM$R" role="1nK1Vg">
+      <property role="TrG5h" value="interface_requireExtended" />
+      <node concept="3clFbS" id="2hQbw6HgM$S" role="1nLNMH">
+        <node concept="Oftf1" id="2hQbw6HgNAQ" role="3cqZAp">
+          <node concept="2OqwBi" id="2hQbw6HgNAR" role="Oftjs">
+            <node concept="3A2sRY" id="2hQbw6HgNH5" role="2Oq$k0">
+              <ref role="3A2yKK" node="2hQbw6HgM$U" resolve="i" />
+            </node>
+            <node concept="3Tsc0h" id="2hQbw6HgOpx" role="2OqNvi">
+              <ref role="3TtcxE" to="tpee:g7HQHFn" resolve="extendedInterface" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2t___k" id="2hQbw6HgM$T" role="1nLNMg">
+        <ref role="2t_S0q" to="tpee:g7HP654" resolve="Interface" />
+        <node concept="3A20r5" id="2hQbw6HgM$U" role="2t_VXX">
+          <property role="TrG5h" value="i" />
+        </node>
+      </node>
+    </node>
+    <node concept="1nLNMY" id="2hQbw6HjmeY" role="1nK1Vg">
+      <property role="TrG5h" value="classConcept_requireSuper" />
+      <node concept="3clFbS" id="2hQbw6HjmeZ" role="1nLNMH">
+        <node concept="Oftf1" id="2hQbw6Hjnn4" role="3cqZAp">
+          <node concept="2OqwBi" id="2hQbw6Hjnn5" role="Oftjs">
+            <node concept="3A2sRY" id="2hQbw6Hjnsx" role="2Oq$k0">
+              <ref role="3A2yKK" node="2hQbw6Hjmf1" resolve="cc" />
+            </node>
+            <node concept="3Tsc0h" id="2hQbw6Hjofl" role="2OqNvi">
+              <ref role="3TtcxE" to="tpee:fWEKbgp" resolve="implementedInterface" />
+            </node>
+          </node>
+        </node>
+        <node concept="1mebxG" id="2hQbw6Hjont" role="3cqZAp">
+          <node concept="2OqwBi" id="2hQbw6HjoJh" role="1mebXD">
+            <node concept="3A2sRY" id="2hQbw6HjonK" role="2Oq$k0">
+              <ref role="3A2yKK" node="2hQbw6Hjmf1" resolve="cc" />
+            </node>
+            <node concept="3TrEf2" id="2hQbw6HjoRr" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpee:gXzkM_H" resolve="superclass" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2t___k" id="2hQbw6Hjmf0" role="1nLNMg">
+        <ref role="2t_S0q" to="tpee:fz12cDA" resolve="ClassConcept" />
+        <node concept="3A20r5" id="2hQbw6Hjmf1" role="2t_VXX">
+          <property role="TrG5h" value="cc" />
+        </node>
+      </node>
+    </node>
     <node concept="1nLNMY" id="1sJZ0_oUxQC" role="1nK1Vg">
       <property role="TrG5h" value="typeVariable_requireDecl" />
       <node concept="3clFbS" id="1sJZ0_oUxQD" role="1nLNMH">
@@ -53532,6 +53584,32 @@
       <node concept="1zAsnw" id="3wxtToEiJ2s" role="lGtFl">
         <node concept="3SKdUq" id="3wxtToEiJ2t" role="27qylF">
           <property role="3SKdUp" value="capture conversion" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="AVZre" id="2hQbw6HdHMi">
+    <property role="3GE5qa" value="rule.code" />
+    <property role="TrG5h" value="MethDecl" />
+    <ref role="2YbDB9" node="34$A1Mf51rY" resolve="TypeOf" />
+    <node concept="1nLNMY" id="2hQbw6HdHMl" role="1nK1Vg">
+      <property role="TrG5h" value="baseMethodDeclaration" />
+      <node concept="3clFbS" id="2hQbw6HdHMm" role="1nLNMH">
+        <node concept="Oftf1" id="2hQbw6HdHMw" role="3cqZAp">
+          <node concept="2OqwBi" id="2hQbw6HdI9k" role="Oftjs">
+            <node concept="3A2sRY" id="2hQbw6HdHMR" role="2Oq$k0">
+              <ref role="3A2yKK" node="2hQbw6HdHMo" resolve="bmd" />
+            </node>
+            <node concept="3Tsc0h" id="2hQbw6HdJ6I" role="2OqNvi">
+              <ref role="3TtcxE" to="tpee:fzclF7Y" resolve="parameter" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2t___k" id="2hQbw6HdHMn" role="1nLNMg">
+        <ref role="2t_S0q" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+        <node concept="3A20r5" id="2hQbw6HdHMo" role="2t_VXX">
+          <property role="TrG5h" value="bmd" />
         </node>
       </node>
     </node>
