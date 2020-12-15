@@ -211,10 +211,10 @@ internal class EvaluationSessionImpl private constructor (
             val outputOccurrences = histView.filterOccurrences(inputStore)
             // todo: make output store in other processing strategies?
 
+            outputOccurrences.forEach{ it.terminate(logicalState) }
             processing.resetStore() // clear observers
             // todo: need clearing occurrenceContractObservers? (MPSCR-66)
             logicalState.reset()
-            outputOccurrences.forEach{ it.terminate(logicalState) }
 
             val rules = ruleIndex.toRules().filter(preambleInfo::inPreamble)
 

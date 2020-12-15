@@ -65,11 +65,9 @@ class Occurrence (observable: LogicalStateObservable,
     override fun parentUpdated(logical: Logical<*>, controller: Controller) = doReactivate(controller)
 
     fun terminate(observable: LogicalStateObservable) {
-        if (alive) {
-            for (a in arguments) {
-                if (a is Logical<*>) {
-                    observable.removeForwardingObserver(a, this)
-                }
+        for (a in arguments) {
+            if (a is Logical<*>) {
+                observable.removeForwardingObserver(a, this)
             }
         }
         alive = false
