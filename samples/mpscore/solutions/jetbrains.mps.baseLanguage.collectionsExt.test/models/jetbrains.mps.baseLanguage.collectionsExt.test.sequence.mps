@@ -11,6 +11,7 @@
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -530,31 +531,6 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="3MFPGC50QxI" role="3cqZAp">
-          <node concept="1PaTwC" id="3MFPGC50QxJ" role="1aUNEU">
-            <node concept="3oM_SD" id="3MFPGC50QB$" role="1PaTwD">
-              <property role="3oM_SC" value="todo:" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC50QDa" role="1PaTwD">
-              <property role="3oM_SC" value="ensure" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC50RAS" role="1PaTwD">
-              <property role="3oM_SC" value="covariance" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC50RCK" role="1PaTwD">
-              <property role="3oM_SC" value="b/w" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC50RCX" role="1PaTwD">
-              <property role="3oM_SC" value="sequence" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC50RDT" role="1PaTwD">
-              <property role="3oM_SC" value="&amp;" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC50RE0" role="1PaTwD">
-              <property role="3oM_SC" value="Iterable" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="3MFPGC522uf" role="3cqZAp">
           <node concept="3cpWsn" id="3MFPGC522ug" role="3cpWs9">
             <property role="TrG5h" value="xsC" />
@@ -565,9 +541,6 @@
             </node>
             <node concept="37vLTw" id="3MFPGC522uj" role="33vP2m">
               <ref role="3cqZAo" node="3MFPGC50JHZ" resolve="cs" />
-            </node>
-            <node concept="1U20sH" id="4NtT$ZxGQZ5" role="lGtFl">
-              <property role="1U20sK" value="error" />
             </node>
           </node>
         </node>
@@ -647,6 +620,60 @@
           </node>
         </node>
         <node concept="3clFbH" id="3MFPGC50ZnZ" role="3cqZAp" />
+        <node concept="3cpWs8" id="2hQbw6I2YL9" role="3cqZAp">
+          <node concept="3cpWsn" id="2hQbw6I2YLa" role="3cpWs9">
+            <property role="TrG5h" value="listOfB" />
+            <node concept="3uibUv" id="2hQbw6I2YL7" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3uibUv" id="2hQbw6I2YSo" role="11_B2D">
+                <ref role="3uigEE" node="3MFPGC51RNv" resolve="SequenceConversions.B" />
+              </node>
+            </node>
+            <node concept="10Nm6u" id="2hQbw6I2ZdO" role="33vP2m" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2hQbw6I2Znc" role="3cqZAp">
+          <node concept="3cpWsn" id="2hQbw6I2Znf" role="3cpWs9">
+            <property role="TrG5h" value="seqOfB" />
+            <node concept="A3Dl8" id="2hQbw6I2Zn9" role="1tU5fm">
+              <node concept="3uibUv" id="2hQbw6I2ZtK" role="A3Ik2">
+                <ref role="3uigEE" node="3MFPGC51RNv" resolve="SequenceConversions.B" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="2hQbw6I2ZLB" role="33vP2m">
+              <ref role="3cqZAo" node="2hQbw6I2YLa" resolve="listOfB" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2hQbw6I2ZRr" role="3cqZAp">
+          <node concept="3cpWsn" id="2hQbw6I2ZRs" role="3cpWs9">
+            <property role="TrG5h" value="seqOfA" />
+            <node concept="A3Dl8" id="2hQbw6I2ZRt" role="1tU5fm">
+              <node concept="3uibUv" id="2hQbw6I30a6" role="A3Ik2">
+                <ref role="3uigEE" node="3MFPGC51QOV" resolve="SequenceConversions.A" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="2hQbw6I2ZRv" role="33vP2m">
+              <ref role="3cqZAo" node="2hQbw6I2YLa" resolve="listOfB" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2hQbw6I30$l" role="3cqZAp">
+          <node concept="3cpWsn" id="2hQbw6I30$m" role="3cpWs9">
+            <property role="TrG5h" value="seqOfC" />
+            <node concept="A3Dl8" id="2hQbw6I30$n" role="1tU5fm">
+              <node concept="3uibUv" id="2hQbw6I30ZL" role="A3Ik2">
+                <ref role="3uigEE" node="3MFPGC51S8B" resolve="SequenceConversions.C" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="2hQbw6I30$p" role="33vP2m">
+              <ref role="3cqZAo" node="2hQbw6I2YLa" resolve="listOfB" />
+            </node>
+            <node concept="1U20sH" id="2hQbw6I31qn" role="lGtFl">
+              <property role="1U20sK" value="error" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="3MFPGC50J3J" role="1B3o_S" />
       <node concept="3cqZAl" id="3MFPGC50J3K" role="3clF45" />
@@ -803,31 +830,6 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="3MFPGC52ar2" role="3cqZAp">
-          <node concept="1PaTwC" id="3MFPGC52ar3" role="1aUNEU">
-            <node concept="3oM_SD" id="3MFPGC52ar4" role="1PaTwD">
-              <property role="3oM_SC" value="todo:" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC52ar5" role="1PaTwD">
-              <property role="3oM_SC" value="ensure" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC52ar6" role="1PaTwD">
-              <property role="3oM_SC" value="covariance" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC52ar7" role="1PaTwD">
-              <property role="3oM_SC" value="b/w" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC52ar8" role="1PaTwD">
-              <property role="3oM_SC" value="sequence" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC52ar9" role="1PaTwD">
-              <property role="3oM_SC" value="&amp;" />
-            </node>
-            <node concept="3oM_SD" id="3MFPGC52ara" role="1PaTwD">
-              <property role="3oM_SC" value="Iterable" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="3MFPGC52arb" role="3cqZAp">
           <node concept="3cpWsn" id="3MFPGC52arc" role="3cpWs9">
             <property role="TrG5h" value="xsC" />
@@ -838,9 +840,6 @@
             </node>
             <node concept="37vLTw" id="3MFPGC52arf" role="33vP2m">
               <ref role="3cqZAo" node="3MFPGC528cV" resolve="cs" />
-            </node>
-            <node concept="1U20sH" id="4NtT$ZxGRvn" role="lGtFl">
-              <property role="1U20sK" value="error" />
             </node>
           </node>
         </node>
