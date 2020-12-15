@@ -54,13 +54,26 @@ internal interface ProcessingStrategy {
      * Should return a filtered [matches] list.
      */
     fun processOccurrenceMatches(active: Occurrence, matches: List<RuleMatchEx>): List<RuleMatchEx>
+
+    /**
+     * Called on new activated [Occurrence]. Allows to handle program's
+     * logical state, e.g. add processing-specific observers with [observable].
+     */
+    fun processActivated(active: Occurrence, observable: LogicalStateObservable): Unit
+
+    /**
+     * Called for each replaced [Occurrence] in match's head.
+     * It's a pair method for [processActivated] to discharge its effects,
+     * e.g. for clearing program logical state.
+     */
+    fun processDiscarded(occ: Occurrence, observable: LogicalStateObservable): Unit
 }
 
 
 /**
  * Default non-incremental processing with stubs.
  */
-internal class NonIncrementalProcessing: ProcessingStrategy {
+internal open class DefaultProcessing: ProcessingStrategy {
 
     override fun invalidatedFeedback(): FeedbackKeySet = emptySet()
 
@@ -75,6 +88,31 @@ internal class NonIncrementalProcessing: ProcessingStrategy {
     override fun processMatch(match: RuleMatchEx) {}
 
     override fun processOccurrenceMatches(active: Occurrence, matches: List<RuleMatchEx>): List<RuleMatchEx> = matches
+
+    override fun processActivated(active: Occurrence, observable: LogicalStateObservable) {}
+
+    override fun processDiscarded(occ: Occurrence, observable: LogicalStateObservable) {}
+}
+
+
+/**
+ * Processing strategy that observes logical vars and ensures basic incremental contract.
+ */
+internal open class GroundProcessing(override val ispec: IncrementalSpec): DefaultProcessing(), IncrSpecHolder {
+
+    private val occurrenceContractObserver: OccurrenceContractObserver? =
+        if (ispec.assertLevel().assertContracts()) OccurrenceContractObserver(ispec) else null
+
+    override fun processActivated(active: Occurrence, observable: LogicalStateObservable) {
+        occurrenceContractObserver?.onActivated(active, observable)
+    }
+
+    override fun processDiscarded(occ: Occurrence, observable: LogicalStateObservable) {
+        if (occ.isPrincipal) {
+            occurrenceContractObserver?.onDiscarded(occ, observable)
+        }
+    }
+
 }
 
 
@@ -97,14 +135,14 @@ internal class NonIncrementalProcessing: ProcessingStrategy {
  * in [IncrementalProcessing].
  */
 internal class IncrementalProcessing(
-    override val ispec: IncrementalSpec,
+    ispec: IncrementalSpec,
     val journal: MatchJournal,
     newRules: Iterable<Rule>,
     droppedRules: Iterable<Any>,
     stateCleaner: ConstraintsProcessing.ProgramStateCleaner,
     ruleIndex: RuleIndex,
     trace: EvaluationTrace
-): ProcessingStrategy, IncrSpecHolder {
+): GroundProcessing(ispec) {
 
     private val journalIndex = journal.index()
     private val ruleOrdering = RuleOrdering(ruleIndex)
@@ -126,6 +164,7 @@ internal class IncrementalProcessing(
 
     override fun processOccurrenceMatches(active: Occurrence, matches: List<RuleMatchEx>) =
         postponeFutureMatchesImpl(active, matches)
+
 
     override fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint): FeedbackStatus {
         var status: FeedbackStatus = FeedbackStatus.NORMAL()
@@ -188,31 +227,21 @@ internal class IncrementalProcessing(
  *
  * Journal invalidation and injected intermediate processing with
  * [processMatch] & [processOccurrenceMatches] are not needed for this.
- * So this strategy is very close to the default [NonIncrementalProcessing].
+ * So this strategy is very close to the default [DefaultProcessing].
  */
 internal class PreambleProcessing(
-    override val ispec: IncrementalSpec,
+    ispec: IncrementalSpec,
     val journal: MatchJournal,
     newRules: Iterable<Rule>,
     ruleIndex: RuleIndex,
     trace: EvaluationTrace
-): ProcessingStrategy, IncrSpecHolder {
+): GroundProcessing(ispec) {
 
     private val journalIndex = journal.index()
     private val ruleOrdering = RuleOrdering(ruleIndex)
 
     private val continuator = ContinueOccurrencesStage(ispec, journalIndex)
     private val adder = AdditionStage(ispec, newRules, continuator, ruleOrdering, ruleIndex, trace)
-
-
-    override fun invalidatedFeedback(): FeedbackKeySet = emptySet()
-
-    override fun invalidatedRules(): List<Any> = emptyList()
-
-    override fun processMatch(match: RuleMatchEx) = Unit
-
-    override fun processOccurrenceMatches(active: Occurrence, matches: List<RuleMatchEx>) = matches
-
 
     override fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint): FeedbackStatus {
         var status: FeedbackStatus = FeedbackStatus.NORMAL()
@@ -243,20 +272,14 @@ internal class PreambleProcessing(
  * Importantly, one ensured by [OccurrenceContractObserver].
  */
 internal class CachedOccurrencesProcessing(
-    override val ispec: IncrementalSpec,
+    ispec: IncrementalSpec,
     private val occurrences: OccurrenceStore
-): ProcessingStrategy, IncrSpecHolder {
+): GroundProcessing(ispec) {
 
     private var inPreamble = true
 
     private val postponedMatches: MutableList<Pair<Occurrence, List<RuleMatchEx>>> = mutableListOf()
 
-
-    override fun invalidatedFeedback(): FeedbackKeySet = emptySet()
-
-    override fun invalidatedRules(): List<Any> = emptyList()
-
-    override fun processMatch(match: RuleMatchEx) = Unit
 
     override fun processOccurrenceMatches(active: Occurrence, matches: List<RuleMatchEx>) =
         if (inPreamble && matches.isNotEmpty()) {

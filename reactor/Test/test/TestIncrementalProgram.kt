@@ -1574,8 +1574,62 @@ class TestIncrementalProgram {
                 ))
         ).launch("violate contract assertion", progSpec) { result ->
 
-            result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
+            //NB: this check isn't supposed to be even run because of exception
+            //result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
 
+        }
+    }
+
+    @Test(expected = EvaluationFailureException::class)
+    fun violatePrincipalLogicalContractOnRelaunch() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "produceBound"),
+            setOf(sym1("foo"))
+        ).withContractChecks()
+
+        val (X, Y) = metaLogical<Int>("X", "Y")
+
+        val fooMatch =
+            rule("produceBound",
+                headKept(
+                    pconstraint("foo", X)
+                ),
+                body(
+                    statement({ x, y -> eq(x,y) }, X, Y),
+                    constraint("hasBound", Y)
+                ))
+
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    pconstraint("foo", X)
+                )),
+
+            // place for inserting 'fooMatch' rule
+
+            rule("bindVar",
+                headKept(
+                    constraint("hasBound", Y)
+                ),
+                body(
+                    statement({ y -> y.set(42) }, Y)
+                ))
+
+        ).launch("normal run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"))
+
+        }.let { (builder, evalRes) ->
+            builder
+                .insertRulesAt(1, fooMatch)
+                .relaunch("violate contract assertion", progSpec, evalRes.token()) { result ->
+
+                    //NB: this check isn't supposed to be even run because of exception
+                    //result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
+                }
         }
     }
 

@@ -33,16 +33,16 @@ import kotlin.collections.HashSet
  * must be immutable, that is, logicals can't be unified
  * with either ground or free other logicals.
  */
-internal class OccurrenceContractObserver(private val observable: LogicalStateObservable, override val ispec: IncrementalSpec): IncrSpecHolder {
+internal class OccurrenceContractObserver(override val ispec: IncrementalSpec): IncrSpecHolder {
     private val observers: HashMap<Int, UnmodifiableLogicalObserver> = hashMapOf()
 
-    fun onActivated(occ: Occurrence) {
+    fun onActivated(occ: Occurrence, observable: LogicalStateObservable) {
         if (occ.isPrincipal) {
             observers[occ.identity] = UnmodifiableLogicalObserver(occ, observable)
         }
     }
 
-    fun onDiscarded(occ: Occurrence) {
+    fun onDiscarded(occ: Occurrence, observable: LogicalStateObservable) {
         // NB: works between incremental sessions only if this instance is preserved between them
         // observers.remove(occ.identity)?.removeObservers(observable)
 

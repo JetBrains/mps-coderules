@@ -46,12 +46,7 @@ internal class ConstraintsProcessing(
 
 ) : StoreAwareJournalImpl(journal, logicalState), IncrSpecHolder {
 
-    private var incrementalProcessing: ProcessingStrategy = NonIncrementalProcessing()
-
-    // todo: move to IncrementalProcessing
-    private val occurrenceContractObserver: OccurrenceContractObserver? =
-        if (ispec.assertLevel().assertContracts()) OccurrenceContractObserver(logicalState, ispec) else null
-
+    private var incrementalProcessing: ProcessingStrategy = DefaultProcessing()
 
     fun setStrategy(strategy: ProcessingStrategy) { this.incrementalProcessing = strategy }
 
@@ -108,9 +103,7 @@ internal class ConstraintsProcessing(
             active.stored = true
             logActivation(active)
             active.revive(logicalState)
-
-            // fixme: move to incremental facade
-            occurrenceContractObserver?.onActivated(active)
+            incrementalProcessing.processActivated(active, logicalState)
         }
         assert(active.alive)
 
@@ -194,7 +187,8 @@ internal class ConstraintsProcessing(
 
                 profiler.profile("terminateOccurrence") {
 
-                    occ.clearLogicalState(logicalState)
+                    occ.terminate(logicalState)
+                    incrementalProcessing.processDiscarded(occ, logicalState)
 
                 }
 
@@ -204,18 +198,11 @@ internal class ConstraintsProcessing(
         }
     }
 
-    private fun Occurrence.clearLogicalState(observable: LogicalStateObservable) {
-        terminate(observable)
-        if (occurrenceContractObserver != null && this.isPrincipal) {
-            occurrenceContractObserver.onDiscarded(this)
-        }
-    }
-
-
     inner class ProgramStateCleaner{
         fun erase(occurrence: Occurrence) {
             dispatchingFront = dispatchingFront.forget(occurrence)
-            occurrence.clearLogicalState(logicalState)
+            occurrence.terminate(logicalState)
+            incrementalProcessing.processDiscarded(occurrence, logicalState)
         }
 
         fun erase(match: RuleMatchEx) {

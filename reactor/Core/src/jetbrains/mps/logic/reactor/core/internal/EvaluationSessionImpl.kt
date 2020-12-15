@@ -114,7 +114,7 @@ internal class EvaluationSessionImpl private constructor (
             val logicalState = LogicalState()
             val dispatchingFront = Dispatcher(ruleIndex).front()
 
-            val processingStrategy = NonIncrementalProcessing()
+            val processingStrategy = GroundProcessing(incrementality)
             val processing = ConstraintsProcessing(dispatchingFront, journal, logicalState, incrementality, trace, profiler)
             processing.setStrategy(processingStrategy)
 
@@ -168,7 +168,6 @@ internal class EvaluationSessionImpl private constructor (
         override fun endSession(session: SessionParts): SessionToken = with(session) {
             val histView = journal.view()
             processing.resetStore() // clear observers
-            // todo: need clearing occurrenceContractObservers? (MPSCR-66)
             val principalState = sessionState(frontState).resetLookup()
             return SessionTokenImpl(histView, emptyList(), ruleIndex.toRules(), principalState, logicalState, ruleIndex)
         }
@@ -213,7 +212,6 @@ internal class EvaluationSessionImpl private constructor (
 
             outputOccurrences.forEach{ it.terminate(logicalState) }
             processing.resetStore() // clear observers
-            // todo: need clearing occurrenceContractObservers? (MPSCR-66)
             logicalState.reset()
 
             val rules = ruleIndex.toRules().filter(preambleInfo::inPreamble)
