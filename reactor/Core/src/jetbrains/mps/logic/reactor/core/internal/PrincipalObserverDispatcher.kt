@@ -37,12 +37,15 @@ interface PrincipalObserverDispatcher {
     fun isTriggered(occ: Occurrence): Boolean
     fun removeTriggered(occ: Occurrence): Boolean
 
+    fun isEmpty(): Boolean
+    fun isNotEmpty() = !isEmpty()
 
     companion object EMPTY : PrincipalObserverDispatcher {
         override fun onActivated(occ: Occurrence, observable: LogicalStateObservable) { }
         override fun onInvalidated(occ: Occurrence, observable: LogicalStateObservable) { }
         override fun setTriggerReceiver(receiver: ObserverTriggeredHandler) { }
         override fun clearTriggerReceiver() { }
+        override fun isEmpty(): Boolean = true
         override fun isObserving(occ: Occurrence): Boolean = false
         override fun isTriggered(occ: Occurrence): Boolean = false
         override fun removeTriggered(occ: Occurrence): Boolean = false
@@ -85,6 +88,8 @@ internal class LogicalBindObserverDispatcher : PrincipalObserverDispatcher {
         observing.remove(occ.identity)?.removeObservers(observable)
     }
 
+    override fun isEmpty(): Boolean = triggered.isEmpty() //&& observing.isEmpty()
+
     override fun isObserving(occ: Occurrence): Boolean = observing.containsKey(occ.identity)
 
     override fun isTriggered(occ: Occurrence): Boolean = triggered.contains(occ.identity)
@@ -99,10 +104,6 @@ internal class LogicalBindObserverDispatcher : PrincipalObserverDispatcher {
             //  then remember it for later requests
             triggered.add(source.identity)
         }
-
-//        checkContract(false) {
-//            "$logical can't be unified because it's used in principal occurrence $source"
-//        }
     }
 
     private inner class LogicalBindObserver(

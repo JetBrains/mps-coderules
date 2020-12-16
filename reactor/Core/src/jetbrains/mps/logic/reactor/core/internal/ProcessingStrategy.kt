@@ -19,6 +19,7 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.program.IncrementalContractViolationException
 import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.program.Rule
 
@@ -192,7 +193,7 @@ internal class IncrementalProcessing(
     override fun offerMatch(match: RuleMatchEx) =
         !match.allHeads().filter { it.isPrincipal }.toList().let {
             if (it.isNotEmpty()) {
-                rewinder.receive(it.asSequence())
+                rewinder.receiveStrict(it.asSequence(), match)
             } else false
         }
 
@@ -250,13 +251,20 @@ internal class IncrementalProcessing(
             postponer.postponeFutureMatches(matches)
         } else matches
 
+    private fun RewindVolatileOccurrencesStage.receiveStrict(occs: Sequence<Occurrence>, match: RuleMatchEx) =
+        rewinder.receive(occs).also {
+            if (ispec.assertLevel() == IncrementalSpec.AssertLevel.AssertContracts) {
+                throw IncrementalContractViolationException(
+                    "Incremental processing can't guarantee correctness for match ${match.rule().uniqueTag()}"
+                )
+            }
+        }
 
     private fun RewindVolatileOccurrencesStage.rewind(cursor: ChunkReader): Boolean =
         maybeReset(cursor)?.let { rewindPos ->
             // This is the only place where journal can be reset to past
             // fixme: modifying not through cursor; not the cleanest way
             posTracker.rewind(rewindPos)
-            // fixme: modifying not through cursor; not the cleanest way
 
             // Some stages on rewind need to take actions (e.g. clear internal state)
             continuator.onRewind(cursor)

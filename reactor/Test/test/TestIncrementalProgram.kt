@@ -1479,7 +1479,7 @@ class TestIncrementalProgram {
     }
 
     @Test
-    fun observerReactivatesFutureOccurrence() {
+    fun observerCantReactivateFutureOccurrence() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "bindVar", "produceBound", "eliminateBound"),
             setOf(sym1("foo"))
@@ -1519,7 +1519,7 @@ class TestIncrementalProgram {
             // Insert rule before produceBound: test whether
             //  occurrence reactivation due to var bind can occur
             //  before this occurrence is actually activated,
-            //  which leads, of course, to inconsistent state.
+            //  which would lead, of course, to inconsistent state.
             builder.insertRulesAt(1,
                 rule("bindVar",
                     headKept(
@@ -1530,57 +1530,10 @@ class TestIncrementalProgram {
                     ))
             ).relaunch("test reactivation", progSpec, evalRes.token()) { result ->
 
-                // Currently incremental processing can't handle such rule dependencies
-                //  stemming from incremental changes to logicals,
-                //  so "eliminateBound" rule won't be reexecuted.
-                // But reactivation of hasBound shouldn't pass either,
-                //  because 'hasBound' isn't in store at the point of tried reactivation.
-                result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
-
                 // NB: this is correct if incremental processing
                 //  takes into account rule dependencies due to logicals.
-                // result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym0("unexpected"))
+                result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"))
             }
-        }
-    }
-
-    @Ignore("feature is superseded")
-    @Test(expected = EvaluationFailureException::class)
-    fun violatePrincipalLogicalContract() {
-        val progSpec = MockIncrProgSpec(
-            setOf("main", "produceBound"),
-            setOf(sym0("main"), sym1("foo"))
-        ).withContractChecks()
-
-        val (X, Y) = metaLogical<Int>("X", "Y")
-        programWithRules(
-            rule("main",
-                headReplaced(
-                    pconstraint("main")
-                ),
-                body(
-                    pconstraint("foo", X)
-                )),
-            rule("produceBound",
-                headKept(
-                    pconstraint("foo", X)
-                ),
-                body(
-                    statement({ x, y -> eq(x,y) }, X, Y),
-                    constraint("hasBound", Y)
-                )),
-            rule("bindVar",
-                headKept(
-                    constraint("hasBound", Y)
-                ),
-                body(
-                    statement({ y -> y.set(42) }, Y)
-                ))
-        ).launch("violate contract assertion", progSpec) { result ->
-
-            //NB: this check isn't supposed to be even run because of exception
-            result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
-
         }
     }
 
@@ -1639,7 +1592,7 @@ class TestIncrementalProgram {
         val progSpec = MockIncrProgSpec(
             setOf("main", "bindVar", "beforeBind"),
             setOf(sym0("main"), sym1("foo"))
-        ).withContractChecks()
+        )
 
         val X = metaLogical<Int>("X")
 
@@ -1694,7 +1647,7 @@ class TestIncrementalProgram {
         val progSpec = MockIncrProgSpec(
             setOf("main", "bindVar", "checkFresh"),
             setOf(sym0("main"), sym1("foo"))
-        ).withContractChecks()
+        )
 
         val X = metaLogical<Int>("X")
 
@@ -1745,7 +1698,7 @@ class TestIncrementalProgram {
         val progSpec = MockIncrProgSpec(
             setOf("main", "produceBound", "beforeProduceBound"),
             setOf(sym0("main"), sym1("foo"))
-        ).withContractChecks()
+        )
 
         val (X, Y) = metaLogical<Int>("X", "Y")
 
@@ -1805,7 +1758,7 @@ class TestIncrementalProgram {
         val progSpec = MockIncrProgSpec(
             setOf("main", "bindVar", "beforeBind"),
             setOf(sym0("main"), sym1("foo"))
-        ).withContractChecks()
+        )
 
         val X = metaLogical<Int>("X")
 
@@ -1858,7 +1811,7 @@ class TestIncrementalProgram {
         val progSpec = MockIncrProgSpec(
             setOf("main", "produceBound", "beforeProduceBound", "runFoo"),
             setOf(sym0("main"), sym1("foo"), sym0("runFoo"))
-        ).withContractChecks()
+        )
 
         val (X, Y) = metaLogical<Int>("X", "Y")
 
@@ -1928,7 +1881,7 @@ class TestIncrementalProgram {
         val progSpec = MockIncrProgSpec(
             setOf("main", "produceBound", "uniVars", "bindVar", "checkFresh"),
             setOf(sym0("main"), sym1("foo"), sym1("bar"))
-        ).withContractChecks()
+        )
 
         val (X, Y) = metaLogical<Int>("X", "Y")
 

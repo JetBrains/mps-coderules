@@ -73,29 +73,44 @@ internal class EvaluationSessionImpl private constructor (
     @Suppress("UNCHECKED_CAST")
     override fun <T : Any> parameter(key: ParameterKey<T>): T? = params ?.get(key) as T
 
+    private fun SessionToken?.hasBindingObservers() =
+        (this as? SessionTokenImpl)?.principalObservers?.isNotEmpty() ?: false
+
     private fun launch(token: SessionToken?, store: OccurrenceStore, main: Constraint): EvaluationResult {
         val sessionProcessing: ProcessingSession =
             with(incrementality) {
                 when {
-                    ability().allowed() && incrLevel() == IncrementalSpec.IncrLevel.Full ->
-                        IncrementalProcessingSession()
-                    ability().allowed() && incrLevel() == IncrementalSpec.IncrLevel.Preamble ->
-                        PreambleProcessingSession()
-                    else ->
-                        DefaultProcessingSession()
+                    ability().allowed() -> when {
+                        // it's a too restrictive place for fallback, happens almost always
+                        //token.hasBindingObservers() -> FallbackProcessingSession()
+                        incrLevel() == IncrementalSpec.IncrLevel.Full -> IncrementalProcessingSession()
+                        incrLevel() == IncrementalSpec.IncrLevel.Preamble -> PreambleProcessingSession()
+                        else -> DefaultProcessingSession()
+                    }
+                    else -> DefaultProcessingSession()
                 }
             }
 
-        with (sessionProcessing) {
-            val session =
+        val session =
+            with(sessionProcessing) {
                 if (token != null) {
                     (token as? SessionTokenImpl)?.setStore(store)
                     nextSession(token)
                 } else {
                     firstSession()
                 }
+            }
 
-            return runSession(session, main)
+        try {
+            return sessionProcessing.runSession(session, main)
+
+        // fixme: exception is a dirty way to abort incremental processing.
+        } catch (e: IncrementalContractViolationException) {
+            with(FallbackProcessingSession(session)) {
+                val fallbackSession =
+                    if (token != null) nextSession(token) else firstSession()
+                return runSession(fallbackSession, main)
+            }
         }
     }
 
@@ -115,12 +130,7 @@ internal class EvaluationSessionImpl private constructor (
             val logicalState = LogicalState()
             val dispatchingFront = Dispatcher(ruleIndex).front()
 
-            // todo: remove this option
-            val principalObservers: PrincipalObserverDispatcher =
-                if (incrementality.assertLevel().assertContracts())
-                    LogicalBindObserverDispatcher()
-                else
-                    PrincipalObserverDispatcher.EMPTY
+            val principalObservers = LogicalBindObserverDispatcher()
             val processingStrategy = GroundProcessing(incrementality, principalObservers)
 
             val processing = ConstraintsProcessing(dispatchingFront, journal, logicalState, incrementality, trace, profiler)
@@ -142,8 +152,59 @@ internal class EvaluationSessionImpl private constructor (
             return EvaluationResultImpl(newToken, status, strategy.invalidatedFeedback(), strategy.invalidatedRules())
         }
 
-        private fun SessionParts.run(main: Constraint): FeedbackStatus = strategy.run(processing, controller, main)
+        protected fun SessionParts.run(main: Constraint): FeedbackStatus = strategy.run(processing, controller, main)
 
+    }
+
+    /**
+     * Same as [DefaultProcessingSession], but also returns
+     * [EvaluationResult.invalidFeedbackKeys] & [EvaluationResult.invalidRules]
+     * to signify that results of a previous session must be cleared.
+     */
+    inner class FallbackProcessingSession(private val abortedSession: SessionParts?): DefaultProcessingSession() {
+
+        constructor(): this(null)
+
+        val invalidatedFeedback: MutableFeedbackKeySet = mutableSetOf()
+        val invalidatedRules: MutableList<Any> = mutableListOf()
+
+
+        override fun nextSession(token: SessionToken): SessionParts {
+
+            invalidateToken(token.journalView as MatchJournal.View)
+            invalidateAborted()
+
+            return super.nextSession(token)
+        }
+
+        override fun runSession(session: SessionParts, main: Constraint): EvaluationResult = with(session) {
+            val status = run(main)
+            controller.shutDown()
+            val newToken = endSession(session)
+
+            invalidatedFeedback.addAll(strategy.invalidatedFeedback())
+            invalidatedRules.addAll(strategy.invalidatedRules())
+
+            return EvaluationResultImpl(newToken, status, invalidatedFeedback, invalidatedRules)
+        }
+
+        private fun invalidateAborted() {
+            if(abortedSession != null) {
+                with (abortedSession) {
+                    invalidatedFeedback.addAll(strategy.invalidatedFeedback())
+                    invalidatedRules.addAll(strategy.invalidatedRules())
+                }
+            }
+        }
+
+        private fun invalidateToken(view: MatchJournal.View) {
+            for(chunk in view.chunks) {
+                if (chunk is MatchJournal.MatchChunk) {
+                    invalidatedFeedback.add(chunk.match.feedbackKey)
+                    invalidatedRules.add(chunk.ruleUniqueTag)
+                }
+            }
+        }
     }
 
     open inner class IncrementalProcessingSession(): DefaultProcessingSession() {
