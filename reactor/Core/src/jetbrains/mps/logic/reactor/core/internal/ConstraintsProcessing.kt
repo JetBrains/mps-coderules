@@ -141,7 +141,13 @@ internal class ConstraintsProcessing(
         if (operational) action(this) else this
 
     private fun processMatch(controller: Controller, match: RuleMatchEx, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus =
-        controller.offerMatch(match, inStatus)
+        inStatus
+            .let {
+                //fixme: refactor this abort logic?
+                if (incrementalProcessing.offerMatch(match)) {
+                    controller.offerMatch(match, inStatus)
+                } else inStatus.abort(DetailedFeedback("incremental processing omitted match"))
+            }
             .let {
                 when (it) {
                     is FeedbackStatus.ABORTED -> {  // guard is not satisfied
@@ -149,15 +155,15 @@ internal class ConstraintsProcessing(
                         return it.recover()         // return from the enclosing method
 
                     }
-                    is FeedbackStatus.FAILED -> { // guard failed
+                    is FeedbackStatus.FAILED -> {   // guard failed
                         return it.recover()         // return from the enclosing method
 
                     }
                     else -> it
                 }
             }
-            .also { trace.trigger(match) }
             .also { incrementalProcessing.processMatch(match) }
+            .also { trace.trigger(match) }
             .also { accept(controller, match) }
             .then { controller.processBody(match, parent, it) }
             .also { trace.finish(match) }
@@ -188,7 +194,6 @@ internal class ConstraintsProcessing(
                 profiler.profile("terminateOccurrence") {
 
                     occ.terminate(logicalState)
-                    incrementalProcessing.processDiscarded(occ, logicalState)
 
                 }
 
@@ -202,7 +207,7 @@ internal class ConstraintsProcessing(
         fun erase(occurrence: Occurrence) {
             dispatchingFront = dispatchingFront.forget(occurrence)
             occurrence.terminate(logicalState)
-            incrementalProcessing.processDiscarded(occurrence, logicalState)
+            incrementalProcessing.processInvalidated(occurrence, logicalState)
         }
 
         fun erase(match: RuleMatchEx) {

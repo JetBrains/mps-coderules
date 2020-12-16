@@ -24,12 +24,14 @@ import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.program.Rule
 
 data class SessionTokenImpl(
-                            private val journalView: MatchJournal.View,
-                            private var store: Collection<Occurrence>,
-                            private val rules: Iterable<Rule>,
-                            private val frontState: DispatchingFrontState,
-                            val logicalState: LogicalState,
-                            val ruleIndex: RuleIndex) : SessionToken
+    private val journalView: MatchJournal.View,
+    private var store: Collection<Occurrence>,
+    private val rules: Iterable<Rule>,
+    private val frontState: DispatchingFrontState,
+    val ruleIndex: RuleIndex,
+    val logicalState: LogicalState,
+    val principalObservers: PrincipalObserverDispatcher = PrincipalObserverDispatcher.EMPTY
+) : SessionToken
 {
     override fun getJournalView(): MatchJournalView = journalView
     override fun getRules(): Iterable<Rule> = rules

@@ -144,7 +144,7 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
         fun isKnown(occ: Occurrence): Boolean = activatingChunkOf(occ) != null
 
         /**
-         * Returns [Chunk] where [occ] was activated.
+         * Returns [Chunk] corresponding to [occ] activation.
          * Returns null for non-principal occurrences & those not from indexed session.
          */
         fun activatingChunkOf(occ: Occurrence): OccChunk?
@@ -154,6 +154,12 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
          * Returns null for non-principal rules & those not from indexed session.
          */
         fun activationPos(match: RuleMatchEx): OccChunk?
+
+        /**
+         * Returns [MatchChunk] corresponding to [RuleMatch] where [occ] was activated.
+         * Returns null for non-principal occurrences & those not from indexed session.
+         */
+        fun matchChunkOf(occChunk: OccChunk): MatchChunk?
 
         /**
          * Length of the indexed [MatchJournal]

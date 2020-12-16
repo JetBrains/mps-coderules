@@ -26,6 +26,9 @@ interface ChunkReader {
 
     infix fun at(pos: MatchJournal.Pos) = current === pos.chunk
     infix fun at(chunk: MatchJournal.Chunk) = current === chunk
+
+    infix fun atNext(pos: MatchJournal.Pos) = next === pos.chunk
+    infix fun atNext(chunk: MatchJournal.Chunk) = next === chunk
 }
 
 interface JournalIterator: ChunkReader, Iterator<MatchJournal.Chunk>

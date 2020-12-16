@@ -55,7 +55,8 @@ internal data class SessionParts(
     val logicalState: LogicalState,
     val controller: ControllerImpl,
     val processing: ConstraintsProcessing,
-    val strategy: ProcessingStrategy
+    val strategy: ProcessingStrategy,
+    val principalObservers: PrincipalObserverDispatcher
 ) {
     val frontState: DispatchingFrontState get() = processing.getFrontState()
 }
@@ -102,11 +103,11 @@ internal class EvaluationSessionImpl private constructor (
 
         override fun firstSession(): SessionParts = getSession(null)
 
-        override fun nextSession(token: SessionToken): SessionParts = getSession(token)
+        override fun nextSession(token: SessionToken): SessionParts = getSession(token as SessionTokenImpl)
 
-        private fun getSession(token: SessionToken?): SessionParts {
+        private fun getSession(token: SessionTokenImpl?): SessionParts {
             val ruleIndex = token
-                ?.let { (it as SessionTokenImpl).ruleIndex }
+                ?.let { it.ruleIndex }
                 ?.also { it.updateIndexFromRules(program.rules()) }
                 ?: RuleIndex(program.rules())
 
@@ -114,24 +115,24 @@ internal class EvaluationSessionImpl private constructor (
             val logicalState = LogicalState()
             val dispatchingFront = Dispatcher(ruleIndex).front()
 
-            val processingStrategy = GroundProcessing(incrementality)
+            // todo: remove this option
+            val principalObservers: PrincipalObserverDispatcher =
+                if (incrementality.assertLevel().assertContracts())
+                    LogicalBindObserverDispatcher()
+                else
+                    PrincipalObserverDispatcher.EMPTY
+            val processingStrategy = GroundProcessing(incrementality, principalObservers)
+
             val processing = ConstraintsProcessing(dispatchingFront, journal, logicalState, incrementality, trace, profiler)
             processing.setStrategy(processingStrategy)
 
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
 
-            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy)
+            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy, principalObservers)
         }
 
         override fun endSession(session: SessionParts): SessionToken = with(session) {
-            SessionTokenImpl(
-                journal.view(),
-                emptyList(),
-                ruleIndex.toRules(),
-                emptyFrontState(),
-                logicalState,
-                ruleIndex
-            )
+            SessionTokenImpl(journal.view(), emptyList(), ruleIndex.toRules(), emptyFrontState(), ruleIndex, logicalState, principalObservers.apply { clearTriggerReceiver() })
         }
 
         override fun runSession(session: SessionParts, main: Constraint): EvaluationResult = with(session) {
@@ -155,21 +156,24 @@ internal class EvaluationSessionImpl private constructor (
             val front = Dispatcher(ruleIndex, tkn.getFrontState()).front()
             val processing = ConstraintsProcessing(front, journal, logicalState, incrementality, trace, profiler)
 
+            val principalObservers = tkn.principalObservers
             val processingStrategy = IncrementalProcessing(
-                incrementality, journal, program.newRules(), program.droppedRules(), processing.getStateCleaner(), ruleIndex, trace
+                incrementality, journal, program.newRules(), program.droppedRules(),
+                processing.getStateCleaner(), ruleIndex, principalObservers, trace
             )
             processing.setStrategy(processingStrategy)
 
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
 
-            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy)
+            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy, principalObservers)
         }
 
         override fun endSession(session: SessionParts): SessionToken = with(session) {
             val histView = journal.view()
             processing.resetStore() // clear observers
             val principalState = sessionState(frontState).resetLookup()
-            return SessionTokenImpl(histView, emptyList(), ruleIndex.toRules(), principalState, logicalState, ruleIndex)
+            principalObservers.clearTriggerReceiver()
+            return SessionTokenImpl(histView, emptyList(), ruleIndex.toRules(), principalState, ruleIndex, logicalState, principalObservers)
         }
 
         /**
@@ -202,7 +206,7 @@ internal class EvaluationSessionImpl private constructor (
 
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
 
-            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy)
+            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy, tkn.principalObservers)
         }
 
         override fun endSession(session: SessionParts): SessionToken = with(session) {
@@ -213,10 +217,11 @@ internal class EvaluationSessionImpl private constructor (
             outputOccurrences.forEach{ it.terminate(logicalState) }
             processing.resetStore() // clear observers
             logicalState.reset()
+            principalObservers.clearTriggerReceiver()
 
             val rules = ruleIndex.toRules().filter(preambleInfo::inPreamble)
 
-            SessionTokenImpl(histView, outputOccurrences, rules, emptyFrontState(), LogicalState(), ruleIndex)
+            SessionTokenImpl(histView, outputOccurrences, rules, emptyFrontState(), ruleIndex, LogicalState())
         }
 
         private fun MatchJournal.View.filterOccurrences(without: OccurrenceStore = emptyStore()): OccurrenceStore {

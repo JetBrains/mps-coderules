@@ -392,23 +392,38 @@ internal open class MatchJournalImpl(
         val last: E get() = if (l is LinkedList<E>) l.last else l.last()
     }
 
-    private class IndexImpl(chunks: Iterable<Chunk>): MatchJournal.Index
+    private class IndexImpl(chunks: List<Chunk>): MatchJournal.Index
     {
         private val chunkOrder = HashMap<Id<Chunk>, Int>()
         private val occChunks = HashMap<Int, OccChunk>()
+        private val parentMatches = HashMap<OccChunk, MatchChunk>()
 
         init {
-            chunks.forEachIndexed { index, chunk ->
+            var index: Int = chunks.size
+            val orphansYet = hashSetOf<OccChunk>()
+            chunks.reversed().forEach { chunk ->
                 if (!(chunk is CornerChunk)) {
-                    chunkOrder[Id(chunk)] = index
+                    chunkOrder[Id(chunk)] = --index
                 }
-                if (chunk is OccChunk) {
-                    occChunks[chunk.occ.identity] = chunk
+
+                when (chunk) {
+                    is OccChunk -> {
+                        occChunks[chunk.occ.identity] = chunk
+
+                        orphansYet.add(chunk)
+                    }
+                    is MatchChunk -> orphansYet.removeIf{ orphan ->
+                        // first met justifying MatchChunk is parent
+                        if (orphan.justifiedBy(chunk)) {
+                            parentMatches[orphan] = chunk
+                            true
+                        } else false
+                    }
                 }
             }
         }
 
-        override val size: Int = chunks.count()
+        override val size: Int = chunks.size
 
         override fun isKnown(chunk: Chunk): Boolean = chunkOrder.containsKey(Id(chunk))
 
@@ -417,9 +432,11 @@ internal open class MatchJournalImpl(
         override fun activationPos(match: RuleMatchEx): OccChunk? =
             // The latest matched occurrence from match's head is (by definition)
             //  the occurrence which activated this match.
-            match.signature().mapNotNull { occSig ->
-                occSig?.let { activatingChunkOf(it.wrapped) }
-            }.maxBy { orderOf(it)!! } // compare positions: find latest
+            match.allHeads()
+                .mapNotNull(this::activatingChunkOf)
+                .maxBy { orderOf(it)!! } // compare positions: find latest
+
+        override fun matchChunkOf(occChunk: OccChunk): MatchChunk? = parentMatches[occChunk]
 
         override val chunkComparator: Comparator<Chunk> get() = compareBy<Chunk>(this::orderOfThrow)
 

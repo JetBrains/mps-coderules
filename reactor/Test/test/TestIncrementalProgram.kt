@@ -4,6 +4,7 @@ import jetbrains.mps.logic.reactor.core.ReactorLifecycle
 import jetbrains.mps.logic.reactor.core.RulesDiff
 import jetbrains.mps.logic.reactor.core.internal.MatchJournal
 import jetbrains.mps.logic.reactor.evaluation.*
+import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.IncrementalContractViolationException
@@ -91,6 +92,8 @@ class TestIncrementalProgram {
     private fun Iterable<Occurrence>.constraintSymbols() = this.map { it.constraint.symbol() }
 
     private fun EvaluationResult.lastChunkSymbols() = this.lastChunk().activatedLog().constraintSymbols()
+
+    private fun ConstraintOccurrence.firstValue(): Any? = (arguments().first() as? Logical<*>)?.value()
 
 
     private fun <T : Any> PredicateInvocation.eq(left: T, right: T) = invocationContext().tellEquals(left, right)
@@ -1541,18 +1544,19 @@ class TestIncrementalProgram {
         }
     }
 
+    @Ignore("feature is superseded")
     @Test(expected = EvaluationFailureException::class)
     fun violatePrincipalLogicalContract() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "produceBound"),
-            setOf(sym1("foo"))
+            setOf(sym0("main"), sym1("foo"))
         ).withContractChecks()
 
         val (X, Y) = metaLogical<Int>("X", "Y")
         programWithRules(
             rule("main",
                 headReplaced(
-                    constraint("main")
+                    pconstraint("main")
                 ),
                 body(
                     pconstraint("foo", X)
@@ -1575,41 +1579,28 @@ class TestIncrementalProgram {
         ).launch("violate contract assertion", progSpec) { result ->
 
             //NB: this check isn't supposed to be even run because of exception
-            //result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
+            result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
 
         }
     }
 
-    @Test(expected = EvaluationFailureException::class)
-    fun violatePrincipalLogicalContractOnRelaunch() {
+    @Test
+    fun inference_insertLogicalUni_2() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "produceBound"),
-            setOf(sym1("foo"))
-        ).withContractChecks()
+            setOf(sym0("main"), sym1("foo"))
+        )
 
         val (X, Y) = metaLogical<Int>("X", "Y")
-
-        val fooMatch =
-            rule("produceBound",
-                headKept(
-                    pconstraint("foo", X)
-                ),
-                body(
-                    statement({ x, y -> eq(x,y) }, X, Y),
-                    constraint("hasBound", Y)
-                ))
 
         programWithRules(
             rule("main",
                 headReplaced(
-                    constraint("main")
+                    pconstraint("main")
                 ),
                 body(
                     pconstraint("foo", X)
                 )),
-
-            // place for inserting 'fooMatch' rule
-
             rule("bindVar",
                 headKept(
                     constraint("hasBound", Y)
@@ -1624,14 +1615,377 @@ class TestIncrementalProgram {
 
         }.let { (builder, evalRes) ->
             builder
-                .insertRulesAt(1, fooMatch)
+                .insertRulesAt(1,
+                    rule("produceBound",
+                        headKept(
+                            pconstraint("foo", X)
+                        ),
+                        body(
+                            statement({ x, y -> eq(x,y) }, X, Y),
+                            constraint("hasBound", Y)
+                        ))
+
+                )
                 .relaunch("violate contract assertion", progSpec, evalRes.token()) { result ->
 
-                    //NB: this check isn't supposed to be even run because of exception
-                    //result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
+                    result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
                 }
         }
     }
+
+
+    @Test
+    fun inference_rewindLogicalBind() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "bindVar", "beforeBind"),
+            setOf(sym0("main"), sym1("foo"))
+        ).withContractChecks()
+
+        val X = metaLogical<Int>("X")
+
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    pconstraint("main")
+                ),
+                body(
+                    pconstraint("foo", X)
+                )),
+            rule("bindVar",
+                headKept(
+                    pconstraint("foo", X)
+                ),
+                body(
+                    statement({ x -> x.set(42) }, X)
+                ))
+
+        ).launch("normal run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"))
+            result.storeView().occurrences(sym1("foo")).first().firstValue() shouldBe 42
+
+        }.let { (builder, evalRes) ->
+            builder
+                .insertRulesAt(1,
+                    rule("beforeBind",
+                        headKept(
+                            pconstraint("foo", X)
+                        ),
+                        guard(
+                            expression({ x -> !x.isBound }, X)
+                        ),
+                        body(
+                            constraint("expected" )
+                        ))
+                )
+                .relaunch("relaunch", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("expected"), sym1("foo"))
+                    result.storeView().occurrences(sym1("foo")).first().firstValue() shouldBe 42
+                }
+        }
+    }
+
+    /**
+     * Opposite to previous test [inference_insertLogicalBind]
+     */
+    @Test
+    fun inference_insertLogicalBind() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "bindVar", "checkFresh"),
+            setOf(sym0("main"), sym1("foo"))
+        ).withContractChecks()
+
+        val X = metaLogical<Int>("X")
+
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    pconstraint("main")
+                ),
+                body(
+                    pconstraint("foo", X)
+                )),
+            rule("checkFresh",
+                headReplaced(
+                    pconstraint("foo", X)
+                ),
+                guard(
+                    expression({ x -> !x.isBound }, X)
+                ),
+                body(
+                    constraint("unexpected" )
+                ))
+
+        ).launch("normal run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("unexpected"))
+
+        }.let { (builder, evalRes) ->
+            builder
+                .insertRulesAt(1,
+                    rule("bindVar",
+                        headKept(
+                            pconstraint("foo", X)
+                        ),
+                        body(
+                            statement({ x -> x.set(42) }, X)
+                        ))
+                )
+                .relaunch("relaunch", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"))
+                    result.storeView().occurrences(sym1("foo")).first().firstValue() shouldBe 42
+                }
+        }
+    }
+
+    @Test
+    fun inference_rewindLogicalBind_indirectUni() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "produceBound", "beforeProduceBound"),
+            setOf(sym0("main"), sym1("foo"))
+        ).withContractChecks()
+
+        val (X, Y) = metaLogical<Int>("X", "Y")
+
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    pconstraint("main")
+                ),
+                body(
+                    pconstraint("foo", X)
+                )),
+            rule("produceBound",
+                headKept(
+                    pconstraint("foo", X)
+                ),
+                body(
+                    statement({ x, y -> eq(x,y) }, X, Y),
+                    constraint("hasBound", Y)
+                )),
+            rule("bindVar",
+                headKept(
+                    constraint("hasBound", Y)
+                ),
+                body(
+                    statement({ y -> y.set(42) }, Y)
+                ))
+
+        ).launch("normal run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
+            result.storeView().occurrences(sym1("foo")).first().firstValue() shouldBe 42
+
+        }.let { (builder, evalRes) ->
+            builder
+                .insertRulesAt(1,
+                    rule("beforeProduceBound",
+                        headKept(
+                            pconstraint("foo", X)
+                        ),
+                        guard(
+                            expression({ x -> !x.isBound }, X)
+                        ),
+                        body(
+                            constraint("expected" )
+                        ))
+                )
+                .relaunch("relaunch", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("expected"), sym1("foo"), sym1("hasBound"))
+                    result.storeView().occurrences(sym1("foo")).first().firstValue() shouldBe 42
+                }
+        }
+    }
+
+    @Test
+    fun inference_rewindLogicalBind_onDiscarded() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "bindVar", "beforeBind"),
+            setOf(sym0("main"), sym1("foo"))
+        ).withContractChecks()
+
+        val X = metaLogical<Int>("X")
+
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    pconstraint("main")
+                ),
+                body(
+                    pconstraint("foo", X)
+                )),
+            rule("bindVar",
+                headReplaced(
+                    pconstraint("foo", X)
+                ),
+                body(
+                    statement({ x -> x.set(42) }, X),
+                    constraint("expectedValue", X)
+                ))
+
+        ).launch("normal run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym1("expectedValue"))
+            result.storeView().occurrences(sym1("expectedValue")).first().firstValue() shouldBe 42
+
+        }.let { (builder, evalRes) ->
+            builder
+                .insertRulesAt(1,
+                    rule("beforeBind",
+                        headKept(
+                            pconstraint("foo", X)
+                        ),
+                        guard(
+                            expression({ x -> !x.isBound }, X)
+                        ),
+                        body(
+                            constraint("expected" )
+                        ))
+                )
+                .relaunch("relaunch", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("expected"), sym1("expectedValue"))
+                    result.storeView().occurrences(sym1("expectedValue")).first().firstValue() shouldBe 42
+                }
+        }
+    }
+
+    @Test
+    fun inference_rewindLogicalBind_indirectMatch() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "produceBound", "beforeProduceBound", "runFoo"),
+            setOf(sym0("main"), sym1("foo"), sym0("runFoo"))
+        ).withContractChecks()
+
+        val (X, Y) = metaLogical<Int>("X", "Y")
+
+        programWithRules(
+            rule("main",
+                headKept(
+                    pconstraint("main")
+                ),
+                body(
+                    pconstraint("foo", X)
+                )),
+            rule("beforeProduceBound",
+                headReplaced(
+                    pconstraint("runFoo")
+                ),
+                headKept(
+                    pconstraint("foo", X)
+                ),
+                guard(
+                    expression({ x -> !x.isBound }, X)
+                ),
+                body(
+                    constraint("expected" )
+                )),
+            rule("produceBound",
+                headKept(
+                    pconstraint("foo", X)
+                ),
+                body(
+                    statement({ x, y -> eq(x,y) }, X, Y),
+                    constraint("hasBound", Y)
+                )),
+            rule("bindVar",
+                headKept(
+                    constraint("hasBound", Y)
+                ),
+                body(
+                    statement({ y -> y.set(42) }, Y)
+                ))
+
+        ).launch("normal run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("main"), sym1("foo"), sym1("hasBound"))
+            result.storeView().occurrences(sym1("foo")).first().firstValue() shouldBe 42
+
+        }.let { (builder, evalRes) ->
+            builder
+                .insertRulesAt(0,
+                    rule("runFoo",
+                        headKept(
+                            pconstraint("main")
+                        ),
+                        body(
+                            pconstraint("runFoo")
+                        ))
+                )
+                .relaunch("relaunch", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("main"), sym0("expected"), sym1("foo"), sym1("hasBound"))
+                    result.storeView().occurrences(sym1("foo")).first().firstValue() shouldBe 42
+                }
+        }
+    }
+
+    @Test
+    fun inference_insertLogicalUni_affectFuture() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "produceBound", "uniVars", "bindVar", "checkFresh"),
+            setOf(sym0("main"), sym1("foo"), sym1("bar"))
+        ).withContractChecks()
+
+        val (X, Y) = metaLogical<Int>("X", "Y")
+
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    pconstraint("main")
+                ),
+                body(
+                    pconstraint("bar", Y),
+                    pconstraint("foo", X)
+                )),
+            rule("bindVar",
+                headKept(
+                    pconstraint("bar", Y)
+                ),
+                body(
+                    statement({ y -> y.set(42) }, Y)
+                )),
+            rule("checkFresh",
+                headKept(
+                    pconstraint("foo", X)
+                ),
+                guard(
+                    expression({ x -> !x.isBound }, X)
+                ),
+                body(
+                    constraint("unexpected")
+                ))
+
+        ).launch("normal run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("bar"), sym0("unexpected"))
+            result.storeView().occurrences(sym1("bar")).first().firstValue() shouldBe 42
+            result.storeView().occurrences(sym1("foo")).first().firstValue() shouldBe null
+
+        }.let { (builder, evalRes) ->
+            builder
+                .insertRulesAt(1,
+                    rule("uniVars",
+                        headKept(
+                            pconstraint("foo", X),
+                            pconstraint("bar", Y)
+                        ),
+                        body(
+                            statement({ x, y -> eq(x,y) }, X, Y)
+                        ))
+                )
+                .relaunch("relaunch", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("bar"))
+                    result.storeView().occurrences(sym1("bar")).first().firstValue() shouldBe 42
+                    result.storeView().occurrences(sym1("foo")).first().firstValue() shouldBe 42
+                }
+        }
+    }
+
 
 
     @Test
