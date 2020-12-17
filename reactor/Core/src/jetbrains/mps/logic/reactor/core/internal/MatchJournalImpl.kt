@@ -189,19 +189,25 @@ internal open class MatchJournalImpl(
     override fun isFront(): Boolean = __cursor.atEnd()
 
 
-    override fun reset(pastPos: MatchJournal.Pos) = reset(pastPos, true)
+    override fun reset(pastPos: MatchJournal.Pos) {
+        reset(pastPos, true)
+        replay(pastPos)
+    }
 
-    override fun resetCursor() = reset(Pos(initialChunk(), 0), false)
+    override fun resetCursor(pastPos: Pos) {
+        reset(pastPos, false)
+    }
 
-    private fun reset(pastPos: MatchJournal.Pos, removing: Boolean) = with(__cursor) {
-        moveToPastRemoving(pastPos) {
+    private fun reset(pastPos: MatchJournal.Pos, removing: Boolean) {
+        __cursor.moveToPastRemoving(pastPos) {
             popAncestor()
             resetOccurrences(it.entries())
-            removing
+            removing && it !== pastPos.chunk
         }
         // drop occurrences at final chunk
-        if (removing) current.entries = current.entries.subList(0, pastPos.entriesCount)
-        resetOccurrences(current.entries.drop(pastPos.entriesCount))
+        if (removing) with(pastPos.chunk as ChunkImpl) {
+            entries = entries.subList(0, pastPos.entriesCount)
+        }
     }
 
     private fun popAncestor() {
@@ -324,8 +330,9 @@ internal open class MatchJournalImpl(
 
 
         /**
-         * Walk in journal in direct order ([from] -> [next])
-         * while applying [action] to each visited [Chunk].
+         * Walk in journal in direct order ([from] -> [current])
+         * while applying [action] to each visited [Chunk]
+         * (not including [from], but including [__current]).
          * No journal state is changed, except by [action] effects
          * (i.e. no reset or replay of occurrences is performed).
          */
@@ -343,20 +350,23 @@ internal open class MatchJournalImpl(
         }
 
         /**
-         * Walk in journal in inverse order ([next] -> [pastPos])
-         * while applying [action] to each visited [Chunk]
-         * and removing it if [action] return [true] for it.
+         * Walk in journal in inverse order ([pastPos] <- [current]) while
+         * applying [action] to each [Chunk] (including [pastPos])
+         * and removing it if [action] returns true for it.
+         *
+         * Contract: after the call [__next] points to [pastPos].
          */
         inline fun moveToPastRemoving(pastPos: Pos, action: (Chunk) -> Boolean) {
             while (!atStart()) {
                 __current = it.previous()
+                if (action(__current)) {
+                    it.remove()
+                }
                 if (this at pastPos) {
-                    it.next() // make it point right after _previous_
+                    __current = it.previous()
+                    it.next() // make it point right after __current
                     updateNext()
                     return
-                }
-                if (action(current)) {
-                    it.remove()
                 }
             }
             this assertAt pastPos

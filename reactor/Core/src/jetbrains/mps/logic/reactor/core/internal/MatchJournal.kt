@@ -76,15 +76,21 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
     val cursor: RemovingJournalIterator
 
     /**
-     * Reset journal's position to the beginning, don't modify journal.
+     * Same as [resetCursor], moves [cursor] before [initialChunk].
      */
-    fun resetCursor()
+    fun resetCursor() = resetCursor(Pos(initialChunk(), 0))
 
     /**
-     * Erase part of the journal between [currentPos] and [pastPos].
-     * Resets journal position to specified position.
+     * Moves [cursor] before [pastPos], so that [ChunkReader.next] is [pastPos].
+     * Doesn't modify journal contents, as opposed to [reset].
+     */
+    fun resetCursor(pastPos: Pos)
+
+    /**
+     * Erase journal between [currentPos] (erased) and [pastPos] (not erased).
+     * Moves [cursor] at [pastPos], so that [ChunkReader.current] is [pastPos].
      * @param pastPos position to reset to.
-     * @throws IllegalStateException when position is not from the past (relative to current pos).
+     * @throws IllegalStateException when position is not from the past (relative to [cursor]).
      */
     fun reset(pastPos: Pos)
 
@@ -92,7 +98,7 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
      * Replay activated and discarded occurrences logged in journal between current
      * and provided positions. Advances journal position to specified position.
      * Idempotent operation (can be called multiple times on same [Pos]]).
-     * @throws IllegalStateException when position is not from the future (relative to current pos).
+     * @throws IllegalStateException when [futurePos] is not from the future (relative to [cursor]).
      */
     fun replay(futurePos: Pos)
 
@@ -130,6 +136,12 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
          * so new additions to journal aren't indexed.
          */
         fun isKnown(chunk: Chunk): Boolean
+
+        /**
+         * Same as [isKnown], but for [Occurrence].
+         * Returns [true] for indexed [Occurrence]s.
+         */
+        fun isKnown(occ: Occurrence): Boolean = activatingChunkOf(occ) != null
 
         /**
          * Returns [Chunk] where [occ] was activated.
