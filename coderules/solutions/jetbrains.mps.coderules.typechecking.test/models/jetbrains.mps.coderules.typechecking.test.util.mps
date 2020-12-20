@@ -908,24 +908,8 @@
             <node concept="2ShNRf" id="5zsw4w31jsK" role="33vP2m">
               <node concept="1pGfFk" id="5zsw4w31jsL" role="2ShVmc">
                 <ref role="37wK5l" to="hano:7DvO2M9VeM1" resolve="RuleProcessingSession" />
-                <node concept="1eOMI4" id="5zsw4w31mBC" role="37wK5m">
-                  <node concept="10QFUN" id="5zsw4w31mB_" role="1eOMHV">
-                    <node concept="A3Dl8" id="5zsw4w31mBE" role="10QFUM">
-                      <node concept="3qUE_q" id="5zsw4w31mBF" role="A3Ik2">
-                        <node concept="3uibUv" id="5zsw4w31mBG" role="3qUE_r">
-                          <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="3KN3A4v4Z8$" role="10QFUP">
-                      <node concept="37vLTw" id="WJTIIoJYoj" role="2Oq$k0">
-                        <ref role="3cqZAo" node="WJTIIoJWGP" resolve="ac" />
-                      </node>
-                      <node concept="liA8E" id="3KN3A4v4ZkU" role="2OqNvi">
-                        <ref role="37wK5l" to="fqlx:3KN3A4uUhpW" resolve="aspects" />
-                      </node>
-                    </node>
-                  </node>
+                <node concept="37vLTw" id="zL5ZaNDNRZ" role="37wK5m">
+                  <ref role="3cqZAo" node="WJTIIoJWGP" resolve="ac" />
                 </node>
                 <node concept="37vLTw" id="72RDgIN4_KQ" role="37wK5m">
                   <ref role="3cqZAo" node="tyIfzC1aQx" resolve="repo" />
@@ -982,13 +966,8 @@
                       <ref role="37wK5l" to="hano:72RDgIN45VE" resolve="repository" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="61G6TdBqAx_" role="37wK5m">
-                    <node concept="37vLTw" id="61G6TdBqAxA" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="session" />
-                    </node>
-                    <node concept="liA8E" id="61G6TdBqAxB" role="2OqNvi">
-                      <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
-                    </node>
+                  <node concept="37vLTw" id="61G6TdBqAxA" role="37wK5m">
+                    <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="session" />
                   </node>
                   <node concept="3clFb_" id="61G6TdBqAxC" role="jymVt">
                     <property role="TrG5h" value="provideFeedback" />

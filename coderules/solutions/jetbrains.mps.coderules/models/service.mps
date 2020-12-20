@@ -579,13 +579,8 @@
                       <ref role="37wK5l" to="hano:72RDgIN45VE" resolve="repository" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="61G6TdBAtiu" role="37wK5m">
-                    <node concept="37vLTw" id="61G6TdBAtiv" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6nFpYluo50r" resolve="processingSession" />
-                    </node>
-                    <node concept="liA8E" id="61G6TdBAtiw" role="2OqNvi">
-                      <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
-                    </node>
+                  <node concept="37vLTw" id="61G6TdBAtiv" role="37wK5m">
+                    <ref role="3cqZAo" node="6nFpYluo50r" resolve="processingSession" />
                   </node>
                   <node concept="3clFb_" id="61G6TdBAtix" role="jymVt">
                     <property role="TrG5h" value="provideFeedback" />

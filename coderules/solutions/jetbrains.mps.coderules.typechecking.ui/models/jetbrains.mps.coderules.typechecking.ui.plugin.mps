@@ -368,9 +368,6 @@
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
-      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
-        <child id="1151689745422" name="elementType" index="A3Ik2" />
-      </concept>
       <concept id="1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" flags="nn" index="2HTt$P">
         <child id="1235573175711" name="elementType" index="2HTBi0" />
         <child id="1235573187520" name="singletonValue" index="2HTEbv" />
@@ -964,27 +961,11 @@
             <node concept="2ShNRf" id="6nFpYlun4Eg" role="33vP2m">
               <node concept="1pGfFk" id="6nFpYlun4Eh" role="2ShVmc">
                 <ref role="37wK5l" to="hano:7DvO2M9VeM1" resolve="RuleProcessingSession" />
-                <node concept="1eOMI4" id="6nFpYlun4Ei" role="37wK5m">
-                  <node concept="10QFUN" id="6nFpYlun4Ej" role="1eOMHV">
-                    <node concept="A3Dl8" id="6nFpYlun4Ek" role="10QFUM">
-                      <node concept="3qUE_q" id="6nFpYlun4El" role="A3Ik2">
-                        <node concept="3uibUv" id="6nFpYlun4Em" role="3qUE_r">
-                          <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="6nFpYlun4En" role="10QFUP">
-                      <node concept="liA8E" id="6nFpYlun4Eo" role="2OqNvi">
-                        <ref role="37wK5l" to="fqlx:3KN3A4uUhpW" resolve="aspects" />
-                      </node>
-                      <node concept="2OqwBi" id="6nFpYlun4Ep" role="2Oq$k0">
-                        <node concept="37vLTw" id="6nFpYlun4Eq" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3KN3A4vCTIK" resolve="ac" />
-                        </node>
-                        <node concept="1uHKPH" id="6nFpYlun4Er" role="2OqNvi" />
-                      </node>
-                    </node>
+                <node concept="2OqwBi" id="zL5ZaNDQ_N" role="37wK5m">
+                  <node concept="37vLTw" id="zL5ZaNDQ_O" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3KN3A4vCTIK" resolve="ac" />
                   </node>
+                  <node concept="1uHKPH" id="zL5ZaNDQ_P" role="2OqNvi" />
                 </node>
                 <node concept="37vLTw" id="6nFpYlun4Es" role="37wK5m">
                   <ref role="3cqZAo" node="6nFpYlun1LV" resolve="repository" />
@@ -3276,24 +3257,8 @@
               <node concept="2ShNRf" id="6nFpYluoeMX" role="33vP2m">
                 <node concept="1pGfFk" id="6nFpYluoeMY" role="2ShVmc">
                   <ref role="37wK5l" to="hano:7DvO2M9VeM1" resolve="RuleProcessingSession" />
-                  <node concept="1eOMI4" id="6nFpYluoeMZ" role="37wK5m">
-                    <node concept="10QFUN" id="6nFpYluoeN0" role="1eOMHV">
-                      <node concept="A3Dl8" id="6nFpYluoeN1" role="10QFUM">
-                        <node concept="3qUE_q" id="6nFpYluoeN2" role="A3Ik2">
-                          <node concept="3uibUv" id="6nFpYluoeN3" role="3qUE_r">
-                            <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="6nFpYluoeN4" role="10QFUP">
-                        <node concept="liA8E" id="6nFpYluoeN5" role="2OqNvi">
-                          <ref role="37wK5l" to="fqlx:3KN3A4uUhpW" resolve="aspects" />
-                        </node>
-                        <node concept="37vLTw" id="7W7Inqm62iI" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3KN3A4vDlEh" resolve="clique" />
-                        </node>
-                      </node>
-                    </node>
+                  <node concept="37vLTw" id="zL5ZaNDTUJ" role="37wK5m">
+                    <ref role="3cqZAo" node="3KN3A4vDlEh" resolve="clique" />
                   </node>
                   <node concept="37vLTw" id="6nFpYluoeN9" role="37wK5m">
                     <ref role="3cqZAo" node="7WKNeR8SQxI" resolve="repository" />
@@ -3325,13 +3290,8 @@
                     <node concept="37vLTw" id="61G6TdBDyzQ" role="37wK5m">
                       <ref role="3cqZAo" node="7WKNeR8SQxI" resolve="repository" />
                     </node>
-                    <node concept="2OqwBi" id="61G6TdBDyzR" role="37wK5m">
-                      <node concept="37vLTw" id="61G6TdBDyzS" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6nFpYluoeMV" resolve="session" />
-                      </node>
-                      <node concept="liA8E" id="61G6TdBDyzT" role="2OqNvi">
-                        <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
-                      </node>
+                    <node concept="37vLTw" id="61G6TdBDyzS" role="37wK5m">
+                      <ref role="3cqZAo" node="6nFpYluoeMV" resolve="session" />
                     </node>
                     <node concept="3clFb_" id="61G6TdBDyzU" role="jymVt">
                       <property role="TrG5h" value="provideFeedback" />

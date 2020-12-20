@@ -6590,11 +6590,11 @@
             <node concept="2OqwBi" id="cmlg9OIZC$" role="37vLTJ">
               <node concept="Xjq3P" id="cmlg9OIZIm" role="2Oq$k0" />
               <node concept="2OwXpG" id="cmlg9OIZCB" role="2OqNvi">
-                <ref role="2Oxat5" node="cmlg9OIRky" resolve="ruleTemplates" />
+                <ref role="2Oxat5" node="cmlg9OIRky" resolve="ruleProcessingSession" />
               </node>
             </node>
-            <node concept="37vLTw" id="cmlg9OIRkG" role="37vLTx">
-              <ref role="3cqZAo" node="cmlg9OINa8" resolve="ruleTemplates" />
+            <node concept="37vLTw" id="zL5ZaNC2ML" role="37vLTx">
+              <ref role="3cqZAo" node="cmlg9OINa8" resolve="ruleProcessingSession" />
             </node>
           </node>
         </node>
@@ -6651,9 +6651,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="cmlg9OINa8" role="3clF46">
-        <property role="TrG5h" value="ruleTemplates" />
-        <node concept="3uibUv" id="cmlg9OIQFQ" role="1tU5fm">
-          <ref role="3uigEE" to="hano:6fdr4UgftiG" resolve="RuleTemplateIndex" />
+        <property role="TrG5h" value="ruleProcessingSession" />
+        <node concept="3uibUv" id="zL5ZaNC2BV" role="1tU5fm">
+          <ref role="3uigEE" to="hano:CGeqIk8WWU" resolve="RuleProcessingSession" />
         </node>
       </node>
       <node concept="37vLTG" id="6nFpYluW4uH" role="3clF46">
@@ -6988,8 +6988,13 @@
                       <node concept="3clFbS" id="2hQbw6HwKjz" role="1bW5cS">
                         <node concept="3clFbF" id="2hQbw6HwKzM" role="3cqZAp">
                           <node concept="2OqwBi" id="2hQbw6Hwurl" role="3clFbG">
-                            <node concept="37vLTw" id="2hQbw6Hwurm" role="2Oq$k0">
-                              <ref role="3cqZAo" node="cmlg9OIRky" resolve="ruleTemplates" />
+                            <node concept="2OqwBi" id="zL5ZaNBYOp" role="2Oq$k0">
+                              <node concept="37vLTw" id="2hQbw6Hwurm" role="2Oq$k0">
+                                <ref role="3cqZAo" node="cmlg9OIRky" resolve="ruleProcessingSession" />
+                              </node>
+                              <node concept="liA8E" id="zL5ZaNC0rO" role="2OqNvi">
+                                <ref role="37wK5l" to="hano:20Ay2VeR9qk" resolve="ruleTemplates" />
+                              </node>
                             </node>
                             <node concept="liA8E" id="2hQbw6Hwurn" role="2OqNvi">
                               <ref role="37wK5l" to="hano:5NuEpF1qn9x" resolve="allRuleTemplatesWithNoInput" />
@@ -9889,8 +9894,13 @@
                     <ref role="3cqZAo" node="5ntLU8GlzgG" resolve="node" />
                   </node>
                 </node>
-                <node concept="37vLTw" id="3OUB6BCqOrO" role="2Oq$k0">
-                  <ref role="3cqZAo" node="cmlg9OIRky" resolve="ruleTemplates" />
+                <node concept="2OqwBi" id="zL5ZaNC0Wd" role="2Oq$k0">
+                  <node concept="37vLTw" id="3OUB6BCqOrO" role="2Oq$k0">
+                    <ref role="3cqZAo" node="cmlg9OIRky" resolve="ruleProcessingSession" />
+                  </node>
+                  <node concept="liA8E" id="zL5ZaNC24Q" role="2OqNvi">
+                    <ref role="37wK5l" to="hano:20Ay2VeR9qk" resolve="ruleTemplates" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -11699,10 +11709,10 @@
       </node>
     </node>
     <node concept="312cEg" id="cmlg9OIRky" role="jymVt">
-      <property role="TrG5h" value="ruleTemplates" />
+      <property role="TrG5h" value="ruleProcessingSession" />
       <node concept="3Tm6S6" id="cmlg9OIRkz" role="1B3o_S" />
-      <node concept="3uibUv" id="cmlg9OIRk_" role="1tU5fm">
-        <ref role="3uigEE" to="hano:6fdr4UgftiG" resolve="RuleTemplateIndex" />
+      <node concept="3uibUv" id="zL5ZaNBS2C" role="1tU5fm">
+        <ref role="3uigEE" to="hano:CGeqIk8WWU" resolve="RuleProcessingSession" />
       </node>
     </node>
     <node concept="312cEg" id="6tPOoeT4XhE" role="jymVt">
@@ -11804,11 +11814,11 @@
             <node concept="2OqwBi" id="7DvO2Ma0lz7" role="37vLTJ">
               <node concept="Xjq3P" id="7DvO2Ma0l$$" role="2Oq$k0" />
               <node concept="2OwXpG" id="7DvO2Ma0lza" role="2OqNvi">
-                <ref role="2Oxat5" node="7DvO2Ma0klb" resolve="macroTemplateIndex" />
+                <ref role="2Oxat5" node="7DvO2Ma0klb" resolve="ruleProcessingSession" />
               </node>
             </node>
             <node concept="37vLTw" id="7DvO2Ma0kll" role="37vLTx">
-              <ref role="3cqZAo" node="7DvO2Ma0k9h" resolve="macroTemplateIndex" />
+              <ref role="3cqZAo" node="7DvO2Ma0k9h" resolve="processingSession" />
             </node>
           </node>
         </node>
@@ -11820,9 +11830,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="7DvO2Ma0k9h" role="3clF46">
-        <property role="TrG5h" value="macroTemplateIndex" />
-        <node concept="3uibUv" id="7P_FdVPvlsI" role="1tU5fm">
-          <ref role="3uigEE" to="hano:1hX44vNlSIA" resolve="MacroTemplateIndex" />
+        <property role="TrG5h" value="processingSession" />
+        <node concept="3uibUv" id="zL5ZaNJgvx" role="1tU5fm">
+          <ref role="3uigEE" to="hano:CGeqIk8WWU" resolve="RuleProcessingSession" />
         </node>
       </node>
     </node>
@@ -12020,8 +12030,13 @@
               </node>
             </node>
             <node concept="2OqwBi" id="5itBwM7W9cJ" role="33vP2m">
-              <node concept="37vLTw" id="5itBwM7W9cK" role="2Oq$k0">
-                <ref role="3cqZAo" node="7DvO2Ma0klb" resolve="macroTemplateIndex" />
+              <node concept="2OqwBi" id="zL5ZaNJiow" role="2Oq$k0">
+                <node concept="37vLTw" id="5itBwM7W9cK" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7DvO2Ma0klb" resolve="ruleProcessingSession" />
+                </node>
+                <node concept="liA8E" id="zL5ZaNJiYR" role="2OqNvi">
+                  <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
+                </node>
               </node>
               <node concept="liA8E" id="5itBwM7W9cL" role="2OqNvi">
                 <ref role="37wK5l" to="hano:5itBwM7W0ZG" resolve="expandMacroTemplate" />
@@ -12149,8 +12164,13 @@
               </node>
             </node>
             <node concept="2OqwBi" id="5itBwMbbRFT" role="33vP2m">
-              <node concept="37vLTw" id="5itBwMbbRFU" role="2Oq$k0">
-                <ref role="3cqZAo" node="7DvO2Ma0klb" resolve="macroTemplateIndex" />
+              <node concept="2OqwBi" id="zL5ZaNJjx8" role="2Oq$k0">
+                <node concept="37vLTw" id="5itBwMbbRFU" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7DvO2Ma0klb" resolve="ruleProcessingSession" />
+                </node>
+                <node concept="liA8E" id="zL5ZaNJk1q" role="2OqNvi">
+                  <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
+                </node>
               </node>
               <node concept="liA8E" id="5itBwMbbRFV" role="2OqNvi">
                 <ref role="37wK5l" to="hano:5itBwM7W0ZG" resolve="expandMacroTemplate" />
@@ -12268,8 +12288,13 @@
               </node>
             </node>
             <node concept="2OqwBi" id="5itBwM7W$4B" role="33vP2m">
-              <node concept="37vLTw" id="5itBwM7W$4C" role="2Oq$k0">
-                <ref role="3cqZAo" node="7DvO2Ma0klb" resolve="macroTemplateIndex" />
+              <node concept="2OqwBi" id="zL5ZaNKHb8" role="2Oq$k0">
+                <node concept="37vLTw" id="5itBwM7W$4C" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7DvO2Ma0klb" resolve="ruleProcessingSession" />
+                </node>
+                <node concept="liA8E" id="zL5ZaNKHO1" role="2OqNvi">
+                  <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
+                </node>
               </node>
               <node concept="liA8E" id="5itBwM7W$4D" role="2OqNvi">
                 <ref role="37wK5l" to="hano:5itBwM7WF$n" resolve="callMacroTemplate" />
@@ -12342,10 +12367,10 @@
     <node concept="2tJIrI" id="5itBwM7VFqM" role="jymVt" />
     <node concept="3Tm1VV" id="7DvO2M9IiOz" role="1B3o_S" />
     <node concept="312cEg" id="7DvO2Ma0klb" role="jymVt">
-      <property role="TrG5h" value="macroTemplateIndex" />
+      <property role="TrG5h" value="ruleProcessingSession" />
       <node concept="3Tm6S6" id="7DvO2Ma0klc" role="1B3o_S" />
-      <node concept="3uibUv" id="7P_FdVPvlwo" role="1tU5fm">
-        <ref role="3uigEE" to="hano:1hX44vNlSIA" resolve="MacroTemplateIndex" />
+      <node concept="3uibUv" id="zL5ZaNJgI6" role="1tU5fm">
+        <ref role="3uigEE" to="hano:CGeqIk8WWU" resolve="RuleProcessingSession" />
       </node>
     </node>
     <node concept="3uibUv" id="7DvO2M9IiOV" role="1zkMxy">

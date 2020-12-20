@@ -196,9 +196,6 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
-      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
-        <child id="1171903916107" name="bound" index="3qUE_r" />
-      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -397,9 +394,6 @@
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
-        <child id="1151689745422" name="elementType" index="A3Ik2" />
-      </concept>
       <concept id="1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" flags="nn" index="2HTt$P">
         <child id="1235573175711" name="elementType" index="2HTBi0" />
         <child id="1235573187520" name="singletonValue" index="2HTEbv" />
@@ -3285,24 +3279,8 @@
                   <node concept="2ShNRf" id="5zsw4w31jsK" role="33vP2m">
                     <node concept="1pGfFk" id="5zsw4w31jsL" role="2ShVmc">
                       <ref role="37wK5l" to="hano:7DvO2M9VeM1" resolve="RuleProcessingSession" />
-                      <node concept="1eOMI4" id="3KN3A4v4Wb0" role="37wK5m">
-                        <node concept="10QFUN" id="3KN3A4v4WaX" role="1eOMHV">
-                          <node concept="A3Dl8" id="3KN3A4v4Wb2" role="10QFUM">
-                            <node concept="3qUE_q" id="3KN3A4v4Wb3" role="A3Ik2">
-                              <node concept="3uibUv" id="3KN3A4v4Wb4" role="3qUE_r">
-                                <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="2OqwBi" id="3KN3A4v4Wb8" role="10QFUP">
-                            <node concept="37vLTw" id="3KN3A4vAmhd" role="2Oq$k0">
-                              <ref role="3cqZAo" node="3KN3A4vAiqQ" resolve="ac" />
-                            </node>
-                            <node concept="liA8E" id="3KN3A4v4Wbc" role="2OqNvi">
-                              <ref role="37wK5l" to="fqlx:3KN3A4uUhpW" resolve="aspects" />
-                            </node>
-                          </node>
-                        </node>
+                      <node concept="37vLTw" id="zL5ZaNDPhd" role="37wK5m">
+                        <ref role="3cqZAo" node="3KN3A4vAiqQ" resolve="ac" />
                       </node>
                       <node concept="37vLTw" id="72RDgIN4_KQ" role="37wK5m">
                         <ref role="3cqZAo" node="6OXbTD_oHcp" resolve="repo" />
@@ -3458,13 +3436,8 @@
                             <ref role="37wK5l" to="hano:72RDgIN45VE" resolve="repository" />
                           </node>
                         </node>
-                        <node concept="2OqwBi" id="61G6TdBqDRs" role="37wK5m">
-                          <node concept="37vLTw" id="61G6TdBqDRt" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="session" />
-                          </node>
-                          <node concept="liA8E" id="61G6TdBqDRu" role="2OqNvi">
-                            <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
-                          </node>
+                        <node concept="37vLTw" id="61G6TdBqDRt" role="37wK5m">
+                          <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="session" />
                         </node>
                         <node concept="3clFb_" id="61G6TdBqDRv" role="jymVt">
                           <property role="TrG5h" value="provideFeedback" />
