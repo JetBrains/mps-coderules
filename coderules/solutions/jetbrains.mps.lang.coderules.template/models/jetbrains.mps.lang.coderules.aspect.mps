@@ -19,7 +19,7 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1106,17 +1106,119 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="500mE4_ssTi" role="3cqZAp">
-          <node concept="2OqwBi" id="3KN3A4v48sf" role="3clFbG">
-            <node concept="37vLTw" id="3KN3A4v48sg" role="2Oq$k0">
+        <node concept="3cpWs8" id="5lR$kylkWw6" role="3cqZAp">
+          <node concept="3cpWsn" id="5lR$kylkWw7" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="2hMVRd" id="5lR$kylkVJg" role="1tU5fm">
+              <node concept="3uibUv" id="5lR$kylkVJj" role="2hN53Y">
+                <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="5lR$kylkWw8" role="33vP2m">
+              <node concept="2i4dXS" id="5lR$kylkWw9" role="2ShVmc">
+                <node concept="3uibUv" id="5lR$kylkWwa" role="HW$YZ">
+                  <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+                </node>
+                <node concept="2OqwBi" id="5lR$kylkWwb" role="I$8f6">
+                  <node concept="37vLTw" id="5lR$kylkWwc" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3KN3A4v3Kad" resolve="resolver" />
+                  </node>
+                  <node concept="liA8E" id="5lR$kylkWwd" role="2OqNvi">
+                    <ref role="37wK5l" to="w1kc:~ModelDependencyResolver.usedLanguages(org.jetbrains.mps.openapi.model.SModel)" resolve="usedLanguages" />
+                    <node concept="37vLTw" id="5lR$kylkWwe" role="37wK5m">
+                      <ref role="3cqZAo" node="500mE4_sraF" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1DcWWT" id="5lR$kylkY1w" role="3cqZAp">
+          <node concept="3clFbS" id="5lR$kylkY1z" role="2LFqv$">
+            <node concept="3clFbF" id="5lR$kyll2UV" role="3cqZAp">
+              <node concept="2OqwBi" id="5lR$kyll3Kv" role="3clFbG">
+                <node concept="37vLTw" id="5lR$kyll2UT" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5lR$kylkWw7" resolve="result" />
+                </node>
+                <node concept="X8dFx" id="5lR$kyll4Ol" role="2OqNvi">
+                  <node concept="2OqwBi" id="5lR$kyll59l" role="25WWJ7">
+                    <node concept="37vLTw" id="5lR$kyll59m" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3KN3A4v3Kad" resolve="resolver" />
+                    </node>
+                    <node concept="liA8E" id="5lR$kyll59n" role="2OqNvi">
+                      <ref role="37wK5l" to="w1kc:~ModelDependencyResolver.usedLanguages(org.jetbrains.mps.openapi.model.SModel)" resolve="usedLanguages" />
+                      <node concept="37vLTw" id="5lR$kyll59o" role="37wK5m">
+                        <ref role="3cqZAo" node="5lR$kylkY1$" resolve="m" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="5lR$kylkY1$" role="1Duv9x">
+            <property role="TrG5h" value="m" />
+            <node concept="3uibUv" id="5lR$kyll0nJ" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="5lR$kylkY1D" role="1DdaDG">
+            <node concept="37vLTw" id="5lR$kylkY1E" role="2Oq$k0">
               <ref role="3cqZAo" node="3KN3A4v3Kad" resolve="resolver" />
             </node>
-            <node concept="liA8E" id="3KN3A4v48sh" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelDependencyResolver.usedLanguages(org.jetbrains.mps.openapi.model.SModel)" resolve="usedLanguages" />
-              <node concept="37vLTw" id="500mE4_stiI" role="37wK5m">
+            <node concept="liA8E" id="5lR$kylkY1F" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~ModelDependencyResolver.directImports(org.jetbrains.mps.openapi.model.SModel)" resolve="directImports" />
+              <node concept="37vLTw" id="5lR$kylkY1G" role="37wK5m">
                 <ref role="3cqZAo" node="500mE4_sraF" resolve="model" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="1DcWWT" id="5lR$kyll74u" role="3cqZAp">
+          <node concept="3clFbS" id="5lR$kyll74v" role="2LFqv$">
+            <node concept="3clFbF" id="5lR$kyll74w" role="3cqZAp">
+              <node concept="2OqwBi" id="5lR$kyll74x" role="3clFbG">
+                <node concept="37vLTw" id="5lR$kyll74y" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5lR$kylkWw7" resolve="result" />
+                </node>
+                <node concept="X8dFx" id="5lR$kyll74z" role="2OqNvi">
+                  <node concept="2OqwBi" id="5lR$kyll74$" role="25WWJ7">
+                    <node concept="37vLTw" id="5lR$kyll74_" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3KN3A4v3Kad" resolve="resolver" />
+                    </node>
+                    <node concept="liA8E" id="5lR$kyll74A" role="2OqNvi">
+                      <ref role="37wK5l" to="w1kc:~ModelDependencyResolver.usedLanguages(org.jetbrains.mps.openapi.model.SModel)" resolve="usedLanguages" />
+                      <node concept="37vLTw" id="5lR$kyll74B" role="37wK5m">
+                        <ref role="3cqZAo" node="5lR$kyll74C" resolve="m" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="5lR$kyll74C" role="1Duv9x">
+            <property role="TrG5h" value="m" />
+            <node concept="3uibUv" id="5lR$kyll74D" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="5lR$kyll74E" role="1DdaDG">
+            <node concept="37vLTw" id="5lR$kyll74F" role="2Oq$k0">
+              <ref role="3cqZAo" node="3KN3A4v3Kad" resolve="resolver" />
+            </node>
+            <node concept="liA8E" id="5lR$kyll74G" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~ModelDependencyResolver.implicitImports(org.jetbrains.mps.openapi.model.SModel)" resolve="implicitImports" />
+              <node concept="37vLTw" id="5lR$kyll74H" role="37wK5m">
+                <ref role="3cqZAo" node="500mE4_sraF" resolve="model" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5lR$kylkR0f" role="3cqZAp">
+          <node concept="37vLTw" id="5lR$kylkWwf" role="3clFbG">
+            <ref role="3cqZAo" node="5lR$kylkWw7" resolve="result" />
           </node>
         </node>
       </node>
