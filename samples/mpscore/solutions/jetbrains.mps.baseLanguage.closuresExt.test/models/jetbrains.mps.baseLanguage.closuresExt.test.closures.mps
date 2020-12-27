@@ -1515,11 +1515,11 @@
                 <node concept="3clFbF" id="4yZzE4kMNuh" role="3cqZAp">
                   <node concept="37vLTw" id="4yZzE4kNb2X" role="3clFbG">
                     <ref role="3cqZAo" node="4yZzE4kNa6M" resolve="obj" />
-                    <node concept="1U20sH" id="4yZzE4kNbwa" role="lGtFl">
-                      <property role="1U20sK" value="error" />
-                    </node>
                   </node>
                 </node>
+              </node>
+              <node concept="1U20sH" id="61SyIbXreTJ" role="lGtFl">
+                <property role="1U20sK" value="error" />
               </node>
             </node>
           </node>
