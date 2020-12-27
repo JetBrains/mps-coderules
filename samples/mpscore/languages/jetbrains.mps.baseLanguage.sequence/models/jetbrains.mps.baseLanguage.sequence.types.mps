@@ -759,5 +759,124 @@
       </node>
     </node>
   </node>
+  <node concept="AVZre" id="61SyIbXrfqY">
+    <property role="TrG5h" value="sequence_lub" />
+    <ref role="2YbDB9" to="kqnc:7nkyKX6XTqJ" resolve="lub" />
+    <node concept="1nLNMY" id="61SyIbXrfr1" role="1nK1Vg">
+      <property role="TrG5h" value="lub_sequence_sequence" />
+      <node concept="3clFbS" id="61SyIbXrfr2" role="1nLNMH">
+        <node concept="1nLNNL" id="61SyIbXrfr5" role="3cqZAp">
+          <node concept="1nLNMm" id="61SyIbXrfr6" role="1nLNNK">
+            <node concept="3Aq93q" id="61SyIbXrfr9" role="1nLNMb">
+              <node concept="3I6sU6" id="61SyIbXrfra" role="3Ip0Jz">
+                <node concept="3I6s7M" id="61SyIbXrfre" role="3I6sU7">
+                  <node concept="3Aqt3T" id="61SyIbXrfrd" role="3I6s78">
+                    <ref role="3AqCNq" to="kqnc:2q0gzCFHesp" resolve="lub" />
+                    <node concept="a7P8L" id="61SyIbXrfr$" role="3AunhB">
+                      <ref role="a7OzE" node="61SyIbXrfrj" resolve="Res" />
+                    </node>
+                    <node concept="1HFMs5" id="61SyIbXrfrQ" role="3AunhB">
+                      <node concept="a7P8L" id="61SyIbXrfrD" role="1uarlU">
+                        <ref role="a7OzE" node="61SyIbXrfrr" resolve="LeftSeq" />
+                      </node>
+                      <node concept="ns1u0" id="61SyIbXrfrZ" role="1uarlW">
+                        <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
+                        <node concept="nsMwS" id="61SyIbXrh2X" role="ns1xD">
+                          <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
+                          <node concept="1nq8_$" id="61SyIbXrh32" role="nsMwV">
+                            <node concept="a7P8L" id="61SyIbXrh31" role="1nq8_t">
+                              <ref role="a7OzE" node="61SyIbXrh2w" resolve="LeftE" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="1HFMs5" id="61SyIbXrfs2" role="3AunhB">
+                      <node concept="a7P8L" id="61SyIbXrfrK" role="1uarlU">
+                        <ref role="a7OzE" node="61SyIbXrfru" resolve="RightSeq" />
+                      </node>
+                      <node concept="ns1u0" id="61SyIbXrfsd" role="1uarlW">
+                        <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
+                        <node concept="nsMwS" id="61SyIbXrh35" role="ns1xD">
+                          <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
+                          <node concept="1nq8_$" id="61SyIbXrh3a" role="nsMwV">
+                            <node concept="a7P8L" id="61SyIbXrh39" role="1nq8_t">
+                              <ref role="a7OzE" node="61SyIbXrh2R" resolve="RightE" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="61SyIbXrfri" role="0Rg$4">
+              <node concept="aZer4" id="61SyIbXrfrj" role="3XD1gS">
+                <property role="TrG5h" value="Res" />
+              </node>
+              <node concept="aZer4" id="61SyIbXrfrr" role="3XD1gS">
+                <property role="TrG5h" value="LeftSeq" />
+              </node>
+              <node concept="aZer4" id="61SyIbXrfru" role="3XD1gS">
+                <property role="TrG5h" value="RightSeq" />
+              </node>
+              <node concept="32pEOW" id="61SyIbXrfro" role="3vLBG7" />
+            </node>
+            <node concept="3NuqgR" id="61SyIbXrh3s" role="0Rg$4">
+              <node concept="aZer4" id="61SyIbXrh3t" role="3XD1gS">
+                <property role="TrG5h" value="ResE" />
+              </node>
+              <node concept="aZer4" id="61SyIbXrh2w" role="3XD1gS">
+                <property role="TrG5h" value="LeftE" />
+              </node>
+              <node concept="aZer4" id="61SyIbXrh2R" role="3XD1gS">
+                <property role="TrG5h" value="RightE" />
+              </node>
+              <node concept="32pEOW" id="61SyIbXrh3D" role="3vLBG7" />
+            </node>
+            <node concept="3xSepi" id="61SyIbXrfsf" role="3xSepv">
+              <node concept="3Aq9E8" id="61SyIbXrfsg" role="3xSepj">
+                <node concept="3I6sU6" id="61SyIbXrfsh" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="61SyIbXrh3l" role="3I6sU7">
+                    <node concept="3Aqt3T" id="61SyIbXrh3j" role="3I6s78">
+                      <ref role="3AqCNq" to="kqnc:2q0gzCFHesp" resolve="lub" />
+                      <node concept="a7P8L" id="61SyIbXrh4r" role="3AunhB">
+                        <ref role="a7OzE" node="61SyIbXrh3t" resolve="ResE" />
+                      </node>
+                      <node concept="a7P8L" id="61SyIbXrh4w" role="3AunhB">
+                        <ref role="a7OzE" node="61SyIbXrh2w" resolve="LeftE" />
+                      </node>
+                      <node concept="a7P8L" id="61SyIbXrh4B" role="3AunhB">
+                        <ref role="a7OzE" node="61SyIbXrh2R" resolve="RightE" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3I6s7M" id="61SyIbXrfsr" role="3I6sU7">
+                    <node concept="3A8Hvi" id="61SyIbXrfsx" role="3I6s78">
+                      <node concept="ns1u0" id="61SyIbXrh4F" role="3A8w4Q">
+                        <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
+                        <node concept="nsMwS" id="61SyIbXrh4H" role="ns1xD">
+                          <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
+                          <node concept="1nq8_$" id="61SyIbXrh4M" role="nsMwV">
+                            <node concept="a7P8L" id="61SyIbXrh4L" role="1nq8_t">
+                              <ref role="a7OzE" node="61SyIbXrh3t" resolve="ResE" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="a7P8L" id="61SyIbXrfsl" role="3A8wtg">
+                        <ref role="a7OzE" node="61SyIbXrfrj" resolve="Res" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
