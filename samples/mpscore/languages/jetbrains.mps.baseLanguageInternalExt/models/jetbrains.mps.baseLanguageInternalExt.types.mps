@@ -64,6 +64,9 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
+        <reference id="1138056395725" name="property" index="3TsBF5" />
+      </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -82,6 +85,10 @@
       </concept>
     </language>
     <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules">
+      <concept id="1618328391714763069" name="jetbrains.mps.lang.coderules.structure.MacroTable" flags="ng" index="0oKg$">
+        <reference id="6097203247219331496" name="extends" index="3tg4Y$" />
+        <child id="1618328391714763070" name="macro" index="0oKgB" />
+      </concept>
       <concept id="7326790520856487884" name="jetbrains.mps.lang.coderules.structure.ProvideFeedbackOperation" flags="ng" index="26X5F$">
         <property id="7326790520856501351" name="severity" index="26X25f" />
         <child id="7326790520856501349" name="message" index="26X25d" />
@@ -90,6 +97,18 @@
         <reference id="861509610434243078" name="decl" index="ns1xF" />
         <child id="861509610434243076" name="override" index="ns1xD" />
       </concept>
+      <concept id="861509610434243104" name="jetbrains.mps.lang.coderules.structure.TermTable" flags="ng" index="ns1xd">
+        <reference id="8966267790978924106" name="extended" index="2efqH6" />
+        <child id="861509610434243105" name="contents" index="ns1xc" />
+      </concept>
+      <concept id="861509610434243081" name="jetbrains.mps.lang.coderules.structure.TermDeclaration" flags="ng" index="ns1x$">
+        <reference id="861509610434243089" name="prototype" index="ns1xW" />
+        <child id="861509610434243084" name="template" index="ns1xx" />
+      </concept>
+      <concept id="861509610434276450" name="jetbrains.mps.lang.coderules.structure.TermTemplate" flags="ng" index="nspSf">
+        <child id="861509610434276451" name="feature" index="nspSe" />
+      </concept>
+      <concept id="861509610434294982" name="jetbrains.mps.lang.coderules.structure.ValueFeature" flags="ng" index="nssqF" />
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
         <child id="861509610434435670" name="getter" index="nsMwV" />
@@ -103,6 +122,20 @@
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
       <concept id="2381360340662937504" name="jetbrains.mps.lang.coderules.structure.TermType" flags="ig" index="32pEOW" />
+      <concept id="6097203247156088058" name="jetbrains.mps.lang.coderules.structure.ExpandMacroInputSpecification" flags="ng" index="3ixlbQ">
+        <reference id="6097203247156276310" name="applicableConcept" index="3ixz9q" />
+        <child id="6097203247156107501" name="input" index="3ix8rx" />
+      </concept>
+      <concept id="6097203247156229793" name="jetbrains.mps.lang.coderules.structure.ExpandMacroInputDeclaration" flags="ng" index="3ixQyH" />
+      <concept id="6097203247155932548" name="jetbrains.mps.lang.coderules.structure.ExpandMacroTemplate" flags="ng" index="3iyZe8">
+        <reference id="6097203247158702389" name="prototype" index="3iRiWT" />
+        <child id="6097203247156392058" name="inputSpec" index="3iweTQ" />
+        <child id="6097203247156492735" name="code" index="3iwQuN" />
+        <child id="6097203247216428965" name="logical" index="3tb1AD" />
+      </concept>
+      <concept id="6097203247183580433" name="jetbrains.mps.lang.coderules.structure.ExpandMacroInputReference" flags="ng" index="3j8tct">
+        <reference id="6097203247183580434" name="declaration" index="3j8tcu" />
+      </concept>
       <concept id="6097203247182936001" name="jetbrains.mps.lang.coderules.structure.ExpandMacroConstraint" flags="ng" index="3jbYBd">
         <reference id="6097203247182937177" name="template" index="3jbY9l" />
         <child id="6097203247182937145" name="input" index="3jbY8P" />
@@ -120,12 +153,17 @@
       <concept id="3575255234174969664" name="jetbrains.mps.lang.coderules.structure.ConstraintRuleStatement" flags="ng" index="1nLNNL">
         <child id="3575255234174969665" name="rule" index="1nLNNK" />
       </concept>
+      <concept id="8908809128801951597" name="jetbrains.mps.lang.coderules.structure.MacroBodyLogicalDeclaration" flags="ng" index="3uniRu" />
       <concept id="7674753015762572646" name="jetbrains.mps.lang.coderules.structure.BodyBlock" flags="ng" index="3xSepi">
         <child id="7674753015762572647" name="body" index="3xSepj" />
       </concept>
       <concept id="7368070394769089081" name="jetbrains.mps.lang.coderules.structure.RuleInputDeclaration" flags="ng" index="3A20r5" />
       <concept id="7368070394769139970" name="jetbrains.mps.lang.coderules.structure.RuleInputReference" flags="ng" index="3A2sRY">
         <reference id="7368070394769213644" name="declaration" index="3A2yKK" />
+      </concept>
+      <concept id="7368070394770780974" name="jetbrains.mps.lang.coderules.structure.UnifiesConstraint" flags="ng" index="3A8Hvi">
+        <child id="7368070394770793930" name="value" index="3A8w4Q" />
+        <child id="7368070394770793388" name="assignee" index="3A8wtg" />
       </concept>
       <concept id="7368070394766963750" name="jetbrains.mps.lang.coderules.structure.Head" flags="ng" index="3Aq93q">
         <property id="7368070394767443940" name="keep" index="3ArMco" />
@@ -134,6 +172,9 @@
         <child id="2316688792939037645" name="logic" index="3Ip0Jz" />
       </concept>
       <concept id="7368070394766966388" name="jetbrains.mps.lang.coderules.structure.Body" flags="ng" index="3Aq9E8" />
+      <concept id="7368070394766978092" name="jetbrains.mps.lang.coderules.structure.EmitConstraintStatement" flags="ng" index="3Aqczg">
+        <child id="7368070394767031348" name="constraint" index="3Aqpz8" />
+      </concept>
       <concept id="7368070394767045637" name="jetbrains.mps.lang.coderules.structure.UserConstraint" flags="ng" index="3Aqt3T">
         <reference id="7368070394767091750" name="template" index="3AqCNq" />
         <child id="7368070394768117915" name="argument" index="3AunhB" />
@@ -1378,6 +1419,61 @@
         <ref role="2t_S0q" to="tp68:hweJtmO" resolve="InternalThisExpression" />
         <node concept="3A20r5" id="7gMIJIxWtX2" role="2t_VXX">
           <property role="TrG5h" value="ite" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="0oKg$" id="7ZvrONsSHY6">
+    <property role="TrG5h" value="InternTypes" />
+    <ref role="3tg4Y$" to="kqnc:E1U1n2RerB" resolve="Types" />
+    <node concept="3iyZe8" id="7ZvrONsSHYb" role="0oKgB">
+      <ref role="3iRiWT" to="kqnc:5itBwMau8m1" resolve="lift" />
+      <node concept="3clFbS" id="7ZvrONsSHYc" role="3iwQuN">
+        <node concept="3Aqczg" id="7ZvrONsSHYK" role="3cqZAp">
+          <node concept="3A8Hvi" id="7ZvrONsSHYH" role="3Aqpz8">
+            <node concept="a7P8L" id="7ZvrONsSHYP" role="3A8wtg">
+              <ref role="a7OzE" node="7ZvrONsSHYf" resolve="Type" />
+            </node>
+            <node concept="ns1u0" id="7ZvrONsSHYR" role="3A8w4Q">
+              <ref role="ns1xF" node="7ZvrONsSHYs" resolve="internClassifier" />
+              <node concept="nsMwS" id="7ZvrONsSHYT" role="ns1xD">
+                <ref role="nsMwP" node="7ZvrONsSHY$" resolve="classname" />
+                <node concept="2OqwBi" id="7ZvrONsSIb7" role="nsMwV">
+                  <node concept="3j8tct" id="7ZvrONsSHYX" role="2Oq$k0">
+                    <ref role="3j8tcu" node="7ZvrONsSHYh" resolve="ict" />
+                  </node>
+                  <node concept="3TrcHB" id="7ZvrONsSIqn" role="2OqNvi">
+                    <ref role="3TsBF5" to="tp68:h6ely4F" resolve="fqClassName" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uniRu" id="7ZvrONsSHYd" role="3tb1AD">
+        <node concept="32pEOW" id="7ZvrONsSHYe" role="3vLBG7" />
+        <node concept="aZer4" id="7ZvrONsSHYf" role="3XD1gS">
+          <property role="TrG5h" value="Type" />
+        </node>
+      </node>
+      <node concept="3ixlbQ" id="7ZvrONsSHYg" role="3iweTQ">
+        <ref role="3ixz9q" to="tp68:h6eloLH" resolve="InternalClassifierType" />
+        <node concept="3ixQyH" id="7ZvrONsSHYh" role="3ix8rx">
+          <property role="TrG5h" value="ict" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="ns1xd" id="7ZvrONsSHYp">
+    <property role="TrG5h" value="InternTerms" />
+    <ref role="2efqH6" to="kqnc:JOGAOsVt29" resolve="Terms" />
+    <node concept="ns1x$" id="7ZvrONsSHYs" role="ns1xc">
+      <property role="TrG5h" value="internClassifier" />
+      <ref role="ns1xW" to="kqnc:4lCLOtwq2MF" resolve="type" />
+      <node concept="nspSf" id="7ZvrONsSHYt" role="ns1xx">
+        <node concept="nssqF" id="7ZvrONsSHY$" role="nspSe">
+          <property role="TrG5h" value="classname" />
         </node>
       </node>
     </node>
