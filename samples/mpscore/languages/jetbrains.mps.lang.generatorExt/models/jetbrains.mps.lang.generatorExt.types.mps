@@ -15,7 +15,6 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpeq" ref="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" />
     <import index="yh6q" ref="r:14dbdd37-ab02-4407-8e3c-3308d6f4fbba(jetbrains.mps.baseLanguage.sequence.types)" />
-    <import index="tpdo" ref="r:00000000-0000-4000-0000-011c895902a0(jetbrains.mps.lang.editor.generator.baseLanguage.template.util)" />
     <import index="tpfc" ref="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)" />
     <import index="75ov" ref="r:cdd4fc54-626c-4040-b1f7-5bc8bfd2ee53(jetbrains.mps.lang.generator.helper)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -1694,69 +1693,6 @@
         <ref role="2t_S0q" to="tpf8:42YwEPgeNM8" resolve="TemplateArgumentPatternVarRefExpression" />
         <node concept="3A20r5" id="3ZfjIHuml9x" role="2t_VXX">
           <property role="TrG5h" value="tapvre" />
-        </node>
-      </node>
-    </node>
-    <node concept="1nLNMY" id="3ZfjIHumlBt" role="1nK1Vg">
-      <property role="TrG5h" value="templateArgumentVariableRefExpression" />
-      <node concept="3clFbS" id="3ZfjIHumlBu" role="1nLNMH">
-        <node concept="1nLNNL" id="3ZfjIHumlEc" role="3cqZAp">
-          <node concept="1nLNMm" id="3ZfjIHumlEd" role="1nLNNK">
-            <node concept="3Aq93q" id="3ZfjIHumlEJ" role="1nLNMb">
-              <property role="3ArMco" value="true" />
-              <node concept="3I6sU6" id="3ZfjIHumlEK" role="3Ip0Jz">
-                <node concept="3I6s7M" id="3ZfjIHumlEO" role="3I6sU7">
-                  <node concept="3Aqt3T" id="3ZfjIHumlEN" role="3I6s78">
-                    <ref role="3AqCNq" to="kqnc:34$A1MfhdDv" resolve="typeOf" />
-                    <node concept="37jhX" id="3ZfjIHumlEV" role="3AunhB">
-                      <node concept="2OqwBi" id="3ZfjIHumlMS" role="37jj2">
-                        <node concept="3A2sRY" id="3ZfjIHumlET" role="2Oq$k0">
-                          <ref role="3A2yKK" node="3ZfjIHumlBw" resolve="tavre" />
-                        </node>
-                        <node concept="3TrEf2" id="3ZfjIHumlVq" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpf8:2n6lsTIwfRq" resolve="varmacro" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="a7P8L" id="3ZfjIHumlXC" role="3AunhB">
-                      <ref role="a7OzE" node="3ZfjIHumlEi" resolve="Type" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3NuqgR" id="3ZfjIHumlEh" role="0Rg$4">
-              <node concept="aZer4" id="3ZfjIHumlEi" role="3XD1gS">
-                <property role="TrG5h" value="Type" />
-              </node>
-              <node concept="32pEOW" id="3ZfjIHumlEu" role="3vLBG7" />
-            </node>
-            <node concept="3xSepi" id="3ZfjIHumlXN" role="3xSepv">
-              <node concept="3Aq9E8" id="3ZfjIHumlXO" role="3xSepj">
-                <node concept="3I6sU6" id="3ZfjIHumlXP" role="3Ip0Jz">
-                  <node concept="3I6s7M" id="3ZfjIHumlXU" role="3I6sU7">
-                    <node concept="3Aqt3T" id="3ZfjIHumlXT" role="3I6s78">
-                      <ref role="3AqCNq" to="kqnc:34$A1MfhdDv" resolve="typeOf" />
-                      <node concept="37jhX" id="3ZfjIHumlY4" role="3AunhB">
-                        <node concept="3A2sRY" id="3ZfjIHumlY2" role="37jj2">
-                          <ref role="3A2yKK" node="3ZfjIHumlBw" resolve="tavre" />
-                        </node>
-                      </node>
-                      <node concept="a7P8L" id="3ZfjIHumlYh" role="3AunhB">
-                        <ref role="a7OzE" node="3ZfjIHumlEi" resolve="Type" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2t___k" id="3ZfjIHumlBv" role="1nLNMg">
-        <ref role="2t_S0q" to="tpf8:3PJ9groyE0C" resolve="TemplateArgumentVariableRefExpression" />
-        <node concept="3A20r5" id="3ZfjIHumlBw" role="2t_VXX">
-          <property role="TrG5h" value="tavre" />
         </node>
       </node>
     </node>
