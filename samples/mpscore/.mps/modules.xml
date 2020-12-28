@@ -12,6 +12,10 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguageInternalExt/jetbrains.mps.baseLanguageInternalExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.coderulesExt/jetbrains.mps.lang.coderulesExt.mpl" folder="ext.coderules" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.constraintsExt/jetbrains.mps.lang.constraintsExt.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.generator.generationContextExt/jetbrains.mps.lang.generator.generationContextExt.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.generatorExt/jetbrains.mps.lang.generatorExt.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.quotationExt/jetbrains.mps.lang.quotationExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.mpl" folder="ext.smodel" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystemExt/jetbrains.mps.lang.typesystemExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logicExt/jetbrains.mps.logicExt.mpl" folder="ext.coderules" />
@@ -19,7 +23,6 @@
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.collectionsExt.test/jetbrains.mps.baseLanguage.collectionsExt.test.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.tuplesExt.test/jetbrains.mps.baseLanguage.tuplesExt.test.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.lang.coderulesExt.test/jetbrains.mps.lang.coderulesExt.test.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.test.msd" folder="ext.smodel" />
       <modulePath path="$PROJECT_DIR$/solutions/samples.mpscore.build/samples.mpscore.build.msd" folder="build" />
       <modulePath path="$PROJECT_DIR$/solutions/typechecking.samples.baseLanguage/typechecking.samples.baseLanguage.msd" folder="" />
