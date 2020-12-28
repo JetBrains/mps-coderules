@@ -282,6 +282,7 @@
     <property role="EcuMT" value="3749787170939265030" />
     <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="VarType" />
+    <ref role="1TJDcQ" node="3_qfG1EP6Nw" resolve="Type" />
     <node concept="PrWs8" id="48ZGLP8BG5o" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
