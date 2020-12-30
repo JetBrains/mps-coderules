@@ -170,9 +170,7 @@
       <concept id="1803469493727536395" name="jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList" flags="ng" index="hTh3S">
         <child id="1803469493727536396" name="concept" index="hTh3Z" />
       </concept>
-      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
@@ -1253,17 +1251,14 @@
     <node concept="13i0hz" id="7LI_gNMXm_R" role="13h7CS">
       <property role="TrG5h" value="getQueryClassifier" />
       <node concept="3Tm1VV" id="7LI_gNMXm_S" role="1B3o_S" />
-      <node concept="2sp9CU" id="7LI_gNMXmAK" role="3clF45" />
+      <node concept="3Tqbb2" id="1wOsNdKDLNJ" role="3clF45" />
       <node concept="3clFbS" id="7LI_gNMXm_U" role="3clF47">
         <node concept="3clFbF" id="7LI_gNMXmIV" role="3cqZAp">
-          <node concept="2OqwBi" id="7LI_gNMXnv5" role="3clFbG">
-            <node concept="2OqwBi" id="7LI_gNMXmVQ" role="2Oq$k0">
-              <node concept="13iPFW" id="7LI_gNMXmIU" role="2Oq$k0" />
-              <node concept="3TrEf2" id="7LI_gNMXnap" role="2OqNvi">
-                <ref role="3Tt5mk" to="wq2x:5EDW3XE6suU" resolve="queryType" />
-              </node>
+          <node concept="2OqwBi" id="7LI_gNMXmVQ" role="3clFbG">
+            <node concept="13iPFW" id="7LI_gNMXmIU" role="2Oq$k0" />
+            <node concept="3TrEf2" id="7LI_gNMXnap" role="2OqNvi">
+              <ref role="3Tt5mk" to="wq2x:5EDW3XE6suU" resolve="queryType" />
             </node>
-            <node concept="iZEcu" id="7LI_gNMXnX3" role="2OqNvi" />
           </node>
         </node>
       </node>
