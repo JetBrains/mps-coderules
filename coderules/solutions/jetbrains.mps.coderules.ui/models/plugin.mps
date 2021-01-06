@@ -3958,6 +3958,214 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2zBk6uIe8Zu" role="jymVt" />
+    <node concept="2tJIrI" id="3GLv42MM1tM" role="jymVt" />
+    <node concept="3clFb_" id="3GLv42MM1KL" role="jymVt">
+      <property role="TrG5h" value="setModel" />
+      <node concept="3Tm1VV" id="3GLv42MM1KM" role="1B3o_S" />
+      <node concept="3cqZAl" id="3GLv42MM1KO" role="3clF45" />
+      <node concept="37vLTG" id="3GLv42MM1KP" role="3clF46">
+        <property role="TrG5h" value="treeTableModel" />
+        <node concept="3uibUv" id="3GLv42MM1KQ" role="1tU5fm">
+          <ref role="3uigEE" to="u30n:~TreeTableModel" resolve="TreeTableModel" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3GLv42MM1KR" role="3clF47">
+        <node concept="3clFbF" id="3GLv42MM1KV" role="3cqZAp">
+          <node concept="3nyPlj" id="3GLv42MM1KU" role="3clFbG">
+            <ref role="37wK5l" to="u30n:~TreeTable.setModel(com.intellij.ui.treeStructure.treetable.TreeTableModel)" resolve="setModel" />
+            <node concept="37vLTw" id="3GLv42MM1KT" role="37wK5m">
+              <ref role="3cqZAo" node="3GLv42MM1KP" resolve="treeTableModel" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3GLv42MM3pO" role="3cqZAp">
+          <node concept="1PaTwC" id="3GLv42MM3pP" role="1aUNEU">
+            <node concept="3oM_SD" id="3GLv42MM3pQ" role="1PaTwD">
+              <property role="3oM_SC" value="fix" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM3q7" role="1PaTwD">
+              <property role="3oM_SC" value="a" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM3qa" role="1PaTwD">
+              <property role="3oM_SC" value="hack" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM3qe" role="1PaTwD">
+              <property role="3oM_SC" value="in" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM3qj" role="1PaTwD">
+              <property role="3oM_SC" value="TreeTableTree's" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM3qp" role="1PaTwD">
+              <property role="3oM_SC" value="constructor" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM3qw" role="1PaTwD">
+              <property role="3oM_SC" value="which" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM3qC" role="1PaTwD">
+              <property role="3oM_SC" value="sets" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM3qL" role="1PaTwD">
+              <property role="3oM_SC" value="border" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM3qV" role="1PaTwD">
+              <property role="3oM_SC" value="to" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM3r6" role="1PaTwD">
+              <property role="3oM_SC" value="null..." />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3GLv42MM4E5" role="3cqZAp">
+          <node concept="1PaTwC" id="3GLv42MM4E6" role="1aUNEU">
+            <node concept="3oM_SD" id="3GLv42MM4E7" role="1PaTwD">
+              <property role="3oM_SC" value="which" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4E_" role="1PaTwD">
+              <property role="3oM_SC" value="in" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4EC" role="1PaTwD">
+              <property role="3oM_SC" value="turn" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4EG" role="1PaTwD">
+              <property role="3oM_SC" value="causes" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4EL" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4ER" role="1PaTwD">
+              <property role="3oM_SC" value="default" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4EY" role="1PaTwD">
+              <property role="3oM_SC" value="border" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4F6" role="1PaTwD">
+              <property role="3oM_SC" value="from" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4Ff" role="1PaTwD">
+              <property role="3oM_SC" value="UI" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4Fp" role="1PaTwD">
+              <property role="3oM_SC" value="defaults" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4F$" role="1PaTwD">
+              <property role="3oM_SC" value="to" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4FK" role="1PaTwD">
+              <property role="3oM_SC" value="be" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM4FX" role="1PaTwD">
+              <property role="3oM_SC" value="installed..." />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3GLv42MM5Vd" role="3cqZAp">
+          <node concept="1PaTwC" id="3GLv42MM5Ve" role="1aUNEU">
+            <node concept="3oM_SD" id="3GLv42MM5Vf" role="1PaTwD">
+              <property role="3oM_SC" value="which" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM5VW" role="1PaTwD">
+              <property role="3oM_SC" value="has" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM5VZ" role="1PaTwD">
+              <property role="3oM_SC" value="top" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM5W3" role="1PaTwD">
+              <property role="3oM_SC" value="and" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM5W8" role="1PaTwD">
+              <property role="3oM_SC" value="bottom" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM5We" role="1PaTwD">
+              <property role="3oM_SC" value="insets" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM5Wl" role="1PaTwD">
+              <property role="3oM_SC" value="set" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM5Wt" role="1PaTwD">
+              <property role="3oM_SC" value="to" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM5WA" role="1PaTwD">
+              <property role="3oM_SC" value="1..." />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3GLv42MM7d$" role="3cqZAp">
+          <node concept="1PaTwC" id="3GLv42MM7d_" role="1aUNEU">
+            <node concept="3oM_SD" id="3GLv42MM7dA" role="1PaTwD">
+              <property role="3oM_SC" value="which" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7eu" role="1PaTwD">
+              <property role="3oM_SC" value="in" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7ex" role="1PaTwD">
+              <property role="3oM_SC" value="turn" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7e_" role="1PaTwD">
+              <property role="3oM_SC" value="causes" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7eE" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7eK" role="1PaTwD">
+              <property role="3oM_SC" value="cell" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7eR" role="1PaTwD">
+              <property role="3oM_SC" value="renderer" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7eZ" role="1PaTwD">
+              <property role="3oM_SC" value="to" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7f8" role="1PaTwD">
+              <property role="3oM_SC" value="be" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7fi" role="1PaTwD">
+              <property role="3oM_SC" value="rendered" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7ft" role="1PaTwD">
+              <property role="3oM_SC" value="at" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7fD" role="1PaTwD">
+              <property role="3oM_SC" value="a" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7fQ" role="1PaTwD">
+              <property role="3oM_SC" value="wrong" />
+            </node>
+            <node concept="3oM_SD" id="3GLv42MM7g4" role="1PaTwD">
+              <property role="3oM_SC" value="location..." />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3GLv42MM8vK" role="3cqZAp">
+          <node concept="1PaTwC" id="3GLv42MM8vL" role="1aUNEU">
+            <node concept="3oM_SD" id="3GLv42MM8vM" role="1PaTwD">
+              <property role="3oM_SC" value="&lt;sigh&gt;" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3GLv42MM2aX" role="3cqZAp">
+          <node concept="2OqwBi" id="3GLv42MM2aY" role="3clFbG">
+            <node concept="1rXfSq" id="3GLv42MM2aZ" role="2Oq$k0">
+              <ref role="37wK5l" to="u30n:~TreeTable.getTree()" resolve="getTree" />
+            </node>
+            <node concept="liA8E" id="3GLv42MM2b0" role="2OqNvi">
+              <ref role="37wK5l" to="u30n:~TreeTableTree.setBorder(javax.swing.border.Border)" resolve="setBorder" />
+              <node concept="2ShNRf" id="3GLv42MM2b1" role="37wK5m">
+                <node concept="1pGfFk" id="3GLv42MM2b2" role="2ShVmc">
+                  <ref role="37wK5l" to="g1qu:~JBEmptyBorder.&lt;init&gt;(int)" resolve="JBEmptyBorder" />
+                  <node concept="3cmrfG" id="3GLv42MM2b3" role="37wK5m">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3GLv42MM1KS" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3GLv42MM1XV" role="jymVt" />
     <node concept="3clFb_" id="1EFtv_BAb3z" role="jymVt">
       <property role="TrG5h" value="dispose" />
       <node concept="3cqZAl" id="1EFtv_BAb3_" role="3clF45" />
