@@ -2820,12 +2820,9 @@
                           <ref role="3cqZAo" node="6QH_LDtdTgs" resolve="typecheckingState" />
                         </node>
                         <node concept="liA8E" id="6QH_LDtdXLN" role="2OqNvi">
-                          <ref role="37wK5l" to="tj24:4Dkptq1OPR7" resolve="getOrUpdateTypecheckingResults" />
+                          <ref role="37wK5l" to="tj24:4Dkptq1OPR7" resolve="updateUnitTypecheckingResults" />
                           <node concept="37vLTw" id="7gMIJIxPLpc" role="37wK5m">
                             <ref role="3cqZAo" node="7mB3viLe1a2" resolve="demo" />
-                          </node>
-                          <node concept="3clFbT" id="7gMIJIxPLSu" role="37wK5m">
-                            <property role="3clFbU" value="true" />
                           </node>
                           <node concept="1bVj0M" id="44XN1Jd6FDu" role="37wK5m">
                             <node concept="3clFbS" id="44XN1Jd6FDw" role="1bW5cS">
