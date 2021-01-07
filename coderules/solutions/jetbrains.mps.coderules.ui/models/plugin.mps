@@ -15062,7 +15062,7 @@
               <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
             </node>
             <node concept="liA8E" id="6QkkSolnw3q" role="2OqNvi">
-              <ref role="37wK5l" to="u30n:~TreeTable.setModel(com.intellij.ui.treeStructure.treetable.TreeTableModel)" resolve="setModel" />
+              <ref role="37wK5l" node="3GLv42MM1KL" resolve="setModel" />
               <node concept="2OqwBi" id="6QkkSolnw8w" role="37wK5m">
                 <node concept="37vLTw" id="2ceN1hD68Jt" role="2Oq$k0">
                   <ref role="3cqZAo" node="2ceN1hD5R6f" resolve="activationTreeTableModelBuilder" />
@@ -15173,7 +15173,7 @@
               <ref role="3cqZAo" node="6QkkSolbdUA" resolve="storeTreeTable" />
             </node>
             <node concept="liA8E" id="6QkkSolrbhP" role="2OqNvi">
-              <ref role="37wK5l" to="u30n:~TreeTable.setModel(com.intellij.ui.treeStructure.treetable.TreeTableModel)" resolve="setModel" />
+              <ref role="37wK5l" node="3GLv42MM1KL" resolve="setModel" />
               <node concept="2OqwBi" id="6QkkSolrbKv" role="37wK5m">
                 <node concept="37vLTw" id="2ceN1hD9RlE" role="2Oq$k0">
                   <ref role="3cqZAo" node="2ceN1hD9wBB" resolve="storeTreeTableModelBuilder" />
