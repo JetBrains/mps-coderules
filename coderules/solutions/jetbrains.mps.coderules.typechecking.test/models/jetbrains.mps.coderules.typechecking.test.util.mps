@@ -1026,14 +1026,6 @@
                 <node concept="37vLTw" id="1XKnVQwZn$" role="37wK5m">
                   <ref role="3cqZAo" node="1XKnVQdrLs" resolve="unit" />
                 </node>
-                <node concept="2ShNRf" id="1XKnVQwZn_" role="37wK5m">
-                  <node concept="1pGfFk" id="1XKnVQwZnA" role="2ShVmc">
-                    <ref role="37wK5l" to="ksgm:5$0KRV_h31e" resolve="RelevantNodesMonitor" />
-                    <node concept="37vLTw" id="1XKnVQwZnB" role="37wK5m">
-                      <ref role="3cqZAo" node="1XKnVQdrLs" resolve="unit" />
-                    </node>
-                  </node>
-                </node>
               </node>
             </node>
           </node>
