@@ -8,6 +8,7 @@
 **/.mps/workspace.xml
 **/.mps/shelf/*
 **/.idea/workspace.xml
+**/.mps/product-workspace.xml
 **/lib/*
 **/.DS_Store
 .gradle
