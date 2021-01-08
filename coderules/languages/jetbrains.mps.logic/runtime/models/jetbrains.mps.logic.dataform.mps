@@ -12265,7 +12265,7 @@
                 <node concept="2OqwBi" id="5wYq9r5vnV3" role="3clFbG">
                   <node concept="2OqwBi" id="6Dg__VITF1a" role="2Oq$k0">
                     <node concept="37vLTw" id="6Dg__VITE8T" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6Dg__VISPrj" resolve="contents" />
+                      <ref role="3cqZAo" node="6Dg__VISPrj" />
                     </node>
                     <node concept="liA8E" id="6Dg__VITGag" role="2OqNvi">
                       <ref role="37wK5l" to="33ny:~LinkedList.peek()" resolve="peek" />
@@ -12274,7 +12274,7 @@
                   <node concept="liA8E" id="5wYq9r5vnV5" role="2OqNvi">
                     <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String)" resolve="append" />
                     <node concept="37vLTw" id="6Dg__VJ7sRc" role="37wK5m">
-                      <ref role="3cqZAo" node="6Dg__VJ7kJG" resolve="name" />
+                      <ref role="3cqZAo" node="6Dg__VJ7kJG" />
                     </node>
                   </node>
                 </node>
@@ -12414,7 +12414,7 @@
           <node concept="2OqwBi" id="5wYq9r5uHyR" role="3clFbG">
             <node concept="2OqwBi" id="6Dg__VITIuL" role="2Oq$k0">
               <node concept="37vLTw" id="6Dg__VITHAu" role="2Oq$k0">
-                <ref role="3cqZAo" node="6Dg__VISPrj" resolve="contents" />
+                <ref role="3cqZAo" node="6Dg__VISPrj" />
               </node>
               <node concept="liA8E" id="6Dg__VITK7n" role="2OqNvi">
                 <ref role="37wK5l" to="33ny:~LinkedList.peek()" resolve="peek" />
@@ -12427,10 +12427,10 @@
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <node concept="2OqwBi" id="5wYq9r5uHyV" role="37wK5m">
                   <node concept="37vLTw" id="5wYq9r5uPRM" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5wYq9r5uqYR" resolve="listRole" />
+                    <ref role="3cqZAo" node="5wYq9r5uqYR" />
                   </node>
                   <node concept="liA8E" id="5wYq9r5uHyX" role="2OqNvi">
-                    <ref role="37wK5l" node="1R$Cm9qGRoH" resolve="symbol" />
+                    <ref role="37wK5l" node="1R$Cm9qGRoH" />
                   </node>
                 </node>
               </node>
@@ -12609,7 +12609,7 @@
                 <node concept="2OqwBi" id="5wYq9r5tWi3" role="3clFbG">
                   <node concept="2OqwBi" id="6Dg__VITOeC" role="2Oq$k0">
                     <node concept="37vLTw" id="6Dg__VITMaV" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6Dg__VISPrj" resolve="contents" />
+                      <ref role="3cqZAo" node="6Dg__VISPrj" />
                     </node>
                     <node concept="liA8E" id="6Dg__VITPgo" role="2OqNvi">
                       <ref role="37wK5l" to="33ny:~LinkedList.peek()" resolve="peek" />
@@ -12618,7 +12618,7 @@
                   <node concept="liA8E" id="5wYq9r5tWi5" role="2OqNvi">
                     <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String)" resolve="append" />
                     <node concept="37vLTw" id="5wYq9r5tWi6" role="37wK5m">
-                      <ref role="3cqZAo" node="1G9MbtSGvQc" resolve="name" />
+                      <ref role="3cqZAo" node="1G9MbtSGvQc" />
                     </node>
                   </node>
                 </node>
