@@ -25,18 +25,37 @@ import jetbrains.mps.logic.reactor.program.Rule
 
 /**
  * Facade interface for incremental processing.
- * Designates points in program evaluation where incremental processing
- * must be injected. It also provides an entry point for evaluation.
+ *
+ * Specifies points in program evaluation where
+ * incremental processing must be must be injected:
+ * [offerMatch], [processMatch], [processOccurrenceMatches],
+ * [processActivated], [processInvalidated].
+ *
+ * Provides an entry point for evaluation: [run].
+ *
+ * Provides additional session output through
+ * [invalidatedFeedback] & [invalidatedRules].
  */
 internal interface ProcessingStrategy {
 
     /**
-     * Information returned back from incremental processing session.
+     * Output of incremental processing session.
+     *
+     * Specifies keys for invalid program feedback
+     * so that caller could clear it.
+     *
+     * @return collection of invalid program feedback keys.
      */
     fun invalidatedFeedback(): FeedbackKeySet
 
     /**
-     * Unique tags of principal rules which matches where invalidated.
+     * Output of incremental processing session.
+     *
+     * Specifies unique tags of principal rules which
+     * matches were invalidated. From this rule information
+     * it can be inferred which rule origins were affected.
+     *
+     * @return collection of unique tags of affected rules.
      */
     fun invalidatedRules(): List<Any>
 
@@ -46,51 +65,75 @@ internal interface ProcessingStrategy {
     fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint): FeedbackStatus
 
     /**
+     * Injection point into program evaluation process.
+     *
      * Called before [Controller.offerMatch].
-     * Can omit match by returning false.
+     * Allows to omit match (by returning `false`)
+     * from usual evaluation process and handle it
+     * in some special manner according to strategy.
+     *
+     * @return `true` if match isn't affected by the strategy,
+     * `false` if it was and must be omitted.
      */
     fun offerMatch(match: RuleMatchEx): Boolean
 
     /**
-     * Pre-process accepted match (i.e. after [Controller.offerMatch])
+     * Injection point into program evaluation process.
+     *
+     * Pre-process [match] accepted by [Controller.offerMatch]
      * before general processing in [Controller.processBody].
+     * Aimed at processing heads of the [match], while [match]
+     * itself is evaluated in a usual manner by [Controller].
      */
     fun processMatch(match: RuleMatchEx)
 
     /**
-     * Processes list of matches on active [Occurrence].
-     * Should return a filtered [matches] list.
+     * Injection point into program evaluation process.
+     *
+     * Processes [matches] of activated [Occurrence]
+     * returned by [Dispatcher.DispatchingFront.matches].
+     * Allows to filter [matches] according to the strategy
+     * e.g. postpone them or drop entirely.
+     *
+     * In contrast to [offerMatch], happens earlier and allows
+     * to process all new matches of [active] at once.
+     *
+     * @return list of filtered [matches].
      */
     fun processOccurrenceMatches(active: Occurrence, matches: List<RuleMatchEx>): List<RuleMatchEx>
 
     /**
+     * Injection point into program evaluation process.
+     *
      * Called on new activated [Occurrence].
      * Allows to handle program's logical state,
      * e.g. add processing-specific observers with [observable].
      */
-    fun processActivated(active: Occurrence, observable: LogicalStateObservable): Unit
+    fun processActivated(active: Occurrence, observable: LogicalStateObservable)
 
     // fixme: essentially InvalidationStage.invalidateChunk redirects back here -- unnecessary circle
     /**
+     * Injection point into program evaluation process.
+     *
      * Called for invalidated [Occurrence]s.
      * It's a pair method for [processActivated] to discharge
      * its effects, e.g. to clear program logical state.
      */
-    fun processInvalidated(occ: Occurrence, observable: LogicalStateObservable): Unit
+    fun processInvalidated(occ: Occurrence, observable: LogicalStateObservable)
 }
 
 
 /**
- * Default non-incremental processing with stubs.
+ * Default non-incremental processing with stubs. Does nothing.
  */
-internal open class DefaultProcessing: ProcessingStrategy {
+internal open class EmptyProcessing: ProcessingStrategy {
 
     override fun invalidatedFeedback(): FeedbackKeySet = emptySet()
 
     override fun invalidatedRules(): List<Any> = emptyList()
 
     /**
-     * Simply redirects evaluation to [Controller].
+     * Entry point. Simply redirects evaluation to [Controller].
      */
     override fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint) =
         controller.activate(main)
@@ -108,12 +151,15 @@ internal open class DefaultProcessing: ProcessingStrategy {
 
 
 /**
- * Processing strategy that observes logical vars and ensures basic incremental contract.
+ * Strategy that observes logical vars used in principal constraints
+ * with a help of [PrincipalObserverDispatcher].
+ *
+ * Required for [IncrementalProcessing] for an initial session run.
  */
 internal open class GroundProcessing(
     override val ispec: IncrementalSpec,
     private val principalObservers: PrincipalObserverDispatcher = PrincipalObserverDispatcher.EMPTY
-): DefaultProcessing(), IncrSpecHolder {
+): EmptyProcessing(), IncrSpecHolder {
 
     override fun processActivated(active: Occurrence, observable: LogicalStateObservable) {
         if (active.isPrincipal) {
@@ -133,8 +179,9 @@ internal open class GroundProcessing(
 /**
  * Facade implementation for incremental processing algorithm.
  *
- * It includes 4 stages that operate on [MatchJournalImpl.Cursor].
+ * It includes 5 stages that operate on [MatchJournalImpl.Cursor].
  * Stages are:
+ *  - [RewindStage]
  *  - [InvalidationStage]
  *  - [AdditionStage]
  *  - [PostponeMatchesStage]
@@ -145,8 +192,7 @@ internal open class GroundProcessing(
  * general processing in [Controller] & [ConstraintsProcessing].
  *
  * Methods [processMatch] & [processOccurrenceMatches] serve as
- * a bridge back from [ConstraintsProcessing] to specific stages
- * in [IncrementalProcessing].
+ * a bridge back from [ConstraintsProcessing] to specific stages.
  */
 internal class IncrementalProcessing(
     ispec: IncrementalSpec,
@@ -161,26 +207,16 @@ internal class IncrementalProcessing(
 
     private val journalIndex = journal.index()
     private val ruleOrdering = RuleOrdering(ruleIndex)
-    private val invalidatingInfo = InvalidatingInfoDispatcher()
 
     private val posTracker = PosTracking(journalIndex, journal)
-    private val continuator = ContinueOccurrencesStage(ispec, invalidatingInfo, journalIndex)
+    private val continuator = ContinueOccurrencesStage(ispec, journalIndex)
     private val invalidator = InvalidationStage(ispec, posTracker, droppedRules.toSet(), continuator, stateCleaner, trace)
-    private val adder = AdditionStage(ispec, newRules, continuator, invalidatingInfo, ruleOrdering, ruleIndex, trace)
-    private val postponer = PostponeMatchesStage(ispec, posTracker, journalIndex, ruleOrdering)
-    private val rewinder = RewindVolatileOccurrencesStage(ispec, posTracker, journalIndex, invalidatingInfo, principalObservers)
+    private val adder = AdditionStage(ispec, posTracker, newRules, continuator, ruleOrdering, ruleIndex, trace)
+    private val postponer = PostponeMatchesStage(ispec, posTracker, ruleOrdering)
+    private val rewinder = RewindStage(ispec, posTracker, principalObservers)
 
     init {
-        // lateinit to break constructor cycle
-        invalidatingInfo.src = invalidator
-
         principalObservers.setTriggerReceiver(this::receiveBindTriggered)
-    }
-
-    private class InvalidatingInfoDispatcher : InvalidatingInfo {
-        lateinit var src: InvalidatingInfo
-
-        override fun isInvalid(entity: Justified): Boolean = src.isInvalid(entity)
     }
 
 
@@ -210,7 +246,7 @@ internal class IncrementalProcessing(
         while (true) {
             posTracker.onNext(cursor)
 
-            rewinder.rewind(cursor)
+            rewind(cursor)
             invalidate(cursor)
 
             val postponedMatches = postponer.onNext(cursor)
@@ -251,7 +287,7 @@ internal class IncrementalProcessing(
             postponer.postponeFutureMatches(matches)
         } else matches
 
-    private fun RewindVolatileOccurrencesStage.receiveStrict(occs: Sequence<Occurrence>, match: RuleMatchEx) =
+    private fun RewindStage.receiveStrict(occs: Sequence<Occurrence>, match: RuleMatchEx) =
         rewinder.receive(occs).also {
             if (ispec.assertLevel() == IncrementalSpec.AssertLevel.AssertContracts) {
                 throw IncrementalContractViolationException(
@@ -260,29 +296,29 @@ internal class IncrementalProcessing(
             }
         }
 
-    private fun RewindVolatileOccurrencesStage.rewind(cursor: ChunkReader): Boolean =
-        maybeReset(cursor)?.let { rewindPos ->
+    private fun rewind(cursor: ChunkReader) {
+        val toRewind = rewinder.onNext(cursor)
+
+        toRewind.firstOrNull()?.let { earliest ->
             // This is the only place where journal can be reset to past
             // fixme: modifying not through cursor; not the cleanest way
-            posTracker.rewind(rewindPos)
+            posTracker.rewind(earliest.toPos())
 
-            // Some stages on rewind need to take actions (e.g. clear internal state)
+            // Will invalidate these chunks and reevaluate them
+            invalidator.receive(toRewind)
+
+            // Some stages on rewind need to clear internal state
+            adder.onRewind(cursor)
             continuator.onRewind(cursor)
-
-            reevaluate(cursor).let {
-                // will invalidate these chunks and reevaluate them
-                invalidator.receive(it)
-            }
-            true
-        } ?: false
-
+        }
+    }
 
     private fun invalidate(cursor: RemovingJournalIterator): Boolean {
         var haveChanges = false
         do {
             // handle all new chunks that were invalidated by rewind
             if (posTracker.isNew(cursor.next)) {
-                invalidator.receive(listOf(cursor.next))
+                invalidator.receive(cursor.next)
             }
 
             if (invalidator.onNext(cursor)) {
@@ -297,48 +333,6 @@ internal class IncrementalProcessing(
 
     private fun requiresIncrementalProcessing(occ: Occurrence) = !journal.isFront() && ispec.ability().allowed() && occ.isPrincipal
 
-}
-
-
-/**
- * Very restricted incremental strategy for processing program preamble.
- *
- * Includes 2 stages:
- * - [AdditionStage] which adds potential matches given occurrences from preamble
- * - [ContinueOccurrencesStage] which actually evaluates them
- *
- * Journal invalidation and injected intermediate processing with
- * [processMatch] & [processOccurrenceMatches] are not needed for this.
- * So this strategy is very close to the default [DefaultProcessing].
- */
-internal class PreambleProcessing(
-    ispec: IncrementalSpec,
-    val journal: MatchJournal,
-    newRules: Iterable<Rule>,
-    ruleIndex: RuleIndex,
-    trace: EvaluationTrace
-): GroundProcessing(ispec) {
-
-    private val journalIndex = journal.index()
-    private val ruleOrdering = RuleOrdering(ruleIndex)
-
-    private val continuator = ContinueOccurrencesStage(ispec, InvalidatingInfo.Empty, journalIndex)
-    private val adder = AdditionStage(ispec, newRules, continuator, InvalidatingInfo.Empty, ruleOrdering, ruleIndex, trace)
-
-    override fun run(processing: ConstraintsProcessing, controller: Controller, main: Constraint): FeedbackStatus {
-        var status: FeedbackStatus = FeedbackStatus.NORMAL()
-        val cursor = journal.cursor
-        while (true) {
-            adder.onNext(cursor)
-
-            status = continuator.runContinued(processing, controller, cursor)
-            if (!status.operational) break
-            if (cursor.atEnd()) break
-
-            cursor.next()
-        }
-        return status
-    }
 }
 
 

@@ -33,21 +33,37 @@ internal typealias OccurrenceStore = Collection<Occurrence>
 internal fun emptyStore(): OccurrenceStore = emptyList()
 
 
-internal interface ProcessingSession {
+/**
+ * Handles creation of the first and following sessions,
+ * properly ending sessions and getting their results.
+ */
+internal interface SessionManager {
 
+    /**
+     * Creates first session when there's no [SessionToken] available.
+     */
     fun firstSession(): SessionParts
 
+    /**
+     * Creates following session when previous [token] is available.
+     */
     fun nextSession(token: SessionToken): SessionParts
 
     /**
-     * Clears state unneeded between sessions and
-     * returns [SessionToken] with session results.
+     * Clears state unneeded between sessions and return
+     * next [SessionToken] required for following session.
      */
     fun endSession(session: SessionParts): SessionToken
 
+    /**
+     * Starts [session] and returns overall [EvaluationResult] of the program.
+     */
     fun runSession(session: SessionParts, main: Constraint): EvaluationResult
 }
 
+/**
+ * Bundle of all entities involved in a session.
+ */
 internal data class SessionParts(
     val preambleInfo: PreambleInfo,
     val ruleIndex: RuleIndex,
@@ -77,7 +93,7 @@ internal class EvaluationSessionImpl private constructor (
         (this as? SessionTokenImpl)?.principalObservers?.isNotEmpty() ?: false
 
     private fun launch(token: SessionToken?, store: OccurrenceStore, main: Constraint): EvaluationResult {
-        val sessionProcessing: ProcessingSession =
+        val sessionProcessing: SessionManager =
             with(incrementality) {
                 when {
                     ability().allowed() -> when {
@@ -114,7 +130,7 @@ internal class EvaluationSessionImpl private constructor (
         }
     }
 
-    open inner class DefaultProcessingSession: ProcessingSession {
+    open inner class DefaultProcessingSession: SessionManager {
 
         override fun firstSession(): SessionParts = getSession(null)
 
@@ -130,15 +146,13 @@ internal class EvaluationSessionImpl private constructor (
             val logicalState = LogicalState()
             val dispatchingFront = Dispatcher(ruleIndex).front()
 
-            val principalObservers = LogicalBindObserverDispatcher()
-            val processingStrategy = GroundProcessing(incrementality, principalObservers)
-
+            val processingStrategy = EmptyProcessing()
             val processing = ConstraintsProcessing(dispatchingFront, journal, logicalState, incrementality, trace, profiler)
             processing.setStrategy(processingStrategy)
 
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
 
-            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy, principalObservers)
+            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy, PrincipalObserverDispatcher.EMPTY)
         }
 
         override fun endSession(session: SessionParts): SessionToken = with(session) {
@@ -208,6 +222,28 @@ internal class EvaluationSessionImpl private constructor (
     }
 
     open inner class IncrementalProcessingSession(): DefaultProcessingSession() {
+
+        /**
+         * Same as [DefaultProcessingSession.firstSession],
+         * but uses [GroundProcessing] instead of [EmptyProcessing]
+         */
+        override fun firstSession(): SessionParts {
+            val ruleIndex = RuleIndex(program.rules())
+            val journal = MatchJournalImpl(incrementality)
+            val logicalState = LogicalState()
+            val dispatchingFront = Dispatcher(ruleIndex).front()
+
+            val principalObservers = LogicalBindObserverDispatcher()
+            val processingStrategy = GroundProcessing(incrementality, principalObservers)
+
+            val processing = ConstraintsProcessing(dispatchingFront, journal, logicalState, incrementality, trace, profiler)
+            processing.setStrategy(processingStrategy)
+
+            val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
+
+            return SessionParts(program.preambleInfo(), ruleIndex, journal, logicalState, controller, processing, processingStrategy, principalObservers)
+        }
+
         override fun nextSession(token: SessionToken): SessionParts {
             val tkn = token as SessionTokenImpl
             val logicalState = tkn.logicalState
@@ -273,7 +309,6 @@ internal class EvaluationSessionImpl private constructor (
         override fun endSession(session: SessionParts): SessionToken = with(session) {
             val histView = journal.view()
             val outputOccurrences = histView.filterOccurrences(inputStore)
-            // todo: make output store in other processing strategies?
 
             outputOccurrences.forEach{ it.terminate(logicalState) }
             processing.resetStore() // clear observers

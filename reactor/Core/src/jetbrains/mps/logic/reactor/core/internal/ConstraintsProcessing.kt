@@ -44,9 +44,10 @@ internal class ConstraintsProcessing(
     val trace: EvaluationTrace = EvaluationTrace.NULL,
     val profiler: Profiler? = null
 
+    // fixme: can get rid of inheritance from journal, use composition instead
 ) : StoreAwareJournalImpl(journal, logicalState), IncrSpecHolder {
 
-    private var incrementalProcessing: ProcessingStrategy = DefaultProcessing()
+    private var incrementalProcessing: ProcessingStrategy = EmptyProcessing()
 
     fun setStrategy(strategy: ProcessingStrategy) { this.incrementalProcessing = strategy }
 

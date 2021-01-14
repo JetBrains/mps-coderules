@@ -31,20 +31,12 @@ import java.util.PriorityQueue
  */
 internal interface IncrementalStage: IncrSpecHolder {
 
-//    fun onNext(reader: MatchJournal.ChunkReader)
+//    fun receive(data: Iterable<R>): Boolean
+
+//    fun onNext(reader: MatchJournal.ChunkReader): Collection<T>
 
 }
 
-/**
- * Used for pruning invalid internal state in impls of [IncrementalStage].
- */
-internal interface InvalidatingInfo {
-    fun isInvalid(entity: Justified): Boolean
-
-    companion object Empty: InvalidatingInfo {
-        override fun isInvalid(entity: Justified): Boolean = false
-    }
-}
 
 /**
  * Invalidation stage includes several activities:
@@ -61,7 +53,7 @@ internal class InvalidationStage(
     private val activationSink: ContinuedActivationSink,
     private val stateCleaner: ConstraintsProcessing.ProgramStateCleaner,
     private val trace: EvaluationTrace
-): IncrementalStage, InvalidatingInfo {
+): IncrementalStage {
 
     private val invalidJustifications = mutableListOf<Justified>()
 
@@ -73,9 +65,6 @@ internal class InvalidationStage(
     fun invalidatedFeedback(): FeedbackKeySet = invalidFeedbackKeys.toHashSet()
 
     fun invalidatedRules(): List<Any> = invalidRuleIdsAll.toList()
-
-    override fun isInvalid(entity: Justified): Boolean =
-        entity.justifiedByAny(invalidJustifications)
 
     fun receive(invalid: Iterable<Justified>) { invalidJustifications.addAll(invalid) }
 
@@ -153,9 +142,9 @@ internal class InvalidationStage(
  */
 internal class AdditionStage(
     override val ispec: IncrementalSpec,
+    private val posTracker: PosTracking,
     private val addedRules: Iterable<Rule>,
     private val activationSink: ContinuedActivationSink,
-    private val invalidatingInfo: InvalidatingInfo,
     private val ruleOrdering: RuleOrdering,
     private val ruleIndex: RuleIndex,
     private val trace: EvaluationTrace
@@ -187,6 +176,12 @@ internal class AdditionStage(
         offerCandidates(reader)
     }
 
+    fun onRewind(reader: ChunkReader) = with(posTracker) {
+        activationCandidates.removeIf {
+            isNew(it.occChunk) || isFuture(it.occChunk)
+        }
+    }
+
     fun receive(candidates: Iterable<MatchCandidate>) =
         activationCandidates.addAll(candidates)
 
@@ -216,12 +211,6 @@ internal class AdditionStage(
             val candidateRule = candidate.rule
             val occChunk = candidate.occChunk
 
-            // Relevant for when rewind happenned
-            if (invalidatingInfo.isInvalid(occChunk)) {
-                aIt.remove()
-                continue
-            }
-
             val pos =
                 if (ruleOrdering.canBeInserted(candidateRule, occChunk, reader.next) || reader.atEnd())
                     reader.current.toPos()
@@ -240,7 +229,7 @@ internal class AdditionStage(
 
 // todo; extract more restricted interface (w/o rewind) for use in stages
 internal class PosTracking(
-    private val journalIndex: MatchJournal.Index,
+    val index: MatchJournal.Index,
     private val journal: MatchJournal,
     initPos: MatchJournal.Pos = journal.initialChunk().toPos()
 ) {
@@ -260,12 +249,12 @@ internal class PosTracking(
 
 
     private fun updateReferencePos(current: MatchJournal.Chunk) {
-        if (journalIndex.isKnown(current)) {
+        if (index.isKnown(current)) {
             lastVisited = current.toPos()
         }
     }
 
-    fun rewind(pos: MatchJournal.Pos) = with(journalIndex) {
+    fun rewind(pos: MatchJournal.Pos) = with(index) {
         assert(isKnown(pos.chunk))
         assert(pos before lastVisited)
 
@@ -285,31 +274,32 @@ internal class PosTracking(
 
 
     fun isOld(chunk: MatchJournal.Chunk): Boolean =
-        journalIndex.isKnown(chunk)
+        index.isKnown(chunk)
     fun isOld(occ: Occurrence): Boolean =
-        journalIndex.isKnown(occ)
+        index.isKnown(occ)
 
     fun isNew(chunk: MatchJournal.Chunk): Boolean =
-        !journalIndex.isKnown(chunk)
+        !index.isKnown(chunk)
     fun isNew(occ: Occurrence): Boolean =
-        !journalIndex.isKnown(occ)
+        !index.isKnown(occ)
 
 
     fun isFront(): Boolean =
-        with(journalIndex) { lastVisited afterOrEq front }
+        with(index) { lastVisited afterOrEq front }
 
     fun isFuture(pos: MatchJournal.Pos): Boolean =
-        with(journalIndex) { pos after lastVisited }
+        with(index) { pos after lastVisited }
+    fun isFuture(chunk: MatchJournal.Chunk) = isFuture(chunk.toPos())
 
     fun isPast(pos: MatchJournal.Pos): Boolean =
-        with(journalIndex) { pos before lastVisited }
+        with(index) { pos before lastVisited }
+    fun isPast(chunk: MatchJournal.Chunk) = isPast(chunk.toPos())
 }
 
 
 internal class PostponeMatchesStage(
     override val ispec: IncrementalSpec,
     private val posTracker: PosTracking,
-    private val journalIndex: MatchJournal.Index,
     private val ruleOrdering: RuleOrdering
 ): IncrementalStage {
 
@@ -353,7 +343,7 @@ internal class PostponeMatchesStage(
         for (m in matches) {
             // Returns null for matches with occurrences only from this session
             //  because journalIndex indexes only previous session.
-            val occChunk = journalIndex.activationPos(m)
+            val occChunk = posTracker.index.activationPos(m)
             if (occChunk != null && posTracker.isFuture(occChunk.toPos())) {
                 postponedMatches.getOrPut(occChunk.identity, ::mutableListOf).add(m)
 
@@ -380,7 +370,6 @@ internal class PostponeMatchesStage(
 
 internal class ContinueOccurrencesStage(
     override val ispec: IncrementalSpec,
-    private val invalidatingInfo: InvalidatingInfo,
     private val journalIndex: MatchJournal.Index
 ): IncrementalStage, ContinuedActivationSink {
 
@@ -416,28 +405,23 @@ internal class ContinueOccurrencesStage(
     private val seen: MutableSet<ExecPos> = HashSet<ExecPos>()
 
 
-    private fun ExecPos.isInvalid() = with(invalidatingInfo) {
-        isInvalid(reactivated)
-    }
-
-    fun onNext(reader: ChunkReader): Collection<Occurrence> {
-        val continued = mutableListOf<Occurrence>()
-        while (queue.isNotEmpty()) {
-            if (queue.top().isInvalid()) {
-                queue.pop()
-                continue
-            }
-            if (!(reader at queue.top())) break
-
-            continued.add( queue.pop().reactivatedOcc )
+    fun onNext(reader: ChunkReader) = mutableListOf<Occurrence>().apply {
+        while (queue.isNotEmpty() && reader at queue.top()) {
+            add(queue.pop().reactivatedOcc)
         }
-        return continued
     }
 
-    fun onRewind(reader: ChunkReader) = with(journalIndex) {
-        val nextPos = reader.next.toPos()
-        seen.removeIf { seenPos ->
-            isNew(seenPos.continueFrom.chunk) || seenPos.continueFrom afterOrEq nextPos
+    fun onRewind(reader: ChunkReader): Unit = with(journalIndex) {
+        val rewindPos = reader.next.toPos()
+
+        // clear queue
+        queue.removeIf {
+            it.reactivated.toPos() afterOrEq rewindPos
+        }
+
+        // clear seen
+        seen.removeIf {
+            isNew(it.continueFrom.chunk) || it.continueFrom afterOrEq rewindPos
         }
     }
 
@@ -465,63 +449,41 @@ internal class ContinueOccurrencesStage(
 }
 
 
-// fixme: docs
-internal class RewindVolatileOccurrencesStage(
+internal class RewindStage(
     override val ispec: IncrementalSpec,
     private val posTracker: PosTracking,
-    private val journalIndex: MatchJournal.Index,
-    private val invalidated: InvalidatingInfo,
     private val principalObserver: PrincipalObserverDispatcher
 ): IncrementalStage {
 
-    private val toRewind: PriorityQueue<MatchJournal.MatchChunk> = PriorityQueue(journalIndex.chunkComparator)
+    private val toRewind: PriorityQueue<MatchJournal.MatchChunk> = PriorityQueue(posTracker.index.chunkComparator)
 
     private val seen = hashSetOf<MatchJournal.Chunk>()
 
+    // precondition: all received occurrences are principal and valid (i.e. not invalidated)
     fun receive(occs: Sequence<Occurrence>): Boolean =
         occs.filter(::takeVolatile)
-            .mapNotNull(journalIndex::activatingChunkOf)
-            .mapNotNull(journalIndex::matchChunkOf)
-            .filter(seen::add)
+            .mapNotNull(posTracker.index::activatingChunkOf) // get chunk corresponding to occurrence activation
+            .mapNotNull(posTracker.index::matchChunkOf) // get chunk that activated it
+            .filter(seen::add) // filter already seen
             .toList().let(toRewind::addAll)
 
-    fun maybeReset(reader: ChunkReader): MatchJournal.Pos? =
+    /**
+     * Returns collection of past chunks for rewind
+     * in sorted order from earliest to latest.
+     */
+    fun onNext(reader: ChunkReader): Collection<MatchJournal.MatchChunk> =
         if (needRewind()) {
-            toRewind.peek()!!.toPos()
-        } else null
+            toRewind.toList().also { toRewind.clear() }
+        } else emptyList()
 
-    fun reevaluate(reader: ChunkReader): Iterable<MatchJournal.MatchChunk> {
-        val reevaluated = mutableListOf<MatchJournal.MatchChunk>()
-        while (toRewind.isNotEmpty()) {
-            if (reader atNext toRewind.peek()!!) {
-                reevaluated.add(toRewind.remove()!!)
-            } else break
-        }
-        return reevaluated
-    }
-
-    fun needRewind(): Boolean = peek()?.let {
-        posTracker.isPast(it.toPos())
+    fun needRewind(): Boolean = toRewind.peek()?.let {
+        posTracker.isPast(it)
     } ?: false
 
-    /**
-     * Checked peek() for [toRewind] which prunes stale positions.
-     */
-    private fun peek(): MatchJournal.MatchChunk? {
-        while (toRewind.isNotEmpty()) {
-            val top = toRewind.peek()!!
-            if (invalidated.isInvalid(top)) {
-                toRewind.remove()
-                continue
-            }
-            return top
-        }
-        return null
-    }
 
     private fun takeVolatile(occ: Occurrence) =
         // NB: only occurrences from previous session are considered
-        journalIndex.isKnown(occ) &&
+        posTracker.isOld(occ) &&
             with(principalObserver) { removeTriggered(occ) }
 
 }
