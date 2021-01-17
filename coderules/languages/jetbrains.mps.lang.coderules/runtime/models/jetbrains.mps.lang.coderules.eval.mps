@@ -4062,7 +4062,7 @@
         <node concept="10P_77" id="61G6TdDXIQo" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="3VwM5b69bNu" role="3clF46">
-        <property role="TrG5h" value="invalidated" />
+        <property role="TrG5h" value="invalidatedOnly" />
         <node concept="10P_77" id="3VwM5b69eRc" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="5EDW3XEu33d" role="3clF46">
@@ -4136,7 +4136,7 @@
                               <ref role="3cqZAo" node="61G6TdDXEdy" resolve="recursively" />
                             </node>
                             <node concept="37vLTw" id="3VwM5b6aJ$4" role="37wK5m">
-                              <ref role="3cqZAo" node="3VwM5b69bNu" resolve="invalidated" />
+                              <ref role="3cqZAo" node="3VwM5b69bNu" resolve="invalidatedOnly" />
                             </node>
                           </node>
                         </node>
