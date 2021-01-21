@@ -534,6 +534,11 @@
             <ref role="3bR37D" node="5wYq9r5EBDN" resolve="jetbrains.mps.coderules.runtime" />
           </node>
         </node>
+        <node concept="1SiIV0" id="1RYTbd6pb7T" role="3bR37C">
+          <node concept="3bR9La" id="1RYTbd6pb7U" role="1SiIV1">
+            <ref role="3bR37D" node="7BVjoXzUxee" resolve="jetbrains.mps.lang.coderules.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7BVjoXzUxkQ" role="2G$12L">
         <property role="TrG5h" value="jetbrains.mps.logic" />
