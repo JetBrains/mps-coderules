@@ -788,6 +788,11 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="1RYTbd6Gsyl" role="3bR37C">
+          <node concept="3bR9La" id="1RYTbd6Gsym" role="1SiIV1">
+            <ref role="3bR37D" node="7BVjoXzUxee" resolve="jetbrains.mps.lang.coderules.runtime" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="65DJywFj0uW" role="3989C9">

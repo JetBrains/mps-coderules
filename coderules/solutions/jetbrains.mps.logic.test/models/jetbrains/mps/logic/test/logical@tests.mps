@@ -17,6 +17,7 @@
     <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="z9ve" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core.internal(jetbrains.mps.logic.reactor/)" />
+    <import index="jpi6" ref="r:4c913df4-f2d5-43f7-af56-6bccd35aeb11(jetbrains.mps.lang.coderules.terms)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -4906,20 +4907,17 @@
         <node concept="3clFbS" id="5wYq9r5_SCv" role="3clF47">
           <node concept="9aQIb" id="5wYq9r5_SGE" role="3cqZAp">
             <node concept="3clFbS" id="5wYq9r5_SGF" role="9aQI4">
-              <node concept="3cpWs8" id="5wYq9r5_SGG" role="3cqZAp">
-                <node concept="3cpWsn" id="5wYq9r5_SGH" role="3cpWs9">
+              <node concept="3cpWs8" id="1RYTbd6El3Y" role="3cqZAp">
+                <node concept="3cpWsn" id="1RYTbd6El3Z" role="3cpWs9">
                   <property role="TrG5h" value="typeterm" />
-                  <node concept="3uibUv" id="5wYq9r5_SGI" role="1tU5fm">
+                  <node concept="3uibUv" id="1RYTbd6El40" role="1tU5fm">
                     <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                   </node>
-                  <node concept="1oi1Uc" id="5wYq9r5_SGJ" role="33vP2m">
-                    <node concept="1oi5UN" id="5wYq9r5_SGK" role="1oi0x0">
-                      <node concept="1oi5Wm" id="5wYq9r5_Yh8" role="1ojpOf">
-                        <property role="TrG5h" value="_term" />
-                        <node concept="1oi5XN" id="5wYq9r5_Yjo" role="1oi5zu">
-                          <property role="1oi5yK" value="boolean" />
-                        </node>
-                      </node>
+                  <node concept="2YIFZM" id="1RYTbd6Emj_" role="33vP2m">
+                    <ref role="37wK5l" to="jpi6:1RYTbd6Ek9q" resolve="createClosedTerm" />
+                    <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                    <node concept="Xl_RD" id="1RYTbd6Emly" role="37wK5m">
+                      <property role="Xl_RC" value="boolean" />
                     </node>
                   </node>
                 </node>
@@ -4931,8 +4929,8 @@
                 <node concept="2YIFZM" id="5wYq9r5_SGR" role="3tpDZA">
                   <ref role="37wK5l" to="6exd:1G9MbtSGvMe" resolve="print" />
                   <ref role="1Pybhc" to="6exd:1G9MbtSGvLs" resolve="DataFormPrinter" />
-                  <node concept="37vLTw" id="5wYq9r5_SGS" role="37wK5m">
-                    <ref role="3cqZAo" node="5wYq9r5_SGH" resolve="typeterm" />
+                  <node concept="37vLTw" id="1RYTbd6Emsx" role="37wK5m">
+                    <ref role="3cqZAo" node="1RYTbd6El3Z" resolve="typeterm" />
                   </node>
                 </node>
               </node>
@@ -4941,23 +4939,22 @@
           <node concept="3clFbH" id="5wYq9r5Av9T" role="3cqZAp" />
           <node concept="9aQIb" id="5wYq9r5Av4C" role="3cqZAp">
             <node concept="3clFbS" id="5wYq9r5Av4D" role="9aQI4">
-              <node concept="3cpWs8" id="5wYq9r5Av4E" role="3cqZAp">
-                <node concept="3cpWsn" id="5wYq9r5Av4F" role="3cpWs9">
+              <node concept="3cpWs8" id="1RYTbd6EmtH" role="3cqZAp">
+                <node concept="3cpWsn" id="1RYTbd6EmtI" role="3cpWs9">
                   <property role="TrG5h" value="typeterm" />
-                  <node concept="3uibUv" id="5wYq9r5Av4G" role="1tU5fm">
+                  <node concept="3uibUv" id="1RYTbd6EmtJ" role="1tU5fm">
                     <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                   </node>
-                  <node concept="1oi1Uc" id="5wYq9r5Av4H" role="33vP2m">
-                    <node concept="1oi5UN" id="5wYq9r5Av4I" role="1oi0x0">
-                      <node concept="1oi5Wm" id="5wYq9r5Av4J" role="1ojpOf">
-                        <property role="TrG5h" value="_term" />
-                        <node concept="1oi5XN" id="5wYq9r5Av4K" role="1oi5zu">
-                          <property role="1oi5yK" value="classifier" />
-                        </node>
-                      </node>
-                      <node concept="1oi5Wm" id="5wYq9r5Av4L" role="1ojpOf">
+                  <node concept="2YIFZM" id="1RYTbd6Em$W" role="33vP2m">
+                    <ref role="37wK5l" to="jpi6:1RYTbd6Ek9q" resolve="createClosedTerm" />
+                    <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                    <node concept="Xl_RD" id="1RYTbd6Em_D" role="37wK5m">
+                      <property role="Xl_RC" value="classifier" />
+                    </node>
+                    <node concept="1oi1Uc" id="1RYTbd6EmCi" role="37wK5m">
+                      <node concept="1oi5Wm" id="1RYTbd6EmED" role="1oi0x0">
                         <property role="TrG5h" value="classifier" />
-                        <node concept="1oi5XN" id="5wYq9r5Av4M" role="1oi5zu">
+                        <node concept="1oi5XN" id="1RYTbd6EmEE" role="1oi5zu">
                           <property role="1oi5yK" value="Object" />
                         </node>
                       </node>
@@ -4972,8 +4969,8 @@
                 <node concept="2YIFZM" id="5wYq9r5Av4P" role="3tpDZA">
                   <ref role="37wK5l" to="6exd:1G9MbtSGvMe" resolve="print" />
                   <ref role="1Pybhc" to="6exd:1G9MbtSGvLs" resolve="DataFormPrinter" />
-                  <node concept="37vLTw" id="5wYq9r5Av4Q" role="37wK5m">
-                    <ref role="3cqZAo" node="5wYq9r5Av4F" resolve="typeterm" />
+                  <node concept="37vLTw" id="1RYTbd6EmSg" role="37wK5m">
+                    <ref role="3cqZAo" node="1RYTbd6EmtI" resolve="typeterm" />
                   </node>
                 </node>
               </node>
@@ -4982,40 +4979,46 @@
           <node concept="3clFbH" id="5wYq9r5AzAh" role="3cqZAp" />
           <node concept="9aQIb" id="5wYq9r5Azwb" role="3cqZAp">
             <node concept="3clFbS" id="5wYq9r5Azwc" role="9aQI4">
-              <node concept="3cpWs8" id="5wYq9r5Azwd" role="3cqZAp">
-                <node concept="3cpWsn" id="5wYq9r5Azwe" role="3cpWs9">
+              <node concept="3cpWs8" id="1RYTbd6EmTs" role="3cqZAp">
+                <node concept="3cpWsn" id="1RYTbd6EmTt" role="3cpWs9">
                   <property role="TrG5h" value="typeterm" />
-                  <node concept="3uibUv" id="5wYq9r5Azwf" role="1tU5fm">
+                  <node concept="3uibUv" id="1RYTbd6EmTu" role="1tU5fm">
                     <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                   </node>
-                  <node concept="1oi1Uc" id="5wYq9r5Azwg" role="33vP2m">
-                    <node concept="1oi5UN" id="5wYq9r5Azwh" role="1oi0x0">
-                      <node concept="1oi5Wm" id="5wYq9r5Azwi" role="1ojpOf">
-                        <property role="TrG5h" value="_term" />
-                        <node concept="1oi5XN" id="5wYq9r5Azwj" role="1oi5zu">
-                          <property role="1oi5yK" value="classifier" />
-                        </node>
-                      </node>
-                      <node concept="1oi5Wm" id="5wYq9r5Azwk" role="1ojpOf">
+                  <node concept="2YIFZM" id="1RYTbd6En0a" role="33vP2m">
+                    <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                    <ref role="37wK5l" to="jpi6:1RYTbd6Ek9q" resolve="createClosedTerm" />
+                    <node concept="Xl_RD" id="1RYTbd6En0b" role="37wK5m">
+                      <property role="Xl_RC" value="classifier" />
+                    </node>
+                    <node concept="1oi1Uc" id="1RYTbd6En0c" role="37wK5m">
+                      <node concept="1oi5Wm" id="1RYTbd6En0d" role="1oi0x0">
                         <property role="TrG5h" value="classifier" />
-                        <node concept="1oi5XN" id="5wYq9r5Azwl" role="1oi5zu">
-                          <property role="1oi5yK" value="List" />
+                        <node concept="1oi5XN" id="1RYTbd6En0e" role="1oi5zu">
+                          <property role="1oi5yK" value="Object" />
                         </node>
                       </node>
-                      <node concept="1oi5ST" id="5wYq9r5AzCW" role="1ojpOf">
+                    </node>
+                    <node concept="1oi1Uc" id="1RYTbd6Enc0" role="37wK5m">
+                      <node concept="1oi5ST" id="1RYTbd6EncP" role="1oi0x0">
                         <property role="TrG5h" value="parameters" />
-                        <node concept="KCUsM" id="5wYq9r5AzGq" role="1oi5TL">
-                          <node concept="1oi5UN" id="5wYq9r5AzGA" role="KCVpo">
-                            <node concept="1oi5Wm" id="5wYq9r5AzGC" role="1ojpOf">
-                              <property role="TrG5h" value="_term" />
-                              <node concept="1oi5XN" id="5wYq9r5AzGE" role="1oi5zu">
-                                <property role="1oi5yK" value="classifier" />
-                              </node>
-                            </node>
-                            <node concept="1oi5Wm" id="5wYq9r5AzGG" role="1ojpOf">
-                              <property role="TrG5h" value="classifier" />
-                              <node concept="1oi5XN" id="5wYq9r5AzGH" role="1oi5zu">
-                                <property role="1oi5yK" value="String" />
+                        <node concept="KCUsM" id="1RYTbd6EncQ" role="1oi5TL">
+                          <node concept="1oi5UN" id="1RYTbd6Hg84" role="KCVpo">
+                            <node concept="22Ky0T" id="1RYTbd6Hg9p" role="lGtFl">
+                              <node concept="2YIFZM" id="1RYTbd6Hg9r" role="22Ky0K">
+                                <ref role="37wK5l" to="jpi6:1RYTbd6Ek9q" resolve="createClosedTerm" />
+                                <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                                <node concept="Xl_RD" id="1RYTbd6Hg9s" role="37wK5m">
+                                  <property role="Xl_RC" value="classifier" />
+                                </node>
+                                <node concept="1oi1Uc" id="1RYTbd6Hg9t" role="37wK5m">
+                                  <node concept="1oi5Wm" id="1RYTbd6Hg9u" role="1oi0x0">
+                                    <property role="TrG5h" value="classifier" />
+                                    <node concept="1oi5XN" id="1RYTbd6Hg9v" role="1oi5zu">
+                                      <property role="1oi5yK" value="String" />
+                                    </node>
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -5032,8 +5035,8 @@
                 <node concept="2YIFZM" id="5wYq9r5Azwo" role="3tpDZA">
                   <ref role="37wK5l" to="6exd:1G9MbtSGvMe" resolve="print" />
                   <ref role="1Pybhc" to="6exd:1G9MbtSGvLs" resolve="DataFormPrinter" />
-                  <node concept="37vLTw" id="5wYq9r5Azwp" role="37wK5m">
-                    <ref role="3cqZAo" node="5wYq9r5Azwe" resolve="typeterm" />
+                  <node concept="37vLTw" id="1RYTbd6Enl9" role="37wK5m">
+                    <ref role="3cqZAo" node="1RYTbd6EmTt" resolve="typeterm" />
                   </node>
                 </node>
               </node>
@@ -5048,31 +5051,24 @@
         <node concept="3clFbS" id="6Dg__VJ4oUc" role="3clF47">
           <node concept="9aQIb" id="6Dg__VJ4oUd" role="3cqZAp">
             <node concept="3clFbS" id="6Dg__VJ4oUe" role="9aQI4">
-              <node concept="3cpWs8" id="6Dg__VJ4oUf" role="3cqZAp">
-                <node concept="3cpWsn" id="6Dg__VJ4oUg" role="3cpWs9">
+              <node concept="3cpWs8" id="1RYTbd6Eumb" role="3cqZAp">
+                <node concept="3cpWsn" id="1RYTbd6Eumc" role="3cpWs9">
                   <property role="TrG5h" value="typeterm" />
-                  <node concept="3uibUv" id="6Dg__VJ4oUh" role="1tU5fm">
+                  <node concept="3uibUv" id="1RYTbd6Eumd" role="1tU5fm">
                     <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                   </node>
-                  <node concept="1oi1Uc" id="6Dg__VJ4oUi" role="33vP2m">
-                    <node concept="1oi5UN" id="6Dg__VJ4oUj" role="1oi0x0">
-                      <node concept="1oi5Wm" id="6Dg__VJ4oUk" role="1ojpOf">
-                        <property role="TrG5h" value="_term" />
-                        <node concept="1oi5XN" id="6Dg__VJ4oUl" role="1oi5zu">
-                          <property role="1oi5yK" value="primType" />
-                        </node>
+                  <node concept="2YIFZM" id="1RYTbd6EutK" role="33vP2m">
+                    <ref role="37wK5l" to="jpi6:1RYTbd6E3Mh" resolve="createSpecTerm" />
+                    <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                    <node concept="2YIFZM" id="1RYTbd6Eu$1" role="37wK5m">
+                      <ref role="37wK5l" to="jpi6:1RYTbd6Ek9q" resolve="createClosedTerm" />
+                      <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                      <node concept="Xl_RD" id="1RYTbd6EuDl" role="37wK5m">
+                        <property role="Xl_RC" value="boolean" />
                       </node>
-                      <node concept="1oi5ST" id="6Dg__VJ4p_Y" role="1ojpOf">
-                        <property role="TrG5h" value="_subterm" />
-                        <node concept="1oi5UN" id="6Dg__VJ4pCs" role="1oi5TL">
-                          <node concept="1oi5Wm" id="6Dg__VJ4pCA" role="1ojpOf">
-                            <property role="TrG5h" value="_term" />
-                            <node concept="1oi5XN" id="6Dg__VJ4pCB" role="1oi5zu">
-                              <property role="1oi5yK" value="boolean" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="1RYTbd6EuvT" role="37wK5m">
+                      <property role="Xl_RC" value="primType" />
                     </node>
                   </node>
                 </node>
@@ -5084,8 +5080,8 @@
                 <node concept="2YIFZM" id="6Dg__VJ4oUo" role="3tpDZA">
                   <ref role="37wK5l" to="6exd:1G9MbtSGvMe" resolve="print" />
                   <ref role="1Pybhc" to="6exd:1G9MbtSGvLs" resolve="DataFormPrinter" />
-                  <node concept="37vLTw" id="6Dg__VJ4oUp" role="37wK5m">
-                    <ref role="3cqZAo" node="6Dg__VJ4oUg" resolve="typeterm" />
+                  <node concept="37vLTw" id="1RYTbd6EuK1" role="37wK5m">
+                    <ref role="3cqZAo" node="1RYTbd6Eumc" resolve="typeterm" />
                   </node>
                 </node>
               </node>
@@ -5094,40 +5090,37 @@
           <node concept="3clFbH" id="6Dg__VJ4oUq" role="3cqZAp" />
           <node concept="9aQIb" id="6Dg__VJ4oUr" role="3cqZAp">
             <node concept="3clFbS" id="6Dg__VJ4oUs" role="9aQI4">
-              <node concept="3cpWs8" id="6Dg__VJ9y17" role="3cqZAp">
-                <node concept="3cpWsn" id="6Dg__VJ9y18" role="3cpWs9">
+              <node concept="3cpWs8" id="1RYTbd6EuLd" role="3cqZAp">
+                <node concept="3cpWsn" id="1RYTbd6EuLe" role="3cpWs9">
                   <property role="TrG5h" value="typeterm" />
-                  <node concept="3uibUv" id="6Dg__VJ9y19" role="1tU5fm">
+                  <node concept="3uibUv" id="1RYTbd6EuLf" role="1tU5fm">
                     <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                   </node>
-                  <node concept="1oi1Uc" id="6Dg__VJ9y1a" role="33vP2m">
-                    <node concept="1oi5UN" id="6Dg__VJ9y1b" role="1oi0x0">
-                      <node concept="1oi5Wm" id="6Dg__VJ9y1c" role="1ojpOf">
-                        <property role="TrG5h" value="_term" />
-                        <node concept="1oi5XN" id="6Dg__VJ9y1d" role="1oi5zu">
-                          <property role="1oi5yK" value="parameterized" />
+                  <node concept="2YIFZM" id="1RYTbd6EuVV" role="33vP2m">
+                    <ref role="37wK5l" to="jpi6:1RYTbd6E3Mh" resolve="createSpecTerm" />
+                    <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                    <node concept="2YIFZM" id="1RYTbd6Ev2T" role="37wK5m">
+                      <ref role="37wK5l" to="jpi6:1RYTbd6Ek9q" resolve="createClosedTerm" />
+                      <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                      <node concept="Xl_RD" id="1RYTbd6Ev4l" role="37wK5m">
+                        <property role="Xl_RC" value="classifier" />
+                      </node>
+                      <node concept="1oi1Uc" id="1RYTbd6Ev7n" role="37wK5m">
+                        <node concept="1oi5Wm" id="1RYTbd6Ev8G" role="1oi0x0">
+                          <property role="TrG5h" value="classifier" />
+                          <node concept="1oi5XN" id="1RYTbd6Ev8H" role="1oi5zu">
+                            <property role="1oi5yK" value="Object" />
+                          </node>
                         </node>
                       </node>
-                      <node concept="1oi5ST" id="6Dg__VJ9y1e" role="1ojpOf">
+                    </node>
+                    <node concept="Xl_RD" id="1RYTbd6EuWS" role="37wK5m">
+                      <property role="Xl_RC" value="parameterized" />
+                    </node>
+                    <node concept="1oi1Uc" id="1RYTbd6Evht" role="37wK5m">
+                      <node concept="1oi5ST" id="1RYTbd6EvpL" role="1oi0x0">
                         <property role="TrG5h" value="parameter" />
-                        <node concept="KCUsM" id="6Dg__VJ9y1f" role="1oi5TL" />
-                      </node>
-                      <node concept="1oi5ST" id="6Dg__VJ9y1g" role="1ojpOf">
-                        <property role="TrG5h" value="_subterm" />
-                        <node concept="1oi5UN" id="6Dg__VJ9y1h" role="1oi5TL">
-                          <node concept="1oi5Wm" id="6Dg__VJ9y1i" role="1ojpOf">
-                            <property role="TrG5h" value="_term" />
-                            <node concept="1oi5XN" id="6Dg__VJ9y1j" role="1oi5zu">
-                              <property role="1oi5yK" value="classifier" />
-                            </node>
-                          </node>
-                          <node concept="1oi5Wm" id="6Dg__VJ9y1k" role="1ojpOf">
-                            <property role="TrG5h" value="classifier" />
-                            <node concept="1oi5XN" id="6Dg__VJ9y1l" role="1oi5zu">
-                              <property role="1oi5yK" value="Object" />
-                            </node>
-                          </node>
-                        </node>
+                        <node concept="KCUsM" id="1RYTbd6EvpM" role="1oi5TL" />
                       </node>
                     </node>
                   </node>
@@ -5140,8 +5133,8 @@
                 <node concept="2YIFZM" id="6Dg__VJ9y15" role="3tpDZA">
                   <ref role="37wK5l" to="6exd:1G9MbtSGvMe" resolve="print" />
                   <ref role="1Pybhc" to="6exd:1G9MbtSGvLs" resolve="DataFormPrinter" />
-                  <node concept="37vLTw" id="6Dg__VJ9ywH" role="37wK5m">
-                    <ref role="3cqZAo" node="6Dg__VJ9y18" resolve="typeterm" />
+                  <node concept="37vLTw" id="1RYTbd6EvBn" role="37wK5m">
+                    <ref role="3cqZAo" node="1RYTbd6EuLe" resolve="typeterm" />
                   </node>
                 </node>
               </node>
@@ -5150,76 +5143,59 @@
           <node concept="3clFbH" id="6Dg__VJ4oUE" role="3cqZAp" />
           <node concept="9aQIb" id="6Dg__VJ4oUF" role="3cqZAp">
             <node concept="3clFbS" id="6Dg__VJ4oUG" role="9aQI4">
-              <node concept="3cpWs8" id="6Dg__VJ4oUt" role="3cqZAp">
-                <node concept="3cpWsn" id="6Dg__VJ4oUu" role="3cpWs9">
-                  <property role="TrG5h" value="typeterm" />
-                  <node concept="3uibUv" id="6Dg__VJ4oUv" role="1tU5fm">
+              <node concept="3cpWs8" id="1RYTbd6EL08" role="3cqZAp">
+                <node concept="3cpWsn" id="1RYTbd6EL09" role="3cpWs9">
+                  <property role="TrG5h" value="typeTerm" />
+                  <node concept="3uibUv" id="1RYTbd6EL0a" role="1tU5fm">
                     <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                   </node>
-                  <node concept="1oi1Uc" id="6Dg__VJ4oUw" role="33vP2m">
-                    <node concept="1oi5UN" id="6Dg__VJ4oUx" role="1oi0x0">
-                      <node concept="1oi5Wm" id="6Dg__VJ4oUy" role="1ojpOf">
-                        <property role="TrG5h" value="_term" />
-                        <node concept="1oi5XN" id="6Dg__VJ4oUz" role="1oi5zu">
-                          <property role="1oi5yK" value="parameterized" />
+                  <node concept="2YIFZM" id="1RYTbd6ELhI" role="33vP2m">
+                    <ref role="37wK5l" to="jpi6:1RYTbd6E3Mh" resolve="createSpecTerm" />
+                    <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                    <node concept="2YIFZM" id="1RYTbd6ELuo" role="37wK5m">
+                      <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                      <ref role="37wK5l" to="jpi6:1RYTbd6E3Mh" resolve="createSpecTerm" />
+                      <node concept="2YIFZM" id="1RYTbd6ELw2" role="37wK5m">
+                        <ref role="37wK5l" to="jpi6:1RYTbd6Ek9q" resolve="createClosedTerm" />
+                        <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                        <node concept="Xl_RD" id="1RYTbd6ELw3" role="37wK5m">
+                          <property role="Xl_RC" value="list" />
+                        </node>
+                        <node concept="1oi1Uc" id="1RYTbd6ELw4" role="37wK5m">
+                          <node concept="1oi5Wm" id="1RYTbd6ELw5" role="1oi0x0">
+                            <property role="TrG5h" value="classifier" />
+                            <node concept="1oi5XN" id="1RYTbd6ELw6" role="1oi5zu">
+                              <property role="1oi5yK" value="List" />
+                            </node>
+                          </node>
                         </node>
                       </node>
-                      <node concept="1oi5ST" id="6Dg__VJ8ILJ" role="1ojpOf">
+                      <node concept="Xl_RD" id="1RYTbd6ELFs" role="37wK5m">
+                        <property role="Xl_RC" value="collection" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="1RYTbd6ELMb" role="37wK5m">
+                      <property role="Xl_RC" value="parameterized" />
+                    </node>
+                    <node concept="1oi1Uc" id="1RYTbd6ELTz" role="37wK5m">
+                      <node concept="1oi5ST" id="1RYTbd6ELTH" role="1oi0x0">
                         <property role="TrG5h" value="parameter" />
-                        <node concept="KCUsM" id="6Dg__VJ8INx" role="1oi5TL">
-                          <node concept="1oi5UN" id="6Dg__VJa3Mv" role="KCVpo">
-                            <node concept="1oi5ST" id="6Dg__VJa3M_" role="1ojpOf">
-                              <property role="TrG5h" value="parameter" />
-                              <node concept="KCUsM" id="6Dg__VJa3MA" role="1oi5TL" />
-                            </node>
-                            <node concept="1oi5ST" id="6Dg__VJa3ML" role="1ojpOf">
-                              <property role="TrG5h" value="_subterm" />
-                              <node concept="1oi5UN" id="6Dg__VJa3MM" role="1oi5TL">
-                                <node concept="1oi5Wm" id="6Dg__VJa3MN" role="1ojpOf">
-                                  <property role="TrG5h" value="_term" />
-                                  <node concept="1oi5XN" id="6Dg__VJa3MO" role="1oi5zu">
-                                    <property role="1oi5yK" value="classifier" />
+                        <node concept="KCUsM" id="1RYTbd6ELTI" role="1oi5TL">
+                          <node concept="1oi5UN" id="1RYTbd6EMPB" role="KCVpo">
+                            <node concept="22Ky0T" id="1RYTbd6EMRH" role="lGtFl">
+                              <node concept="2YIFZM" id="1RYTbd6EMzF" role="22Ky0K">
+                                <ref role="37wK5l" to="jpi6:1RYTbd6Ek9q" resolve="createClosedTerm" />
+                                <ref role="1Pybhc" to="jpi6:1RYTbd6oE5l" resolve="TermUtil" />
+                                <node concept="Xl_RD" id="1RYTbd6EMzG" role="37wK5m">
+                                  <property role="Xl_RC" value="classifier" />
+                                </node>
+                                <node concept="1oi1Uc" id="1RYTbd6EMzH" role="37wK5m">
+                                  <node concept="1oi5Wm" id="1RYTbd6EMzI" role="1oi0x0">
+                                    <property role="TrG5h" value="classifier" />
+                                    <node concept="1oi5XN" id="1RYTbd6EMzJ" role="1oi5zu">
+                                      <property role="1oi5yK" value="String" />
+                                    </node>
                                   </node>
-                                </node>
-                                <node concept="1oi5Wm" id="6Dg__VJa3MP" role="1ojpOf">
-                                  <property role="TrG5h" value="classifier" />
-                                  <node concept="1oi5XN" id="6Dg__VJa3MQ" role="1oi5zu">
-                                    <property role="1oi5yK" value="String" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="1oi5Wm" id="6Dg__VJa3Mx" role="1ojpOf">
-                              <property role="TrG5h" value="_term" />
-                              <node concept="1oi5XN" id="6Dg__VJa3My" role="1oi5zu">
-                                <property role="1oi5yK" value="parameterized" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="1oi5ST" id="6Dg__VJ8IEB" role="1ojpOf">
-                        <property role="TrG5h" value="_subterm" />
-                        <node concept="1oi5UN" id="6Dg__VJ8IH7" role="1oi5TL">
-                          <node concept="1oi5Wm" id="6Dg__VJ8IIf" role="1ojpOf">
-                            <property role="TrG5h" value="_term" />
-                            <node concept="1oi5XN" id="6Dg__VJ8IIr" role="1oi5zu">
-                              <property role="1oi5yK" value="collection" />
-                            </node>
-                          </node>
-                          <node concept="1oi5ST" id="6Dg__VJ9P20" role="1ojpOf">
-                            <property role="TrG5h" value="_subterm" />
-                            <node concept="1oi5UN" id="6Dg__VJ9P21" role="1oi5TL">
-                              <node concept="1oi5Wm" id="6Dg__VJ9P22" role="1ojpOf">
-                                <property role="TrG5h" value="_term" />
-                                <node concept="1oi5XN" id="6Dg__VJ9P23" role="1oi5zu">
-                                  <property role="1oi5yK" value="list" />
-                                </node>
-                              </node>
-                              <node concept="1oi5Wm" id="6Dg__VJ9P24" role="1ojpOf">
-                                <property role="TrG5h" value="classifier" />
-                                <node concept="1oi5XN" id="6Dg__VJ9P25" role="1oi5zu">
-                                  <property role="1oi5yK" value="List" />
                                 </node>
                               </node>
                             </node>
@@ -5230,15 +5206,16 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbH" id="1RYTbd6EKI4" role="3cqZAp" />
               <node concept="3vlDli" id="6Dg__VJ4oUX" role="3cqZAp">
                 <node concept="Xl_RD" id="6Dg__VJ4oUY" role="3tpDZB">
                   <property role="Xl_RC" value="list(parameter:[classifier(classifier='String')] classifier='List')" />
                 </node>
                 <node concept="2YIFZM" id="6Dg__VJ4oUZ" role="3tpDZA">
-                  <ref role="37wK5l" to="6exd:1G9MbtSGvMe" resolve="print" />
                   <ref role="1Pybhc" to="6exd:1G9MbtSGvLs" resolve="DataFormPrinter" />
-                  <node concept="37vLTw" id="6Dg__VJ9yC6" role="37wK5m">
-                    <ref role="3cqZAo" node="6Dg__VJ4oUu" resolve="typeterm" />
+                  <ref role="37wK5l" to="6exd:1G9MbtSGvMe" resolve="print" />
+                  <node concept="37vLTw" id="1RYTbd6ENfr" role="37wK5m">
+                    <ref role="3cqZAo" node="1RYTbd6EL09" resolve="typeTerm" />
                   </node>
                 </node>
               </node>
