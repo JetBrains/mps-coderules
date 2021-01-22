@@ -15103,7 +15103,7 @@
               <node concept="3cpWs6" id="5hSMZ_lNZhv" role="3cqZAp">
                 <node concept="10Nm6u" id="5hSMZ_lNZhw" role="3cqZAk">
                   <node concept="1sPUBX" id="5hSMZ_lNZhx" role="lGtFl">
-                    <ref role="v9R2y" node="JOGAOsGlpT" resolve="term_pattern" />
+                    <ref role="v9R2y" node="1CcQBrPQape" resolve="term_pattern_feature" />
                   </node>
                 </node>
               </node>
@@ -16587,41 +16587,6 @@
               <node concept="KCUsM" id="4boCUQuFUFy" role="1oi5TL" />
             </node>
           </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="jVnub" id="JOGAOsGlpT">
-    <property role="TrG5h" value="term_pattern" />
-    <property role="3GE5qa" value="term" />
-    <node concept="3aamgX" id="JOGAOsGlpV" role="3aUrZf">
-      <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="wq2x:JOGAOsxiL_" resolve="TermFeature" />
-      <node concept="gft3U" id="JOGAOsGmnd" role="1lVwrX">
-        <node concept="1oi5Wm" id="JOGAOsGmwQ" role="gfFT$">
-          <property role="TrG5h" value="name" />
-          <node concept="1sPUBX" id="JOGAOsGmwU" role="lGtFl">
-            <ref role="v9R2y" node="1L74NXFa1BL" resolve="term_getter" />
-          </node>
-        </node>
-      </node>
-      <node concept="30G5F_" id="JOGAOsGlpZ" role="30HLyM">
-        <node concept="3clFbS" id="JOGAOsGlq0" role="2VODD2">
-          <node concept="3clFbF" id="JOGAOsGlxj" role="3cqZAp">
-            <node concept="2OqwBi" id="JOGAOsGlJj" role="3clFbG">
-              <node concept="30H73N" id="JOGAOsGlxi" role="2Oq$k0" />
-              <node concept="3TrcHB" id="JOGAOsGma1" role="2OqNvi">
-                <ref role="3TsBF5" to="wq2x:JOGAOsxiLC" resolve="final" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="gft3U" id="JOGAOsGmwX" role="jxRDz">
-      <node concept="10Nm6u" id="JOGAOsGmE$" role="gfFT$">
-        <node concept="1sPUBX" id="JOGAOsGmEI" role="lGtFl">
-          <ref role="v9R2y" node="1CcQBrPQape" resolve="term_pattern_feature" />
         </node>
       </node>
     </node>

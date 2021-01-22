@@ -1383,11 +1383,6 @@
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="term.feature" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="JOGAOsxiLC" role="1TKVEl">
-      <property role="IQ2nx" value="861509610434276456" />
-      <property role="TrG5h" value="final" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
     <node concept="PrWs8" id="JOGAOsxiLA" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
