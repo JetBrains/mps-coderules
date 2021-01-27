@@ -6450,7 +6450,7 @@
             </node>
             <node concept="2YIFZM" id="3j46jeGXnsM" role="37vLTx">
               <ref role="1Pybhc" to="tj24:5EDW3XDYg8Y" resolve="TypecheckingQueries" />
-              <ref role="37wK5l" to="tj24:5EDW3XEtfON" resolve="coerce" />
+              <ref role="37wK5l" to="tj24:5EDW3XEtfON" resolve="coerceConcept" />
               <node concept="37vLTw" id="3j46jeGXnsN" role="37wK5m">
                 <ref role="3cqZAo" node="3j46jeGX9tL" resolve="source" />
               </node>
