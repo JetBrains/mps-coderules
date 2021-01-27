@@ -4049,21 +4049,8 @@
                           <ref role="3A2yKK" node="5zhVuyL9tTQ" resolve="ise" />
                         </node>
                       </node>
-                      <node concept="ns1u0" id="5zhVuyL9vYH" role="3AunhB">
-                        <ref role="ns1xF" to="jxwi:7LI_gNMWw2A" resolve="node" />
-                        <node concept="nsMwS" id="5zhVuyL9vYI" role="ns1xD">
-                          <ref role="nsMwP" to="jxwi:7LI_gNMWxb4" resolve="concept" />
-                          <node concept="2OqwBi" id="5zhVuyL9vYJ" role="nsMwV">
-                            <node concept="2c44tf" id="5zhVuyL9vYK" role="2Oq$k0">
-                              <node concept="3bZ5Sz" id="5zhVuyL9vYL" role="2c44tc">
-                                <ref role="3bZ5Sy" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                              </node>
-                            </node>
-                            <node concept="3TrEf2" id="5zhVuyL9vYM" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp25:5MFgGQnlLNJ" resolve="conceptDeclaraton" />
-                            </node>
-                          </node>
-                        </node>
+                      <node concept="ns1u0" id="7fc$yRJBACa" role="3AunhB">
+                        <ref role="ns1xF" to="kqnc:JOGAOsVt36" resolve="_boolean_" />
                       </node>
                     </node>
                   </node>
