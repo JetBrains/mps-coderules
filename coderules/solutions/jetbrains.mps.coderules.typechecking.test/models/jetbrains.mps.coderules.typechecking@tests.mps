@@ -393,13 +393,9 @@
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
-      <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
       <concept id="1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" flags="nn" index="2HTt$P">
         <child id="1235573175711" name="elementType" index="2HTBi0" />
         <child id="1235573187520" name="singletonValue" index="2HTEbv" />
-      </concept>
-      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
-        <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1205679737078" name="jetbrains.mps.baseLanguage.collections.structure.SortOperation" flags="nn" index="2S7cBI">
@@ -2834,19 +2830,7 @@
                                     <ref role="3cqZAo" node="44XN1Jd6FWm" resolve="updatable" />
                                   </node>
                                   <node concept="liA8E" id="44XN1Jd6HUy" role="2OqNvi">
-                                    <ref role="37wK5l" to="tj24:44XN1Jd0LEF" resolve="update" />
-                                    <node concept="2ShNRf" id="3yEb0I3XyF_" role="37wK5m">
-                                      <node concept="2i4dXS" id="3yEb0I3XyZB" role="2ShVmc">
-                                        <node concept="3Tqbb2" id="3yEb0I3XzBT" role="HW$YZ" />
-                                      </node>
-                                    </node>
-                                    <node concept="2ShNRf" id="2yEnwshaWb4" role="37wK5m">
-                                      <node concept="2i4dXS" id="2yEnwshaXoy" role="2ShVmc">
-                                        <node concept="3uibUv" id="2yEnwshaYRK" role="HW$YZ">
-                                          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                                        </node>
-                                      </node>
-                                    </node>
+                                    <ref role="37wK5l" to="tj24:5Qx6_65$vyG" resolve="update" />
                                     <node concept="1bVj0M" id="6QH_LDtdXLP" role="37wK5m">
                                       <node concept="3clFbS" id="6QH_LDtdXLQ" role="1bW5cS">
                                         <node concept="3clFbH" id="6$gg4kAgPiE" role="3cqZAp" />
