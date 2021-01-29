@@ -4191,7 +4191,7 @@
                       <node concept="1oi5Wm" id="1RYTbd6En0d" role="1oi0x0">
                         <property role="TrG5h" value="classifier" />
                         <node concept="1oi5XN" id="1RYTbd6En0e" role="1oi5zu">
-                          <property role="1oi5yK" value="Object" />
+                          <property role="1oi5yK" value="List" />
                         </node>
                       </node>
                     </node>
