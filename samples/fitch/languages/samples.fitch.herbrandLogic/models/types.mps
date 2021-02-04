@@ -282,9 +282,6 @@
         <child id="861509610434243084" name="template" index="ns1xx" />
       </concept>
       <concept id="861509610434305888" name="jetbrains.mps.lang.coderules.structure.ListFeature" flags="ng" index="nsiOd" />
-      <concept id="861509610434276453" name="jetbrains.mps.lang.coderules.structure.TermFeature" flags="ng" index="nspS8">
-        <property id="861509610434276456" name="final" index="nspS5" />
-      </concept>
       <concept id="861509610434276450" name="jetbrains.mps.lang.coderules.structure.TermTemplate" flags="ng" index="nspSf">
         <child id="861509610434276451" name="feature" index="nspSe" />
       </concept>
@@ -3448,11 +3445,9 @@
       <node concept="nspSf" id="7VBaGntKJ6R" role="ns1xx">
         <node concept="nstbe" id="7VBaGntKJ6S" role="nspSe">
           <property role="TrG5h" value="variable" />
-          <property role="nspS5" value="false" />
         </node>
         <node concept="nstbe" id="7VBaGntKJ6T" role="nspSe">
           <property role="TrG5h" value="sentence" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -3461,11 +3456,9 @@
       <node concept="nspSf" id="7VBaGntKJ6V" role="ns1xx">
         <node concept="nstbe" id="7VBaGntKJ6W" role="nspSe">
           <property role="TrG5h" value="variable" />
-          <property role="nspS5" value="false" />
         </node>
         <node concept="nstbe" id="7VBaGntKJ6X" role="nspSe">
           <property role="TrG5h" value="sentence" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -3474,11 +3467,9 @@
       <node concept="nspSf" id="7VBaGntKJ6Z" role="ns1xx">
         <node concept="nssqF" id="7VBaGntKJ70" role="nspSe">
           <property role="TrG5h" value="name" />
-          <property role="nspS5" value="false" />
         </node>
         <node concept="nsiOd" id="7VBaGntKJ71" role="nspSe">
           <property role="TrG5h" value="member" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -3487,7 +3478,6 @@
       <node concept="nspSf" id="7VBaGntKJ73" role="ns1xx">
         <node concept="nssqF" id="7VBaGntKJ74" role="nspSe">
           <property role="TrG5h" value="name" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -3496,7 +3486,6 @@
       <node concept="nspSf" id="7VBaGntKJ76" role="ns1xx">
         <node concept="nssqF" id="7VBaGntKJ77" role="nspSe">
           <property role="TrG5h" value="name" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -3505,11 +3494,9 @@
       <node concept="nspSf" id="7VBaGntKJ79" role="ns1xx">
         <node concept="nssqF" id="7VBaGntKJ7a" role="nspSe">
           <property role="TrG5h" value="name" />
-          <property role="nspS5" value="false" />
         </node>
         <node concept="nsiOd" id="7VBaGntKJ7b" role="nspSe">
           <property role="TrG5h" value="argument" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>

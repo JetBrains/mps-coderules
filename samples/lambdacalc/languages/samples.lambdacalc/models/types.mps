@@ -389,9 +389,6 @@
       <concept id="861509610434243081" name="jetbrains.mps.lang.coderules.structure.TermDeclaration" flags="ng" index="ns1x$">
         <child id="861509610434243084" name="template" index="ns1xx" />
       </concept>
-      <concept id="861509610434276453" name="jetbrains.mps.lang.coderules.structure.TermFeature" flags="ng" index="nspS8">
-        <property id="861509610434276456" name="final" index="nspS5" />
-      </concept>
       <concept id="861509610434276450" name="jetbrains.mps.lang.coderules.structure.TermTemplate" flags="ng" index="nspSf">
         <child id="861509610434276451" name="feature" index="nspSe" />
       </concept>
@@ -15830,11 +15827,9 @@
       <node concept="nspSf" id="7VBaGntJSG3" role="ns1xx">
         <node concept="nstbe" id="7VBaGntJSG4" role="nspSe">
           <property role="TrG5h" value="arg" />
-          <property role="nspS5" value="false" />
         </node>
         <node concept="nstbe" id="7VBaGntJSG5" role="nspSe">
           <property role="TrG5h" value="res" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -15851,7 +15846,6 @@
       <node concept="nspSf" id="7VBaGntJSG7" role="ns1xx">
         <node concept="nstbe" id="7VBaGntJSG8" role="nspSe">
           <property role="TrG5h" value="type" />
-          <property role="nspS5" value="false" />
         </node>
         <node concept="nstbe" id="39Sam6ZkwZq" role="nspSe">
           <property role="TrG5h" value="typeVars" />

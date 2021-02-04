@@ -703,9 +703,6 @@
         <child id="861509610434243084" name="template" index="ns1xx" />
       </concept>
       <concept id="861509610434305888" name="jetbrains.mps.lang.coderules.structure.ListFeature" flags="ng" index="nsiOd" />
-      <concept id="861509610434276453" name="jetbrains.mps.lang.coderules.structure.TermFeature" flags="ng" index="nspS8">
-        <property id="861509610434276456" name="final" index="nspS5" />
-      </concept>
       <concept id="861509610434276450" name="jetbrains.mps.lang.coderules.structure.TermTemplate" flags="ng" index="nspSf">
         <child id="861509610434276451" name="feature" index="nspSe" />
       </concept>
@@ -42159,11 +42156,9 @@
       <node concept="nspSf" id="JOGAOsVt2b" role="ns1xx">
         <node concept="nssqF" id="JOGAOsVt2c" role="nspSe">
           <property role="TrG5h" value="classifier" />
-          <property role="nspS5" value="false" />
         </node>
         <node concept="nssqF" id="JOGAOsVt2d" role="nspSe">
           <property role="TrG5h" value="kind" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -42201,7 +42196,6 @@
       <node concept="nspSf" id="JOGAOsVt2g" role="ns1xx">
         <node concept="nssqF" id="JOGAOsVt2h" role="nspSe">
           <property role="TrG5h" value="declaration" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -42220,15 +42214,12 @@
       <node concept="nspSf" id="JOGAOsVt2k" role="ns1xx">
         <node concept="nstbe" id="JOGAOsVt2l" role="nspSe">
           <property role="TrG5h" value="origin" />
-          <property role="nspS5" value="false" />
         </node>
         <node concept="nstbe" id="JOGAOsVt2m" role="nspSe">
           <property role="TrG5h" value="ubound" />
-          <property role="nspS5" value="false" />
         </node>
         <node concept="nstbe" id="JOGAOsVt2n" role="nspSe">
           <property role="TrG5h" value="lbound" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -42305,7 +42296,6 @@
       <node concept="nspSf" id="JOGAOsVt2F" role="ns1xx">
         <node concept="nssqF" id="JOGAOsVt2H" role="nspSe">
           <property role="TrG5h" value="val" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -42315,7 +42305,6 @@
       <node concept="nspSf" id="JOGAOsVt2J" role="ns1xx">
         <node concept="nssqF" id="JOGAOsVt2L" role="nspSe">
           <property role="TrG5h" value="val" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -42325,7 +42314,6 @@
       <node concept="nspSf" id="JOGAOsVt2N" role="ns1xx">
         <node concept="nssqF" id="JOGAOsVt2P" role="nspSe">
           <property role="TrG5h" value="val" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -42335,7 +42323,6 @@
       <node concept="nspSf" id="JOGAOsVt2R" role="ns1xx">
         <node concept="nssqF" id="JOGAOsVt2T" role="nspSe">
           <property role="TrG5h" value="val" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -42345,7 +42332,6 @@
       <node concept="nspSf" id="JOGAOsVt2V" role="ns1xx">
         <node concept="nssqF" id="JOGAOsVt2X" role="nspSe">
           <property role="TrG5h" value="val" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -42355,7 +42341,6 @@
       <node concept="nspSf" id="JOGAOsVt2Z" role="ns1xx">
         <node concept="nssqF" id="JOGAOsVt31" role="nspSe">
           <property role="TrG5h" value="val" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -42365,7 +42350,6 @@
       <node concept="nspSf" id="JOGAOsVt33" role="ns1xx">
         <node concept="nssqF" id="JOGAOsVt35" role="nspSe">
           <property role="TrG5h" value="val" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -42375,7 +42359,6 @@
       <node concept="nspSf" id="JOGAOsVt37" role="ns1xx">
         <node concept="nssqF" id="JOGAOsVt39" role="nspSe">
           <property role="TrG5h" value="val" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>

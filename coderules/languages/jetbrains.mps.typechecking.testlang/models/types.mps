@@ -171,9 +171,6 @@
       <concept id="861509610434243081" name="jetbrains.mps.lang.coderules.structure.TermDeclaration" flags="ng" index="ns1x$">
         <child id="861509610434243084" name="template" index="ns1xx" />
       </concept>
-      <concept id="861509610434276453" name="jetbrains.mps.lang.coderules.structure.TermFeature" flags="ng" index="nspS8">
-        <property id="861509610434276456" name="final" index="nspS5" />
-      </concept>
       <concept id="861509610434276450" name="jetbrains.mps.lang.coderules.structure.TermTemplate" flags="ng" index="nspSf">
         <child id="861509610434276451" name="feature" index="nspSe" />
       </concept>
@@ -1247,7 +1244,6 @@
         </node>
         <node concept="nssqF" id="JOGAOsVt6$" role="nspSe">
           <property role="TrG5h" value="val" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>

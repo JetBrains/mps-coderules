@@ -166,9 +166,6 @@
         <child id="861509610434243084" name="template" index="ns1xx" />
       </concept>
       <concept id="861509610434305888" name="jetbrains.mps.lang.coderules.structure.ListFeature" flags="ng" index="nsiOd" />
-      <concept id="861509610434276453" name="jetbrains.mps.lang.coderules.structure.TermFeature" flags="ng" index="nspS8">
-        <property id="861509610434276456" name="final" index="nspS5" />
-      </concept>
       <concept id="861509610434276450" name="jetbrains.mps.lang.coderules.structure.TermTemplate" flags="ng" index="nspSf">
         <child id="861509610434276451" name="feature" index="nspSe" />
       </concept>
@@ -5209,7 +5206,6 @@
       <node concept="nspSf" id="7VBaGntKJ7Y" role="ns1xx">
         <node concept="nssqF" id="7VBaGntKJ7Z" role="nspSe">
           <property role="TrG5h" value="name" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -5218,7 +5214,6 @@
       <node concept="nspSf" id="7VBaGntKJ81" role="ns1xx">
         <node concept="nsiOd" id="7VBaGntKJ82" role="nspSe">
           <property role="TrG5h" value="conjuncts" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -5227,7 +5222,6 @@
       <node concept="nspSf" id="7VBaGntKJ84" role="ns1xx">
         <node concept="nsiOd" id="7VBaGntKJ85" role="nspSe">
           <property role="TrG5h" value="disjuncts" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -5236,7 +5230,6 @@
       <node concept="nspSf" id="7VBaGntKJ87" role="ns1xx">
         <node concept="nstbe" id="7VBaGntKJ88" role="nspSe">
           <property role="TrG5h" value="target" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -5245,11 +5238,9 @@
       <node concept="nspSf" id="7VBaGntKJ8a" role="ns1xx">
         <node concept="nstbe" id="7VBaGntKJ8b" role="nspSe">
           <property role="TrG5h" value="antecedent" />
-          <property role="nspS5" value="false" />
         </node>
         <node concept="nstbe" id="7VBaGntKJ8c" role="nspSe">
           <property role="TrG5h" value="consequence" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -5258,11 +5249,9 @@
       <node concept="nspSf" id="7VBaGntKJ8e" role="ns1xx">
         <node concept="nstbe" id="7VBaGntKJ8f" role="nspSe">
           <property role="TrG5h" value="antecedent" />
-          <property role="nspS5" value="false" />
         </node>
         <node concept="nstbe" id="7VBaGntKJ8g" role="nspSe">
           <property role="TrG5h" value="consequence" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
