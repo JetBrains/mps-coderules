@@ -33,12 +33,12 @@
     <import index="bbnd" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runners(JUnit/)" />
     <import index="u132" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:junit.framework(JUnit/)" />
     <import index="a19p" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.rules(JUnit/)" />
-    <import index="fczk" ref="1fd846c3-c5f9-4b9e-9ecc-e716f7149f86/java:org.hamcrest.core(Hamcrest/)" />
     <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
     <import index="k2t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.checkers(MPS.Core/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.coderules.typechecking.plugin)" />
     <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
+    <import index="fczk" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.hamcrest.core(JUnit/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -885,10 +885,10 @@
                     <node concept="37vLTw" id="1Lr58WFUzKJ" role="37wK5m">
                       <ref role="3cqZAo" node="1Lr58WFTII2" resolve="severity" />
                     </node>
-                    <node concept="2YIFZM" id="1Lr58WFUBmv" role="37wK5m">
+                    <node concept="2YIFZM" id="1jF_HSykazv" role="37wK5m">
                       <ref role="37wK5l" to="fczk:~IsNot.not(java.lang.Object)" resolve="not" />
                       <ref role="1Pybhc" to="fczk:~IsNot" resolve="IsNot" />
-                      <node concept="Rm8GO" id="1Lr58WFUBqA" role="37wK5m">
+                      <node concept="Rm8GO" id="1jF_HSykazw" role="37wK5m">
                         <ref role="Rm8GQ" to="2gg1:~MessageStatus.ERROR" resolve="ERROR" />
                         <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
                       </node>
