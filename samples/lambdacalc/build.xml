@@ -183,11 +183,13 @@
           <module ref="707c4fde-f79a-44b5-b3d7-b5cef8844ccf(jetbrains.mps.lang.test.runtime)" kind="rt" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" kind="cl" />
+          <module ref="c9670c16-a215-41fb-8784-04b14329799d(jetbrains.mps.coderules.typechecking.test)" kind="cl" />
           <module ref="af858d84-85f2-42f4-a854-0b3c6b5cd482(samples.lambdacalc)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f61473f9-130f-42f6-b98d-6c438812c2f6:jetbrains.mps.baseLanguage.unitTest" />
           <language id="l:63650c59-16c8-498a-99c8-005c7ee9515d:jetbrains.mps.lang.access" />
+          <language id="l:3a13115c-633c-4c5c-bbcc-75c4219e9555:jetbrains.mps.lang.quotation" />
           <language id="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" />
           <language id="l:8585453e-6bfb-4d80-98de-b16074f1d86c:jetbrains.mps.lang.test" />
           <language id="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" />
@@ -253,6 +255,8 @@
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
@@ -261,7 +265,9 @@
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.test.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.annotation.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.testlang.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/closures.runtime.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/collections.runtime.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -521,6 +527,7 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
@@ -545,6 +552,8 @@
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
+      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
+      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
@@ -553,7 +562,9 @@
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
+      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.test.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.annotation.jar" />
+      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.testlang.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/closures.runtime.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/collections.runtime.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
