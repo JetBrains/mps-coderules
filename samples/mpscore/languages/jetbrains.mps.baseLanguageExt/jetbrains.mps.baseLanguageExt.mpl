@@ -19,7 +19,6 @@
     <dependency reexport="false">bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)</dependency>
     <dependency reexport="false">ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)</dependency>
     <dependency reexport="false">6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)</dependency>
-    <dependency reexport="false">517911e5-605f-4310-831b-10d44e0f5237(jetbrains.mps.controlflow)</dependency>
     <dependency reexport="false">498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)</dependency>
     <dependency reexport="false">4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)</dependency>
     <dependency reexport="false">c7d01124-66d5-486d-8b50-7fdccb60b839(jetbrains.mps.baseLanguage.util)</dependency>

@@ -26,6 +26,7 @@
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.lang.typechecking.runtime/jetbrains.mps.lang.typechecking.runtime.msd" folder="typechecking.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" folder="coderules.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.logic.test/jetbrains.mps.logic.test.msd" folder="coderules.lang" />
+      <modulePath path="$PROJECT_DIR$/samples/controlflow/jetbrains.mps.baseLanguageExt2/jetbrains.mps.baseLanguageExt2.mpl" folder="exp.controlflow" />
       <modulePath path="$PROJECT_DIR$/samples/fitch/languages/samples.fitch.firstOrderLogic/samples.fitch.firstOrderLogic.mpl" folder="samples.fitch" />
       <modulePath path="$PROJECT_DIR$/samples/fitch/languages/samples.fitch.herbrandLogic/samples.fitch.herbrandLogic.mpl" folder="samples.fitch" />
       <modulePath path="$PROJECT_DIR$/samples/fitch/languages/samples.fitch.propositionalLogic/samples.fitch.propositionalLogic.mpl" folder="samples.fitch" />
