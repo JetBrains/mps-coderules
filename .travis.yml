@@ -10,7 +10,7 @@ deploy:
   - provider: releases
     api_key:
       secure: dOEX78/Th6n5XAbfQKT8DCQbQOqE9C4etqtH7OsI4snYAUkZdxHmdmuFWoMqwnU9nbR+17+2f9XPpE9BfslnxMP21lvn6AP5jScFgeZzV1KJ7kPg1H8buxLvGiQLq1vjNBrmT/Fg5S7tZFWSljEVKRQczpbijdtiTTzdRu/dGCPrLJiijS1uSJet6AwJ4qd+HIXsrVlPny5XL36SCiF88HiYO1vMQFo3pOPCrELfSLHHmLohcdcLy21BTMsbaZwrFzgb4xnmoFRRMiqVOi0z/zOTCNz6AWwfZ+RrAS2YmBSMeIL0R0K22P1WStg1NiYYaapoMf1AESW0VdKm6bSxD2SgxdG7V0hGbOFpzd5uZ22PxtishIfWerwvHCOey2JgH/xl4oGmLqwxmaWJMIrsWI5ObSePFbukKH6kkdGCrZq83cnJonYNb8KckBN997iQI12AKahUDnHg+Se62KANqogcWpWCztCAzgyqOb0swYBQ53vUzwciwul2yzr8Hrm5N32OY9UcK5Hx9pRtSr3c9ykJybdPnzUcCJGdxvNdDek21fx41q+1Qr2EgeJon8BmBpyLwfngIL3DRFEcfxQzramV6kVRI1T67Pk6xD+mVrYDGFbGAGkElEvdrlnOFzWv0Pza8cIv9i13B4sNdQOYtyEwaT0UvzklMVHw8ifYT0M=
-    file: build/artifacts/coderules/coderules-0.5.zip
+    file: build/artifacts/coderules/jebtrains.mps.coderules-0.9-SNAPSHOT.zip
     skip_cleanup: true
     on:
       branch: master

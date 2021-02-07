@@ -109,8 +109,8 @@ task generateUpdatePluginsXml {
     def updatesDir = project.projectDir.absolutePath + "/build/artifacts/coderules/updates"
     mkdir(updatesDir)
 
-    def baseUrl = "https://github.com/fisakov/constraints-typechecking/releases/download"
-    def zip = "/coderules-0.5.zip"
+    def baseUrl = "https://github.com/JetBrains/mps-coderules/releases/download"
+    def zip = "/jebtrains.mps.coderules-0.9-SNAPSHOT.zip"
 
     file(updatesDir + "/updatePlugins.xml").withWriter { w ->
        new MarkupBuilder(new IndentPrinter(w, "    ", true)).
