@@ -173,6 +173,7 @@
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -240,6 +241,13 @@
         <property id="8575328350543493365" name="message" index="huDt6" />
         <property id="2423417345669755629" name="filter" index="1eyWvh" />
       </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
+      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
@@ -293,22 +301,35 @@
               </node>
               <node concept="3clFbH" id="2rIdnPwwLWI" role="3cqZAp" />
             </node>
-            <node concept="3y3z36" id="2rIdnPwwLzh" role="3clFbw">
-              <node concept="10Nm6u" id="2rIdnPwwLKh" role="3uHU7w" />
-              <node concept="2YIFZM" id="2KEPLp6ICYM" role="3uHU7B">
-                <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String)" resolve="getProperty" />
-                <node concept="Xl_RD" id="2KEPLp6ICYN" role="37wK5m">
-                  <property role="Xl_RC" value="mps.test.modules" />
+            <node concept="1Wc70l" id="5Hdh9$Ih9pj" role="3clFbw">
+              <node concept="3clFbT" id="5Hdh9$Id_Dp" role="3uHU7B" />
+              <node concept="3y3z36" id="2rIdnPwwLzh" role="3uHU7w">
+                <node concept="10Nm6u" id="2rIdnPwwLKh" role="3uHU7w" />
+                <node concept="2YIFZM" id="2KEPLp6ICYM" role="3uHU7B">
+                  <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                  <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String)" resolve="getProperty" />
+                  <node concept="Xl_RD" id="2KEPLp6ICYN" role="37wK5m">
+                    <property role="Xl_RC" value="mps.test.modules" />
+                  </node>
                 </node>
               </node>
             </node>
             <node concept="9aQIb" id="2rIdnPwwLPG" role="9aQIa">
               <node concept="3clFbS" id="2rIdnPwwLPH" role="9aQI4">
-                <node concept="RRSsy" id="2rIdnPuCRgJ" role="3cqZAp">
+                <node concept="1X3_iC" id="5Hdh9$Ih9rS" role="lGtFl">
+                  <property role="3V$3am" value="statement" />
+                  <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                  <node concept="RRSsy" id="2rIdnPuCRgJ" role="8Wnug">
+                    <property role="RRSoG" value="gZ5fksE/warn" />
+                    <node concept="Xl_RD" id="2rIdnPuCRgL" role="RRSoy">
+                      <property role="Xl_RC" value="Test is disabled in non-CI enviroment" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="RRSsy" id="5Hdh9$Ih9qO" role="3cqZAp">
                   <property role="RRSoG" value="gZ5fksE/warn" />
-                  <node concept="Xl_RD" id="2rIdnPuCRgL" role="RRSoy">
-                    <property role="Xl_RC" value="Test is disabled in non-CI enviroment" />
+                  <node concept="Xl_RD" id="5Hdh9$Ih9qP" role="RRSoy">
+                    <property role="Xl_RC" value="Test is temporarily disabled. See MPS-33035" />
                   </node>
                 </node>
               </node>
