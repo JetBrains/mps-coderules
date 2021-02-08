@@ -15,6 +15,19 @@
     <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" />
   </imports>
   <registry>
+    <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml">
+      <concept id="6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" flags="ng" index="2pMdtt">
+        <property id="6666499814681541920" name="text" index="2pMdty" />
+      </concept>
+      <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
+        <property id="6666499814681415862" name="tagName" index="2pNNFO" />
+        <child id="6666499814681415861" name="attributes" index="2pNNFR" />
+      </concept>
+      <concept id="6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" flags="ng" index="2pNUuL">
+        <property id="6666499814681447926" name="attrName" index="2pNUuO" />
+        <child id="6666499814681541918" name="value" index="2pMdts" />
+      </concept>
+    </language>
     <language id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests">
       <concept id="4560297596904469355" name="jetbrains.mps.build.mps.tests.structure.BuildMps_TestModuleGroup" flags="ng" index="22LTRF">
         <reference id="4560297596904469356" name="group" index="22LTRG" />
@@ -110,6 +123,7 @@
       </concept>
       <concept id="6592112598314498932" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin" flags="ng" index="m$_wf">
         <property id="6592112598314498927" name="id" index="m$_wk" />
+        <child id="1359186315025500371" name="xml" index="20twgj" />
         <child id="7832771629084912518" name="vendor" index="2iVFfd" />
         <child id="6592112598314498931" name="version" index="m$_w8" />
         <child id="6592112598314499021" name="name" index="m$_yQ" />
@@ -238,6 +252,15 @@
       <node concept="2iUeEo" id="3AC_dXTSEsp" role="2iVFfd">
         <property role="2iUeEt" value="JetBrains s.r.o." />
         <property role="2iUeEu" value="jetbrains.com/mps" />
+      </node>
+      <node concept="2pNNFK" id="5Hdh9$IhmUh" role="20twgj">
+        <property role="2pNNFO" value="idea-version" />
+        <node concept="2pNUuL" id="5Hdh9$IhmW_" role="2pNNFR">
+          <property role="2pNUuO" value="since-build" />
+          <node concept="2pMdtt" id="5Hdh9$IhnkA" role="2pMdts">
+            <property role="2pMdty" value="211.1" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="3PhVAH_Wgx6" role="3989C9">
@@ -3078,6 +3101,16 @@
         <node concept="NbPM2" id="2BiN_P7R7M9" role="aVJcq">
           <node concept="3Mxwew" id="2BiN_P7R7M8" role="3MwsjC">
             <property role="3MwjfP" value="9999" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2kB4xC" id="5Hdh9$IhmQ$" role="1l3spd">
+      <property role="TrG5h" value="ci.mps.release" />
+      <node concept="aVJcg" id="5Hdh9$IhmQ_" role="aVJcv">
+        <node concept="NbPM2" id="5Hdh9$IhmQA" role="aVJcq">
+          <node concept="3Mxwew" id="5Hdh9$IhmQB" role="3MwsjC">
+            <property role="3MwjfP" value="211" />
           </node>
         </node>
       </node>
