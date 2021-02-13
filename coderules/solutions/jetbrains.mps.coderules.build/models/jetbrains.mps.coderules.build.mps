@@ -237,8 +237,11 @@
         </node>
       </node>
       <node concept="3_J27D" id="7BVjoXzUx6a" role="m$_w8">
+        <node concept="3Mxwey" id="4XsNDZX0EoU" role="3MwsjC">
+          <ref role="3Mxwex" node="5Hdh9$IhmQ$" resolve="ci.mps.release" />
+        </node>
         <node concept="3Mxwew" id="2BiN_P7R7Wi" role="3MwsjC">
-          <property role="3MwjfP" value="0.9-b" />
+          <property role="3MwjfP" value="-0.9-b" />
         </node>
         <node concept="3Mxwey" id="2BiN_P7R81m" role="3MwsjC">
           <ref role="3Mxwex" node="2BiN_P7R7jO" resolve="ci.build.num" />
@@ -3252,12 +3255,7 @@
         </node>
         <node concept="m$_wl" id="65DJywFjdwt" role="39821P">
           <ref role="m_rDy" node="7BVjoXzUx67" resolve="jetbrains.mps.coderules" />
-          <node concept="398223" id="5Hdh9$I8BkT" role="39821P">
-            <node concept="3_J27D" id="5Hdh9$I8BkV" role="Nbhlr">
-              <node concept="3Mxwew" id="5Hdh9$I8Bnh" role="3MwsjC">
-                <property role="3MwjfP" value="solutions" />
-              </node>
-            </node>
+          <node concept="398223" id="65DJywFkEum" role="39821P">
             <node concept="L2wRC" id="65DJywFk8r8" role="39821P">
               <ref role="L2wRA" node="7BVjoXzUxee" resolve="jetbrains.mps.lang.coderules.runtime" />
             </node>
@@ -3394,8 +3392,6 @@
             <node concept="L2wRC" id="55Q$YFtwDpa" role="39821P">
               <ref role="L2wRA" node="55Q$YFtvwQY" resolve="jetbrains.mps.coderules.typechecking.ui" />
             </node>
-          </node>
-          <node concept="398223" id="65DJywFkEum" role="39821P">
             <node concept="L2wRC" id="65DJywFk8Gh" role="39821P">
               <ref role="L2wRA" node="7BVjoXzUxkQ" resolve="jetbrains.mps.logic" />
             </node>
