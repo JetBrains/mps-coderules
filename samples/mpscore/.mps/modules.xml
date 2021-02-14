@@ -24,7 +24,6 @@
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.tuplesExt.test/jetbrains.mps.baseLanguage.tuplesExt.test.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.test.msd" folder="ext.smodel" />
-      <modulePath path="$PROJECT_DIR$/solutions/samples.mpscore.build/samples.mpscore.build.msd" folder="build" />
       <modulePath path="$PROJECT_DIR$/solutions/typechecking.samples.baseLanguage/typechecking.samples.baseLanguage.msd" folder="" />
     </projectModules>
   </component>
