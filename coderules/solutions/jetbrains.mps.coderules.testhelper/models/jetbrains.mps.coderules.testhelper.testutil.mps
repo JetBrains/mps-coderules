@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:20f81ae9-fed0-48fa-893d-6c6b658e3dee(jetbrains.mps.coderules.typechecking.test.util)">
+<model ref="r:a07b09f7-cbf3-40d9-ae10-40da3926c5fa(jetbrains.mps.coderules.testhelper.testutil)">
   <persistence version="9" />
   <attribute name="doNotGenerate" value="false" />
   <languages>

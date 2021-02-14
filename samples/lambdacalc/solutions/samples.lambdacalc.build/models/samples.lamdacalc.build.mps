@@ -299,6 +299,11 @@
             <ref role="3bR37D" to="zqd8:7mB3viLwG3m" resolve="jetbrains.mps.coderules.typechecking.test" />
           </node>
         </node>
+        <node concept="1SiIV0" id="4XsNDZX9sdp" role="3bR37C">
+          <node concept="3bR9La" id="4XsNDZX9sdq" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:4XsNDZX1tUA" resolve="jetbrains.mps.coderules.testhelper" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2sgV4H" id="7E7FS_VaV_9" role="1l3spa">

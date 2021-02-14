@@ -285,23 +285,6 @@
           <property role="3ZfqAx" value="models" />
           <property role="1Hdu6h" value="true" />
           <property role="1HemKv" value="true" />
-          <node concept="3LXTmp" id="6Dg__VJQ3Ba" role="1HemKq">
-            <node concept="398BVA" id="6Dg__VJQ3Bb" role="3LXTmr">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.mpscore_home" />
-              <node concept="2Ry0Ak" id="6Dg__VJQ3Bc" role="iGT6I">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="6Dg__VJQ3Bd" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.closuresExt" />
-                  <node concept="2Ry0Ak" id="6Dg__VJQ3Be" role="2Ry0An">
-                    <property role="2Ry0Am" value="models" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3qWCbU" id="6Dg__VJQ3Bf" role="3LXTna">
-              <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
-            </node>
-          </node>
           <node concept="3LXTmp" id="6Dg__VJQ4ao" role="1HemKq">
             <node concept="398BVA" id="6Dg__VJQ4ag" role="3LXTmr">
               <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.mpscore_home" />
@@ -332,26 +315,6 @@
             <property role="3ZfqAx" value="generator/templates" />
             <property role="1Hdu6h" value="true" />
             <property role="1HemKv" value="true" />
-            <node concept="3LXTmp" id="6Dg__VJQ3Bm" role="1HemKq">
-              <node concept="398BVA" id="6Dg__VJQ3Bn" role="3LXTmr">
-                <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.mpscore_home" />
-                <node concept="2Ry0Ak" id="6Dg__VJQ3Bo" role="iGT6I">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="6Dg__VJQ3Bp" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.closuresExt" />
-                    <node concept="2Ry0Ak" id="6Dg__VJQ3Bq" role="2Ry0An">
-                      <property role="2Ry0Am" value="generator" />
-                      <node concept="2Ry0Ak" id="6Dg__VJQ3Br" role="2Ry0An">
-                        <property role="2Ry0Am" value="templates" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3qWCbU" id="6Dg__VJQ3Bs" role="3LXTna">
-                <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
-              </node>
-            </node>
             <node concept="3LXTmp" id="6Dg__VJQ4aA" role="1HemKq">
               <node concept="398BVA" id="6Dg__VJQ4as" role="3LXTmr">
                 <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.mpscore_home" />
@@ -474,23 +437,6 @@
           <property role="3ZfqAx" value="models" />
           <property role="1Hdu6h" value="true" />
           <property role="1HemKv" value="true" />
-          <node concept="3LXTmp" id="6Dg__VJQ2Of" role="1HemKq">
-            <node concept="398BVA" id="6Dg__VJQ2Og" role="3LXTmr">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.mpscore_home" />
-              <node concept="2Ry0Ak" id="6Dg__VJQ2Oh" role="iGT6I">
-                <property role="2Ry0Am" value="solutions" />
-                <node concept="2Ry0Ak" id="6Dg__VJQ2Oi" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.closuresExt.test" />
-                  <node concept="2Ry0Ak" id="6Dg__VJQ2Oj" role="2Ry0An">
-                    <property role="2Ry0Am" value="models" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3qWCbU" id="6Dg__VJQ2Ok" role="3LXTna">
-              <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
-            </node>
-          </node>
           <node concept="3LXTmp" id="6Dg__VJQ3eu" role="1HemKq">
             <node concept="398BVA" id="6Dg__VJQ3em" role="3LXTmr">
               <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.mpscore_home" />
@@ -1246,23 +1192,6 @@
           <property role="3ZfqAx" value="models" />
           <property role="1Hdu6h" value="true" />
           <property role="1HemKv" value="true" />
-          <node concept="3LXTmp" id="7gMIJIxVu3d" role="1HemKq">
-            <node concept="398BVA" id="7gMIJIxVu3e" role="3LXTmr">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.mpscore_home" />
-              <node concept="2Ry0Ak" id="7gMIJIxVu3f" role="iGT6I">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="7gMIJIxVu3g" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguageExt" />
-                  <node concept="2Ry0Ak" id="7gMIJIxVu3h" role="2Ry0An">
-                    <property role="2Ry0Am" value="models" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3qWCbU" id="7gMIJIxVu3i" role="3LXTna">
-              <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
-            </node>
-          </node>
           <node concept="3LXTmp" id="7gMIJIxVucm" role="1HemKq">
             <node concept="398BVA" id="7gMIJIxVuce" role="3LXTmr">
               <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.mpscore_home" />
@@ -1647,6 +1576,11 @@
         <node concept="1SiIV0" id="6tFa8SpSDbV" role="3bR37C">
           <node concept="3bR9La" id="6tFa8SpSDbW" role="1SiIV1">
             <ref role="3bR37D" to="zqd8:5wYq9r5EBDN" resolve="jetbrains.mps.coderules.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4XsNDZX9sgj" role="3bR37C">
+          <node concept="3bR9La" id="4XsNDZX9sgk" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:4XsNDZX1tUA" resolve="jetbrains.mps.coderules.testhelper" />
           </node>
         </node>
       </node>
@@ -2328,6 +2262,11 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4XsNDZX9shP" role="3bR37C">
+          <node concept="3bR9La" id="4XsNDZX9shQ" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:4XsNDZX1tUA" resolve="jetbrains.mps.coderules.testhelper" />
           </node>
         </node>
       </node>

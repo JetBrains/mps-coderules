@@ -25,12 +25,12 @@
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
     <import index="sppd" ref="r:0e60ac07-77c3-4d5c-b40d-73e8fd128592(jetbrains.mps.coderules.typechecking.testlang.sandbox.test)" />
     <import index="qulx" ref="r:ec0979fb-ae37-4823-9eaa-8550d9f5c6fd(jetbrains.mps.typechecking.testlang.structure)" />
-    <import index="hfva" ref="r:20f81ae9-fed0-48fa-893d-6c6b658e3dee(jetbrains.mps.coderules.typechecking.test.util)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="7ed7" ref="r:48788b84-8ecd-41f5-ad03-cc8c09b1f186(jetbrains.mps.lang.coderules.analysis)" />
     <import index="zuft" ref="r:65f97255-4bb1-4783-acd6-a4ed5a1088e2(jetbrains.mps.typechecking.testlang.types)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="psoy" ref="r:78313117-90ee-47a5-a91e-b5213df7f611(jetbrains.mps.coderules.runtime.result)" />
+    <import index="hmoe" ref="r:a07b09f7-cbf3-40d9-ae10-40da3926c5fa(jetbrains.mps.coderules.testhelper.testutil)" />
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" implicit="true" />
@@ -487,11 +487,11 @@
                 <node concept="3cpWsn" id="tyIfzC3OTC" role="3cpWs9">
                   <property role="TrG5h" value="launcher" />
                   <node concept="3uibUv" id="tyIfzC3OTD" role="1tU5fm">
-                    <ref role="3uigEE" to="hfva:tyIfzC0ZNj" resolve="IncrementalLauncher" />
+                    <ref role="3uigEE" to="hmoe:tyIfzC0ZNj" resolve="IncrementalLauncher" />
                   </node>
                   <node concept="2ShNRf" id="tyIfzC3Sr4" role="33vP2m">
                     <node concept="1pGfFk" id="tyIfzC3Sr3" role="2ShVmc">
-                      <ref role="37wK5l" to="hfva:WJTIIoUgQU" resolve="CollectingIncrementalLauncher" />
+                      <ref role="37wK5l" to="hmoe:WJTIIoUgQU" resolve="CollectingIncrementalLauncher" />
                       <node concept="37vLTw" id="tyIfzC3W$o" role="37wK5m">
                         <ref role="3cqZAo" node="tyIfzC3L6a" resolve="repo" />
                       </node>
@@ -523,7 +523,7 @@
                       <ref role="3cqZAo" node="tyIfzC3OTC" resolve="launcher" />
                     </node>
                     <node concept="liA8E" id="tyIfzC4y1T" role="2OqNvi">
-                      <ref role="37wK5l" to="hfva:tyIfzC3x3f" resolve="produceProgram" />
+                      <ref role="37wK5l" to="hmoe:tyIfzC3x3f" resolve="produceProgram" />
                       <node concept="2ShNRf" id="3j46jeGDMzS" role="37wK5m">
                         <node concept="2HTt$P" id="3j46jeGDOff" role="2ShVmc">
                           <node concept="3Tqbb2" id="3j46jeGDOmu" role="2HTBi0" />
@@ -537,7 +537,7 @@
                           <ref role="3cqZAo" node="tyIfzC3OTC" resolve="launcher" />
                         </node>
                         <node concept="liA8E" id="3j46jeGQWI$" role="2OqNvi">
-                          <ref role="37wK5l" to="hfva:3j46jeGMWII" resolve="getCheckQuery" />
+                          <ref role="37wK5l" to="hmoe:3j46jeGMWII" resolve="getCheckQuery" />
                         </node>
                       </node>
                     </node>
@@ -561,7 +561,7 @@
                       <ref role="3cqZAo" node="tyIfzC3OTC" resolve="launcher" />
                     </node>
                     <node concept="liA8E" id="4VntlICnMya" role="2OqNvi">
-                      <ref role="37wK5l" to="hfva:4VntlICnjoD" resolve="getProgramSpec" />
+                      <ref role="37wK5l" to="hmoe:4VntlICnjoD" resolve="getProgramSpec" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="4VntlICnIU3" role="37vLTJ">

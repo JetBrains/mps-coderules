@@ -24,6 +24,7 @@
   <property name="mpsBootstrapCore.version.eap" value="${import.mps.mpsBootstrapCore.version.eap}" />
   <property name="mpsBootstrapCore.version" value="${import.mps.mpsBootstrapCore.version}" />
   <property name="coderules.ci.build.num" value="${import.coderules.coderules.ci.build.num}" />
+  <property name="coderules.ci.mps.release" value="${import.coderules.coderules.ci.mps.release}" />
   <property name="coderules.test.jvmargs" value="${import.coderules.coderules.test.jvmargs}" />
   <property name="environment" value="env" />
   <property name="env.JAVA_HOME" value="${java.home}/.." />
@@ -428,9 +429,6 @@
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageInternalExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternalExt-generator.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguageExt-models1">
-      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageExt/models" includes="**/*.mps, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguageInternalExt-models">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageInternalExt/models" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
@@ -451,7 +449,6 @@
         <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/languages/jetbrains.mps.baseLanguageInternalExt/jetbrains.mps.baseLanguageInternalExt.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguageExt-models1" prefix="module/models" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguageInternalExt-models" prefix="module/models" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguageInternalExt-generator-templates" prefix="module/generator/templates" />
     </jar>
@@ -1357,6 +1354,7 @@
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" kind="cl" />
           <module ref="f113d56b-63e3-4120-a89c-2f5dcb8c6290(jetbrains.mps.coderules.runtime)" kind="cl" />
+          <module ref="02473356-2f59-4de1-ba87-e88f9d606180(jetbrains.mps.coderules.testhelper)" kind="cl" />
           <module ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" kind="cl" />
           <module ref="c9670c16-a215-41fb-8784-04b14329799d(jetbrains.mps.coderules.typechecking.test)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
@@ -1494,6 +1492,7 @@
           <module ref="9e36d2ee-c59c-4580-9e81-646748d0614b(jetbrains.mps.baseLanguage.closuresExt)" kind="cl" />
           <module ref="c1f5ad88-21f4-4e0e-927c-48b1ca0c2334(jetbrains.mps.baseLanguage.collectionsExt)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
+          <module ref="02473356-2f59-4de1-ba87-e88f9d606180(jetbrains.mps.coderules.testhelper)" kind="cl" />
           <module ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" kind="cl" />
           <module ref="c9670c16-a215-41fb-8784-04b14329799d(jetbrains.mps.coderules.typechecking.test)" kind="cl" />
         </dependencies>
@@ -1731,14 +1730,8 @@
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodelExt-generator.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.closuresExt-models1">
-      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.closuresExt/models" includes="**/*.mps, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.smodelExt-models">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/models" includes="**/*.mps, **/*.mpsr, **/.model" />
-    </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.closuresExt-generator-templates1">
-      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.closuresExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.smodelExt-generator-templates">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
@@ -1757,9 +1750,7 @@
         <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/languages/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.closuresExt-models1" prefix="module/models" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.smodelExt-models" prefix="module/models" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.closuresExt-generator-templates1" prefix="module/generator/templates" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.smodelExt-generator-templates" prefix="module/generator/templates" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.smodelExt.test.jar" />
@@ -1815,9 +1806,6 @@
       <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.lang.smodelExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodelExt.test.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-jetbrains.mps.baseLanguage.closuresExt.test-models1">
-      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.closuresExt.test/models" includes="**/*.mps, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-jetbrains.mps.lang.smodelExt-models">
       <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.lang.smodelExt/models" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
@@ -1829,7 +1817,6 @@
         <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/solutions/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.test.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-jetbrains.mps.baseLanguage.closuresExt.test-models1" prefix="module/models" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-jetbrains.mps.lang.smodelExt-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.typesystemExt.jar" />
@@ -2838,7 +2825,7 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.logicExt-models" prefix="module/models" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.logicExt-generator-templates" prefix="module/generator/templates" />
     </jar>
-    <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version.major=${mpsBootstrapCore.version.major}${line.separator}mpsBootstrapCore.version.minor=${mpsBootstrapCore.version.minor}${line.separator}mpsBootstrapCore.version.bugfixNr=${mpsBootstrapCore.version.bugfixNr}${line.separator}mpsBootstrapCore.version.eap=${mpsBootstrapCore.version.eap}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}coderules.ci.build.num=${coderules.ci.build.num}${line.separator}coderules.test.jvmargs=${coderules.test.jvmargs}</echo>
+    <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version.major=${mpsBootstrapCore.version.major}${line.separator}mpsBootstrapCore.version.minor=${mpsBootstrapCore.version.minor}${line.separator}mpsBootstrapCore.version.bugfixNr=${mpsBootstrapCore.version.bugfixNr}${line.separator}mpsBootstrapCore.version.eap=${mpsBootstrapCore.version.eap}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}coderules.ci.build.num=${coderules.ci.build.num}${line.separator}coderules.ci.mps.release=${coderules.ci.mps.release}${line.separator}coderules.test.jvmargs=${coderules.test.jvmargs}</echo>
   </target>
   
   <target name="buildDependents" />
@@ -2871,6 +2858,7 @@
       <plugin path="${artifacts.mps}/plugins/mps-testing" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.testhelper.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" />
@@ -4340,6 +4328,7 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.testhelper.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
@@ -4428,6 +4417,7 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.testhelper.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
@@ -5163,6 +5153,7 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.testhelper.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
@@ -5505,6 +5496,7 @@
     <path id="mps.libraries.path">
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
+      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.testhelper.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" />
