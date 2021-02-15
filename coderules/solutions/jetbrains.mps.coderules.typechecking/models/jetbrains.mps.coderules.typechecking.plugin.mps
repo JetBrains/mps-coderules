@@ -1849,12 +1849,15 @@
               <node concept="10Nm6u" id="3VwM5b5TI0E" role="3uHU7w" />
             </node>
             <node concept="1eOMI4" id="3VwM5b5TJ13" role="3uHU7w">
-              <node concept="2OqwBi" id="3VwM5b5TIHd" role="1eOMHV">
-                <node concept="37vLTw" id="3VwM5b5TJYt" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3VwM5b5TB$X" resolve="sharedStateFlags" />
-                </node>
-                <node concept="liA8E" id="3VwM5b5TIHf" role="2OqNvi">
-                  <ref role="37wK5l" to="1ka:~TypecheckingSession$Flags.isGenerator()" resolve="isGenerator" />
+              <node concept="3clFbC" id="4XsNDZXGdLV" role="1eOMHV">
+                <node concept="10Nm6u" id="4XsNDZXGeC2" role="3uHU7w" />
+                <node concept="2OqwBi" id="3VwM5b5TIHd" role="3uHU7B">
+                  <node concept="37vLTw" id="3VwM5b5TJYt" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3VwM5b5TB$X" resolve="sharedStateFlags" />
+                  </node>
+                  <node concept="liA8E" id="4XsNDZXGdwN" role="2OqNvi">
+                    <ref role="37wK5l" to="1ka:~TypecheckingSession$Flags.getRoot()" resolve="getRoot" />
+                  </node>
                 </node>
               </node>
             </node>
