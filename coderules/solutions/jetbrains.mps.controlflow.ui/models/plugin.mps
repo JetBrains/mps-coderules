@@ -1804,6 +1804,10 @@
                               <node concept="37vLTw" id="2daneBOTK_4" role="37wK5m">
                                 <ref role="3cqZAo" node="2daneBOT6rC" resolve="traceEvents" />
                               </node>
+                              <node concept="10M0yZ" id="4XsNDZYoLBm" role="37wK5m">
+                                <ref role="3cqZAo" to="hano:39eNUjlX_RD" resolve="NULL" />
+                                <ref role="1PxDUh" to="hano:39eNUjlSJ9Q" resolve="TemplateTrace" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -1833,8 +1837,8 @@
                                 <node concept="37vLTw" id="2daneBOUwlg" role="2Oq$k0">
                                   <ref role="3cqZAo" node="2daneBOT1Cq" resolve="openedTab" />
                                 </node>
-                                <node concept="liA8E" id="2daneBOVtp_" role="2OqNvi">
-                                  <ref role="37wK5l" to="o35r:5X6ji59xVZa" resolve="refreshActivation" />
+                                <node concept="liA8E" id="4XsNDZYwFuN" role="2OqNvi">
+                                  <ref role="37wK5l" to="o35r:4XsNDZYuNqF" resolve="refresh" />
                                 </node>
                               </node>
                             </node>
