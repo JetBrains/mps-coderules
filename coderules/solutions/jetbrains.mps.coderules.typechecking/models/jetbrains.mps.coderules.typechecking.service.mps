@@ -7435,6 +7435,44 @@
         </node>
         <node concept="3Tm1VV" id="1z4$59iPqgS" role="1B3o_S" />
       </node>
+      <node concept="2tJIrI" id="3CzfQ_opcR4" role="jymVt" />
+      <node concept="3clFb_" id="3CzfQ_opsrf" role="jymVt">
+        <property role="TrG5h" value="withInvalidateTypeNotifier" />
+        <node concept="37vLTG" id="3CzfQ_oqwJn" role="3clF46">
+          <property role="TrG5h" value="notifier" />
+          <node concept="3uibUv" id="3CzfQ_oq$ed" role="1tU5fm">
+            <ref role="3uigEE" to="82uw:~Consumer" resolve="Consumer" />
+            <node concept="3uibUv" id="3CzfQ_oqCfb" role="11_B2D">
+              <ref role="3uigEE" to="w1kc:~SNode" resolve="SNode" />
+            </node>
+          </node>
+        </node>
+        <node concept="3uibUv" id="3CzfQ_opF7E" role="3clF45">
+          <ref role="3uigEE" node="1z4$59iohfJ" resolve="TypecheckingService.Request" />
+          <node concept="16syzq" id="3CzfQ_opMOZ" role="11_B2D">
+            <ref role="16sUi3" node="1z4$59iqk5$" resolve="T" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="3CzfQ_opsri" role="1B3o_S" />
+        <node concept="3clFbS" id="3CzfQ_opsrj" role="3clF47">
+          <node concept="3clFbF" id="3CzfQ_ornXk" role="3cqZAp">
+            <node concept="37vLTI" id="3CzfQ_orG5b" role="3clFbG">
+              <node concept="37vLTw" id="3CzfQ_orKzS" role="37vLTx">
+                <ref role="3cqZAo" node="3CzfQ_oqwJn" resolve="notifier" />
+              </node>
+              <node concept="2OqwBi" id="3CzfQ_oruJB" role="37vLTJ">
+                <node concept="Xjq3P" id="3CzfQ_ornXj" role="2Oq$k0" />
+                <node concept="2OwXpG" id="3CzfQ_or_3p" role="2OqNvi">
+                  <ref role="2Oxat5" node="3CzfQ_or7aj" resolve="notifier" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="3CzfQ_os$JE" role="3cqZAp">
+            <node concept="Xjq3P" id="3CzfQ_os$JC" role="3clFbG" />
+          </node>
+        </node>
+      </node>
       <node concept="2tJIrI" id="1z4$59io$Zj" role="jymVt" />
       <node concept="3clFb_" id="1z4$59ivhO1" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -7625,6 +7663,16 @@
           <ref role="3uigEE" to="82uw:~Consumer" resolve="Consumer" />
           <node concept="3uibUv" id="1z4$59i_Keu" role="11_B2D">
             <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+          </node>
+        </node>
+      </node>
+      <node concept="312cEg" id="3CzfQ_or7aj" role="jymVt">
+        <property role="TrG5h" value="notifier" />
+        <node concept="3Tm6S6" id="3CzfQ_or7ak" role="1B3o_S" />
+        <node concept="3uibUv" id="3CzfQ_or7al" role="1tU5fm">
+          <ref role="3uigEE" to="82uw:~Consumer" resolve="Consumer" />
+          <node concept="3uibUv" id="3CzfQ_orRhU" role="11_B2D">
+            <ref role="3uigEE" to="w1kc:~SNode" resolve="SNode" />
           </node>
         </node>
       </node>
