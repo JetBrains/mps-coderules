@@ -157,6 +157,7 @@
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
       <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_" />
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -310,9 +311,6 @@
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
-      </concept>
-      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
-        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
@@ -808,14 +806,17 @@
                                   <ref role="3cqZAo" node="3FGJ5nvn8o2" resolve="it" />
                                 </node>
                               </node>
-                              <node concept="liA8E" id="6tnA46794bu" role="2OqNvi">
-                                <ref role="37wK5l" to="i348:6tnA4677QqC" resolve="originRef" />
+                              <node concept="liA8E" id="3Pxu0s8fl0p" role="2OqNvi">
+                                <ref role="37wK5l" to="i348:3Pxu0s8egWa" resolve="origin" />
                               </node>
                             </node>
                           </node>
                         </node>
-                        <node concept="2OqwBi" id="3FGJ5nvnADg" role="3uHU7w">
-                          <node concept="2OqwBi" id="3FGJ5nvnBh9" role="2Oq$k0">
+                        <node concept="3clFbC" id="3Pxu0s8fths" role="3uHU7w">
+                          <node concept="37vLTw" id="3Pxu0s8ftWw" role="3uHU7w">
+                            <ref role="3cqZAo" node="3FGJ5nvmG0V" resolve="testNode" />
+                          </node>
+                          <node concept="2OqwBi" id="3FGJ5nvnBh9" role="3uHU7B">
                             <node concept="0kSF2" id="3FGJ5nvnAcC" role="2Oq$k0">
                               <node concept="3uibUv" id="3FGJ5nvnAtZ" role="0kSFW">
                                 <ref role="3uigEE" to="i348:7nPD14OaO1O" resolve="RuleEx" />
@@ -824,21 +825,8 @@
                                 <ref role="3cqZAo" node="3FGJ5nvn8o2" resolve="it" />
                               </node>
                             </node>
-                            <node concept="liA8E" id="6tnA46794Iy" role="2OqNvi">
-                              <ref role="37wK5l" to="i348:6tnA4677QqC" resolve="originRef" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="3FGJ5nvn8o0" role="2OqNvi">
-                            <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
-                            <node concept="2OqwBi" id="3FGJ5nvn9US" role="37wK5m">
-                              <node concept="liA8E" id="3FGJ5nvnamB" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SNode.getReference()" resolve="getReference" />
-                              </node>
-                              <node concept="2JrnkZ" id="3FGJ5nvn9UX" role="2Oq$k0">
-                                <node concept="37vLTw" id="3FGJ5nvn8o1" role="2JrQYb">
-                                  <ref role="3cqZAo" node="3FGJ5nvmG0V" resolve="testNode" />
-                                </node>
-                              </node>
+                            <node concept="liA8E" id="3Pxu0s8foMV" role="2OqNvi">
+                              <ref role="37wK5l" to="i348:3Pxu0s8egWa" resolve="origin" />
                             </node>
                           </node>
                         </node>

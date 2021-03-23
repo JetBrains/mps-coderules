@@ -1798,7 +1798,7 @@
       </node>
     </node>
     <node concept="Wx3nA" id="2yEnwsh8n5F" role="jymVt">
-      <property role="TrG5h" value="INVALID_FEEDBACK" />
+      <property role="TrG5h" value="INVALIDATED_FEEDBACK_KEYS" />
       <node concept="3Tm1VV" id="2yEnwsh8n5G" role="1B3o_S" />
       <node concept="2YIFZM" id="2yEnwsh8n5H" role="33vP2m">
         <ref role="1Pybhc" node="2daneBOWXQd" resolve="Effect" />
@@ -1815,7 +1815,7 @@
       </node>
     </node>
     <node concept="Wx3nA" id="2EG5v$dFgce" role="jymVt">
-      <property role="TrG5h" value="INVALIDATED_NODES" />
+      <property role="TrG5h" value="INVALIDATED_ORIGINS" />
       <node concept="3Tm1VV" id="2EG5v$dFgcf" role="1B3o_S" />
       <node concept="2YIFZM" id="2EG5v$dFgcg" role="33vP2m">
         <ref role="37wK5l" node="6BMBBPD1Gnj" resolve="valueKey" />
@@ -2501,12 +2501,12 @@
                         </node>
                         <node concept="3cpWs8" id="2EG5v$dFmTU" role="3cqZAp">
                           <node concept="3cpWsn" id="2EG5v$dFmTX" role="3cpWs9">
-                            <property role="TrG5h" value="invalidated" />
+                            <property role="TrG5h" value="invalidatedOrigins" />
                             <node concept="3vKaQO" id="2EG5v$dFmTR" role="1tU5fm">
-                              <node concept="2sp9CU" id="1RYTbd8hrEg" role="3O5elw" />
+                              <node concept="3Tqbb2" id="3Pxu0s8k8tA" role="3O5elw" />
                             </node>
                             <node concept="1rXfSq" id="2EG5v$dG07H" role="33vP2m">
-                              <ref role="37wK5l" node="2EG5v$dDKbh" resolve="getInvalidated" />
+                              <ref role="37wK5l" node="2EG5v$dDKbh" resolve="collectInvalidatedOrigins" />
                               <node concept="2OqwBi" id="6KCGZaSxuGM" role="37wK5m">
                                 <node concept="37vLTw" id="6KCGZaSxtQH" role="2Oq$k0">
                                   <ref role="3cqZAo" node="4J__M6Mw24" resolve="evaluationResult" />
@@ -2551,7 +2551,7 @@
                               </node>
                               <node concept="2OqwBi" id="q1hCixUYFz" role="37wK5m">
                                 <node concept="37vLTw" id="51ek2rQHN6Z" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="2yEnwsh8n5F" resolve="INVALID_FEEDBACK" />
+                                  <ref role="3cqZAo" node="2yEnwsh8n5F" resolve="INVALIDATED_FEEDBACK_KEYS" />
                                 </node>
                                 <node concept="liA8E" id="q1hCixUYF_" role="2OqNvi">
                                   <ref role="37wK5l" node="6BMBBPCRIcz" resolve="is" />
@@ -2562,12 +2562,12 @@
                               </node>
                               <node concept="2OqwBi" id="2EG5v$dFjOp" role="37wK5m">
                                 <node concept="37vLTw" id="2EG5v$dFior" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="2EG5v$dFgce" resolve="INVALIDATED_NODES" />
+                                  <ref role="3cqZAo" node="2EG5v$dFgce" resolve="INVALIDATED_ORIGINS" />
                                 </node>
                                 <node concept="liA8E" id="2EG5v$dFkOS" role="2OqNvi">
                                   <ref role="37wK5l" node="6BMBBPCRIcz" resolve="is" />
                                   <node concept="37vLTw" id="2EG5v$dGPCg" role="37wK5m">
-                                    <ref role="3cqZAo" node="2EG5v$dFmTX" resolve="invalidated" />
+                                    <ref role="3cqZAo" node="2EG5v$dFmTX" resolve="invalidatedOrigins" />
                                   </node>
                                 </node>
                               </node>
@@ -2679,18 +2679,18 @@
     </node>
     <node concept="2tJIrI" id="2EG5v$dDC27" role="jymVt" />
     <node concept="3clFb_" id="2EG5v$dDKbh" role="jymVt">
-      <property role="TrG5h" value="getInvalidated" />
+      <property role="TrG5h" value="collectInvalidatedOrigins" />
       <node concept="3clFbS" id="2EG5v$dDKbk" role="3clF47">
         <node concept="3cpWs8" id="2EG5v$dFx$H" role="3cqZAp">
           <node concept="3cpWsn" id="2EG5v$dFx$K" role="3cpWs9">
             <property role="TrG5h" value="invalidOrigins" />
             <node concept="2ShNRf" id="2EG5v$dF$cN" role="33vP2m">
               <node concept="2i4dXS" id="2EG5v$dFBP6" role="2ShVmc">
-                <node concept="2sp9CU" id="2EG5v$dFCiK" role="HW$YZ" />
+                <node concept="3Tqbb2" id="3Pxu0s8k6b7" role="HW$YZ" />
               </node>
             </node>
             <node concept="2hMVRd" id="2EG5v$dFB68" role="1tU5fm">
-              <node concept="2sp9CU" id="2EG5v$dFBiS" role="2hN53Y" />
+              <node concept="3Tqbb2" id="3Pxu0s8k4Xz" role="2hN53Y" />
             </node>
           </node>
         </node>
@@ -2735,8 +2735,8 @@
                         <node concept="37vLTw" id="2EG5v$dFI3s" role="2Oq$k0">
                           <ref role="3cqZAo" node="2EG5v$dFHhH" resolve="ruleEx" />
                         </node>
-                        <node concept="liA8E" id="2EG5v$dFIUp" role="2OqNvi">
-                          <ref role="37wK5l" to="i348:6tnA4677QqC" resolve="originRef" />
+                        <node concept="liA8E" id="3Pxu0s8k3w3" role="2OqNvi">
+                          <ref role="37wK5l" to="i348:3Pxu0s8egWa" resolve="origin" />
                         </node>
                       </node>
                     </node>
@@ -2799,7 +2799,7 @@
         </node>
       </node>
       <node concept="3vKaQO" id="2EG5v$dFtoQ" role="3clF45">
-        <node concept="2sp9CU" id="1RYTbd8hoku" role="3O5elw" />
+        <node concept="3Tqbb2" id="3Pxu0s8k16z" role="3O5elw" />
       </node>
       <node concept="P$JXv" id="2EG5v$dFT$I" role="lGtFl">
         <node concept="TZ5HA" id="2EG5v$dFT$J" role="TZ5H$">
