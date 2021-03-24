@@ -2739,21 +2739,6 @@
                 </node>
               </node>
               <node concept="3clFbH" id="14$_tTxzNf1" role="3cqZAp" />
-              <node concept="3cpWs8" id="1z4$59jNhpj" role="3cqZAp">
-                <node concept="3cpWsn" id="1z4$59jNhpk" role="3cpWs9">
-                  <property role="TrG5h" value="tmo" />
-                  <node concept="3uibUv" id="1z4$59jNhmG" role="1tU5fm">
-                    <ref role="3uigEE" to="tj24:1z4$59jK85m" resolve="TypesModuleOwner" />
-                  </node>
-                  <node concept="2YIFZM" id="1z4$59jNhpl" role="33vP2m">
-                    <ref role="37wK5l" to="tj24:1z4$59jKaUN" resolve="get" />
-                    <ref role="1Pybhc" to="tj24:1z4$59jK85m" resolve="TypesModuleOwner" />
-                    <node concept="37vLTw" id="1z4$59jNhpm" role="37wK5m">
-                      <ref role="3cqZAo" node="14$_tTxzTDw" resolve="modelRepo" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3cpWs8" id="6QH_LDtdTgr" role="3cqZAp">
                 <node concept="3cpWsn" id="6QH_LDtdTgs" role="3cpWs9">
                   <property role="TrG5h" value="typecheckingState" />
@@ -2763,12 +2748,6 @@
                   <node concept="2ShNRf" id="1z4$59jNhZc" role="33vP2m">
                     <node concept="1pGfFk" id="1z4$59jNilE" role="2ShVmc">
                       <ref role="37wK5l" to="tj24:5cBWTAehvV3" resolve="TypecheckingState" />
-                      <node concept="37vLTw" id="1z4$59jNiwB" role="37wK5m">
-                        <ref role="3cqZAo" node="1z4$59jNhpk" resolve="tmo" />
-                      </node>
-                      <node concept="3clFbT" id="5XNK1YzpxKa" role="37wK5m">
-                        <property role="3clFbU" value="true" />
-                      </node>
                     </node>
                   </node>
                 </node>

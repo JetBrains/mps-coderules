@@ -5518,11 +5518,8 @@
       <node concept="3clFbS" id="WJTIIoWnAV" role="3clF47">
         <node concept="3cpWs6" id="WJTIIoWocI" role="3cqZAp">
           <node concept="2ShNRf" id="WJTIIoUXxB" role="3cqZAk">
-            <node concept="1pGfFk" id="WJTIIoUYgi" role="2ShVmc">
-              <ref role="37wK5l" node="WJTIIoVepJ" resolve="TypeIndexIncrementalLauncher.TestTypesIndex" />
-              <node concept="37vLTw" id="WJTIIoUYmL" role="37wK5m">
-                <ref role="3cqZAo" node="WJTIIoUV8P" resolve="module" />
-              </node>
+            <node concept="HV5vD" id="55xYlrl_L92" role="2ShVmc">
+              <ref role="HV5vE" node="WJTIIoVdei" resolve="TypeIndexIncrementalLauncher.TestTypesIndex" />
             </node>
           </node>
         </node>
@@ -5539,24 +5536,6 @@
       <node concept="3Tm6S6" id="WJTIIoVi_5" role="1B3o_S" />
       <node concept="3uibUv" id="WJTIIoVe7c" role="1zkMxy">
         <ref role="3uigEE" to="tj24:6QH_LDtcxgf" resolve="TypecheckingResultsCache" />
-      </node>
-      <node concept="3clFbW" id="WJTIIoVepJ" role="jymVt">
-        <node concept="37vLTG" id="WJTIIoVepK" role="3clF46">
-          <property role="TrG5h" value="typesModule" />
-          <node concept="3uibUv" id="WJTIIoVepL" role="1tU5fm">
-            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-          </node>
-        </node>
-        <node concept="3cqZAl" id="WJTIIoVepM" role="3clF45" />
-        <node concept="3Tmbuc" id="WJTIIoW_05" role="1B3o_S" />
-        <node concept="3clFbS" id="WJTIIoVepO" role="3clF47">
-          <node concept="XkiVB" id="WJTIIoVepX" role="3cqZAp">
-            <ref role="37wK5l" to="tj24:6QH_LDtcxgh" resolve="TypecheckingResultsCache" />
-            <node concept="37vLTw" id="WJTIIoVepY" role="37wK5m">
-              <ref role="3cqZAo" node="WJTIIoVepK" resolve="typesModule" />
-            </node>
-          </node>
-        </node>
       </node>
       <node concept="2tJIrI" id="WJTIIoVgCH" role="jymVt" />
       <node concept="3clFb_" id="WJTIIoVgXI" role="jymVt">
