@@ -10996,13 +10996,10 @@
               <node concept="37vLTw" id="3DPJ8QIIN3G" role="37wK5m">
                 <ref role="3cqZAo" node="6nFpYltSFnC" resolve="nodes" />
               </node>
-              <node concept="1rXfSq" id="3DPJ8QIIN3H" role="37wK5m">
-                <ref role="37wK5l" node="6nFpYltM1Er" resolve="invalidatedOrNew" />
-                <node concept="1rXfSq" id="3DPJ8QIIN3I" role="37wK5m">
-                  <ref role="37wK5l" node="6nFpYltVXdg" resolve="singular" />
-                  <node concept="37vLTw" id="3DPJ8QIIN3J" role="37wK5m">
-                    <ref role="3cqZAo" node="6nFpYltSFn$" resolve="action" />
-                  </node>
+              <node concept="1rXfSq" id="3DPJ8QIIN3I" role="37wK5m">
+                <ref role="37wK5l" node="6nFpYltVXdg" resolve="singular" />
+                <node concept="37vLTw" id="3DPJ8QIIN3J" role="37wK5m">
+                  <ref role="3cqZAo" node="6nFpYltSFn$" resolve="action" />
                 </node>
               </node>
             </node>
@@ -13011,9 +13008,6 @@
           <ref role="3uigEE" node="7DvO2M9Uago" resolve="RulesPlanHandler" />
         </node>
       </node>
-      <node concept="2hMVRd" id="1XKnVQltnt" role="3clF45">
-        <node concept="3Tqbb2" id="1XKnVQl$Sh" role="2hN53Y" />
-      </node>
       <node concept="3Tm1VV" id="1XKnVQioNr" role="1B3o_S" />
       <node concept="3clFbS" id="1XKnVQioNs" role="3clF47">
         <node concept="3SKdUt" id="51ek2rQMIYJ" role="3cqZAp">
@@ -13128,34 +13122,20 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4J__M6h__I" role="3cqZAp">
-          <node concept="2OqwBi" id="4J__M6hAl3" role="3clFbG">
-            <node concept="37vLTw" id="4J__M6h__G" role="2Oq$k0">
-              <ref role="3cqZAo" node="1XKnVQiz0H" resolve="planHandler" />
-            </node>
-            <node concept="liA8E" id="4J__M6hB9Q" role="2OqNvi">
-              <ref role="37wK5l" node="4J__M63pdY" resolve="markAllValidated" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1XKnVQlB02" role="3cqZAp">
-          <node concept="37vLTw" id="1XKnVQlB00" role="3clFbG">
-            <ref role="3cqZAo" node="1XKnVQiLVc" resolve="changedSetClosure" />
-          </node>
-        </node>
       </node>
       <node concept="P$JXv" id="1XKnVQkJXN" role="lGtFl">
         <node concept="TZ5HA" id="1XKnVQkJXO" role="TZ5H$">
           <node concept="1dT_AC" id="1XKnVQkJXP" role="1dT_Ay">
-            <property role="1dT_AB" value="Returns the changed set closure." />
+            <property role="1dT_AB" value="Performs invalidation on the passed RulesPlanHandler using the changed set. " />
           </node>
         </node>
-        <node concept="TZ5HA" id="1XKnVQlDZq" role="TZ5H$">
-          <node concept="1dT_AC" id="1XKnVQlDZr" role="1dT_Ay">
-            <property role="1dT_AB" value="Must be called in read action." />
+        <node concept="TZ5HA" id="55xYlrlJHGn" role="TZ5H$">
+          <node concept="1dT_AC" id="55xYlrlJHGo" role="1dT_Ay">
+            <property role="1dT_AB" value="Clears internally collected changes. " />
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="55xYlrlJoZI" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="1XKnVQihdz" role="jymVt" />
     <node concept="3clFb_" id="6nFpYlue$oB" role="jymVt">

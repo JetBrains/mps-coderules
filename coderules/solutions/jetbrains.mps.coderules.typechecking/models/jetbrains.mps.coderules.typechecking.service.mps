@@ -14049,10 +14049,27 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="55xYlrlMeA3" role="3cqZAp">
+          <node concept="37vLTI" id="55xYlrlMeA5" role="3clFbG">
+            <node concept="2OqwBi" id="55xYlrlMf6J" role="37vLTJ">
+              <node concept="Xjq3P" id="55xYlrlMfo5" role="2Oq$k0" />
+              <node concept="2OwXpG" id="55xYlrlMf6M" role="2OqNvi">
+                <ref role="2Oxat5" node="55xYlrlMe_Z" resolve="producePartialProgram" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="55xYlrlMeA9" role="37vLTx">
+              <ref role="3cqZAo" node="55xYlrlMebT" resolve="producePartialProgram" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="17DrR$SZPQ1" role="3clF46">
         <property role="TrG5h" value="initial" />
         <node concept="10P_77" id="17DrR$SZQTG" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="55xYlrlMebT" role="3clF46">
+        <property role="TrG5h" value="producePartialProgram" />
+        <node concept="10P_77" id="55xYlrlMevz" role="1tU5fm" />
       </node>
     </node>
     <node concept="2tJIrI" id="7i3KM7gxGzn" role="jymVt" />
@@ -14119,6 +14136,25 @@
                               <node concept="37vLTw" id="3Pxu0s89Eyn" role="37wK5m">
                                 <ref role="3cqZAo" to="1yqb:6nFpYluqFen" resolve="planHandler" />
                               </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbJ" id="55xYlrlMzva" role="3cqZAp">
+                          <node concept="3clFbS" id="55xYlrlMzvc" role="3clFbx">
+                            <node concept="3clFbF" id="55xYlrlL89q" role="3cqZAp">
+                              <node concept="2OqwBi" id="55xYlrlL8AF" role="3clFbG">
+                                <node concept="37vLTw" id="55xYlrlL89o" role="2Oq$k0">
+                                  <ref role="3cqZAo" to="1yqb:6nFpYluqFen" resolve="planHandler" />
+                                </node>
+                                <node concept="liA8E" id="55xYlrlL98k" role="2OqNvi">
+                                  <ref role="37wK5l" to="ksgm:4J__M63pdY" resolve="markAllValidated" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3fqX7Q" id="55xYlrlMzRJ" role="3clFbw">
+                            <node concept="37vLTw" id="55xYlrlM$hC" role="3fr31v">
+                              <ref role="3cqZAo" node="55xYlrlMe_Z" resolve="producePartialProgram" />
                             </node>
                           </node>
                         </node>
@@ -14268,6 +14304,12 @@
       <node concept="3uibUv" id="6nFpYluWSlF" role="1tU5fm">
         <ref role="3uigEE" to="ksgm:70Wv0dJhQb2" resolve="OriginIndex" />
       </node>
+    </node>
+    <node concept="312cEg" id="55xYlrlMe_Z" role="jymVt">
+      <property role="TrG5h" value="producePartialProgram" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="55xYlrlMeA0" role="1B3o_S" />
+      <node concept="10P_77" id="55xYlrlMeA2" role="1tU5fm" />
     </node>
     <node concept="2tJIrI" id="6nFpYlurR2R" role="jymVt" />
   </node>
@@ -18302,6 +18344,9 @@
                       <ref role="3cqZAo" node="5Qx6_65tZCJ" resolve="cacheHolder" />
                     </node>
                   </node>
+                </node>
+                <node concept="3clFbT" id="55xYlrlMtWq" role="37wK5m">
+                  <property role="3clFbU" value="true" />
                 </node>
               </node>
             </node>
