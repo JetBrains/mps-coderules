@@ -30,7 +30,6 @@ typealias Evidence = Int
  */
 typealias Justifications = TIntSet
 
-
 fun emptyJustifications(): Justifications = TIntHashSet(1)
 fun justsOf(vararg elements: Evidence): Justifications = TIntHashSet(elements)
 fun justsFromCollection(collection: Collection<Evidence>): Justifications = TIntHashSet(collection)

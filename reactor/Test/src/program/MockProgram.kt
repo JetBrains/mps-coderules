@@ -3,7 +3,9 @@
  */
 
 import jetbrains.mps.logic.reactor.core.RulesDiff
+import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
 import jetbrains.mps.logic.reactor.evaluation.InvocationContext
+import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.Supervisor
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -128,7 +130,7 @@ open class MockSupervisor : Supervisor {
             else a
         }
 
-//    override fun handleFeedback(rule: Rule?, feedback: EvaluationFeedback?): Boolean = false
+    override fun handleFeedback(ruleMatch: RuleMatch, feedbackKey: Any, feedbackBasis: MutableList<Any>, feedback: EvaluationFeedback): Boolean = false
 }
 
 class MockConstraintRegistry() {

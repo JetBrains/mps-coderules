@@ -64,6 +64,8 @@ internal open class MatchJournalImpl(
     // invariant: never empty
     private val hist: IteratorMutableList<ChunkImpl>
 
+    private val chunkIndex = ChunkIndex()
+
     // pointer to current position where logging (chunk additions) and log erasing (chunk removals) happen
     // initially points at initial chunk
     private val __cursor: Cursor
@@ -132,6 +134,13 @@ internal open class MatchJournalImpl(
 
         return added
     }
+
+    private fun indexChunk(chunk: Chunk) {
+        chunkIndex.put(chunk.evidence, chunk)
+    }
+
+    private fun lookupChunkByEvidence(evidence: Evidence) =
+        chunkIndex.get(evidence)
 
     private fun trackAncestor(logEvent: Justified) {
         while (!logEvent.justifiedBy(parentChunk())) {
@@ -234,6 +243,20 @@ internal open class MatchJournalImpl(
 
     override fun index(): MatchJournal.Index = IndexImpl(hist)
 
+    override fun principalRuleTags(chunk: Chunk): List<Any> {
+        val ptags = mutableListOf<Any>()
+        chunk.justifications().forEach { jn ->
+            // hist is sequential, random access can be expensive
+            (lookupChunkByEvidence(jn) as? MatchChunk)?.let {
+                if (it.match.isPrincipal) {
+                    ptags.add(it.ruleUniqueTag)
+                }
+            }
+            true
+        }
+        return ptags
+    }
+
     private fun allOccurrences(): Sequence<Occurrence> {
         // the following loop doesn't handle this case of starting posPtr, when 'current' isn't valid (e.g. just right after resetPos())
         if (__cursor.atStart()) return emptySequence()
@@ -320,6 +343,7 @@ internal open class MatchJournalImpl(
         override fun add(chunk: Chunk) {
             it.add(chunk as ChunkImpl)
             __current = chunk
+            indexChunk(chunk)
         }
 
         override fun removeNext() {
@@ -327,7 +351,6 @@ internal open class MatchJournalImpl(
             it.remove()
             updateNext()
         }
-
 
         /**
          * Walk in journal in direct order ([from] -> [current])
@@ -379,7 +402,6 @@ internal open class MatchJournalImpl(
             replayOccurrences(chunk.entries())
         }
     }
-
 
     /**
      * Immutable view for MutableList that provides mutability only through its iterators
@@ -452,7 +474,6 @@ internal open class MatchJournalImpl(
             else -> ord
         }
     }
-
 
     /**
      * Mock RuleMatch for use only in initial Chunk

@@ -33,12 +33,12 @@ class CompositeFeedback private constructor(private val elements: List<Feedback>
         this.severity = maxSeverity(elements)
     }
 
-    override fun handle(currentRuleMatch: RuleMatch, feedbackKey: Any, supervisor: Supervisor): Boolean {
+    override fun handle(currentRuleMatch: RuleMatch, feedbackKey: Any, feedbackBasis: List<Any>, supervisor: Supervisor): Boolean {
         var unhandled = 0
         for (feedback in elements) {
             if (!feedback.alreadyHandled()) {
                 unhandled += 1
-                if (supervisor.handleFeedback(currentRuleMatch, feedbackKey, feedback)) {
+                if (supervisor.handleFeedback(currentRuleMatch, feedbackKey, feedbackBasis, feedback)) {
                     feedback.setHandled()
                     unhandled -= 1
                 }

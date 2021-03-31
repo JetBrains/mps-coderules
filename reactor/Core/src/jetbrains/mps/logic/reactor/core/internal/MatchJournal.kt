@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
+import gnu.trove.TIntObjectHashMap
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.program.*
@@ -23,8 +24,10 @@ import jetbrains.mps.logic.reactor.util.Id
 import java.util.*
 import kotlin.Comparator
 
+typealias ChunkIndex = TIntObjectHashMap<MatchJournal.Chunk>
 
-interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
+
+interface MatchJournal :  EvidenceSource {
 
     /**
      * Add new [Chunk] for matches of principal rules.
@@ -68,7 +71,7 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
     /**
      * Returns read-only [JournalIterator] that allows to remove future [Chunk]s.
      */
-    override fun iterator(): JournalIterator
+    fun iterator(): JournalIterator
 
     /**
      * Returns internal [JournalIterator] that allows to remove future [Chunk]s.
@@ -118,6 +121,7 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
      */
     fun index(): Index
 
+    fun principalRuleTags(chunk: Chunk): List<Any>
 
     /**
      * Simplifies some search operations on [MatchJournal].
@@ -165,8 +169,8 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
          * Length of the indexed [MatchJournal]
          */
         val size: Int
-
     }
+
 
     /**
      * Immutable snapshot of [MatchJournal].
@@ -178,7 +182,6 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
         override fun getStoreView(): StoreView = StoreViewImpl(
             chunks.flatMap { it.entries() }.allOccurrences().asSequence()
         )
-
         override fun getPreamble(info: PreambleInfo): View {
             val cornerChunk = chunks.first() // corner chunk at beginning
             val initialChunk = chunks[1]
@@ -209,6 +212,7 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
      * the next [Chunk] was logged.
      */
     interface Chunk : Justified {
+
         /**
          * Corresponds to event of activated or discarded [Occurrence]
          */
@@ -235,7 +239,6 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
          * Same as [entries], but returns only discarded [Occurrence]s.
          */
         fun discardedLog(): List<Occurrence> = entries().filter { it.discarded }.map { it.occ }
-
         fun toPos(): Pos = Pos(this, entries().size)
     }
 
@@ -243,6 +246,7 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
      * [Chunk] corresponding to a [RuleMatch] of a principal [Rule].
      */
     interface MatchChunk : Chunk {
+
         /**
          * Returns true if this [Chunk] depends on changes to specified rule.
          * Relevant for rules with origin. Doesn't include rule from [match].
@@ -253,7 +257,6 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
          * [RuleMatch] which defines this [Chunk]
          */
         val match: RuleMatch
-
         val ruleUniqueTag: Any get() = match.rule().uniqueTag()
     }
 
@@ -265,16 +268,15 @@ interface MatchJournal : Iterable<MatchJournal.Chunk>, EvidenceSource {
     }
 
     open class Pos(val chunk: Chunk, val entriesCount: Int) {
+
         override fun equals(other: Any?) =
             other is Pos
             && other.chunk === chunk
             && other.entriesCount == entriesCount
 
         override fun hashCode(): Int = 31 * chunk.hashCode() + entriesCount
-
         override fun toString(): String = "($chunk, $entriesCount)"
     }
-
 }
 
 

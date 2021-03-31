@@ -68,7 +68,7 @@ class TestController {
                                                vararg occurrences: ConstraintOccurrence): Controller {
         val program = MockProgram("test", rulesLists, registry = MockConstraintRegistry())
         val supervisor = object : MockSupervisor() {
-            override fun handleFeedback(ruleMatch: RuleMatch, feedbackKey: Any, feedback: EvaluationFeedback): Boolean =
+            override fun handleFeedback(ruleMatch: RuleMatch, feedbackKey: Any, feedbackBasis: MutableList<Any>, feedback: EvaluationFeedback): Boolean  =
                 feedbackHandler(ruleMatch, feedback)
         }
         MockSession.init(program, supervisor)

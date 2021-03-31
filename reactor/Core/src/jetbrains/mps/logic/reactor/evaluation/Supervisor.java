@@ -34,8 +34,5 @@ public interface Supervisor {
      * Override this method in order to "handle" the feedback.
      * Returns true if the method has handled (consumed) the feedback.
      */
-    default boolean handleFeedback(RuleMatch ruleMatch, Object feedbackKey, EvaluationFeedback feedback) {
-        return false;
-    }
-
+    boolean handleFeedback(RuleMatch ruleMatch, Object feedbackKey, List<Object> feedbackBasis, EvaluationFeedback feedback);
 }
