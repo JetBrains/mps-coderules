@@ -3537,17 +3537,9 @@
                   <node concept="2ShNRf" id="3o9wrC3tZfr" role="33vP2m">
                     <node concept="1pGfFk" id="6RN9TdHofDR" role="2ShVmc">
                       <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="FeedbackReportingSupervisor" />
-                      <node concept="2ShNRf" id="6RN9TdHoj5N" role="37wK5m">
-                        <node concept="1pGfFk" id="6RN9TdHojUR" role="2ShVmc">
-                          <ref role="37wK5l" to="hano:6RN9TdHmUdh" resolve="OriginScopeFeedbackConsumer" />
-                          <node concept="2OqwBi" id="3o9wrC3u3mt" role="37wK5m">
-                            <node concept="37vLTw" id="3o9wrC3u307" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
-                            </node>
-                            <node concept="liA8E" id="3o9wrC3u59R" role="2OqNvi">
-                              <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
-                            </node>
-                          </node>
+                      <node concept="2ShNRf" id="55xYlrmck$T" role="37wK5m">
+                        <node concept="HV5vD" id="55xYlrmcljP" role="2ShVmc">
+                          <ref role="HV5vE" to="hano:55xYlrmcfkC" resolve="FeedbackConsumer.Stub" />
                         </node>
                       </node>
                     </node>
