@@ -38,6 +38,7 @@
       <modulePath path="$PROJECT_DIR$/samples/lambdacalc/solutions/samples.lambdacalc.build/samples.lambdacalc.build.msd" folder="samples.lambdacalc" />
       <modulePath path="$PROJECT_DIR$/samples/lambdacalc/solutions/samples.lambdacalc.demo/samples.lambdacalc.demo.msd" folder="samples.lambdacalc" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.blTypesExt/jetbrains.mps.baseLanguage.blTypesExt.mpl" folder="samples.mpscore.ext.baseLanguage" />
+      <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.classifiersExt/jetbrains.mps.baseLanguage.classifiersExt.mpl" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.closuresExt/jetbrains.mps.baseLanguage.closuresExt.mpl" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.collectionsExt/jetbrains.mps.baseLanguage.collectionsExt.mpl" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.function/jetbrains.mps.baseLanguage.function.mpl" folder="samples.mpscore.ext.baseLanguage" />
