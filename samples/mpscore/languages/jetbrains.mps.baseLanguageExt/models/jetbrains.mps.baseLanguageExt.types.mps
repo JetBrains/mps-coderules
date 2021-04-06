@@ -2487,6 +2487,58 @@
         </node>
       </node>
     </node>
+    <node concept="1nLNMY" id="2q9s7fq1wJE" role="1nK1Vg">
+      <property role="TrG5h" value="findHierarchy_fail" />
+      <node concept="3clFbS" id="2q9s7fq1wJF" role="1nLNMH">
+        <node concept="1nLNNL" id="2q9s7fq1wOZ" role="3cqZAp">
+          <node concept="1nLNMm" id="2q9s7fq1wP0" role="1nLNNK">
+            <node concept="3Aq93q" id="2q9s7fq1wP6" role="1nLNMb">
+              <property role="3ArMco" value="true" />
+              <node concept="3I6sU6" id="2q9s7fq1wP7" role="3Ip0Jz">
+                <node concept="3I6s7M" id="2q9s7fq1wPe" role="3I6sU7">
+                  <node concept="3Aqt3T" id="2q9s7fq1wPd" role="3I6s78">
+                    <ref role="3AqCNq" node="1qY0I4bFlcz" resolve="findHierarchy" />
+                    <node concept="a7P8L" id="2q9s7fq1wRc" role="3AunhB">
+                      <ref role="a7OzE" node="2q9s7fq1wPY" resolve="V" />
+                    </node>
+                    <node concept="a7P8L" id="2q9s7fq1wR$" role="3AunhB">
+                      <ref role="a7OzE" node="2q9s7fq1wPs" resolve="T" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="2q9s7fq1wPr" role="0Rg$4">
+              <node concept="aZer4" id="2q9s7fq1wPs" role="3XD1gS">
+                <property role="TrG5h" value="T" />
+              </node>
+              <node concept="32pEOW" id="2q9s7fq1wPA" role="3vLBG7" />
+            </node>
+            <node concept="3NuqgR" id="2q9s7fq1wPX" role="0Rg$4">
+              <node concept="aZer4" id="2q9s7fq1wPY" role="3XD1gS">
+                <property role="TrG5h" value="V" />
+              </node>
+              <node concept="3uibUv" id="2q9s7fq1wQb" role="3vLBG7">
+                <ref role="3uigEE" node="rZZ6HYot1" resolve="ClassHierarchyGraph.InstVertex" />
+              </node>
+            </node>
+            <node concept="3xSepi" id="2q9s7fq1wSl" role="3xSepv">
+              <node concept="3Aq9E8" id="2q9s7fq1wSm" role="3xSepj">
+                <node concept="3I6sU6" id="2q9s7fq1wSn" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="2q9s7fq1wSw" role="3I6sU7">
+                    <node concept="1lpGmL" id="2q9s7fq1wSu" role="3I6s78">
+                      <node concept="Xl_RD" id="2q9s7fq1wSC" role="1lp$hM">
+                        <property role="Xl_RC" value="can't find hierarchy" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="AVZre" id="1zN1RIlreLa">
     <property role="TrG5h" value="MethodCall" />
@@ -13096,7 +13148,9 @@
               <node concept="aZer4" id="3hZrJU5Vz8s" role="3XD1gS">
                 <property role="TrG5h" value="TVDecl" />
               </node>
-              <node concept="3Tqbb2" id="3hZrJU5Vz8t" role="3vLBG7" />
+              <node concept="3Tqbb2" id="3hZrJU5Vz8t" role="3vLBG7">
+                <ref role="ehGHo" to="tpee:g96euPO" resolve="TypeVariableDeclaration" />
+              </node>
             </node>
             <node concept="3xSepi" id="6E2cNicdiiK" role="3xSepv">
               <node concept="3Aq9E8" id="6p5LEuvdJWt" role="3xSepj">
@@ -14153,7 +14207,9 @@
               <node concept="aZer4" id="3hZrJU5Vz3p" role="3XD1gS">
                 <property role="TrG5h" value="TVDecl" />
               </node>
-              <node concept="3Tqbb2" id="3hZrJU5Vz3q" role="3vLBG7" />
+              <node concept="3Tqbb2" id="3hZrJU5Vz3q" role="3vLBG7">
+                <ref role="ehGHo" to="tpee:g96euPO" resolve="TypeVariableDeclaration" />
+              </node>
             </node>
             <node concept="3xSepi" id="6E2cNicdiiP" role="3xSepv">
               <node concept="3Aq9E8" id="6EY0p2z7DUb" role="3xSepj">
@@ -16986,29 +17042,21 @@
                     <node concept="a7P8L" id="2q0gzCFHsS9" role="3AunhB">
                       <ref role="a7OzE" node="1_2bK$p0nZj" resolve="Lub" />
                     </node>
-                    <node concept="a7P8L" id="2q0gzCFHfK2" role="3AunhB">
-                      <ref role="a7OzE" node="1_2bK$p0mra" resolve="Left" />
+                    <node concept="1HFMs5" id="2q9s7fq1wxG" role="3AunhB">
+                      <node concept="a7P8L" id="2q0gzCFHfK2" role="1uarlU">
+                        <ref role="a7OzE" node="1_2bK$p0mra" resolve="Left" />
+                      </node>
+                      <node concept="ns1u0" id="2q9s7fq1wyc" role="1uarlW">
+                        <ref role="ns1xF" node="JOGAOsVt2a" resolve="classifier" />
+                      </node>
                     </node>
-                    <node concept="a7P8L" id="2q0gzCFHlC3" role="3AunhB">
-                      <ref role="a7OzE" node="1_2bK$p0mzY" resolve="Right" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3Aq9_M" id="6BU$YTNH8Sx" role="1nLNMa">
-              <node concept="3I6sU6" id="4nIWweBDU2y" role="3Ip0Jz">
-                <node concept="3I6s7M" id="4nIWweBDU2z" role="3I6sU7">
-                  <node concept="2aM9Np" id="6BU$YTNH8Te" role="3I6s78">
-                    <node concept="a7P8L" id="6BU$YTNH8Tp" role="2aLmnP">
-                      <ref role="a7OzE" node="1_2bK$p0mra" resolve="Left" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3I6s7M" id="4nIWweBDU2$" role="3I6sU7">
-                  <node concept="2aM9Np" id="6BU$YTNH8Th" role="3I6s78">
-                    <node concept="a7P8L" id="6BU$YTNH8Ts" role="2aLmnP">
-                      <ref role="a7OzE" node="1_2bK$p0mzY" resolve="Right" />
+                    <node concept="1HFMs5" id="2q9s7fq1wyB" role="3AunhB">
+                      <node concept="a7P8L" id="2q0gzCFHlC3" role="1uarlU">
+                        <ref role="a7OzE" node="1_2bK$p0mzY" resolve="Right" />
+                      </node>
+                      <node concept="ns1u0" id="2q9s7fq1wzc" role="1uarlW">
+                        <ref role="ns1xF" node="JOGAOsVt2a" resolve="classifier" />
+                      </node>
                     </node>
                   </node>
                 </node>
