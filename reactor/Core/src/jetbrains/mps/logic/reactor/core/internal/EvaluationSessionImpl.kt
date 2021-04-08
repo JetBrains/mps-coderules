@@ -291,8 +291,8 @@ internal class EvaluationSessionImpl private constructor (
             val logicalState = LogicalState()
 
             // fixme: ensure why ruleIndex.update here leads to errors
-            // val ruleIndex = tkn.ruleIndex.apply{ updateIndexFromRules(program.rules()) }
-            val ruleIndex = RuleIndex(program.rules())
+             val ruleIndex = tkn.ruleIndex.apply{ updateIndexFromRules(program.rules()) }
+//            val ruleIndex = RuleIndex(program.rules())
             val front = Dispatcher(ruleIndex).front() // new dispatcher front
             val journal = MatchJournalImpl(incrementality) // new journal
             val processing = ConstraintsProcessing(front, journal, logicalState, incrementality, trace, profiler)
