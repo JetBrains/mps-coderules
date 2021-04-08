@@ -70,8 +70,6 @@ public abstract class Rule {
 
         public String name() { return name; }
 
-        public Object uniqueTag() { return utag; }
-
         /**
          * Rule is "stable" if it has no unique part
          * and its name coincides with unique tag.
@@ -90,24 +88,27 @@ public abstract class Rule {
             this.group = groupPrefix;
             this.name = commonPart;
             this.utag = utagSb.toString();
+            this.hash = utag.hashCode();
         }
 
-        public Tag(String commonPart, Object uniquePart) { this(commonPart, commonPart, uniquePart); }
-
+        @Deprecated
         public Tag(String tag) { this(tag, tag, null); }
 
         @Override
-        public int hashCode() { return utag.hashCode(); }
+        public int hashCode() { return hash; }
 
         @Override
         public boolean equals(Object obj) {
-            // NB: allow equality to String
+            if (obj == null) return false;
+            if (this == obj) return true;
+            // FIXME WTF? NB: allow equality to String
             return this.toString().equals(obj.toString());
         }
 
         @Override
         public String toString() { return utag; }
 
+        private final int hash;
         private final String group;
         private final String name;
         private final String utag;
