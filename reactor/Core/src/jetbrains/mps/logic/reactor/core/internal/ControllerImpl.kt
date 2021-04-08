@@ -88,6 +88,12 @@ internal class ControllerImpl (
         solver.tell(invocation)
     }
 
+    override fun tryTell(invocation: PredicateInvocation): Solver.Result {
+        val solver = invocation.predicate().symbol().solver(supervisor)
+        trace.tell(invocation)
+        return solver.tryTell(invocation)
+    }
+
     override fun reactivate(occ: Occurrence): FeedbackStatus =
         profiler.profile<FeedbackStatus>("reactivate_${occ.constraint.symbol()}") {
 
@@ -258,7 +264,7 @@ internal class ControllerImpl (
 
             context.runSafe {
                 val args = supervisor.instantiateArguments(predicate.arguments(), context.logicalContext, context)
-                tell(predicate.invocation(args, context.logicalContext, context))
+                tryTell(predicate.invocation(args, context.logicalContext, context))
             }
 
         }
@@ -329,22 +335,27 @@ internal class ControllerImpl (
             return status.operational
         }
 
-        inline fun runSafe(block: () -> Unit) : Boolean {
+        inline fun runSafe(block: () -> Solver.Result) : Boolean {
             if (status.operational) {
+                var failure: EvaluationFailure? = null
                 try {
-                    block()
+                    block().let {
+                        if (!it.isOk()) {
+                            failure = EvaluationFailure(it.message, it.cause);
+                        }
+                    }
 
                 } catch (ex: RuntimeException) {
-                    val failure = if (ex is EvaluationFailureException)
-                                        EvaluationFailure(ex)
-                                      else
-                                        EvaluationFailure(EvaluationFailureException(ex))
+                    failure = EvaluationFailure(ex)
+                }
+
+                if (failure != null) {
                     if (checking) {
-                        this.status = status.abort(failure)
+                        this.status = status.abort(failure as EvaluationFailure)
 
                     } else {
                         trace.feedback(failure)
-                        this.status = status.fail(failure)
+                        this.status = status.fail(failure as EvaluationFailure)
                     }
                 }
             }

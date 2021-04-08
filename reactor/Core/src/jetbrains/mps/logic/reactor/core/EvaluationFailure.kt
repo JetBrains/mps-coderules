@@ -51,14 +51,14 @@ class EvaluationFailure : Feedback {
 
     private var reason: EvaluationFailure? = null
     private var message: String? = null
-    private var cause: EvaluationFailureException? = null
+    private var cause: Throwable? = null
 
-    constructor(ex: EvaluationFailureException) {
+    constructor(ex: Throwable?) {
         this.cause = ex
-        this.message = ex.message
+        this.message = ex?.message
     }
 
-    constructor(message: String, ex: EvaluationFailureException) {
+    constructor(message: String?, ex: Throwable?) {
         this.cause = ex
         this.message = message
     }
@@ -88,7 +88,7 @@ class EvaluationFailure : Feedback {
         return getCause()
     }
 
-    fun getCause(): EvaluationFailureException? {
+    fun getCause(): Throwable? {
         return if (cause != null) cause else reason?.getCause()
     }
 }

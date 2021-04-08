@@ -1,6 +1,7 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.*
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
+import jetbrains.mps.logic.reactor.evaluation.Solver
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
@@ -206,6 +207,10 @@ class MockController : Controller {
 
     override fun tell(invocation: PredicateInvocation) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun tryTell(invocation: PredicateInvocation): Solver.Result {
+        TODO("Not yet implemented")
     }
 
     override fun activate(constraint: Constraint): FeedbackStatus {

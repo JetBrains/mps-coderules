@@ -22,6 +22,7 @@ package jetbrains.mps.logic.reactor.evaluation;
  *
  * @author Fedor Isakov
  */
+@Deprecated
 public interface Queryable extends Instructible {
 
     boolean ask(PredicateInvocation invocation);

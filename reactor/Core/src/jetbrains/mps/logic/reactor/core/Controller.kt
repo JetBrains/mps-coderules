@@ -20,6 +20,7 @@ import jetbrains.mps.logic.reactor.core.internal.ConstraintsProcessing
 import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
 import jetbrains.mps.logic.reactor.core.internal.MatchJournal
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
+import jetbrains.mps.logic.reactor.evaluation.Solver
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.program.Constraint
 
@@ -33,6 +34,8 @@ interface Controller {
     fun ask(invocation: PredicateInvocation): Boolean
 
     fun tell(invocation: PredicateInvocation)
+
+    fun tryTell(invocation: PredicateInvocation): Solver.Result
 
     fun activate(constraint: Constraint): FeedbackStatus
 
