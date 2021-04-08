@@ -25,6 +25,7 @@
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="nn" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
@@ -97,11 +98,22 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1068580123160" name="condition" index="3clFbw" />
+        <child id="1068580123161" name="ifTrue" index="3clFbx" />
+      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
+        <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
+      </concept>
+      <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -618,14 +630,49 @@
       <node concept="3cqZAl" id="6yEjedm63W$" role="3clF45" />
       <node concept="3Tm1VV" id="6yEjedm623e" role="1B3o_S" />
       <node concept="3clFbS" id="6yEjedm623f" role="3clF47">
-        <node concept="3clFbF" id="6yEjedm6hJS" role="3cqZAp">
-          <node concept="1rXfSq" id="6yEjedm6hJR" role="3clFbG">
-            <ref role="37wK5l" to="cxk7:2UGjFq4mbmq" resolve="doTell" />
-            <node concept="37vLTw" id="6yEjedm6hPb" role="37wK5m">
-              <ref role="3cqZAo" node="6yEjedm623g" resolve="a" />
+        <node concept="3cpWs8" id="2gPa6JHHhmh" role="3cqZAp">
+          <node concept="3cpWsn" id="2gPa6JHHhmi" role="3cpWs9">
+            <property role="TrG5h" value="res" />
+            <node concept="3uibUv" id="2gPa6JHHhmj" role="1tU5fm">
+              <ref role="3uigEE" to="w7la:~Solver$Result" resolve="Solver.Result" />
             </node>
-            <node concept="37vLTw" id="6yEjedm6hWN" role="37wK5m">
-              <ref role="3cqZAo" node="6yEjedm623i" resolve="b" />
+            <node concept="1rXfSq" id="2gPa6JHHhmk" role="33vP2m">
+              <ref role="37wK5l" to="cxk7:2UGjFq4mbmq" resolve="doTell" />
+              <node concept="37vLTw" id="2gPa6JHHhml" role="37wK5m">
+                <ref role="3cqZAo" node="6yEjedm623g" resolve="a" />
+              </node>
+              <node concept="37vLTw" id="2gPa6JHHhmm" role="37wK5m">
+                <ref role="3cqZAo" node="6yEjedm623i" resolve="b" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2gPa6JHHhmn" role="3cqZAp">
+          <node concept="3clFbS" id="2gPa6JHHhmo" role="3clFbx">
+            <node concept="YS8fn" id="2gPa6JHHhmp" role="3cqZAp">
+              <node concept="2ShNRf" id="2gPa6JHHhmq" role="YScLw">
+                <node concept="1pGfFk" id="2gPa6JHHhmr" role="2ShVmc">
+                  <ref role="37wK5l" to="w7la:~EvaluationFailureException.&lt;init&gt;(java.lang.String)" resolve="EvaluationFailureException" />
+                  <node concept="2OqwBi" id="2gPa6JHHhms" role="37wK5m">
+                    <node concept="37vLTw" id="2gPa6JHHhmt" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2gPa6JHHhmi" resolve="res" />
+                    </node>
+                    <node concept="liA8E" id="2gPa6JHHhmu" role="2OqNvi">
+                      <ref role="37wK5l" to="w7la:~Solver$Result.getMessage()" resolve="getMessage" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="2gPa6JHHhmv" role="3clFbw">
+            <node concept="2OqwBi" id="2gPa6JHHhmw" role="3fr31v">
+              <node concept="37vLTw" id="2gPa6JHHhmx" role="2Oq$k0">
+                <ref role="3cqZAo" node="2gPa6JHHhmi" resolve="res" />
+              </node>
+              <node concept="liA8E" id="2gPa6JHHhmy" role="2OqNvi">
+                <ref role="37wK5l" to="w7la:~Solver$Result.isOk()" resolve="isOk" />
+              </node>
             </node>
           </node>
         </node>
@@ -699,14 +746,49 @@
       <node concept="3cqZAl" id="6yEjedm8tAk" role="3clF45" />
       <node concept="3Tm1VV" id="6yEjedm8tAl" role="1B3o_S" />
       <node concept="3clFbS" id="6yEjedm8tAm" role="3clF47">
-        <node concept="3clFbF" id="6yEjedm8tOR" role="3cqZAp">
-          <node concept="1rXfSq" id="6yEjedm8tOQ" role="3clFbG">
-            <ref role="37wK5l" to="cxk7:2UGjFq4lGBW" resolve="doTell" />
-            <node concept="37vLTw" id="6yEjedm8tTM" role="37wK5m">
-              <ref role="3cqZAo" node="6yEjedm8tDF" resolve="a" />
+        <node concept="3cpWs8" id="2gPa6JHyWM0" role="3cqZAp">
+          <node concept="3cpWsn" id="2gPa6JHyWM1" role="3cpWs9">
+            <property role="TrG5h" value="res" />
+            <node concept="3uibUv" id="2gPa6JHyPL4" role="1tU5fm">
+              <ref role="3uigEE" to="w7la:~Solver$Result" resolve="Solver.Result" />
             </node>
-            <node concept="37vLTw" id="6yEjedm8u66" role="37wK5m">
-              <ref role="3cqZAo" node="6yEjedm8tGg" resolve="b" />
+            <node concept="1rXfSq" id="2gPa6JHyWM2" role="33vP2m">
+              <ref role="37wK5l" to="cxk7:2UGjFq4lGBW" resolve="doTell" />
+              <node concept="37vLTw" id="2gPa6JHyWM3" role="37wK5m">
+                <ref role="3cqZAo" node="6yEjedm8tDF" resolve="a" />
+              </node>
+              <node concept="37vLTw" id="2gPa6JHyWM4" role="37wK5m">
+                <ref role="3cqZAo" node="6yEjedm8tGg" resolve="b" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2gPa6JHyWUv" role="3cqZAp">
+          <node concept="3clFbS" id="2gPa6JHyWUx" role="3clFbx">
+            <node concept="YS8fn" id="2gPa6JHyXfO" role="3cqZAp">
+              <node concept="2ShNRf" id="2gPa6JHyXgv" role="YScLw">
+                <node concept="1pGfFk" id="2gPa6JHyXxn" role="2ShVmc">
+                  <ref role="37wK5l" to="w7la:~EvaluationFailureException.&lt;init&gt;(java.lang.String)" resolve="EvaluationFailureException" />
+                  <node concept="2OqwBi" id="2gPa6JHyXI1" role="37wK5m">
+                    <node concept="37vLTw" id="2gPa6JHyXBb" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2gPa6JHyWM1" resolve="res" />
+                    </node>
+                    <node concept="liA8E" id="2gPa6JHyXNA" role="2OqNvi">
+                      <ref role="37wK5l" to="w7la:~Solver$Result.getMessage()" resolve="getMessage" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="2gPa6JHyWXV" role="3clFbw">
+            <node concept="2OqwBi" id="2gPa6JHyX8k" role="3fr31v">
+              <node concept="37vLTw" id="2gPa6JHyX2R" role="2Oq$k0">
+                <ref role="3cqZAo" node="2gPa6JHyWM1" resolve="res" />
+              </node>
+              <node concept="liA8E" id="2gPa6JHyXcB" role="2OqNvi">
+                <ref role="37wK5l" to="w7la:~Solver$Result.isOk()" resolve="isOk" />
+              </node>
             </node>
           </node>
         </node>
