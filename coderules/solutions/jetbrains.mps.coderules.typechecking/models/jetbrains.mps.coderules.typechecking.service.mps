@@ -451,6 +451,13 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
+      </concept>
     </language>
     <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
       <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="nn" index="3oM_SD">
@@ -17244,31 +17251,35 @@
             </node>
           </node>
           <node concept="3clFbH" id="1XKnVOCXGA" role="3cqZAp" />
-          <node concept="3cpWs8" id="1imVejVC0fy" role="3cqZAp">
-            <node concept="3cpWsn" id="1imVejVC0fz" role="3cpWs9">
-              <property role="TrG5h" value="cachedOccurrences" />
-              <node concept="3uibUv" id="1imVejVC0f$" role="1tU5fm">
-                <ref role="3uigEE" to="i348:1imVejVtN6P" resolve="PrincipalStore" />
-              </node>
-              <node concept="2OqwBi" id="1imVejVC18r" role="33vP2m">
-                <node concept="1rXfSq" id="1imVejVC0sN" role="2Oq$k0">
-                  <ref role="37wK5l" node="3OUB6BBwqkM" resolve="getAspectCachedData" />
-                  <node concept="37vLTw" id="1imVejVC0KO" role="37wK5m">
-                    <ref role="3cqZAo" node="6XnUDeizCc7" resolve="aspectClique" />
-                  </node>
+          <node concept="1X3_iC" id="2gPa6JIullG" role="lGtFl">
+            <property role="3V$3am" value="statement" />
+            <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+            <node concept="3cpWs8" id="1imVejVC0fy" role="8Wnug">
+              <node concept="3cpWsn" id="1imVejVC0fz" role="3cpWs9">
+                <property role="TrG5h" value="cachedOccurrences" />
+                <node concept="3uibUv" id="1imVejVC0f$" role="1tU5fm">
+                  <ref role="3uigEE" to="i348:1imVejVtN6P" resolve="PrincipalStore" />
                 </node>
-                <node concept="liA8E" id="1imVejVC1yV" role="2OqNvi">
-                  <ref role="37wK5l" node="7z54$fPgk2E" resolve="getOrSet" />
-                  <node concept="10M0yZ" id="1imVejVC2Pr" role="37wK5m">
-                    <ref role="3cqZAo" node="7wgfyCWWZq3" resolve="PRINCIPAL_STORE" />
-                    <ref role="1PxDUh" node="7kaxm0sEy3e" resolve="TypecheckingService" />
+                <node concept="2OqwBi" id="1imVejVC18r" role="33vP2m">
+                  <node concept="1rXfSq" id="1imVejVC0sN" role="2Oq$k0">
+                    <ref role="37wK5l" node="3OUB6BBwqkM" resolve="getAspectCachedData" />
+                    <node concept="37vLTw" id="1imVejVC0KO" role="37wK5m">
+                      <ref role="3cqZAo" node="6XnUDeizCc7" resolve="aspectClique" />
+                    </node>
                   </node>
-                  <node concept="1bVj0M" id="1imVejVC3v$" role="37wK5m">
-                    <node concept="3clFbS" id="1imVejVC3vA" role="1bW5cS">
-                      <node concept="3clFbF" id="1imVejVC3Gb" role="3cqZAp">
-                        <node concept="2ShNRf" id="1imVejVC3G9" role="3clFbG">
-                          <node concept="HV5vD" id="1imVejVC4E9" role="2ShVmc">
-                            <ref role="HV5vE" to="i348:1imVejVtN6P" resolve="PrincipalStore" />
+                  <node concept="liA8E" id="1imVejVC1yV" role="2OqNvi">
+                    <ref role="37wK5l" node="7z54$fPgk2E" resolve="getOrSet" />
+                    <node concept="10M0yZ" id="1imVejVC2Pr" role="37wK5m">
+                      <ref role="3cqZAo" node="7wgfyCWWZq3" resolve="PRINCIPAL_STORE" />
+                      <ref role="1PxDUh" node="7kaxm0sEy3e" resolve="TypecheckingService" />
+                    </node>
+                    <node concept="1bVj0M" id="1imVejVC3v$" role="37wK5m">
+                      <node concept="3clFbS" id="1imVejVC3vA" role="1bW5cS">
+                        <node concept="3clFbF" id="1imVejVC3Gb" role="3cqZAp">
+                          <node concept="2ShNRf" id="1imVejVC3G9" role="3clFbG">
+                            <node concept="HV5vD" id="1imVejVC4E9" role="2ShVmc">
+                              <ref role="HV5vE" to="i348:1imVejVtN6P" resolve="PrincipalStore" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -17315,9 +17326,7 @@
                 <node concept="37vLTw" id="6XnUDeizCcV" role="37wK5m">
                   <ref role="3cqZAo" node="6XnUDeizCcf" resolve="query" />
                 </node>
-                <node concept="37vLTw" id="1imVejVC4Ok" role="37wK5m">
-                  <ref role="3cqZAo" node="1imVejVC0fz" resolve="cachedOccurrences" />
-                </node>
+                <node concept="10Nm6u" id="2gPa6JIuj_Z" role="37wK5m" />
               </node>
             </node>
           </node>
@@ -17484,10 +17493,7 @@
                       </node>
                       <node concept="liA8E" id="57Rdq$NvAXO" role="2OqNvi">
                         <ref role="37wK5l" to="xnrr:57Rdq$NuMzc" resolve="setLevel" />
-                        <node concept="Rm8GO" id="57Rdq$NvVWN" role="37wK5m">
-                          <ref role="Rm8GQ" to="av0y:~IncrementalSpec$IncrLevel.Preamble" resolve="Preamble" />
-                          <ref role="1Px2BO" to="av0y:~IncrementalSpec$IncrLevel" resolve="IncrementalSpec.IncrLevel" />
-                        </node>
+                        <node concept="10Nm6u" id="2gPa6JHY3FU" role="37wK5m" />
                       </node>
                     </node>
                     <node concept="liA8E" id="57Rdq$NvAXQ" role="2OqNvi">
