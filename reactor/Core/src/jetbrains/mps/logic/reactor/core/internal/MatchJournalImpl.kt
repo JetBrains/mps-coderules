@@ -243,12 +243,12 @@ internal open class MatchJournalImpl(
 
     override fun index(): MatchJournal.Index = IndexImpl(hist)
 
-    override fun principalRuleTags(chunk: Chunk): List<Any> {
+    override fun basisRuleTags(chunk: Chunk): List<Any> {
         val ptags = mutableListOf<Any>()
         chunk.justifications().forEach { jn ->
             // hist is sequential, random access can be expensive
             (lookupChunkByEvidence(jn) as? MatchChunk)?.let {
-                if (it.match.isPrincipal) {
+                if (it.match.rule().isBasis) {
                     ptags.add(it.ruleUniqueTag)
                 }
             }

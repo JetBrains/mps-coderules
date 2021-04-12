@@ -40,6 +40,8 @@ public abstract class Rule {
         return Collections.emptyList();
     }
 
+    public boolean isBasis() { return false; }
+
     /**
      * A tag uniquely identifies the rule.
      */

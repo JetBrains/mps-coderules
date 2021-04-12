@@ -121,7 +121,7 @@ interface MatchJournal :  EvidenceSource {
      */
     fun index(): Index
 
-    fun principalRuleTags(chunk: Chunk): List<Any>
+    fun basisRuleTags(chunk: Chunk): List<Any>
 
     /**
      * Simplifies some search operations on [MatchJournal].

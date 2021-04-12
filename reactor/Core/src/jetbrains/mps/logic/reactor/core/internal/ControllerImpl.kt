@@ -175,7 +175,7 @@ internal class ControllerImpl (
                         if (status.feedback?.alreadyHandled() == false) {
                             status.feedback.handle(match,
                                                     newParent.match.feedbackKey,
-                                                    processing.principalRuleTags(newParent),
+                                                    processing.basisRuleTags(newParent),
                                                     supervisor)
                         }
                     }
@@ -199,7 +199,7 @@ internal class ControllerImpl (
                     } else if (status.feedback?.alreadyHandled() == false
                         && status.failure.handle(match,
                                                     newParent.match.feedbackKey,
-                                                    processing.principalRuleTags(newParent),
+                                                    processing.basisRuleTags(newParent),
                                                     supervisor)) {
 
                         status.recover()
