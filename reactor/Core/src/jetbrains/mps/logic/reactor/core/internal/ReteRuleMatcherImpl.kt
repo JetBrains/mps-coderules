@@ -26,7 +26,7 @@ import kotlin.NoSuchElementException
 import kotlin.collections.ArrayList
 
 /**
- * An alternative implementation of RuleMatcherImpl. Has similar asymptotic characteristics as the "naïve" implementation.
+ * An alternative implementation of RuleMatcher. Has similar asymptotic characteristics as the "naïve" implementation.
  *
  * Loosely based on "Rete network" algorithm.
  *
@@ -77,6 +77,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup?,
 
         var lastGeneration = Generation(Layer(InitialNode()))
 
+        /* FIXME MEMLEAK */
         val consumedSignatures = IndexedSignatureSet()
 
         abstract inner class ReteNode
@@ -234,8 +235,10 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup?,
          */
         inner class Layer() {
 
+            /* FIXME MEMLEAK */
             private val introTrail: Trail = trailOf()
 
+            /* FIXME MEMLEAK */
             private val introNodes = HashMap<Int, MutableList<ReteNode>>()
 
             private val nodeList = UnionFindLinkedList<ReteNode>()
@@ -255,12 +258,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup?,
             fun containsOccurrence(occ: Occurrence): Boolean {
                 return introTrail.contains(occ.identity)
             }
-
-            fun forgetContains(occ: Occurrence) {
-                // FIXME this breaks the internal invariant
-                introTrail.remove(occ.identity)
-            }
-
+            
             fun iterate(): MutableIterator<ReteNode> = nodeList.iterator()
 
             fun nextNode(it: MutableIterator<ReteNode>): ReteNode? {
@@ -449,23 +447,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup?,
                 consumedSignatures.removeAllWith(occurrence.identity)
                 return nextGeneration().reset()
             }
-
-            /*
-             * Allows to avoid triggering reactivation logic in the next call of "introduce" for this occurrence.
-             */
-            fun forgetIntroduced(occurrence: Occurrence): Generation {
-                for (layer in layers) {
-                    layer.forgetContains(occurrence)
-                }
-                if (lastIntroduced === occurrence) lastIntroduced = null
-                return nextGeneration()
-            }
-
-            fun erase(occurrence: Occurrence): Generation {
-                if (lastIntroduced === occurrence) lastIntroduced = null
-                return drop(occurrence).clearInvalidNodes()
-            }
-
+            
             private fun clearInvalidNodes(): Generation {
                 while (nodesIt.hasNext()) {
                     val n = nodesIt.next()
@@ -528,21 +510,6 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup?,
             return this
         }
 
-        override fun forgetExpanded(occ: Occurrence): ReteNetwork {
-            this.lastGeneration.forgetIntroduced(occ)
-            return this
-        }
-
-        override fun forgetConsumed(occ: Occurrence): ReteNetwork {
-            consumedSignatures.removeAllWith(occ.identity)
-            return this
-        }
-
-        override fun forget(occ: Occurrence): RuleMatchingProbe {
-            this.lastGeneration = lastGeneration.erase(occ)
-            return this
-        }
-
         override fun hasOccurrences(): Boolean {
             return this.lastGeneration.hasOccurrences()
         }
@@ -553,11 +520,6 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup?,
 
         override fun consume(ruleMatch: RuleMatchEx): RuleMatchingProbe {
             consumedSignatures.add(ruleMatch.signatureArray().toSignature())
-            return this
-        }
-
-        override fun forget(ruleMatch: RuleMatchEx): RuleMatchingProbe {
-            consumedSignatures.remove(ruleMatch.signatureArray().toSignature())
             return this
         }
 

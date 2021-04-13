@@ -16,9 +16,6 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
-import jetbrains.mps.logic.reactor.program.PreambleInfo;
-
 public interface MatchJournalView {
     StoreView getStoreView();
-    MatchJournalView getPreamble(PreambleInfo info);
 }

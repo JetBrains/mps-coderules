@@ -51,8 +51,6 @@ internal class ConstraintsProcessing(
 
     fun setStrategy(strategy: ProcessingStrategy) { this.incrementalProcessing = strategy }
 
-    fun getStateCleaner(): ProgramStateCleaner = ProgramStateCleaner()
-
     fun getFrontState(): DispatchingFrontState = dispatchingFront.state()
 
     fun engage(controller: Controller) {
@@ -61,18 +59,6 @@ internal class ConstraintsProcessing(
 
     fun disengage(controller: Controller) {
         logicalState.clearController(controller)
-    }
-
-    fun activateContinue(controller: Controller, activeOcc: Occurrence, parent: MatchJournal.MatchChunk): FeedbackStatus {
-        assert(activeOcc.stored)
-
-        // Forget that occurrence was seen. Otherwise it will be
-        // processed as with reactivation through observers.
-        this.dispatchingFront = dispatchingFront.forgetExpanded(activeOcc)
-
-        trace.activateContinue(activeOcc)
-
-        return processActivated(controller, activeOcc, parent, FeedbackStatus.NORMAL())
     }
 
     fun evaluate(controller: Controller, prototype: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus =
@@ -185,17 +171,11 @@ internal class ConstraintsProcessing(
         profiler.profile("discardOccurrence") {
 
             match.forEachReplaced { occ ->
-                // Principal occurrences must be preserved for future incremental evaluation sessions
-                if (!occ.isPrincipal) {
-                    this.dispatchingFront = dispatchingFront.contract(occ)
-                }
-
+                this.dispatchingFront = dispatchingFront.contract(occ)
                 occ.stored = false
 
                 profiler.profile("terminateOccurrence") {
-
                     occ.terminate(logicalState)
-
                 }
 
                 trace.discard(occ)
@@ -203,19 +183,7 @@ internal class ConstraintsProcessing(
 
         }
     }
-
-    inner class ProgramStateCleaner{
-        fun erase(occurrence: Occurrence) {
-            dispatchingFront = dispatchingFront.forget(occurrence)
-            occurrence.terminate(logicalState)
-            incrementalProcessing.processInvalidated(occurrence, logicalState)
-        }
-
-        fun erase(match: RuleMatchEx) {
-            dispatchingFront = dispatchingFront.forget(match)
-        }
-    }
-
+    
     /**
      * Encapsulates logic for deriving [Evidence] and [Justifications] for a new [Occurrence].
      */

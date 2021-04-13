@@ -25,6 +25,4 @@ public interface SessionToken {
     MatchJournalView getJournalView();
     @NotNull()
     Iterable<Rule> getRules();
-    @NotNull
-    Collection<ConstraintOccurrence> getPrincipalStore();
 }

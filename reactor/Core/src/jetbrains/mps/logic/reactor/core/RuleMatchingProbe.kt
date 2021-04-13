@@ -54,19 +54,6 @@ interface RuleMatchingProbe {
      */
     fun consume(ruleMatch: RuleMatchEx): RuleMatchingProbe
 
-    /**
-     * Clears all internal state related to [ruleMatch].
-     * Effect is as if [ruleMatch] was never seen.
-     */
-    fun forget(ruleMatch: RuleMatchEx): RuleMatchingProbe
-
-    /**
-     * Clears all state related to [Occurrence] [occ].
-     * Same as [contract], but also clears internal state.
-     * Effect is as if [occ] was never seen.
-     */
-    fun forget(occ: Occurrence): RuleMatchingProbe
-
     fun expand(occ: Occurrence): RuleMatchingProbe
 
     fun expand(occ: Occurrence, mask: BitSet, profiler: Profiler? = null): RuleMatchingProbe
@@ -75,22 +62,4 @@ interface RuleMatchingProbe {
      * Tells the probe that [occ] can't be used for finding matches.
      */
     fun contract(occ: Occurrence): RuleMatchingProbe
-
-    /**
-     * Turns the Probe's processing-related state linked with
-     * [occ] from "fully-expanded" to "partially-expanded".
-     * Doesn't modify internal state related to [matches], instead
-     * modifies how the next [expand] of [occ] will be processed.
-     *
-     * Notion of "partially-expanded" state is important
-     * only for incremental execution.
-     */
-    fun forgetExpanded(occ: Occurrence): RuleMatchingProbe
-
-    /**
-     * Clears internal state related to [consume]
-     * as if [occ] were never seen by this probe.
-     */
-    fun forgetConsumed(occ: Occurrence): RuleMatchingProbe
-
 }

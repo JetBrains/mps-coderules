@@ -182,27 +182,6 @@ interface MatchJournal :  EvidenceSource {
         override fun getStoreView(): StoreView = StoreViewImpl(
             chunks.flatMap { it.entries() }.allOccurrences().asSequence()
         )
-        override fun getPreamble(info: PreambleInfo): View {
-            val cornerChunk = chunks.first() // corner chunk at beginning
-            val initialChunk = chunks[1]
-            val preambleChunks = arrayListOf<Chunk>(cornerChunk, initialChunk)
-
-            for (chunk in chunks.asSequence().drop(preambleChunks.size)) {
-                // chunks which depend only on preamble are added to preamble
-                if (chunk.justifiedOnlyBy(preambleChunks)) {
-                    if (chunk is MatchChunk && info.inPreamble(chunk.match.rule())
-                        || chunk is OccChunk)
-                    {
-                        preambleChunks.add(chunk)
-                    }
-                }
-            }
-            val evidenceSeed = preambleChunks.last().evidence;
-            preambleChunks.add(chunks.last()) // corner chunk at end
-            assert(evidenceSeed == preambleChunks.maxBy { it.evidence }?.evidence)
-
-            return View(preambleChunks, evidenceSeed + 1)
-        }
     }
 
     /**

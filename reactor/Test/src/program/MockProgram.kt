@@ -2,7 +2,6 @@
  * @author Fedor Isakov
  */
 
-import jetbrains.mps.logic.reactor.core.RulesDiff
 import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
 import jetbrains.mps.logic.reactor.evaluation.InvocationContext
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
@@ -103,20 +102,7 @@ class MockRule(
 }
 
 class MockProgram(val name: String, val rulesLists: List<RulesList>, val registry: MockConstraintRegistry) : Program() {
-    private var rulesDiff: RulesDiff = RulesDiff.emptyDiff()
-
-    override fun preambleInfo(): PreambleInfo = PreambleInfo.EMPTY
-
-    override fun incrementalDiff(): RulesDiff = rulesDiff
-
-    override fun withRulesDiff(diff: RulesDiff): MockProgram {
-        this.rulesDiff = diff
-        return this
-    }
-
     override fun name(): String = name
-
-    override fun rulesLists(): Iterable<RulesList> = unmodifiableCollection(rulesLists)
 
     override fun rules(): MutableIterable<Rule> = unmodifiableCollection(rulesLists.flatMap { it.rules() })
 }

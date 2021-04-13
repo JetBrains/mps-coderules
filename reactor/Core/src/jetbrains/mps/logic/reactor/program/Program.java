@@ -16,15 +16,8 @@
 
 package jetbrains.mps.logic.reactor.program;
 
-import javaslang.collection.List;
-import javaslang.collection.Stream;
-import jetbrains.mps.logic.reactor.core.RulesDiff;
-
-import java.util.ArrayList;
-import java.util.stream.Collectors;
-
 /**
- * A collection of rulesLists that constitute a constraint rules program.
+ * A collection of rules that constitute a constraint rules program.
  *
  * @author Fedor Isakov
  */
@@ -32,39 +25,6 @@ public abstract class Program {
 
     public abstract String name();
 
-    @Deprecated
-    public abstract Iterable<RulesList> rulesLists();
-
-    public abstract PreambleInfo preambleInfo();
-
-    @Deprecated
-    public Program withRulesDiff(RulesDiff diff) { return this; };
-
-    @Deprecated
-    public RulesDiff incrementalDiff() { return RulesDiff.emptyDiff(); };
-
-    public Iterable<Rule> rules() {
-        ArrayList<Rule> allRules = new ArrayList<Rule>();
-        for (RulesList rulesList : rulesLists()) {
-            for (Rule rule : rulesList.rules()) {
-                allRules.add(rule);
-            }
-        }
-        return allRules;
-    };
-
-    /**
-     * Returns rules that have been created since the last evaluation of this program.
-     */
-    public Iterable<Rule> newRules () {
-        return incrementalDiff().getAdded();
-    }
-
-    /**
-     * Returns objects that identify rules removed from the previous invocation.
-     */
-    public Iterable<Object> droppedRules() {
-        return incrementalDiff().getRemoved();
-    }
+    abstract public Iterable<Rule> rules();
 
 }

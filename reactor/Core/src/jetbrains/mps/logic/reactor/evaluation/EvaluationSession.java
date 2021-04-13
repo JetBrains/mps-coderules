@@ -78,14 +78,6 @@ public abstract class EvaluationSession {
 
         public abstract Config withTrace(EvaluationTrace computingTracer);
 
-        /**
-         * @deprecated passing store view is deprecated and doesn't have an effect
-         */
-        @Deprecated
-        public abstract Config withStoreView(StoreView storeView);
-
-        public Config withStore(Collection<ConstraintOccurrence> store) { return this; }
-
         public Config withSessionToken(SessionToken token) { return this; }
 
         public Config withIncrSpec(IncrementalSpec ispec) { return this; }

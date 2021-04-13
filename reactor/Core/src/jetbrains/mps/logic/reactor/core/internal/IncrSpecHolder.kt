@@ -22,6 +22,7 @@ import jetbrains.mps.logic.reactor.program.IncrementalContractViolationException
 import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.program.Rule
 
+@Deprecated("obsolete class")
 interface IncrSpecHolder {
     val ispec: IncrementalSpec
 
@@ -33,19 +34,4 @@ interface IncrSpecHolder {
     val RuleMatch.isWeakPrincipal get() = ispec.isWeakPrincipal(this.rule())
     val Rule.isWeakPrincipal get() = ispec.isWeakPrincipal(this)
 
-}
-
-
-inline fun checkContract(value: Boolean) {
-    checkContract(value) { "Contract assertion failed" }
-}
-inline fun checkContract(value: Boolean, lazyMsg: () -> String) {
-    if (!value) throw IncrementalContractViolationException(lazyMsg())
-}
-
-inline fun IncrSpecHolder.assertContract(lazyValue: () -> Boolean) {
-    assertContract(lazyValue) { "Contract assertion failed" }
-}
-inline fun IncrSpecHolder.assertContract(lazyValue: () -> Boolean, noinline lazyMsg: () -> String) {
-    if (ispec.assertLevel().assertContracts()) checkContract(lazyValue(), lazyMsg)
 }

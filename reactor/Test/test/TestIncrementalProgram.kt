@@ -1,13 +1,11 @@
 import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.ReactorLifecycle
-import jetbrains.mps.logic.reactor.core.RulesDiff
 import jetbrains.mps.logic.reactor.core.internal.MatchJournal
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
-import jetbrains.mps.logic.reactor.program.IncrementalContractViolationException
 import org.junit.*
 import org.junit.Assert.*
 import program.MockConstraint
@@ -33,6 +31,7 @@ import solver.tellEquals
  * @author Fedor Isakov
  */
 
+@Ignore
 class TestIncrementalProgram {
 
     companion object {
@@ -64,9 +63,7 @@ class TestIncrementalProgram {
     private fun Builder.relaunch(name: String, incrSpec: IncrementalSpec, sessionToken: SessionToken, resultHandler: (EvaluationResult) -> Unit )
         : Pair<Builder, EvaluationResult>
     {
-        val prog = program(name).withRulesDiff(
-            RulesDiff.findDiff(sessionToken.rules, rules)
-        )
+        val prog = program(name)
         val result = EvaluationSession.newSession(prog)
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
             .withIncrSpec(incrSpec)

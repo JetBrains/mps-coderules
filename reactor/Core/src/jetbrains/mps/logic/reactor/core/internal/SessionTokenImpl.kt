@@ -25,7 +25,6 @@ import jetbrains.mps.logic.reactor.program.Rule
 
 data class SessionTokenImpl(
     private val journalView: MatchJournal.View,
-    private var store: Collection<Occurrence>,
     private val rules: Iterable<Rule>,
     private val frontState: DispatchingFrontState,
     val ruleIndex: RuleIndex,
@@ -35,8 +34,4 @@ data class SessionTokenImpl(
 {
     override fun getJournalView(): MatchJournalView = journalView
     override fun getRules(): Iterable<Rule> = rules
-    override fun getPrincipalStore(): Collection<Occurrence> = store
-
-    fun getFrontState(): DispatchingFrontState = frontState
-    fun setStore(newStore: Collection<Occurrence>) { this.store = newStore }
 }

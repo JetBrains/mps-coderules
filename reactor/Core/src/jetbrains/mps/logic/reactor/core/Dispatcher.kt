@@ -109,30 +109,7 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
             occId2tags.remove(discarded.identity)
                 ?.mapNotNull { ruleTag -> ruletag2probe[ruleTag] }
                 ?.map { probe -> probe.contract(discarded) })
-
-        /**
-         * Returns a [DispatchingFront] instance which "forgot" that it already expanded the occurrence.
-         * After that the occurrence can be expanded again without triggering observer reactivation logic.
-         * Needed to discern incremental reactivation from observers reactivation.
-         * In other words, the state of [DispatchingFront] connected with this occurrence
-         * transitions from "fully-expanded" to "partially-expanded".
-         */
-        internal fun forgetExpanded(dropped: Occurrence): DispatchingFront = DispatchingFront(this,
-            ruleIndex.forOccurrence(dropped)
-                .mapNotNull { rule -> ruletag2probe[rule.uniqueTag()] }
-                .map { probe -> probe.forgetExpanded(dropped) }
-            )
-
-        /**
-         * Returns a new [DispatchingFront] instance which contracts state with this occurrence
-         * and "forgets" that has seen it or that consumed any matches involving it.
-         * Needed for pruning outdated unrelevant state on incremental reactivations.
-         */
-        internal fun forget(dropped: Occurrence): DispatchingFront = DispatchingFront(this,
-            ruleIndex.forOccurrence(dropped)
-                .mapNotNull { rule -> ruletag2probe[rule.uniqueTag()] }
-                .map { probe -> probe.forget(dropped) })
-
+        
         /**
          * Serves to indicate that the specified [RuleMatchEx] has been processed (consumed) and has to
          * be excluded from any further "match" set returned by [matches].
@@ -140,19 +117,6 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
         internal fun consume(consumedMatch: RuleMatchEx): DispatchingFront {
             ruletag2probe[consumedMatch.rule().uniqueTag()]?.let {
                 val probe = it.consume(consumedMatch)
-                if (RULE_MATCHER_PROBE_PERSISTENT) {
-                    ruletag2probe[consumedMatch.rule().uniqueTag()] = probe
-                }
-            }
-            return DispatchingFront(this)
-        }
-
-        /**
-         * Forgets that the specified [RuleMatchEx] has been consumed.
-         */
-        internal fun forget(consumedMatch: RuleMatchEx): DispatchingFront {
-            ruletag2probe[consumedMatch.rule().uniqueTag()]?.let {
-                val probe = it.forget(consumedMatch)
                 if (RULE_MATCHER_PROBE_PERSISTENT) {
                     ruletag2probe[consumedMatch.rule().uniqueTag()] = probe
                 }
