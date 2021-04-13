@@ -19,7 +19,6 @@ package jetbrains.mps.logic.reactor.core
 import gnu.trove.list.TIntList
 import gnu.trove.list.array.TIntArrayList
 import jetbrains.mps.logic.reactor.core.internal.ReteRuleMatcherImpl
-import jetbrains.mps.logic.reactor.core.internal.RuleMatcherImpl
 import jetbrains.mps.logic.reactor.program.Rule
 
 /**
