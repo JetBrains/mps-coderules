@@ -36,7 +36,6 @@
     <import index="lehm" ref="r:464fcc95-fddb-47d1-b620-592cbf6b8bf2(jetbrains.mps.coderules.runtime.memoizer)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
-    <import index="crgr" ref="f:diff_old1#r:6285678b-007f-4527-bcf5-6fd38ba8c969(jetbrains.mps.lang.coderules.program@old1)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -4874,39 +4873,6 @@
                           <node concept="3clFbH" id="4UTrqZZNX0l" role="3cqZAp" />
                           <node concept="1DcWWT" id="4UTrqZZNX0m" role="3cqZAp">
                             <node concept="3clFbS" id="4UTrqZZNX0n" role="2LFqv$">
-                              <node concept="3SKdUt" id="4UTrqZZO0z8" role="3cqZAp">
-                                <node concept="1PaTwC" id="589APehYxPV" role="1aUNEU">
-                                  <node concept="3oM_SD" id="589APehYxPW" role="1PaTwD">
-                                    <property role="3oM_SC" value="FIXME:" />
-                                  </node>
-                                  <node concept="3oM_SD" id="589APehYxPX" role="1PaTwD">
-                                    <property role="3oM_SC" value="WTH?" />
-                                  </node>
-                                  <node concept="3oM_SD" id="589APehYxPY" role="1PaTwD">
-                                    <property role="3oM_SC" value="skipping" />
-                                  </node>
-                                  <node concept="3oM_SD" id="589APehYxPZ" role="1PaTwD">
-                                    <property role="3oM_SC" value="all" />
-                                  </node>
-                                  <node concept="3oM_SD" id="589APehYxQ0" role="1PaTwD">
-                                    <property role="3oM_SC" value="attributes?" />
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="3clFbJ" id="4UTrqZZNX0o" role="3cqZAp">
-                                <node concept="3clFbS" id="4UTrqZZNX0p" role="3clFbx">
-                                  <node concept="3N13vt" id="4UTrqZZNX0q" role="3cqZAp" />
-                                </node>
-                                <node concept="2OqwBi" id="4UTrqZZNX0r" role="3clFbw">
-                                  <node concept="37vLTw" id="4UTrqZZNX0s" role="2Oq$k0">
-                                    <ref role="3cqZAo" to="crgr:4UTrqZZNX0N" resolve="ch" />
-                                  </node>
-                                  <node concept="1BlSNk" id="4UTrqZZNX0t" role="2OqNvi">
-                                    <ref role="1BmUXE" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                                    <ref role="1Bn3mz" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
-                                  </node>
-                                </node>
-                              </node>
                               <node concept="3clFbJ" id="4UTrqZZO60T" role="3cqZAp">
                                 <node concept="3clFbS" id="4UTrqZZO60V" role="3clFbx">
                                   <node concept="3N13vt" id="4UTrqZZO6ZA" role="3cqZAp" />
