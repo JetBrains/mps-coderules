@@ -24019,7 +24019,9 @@
               <node concept="aZer4" id="euG2bFdunq" role="3XD1gS">
                 <property role="TrG5h" value="BoundNode" />
               </node>
-              <node concept="3Tqbb2" id="5f6wxQ35wnB" role="3vLBG7" />
+              <node concept="3Tqbb2" id="5f6wxQ35wnB" role="3vLBG7">
+                <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
+              </node>
             </node>
             <node concept="3NuqgR" id="5f6wxQ33X7h" role="0Rg$4">
               <node concept="aZer4" id="euG2bFdunO" role="3XD1gS">
@@ -25929,7 +25931,9 @@
               <node concept="aZer4" id="3hZrJU5VyPR" role="3XD1gS">
                 <property role="TrG5h" value="TVDecl" />
               </node>
-              <node concept="3Tqbb2" id="3hZrJU5VyQd" role="3vLBG7" />
+              <node concept="3Tqbb2" id="3hZrJU5VyQd" role="3vLBG7">
+                <ref role="ehGHo" to="tpee:g96euPO" resolve="TypeVariableDeclaration" />
+              </node>
             </node>
             <node concept="3xSepi" id="6E2cNicdikH" role="3xSepv">
               <node concept="3Aq9E8" id="3fECE2uRVnA" role="3xSepj">
@@ -43812,7 +43816,9 @@
               <node concept="aZer4" id="3hZrJU5VyXi" role="3XD1gS">
                 <property role="TrG5h" value="TVDecl" />
               </node>
-              <node concept="3Tqbb2" id="3hZrJU5VyXj" role="3vLBG7" />
+              <node concept="3Tqbb2" id="3hZrJU5VyXj" role="3vLBG7">
+                <ref role="ehGHo" to="tpee:g96euPO" resolve="TypeVariableDeclaration" />
+              </node>
             </node>
             <node concept="3xSepi" id="6E2cNicdiiz" role="3xSepv">
               <node concept="3Aq9E8" id="5o9$c3zOrUy" role="3xSepj">
