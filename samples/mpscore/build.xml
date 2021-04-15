@@ -2614,7 +2614,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.smodelExt, java.compile.jetbrains.mps.lang.smodelExt#01, java.compile.jetbrains.mps.lang.smodelExt.test, java.compile.jetbrains.mps.behaviorExt, java.compile.jetbrains.mps.behaviorExt.generator, java.compile.jetbrains.mps.lang.typesystemExt, java.compile.jetbrains.mps.lang.typesystemExt#01, java.compile.jetbrains.mps.lang.quotationExt, java.compile.jetbrains.mps.lang.quotationExt#01, java.compile.jetbrains.mps.lang.constraintsExt, java.compile.jetbrains.mps.lang.constraintsExt#01, java.compile.jetbrains.mps.lang.generatorExt, java.compile.jetbrains.mps.lang.generatorExt#01, java.compile.jetbrains.mps.lang.generator.generationContextExt, java.compile.jetbrains.mps.lang.generator.generationContextExt#01, java.compile.jetbrains.mps.lang.testExt, java.compile.jetbrains.mps.lang.testExt.generator, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.baseLanguageInternalExt, java.compile.jetbrains.mps.baseLanguageInternalExt#01, java.compile.jetbrains.mps.baseLanguage.blTypesExt, java.compile.jetbrains.mps.baseLanguage.blTypesExt#01, java.compile.jetbrains.mps.baseLanguage.javadocExt, java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.baseLanguageExt.test, java.compile.typechecking.samples.baseLanguage, java.compile.jetbrains.mps.baseLanguage.tuplesExt, java.compile.jetbrains.mps.baseLanguage.tuplesExt#01, java.compile.jetbrains.mps.baseLanguage.tuplesExt.test, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguage.sequence#01, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.function#01, java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.collectionsExt#01, java.compile.jetbrains.mps.baseLanguage.collectionsExt.test, java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.closuresExt#1312156863939371938, java.compile.jetbrains.mps.baseLanguage.closuresExt.test, java.compile.jetbrains.mps.logicExt, java.compile.jetbrains.mps.logicExt#01" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.smodelExt, java.compile.jetbrains.mps.lang.smodelExt#01, java.compile.jetbrains.mps.lang.smodel.queryExt, java.compile.jetbrains.mps.lang.smodel.queryExt.generator, java.compile.jetbrains.mps.lang.smodelExt.test, java.compile.jetbrains.mps.behaviorExt, java.compile.jetbrains.mps.behaviorExt.generator, java.compile.jetbrains.mps.lang.typesystemExt, java.compile.jetbrains.mps.lang.typesystemExt#01, java.compile.jetbrains.mps.lang.quotationExt, java.compile.jetbrains.mps.lang.quotationExt#01, java.compile.jetbrains.mps.lang.constraintsExt, java.compile.jetbrains.mps.lang.constraintsExt#01, java.compile.jetbrains.mps.lang.generatorExt, java.compile.jetbrains.mps.lang.generatorExt#01, java.compile.jetbrains.mps.lang.generator.generationContextExt, java.compile.jetbrains.mps.lang.generator.generationContextExt#01, java.compile.jetbrains.mps.lang.testExt, java.compile.jetbrains.mps.lang.testExt.generator, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.baseLanguageInternalExt, java.compile.jetbrains.mps.baseLanguageInternalExt#01, java.compile.jetbrains.mps.baseLanguage.blTypesExt, java.compile.jetbrains.mps.baseLanguage.blTypesExt#01, java.compile.jetbrains.mps.baseLanguage.javadocExt, java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.baseLanguageExt.test, java.compile.typechecking.samples.baseLanguage, java.compile.jetbrains.mps.baseLanguage.tuplesExt, java.compile.jetbrains.mps.baseLanguage.tuplesExt#01, java.compile.jetbrains.mps.baseLanguage.tuplesExt.test, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguage.sequence#01, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.function#01, java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.collectionsExt#01, java.compile.jetbrains.mps.baseLanguage.collectionsExt.test, java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.closuresExt#1312156863939371938, java.compile.jetbrains.mps.baseLanguage.closuresExt.test, java.compile.jetbrains.mps.logicExt, java.compile.jetbrains.mps.logicExt#01" />
   
   <target name="processResources" />
   
@@ -2778,6 +2778,7 @@
         <module file="${basedir}/languages/jetbrains.mps.lang.generator.generationContextExt/jetbrains.mps.lang.generator.generationContextExt.mpl" />
         <module file="${basedir}/languages/jetbrains.mps.lang.generatorExt/jetbrains.mps.lang.generatorExt.mpl" />
         <module file="${basedir}/languages/jetbrains.mps.lang.quotationExt/jetbrains.mps.lang.quotationExt.mpl" />
+        <module file="${basedir}/languages/jetbrains.mps.lang.smodel.queryExt/jetbrains.mps.lang.smodel.queryExt.mpl" />
         <module file="${basedir}/languages/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.mpl" />
         <module file="${basedir}/languages/jetbrains.mps.lang.testExt/jetbrains.mps.lang.testExt.mpl" />
         <module file="${basedir}/languages/jetbrains.mps.lang.typesystemExt/jetbrains.mps.lang.typesystemExt.mpl" />
@@ -2937,6 +2938,132 @@
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.14.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.lang.smodel.queryExt" depends="java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, java.compile.jetbrains.mps.lang.typesystemExt, fetchDependencies">
+    <mkdir dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.queryExt" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.queryExt" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-context.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-constraints-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-problem.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-feedback-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messages-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messages-for-rules.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-references.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-generator.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-persistence.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-project-check.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystemExt" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.16.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.modelapi.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.query.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.14.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.lang.smodel.queryExt.generator" depends="java.compile.jetbrains.mps.lang.smodel.queryExt, fetchDependencies">
+    <mkdir dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/generator/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.queryExt.generator" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.queryExt.generator" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/generator/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-context.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-constraints-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-problem.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-feedback-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messages-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messages-for-rules.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-references.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-generator.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-persistence.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-project-check.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.queryExt" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.16.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.query.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
   </target>
@@ -5747,6 +5874,8 @@
     <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generatorExt/generator/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.quotationExt/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.quotationExt/generator/source_gen" />
+    <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/source_gen" />
+    <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/generator/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/generator/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.testExt/source_gen" />

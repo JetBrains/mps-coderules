@@ -18,6 +18,7 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.generator.generationContextExt/jetbrains.mps.lang.generator.generationContextExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.generatorExt/jetbrains.mps.lang.generatorExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.quotationExt/jetbrains.mps.lang.quotationExt.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.smodel.queryExt/jetbrains.mps.lang.smodel.queryExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.mpl" folder="ext.smodel" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.testExt/jetbrains.mps.lang.testExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystemExt/jetbrains.mps.lang.typesystemExt.mpl" folder="" />
