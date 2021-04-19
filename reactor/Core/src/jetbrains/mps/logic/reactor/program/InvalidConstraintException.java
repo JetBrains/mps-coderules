@@ -18,7 +18,7 @@ package jetbrains.mps.logic.reactor.program;
 
 
 
-public class InvalidConstraintException extends Exception {
+public class InvalidConstraintException extends RuntimeException {
 
     public InvalidConstraintException(String message) {
         super(message);
