@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.core
 
 import gnu.trove.map.hash.TIntObjectHashMap
+import org.jetbrains.kotlin.fir.resolve.getOrPut
 
 
 typealias DispatchingFrontState = Map<Any, RuleMatcher>
@@ -34,20 +35,13 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
 
     private val ruletag2matcher = HashMap<Any, RuleMatcher>()
 
-    init {
-        ruleIndex.forEach { rule ->
-            val ruletag = rule.uniqueTag()
-            // reset references to stale RuleIndex instances
-            val matcher = prevState[ruletag]?.apply { setRuleLookup(ruleIndex) }
-                    ?: createRuleMatcher(ruleIndex, ruletag)
-            ruletag2matcher.put(ruletag, matcher);
-        }
-    }
-
     /**
      * Create new empty [DispatchingFront] ready to accept constraints.
      */
     fun front() = DispatchingFront()
+
+    fun getOrCreateMatcher(ruleTag: Any): RuleMatcher =
+        ruletag2matcher.getOrPut(ruleTag) { createRuleMatcher(ruleIndex, ruleTag) }
 
     inner class DispatchingFront {
 
@@ -61,9 +55,6 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
             this.ruletag2probe = hashMapOf()
             this.occId2tags = TIntObjectHashMap()
             this.matching = null
-            ruletag2matcher.entries.forEach { e ->
-                ruletag2probe.put(e.key, e.value.probe())
-            }
         }
 
         private constructor(pred: DispatchingFront, matching: Iterable<RuleMatchingProbe>? = null) {
@@ -72,15 +63,15 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
             this.matching = matching
         }
 
+        fun getOrCreateProbe(ruleTag: Any): RuleMatchingProbe =
+            ruletag2probe.getOrPut(ruleTag) { getOrCreateMatcher(ruleTag).probe() }
+        
         /**
          * Returns all matches satisfied by the constraint occurrences received so far.
          */
         fun matches() : Iterable<RuleMatchEx> {
             val allMatches = arrayListOf<RuleMatchEx>()
             matching?.forEach { probe ->
-                if (RULE_MATCHER_PROBE_PERSISTENT) {
-                    ruletag2probe[probe.rule().uniqueTag()] = probe
-                }
                 allMatches.addAll(probe.matches())
             }
             return allMatches
@@ -99,7 +90,7 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
                         occId2tags.put(activated.identity, arrayListOf())
                     }
                     occId2tags[activated.identity].add(rule.uniqueTag())
-                    ruletag2probe[rule.uniqueTag()]?.expand(activated, mask) })
+                    getOrCreateProbe(rule.uniqueTag()).expand(activated, mask) })
 
         /**
          * Returns a [DispatchingFront] instance that is "contracted": all matches corresponding to the
@@ -117,9 +108,6 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
         internal fun consume(consumedMatch: RuleMatchEx): DispatchingFront {
             ruletag2probe[consumedMatch.rule().uniqueTag()]?.let {
                 val probe = it.consume(consumedMatch)
-                if (RULE_MATCHER_PROBE_PERSISTENT) {
-                    ruletag2probe[consumedMatch.rule().uniqueTag()] = probe
-                }
             }
             return DispatchingFront(this)
         }

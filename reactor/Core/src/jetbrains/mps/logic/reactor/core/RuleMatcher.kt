@@ -46,8 +46,6 @@ interface RuleMatcher {
 
 fun createRuleMatcher(lookup: RuleLookup, tag: Any): RuleMatcher = ReteRuleMatcherImpl(lookup, tag)
 
-val RULE_MATCHER_PROBE_PERSISTENT = false
-
 // Trove stuff
 typealias Signature = TIntList
 
