@@ -171,19 +171,23 @@ internal class EvaluationSessionImpl private constructor (
             @Suppress("UNCHECKED_CAST")
             val durations = parameters[ParameterKey.of("profiling.data", MutableMap::class.java)]
                 as MutableMap<String, String>?
-            val profiler = durations?.let { Profiler() }
+            val profiler = durations?.let { (token as? SessionTokenImpl)?.profiler ?: Profiler() }
 
             session = EvaluationSessionImpl(ispec, program, supervisor, evaluationTrace, profiler, parameters)
             Backend.ourBackend.ourSession.set(session)
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-                return session.launch(token, main)
+                val result = session.launch(token, main)
+                if (profiler != null) {
+                    ((result as EvaluationResultImpl).token as SessionTokenImpl).profiler = profiler
+                }
+                return result
             }
             finally {
                 try {
                     profiler?.run {
                         formattedData().entries.forEach { e -> durations.put(e.key, e.value) }
-                        clear()
+//                        clear()
                     }
                 }
                 catch (t: Throwable) {
@@ -191,7 +195,6 @@ internal class EvaluationSessionImpl private constructor (
                 }
                 Backend.ourBackend.ourSession.set(null)
             }
-
         }
 
     }

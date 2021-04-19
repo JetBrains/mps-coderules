@@ -22,10 +22,14 @@
       <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
         <property id="6666499814681415862" name="tagName" index="2pNNFO" />
         <child id="6666499814681415861" name="attributes" index="2pNNFR" />
+        <child id="1622293396948928802" name="content" index="3o6s8t" />
       </concept>
       <concept id="6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" flags="ng" index="2pNUuL">
         <property id="6666499814681447926" name="attrName" index="2pNUuO" />
         <child id="6666499814681541918" name="value" index="2pMdts" />
+      </concept>
+      <concept id="1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" flags="nn" index="3o6iSG">
+        <property id="1622293396948953704" name="value" index="3o6i5n" />
       </concept>
     </language>
     <language id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests">
@@ -287,9 +291,18 @@
         <node concept="2pNUuL" id="5Hdh9$IhmW_" role="2pNNFR">
           <property role="2pNUuO" value="since-build" />
           <node concept="2pMdtt" id="5Hdh9$IhnkA" role="2pMdts">
-            <property role="2pMdty" value="212.1" />
+            <property role="2pMdty" value="213.1" />
           </node>
         </node>
+      </node>
+      <node concept="2pNNFK" id="2fVm_54SZ$e" role="20twgj">
+        <property role="2pNNFO" value="change-notes" />
+        <node concept="3o6iSG" id="2fVm_54SZHp" role="3o6s8t">
+          <property role="3o6i5n" value="First public EAP" />
+        </node>
+      </node>
+      <node concept="2pNNFK" id="2fVm_54SZBF" role="20twgj">
+        <property role="2pNNFO" value="depends" />
       </node>
       <node concept="m$_yB" id="2ABzB2CYN_W" role="m$_yh">
         <ref role="m$_yA" node="7BVjoXzUxkQ" resolve="jetbrains.mps.logic" />
@@ -3500,7 +3513,7 @@
       <node concept="aVJcg" id="5Hdh9$IhmQ_" role="aVJcv">
         <node concept="NbPM2" id="5Hdh9$IhmQA" role="aVJcq">
           <node concept="3Mxwew" id="5Hdh9$IhmQB" role="3MwsjC">
-            <property role="3MwjfP" value="212" />
+            <property role="3MwjfP" value="213" />
           </node>
         </node>
       </node>
