@@ -27,6 +27,19 @@ import kotlin.collections.HashMap
  */
 
 /**
+ * A map-like structure to keep multiple values associated with a single term.
+ *
+ * Term variables are supported: a variable matches any term, including other variable. All variables are treated
+ * as "wildcards", so the subsequent unification of the query term and the key does not necessarily succeeds.
+ *
+ * To access the stored values, the method `lookupValues` returns all values associated with terms.
+ * The method `allValues` returns all stored values. Neither method makes any guarantees about the cardinality or
+ * the order of the values returned.
+ *
+ * The implementation is based on the structure called "discrimination tree" as described in the chapter 26 of [1].
+ *
+ * [1] Alan Robinson and Andrei Voronkov (Eds.). 2001. Handbook of Automated Reasoning.
+ * Elsevier Sci. Pub. B. V., Amsterdam, The Netherlands, The Netherlands.
  * An implementation of TermTrie not relying on persistent data structures.
  */
 
@@ -159,39 +172,43 @@ class ClassicTermTrie<T> : TermTrie<T> {
      */
     private fun visitMatching(pattern: Term, visitor: (T) -> Unit) {
         val seenNonLeaf = IdentityHashMap<Term, Term>()
+        val canonicTerms = IdentityHashMap<Term, Pair<Term, Any>>()
         val visitStack = arrayListOf<Pair<PathNode<T>, List<Term>>>(root to arrayListOf(pattern))
 
         while (!visitStack.isEmpty()) {
-            val (node, terms) = visitStack.pop()
-            if (!terms.isEmpty()) {
-                val head = terms.first()
-                val tail = terms.subList(1, terms.size)
+            val (base, ptnTerms) = visitStack.pop()
+            if (!ptnTerms.isEmpty()) {
+                val ptnHead = ptnTerms.first()
+                val ptnTail = ptnTerms.subList(1, ptnTerms.size)
 
-                // dereferece the term only if it hasn't been dereferenced before
-                val term = deref(head).let { dt -> seenNonLeaf[dt]?.run { head } ?: dt }
+                if (!canonicTerms.containsKey(ptnHead)) {
+                    // dereferece the term only if it hasn't been dereferenced before
+                    val derefPtnHead = deref(ptnHead).let { dt -> seenNonLeaf[dt]?.run { ptnHead } ?: dt }
+                    canonicTerms[ptnHead] = derefPtnHead to symbolOrWildcard(derefPtnHead)
+                }
+                val (term, sym) = canonicTerms[ptnHead] !!
 
-                val sym = symbolOrWildcard(term)
                 if (sym == WILDCARD) {
-                    if (!tail.isEmpty()) {
+                    if (!ptnTail.isEmpty()) {
                         // skip the current node
                         // match the patterns tail with the current node's direct successors
-                        val (allTerms, allEdge) = node.allTerms2edge()
-                        allTerms.forEach { it.values().forEach (visitor) }
-                        allEdge.forEach { visitStack.push(it to tail)  }
+                        val (terms, bases) = base.terms2bases()
+                        terms.forEach { it.values().forEach (visitor) }
+                        bases.forEach { visitStack.push(it to ptnTail)  }
 
                     } else {
                         // wildcard consumes the rest of the trie
-                        node.allNext().forEach { visitAll(it, visitor) }
+                        base.allNext().forEach { visitAll(it, visitor) }
                     }
 
                 } else {
-                    node.next(WILDCARD)?.let { nn ->
+                    base.next(WILDCARD)?.let { nn ->
                         nn.values().forEach(visitor)
-                        if (!tail.isEmpty()) {
-                            visitStack.push(nn to tail)
+                        if (!ptnTail.isEmpty()) {
+                            visitStack.push(nn to ptnTail)
                         }
                     }
-                    node.next(sym)?.let { nn ->
+                    base.next(sym)?.let { nn ->
                         nn.values().forEach(visitor)
                         
                         // prepend this patternTerm's arguments to the tail pattern terms
@@ -199,7 +216,7 @@ class ClassicTermTrie<T> : TermTrie<T> {
                         if (newTail.size > 0) {
                             seenNonLeaf[term] = term
                         }
-                        newTail.addAll(tail)
+                        newTail.addAll(ptnTail)
                         if (!newTail.isEmpty()) {
                             visitStack.push(nn to newTail)
                         }
@@ -229,9 +246,11 @@ class ClassicTermTrie<T> : TermTrie<T> {
         fun allNext(): Iterable<PathNode<T>> = next.values
 
         /**
+         * Helper method for processing a wildcard in pattern.
+         *
          * Returns a pair of iterables:
-         * -  first component contains all the nodes that make up the next *term*;
-         * -  second component contains the nodes on the edge before the *term* after that one.
+         * -  first component contains all nodes that make up the next *term*;
+         * -  second component contains base nodes that precede terms following that *term*.
          *
          * The trie keeps the terms _flattened_, and the following proposition holds.
          *
@@ -243,15 +262,15 @@ class ClassicTermTrie<T> : TermTrie<T> {
          * The size of a list representing a flattened term is equal to
          * the sum of arities of all symbols in this list plus 1.
          */
-        fun allTerms2edge(): Pair<Iterable<PathNode<T>>, Iterable<PathNode<T>>> {
+        fun terms2bases(): Pair<Iterable<PathNode<T>>, Iterable<PathNode<T>>> {
 
             // for every current node there is a number
             // initially 0
             // counting down with every call to allNext()
             // increased by current node's arity
 
-            val term = ArrayList<PathNode<T>>()
-            val edge = ArrayList<PathNode<T>>()
+            val terms = ArrayList<PathNode<T>>()
+            val bases = ArrayList<PathNode<T>>()
 
             val stack = arrayListOf<Pair<PathNode<T>, Int>>()
             for (n in allNext()) {
@@ -262,15 +281,15 @@ class ClassicTermTrie<T> : TermTrie<T> {
                 val (n, count) = stack.pop()
                 val newCount = count + n.arity
                 if (newCount == 0) {
-                    edge.add(n)
+                    bases.add(n)
 
                 } else {
-                    term.add(n)
+                    terms.add(n)
                     n.allNext().forEach { stack.push(it to (newCount - 1)) }
                 }
             }
 
-            return term to edge
+            return terms to bases
         }
 
         fun putNext(node: PathNode<T>): PathNode<T> {
