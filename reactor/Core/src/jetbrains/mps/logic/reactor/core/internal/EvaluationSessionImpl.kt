@@ -89,8 +89,8 @@ internal class EvaluationSessionImpl private constructor (
     override fun <T : Any> parameter(key: ParameterKey<T>): T? = params ?.get(key) as T
 
     private fun launch(token: SessionToken?, main: Constraint): EvaluationResult {
-        val sessionProcessing: SessionManager = DefaultProcessingSession()
-        val session = sessionProcessing.firstSession()
+        val sessionProcessing: DefaultProcessingSession = DefaultProcessingSession()
+        val session = sessionProcessing.getSession(token as SessionTokenImpl?)
         return sessionProcessing.runSession(session, main)
     }
 
@@ -100,7 +100,7 @@ internal class EvaluationSessionImpl private constructor (
 
         override fun nextSession(token: SessionToken): SessionParts = getSession(token as SessionTokenImpl)
 
-        private fun getSession(token: SessionTokenImpl?): SessionParts {
+        fun getSession(token: SessionTokenImpl?): SessionParts {
             val ruleIndex = token
                 ?.let { it.ruleIndex }
                 ?.also { it.updateIndexFromRules(program.rules()) }
