@@ -1030,11 +1030,6 @@
                     <node concept="37vLTw" id="7WKNeR8ThOi" role="37wK5m">
                       <ref role="3cqZAo" node="7WKNeR8SQxI" resolve="repository" />
                     </node>
-                    <node concept="2ShNRf" id="6nFpYlur12C" role="37wK5m">
-                      <node concept="1pGfFk" id="1LBj9w_EVRM" role="2ShVmc">
-                        <ref role="37wK5l" to="ksgm:1LBj9w_EhDG" resolve="RulesPlanHandler" />
-                      </node>
-                    </node>
                     <node concept="37vLTw" id="7WKNeR9foS9" role="37wK5m">
                       <ref role="3cqZAo" node="7WKNeR9fm7b" resolve="query" />
                     </node>

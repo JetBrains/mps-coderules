@@ -546,9 +546,6 @@
           <node concept="37vLTw" id="1imVejVBZ$2" role="37wK5m">
             <ref role="3cqZAo" node="5EDW3XEoy5T" resolve="repository" />
           </node>
-          <node concept="37vLTw" id="1imVejVBWIi" role="37wK5m">
-            <ref role="3cqZAo" node="5EDW3XEoy5V" resolve="planHandler" />
-          </node>
           <node concept="37vLTw" id="1imVejVBWUS" role="37wK5m">
             <ref role="3cqZAo" node="5EDW3XEoy5X" resolve="query" />
           </node>
@@ -583,12 +580,6 @@
         <property role="TrG5h" value="repository" />
         <node concept="3uibUv" id="5EDW3XEoy5U" role="1tU5fm">
           <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="5EDW3XEoy5V" role="3clF46">
-        <property role="TrG5h" value="planHandler" />
-        <node concept="3uibUv" id="5EDW3XEoy5W" role="1tU5fm">
-          <ref role="3uigEE" to="ksgm:7DvO2M9Uago" resolve="RulesPlanHandler" />
         </node>
       </node>
       <node concept="37vLTG" id="5EDW3XEoy5X" role="3clF46">
@@ -681,19 +672,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1imVejVB$_V" role="3cqZAp">
-          <node concept="37vLTI" id="1imVejVB$_W" role="3clFbG">
-            <node concept="2OqwBi" id="1imVejVB$_X" role="37vLTJ">
-              <node concept="Xjq3P" id="1imVejVB$_Y" role="2Oq$k0" />
-              <node concept="2OwXpG" id="1imVejVB$_Z" role="2OqNvi">
-                <ref role="2Oxat5" node="6nFpYluqFen" resolve="planHandler" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="1imVejVB$A0" role="37vLTx">
-              <ref role="3cqZAo" node="1imVejVB$Ah" resolve="planHandler" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="1imVejVB$A1" role="3cqZAp">
           <node concept="37vLTI" id="1imVejVB$A2" role="3clFbG">
             <node concept="37vLTw" id="1imVejVB$A3" role="37vLTx">
@@ -736,12 +714,6 @@
         <property role="TrG5h" value="repository" />
         <node concept="3uibUv" id="1imVejVB$Ag" role="1tU5fm">
           <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1imVejVB$Ah" role="3clF46">
-        <property role="TrG5h" value="planHandler" />
-        <node concept="3uibUv" id="1imVejVB$Ai" role="1tU5fm">
-          <ref role="3uigEE" to="ksgm:7DvO2M9Uago" resolve="RulesPlanHandler" />
         </node>
       </node>
       <node concept="37vLTG" id="1imVejVB$Aj" role="3clF46">
@@ -1022,8 +994,13 @@
                           <node concept="2OqwBi" id="7kTeLbPtIoW" role="37vLTx">
                             <node concept="liA8E" id="7kTeLbPtIoY" role="2OqNvi">
                               <ref role="37wK5l" to="hano:7kTeLbPojCz" resolve="produce" />
-                              <node concept="37vLTw" id="6nFpYlur4Wi" role="37wK5m">
-                                <ref role="3cqZAo" node="6nFpYluqFen" resolve="planHandler" />
+                              <node concept="2OqwBi" id="1Pi9pJ$5za4" role="37wK5m">
+                                <node concept="37vLTw" id="1Pi9pJ$5y7X" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6nFpYluo50r" resolve="processingSession" />
+                                </node>
+                                <node concept="liA8E" id="1Pi9pJ$5$95" role="2OqNvi">
+                                  <ref role="37wK5l" to="hano:1Pi9pJ$57yb" resolve="planHandler" />
+                                </node>
                               </node>
                               <node concept="37vLTw" id="7kTeLbPtKEF" role="37wK5m">
                                 <ref role="3cqZAo" node="7kTeLbPt5$3" resolve="nodes" />
@@ -1273,13 +1250,6 @@
       <node concept="3Tm6S6" id="61G6TdBAent" role="1B3o_S" />
       <node concept="3uibUv" id="61G6TdBAenv" role="1tU5fm">
         <ref role="3uigEE" to="ksgm:7DvO2M9IiKB" resolve="MacroProcessing" />
-      </node>
-    </node>
-    <node concept="312cEg" id="6nFpYluqFen" role="jymVt">
-      <property role="TrG5h" value="planHandler" />
-      <node concept="3Tmbuc" id="6nFpYlurNeP" role="1B3o_S" />
-      <node concept="3uibUv" id="6nFpYluqFeq" role="1tU5fm">
-        <ref role="3uigEE" to="ksgm:7DvO2M9Uago" resolve="RulesPlanHandler" />
       </node>
     </node>
     <node concept="312cEg" id="7kTeLbPt5$3" role="jymVt">

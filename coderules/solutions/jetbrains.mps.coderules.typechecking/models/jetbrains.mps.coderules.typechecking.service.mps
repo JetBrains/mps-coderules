@@ -6341,33 +6341,6 @@
       <node concept="3Tmbuc" id="61G6TdCrivj" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="6$F3Z5zitgo" role="jymVt" />
-    <node concept="Wx3nA" id="6nFpYlvf3Cm" role="jymVt">
-      <property role="TrG5h" value="RULES_PLAN_HANDLER" />
-      <node concept="3uibUv" id="6nFpYlvf3Co" role="1tU5fm">
-        <ref role="3uigEE" node="7i3KM7g1Lm1" resolve="CachedData.DataFlavour" />
-        <node concept="3uibUv" id="6nFpYlvf3Cp" role="11_B2D">
-          <ref role="3uigEE" to="ksgm:7DvO2M9Uago" resolve="RulesPlanHandler" />
-        </node>
-      </node>
-      <node concept="2ShNRf" id="6nFpYlvf3Cq" role="33vP2m">
-        <node concept="1pGfFk" id="6nFpYlvf3Cr" role="2ShVmc">
-          <ref role="37wK5l" node="7i3KM7g1T3X" resolve="CachedData.DataFlavour" />
-          <node concept="3uibUv" id="6nFpYlvf3Cs" role="1pMfVU">
-            <ref role="3uigEE" to="ksgm:7DvO2M9Uago" resolve="RulesPlanHandler" />
-          </node>
-          <node concept="2OqwBi" id="6nFpYlvf3Ct" role="37wK5m">
-            <node concept="3VsKOn" id="6nFpYlvf3Cu" role="2Oq$k0">
-              <ref role="3VsUkX" to="ksgm:7DvO2M9Uago" resolve="RulesPlanHandler" />
-            </node>
-            <node concept="liA8E" id="6nFpYlvf3Cv" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Class.getName()" resolve="getName" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tmbuc" id="61G6TdCrk7a" role="1B3o_S" />
-    </node>
-    <node concept="2tJIrI" id="6nFpYlvf3Cl" role="jymVt" />
     <node concept="Wx3nA" id="6nFpYluD3aD" role="jymVt">
       <property role="TrG5h" value="UPDATES" />
       <node concept="3uibUv" id="6nFpYluD3aF" role="1tU5fm">
@@ -14541,12 +14514,6 @@
           <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
         </node>
       </node>
-      <node concept="37vLTG" id="6nFpYluqHqg" role="3clF46">
-        <property role="TrG5h" value="planHandler" />
-        <node concept="3uibUv" id="6nFpYluqHIQ" role="1tU5fm">
-          <ref role="3uigEE" to="ksgm:7DvO2M9Uago" resolve="RulesPlanHandler" />
-        </node>
-      </node>
       <node concept="37vLTG" id="6nFpYluWRTo" role="3clF46">
         <property role="TrG5h" value="originIndex" />
         <node concept="3uibUv" id="6nFpYluWSbt" role="1tU5fm">
@@ -14589,9 +14556,6 @@
           </node>
           <node concept="37vLTw" id="6nFpYlurvhr" role="37wK5m">
             <ref role="3cqZAo" node="7WKNeR9fh8_" resolve="repository" />
-          </node>
-          <node concept="37vLTw" id="6nFpYlurvki" role="37wK5m">
-            <ref role="3cqZAo" node="6nFpYluqHqg" resolve="planHandler" />
           </node>
           <node concept="37vLTw" id="5EDW3XEtZSk" role="37wK5m">
             <ref role="3cqZAo" node="5EDW3XEtX7J" resolve="query" />
@@ -14708,8 +14672,13 @@
                             </node>
                             <node concept="liA8E" id="3Pxu0s89Eym" role="2OqNvi">
                               <ref role="37wK5l" to="ksgm:1XKnVQioNo" resolve="invalidateChanged" />
-                              <node concept="37vLTw" id="3Pxu0s89Eyn" role="37wK5m">
-                                <ref role="3cqZAo" to="1yqb:6nFpYluqFen" resolve="planHandler" />
+                              <node concept="2OqwBi" id="1Pi9pJ$5DJv" role="37wK5m">
+                                <node concept="37vLTw" id="1Pi9pJ$5D8x" role="2Oq$k0">
+                                  <ref role="3cqZAo" to="1yqb:6nFpYluo50r" resolve="processingSession" />
+                                </node>
+                                <node concept="liA8E" id="1Pi9pJ$5EjG" role="2OqNvi">
+                                  <ref role="37wK5l" to="hano:1Pi9pJ$57yb" resolve="planHandler" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -14718,11 +14687,16 @@
                           <node concept="3clFbS" id="55xYlrlMzvc" role="3clFbx">
                             <node concept="3clFbF" id="55xYlrlL89q" role="3cqZAp">
                               <node concept="2OqwBi" id="55xYlrlL8AF" role="3clFbG">
-                                <node concept="37vLTw" id="55xYlrlL89o" role="2Oq$k0">
-                                  <ref role="3cqZAo" to="1yqb:6nFpYluqFen" resolve="planHandler" />
-                                </node>
                                 <node concept="liA8E" id="55xYlrlL98k" role="2OqNvi">
                                   <ref role="37wK5l" to="ksgm:4J__M63pdY" resolve="markAllValidated" />
+                                </node>
+                                <node concept="2OqwBi" id="1Pi9pJ$5EFP" role="2Oq$k0">
+                                  <node concept="37vLTw" id="1Pi9pJ$5EFQ" role="2Oq$k0">
+                                    <ref role="3cqZAo" to="1yqb:6nFpYluo50r" resolve="processingSession" />
+                                  </node>
+                                  <node concept="liA8E" id="1Pi9pJ$5EFR" role="2OqNvi">
+                                    <ref role="37wK5l" to="hano:1Pi9pJ$57yb" resolve="planHandler" />
+                                  </node>
                                 </node>
                               </node>
                             </node>
@@ -16740,11 +16714,6 @@
                     <ref role="37wK5l" node="61G6TdCmasW" resolve="getRepository" />
                   </node>
                 </node>
-                <node concept="2ShNRf" id="6nFpYluqJHO" role="37wK5m">
-                  <node concept="1pGfFk" id="1LBj9w_ERR0" role="2ShVmc">
-                    <ref role="37wK5l" to="ksgm:1LBj9w_EhDG" resolve="RulesPlanHandler" />
-                  </node>
-                </node>
                 <node concept="10Nm6u" id="4XsNDZY66Ql" role="37wK5m" />
               </node>
             </node>
@@ -17315,41 +17284,6 @@
             </node>
           </node>
           <node concept="3clFbH" id="6XnUDeizCc$" role="3cqZAp" />
-          <node concept="3cpWs8" id="4baZKvaTcSc" role="3cqZAp">
-            <node concept="3cpWsn" id="4baZKvaTcSd" role="3cpWs9">
-              <property role="TrG5h" value="planHandler" />
-              <node concept="3uibUv" id="4baZKvaTcSe" role="1tU5fm">
-                <ref role="3uigEE" to="ksgm:7DvO2M9Uago" resolve="RulesPlanHandler" />
-              </node>
-              <node concept="2OqwBi" id="4baZKvaTcSf" role="33vP2m">
-                <node concept="1rXfSq" id="4baZKvaTcSg" role="2Oq$k0">
-                  <ref role="37wK5l" node="565UPcqsaJY" resolve="getCachedData" />
-                  <node concept="37vLTw" id="4baZKvaTcSh" role="37wK5m">
-                    <ref role="3cqZAo" node="6XnUDeizCc7" resolve="aspectClique" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="4baZKvaTcSi" role="2OqNvi">
-                  <ref role="37wK5l" node="7z54$fPgk2E" resolve="getOrSet" />
-                  <node concept="10M0yZ" id="4baZKvaTcSj" role="37wK5m">
-                    <ref role="1PxDUh" node="7kaxm0sEy3e" resolve="TypecheckingService" />
-                    <ref role="3cqZAo" node="6nFpYlvf3Cm" resolve="RULES_PLAN_HANDLER" />
-                  </node>
-                  <node concept="1bVj0M" id="4baZKvaTcSk" role="37wK5m">
-                    <node concept="3clFbS" id="4baZKvaTcSl" role="1bW5cS">
-                      <node concept="3clFbF" id="4baZKvaTcSm" role="3cqZAp">
-                        <node concept="2ShNRf" id="4baZKvaTcSn" role="3clFbG">
-                          <node concept="1pGfFk" id="4baZKvaTcSo" role="2ShVmc">
-                            <ref role="37wK5l" to="ksgm:1LBj9w_EhDG" resolve="RulesPlanHandler" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="1imVejVBZUN" role="3cqZAp" />
           <node concept="3clFbF" id="6XnUDeizCcG" role="3cqZAp">
             <node concept="2ShNRf" id="6XnUDeizCcH" role="3clFbG">
               <node concept="1pGfFk" id="6XnUDeizCcI" role="2ShVmc">
@@ -17379,9 +17313,6 @@
                   <node concept="liA8E" id="6XnUDeizCcR" role="2OqNvi">
                     <ref role="37wK5l" node="61G6TdCmasW" resolve="getRepository" />
                   </node>
-                </node>
-                <node concept="37vLTw" id="4baZKvaTfzS" role="37wK5m">
-                  <ref role="3cqZAo" node="4baZKvaTcSd" resolve="planHandler" />
                 </node>
                 <node concept="37vLTw" id="6XnUDeizCcV" role="37wK5m">
                   <ref role="3cqZAo" node="6XnUDeizCcf" resolve="query" />
@@ -18120,41 +18051,6 @@
             </node>
           </node>
           <node concept="3clFbH" id="3OUB6BBy0qL" role="3cqZAp" />
-          <node concept="3cpWs8" id="565UPcqfPEs" role="3cqZAp">
-            <node concept="3cpWsn" id="565UPcqfPEt" role="3cpWs9">
-              <property role="TrG5h" value="planHandler" />
-              <node concept="3uibUv" id="565UPcqffXl" role="1tU5fm">
-                <ref role="3uigEE" to="ksgm:7DvO2M9Uago" resolve="RulesPlanHandler" />
-              </node>
-              <node concept="2OqwBi" id="565UPcqfQyQ" role="33vP2m">
-                <node concept="1rXfSq" id="565UPcqfQyR" role="2Oq$k0">
-                  <ref role="37wK5l" node="3OUB6BBwRT6" resolve="getAspectCachedData" />
-                  <node concept="37vLTw" id="565UPcqfQyS" role="37wK5m">
-                    <ref role="3cqZAo" node="3OUB6BBaXxO" resolve="aspectClique" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="565UPcqfQyT" role="2OqNvi">
-                  <ref role="37wK5l" node="7z54$fPgk2E" resolve="getOrSet" />
-                  <node concept="10M0yZ" id="565UPcqfQyU" role="37wK5m">
-                    <ref role="3cqZAo" node="6nFpYlvf3Cm" resolve="RULES_PLAN_HANDLER" />
-                    <ref role="1PxDUh" node="7kaxm0sEy3e" resolve="TypecheckingService" />
-                  </node>
-                  <node concept="1bVj0M" id="565UPcqfQyV" role="37wK5m">
-                    <node concept="3clFbS" id="565UPcqfQyW" role="1bW5cS">
-                      <node concept="3clFbF" id="565UPcqfQyX" role="3cqZAp">
-                        <node concept="2ShNRf" id="565UPcqfQyY" role="3clFbG">
-                          <node concept="1pGfFk" id="565UPcqfQyZ" role="2ShVmc">
-                            <ref role="37wK5l" to="ksgm:1LBj9w_EhDG" resolve="RulesPlanHandler" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="565UPcqfS_D" role="3cqZAp" />
           <node concept="3clFbF" id="3OUB6BBbeOR" role="3cqZAp">
             <node concept="2ShNRf" id="3OUB6BBbeOS" role="3clFbG">
               <node concept="1pGfFk" id="3OUB6BBbeOT" role="2ShVmc">
@@ -18184,9 +18080,6 @@
                   <node concept="liA8E" id="3OUB6BBbeP2" role="2OqNvi">
                     <ref role="37wK5l" node="61G6TdCmasW" resolve="getRepository" />
                   </node>
-                </node>
-                <node concept="37vLTw" id="565UPcqfPEx" role="37wK5m">
-                  <ref role="3cqZAo" node="565UPcqfPEt" resolve="planHandler" />
                 </node>
                 <node concept="37vLTw" id="3OUB6BBbeP5" role="37wK5m">
                   <ref role="3cqZAo" node="3OUB6BBaXxV" resolve="query" />
@@ -18641,41 +18534,6 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbH" id="61G6TdBAyAj" role="3cqZAp" />
-          <node concept="3cpWs8" id="6nFpYluFUzo" role="3cqZAp">
-            <node concept="3cpWsn" id="6nFpYluFUzp" role="3cpWs9">
-              <property role="TrG5h" value="planHandler" />
-              <node concept="3uibUv" id="6nFpYluFQLx" role="1tU5fm">
-                <ref role="3uigEE" to="ksgm:7DvO2M9Uago" resolve="RulesPlanHandler" />
-              </node>
-              <node concept="2OqwBi" id="6nFpYluNd7o" role="33vP2m">
-                <node concept="1rXfSq" id="3OUB6BByx8B" role="2Oq$k0">
-                  <ref role="37wK5l" node="3OUB6BBwRT6" resolve="getAspectCachedData" />
-                  <node concept="37vLTw" id="3OUB6BByx8C" role="37wK5m">
-                    <ref role="3cqZAo" node="6nFpYlusyqe" resolve="aspectClique" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="6nFpYluNdof" role="2OqNvi">
-                  <ref role="37wK5l" node="7z54$fPgk2E" resolve="getOrSet" />
-                  <node concept="10M0yZ" id="61G6TdCq_qt" role="37wK5m">
-                    <ref role="1PxDUh" node="7kaxm0sEy3e" resolve="TypecheckingService" />
-                    <ref role="3cqZAo" node="6nFpYlvf3Cm" resolve="RULES_PLAN_HANDLER" />
-                  </node>
-                  <node concept="1bVj0M" id="6nFpYlvf2M8" role="37wK5m">
-                    <node concept="3clFbS" id="6nFpYlvf2Ma" role="1bW5cS">
-                      <node concept="3clFbF" id="6nFpYlvf35u" role="3cqZAp">
-                        <node concept="2ShNRf" id="6nFpYlvf35w" role="3clFbG">
-                          <node concept="1pGfFk" id="1LBj9w_EJo4" role="2ShVmc">
-                            <ref role="37wK5l" to="ksgm:1LBj9w_EhDG" resolve="RulesPlanHandler" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbH" id="3OUB6BByEiv" role="3cqZAp" />
           <node concept="3cpWs8" id="6nFpYlvfycz" role="3cqZAp">
             <node concept="3cpWsn" id="6nFpYlvfyc$" role="3cpWs9">
@@ -18815,9 +18673,6 @@
                   <node concept="liA8E" id="1z4$59iAB7V" role="2OqNvi">
                     <ref role="37wK5l" node="61G6TdCmasW" resolve="getRepository" />
                   </node>
-                </node>
-                <node concept="37vLTw" id="6nFpYluFUzs" role="37wK5m">
-                  <ref role="3cqZAo" node="6nFpYluFUzp" resolve="planHandler" />
                 </node>
                 <node concept="37vLTw" id="6nFpYlvf$Xe" role="37wK5m">
                   <ref role="3cqZAo" node="6nFpYlvfyc$" resolve="originIndex" />
