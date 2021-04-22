@@ -20,7 +20,6 @@ import jetbrains.mps.logic.reactor.logical.VarSymbol
 import jetbrains.mps.unification.Term
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 /**
  * @author Fedor Isakov
@@ -107,7 +106,6 @@ class ClassicTermTrie<T> : TermTrie<T> {
 
         val head = nodeStack.pop()
         head.addValue(value)
-        nodeStack.foldRight(head) { node, nextNode  -> node.putNext(nextNode) }
     }
 
     private fun removeValue(matchTerm: Term, value: T) {
@@ -135,10 +133,13 @@ class ClassicTermTrie<T> : TermTrie<T> {
             nodeStack.push(nextNode)
         }
 
-        val head = nodeStack.pop()
-        head.removeValue(value)
-        // TODO: cleanup the empty nodes
-//        nodeStack.subList(1, nodeStack.size).fold(head) { nextNode, node -> node.putNext(nextNode) }
+        var leaf = nodeStack.pop()
+        leaf.removeValue(value)
+        while (!leaf.isLeaf() && nodeStack.isNotEmpty()) {
+            val base = nodeStack.pop()
+            base.dropNext(leaf)
+            leaf = base
+        }
     }
 
     /**
@@ -173,10 +174,10 @@ class ClassicTermTrie<T> : TermTrie<T> {
     private fun visitMatching(pattern: Term, visitor: (T) -> Unit) {
         val seenNonLeaf = IdentityHashMap<Term, Term>()
         val canonicTerms = IdentityHashMap<Term, Pair<Term, Any>>()
-        val visitStack = arrayListOf<Pair<PathNode<T>, List<Term>>>(root to arrayListOf(pattern))
+        val visitStack = arrayListOf(listOf(root) to listOf(pattern))
 
         while (!visitStack.isEmpty()) {
-            val (base, ptnTerms) = visitStack.pop()
+            val (bases, ptnTerms) = visitStack.pop()
             if (!ptnTerms.isEmpty()) {
                 val ptnHead = ptnTerms.first()
                 val ptnTail = ptnTerms.subList(1, ptnTerms.size)
@@ -188,37 +189,39 @@ class ClassicTermTrie<T> : TermTrie<T> {
                 }
                 val (term, sym) = canonicTerms[ptnHead] !!
 
-                if (sym == WILDCARD) {
-                    if (!ptnTail.isEmpty()) {
-                        // skip the current node
-                        // match the patterns tail with the current node's direct successors
-                        val (terms, bases) = base.terms2bases()
-                        terms.forEach { it.values().forEach (visitor) }
-                        bases.forEach { visitStack.push(it to ptnTail)  }
+                for (base in bases) {
+                    if (sym == WILDCARD) {
+                        if (!ptnTail.isEmpty()) {
+                            // skip the current node
+                            // match the patterns tail with the current node's direct successors
+                            val (wcdTerms, wcdBases) = base.terms2bases()
+                            wcdTerms.forEach { it.values().forEach (visitor) }
+                            visitStack.push(wcdBases to ptnTail)
+
+                        } else {
+                            // wildcard consumes the rest of the trie
+                            base.allNext().forEach { visitAll(it, visitor) }
+                        }
 
                     } else {
-                        // wildcard consumes the rest of the trie
-                        base.allNext().forEach { visitAll(it, visitor) }
-                    }
+                        base.next(WILDCARD)?.let { nn ->
+                            nn.values().forEach(visitor)
+                            if (!ptnTail.isEmpty()) {
+                                visitStack.push(listOf(nn) to ptnTail)
+                            }
+                        }
+                        base.next(sym)?.let { nn ->
+                            nn.values().forEach(visitor)
 
-                } else {
-                    base.next(WILDCARD)?.let { nn ->
-                        nn.values().forEach(visitor)
-                        if (!ptnTail.isEmpty()) {
-                            visitStack.push(nn to ptnTail)
-                        }
-                    }
-                    base.next(sym)?.let { nn ->
-                        nn.values().forEach(visitor)
-                        
-                        // prepend this patternTerm's arguments to the tail pattern terms
-                        val newTail = ArrayList(term.arguments())
-                        if (newTail.size > 0) {
-                            seenNonLeaf[term] = term
-                        }
-                        newTail.addAll(ptnTail)
-                        if (!newTail.isEmpty()) {
-                            visitStack.push(nn to newTail)
+                            // prepend this patternTerm's arguments to the tail pattern terms
+                            val newTail = ArrayList(term.arguments())
+                            if (newTail.size > 0) {
+                                seenNonLeaf[term] = term
+                            }
+                            newTail.addAll(ptnTail)
+                            if (!newTail.isEmpty()) {
+                                visitStack.push(listOf(nn) to newTail)
+                            }
                         }
                     }
                 }
@@ -232,18 +235,20 @@ class ClassicTermTrie<T> : TermTrie<T> {
     private class PathNode<T>(val symbol: Any,
                               val arity: Int)
     {
-        private val next = HashMap<Any, PathNode<T>>(4)
-        
-        private val values = IdentityHashMap<T, Any>(8)
+        private val next = HashMap<Any, PathNode<T>>(8)
+
+        private val values = IdentityHashMap<T, Any>()
 
         fun values(): Iterable<T> = values.keys
+
+        fun isLeaf(): Boolean = next.isEmpty()
 
         fun next(symbol: Any): PathNode<T>? = next[symbol]
 
         /**
          * Returns all trie nodes that are direct successors of this one.
          */
-        fun allNext(): Iterable<PathNode<T>> = next.values
+        fun allNext(): List<PathNode<T>> = next.values.toList()
 
         /**
          * Helper method for processing a wildcard in pattern.
@@ -262,7 +267,7 @@ class ClassicTermTrie<T> : TermTrie<T> {
          * The size of a list representing a flattened term is equal to
          * the sum of arities of all symbols in this list plus 1.
          */
-        fun terms2bases(): Pair<Iterable<PathNode<T>>, Iterable<PathNode<T>>> {
+        fun terms2bases(): Pair<List<PathNode<T>>, List<PathNode<T>>> {
 
             // for every current node there is a number
             // initially 0
@@ -272,30 +277,25 @@ class ClassicTermTrie<T> : TermTrie<T> {
             val terms = ArrayList<PathNode<T>>()
             val bases = ArrayList<PathNode<T>>()
 
-            val stack = arrayListOf<Pair<PathNode<T>, Int>>()
-            for (n in allNext()) {
-                stack.push(n to 0)
-            }
+            val stack = arrayListOf(allNext() to 0)
 
             while (stack.isNotEmpty()) {
-                val (n, count) = stack.pop()
-                val newCount = count + n.arity
-                if (newCount == 0) {
-                    bases.add(n)
+                val (nn, count) = stack.pop()
+                for (n in nn) {
+                    val newCount = count + n.arity
+                    if (newCount == 0) {
+                        bases.add(n)
 
-                } else {
-                    terms.add(n)
-                    n.allNext().forEach { stack.push(it to (newCount - 1)) }
+                    } else {
+                        terms.add(n)
+                        stack.push(n.allNext() to (newCount - 1))
+                    }
                 }
             }
 
             return terms to bases
         }
 
-        fun putNext(node: PathNode<T>): PathNode<T> {
-            next.put(node.symbol, node)
-            return this
-        }
 
         fun addValue(value: T) {
             values[value] = KEYHOLDER
@@ -308,8 +308,21 @@ class ClassicTermTrie<T> : TermTrie<T> {
         inline fun nextOrDefault(symbol: Any,
                                  default: (sym: Any) -> PathNode<T>): PathNode<T>
         {
-            return next[symbol] ?: default(symbol)
+            val existing = next[symbol]
+            if (existing != null) {
+                return existing
+            } else {
+                val default = default(symbol)
+                next[symbol] = default
+                return default
+            }
         }
 
+        fun dropNext(drop: PathNode<T>) {
+            this.next.remove(drop)
+        }
+
+//        override fun toString(): String =
+//            "${symbol}/${arity} (${values.keys.joinToString(", ")}) > [${next.map { it.symbol }.joinToString(", ")}] "
     }
 }
