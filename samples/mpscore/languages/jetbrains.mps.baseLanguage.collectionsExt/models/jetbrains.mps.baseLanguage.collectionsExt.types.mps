@@ -25667,6 +25667,7 @@
     <ref role="2YbDB9" to="kqnc:2J$kxDHIJYU" resolve="ExpectType" />
     <node concept="1nLNMY" id="3CulEO3elcx" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_multiForEachVariable" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="3CulEO3elcy" role="1nLNMH">
         <node concept="1nLNNL" id="12QmIo_7sf0" role="3cqZAp">
           <node concept="1nLNMm" id="12QmIo_7sf1" role="1nLNNK">
@@ -25730,6 +25731,7 @@
     </node>
     <node concept="1nLNMY" id="3CulEO3elv7" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_multiForEachVariable" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="3CulEO3elv8" role="1nLNMH">
         <node concept="1nLNNL" id="14oWJ2Nxubl" role="3cqZAp">
           <node concept="1nLNMm" id="14oWJ2Nxubm" role="1nLNNK">

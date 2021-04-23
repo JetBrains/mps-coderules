@@ -267,6 +267,7 @@
         <child id="7674753015762572651" name="body" index="3xSepv" />
       </concept>
       <concept id="3575255234174969615" name="jetbrains.mps.lang.coderules.structure.RuleTemplate" flags="ng" index="1nLNMY">
+        <property id="597338001513854136" name="auxiliary" index="1nmhW7" />
         <child id="3575255234174969633" name="input" index="1nLNMg" />
         <child id="3575255234174969628" name="code" index="1nLNMH" />
       </concept>
@@ -2698,6 +2699,7 @@
     <ref role="2YbDB9" to="kqnc:2J$kxDHIJYU" resolve="ExpectType" />
     <node concept="1nLNMY" id="3rrtTcSrt6E" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_varDeclaration" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="3rrtTcSrt6F" role="1nLNMH">
         <node concept="1nLNNL" id="12QmIo_7sf0" role="3cqZAp">
           <node concept="1nLNMm" id="12QmIo_7sf1" role="1nLNNK">
@@ -2761,6 +2763,7 @@
     </node>
     <node concept="1nLNMY" id="3rrtTcSrrWM" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_varDeclaration" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="3rrtTcSrrWN" role="1nLNMH">
         <node concept="1nLNNL" id="77mpfA3IyqW" role="3cqZAp">
           <node concept="1nLNMm" id="77mpfA3IyqX" role="1nLNNK">

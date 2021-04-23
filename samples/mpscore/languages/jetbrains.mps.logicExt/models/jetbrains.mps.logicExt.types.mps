@@ -244,6 +244,7 @@
         <child id="7674753015762572651" name="body" index="3xSepv" />
       </concept>
       <concept id="3575255234174969615" name="jetbrains.mps.lang.coderules.structure.RuleTemplate" flags="ng" index="1nLNMY">
+        <property id="597338001513854136" name="auxiliary" index="1nmhW7" />
         <child id="3575255234174969633" name="input" index="1nLNMg" />
         <child id="3575255234174969628" name="code" index="1nLNMH" />
       </concept>
@@ -2541,6 +2542,7 @@
     <ref role="2YbDB9" to="kqnc:2J$kxDHIJYU" resolve="ExpectType" />
     <node concept="1nLNMY" id="12QmIo_7seY" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_logicalItem" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="12QmIo_7seZ" role="1nLNMH">
         <node concept="1nLNNL" id="12QmIo_7sf0" role="3cqZAp">
           <node concept="1nLNMm" id="12QmIo_7sf1" role="1nLNNK">
@@ -2604,6 +2606,7 @@
     </node>
     <node concept="1nLNMY" id="5X1yxJH__SD" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_logicalVarDecl" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="5X1yxJH__SE" role="1nLNMH">
         <node concept="1nLNNL" id="5X1yxJH__SF" role="3cqZAp">
           <node concept="1nLNMm" id="5X1yxJH__SG" role="1nLNNK">
@@ -2667,6 +2670,7 @@
     </node>
     <node concept="1nLNMY" id="5X1yxJH_Ayi" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_logicalVar" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="5X1yxJH_Ayj" role="1nLNMH">
         <node concept="1nLNNL" id="5X1yxJH_Ayk" role="3cqZAp">
           <node concept="1nLNMm" id="5X1yxJH_Ayl" role="1nLNNK">
@@ -2730,6 +2734,7 @@
     </node>
     <node concept="1nLNMY" id="35YJGAJTRFo" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_logicalItem" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="35YJGAJTRFp" role="1nLNMH">
         <node concept="1nLNNL" id="35YJGAJTRFq" role="3cqZAp">
           <node concept="1nLNMm" id="35YJGAJTRFr" role="1nLNNK">
@@ -2846,6 +2851,7 @@
     </node>
     <node concept="1nLNMY" id="14oWJ2Nxubj" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_logicalVarDecl" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="14oWJ2Nxubk" role="1nLNMH">
         <node concept="1nLNNL" id="14oWJ2Nxubl" role="3cqZAp">
           <node concept="1nLNMm" id="14oWJ2Nxubm" role="1nLNNK">
@@ -2961,6 +2967,7 @@
     </node>
     <node concept="1nLNMY" id="14oWJ2NxwyB" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_logicalVar" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="14oWJ2NxwyC" role="1nLNMH">
         <node concept="1nLNNL" id="14oWJ2NxwyD" role="3cqZAp">
           <node concept="1nLNMm" id="14oWJ2NxwyE" role="1nLNNK">

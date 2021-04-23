@@ -257,6 +257,7 @@
         <child id="7674753015762572651" name="body" index="3xSepv" />
       </concept>
       <concept id="3575255234174969615" name="jetbrains.mps.lang.coderules.structure.RuleTemplate" flags="ng" index="1nLNMY">
+        <property id="597338001513854136" name="auxiliary" index="1nmhW7" />
         <child id="3575255234174969633" name="input" index="1nLNMg" />
         <child id="3575255234174969628" name="code" index="1nLNMH" />
       </concept>
@@ -2901,6 +2902,7 @@
     <ref role="2YbDB9" to="kqnc:2J$kxDHIJYU" resolve="ExpectType" />
     <node concept="1nLNMY" id="51ek2rSbOY0" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_CallMacroParameterDeclaration" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="51ek2rSbOY1" role="1nLNMH">
         <node concept="1nLNNL" id="12QmIo_7sf0" role="3cqZAp">
           <node concept="1nLNMm" id="12QmIo_7sf1" role="1nLNNK">
@@ -2964,6 +2966,7 @@
     </node>
     <node concept="1nLNMY" id="51ek2rSbOTG" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_ExpandMacroInputDeclaration" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="51ek2rSbOTH" role="1nLNMH">
         <node concept="1nLNNL" id="51ek2rSbOTI" role="3cqZAp">
           <node concept="1nLNMm" id="51ek2rSbOTJ" role="1nLNNK">
@@ -3027,6 +3030,7 @@
     </node>
     <node concept="1nLNMY" id="6zber0NTBxI" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_expandMacroParameterDeclaration" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="6zber0NTBxJ" role="1nLNMH">
         <node concept="1nLNNL" id="6zber0NTBEh" role="3cqZAp">
           <node concept="1nLNMm" id="6zber0NTBEi" role="1nLNNK">
@@ -3090,6 +3094,7 @@
     </node>
     <node concept="1nLNMY" id="51ek2rSbWAp" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_CallMacroParameterDeclaration" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="51ek2rSbWAq" role="1nLNMH">
         <node concept="1nLNNL" id="14oWJ2Nxubl" role="3cqZAp">
           <node concept="1nLNMm" id="14oWJ2Nxubm" role="1nLNNK">
@@ -3205,6 +3210,7 @@
     </node>
     <node concept="1nLNMY" id="51ek2rSbW_Y" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_ExpandMacroInputDeclaration" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="51ek2rSbW_Z" role="1nLNMH">
         <node concept="1nLNNL" id="51ek2rSbXfc" role="3cqZAp">
           <node concept="1nLNMm" id="51ek2rSbXfd" role="1nLNNK">
@@ -3320,6 +3326,7 @@
     </node>
     <node concept="1nLNMY" id="6zber0NTCjg" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_expandMacroParameterDeclaration" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="6zber0NTCjh" role="1nLNMH">
         <node concept="1nLNNL" id="6zber0NTCse" role="3cqZAp">
           <node concept="1nLNMm" id="6zber0NTCsf" role="1nLNNK">
