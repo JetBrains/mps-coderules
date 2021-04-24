@@ -133,7 +133,9 @@
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
-      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
+      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
+        <reference id="1138405853777" name="concept" index="ehGHo" />
+      </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -2481,7 +2483,9 @@
               <node concept="aZer4" id="6Dg__VK8Mla" role="3XD1gS">
                 <property role="TrG5h" value="DNode" />
               </node>
-              <node concept="3Tqbb2" id="6Dg__VK8LgQ" role="3vLBG7" />
+              <node concept="3Tqbb2" id="6Dg__VK8LgQ" role="3vLBG7">
+                <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
+              </node>
             </node>
             <node concept="3NuqgR" id="6Dg__VK8Lj2" role="0Rg$4">
               <node concept="aZer4" id="6Dg__VK8Lj3" role="3XD1gS">

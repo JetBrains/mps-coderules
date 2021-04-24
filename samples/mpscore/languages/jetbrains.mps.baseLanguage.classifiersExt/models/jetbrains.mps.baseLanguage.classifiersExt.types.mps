@@ -1353,6 +1353,14 @@
       <node concept="3clFbS" id="2q9s7foUOEm" role="1nLNMH">
         <node concept="1nLNNL" id="2q9s7foUOF6" role="3cqZAp">
           <node concept="1nLNMm" id="2q9s7foUOF8" role="1nLNNK">
+            <node concept="3NuqgR" id="1stFrrzRYJk" role="0Rg$4">
+              <node concept="3Tqbb2" id="1stFrrzRYOx" role="3vLBG7">
+                <ref role="ehGHo" to="tp4f:hyWqMFP" resolve="IClassifier" />
+              </node>
+              <node concept="aZer4" id="2q9s7foUPm8" role="3XD1gS">
+                <property role="TrG5h" value="Cls" />
+              </node>
+            </node>
             <node concept="3Aq93q" id="2q9s7foUOFf" role="1nLNMb">
               <node concept="3I6sU6" id="2q9s7foUOFg" role="3Ip0Jz">
                 <node concept="3I6s7M" id="2q9s7foUOFn" role="3I6sU7">
@@ -1384,9 +1392,6 @@
             <node concept="3NuqgR" id="2q9s7foUPj9" role="0Rg$4">
               <node concept="aZer4" id="2q9s7foUPja" role="3XD1gS">
                 <property role="TrG5h" value="Node" />
-              </node>
-              <node concept="aZer4" id="2q9s7foUPm8" role="3XD1gS">
-                <property role="TrG5h" value="Cls" />
               </node>
               <node concept="3Tqbb2" id="2q9s7foUPjk" role="3vLBG7" />
             </node>
