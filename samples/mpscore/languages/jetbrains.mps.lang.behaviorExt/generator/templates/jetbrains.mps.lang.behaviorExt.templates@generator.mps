@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:a97a15cd-4afc-467f-ab0c-5473077fcecf(jetbrains.mps.behaviorExt.generator.templates@generator)">
+<model ref="r:a97a15cd-4afc-467f-ab0c-5473077fcecf(jetbrains.mps.lang.behaviorExt.templates@generator)">
   <persistence version="9" />
   <languages>
     <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
-    <import index="vwoa" ref="r:91cdb51e-443e-4719-9dd5-46b3df0d2b9e(jetbrains.mps.behaviorExt.structure)" />
+    <import index="vwoa" ref="r:91cdb51e-443e-4719-9dd5-46b3df0d2b9e(jetbrains.mps.lang.behaviorExt.structure)" />
   </imports>
   <registry>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">

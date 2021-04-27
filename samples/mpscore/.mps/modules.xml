@@ -12,7 +12,7 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.tuplesExt/jetbrains.mps.baseLanguage.tuplesExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguageInternalExt/jetbrains.mps.baseLanguageInternalExt.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.behaviorExt/jetbrains.mps.behaviorExt.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.behaviorExt/jetbrains.mps.lang.behaviorExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.coderulesExt/jetbrains.mps.lang.coderulesExt.mpl" folder="ext.coderules" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.constraintsExt/jetbrains.mps.lang.constraintsExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.generator.generationContextExt/jetbrains.mps.lang.generator.generationContextExt.mpl" folder="" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:9468b2da-d680-4618-8620-b6908c569525(jetbrains.mps.behaviorExt.types)">
+<model ref="r:9468b2da-d680-4618-8620-b6908c569525(jetbrains.mps.lang.behaviorExt.types)">
   <persistence version="9" />
   <languages>
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />

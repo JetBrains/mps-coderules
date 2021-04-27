@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.behaviorExt" uuid="e6d71378-a200-440d-aee2-16f93b792e86" languageVersion="0" moduleVersion="0">
+<language namespace="jetbrains.mps.lang.behaviorExt" uuid="e6d71378-a200-440d-aee2-16f93b792e86" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -12,7 +12,7 @@
   </facets>
   <accessoryModels />
   <generators>
-    <generator alias="main" namespace="jetbrains.mps.behaviorExt.generator" uuid="64feabf9-0bb2-49ae-800e-ae9bc7f04c9e">
+    <generator alias="main" namespace="jetbrains.mps.lang.behaviorExt.generator" uuid="64feabf9-0bb2-49ae-800e-ae9bc7f04c9e">
       <models>
         <modelRoot contentPath="${module}/generator" type="default">
           <sourceRoot location="templates" />
@@ -52,16 +52,19 @@
         <module reference="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" version="0" />
         <module reference="52b81ac7-93fd-4e9e-b972-4995882da6d4(jetbrains.mps.baseLanguage.references.runtime)" version="0" />
         <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
-        <module reference="e6d71378-a200-440d-aee2-16f93b792e86(jetbrains.mps.behaviorExt)" version="0" />
-        <module reference="64feabf9-0bb2-49ae-800e-ae9bc7f04c9e(jetbrains.mps.behaviorExt.generator)" version="0" />
+        <module reference="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" version="0" />
         <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
         <module reference="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" version="0" />
         <module reference="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" version="0" />
         <module reference="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" version="0" />
+        <module reference="e6d71378-a200-440d-aee2-16f93b792e86(jetbrains.mps.lang.behaviorExt)" version="0" />
+        <module reference="64feabf9-0bb2-49ae-800e-ae9bc7f04c9e(jetbrains.mps.lang.behaviorExt.generator)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
         <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
         <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
         <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
+        <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
+        <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
         <module reference="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" version="0" />
       </dependencyVersions>
       <mapping-priorities />
@@ -69,7 +72,6 @@
   </generators>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)</dependency>
     <dependency reexport="false">65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)</dependency>
   </dependencies>
   <languageVersions>
@@ -119,10 +121,10 @@
     <module reference="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" version="0" />
     <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
     <module reference="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" version="0" />
-    <module reference="e6d71378-a200-440d-aee2-16f93b792e86(jetbrains.mps.behaviorExt)" version="0" />
     <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
     <module reference="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" version="0" />
     <module reference="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" version="0" />
+    <module reference="e6d71378-a200-440d-aee2-16f93b792e86(jetbrains.mps.lang.behaviorExt)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />
     <module reference="446c26eb-2b7b-4bf0-9b35-f83fa582753e(jetbrains.mps.lang.modelapi)" version="0" />
@@ -135,6 +137,7 @@
     <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
   </dependencyVersions>
   <extendedLanguages>
+    <extendedLanguage>0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)</extendedLanguage>
     <extendedLanguage>af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)</extendedLanguage>
   </extendedLanguages>
 </language>
