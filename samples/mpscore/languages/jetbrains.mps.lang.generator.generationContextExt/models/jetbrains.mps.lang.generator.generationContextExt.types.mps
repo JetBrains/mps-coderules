@@ -115,6 +115,9 @@
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
+      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
+        <child id="4780620083400582654" name="logical" index="1nq8_t" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
@@ -789,6 +792,14 @@
                             <node concept="3A8Hvi" id="3ZfjIHuvDK$" role="3I6s78">
                               <node concept="ns1u0" id="3ZfjIHuvDL0" role="3A8w4Q">
                                 <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
+                                <node concept="nsMwS" id="5BZU0S2DbRP" role="ns1xD">
+                                  <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
+                                  <node concept="1nq8_$" id="5BZU0S2DbSs" role="nsMwV">
+                                    <node concept="a7P8L" id="5BZU0S2DbSr" role="1nq8_t">
+                                      <ref role="a7OzE" node="5BZU0S2DbRU" resolve="TPs" />
+                                    </node>
+                                  </node>
+                                </node>
                               </node>
                               <node concept="a7P8L" id="3ZfjIHuvDKh" role="3A8wtg">
                                 <ref role="a7OzE" node="3ZfjIHuvDtE" resolve="ClsType" />
@@ -834,6 +845,12 @@
                         <property role="TrG5h" value="ClsType" />
                       </node>
                       <node concept="32pEOW" id="3ZfjIHuvDtw" role="3vLBG7" />
+                    </node>
+                    <node concept="3NuqgR" id="5BZU0S2DbRT" role="0Rg$4">
+                      <node concept="aZer4" id="5BZU0S2DbRU" role="3XD1gS">
+                        <property role="TrG5h" value="TPs" />
+                      </node>
+                      <node concept="32pEOW" id="5BZU0S2DbSa" role="3vLBG7" />
                     </node>
                   </node>
                 </node>
