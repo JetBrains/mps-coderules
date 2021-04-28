@@ -125,6 +125,10 @@
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
       <concept id="2381360340662937504" name="jetbrains.mps.lang.coderules.structure.TermType" flags="ig" index="32pEOW" />
+      <concept id="6097203247184206287" name="jetbrains.mps.lang.coderules.structure.CallMacroConstraint" flags="ng" index="3jm4v3">
+        <reference id="6097203247184207800" name="template" index="3jm46O" />
+        <child id="6097203247184212024" name="logical" index="3jm6SO" />
+      </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="4814011019633607808" name="parameter" index="0Rg$4" />
         <child id="3575255234174969658" name="head" index="1nLNMb" />
@@ -774,7 +778,27 @@
               </node>
               <node concept="32pEOW" id="28u2HUPWQmn" role="3vLBG7" />
             </node>
+            <node concept="3NuqgR" id="7kXqzcTBg31" role="0Rg$4">
+              <node concept="aZer4" id="7kXqzcTBg32" role="3XD1gS">
+                <property role="TrG5h" value="Concept" />
+              </node>
+              <node concept="3Tqbb2" id="7kXqzcTBg3c" role="3vLBG7">
+                <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+              </node>
+            </node>
             <node concept="3xSepi" id="28u2HUPWRBR" role="3xSepv">
+              <node concept="3Aq9E8" id="7kXqzcTBg1d" role="3xSepj">
+                <node concept="3I6sU6" id="7kXqzcTBg1e" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="7kXqzcTBg0k" role="3I6sU7">
+                    <node concept="3jm4v3" id="7kXqzcTBg0i" role="3I6s78">
+                      <ref role="3jm46O" to="jxwi:7kXqzcTAj1H" resolve="defaultConcept" />
+                      <node concept="a7P8L" id="7kXqzcTBg3o" role="3jm6SO">
+                        <ref role="a7OzE" node="7kXqzcTBg32" resolve="Concept" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3Aq9E8" id="28u2HUPWRBS" role="3xSepj">
                 <node concept="3I6sU6" id="28u2HUPWRBT" role="3Ip0Jz">
                   <node concept="3I6s7M" id="28u2HUPWRC1" role="3I6sU7">
@@ -798,6 +822,14 @@
                                       <node concept="1nq8_$" id="28u2HUPWRDY" role="nsMwV">
                                         <node concept="ns1u0" id="28u2HUPWRDX" role="1nq8_t">
                                           <ref role="ns1xF" to="jxwi:7LI_gNMWw2A" resolve="node" />
+                                          <node concept="nsMwS" id="7kXqzcTBg3u" role="ns1xD">
+                                            <ref role="nsMwP" to="jxwi:7LI_gNMWxb4" resolve="concept" />
+                                            <node concept="1nq8_$" id="7kXqzcTBg3A" role="nsMwV">
+                                              <node concept="a7P8L" id="7kXqzcTBg3_" role="1nq8_t">
+                                                <ref role="a7OzE" node="7kXqzcTBg32" resolve="Concept" />
+                                              </node>
+                                            </node>
+                                          </node>
                                         </node>
                                       </node>
                                     </node>

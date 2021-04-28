@@ -4155,6 +4155,14 @@
                           <node concept="1nq8_$" id="5zhVuyL9tJu" role="nsMwV">
                             <node concept="ns1u0" id="5zhVuyL9tJt" role="1nq8_t">
                               <ref role="ns1xF" to="jxwi:7LI_gNMWw2A" resolve="node" />
+                              <node concept="nsMwS" id="7kXqzcTBGBA" role="ns1xD">
+                                <ref role="nsMwP" to="jxwi:7LI_gNMWxb4" resolve="concept" />
+                                <node concept="1nq8_$" id="7kXqzcTBGBI" role="nsMwV">
+                                  <node concept="a7P8L" id="7kXqzcTBGBH" role="1nq8_t">
+                                    <ref role="a7OzE" node="7kXqzcTBFOa" resolve="Concept" />
+                                  </node>
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -4162,6 +4170,14 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="7kXqzcTBFO9" role="0Rg$4">
+              <node concept="aZer4" id="7kXqzcTBFOa" role="3XD1gS">
+                <property role="TrG5h" value="Concept" />
+              </node>
+              <node concept="3Tqbb2" id="7kXqzcTBFOh" role="3vLBG7">
+                <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
               </node>
             </node>
           </node>
