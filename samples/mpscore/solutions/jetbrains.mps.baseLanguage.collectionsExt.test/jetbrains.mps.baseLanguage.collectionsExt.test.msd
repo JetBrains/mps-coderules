@@ -22,6 +22,7 @@
     <dependency reexport="false">0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)</dependency>
     <dependency reexport="false">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</dependency>
     <dependency reexport="false">02473356-2f59-4de1-ba87-e88f9d606180(jetbrains.mps.coderules.testhelper)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="11" />
