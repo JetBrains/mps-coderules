@@ -127,7 +127,15 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
+    <language id="0b80a2e8-f9f1-47b3-823f-56eb115bca42" name="jetbrains.mps.typechecking.annotation">
+      <concept id="1942415814694854601" name="jetbrains.mps.typechecking.annotation.structure.ErrorAnnotation" flags="ng" index="1U20sH">
+        <property id="1942415814694854612" name="text" index="1U20sK" />
+      </concept>
+    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -628,6 +636,9 @@
                 <ref role="3cqZAo" node="2w09tXqHKia" resolve="i" />
               </node>
             </node>
+            <node concept="1U20sH" id="68TJRU2gTV2" role="lGtFl">
+              <property role="1U20sK" value="error" />
+            </node>
           </node>
         </node>
         <node concept="3clFbH" id="2w09tXqHNP7" role="3cqZAp" />
@@ -715,6 +726,41 @@
               <node concept="3cmrfG" id="2w09tXqIBkY" role="37wK5m">
                 <property role="3cmrfH" value="123" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="68TJRU2gSIp" role="3cqZAp">
+          <node concept="3cpWsn" id="68TJRU2gSIq" role="3cpWs9">
+            <property role="TrG5h" value="two" />
+            <node concept="3uibUv" id="68TJRU2gSUJ" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~ArrayList" resolve="ArrayList" />
+              <node concept="3qTvmN" id="68TJRU2gSWj" role="11_B2D" />
+            </node>
+            <node concept="2YIFZM" id="68TJRU2gSIs" role="33vP2m">
+              <ref role="37wK5l" node="5XJPBczuqgl" resolve="one" />
+              <ref role="1Pybhc" node="5XJPBczuqgj" resolve="StaticMethodInference.Foo" />
+              <node concept="2ShNRf" id="68TJRU2gSIt" role="37wK5m">
+                <node concept="1pGfFk" id="68TJRU2gSIu" role="2ShVmc">
+                  <ref role="37wK5l" to="33ny:~LinkedList.&lt;init&gt;()" resolve="LinkedList" />
+                  <node concept="3uibUv" id="68TJRU2gSIv" role="1pMfVU">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2ShNRf" id="68TJRU2gSIw" role="37wK5m">
+                <node concept="1pGfFk" id="68TJRU2gSIx" role="2ShVmc">
+                  <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                  <node concept="3uibUv" id="68TJRU2gSIy" role="1pMfVU">
+                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3cmrfG" id="68TJRU2gSIz" role="37wK5m">
+                <property role="3cmrfH" value="123" />
+              </node>
+            </node>
+            <node concept="1U20sH" id="68TJRU2gU5C" role="lGtFl">
+              <property role="1U20sK" value="error" />
             </node>
           </node>
         </node>
