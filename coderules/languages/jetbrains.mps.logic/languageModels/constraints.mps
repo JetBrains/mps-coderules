@@ -864,35 +864,19 @@
                 </node>
               </node>
             </node>
-            <node concept="1Wc70l" id="hYA4RDOcb6" role="3uHU7B">
-              <node concept="2OqwBi" id="7zIaasjS9a5" role="3uHU7B">
-                <node concept="2OqwBi" id="7zIaasjS9a6" role="2Oq$k0">
-                  <node concept="nLn13" id="hYA4RDOoLF" role="2Oq$k0" />
-                  <node concept="2Xjw5R" id="7zIaasjS9a8" role="2OqNvi">
-                    <node concept="1xMEDy" id="7zIaasjS9a9" role="1xVPHs">
-                      <node concept="chp4Y" id="7zIaasjS9aa" role="ri$Ld">
-                        <ref role="cht4Q" to="5j4j:7zIaasjACyh" resolve="EvaluationSubject" />
-                      </node>
+            <node concept="2OqwBi" id="7zIaasjS9a5" role="3uHU7B">
+              <node concept="2OqwBi" id="7zIaasjS9a6" role="2Oq$k0">
+                <node concept="nLn13" id="hYA4RDOoLF" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="7zIaasjS9a8" role="2OqNvi">
+                  <node concept="1xMEDy" id="7zIaasjS9a9" role="1xVPHs">
+                    <node concept="chp4Y" id="7zIaasjS9aa" role="ri$Ld">
+                      <ref role="cht4Q" to="5j4j:7zIaasjACyh" resolve="EvaluationSubject" />
                     </node>
-                    <node concept="1xIGOp" id="hYA4RDOmVp" role="1xVPHs" />
                   </node>
+                  <node concept="1xIGOp" id="hYA4RDOmVp" role="1xVPHs" />
                 </node>
-                <node concept="3w_OXm" id="7zIaasjS9kS" role="2OqNvi" />
               </node>
-              <node concept="2OqwBi" id="hYA4RDOnBC" role="3uHU7w">
-                <node concept="2OqwBi" id="hYA4RDOnc7" role="2Oq$k0">
-                  <node concept="nLn13" id="hYA4RDOoQc" role="2Oq$k0" />
-                  <node concept="2Xjw5R" id="hYA4RDOnnE" role="2OqNvi">
-                    <node concept="1xMEDy" id="hYA4REcaxF" role="1xVPHs">
-                      <node concept="chp4Y" id="hYA4REcaAm" role="ri$Ld">
-                        <ref role="cht4Q" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
-                      </node>
-                    </node>
-                    <node concept="1xIGOp" id="hYA4RDOobn" role="1xVPHs" />
-                  </node>
-                </node>
-                <node concept="3x8VRR" id="hYA4RDOnOm" role="2OqNvi" />
-              </node>
+              <node concept="3w_OXm" id="7zIaasjS9kS" role="2OqNvi" />
             </node>
           </node>
         </node>

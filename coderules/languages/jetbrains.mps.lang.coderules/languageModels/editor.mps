@@ -385,6 +385,7 @@
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -4185,8 +4186,32 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F1sOY" id="1L74NXFMBX2" role="3EZMnx">
-        <ref role="1NtTu8" to="wq2x:JOGAOsxTDm" resolve="getter" />
+      <node concept="3EZMnI" id="ZNYugt4Pv1" role="3EZMnx">
+        <node concept="l2Vlx" id="ZNYugt4Pv2" role="2iSdaV" />
+        <node concept="3F1sOY" id="1L74NXFMBX2" role="3EZMnx">
+          <ref role="1NtTu8" to="wq2x:JOGAOsxTDm" resolve="getter" />
+          <node concept="pkWqt" id="ZNYugt4Pvg" role="pqm2j">
+            <node concept="3clFbS" id="ZNYugt4Pvh" role="2VODD2">
+              <node concept="3clFbF" id="ZNYugt4Pzf" role="3cqZAp">
+                <node concept="3y3z36" id="ZNYugt4Q6M" role="3clFbG">
+                  <node concept="10Nm6u" id="ZNYugt4QcH" role="3uHU7w" />
+                  <node concept="2OqwBi" id="ZNYugt4PJR" role="3uHU7B">
+                    <node concept="pncrf" id="ZNYugt4Pze" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="ZNYugt4PWE" role="2OqNvi">
+                      <ref role="3Tt5mk" to="wq2x:JOGAOsxTDm" resolve="getter" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3nxI2P" id="ZNYugt4QnK" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F1sOY" id="ZNYugt4Qpr" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:ZNYugt4PuX" resolve="item" />
       </node>
       <node concept="l2Vlx" id="1L74NXFMBU8" role="2iSdaV" />
     </node>

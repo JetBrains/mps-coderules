@@ -28,6 +28,7 @@
       <concept id="6491077959632463275" name="jetbrains.mps.lang.structure.structure.EnumPropertyMigrationInfo" flags="ng" index="3l_iC">
         <child id="6491077959632463286" name="oldProperty" index="3l_iP" />
       </concept>
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
         <property id="7862711839422615217" name="text" index="t5JxN" />
         <child id="7862711839422615224" name="seeAlso" index="t5JxU" />
@@ -1414,8 +1415,14 @@
       <property role="IQ2ns" value="861509610434435670" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="getter" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="ZNYugt4Qqr" role="lGtFl" />
+    </node>
+    <node concept="1TJgyj" id="ZNYugt4PuX" role="1TKVEi">
+      <property role="IQ2ns" value="1149537088045275069" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="item" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
     <node concept="t5JxF" id="3MfP0fwg5uI" role="lGtFl">
       <property role="t5JxN" value="Allows to override default feature value in term constructor" />
@@ -1658,6 +1665,12 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="ZNYugt1SnT">
+    <property role="EcuMT" value="1149537088044500473" />
+    <property role="3GE5qa" value="term.feature" />
+    <property role="TrG5h" value="NodeRefFeature" />
+    <ref role="1TJDcQ" node="JOGAOsxiL_" resolve="TermFeature" />
   </node>
 </model>
 
