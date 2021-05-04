@@ -2,7 +2,7 @@
 <model ref="r:65f97255-4bb1-4783-acd6-a4ed5a1088e2(jetbrains.mps.typechecking.testlang.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
@@ -107,9 +107,6 @@
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
-        <child id="4780620083400582654" name="logical" index="1nq8_t" />
-      </concept>
       <concept id="8713947027062024097" name="jetbrains.mps.logic.structure.LogicalItemValueExpression" flags="ng" index="1Ft4W6">
         <child id="8713947027062064784" name="logical" index="1FtiSR" />
       </concept>
@@ -177,6 +174,7 @@
       <concept id="861509610434294982" name="jetbrains.mps.lang.coderules.structure.ValueFeature" flags="ng" index="nssqF" />
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
+        <child id="1149537088045275069" name="item" index="iSaTp" />
         <child id="861509610434435670" name="getter" index="nsMwV" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
@@ -354,18 +352,14 @@
                         <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
                         <node concept="nsMwS" id="7mB3viLdI7t" role="ns1xD">
                           <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
-                          <node concept="1nq8_$" id="7mB3viLdI7A" role="nsMwV">
-                            <node concept="a7P8L" id="7mB3viLdI7$" role="1nq8_t">
-                              <ref role="a7OzE" node="7mB3viLdI2x" resolve="Name" />
-                            </node>
+                          <node concept="a7P8L" id="7mB3viLdI7$" role="iSaTp">
+                            <ref role="a7OzE" node="7mB3viLdI2x" resolve="Name" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="7mB3viLbLNk" role="ns1xD">
                           <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
-                          <node concept="1nq8_$" id="7mB3viLbLOy" role="nsMwV">
-                            <node concept="a7P8L" id="7mB3viLbLOw" role="1nq8_t">
-                              <ref role="a7OzE" node="7lt0LtPP29U" resolve="Val" />
-                            </node>
+                          <node concept="a7P8L" id="7mB3viLbLOw" role="iSaTp">
+                            <ref role="a7OzE" node="7lt0LtPP29U" resolve="Val" />
                           </node>
                         </node>
                       </node>
@@ -488,10 +482,8 @@
                         </node>
                         <node concept="nsMwS" id="7mB3viLi4rh" role="ns1xD">
                           <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
-                          <node concept="1nq8_$" id="7mB3viLi4v0" role="nsMwV">
-                            <node concept="a7P8L" id="7mB3viLi4uY" role="1nq8_t">
-                              <ref role="a7OzE" node="7mB3viLi4pZ" resolve="AVal" />
-                            </node>
+                          <node concept="a7P8L" id="7mB3viLi4uY" role="iSaTp">
+                            <ref role="a7OzE" node="7mB3viLi4pZ" resolve="AVal" />
                           </node>
                         </node>
                       </node>
@@ -510,10 +502,8 @@
                         </node>
                         <node concept="nsMwS" id="7mB3viLi4w2" role="ns1xD">
                           <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
-                          <node concept="1nq8_$" id="7mB3viLi4w3" role="nsMwV">
-                            <node concept="a7P8L" id="7mB3viLi4wZ" role="1nq8_t">
-                              <ref role="a7OzE" node="7mB3viLi4qx" resolve="BVal" />
-                            </node>
+                          <node concept="a7P8L" id="7mB3viLi4wZ" role="iSaTp">
+                            <ref role="a7OzE" node="7mB3viLi4qx" resolve="BVal" />
                           </node>
                         </node>
                       </node>
@@ -593,10 +583,8 @@
                         </node>
                         <node concept="nsMwS" id="2DIFeUB7n6p" role="ns1xD">
                           <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
-                          <node concept="1nq8_$" id="2DIFeUB7n6q" role="nsMwV">
-                            <node concept="a7P8L" id="2DIFeUB7sez" role="1nq8_t">
-                              <ref role="a7OzE" node="5TXeSYT5cnq" resolve="AVal" />
-                            </node>
+                          <node concept="a7P8L" id="2DIFeUB7sez" role="iSaTp">
+                            <ref role="a7OzE" node="5TXeSYT5cnq" resolve="AVal" />
                           </node>
                         </node>
                       </node>
@@ -615,10 +603,8 @@
                         </node>
                         <node concept="nsMwS" id="2DIFeUB7n6x" role="ns1xD">
                           <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
-                          <node concept="1nq8_$" id="2DIFeUB7n6y" role="nsMwV">
-                            <node concept="a7P8L" id="2DIFeUB7seD" role="1nq8_t">
-                              <ref role="a7OzE" node="5TXeSYT5cnr" resolve="BVal" />
-                            </node>
+                          <node concept="a7P8L" id="2DIFeUB7seD" role="iSaTp">
+                            <ref role="a7OzE" node="5TXeSYT5cnr" resolve="BVal" />
                           </node>
                         </node>
                       </node>

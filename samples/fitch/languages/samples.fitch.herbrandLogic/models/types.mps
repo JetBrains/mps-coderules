@@ -2,7 +2,7 @@
 <model ref="r:2e585daf-c5c7-4735-a41f-b2044cd9b207(samples.fitch.herbrandLogic.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="13" />
@@ -162,9 +162,6 @@
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4">
         <child id="6036655413809169524" name="cardinalityExpr" index="3gj$pD" />
       </concept>
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
-        <child id="4780620083400582654" name="logical" index="1nq8_t" />
-      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
@@ -289,6 +286,7 @@
       <concept id="861509610434289827" name="jetbrains.mps.lang.coderules.structure.ChildFeature" flags="ng" index="nstbe" />
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
+        <child id="1149537088045275069" name="item" index="iSaTp" />
         <child id="861509610434435670" name="getter" index="nsMwV" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
@@ -432,18 +430,14 @@
               <ref role="ns1xF" node="7VBaGntKJ6Q" resolve="Forall" />
               <node concept="nsMwS" id="5itBwMa8vVd" role="ns1xD">
                 <ref role="nsMwP" node="7VBaGntKJ6S" resolve="variable" />
-                <node concept="1nq8_$" id="5itBwMa8vVe" role="nsMwV">
-                  <node concept="a7P8L" id="5itBwMa8vVf" role="1nq8_t">
-                    <ref role="a7OzE" node="Vo$tzLEEJk" resolve="Var" />
-                  </node>
+                <node concept="a7P8L" id="5itBwMa8vVf" role="iSaTp">
+                  <ref role="a7OzE" node="Vo$tzLEEJk" resolve="Var" />
                 </node>
               </node>
               <node concept="nsMwS" id="5itBwMa8vVg" role="ns1xD">
                 <ref role="nsMwP" node="7VBaGntKJ6T" resolve="sentence" />
-                <node concept="1nq8_$" id="5itBwMa8vVh" role="nsMwV">
-                  <node concept="a7P8L" id="5itBwMa9DlF" role="1nq8_t">
-                    <ref role="a7OzE" node="Vo$tzLEEJq" resolve="Body" />
-                  </node>
+                <node concept="a7P8L" id="5itBwMa9DlF" role="iSaTp">
+                  <ref role="a7OzE" node="Vo$tzLEEJq" resolve="Body" />
                 </node>
               </node>
             </node>
@@ -516,18 +510,14 @@
               <ref role="ns1xF" node="7VBaGntKJ6U" resolve="Exists" />
               <node concept="nsMwS" id="7VBaGntKJaq" role="ns1xD">
                 <ref role="nsMwP" node="7VBaGntKJ6W" resolve="variable" />
-                <node concept="1nq8_$" id="Vo$tzLEFM$" role="nsMwV">
-                  <node concept="a7P8L" id="Vo$tzLEFM_" role="1nq8_t">
-                    <ref role="a7OzE" node="Vo$tzLEFMH" resolve="Var" />
-                  </node>
+                <node concept="a7P8L" id="Vo$tzLEFM_" role="iSaTp">
+                  <ref role="a7OzE" node="Vo$tzLEFMH" resolve="Var" />
                 </node>
               </node>
               <node concept="nsMwS" id="7VBaGntKJar" role="ns1xD">
                 <ref role="nsMwP" node="7VBaGntKJ6X" resolve="sentence" />
-                <node concept="1nq8_$" id="Vo$tzLEFME" role="nsMwV">
-                  <node concept="a7P8L" id="Vo$tzLEFMF" role="1nq8_t">
-                    <ref role="a7OzE" node="Vo$tzLEFMI" resolve="Body" />
-                  </node>
+                <node concept="a7P8L" id="Vo$tzLEFMF" role="iSaTp">
+                  <ref role="a7OzE" node="Vo$tzLEFMI" resolve="Body" />
                 </node>
               </node>
             </node>
@@ -635,10 +625,8 @@
               </node>
               <node concept="nsMwS" id="7VBaGntKJax" role="ns1xD">
                 <ref role="nsMwP" node="7VBaGntKJ71" resolve="member" />
-                <node concept="1nq8_$" id="Vo$tzLIpZQ" role="nsMwV">
-                  <node concept="a7P8L" id="Vo$tzLIpZR" role="1nq8_t">
-                    <ref role="a7OzE" node="Vo$tzLIpZg" resolve="Memb" />
-                  </node>
+                <node concept="a7P8L" id="Vo$tzLIpZR" role="iSaTp">
+                  <ref role="a7OzE" node="Vo$tzLIpZg" resolve="Memb" />
                 </node>
               </node>
             </node>
@@ -836,10 +824,8 @@
               </node>
               <node concept="nsMwS" id="7VBaGntKJaD" role="ns1xD">
                 <ref role="nsMwP" node="7VBaGntKJ7b" resolve="argument" />
-                <node concept="1nq8_$" id="Vo$tzLIpVG" role="nsMwV">
-                  <node concept="a7P8L" id="Vo$tzLIpVF" role="1nq8_t">
-                    <ref role="a7OzE" node="Vo$tzLIcAp" resolve="Arg" />
-                  </node>
+                <node concept="a7P8L" id="Vo$tzLIpVF" role="iSaTp">
+                  <ref role="a7OzE" node="Vo$tzLIcAp" resolve="Arg" />
                 </node>
               </node>
             </node>
@@ -1130,18 +1116,14 @@
                             <ref role="ns1xF" node="7VBaGntKJ6Q" resolve="Forall" />
                             <node concept="nsMwS" id="7VBaGntKJaF" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6S" resolve="variable" />
-                              <node concept="1nq8_$" id="2oO2uzBXAqH" role="nsMwV">
-                                <node concept="a7P8L" id="2oO2uzBXAqF" role="1nq8_t">
-                                  <ref role="a7OzE" node="2oO2uzBWTdP" resolve="Var" />
-                                </node>
+                              <node concept="a7P8L" id="2oO2uzBXAqF" role="iSaTp">
+                                <ref role="a7OzE" node="2oO2uzBWTdP" resolve="Var" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJaG" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6T" resolve="sentence" />
-                              <node concept="1nq8_$" id="2oO2uzBXAsU" role="nsMwV">
-                                <node concept="a7P8L" id="2oO2uzBXAsT" role="1nq8_t">
-                                  <ref role="a7OzE" node="2oO2uzBWT6$" resolve="Prem" />
-                                </node>
+                              <node concept="a7P8L" id="2oO2uzBXAsT" role="iSaTp">
+                                <ref role="a7OzE" node="2oO2uzBWT6$" resolve="Prem" />
                               </node>
                             </node>
                           </node>
@@ -1787,18 +1769,14 @@
                             <ref role="ns1xF" node="7VBaGntKJ6Q" resolve="Forall" />
                             <node concept="nsMwS" id="7VBaGntKJah" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6S" resolve="variable" />
-                              <node concept="1nq8_$" id="2CF5XF5oJvc" role="nsMwV">
-                                <node concept="a7P8L" id="2CF5XF5oJvd" role="1nq8_t">
-                                  <ref role="a7OzE" node="2oO2uzBWNnU" resolve="Var" />
-                                </node>
+                              <node concept="a7P8L" id="2CF5XF5oJvd" role="iSaTp">
+                                <ref role="a7OzE" node="2oO2uzBWNnU" resolve="Var" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJai" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6T" resolve="sentence" />
-                              <node concept="1nq8_$" id="2CF5XF5oJvi" role="nsMwV">
-                                <node concept="a7P8L" id="2CF5XF5oJvj" role="1nq8_t">
-                                  <ref role="a7OzE" node="2oO2uzBXx8g" resolve="Stc" />
-                                </node>
+                              <node concept="a7P8L" id="2CF5XF5oJvj" role="iSaTp">
+                                <ref role="a7OzE" node="2oO2uzBXx8g" resolve="Stc" />
                               </node>
                             </node>
                           </node>
@@ -2024,18 +2002,14 @@
                             <ref role="ns1xF" node="7VBaGntKJ6U" resolve="Exists" />
                             <node concept="nsMwS" id="7VBaGntKJak" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6W" resolve="variable" />
-                              <node concept="1nq8_$" id="2CF5XF5qul1" role="nsMwV">
-                                <node concept="a7P8L" id="2CF5XF5qul0" role="1nq8_t">
-                                  <ref role="a7OzE" node="2CF5XF5qukG" resolve="Var" />
-                                </node>
+                              <node concept="a7P8L" id="2CF5XF5qul0" role="iSaTp">
+                                <ref role="a7OzE" node="2CF5XF5qukG" resolve="Var" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJal" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6X" resolve="sentence" />
-                              <node concept="1nq8_$" id="2CF5XF5quA1" role="nsMwV">
-                                <node concept="a7P8L" id="2CF5XF5quA0" role="1nq8_t">
-                                  <ref role="a7OzE" node="2CF5XF5quzw" resolve="Stc" />
-                                </node>
+                              <node concept="a7P8L" id="2CF5XF5quA0" role="iSaTp">
+                                <ref role="a7OzE" node="2CF5XF5quzw" resolve="Stc" />
                               </node>
                             </node>
                           </node>
@@ -2303,18 +2277,14 @@
                             <ref role="ns1xF" node="7VBaGntKJ6U" resolve="Exists" />
                             <node concept="nsMwS" id="7VBaGntKJa_" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6W" resolve="variable" />
-                              <node concept="1nq8_$" id="2CF5XF5qAuj" role="nsMwV">
-                                <node concept="a7P8L" id="2CF5XF5qAui" role="1nq8_t">
-                                  <ref role="a7OzE" node="2CF5XF5qAtH" resolve="ExVar" />
-                                </node>
+                              <node concept="a7P8L" id="2CF5XF5qAui" role="iSaTp">
+                                <ref role="a7OzE" node="2CF5XF5qAtH" resolve="ExVar" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJaA" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6X" resolve="sentence" />
-                              <node concept="1nq8_$" id="2CF5XF5qAwy" role="nsMwV">
-                                <node concept="a7P8L" id="2CF5XF5qODY" role="1nq8_t">
-                                  <ref role="a7OzE" node="2CF5XF5qOwG" resolve="ExStc" />
-                                </node>
+                              <node concept="a7P8L" id="2CF5XF5qODY" role="iSaTp">
+                                <ref role="a7OzE" node="2CF5XF5qOwG" resolve="ExStc" />
                               </node>
                             </node>
                           </node>
@@ -2357,32 +2327,24 @@
                             <ref role="ns1xF" node="7VBaGntKJ6Q" resolve="Forall" />
                             <node concept="nsMwS" id="7VBaGntKJae" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6S" resolve="variable" />
-                              <node concept="1nq8_$" id="3dsgZcixZw2" role="nsMwV">
-                                <node concept="a7P8L" id="3dsgZcixZw3" role="1nq8_t">
-                                  <ref role="a7OzE" node="2CF5XF5qNbA" resolve="UniVar" />
-                                </node>
+                              <node concept="a7P8L" id="3dsgZcixZw3" role="iSaTp">
+                                <ref role="a7OzE" node="2CF5XF5qNbA" resolve="UniVar" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJaf" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6T" resolve="sentence" />
-                              <node concept="1nq8_$" id="3dsgZcixZw8" role="nsMwV">
-                                <node concept="ns1u0" id="7VBaGntKJas" role="1nq8_t">
-                                  <ref role="ns1xF" to="6r1k:7VBaGntKJ89" resolve="If" />
-                                  <node concept="nsMwS" id="7VBaGntKJat" role="ns1xD">
-                                    <ref role="nsMwP" to="6r1k:7VBaGntKJ8b" resolve="antecedent" />
-                                    <node concept="1nq8_$" id="3dsgZcixZwe" role="nsMwV">
-                                      <node concept="a7P8L" id="3dsgZcixZwf" role="1nq8_t">
-                                        <ref role="a7OzE" node="2CF5XF5qAtS" resolve="UniStc" />
-                                      </node>
-                                    </node>
+                              <node concept="ns1u0" id="7VBaGntKJas" role="iSaTp">
+                                <ref role="ns1xF" to="6r1k:7VBaGntKJ89" resolve="If" />
+                                <node concept="nsMwS" id="7VBaGntKJat" role="ns1xD">
+                                  <ref role="nsMwP" to="6r1k:7VBaGntKJ8b" resolve="antecedent" />
+                                  <node concept="a7P8L" id="3dsgZcixZwf" role="iSaTp">
+                                    <ref role="a7OzE" node="2CF5XF5qAtS" resolve="UniStc" />
                                   </node>
-                                  <node concept="nsMwS" id="7VBaGntKJau" role="ns1xD">
-                                    <ref role="nsMwP" to="6r1k:7VBaGntKJ8c" resolve="consequence" />
-                                    <node concept="1nq8_$" id="3dsgZcixZwk" role="nsMwV">
-                                      <node concept="a7P8L" id="3dsgZcixZwl" role="1nq8_t">
-                                        <ref role="a7OzE" node="2CF5XF5qF8v" resolve="Con" />
-                                      </node>
-                                    </node>
+                                </node>
+                                <node concept="nsMwS" id="7VBaGntKJau" role="ns1xD">
+                                  <ref role="nsMwP" to="6r1k:7VBaGntKJ8c" resolve="consequence" />
+                                  <node concept="a7P8L" id="3dsgZcixZwl" role="iSaTp">
+                                    <ref role="a7OzE" node="2CF5XF5qF8v" resolve="Con" />
                                   </node>
                                 </node>
                               </node>

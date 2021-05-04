@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -125,9 +125,6 @@
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4">
         <child id="6036655413809169524" name="cardinalityExpr" index="3gj$pD" />
       </concept>
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
-        <child id="4780620083400582654" name="logical" index="1nq8_t" />
-      </concept>
       <concept id="8713947027062024097" name="jetbrains.mps.logic.structure.LogicalItemValueExpression" flags="ng" index="1Ft4W6">
         <child id="8713947027062064784" name="logical" index="1FtiSR" />
       </concept>
@@ -202,6 +199,7 @@
       <concept id="861509610434294982" name="jetbrains.mps.lang.coderules.structure.ValueFeature" flags="ng" index="nssqF" />
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
+        <child id="1149537088045275069" name="item" index="iSaTp" />
         <child id="861509610434435670" name="getter" index="nsMwV" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
@@ -1377,10 +1375,8 @@
                         <ref role="ns1xF" node="2q9s7foUKiD" resolve="defaultClassifier" />
                         <node concept="nsMwS" id="2q9s7foUPlH" role="ns1xD">
                           <ref role="nsMwP" node="2q9s7foUKjg" resolve="classifier" />
-                          <node concept="1nq8_$" id="2q9s7foUPmo" role="nsMwV">
-                            <node concept="a7P8L" id="2q9s7foUPmn" role="1nq8_t">
-                              <ref role="a7OzE" node="2q9s7foUPm8" resolve="Cls" />
-                            </node>
+                          <node concept="a7P8L" id="2q9s7foUPmn" role="iSaTp">
+                            <ref role="a7OzE" node="2q9s7foUPm8" resolve="Cls" />
                           </node>
                         </node>
                       </node>

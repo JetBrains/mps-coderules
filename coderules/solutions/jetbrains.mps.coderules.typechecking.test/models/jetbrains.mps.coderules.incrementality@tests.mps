@@ -12,7 +12,7 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="13" />
     <use id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text" version="-1" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
     <use id="3a1f0f04-b5e0-43be-884e-b856bfdeca21" name="jetbrains.mps.typechecking.testlang" version="0" />
   </languages>
   <imports>
@@ -203,9 +203,6 @@
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
-        <child id="4780620083400582654" name="logical" index="1nq8_t" />
-      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
@@ -311,7 +308,7 @@
       </concept>
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
+        <child id="1149537088045275069" name="item" index="iSaTp" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
@@ -1041,18 +1038,14 @@
                             <ref role="ns1xF" to="zuft:JfcwnvuueH" resolve="Pair" />
                             <node concept="nsMwS" id="7qe1GumRXOX" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueR" resolve="fst" />
-                              <node concept="1nq8_$" id="7qe1GumRXOY" role="nsMwV">
-                                <node concept="a7P8L" id="7qe1GumRXOZ" role="1nq8_t">
-                                  <ref role="a7OzE" node="7qe1GumRXOP" resolve="L" />
-                                </node>
+                              <node concept="a7P8L" id="7qe1GumRXOZ" role="iSaTp">
+                                <ref role="a7OzE" node="7qe1GumRXOP" resolve="L" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="7qe1GumRXP0" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueX" resolve="snd" />
-                              <node concept="1nq8_$" id="7qe1GumRXP1" role="nsMwV">
-                                <node concept="a7P8L" id="7qe1GumRXP2" role="1nq8_t">
-                                  <ref role="a7OzE" node="7qe1GumRXOQ" resolve="R" />
-                                </node>
+                              <node concept="a7P8L" id="7qe1GumRXP2" role="iSaTp">
+                                <ref role="a7OzE" node="7qe1GumRXOQ" resolve="R" />
                               </node>
                             </node>
                           </node>
@@ -1163,18 +1156,14 @@
                             <ref role="ns1xF" to="zuft:JfcwnvuueH" resolve="Pair" />
                             <node concept="nsMwS" id="Jfcwnvuw$7" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueR" resolve="fst" />
-                              <node concept="1nq8_$" id="Jfcwnvuw$8" role="nsMwV">
-                                <node concept="a7P8L" id="Jfcwnvuw$9" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT54SS" resolve="L" />
-                                </node>
+                              <node concept="a7P8L" id="Jfcwnvuw$9" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT54SS" resolve="L" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="Jfcwnvuw$a" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueX" resolve="snd" />
-                              <node concept="1nq8_$" id="Jfcwnvuw$b" role="nsMwV">
-                                <node concept="a7P8L" id="Jfcwnvuw$c" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT54ST" resolve="R" />
-                                </node>
+                              <node concept="a7P8L" id="Jfcwnvuw$c" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT54ST" resolve="R" />
                               </node>
                             </node>
                           </node>
@@ -1295,18 +1284,14 @@
                             <ref role="ns1xF" to="zuft:JfcwnvuueH" resolve="Pair" />
                             <node concept="nsMwS" id="Jfcwnvuw$K" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueR" resolve="fst" />
-                              <node concept="1nq8_$" id="Jfcwnvuw$L" role="nsMwV">
-                                <node concept="a7P8L" id="Jfcwnvuw$M" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT5511" resolve="L" />
-                                </node>
+                              <node concept="a7P8L" id="Jfcwnvuw$M" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT5511" resolve="L" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="Jfcwnvuw$N" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueX" resolve="snd" />
-                              <node concept="1nq8_$" id="Jfcwnvuw$O" role="nsMwV">
-                                <node concept="a7P8L" id="Jfcwnvuw$P" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT5512" resolve="R" />
-                                </node>
+                              <node concept="a7P8L" id="Jfcwnvuw$P" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT5512" resolve="R" />
                               </node>
                             </node>
                           </node>
@@ -1427,18 +1412,14 @@
                             <ref role="ns1xF" to="zuft:JfcwnvuueH" resolve="Pair" />
                             <node concept="nsMwS" id="JfcwnvuwBo" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueR" resolve="fst" />
-                              <node concept="1nq8_$" id="JfcwnvuwBp" role="nsMwV">
-                                <node concept="a7P8L" id="JfcwnvuwBq" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT55hT" resolve="L" />
-                                </node>
+                              <node concept="a7P8L" id="JfcwnvuwBq" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT55hT" resolve="L" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="JfcwnvuwBr" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueX" resolve="snd" />
-                              <node concept="1nq8_$" id="JfcwnvuwBs" role="nsMwV">
-                                <node concept="a7P8L" id="JfcwnvuwBt" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT55hU" resolve="R" />
-                                </node>
+                              <node concept="a7P8L" id="JfcwnvuwBt" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT55hU" resolve="R" />
                               </node>
                             </node>
                           </node>
@@ -1552,18 +1533,14 @@
                             <ref role="ns1xF" to="zuft:JfcwnvuueH" resolve="Pair" />
                             <node concept="nsMwS" id="JfcwnvuwE2" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueR" resolve="fst" />
-                              <node concept="1nq8_$" id="JfcwnvuwE3" role="nsMwV">
-                                <node concept="a7P8L" id="JfcwnvuwE4" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT55s9" resolve="L" />
-                                </node>
+                              <node concept="a7P8L" id="JfcwnvuwE4" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT55s9" resolve="L" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="JfcwnvuwE5" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueX" resolve="snd" />
-                              <node concept="1nq8_$" id="JfcwnvuwE6" role="nsMwV">
-                                <node concept="a7P8L" id="JfcwnvuwE7" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT55sa" resolve="R" />
-                                </node>
+                              <node concept="a7P8L" id="JfcwnvuwE7" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT55sa" resolve="R" />
                               </node>
                             </node>
                           </node>
@@ -1691,18 +1668,14 @@
                             <ref role="ns1xF" to="zuft:JfcwnvuueH" resolve="Pair" />
                             <node concept="nsMwS" id="4t6qIYSPdaU" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueR" resolve="fst" />
-                              <node concept="1nq8_$" id="4t6qIYSPdaV" role="nsMwV">
-                                <node concept="a7P8L" id="4t6qIYSPdaW" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT55$P" resolve="L" />
-                                </node>
+                              <node concept="a7P8L" id="4t6qIYSPdaW" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT55$P" resolve="L" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="4t6qIYSPdaX" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueX" resolve="snd" />
-                              <node concept="1nq8_$" id="4t6qIYSPdaY" role="nsMwV">
-                                <node concept="a7P8L" id="4t6qIYSPdo8" role="1nq8_t">
-                                  <ref role="a7OzE" node="4t6qIYSPdm_" resolve="Local2" />
-                                </node>
+                              <node concept="a7P8L" id="4t6qIYSPdo8" role="iSaTp">
+                                <ref role="a7OzE" node="4t6qIYSPdm_" resolve="Local2" />
                               </node>
                             </node>
                           </node>
@@ -1723,18 +1696,14 @@
                             <ref role="ns1xF" to="zuft:JfcwnvuueH" resolve="Pair" />
                             <node concept="nsMwS" id="4t6qIYSPdtC" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueR" resolve="fst" />
-                              <node concept="1nq8_$" id="4t6qIYSPdtI" role="nsMwV">
-                                <node concept="a7P8L" id="4t6qIYT2aT_" role="1nq8_t">
-                                  <ref role="a7OzE" node="4t6qIYT2aJm" resolve="Local3" />
-                                </node>
+                              <node concept="a7P8L" id="4t6qIYT2aT_" role="iSaTp">
+                                <ref role="a7OzE" node="4t6qIYT2aJm" resolve="Local3" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="4t6qIYSPdtP" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueX" resolve="snd" />
-                              <node concept="1nq8_$" id="4t6qIYSPdvJ" role="nsMwV">
-                                <node concept="a7P8L" id="4t6qIYSPdvQ" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT55$Q" resolve="R" />
-                                </node>
+                              <node concept="a7P8L" id="4t6qIYSPdvQ" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT55$Q" resolve="R" />
                               </node>
                             </node>
                           </node>
@@ -1851,18 +1820,14 @@
                             <ref role="ns1xF" to="zuft:JfcwnvuueH" resolve="Pair" />
                             <node concept="nsMwS" id="4t6qIYSPqa_" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueR" resolve="fst" />
-                              <node concept="1nq8_$" id="4t6qIYSPqaA" role="nsMwV">
-                                <node concept="a7P8L" id="4t6qIYSPqaB" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT55Om" resolve="L" />
-                                </node>
+                              <node concept="a7P8L" id="4t6qIYSPqaB" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT55Om" resolve="L" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="4t6qIYSPqaC" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueX" resolve="snd" />
-                              <node concept="1nq8_$" id="4t6qIYSPqaD" role="nsMwV">
-                                <node concept="a7P8L" id="4t6qIYTd8QF" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT55Og" resolve="Local2" />
-                                </node>
+                              <node concept="a7P8L" id="4t6qIYTd8QF" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT55Og" resolve="Local2" />
                               </node>
                             </node>
                           </node>
@@ -1972,18 +1937,14 @@
                             <ref role="ns1xF" to="zuft:JfcwnvuueH" resolve="Pair" />
                             <node concept="nsMwS" id="4t6qIYTd7Es" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueR" resolve="fst" />
-                              <node concept="1nq8_$" id="4t6qIYTd7Et" role="nsMwV">
-                                <node concept="a7P8L" id="4t6qIYTd7Eu" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT564B" resolve="L" />
-                                </node>
+                              <node concept="a7P8L" id="4t6qIYTd7Eu" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT564B" resolve="L" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="4t6qIYTd7Ev" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueX" resolve="snd" />
-                              <node concept="1nq8_$" id="4t6qIYTd7Ew" role="nsMwV">
-                                <node concept="a7P8L" id="4t6qIYTd8S2" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT564x" resolve="Local2" />
-                                </node>
+                              <node concept="a7P8L" id="4t6qIYTd8S2" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT564x" resolve="Local2" />
                               </node>
                             </node>
                           </node>
@@ -1998,10 +1959,8 @@
                             <ref role="ns1xF" to="zuft:JfcwnvuueH" resolve="Pair" />
                             <node concept="nsMwS" id="4t6qIYTd8KA" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JfcwnvuueR" resolve="fst" />
-                              <node concept="1nq8_$" id="4t6qIYTd8KG" role="nsMwV">
-                                <node concept="a7P8L" id="4t6qIYTd8Tv" role="1nq8_t">
-                                  <ref role="a7OzE" node="5TXeSYT564y" resolve="Local3" />
-                                </node>
+                              <node concept="a7P8L" id="4t6qIYTd8Tv" role="iSaTp">
+                                <ref role="a7OzE" node="5TXeSYT564y" resolve="Local3" />
                               </node>
                             </node>
                           </node>
@@ -3145,18 +3104,14 @@
                             <ref role="ns1xF" to="zuft:JOGAOsVt6y" resolve="Type" />
                             <node concept="nsMwS" id="JfcwnvutGg" role="ns1xD">
                               <ref role="nsMwP" to="zuft:7mB3viLdDa5" resolve="name" />
-                              <node concept="1nq8_$" id="JfcwnvutGm" role="nsMwV">
-                                <node concept="a7P8L" id="JfcwnvutGk" role="1nq8_t">
-                                  <ref role="a7OzE" node="48ZGLP7phr7" resolve="NewTV" />
-                                </node>
+                              <node concept="a7P8L" id="JfcwnvutGk" role="iSaTp">
+                                <ref role="a7OzE" node="48ZGLP7phr7" resolve="NewTV" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="JfcwnvutGB" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JOGAOsVt6$" resolve="val" />
-                              <node concept="1nq8_$" id="JfcwnvutGK" role="nsMwV">
-                                <node concept="a7P8L" id="JfcwnvutGI" role="1nq8_t">
-                                  <ref role="a7OzE" node="48ZGLP7pgwC" resolve="E" />
-                                </node>
+                              <node concept="a7P8L" id="JfcwnvutGI" role="iSaTp">
+                                <ref role="a7OzE" node="48ZGLP7pgwC" resolve="E" />
                               </node>
                             </node>
                           </node>
@@ -3233,18 +3188,14 @@
                             <ref role="ns1xF" to="zuft:JOGAOsVt6y" resolve="Type" />
                             <node concept="nsMwS" id="JfcwnvutH9" role="ns1xD">
                               <ref role="nsMwP" to="zuft:7mB3viLdDa5" resolve="name" />
-                              <node concept="1nq8_$" id="JfcwnvutHa" role="nsMwV">
-                                <node concept="a7P8L" id="JfcwnvutHb" role="1nq8_t">
-                                  <ref role="a7OzE" node="JfcwnvutGZ" resolve="NewTV" />
-                                </node>
+                              <node concept="a7P8L" id="JfcwnvutHb" role="iSaTp">
+                                <ref role="a7OzE" node="JfcwnvutGZ" resolve="NewTV" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="JfcwnvutHc" role="ns1xD">
                               <ref role="nsMwP" to="zuft:JOGAOsVt6$" resolve="val" />
-                              <node concept="1nq8_$" id="JfcwnvutHd" role="nsMwV">
-                                <node concept="a7P8L" id="JfcwnvutHe" role="1nq8_t">
-                                  <ref role="a7OzE" node="JfcwnvutGX" resolve="E" />
-                                </node>
+                              <node concept="a7P8L" id="JfcwnvutHe" role="iSaTp">
+                                <ref role="a7OzE" node="JfcwnvutGX" resolve="E" />
                               </node>
                             </node>
                           </node>

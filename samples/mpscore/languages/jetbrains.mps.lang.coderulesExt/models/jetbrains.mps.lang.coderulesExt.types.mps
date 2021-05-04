@@ -2,7 +2,7 @@
 <model ref="r:9071f0f9-8ac0-4a08-8867-06e41ca1c7d9(jetbrains.mps.lang.coderulesExt.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -116,9 +116,6 @@
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4">
         <child id="6036655413809169524" name="cardinalityExpr" index="3gj$pD" />
       </concept>
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
-        <child id="4780620083400582654" name="logical" index="1nq8_t" />
-      </concept>
       <concept id="8713947027062024097" name="jetbrains.mps.logic.structure.LogicalItemValueExpression" flags="ng" index="1Ft4W6">
         <child id="8713947027062064784" name="logical" index="1FtiSR" />
       </concept>
@@ -205,6 +202,7 @@
       <concept id="861509610434276450" name="jetbrains.mps.lang.coderules.structure.TermTemplate" flags="ng" index="nspSf" />
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
+        <child id="1149537088045275069" name="item" index="iSaTp" />
         <child id="861509610434435670" name="getter" index="nsMwV" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
@@ -443,10 +441,8 @@
                         <ref role="ns1xF" to="54p4:7LI_gNMkMFB" resolve="logical" />
                         <node concept="nsMwS" id="14oWJ2NFhGN" role="ns1xD">
                           <ref role="nsMwP" to="54p4:7LI_gNMpTBn" resolve="dataType" />
-                          <node concept="1nq8_$" id="14oWJ2NFhGO" role="nsMwV">
-                            <node concept="a7P8L" id="14oWJ2NFhGP" role="1nq8_t">
-                              <ref role="a7OzE" node="14oWJ2NFhGS" resolve="DType" />
-                            </node>
+                          <node concept="a7P8L" id="14oWJ2NFhGP" role="iSaTp">
+                            <ref role="a7OzE" node="14oWJ2NFhGS" resolve="DType" />
                           </node>
                         </node>
                       </node>
@@ -952,10 +948,8 @@
                         <ref role="ns1xF" to="yh6q:3MFPGC50Ab3" resolve="sequence" />
                         <node concept="nsMwS" id="7LI_gNMXkoN" role="ns1xD">
                           <ref role="nsMwP" to="yh6q:3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="7LI_gNMXkoS" role="nsMwV">
-                            <node concept="ns1u0" id="7LI_gNMXkoR" role="1nq8_t">
-                              <ref role="ns1xF" to="jxwi:7LI_gNMWw2A" resolve="node" />
-                            </node>
+                          <node concept="ns1u0" id="7LI_gNMXkoR" role="iSaTp">
+                            <ref role="ns1xF" to="jxwi:7LI_gNMWw2A" resolve="node" />
                           </node>
                         </node>
                       </node>
@@ -1809,10 +1803,8 @@
                         <ref role="ns1xF" to="54p4:7LI_gNMkMFB" resolve="logical" />
                         <node concept="nsMwS" id="7LI_gNMXJbW" role="ns1xD">
                           <ref role="nsMwP" to="54p4:7LI_gNMpTBn" resolve="dataType" />
-                          <node concept="1nq8_$" id="7LI_gNMXJc1" role="nsMwV">
-                            <node concept="a7P8L" id="7LI_gNMXJc0" role="1nq8_t">
-                              <ref role="a7OzE" node="7LI_gNMXIer" resolve="Type" />
-                            </node>
+                          <node concept="a7P8L" id="7LI_gNMXJc0" role="iSaTp">
+                            <ref role="a7OzE" node="7LI_gNMXIer" resolve="Type" />
                           </node>
                         </node>
                       </node>
@@ -2040,12 +2032,10 @@
                                       <ref role="ns1xF" to="54p4:7LI_gNMkMFB" resolve="logical" />
                                       <node concept="nsMwS" id="3QaPPfnPfII" role="ns1xD">
                                         <ref role="nsMwP" to="54p4:7LI_gNMpTBn" resolve="dataType" />
-                                        <node concept="1nq8_$" id="3QaPPfnPgsk" role="nsMwV">
-                                          <node concept="a7P8L" id="3QaPPfnPgsj" role="1nq8_t">
-                                            <ref role="a7OzE" node="7LI_gNMXV3g" resolve="DataType" />
-                                            <node concept="37vLTw" id="3QaPPfnPh8K" role="3gCZO6">
-                                              <ref role="3cqZAo" node="7LI_gNMXURp" resolve="i" />
-                                            </node>
+                                        <node concept="a7P8L" id="3QaPPfnPgsj" role="iSaTp">
+                                          <ref role="a7OzE" node="7LI_gNMXV3g" resolve="DataType" />
+                                          <node concept="37vLTw" id="3QaPPfnPh8K" role="3gCZO6">
+                                            <ref role="3cqZAo" node="7LI_gNMXURp" resolve="i" />
                                           </node>
                                         </node>
                                       </node>
@@ -3670,10 +3660,8 @@
                         <ref role="ns1xF" to="54p4:7LI_gNMkMFB" resolve="logical" />
                         <node concept="nsMwS" id="7kXqzcTKecp" role="ns1xD">
                           <ref role="nsMwP" to="54p4:7LI_gNMpTBn" resolve="dataType" />
-                          <node concept="1nq8_$" id="7kXqzcTKecJ" role="nsMwV">
-                            <node concept="a7P8L" id="7kXqzcTKecI" role="1nq8_t">
-                              <ref role="a7OzE" node="7kXqzcTKecx" resolve="SDataType" />
-                            </node>
+                          <node concept="a7P8L" id="7kXqzcTKecI" role="iSaTp">
+                            <ref role="a7OzE" node="7kXqzcTKecx" resolve="SDataType" />
                           </node>
                         </node>
                       </node>
@@ -3686,10 +3674,8 @@
                         <ref role="ns1xF" to="54p4:7LI_gNMkMFB" resolve="logical" />
                         <node concept="nsMwS" id="51ek2rScB7k" role="ns1xD">
                           <ref role="nsMwP" to="54p4:7LI_gNMpTBn" resolve="dataType" />
-                          <node concept="1nq8_$" id="51ek2rScB9a" role="nsMwV">
-                            <node concept="a7P8L" id="vq9UdHmPHY" role="1nq8_t">
-                              <ref role="a7OzE" node="vq9UdHmP$m" resolve="TDataType" />
-                            </node>
+                          <node concept="a7P8L" id="vq9UdHmPHY" role="iSaTp">
+                            <ref role="a7OzE" node="vq9UdHmP$m" resolve="TDataType" />
                           </node>
                         </node>
                       </node>
@@ -3751,10 +3737,8 @@
                         <ref role="ns1xF" to="54p4:7LI_gNMkMFB" resolve="logical" />
                         <node concept="nsMwS" id="7kXqzcTKe5s" role="ns1xD">
                           <ref role="nsMwP" to="54p4:7LI_gNMpTBn" resolve="dataType" />
-                          <node concept="1nq8_$" id="7kXqzcTKe5t" role="nsMwV">
-                            <node concept="a7P8L" id="7kXqzcTKe5u" role="1nq8_t">
-                              <ref role="a7OzE" node="7kXqzcTKe5y" resolve="TDataType" />
-                            </node>
+                          <node concept="a7P8L" id="7kXqzcTKe5u" role="iSaTp">
+                            <ref role="a7OzE" node="7kXqzcTKe5y" resolve="TDataType" />
                           </node>
                         </node>
                       </node>
@@ -3810,10 +3794,8 @@
                         <ref role="ns1xF" to="54p4:7LI_gNMkMFB" resolve="logical" />
                         <node concept="nsMwS" id="51ek2rScB9_" role="ns1xD">
                           <ref role="nsMwP" to="54p4:7LI_gNMpTBn" resolve="dataType" />
-                          <node concept="1nq8_$" id="51ek2rScB9A" role="nsMwV">
-                            <node concept="a7P8L" id="51ek2rScB9B" role="1nq8_t">
-                              <ref role="a7OzE" node="51ek2rScB9F" resolve="SDataType" />
-                            </node>
+                          <node concept="a7P8L" id="51ek2rScB9B" role="iSaTp">
+                            <ref role="a7OzE" node="51ek2rScB9F" resolve="SDataType" />
                           </node>
                         </node>
                       </node>
@@ -3901,10 +3883,8 @@
                         <ref role="ns1xF" to="54p4:7LI_gNMkMFB" resolve="logical" />
                         <node concept="nsMwS" id="7FV1iGvO12g" role="ns1xD">
                           <ref role="nsMwP" to="54p4:7LI_gNMpTBn" resolve="dataType" />
-                          <node concept="1nq8_$" id="7FV1iGvO12Q" role="nsMwV">
-                            <node concept="a7P8L" id="7FV1iGvO12P" role="1nq8_t">
-                              <ref role="a7OzE" node="7FV1iGvO12y" resolve="SDataType" />
-                            </node>
+                          <node concept="a7P8L" id="7FV1iGvO12P" role="iSaTp">
+                            <ref role="a7OzE" node="7FV1iGvO12y" resolve="SDataType" />
                           </node>
                         </node>
                       </node>
@@ -3974,10 +3954,8 @@
                         <ref role="ns1xF" to="54p4:7LI_gNMkMFB" resolve="logical" />
                         <node concept="nsMwS" id="7FV1iGvO1Wf" role="ns1xD">
                           <ref role="nsMwP" to="54p4:7LI_gNMpTBn" resolve="dataType" />
-                          <node concept="1nq8_$" id="7FV1iGvO1Wg" role="nsMwV">
-                            <node concept="a7P8L" id="7FV1iGvO1Wh" role="1nq8_t">
-                              <ref role="a7OzE" node="7FV1iGvO1W6" resolve="TDataType" />
-                            </node>
+                          <node concept="a7P8L" id="7FV1iGvO1Wh" role="iSaTp">
+                            <ref role="a7OzE" node="7FV1iGvO1W6" resolve="TDataType" />
                           </node>
                         </node>
                       </node>

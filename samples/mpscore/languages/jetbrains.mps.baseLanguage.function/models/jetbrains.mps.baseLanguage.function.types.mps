@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -84,9 +84,6 @@
         <child id="6856711987710888500" name="root" index="Hz6kd" />
       </concept>
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.ListNode" flags="ng" index="KCUsM" />
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
-        <child id="4780620083400582654" name="logical" index="1nq8_t" />
-      </concept>
       <concept id="960803923479540328" name="jetbrains.mps.logic.structure.LogicalVariableDataForm" flags="ng" index="3wAshV">
         <child id="960803923479549586" name="variable" index="3wAq21" />
       </concept>
@@ -147,7 +144,7 @@
       <concept id="861509610434289827" name="jetbrains.mps.lang.coderules.structure.ChildFeature" flags="ng" index="nstbe" />
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
+        <child id="1149537088045275069" name="item" index="iSaTp" />
       </concept>
       <concept id="8335224865066015764" name="jetbrains.mps.lang.coderules.structure.RulesList" flags="ng" index="AVZre">
         <reference id="3541122455446356437" name="extends" index="2YbDB9" />
@@ -268,18 +265,14 @@
                         <ref role="ns1xF" node="6$MmqWflYd6" resolve="function" />
                         <node concept="nsMwS" id="6$MmqWfmA9y" role="ns1xD">
                           <ref role="nsMwP" node="6$MmqWflYdw" resolve="params" />
-                          <node concept="1nq8_$" id="6$MmqWfmA9B" role="nsMwV">
-                            <node concept="a7P8L" id="6$MmqWfmA9A" role="1nq8_t">
-                              <ref role="a7OzE" node="6$MmqWfm_Rk" resolve="ParamsL" />
-                            </node>
+                          <node concept="a7P8L" id="6$MmqWfmA9A" role="iSaTp">
+                            <ref role="a7OzE" node="6$MmqWfm_Rk" resolve="ParamsL" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="6$MmqWfmAOi" role="ns1xD">
                           <ref role="nsMwP" node="6$MmqWflYdg" resolve="result" />
-                          <node concept="1nq8_$" id="6$MmqWfmAOq" role="nsMwV">
-                            <node concept="a7P8L" id="6$MmqWfmAOp" role="1nq8_t">
-                              <ref role="a7OzE" node="6$MmqWfm_Tg" resolve="ResL" />
-                            </node>
+                          <node concept="a7P8L" id="6$MmqWfmAOp" role="iSaTp">
+                            <ref role="a7OzE" node="6$MmqWfm_Tg" resolve="ResL" />
                           </node>
                         </node>
                       </node>
@@ -292,18 +285,14 @@
                         <ref role="ns1xF" node="6$MmqWflYd6" resolve="function" />
                         <node concept="nsMwS" id="6$MmqWfmAPz" role="ns1xD">
                           <ref role="nsMwP" node="6$MmqWflYdw" resolve="params" />
-                          <node concept="1nq8_$" id="6$MmqWfmAPC" role="nsMwV">
-                            <node concept="a7P8L" id="6$MmqWfmAPB" role="1nq8_t">
-                              <ref role="a7OzE" node="6$MmqWfm_SL" resolve="ParamsR" />
-                            </node>
+                          <node concept="a7P8L" id="6$MmqWfmAPB" role="iSaTp">
+                            <ref role="a7OzE" node="6$MmqWfm_SL" resolve="ParamsR" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="6$MmqWfmAPF" role="ns1xD">
                           <ref role="nsMwP" node="6$MmqWflYdg" resolve="result" />
-                          <node concept="1nq8_$" id="6$MmqWfmAPX" role="nsMwV">
-                            <node concept="a7P8L" id="6$MmqWfmAPW" role="1nq8_t">
-                              <ref role="a7OzE" node="6$MmqWfm_TR" resolve="ResR" />
-                            </node>
+                          <node concept="a7P8L" id="6$MmqWfmAPW" role="iSaTp">
+                            <ref role="a7OzE" node="6$MmqWfm_TR" resolve="ResR" />
                           </node>
                         </node>
                       </node>
@@ -540,18 +529,14 @@
               <ref role="ns1xF" node="6$MmqWflYd6" resolve="function" />
               <node concept="nsMwS" id="6$MmqWfmpv5" role="ns1xD">
                 <ref role="nsMwP" node="6$MmqWflYdw" resolve="params" />
-                <node concept="1nq8_$" id="6$MmqWfmw1Q" role="nsMwV">
-                  <node concept="a7P8L" id="2MpDLe9wpWd" role="1nq8_t">
-                    <ref role="a7OzE" node="2MpDLe9worb" resolve="ParamTypesList" />
-                  </node>
+                <node concept="a7P8L" id="2MpDLe9wpWd" role="iSaTp">
+                  <ref role="a7OzE" node="2MpDLe9worb" resolve="ParamTypesList" />
                 </node>
               </node>
               <node concept="nsMwS" id="6$MmqWfmwCT" role="ns1xD">
                 <ref role="nsMwP" node="6$MmqWflYdg" resolve="result" />
-                <node concept="1nq8_$" id="6$MmqWfmwD1" role="nsMwV">
-                  <node concept="a7P8L" id="6$MmqWfmwD0" role="1nq8_t">
-                    <ref role="a7OzE" node="6$MmqWfmrtC" resolve="ResultType" />
-                  </node>
+                <node concept="a7P8L" id="6$MmqWfmwD0" role="iSaTp">
+                  <ref role="a7OzE" node="6$MmqWfmrtC" resolve="ResultType" />
                 </node>
               </node>
             </node>

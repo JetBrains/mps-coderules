@@ -2,7 +2,7 @@
 <model ref="r:a40f7100-fd07-4b1c-98c5-112d92c92128(samples.fitch.firstOrderLogic.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="13" />
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
@@ -112,9 +112,6 @@
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
-        <child id="4780620083400582654" name="logical" index="1nq8_t" />
-      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
@@ -214,7 +211,7 @@
       <concept id="861509610434289827" name="jetbrains.mps.lang.coderules.structure.ChildFeature" flags="ng" index="nstbe" />
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
+        <child id="1149537088045275069" name="item" index="iSaTp" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
@@ -357,18 +354,14 @@
               <ref role="ns1xF" node="7VBaGntKJ6C" resolve="Equality" />
               <node concept="nsMwS" id="7VBaGntKJ8W" role="ns1xD">
                 <ref role="nsMwP" node="7VBaGntKJ6E" resolve="left" />
-                <node concept="1nq8_$" id="3w0n0hzlYjG" role="nsMwV">
-                  <node concept="a7P8L" id="3w0n0hzlYjF" role="1nq8_t">
-                    <ref role="a7OzE" node="3w0n0hzlYhK" resolve="Left" />
-                  </node>
+                <node concept="a7P8L" id="3w0n0hzlYjF" role="iSaTp">
+                  <ref role="a7OzE" node="3w0n0hzlYhK" resolve="Left" />
                 </node>
               </node>
               <node concept="nsMwS" id="7VBaGntKJ8X" role="ns1xD">
                 <ref role="nsMwP" node="7VBaGntKJ6F" resolve="right" />
-                <node concept="1nq8_$" id="3w0n0hzlYwu" role="nsMwV">
-                  <node concept="a7P8L" id="3w0n0hzlYwt" role="1nq8_t">
-                    <ref role="a7OzE" node="3w0n0hzlYhT" resolve="Right" />
-                  </node>
+                <node concept="a7P8L" id="3w0n0hzlYwt" role="iSaTp">
+                  <ref role="a7OzE" node="3w0n0hzlYhT" resolve="Right" />
                 </node>
               </node>
             </node>
@@ -473,18 +466,14 @@
                         <ref role="ns1xF" node="7VBaGntKJ6C" resolve="Equality" />
                         <node concept="nsMwS" id="7VBaGntKJ95" role="ns1xD">
                           <ref role="nsMwP" node="7VBaGntKJ6E" resolve="left" />
-                          <node concept="1nq8_$" id="3w0n0hzmj5J" role="nsMwV">
-                            <node concept="a7P8L" id="3w0n0hzmj5I" role="1nq8_t">
-                              <ref role="a7OzE" node="3w0n0hzmj4c" resolve="Term" />
-                            </node>
+                          <node concept="a7P8L" id="3w0n0hzmj5I" role="iSaTp">
+                            <ref role="a7OzE" node="3w0n0hzmj4c" resolve="Term" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="7VBaGntKJ96" role="ns1xD">
                           <ref role="nsMwP" node="7VBaGntKJ6F" resolve="right" />
-                          <node concept="1nq8_$" id="3w0n0hzmjcz" role="nsMwV">
-                            <node concept="a7P8L" id="2gcGVmG$Rdc" role="1nq8_t">
-                              <ref role="a7OzE" node="3w0n0hzmj4c" resolve="Term" />
-                            </node>
+                          <node concept="a7P8L" id="2gcGVmG$Rdc" role="iSaTp">
+                            <ref role="a7OzE" node="3w0n0hzmj4c" resolve="Term" />
                           </node>
                         </node>
                       </node>
@@ -1108,18 +1097,14 @@
                             <ref role="ns1xF" node="7VBaGntKJ6C" resolve="Equality" />
                             <node concept="nsMwS" id="7VBaGntKJ8Z" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6E" resolve="left" />
-                              <node concept="1nq8_$" id="3w0n0hzmnoI" role="nsMwV">
-                                <node concept="a7P8L" id="3w0n0hzmnoH" role="1nq8_t">
-                                  <ref role="a7OzE" node="3w0n0hzmjfs" resolve="EqLeft" />
-                                </node>
+                              <node concept="a7P8L" id="3w0n0hzmnoH" role="iSaTp">
+                                <ref role="a7OzE" node="3w0n0hzmjfs" resolve="EqLeft" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJ90" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6F" resolve="right" />
-                              <node concept="1nq8_$" id="3w0n0hzmnri" role="nsMwV">
-                                <node concept="a7P8L" id="3w0n0hzmnrh" role="1nq8_t">
-                                  <ref role="a7OzE" node="3w0n0hzmjfI" resolve="EqRight" />
-                                </node>
+                              <node concept="a7P8L" id="3w0n0hzmnrh" role="iSaTp">
+                                <ref role="a7OzE" node="3w0n0hzmjfI" resolve="EqRight" />
                               </node>
                             </node>
                           </node>
@@ -1889,18 +1874,14 @@
                             <ref role="ns1xF" node="7VBaGntKJ6C" resolve="Equality" />
                             <node concept="nsMwS" id="7VBaGntKJ92" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6E" resolve="left" />
-                              <node concept="1nq8_$" id="3w0n0hznwzX" role="nsMwV">
-                                <node concept="a7P8L" id="3w0n0hznwzY" role="1nq8_t">
-                                  <ref role="a7OzE" node="3w0n0hznw$l" resolve="EqLeft" />
-                                </node>
+                              <node concept="a7P8L" id="3w0n0hznwzY" role="iSaTp">
+                                <ref role="a7OzE" node="3w0n0hznw$l" resolve="EqLeft" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJ93" role="ns1xD">
                               <ref role="nsMwP" node="7VBaGntKJ6F" resolve="right" />
-                              <node concept="1nq8_$" id="3w0n0hznw$3" role="nsMwV">
-                                <node concept="a7P8L" id="3w0n0hznw$4" role="1nq8_t">
-                                  <ref role="a7OzE" node="3w0n0hznw$m" resolve="EqRight" />
-                                </node>
+                              <node concept="a7P8L" id="3w0n0hznw$4" role="iSaTp">
+                                <ref role="a7OzE" node="3w0n0hznw$m" resolve="EqRight" />
                               </node>
                             </node>
                           </node>

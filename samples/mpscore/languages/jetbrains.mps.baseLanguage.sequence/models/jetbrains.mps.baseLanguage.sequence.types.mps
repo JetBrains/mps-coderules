@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -57,9 +57,6 @@
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.ListNode" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
-        <child id="4780620083400582654" name="logical" index="1nq8_t" />
-      </concept>
       <concept id="960803923479540328" name="jetbrains.mps.logic.structure.LogicalVariableDataForm" flags="ng" index="3wAshV">
         <child id="960803923479549586" name="variable" index="3wAq21" />
       </concept>
@@ -99,6 +96,7 @@
       <concept id="861509610434289827" name="jetbrains.mps.lang.coderules.structure.ChildFeature" flags="ng" index="nstbe" />
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
+        <child id="1149537088045275069" name="item" index="iSaTp" />
         <child id="861509610434435670" name="getter" index="nsMwV" />
       </concept>
       <concept id="8335224865066015764" name="jetbrains.mps.lang.coderules.structure.RulesList" flags="ng" index="AVZre">
@@ -255,10 +253,8 @@
               <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
               <node concept="nsMwS" id="3Z1xyIvWi8a" role="ns1xD">
                 <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                <node concept="1nq8_$" id="3Z1xyIvWi8f" role="nsMwV">
-                  <node concept="a7P8L" id="3Z1xyIvWi8e" role="1nq8_t">
-                    <ref role="a7OzE" node="3Z1xyIvWi72" resolve="Elem" />
-                  </node>
+                <node concept="a7P8L" id="3Z1xyIvWi8e" role="iSaTp">
+                  <ref role="a7OzE" node="3Z1xyIvWi72" resolve="Elem" />
                 </node>
               </node>
             </node>
@@ -313,10 +309,8 @@
               <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
               <node concept="nsMwS" id="2GIrmkQ2LRi" role="ns1xD">
                 <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                <node concept="1nq8_$" id="2GIrmkQ2LRn" role="nsMwV">
-                  <node concept="a7P8L" id="2GIrmkQ2LZQ" role="1nq8_t">
-                    <ref role="a7OzE" node="1oUE7CXmmkR" resolve="Elem" />
-                  </node>
+                <node concept="a7P8L" id="2GIrmkQ2LZQ" role="iSaTp">
+                  <ref role="a7OzE" node="1oUE7CXmmkR" resolve="Elem" />
                 </node>
               </node>
             </node>
@@ -358,10 +352,8 @@
                         <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
                         <node concept="nsMwS" id="3MFPGC50KD$" role="ns1xD">
                           <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="3MFPGC50KD_" role="nsMwV">
-                            <node concept="a7P8L" id="3MFPGC50KDA" role="1nq8_t">
-                              <ref role="a7OzE" node="3MFPGC50KDL" resolve="TElem" />
-                            </node>
+                          <node concept="a7P8L" id="3MFPGC50KDA" role="iSaTp">
+                            <ref role="a7OzE" node="3MFPGC50KDL" resolve="TElem" />
                           </node>
                         </node>
                       </node>
@@ -374,16 +366,12 @@
                         <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
                         <node concept="nsMwS" id="3MFPGC50KDE" role="ns1xD">
                           <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="6BxgBHb9Wc2" role="nsMwV">
-                            <node concept="ns1u0" id="6BxgBHb9Wc1" role="1nq8_t">
-                              <ref role="ns1xF" to="kqnc:JOGAOsVt2u" resolve="upperBound" />
-                              <node concept="nsMwS" id="6BxgBHb9Wc7" role="ns1xD">
-                                <ref role="nsMwP" to="kqnc:39Sam6YgyvP" resolve="parameter" />
-                                <node concept="1nq8_$" id="6BxgBHb9Wcf" role="nsMwV">
-                                  <node concept="a7P8L" id="6BxgBHb9Wce" role="1nq8_t">
-                                    <ref role="a7OzE" node="3MFPGC50KDK" resolve="SElem" />
-                                  </node>
-                                </node>
+                          <node concept="ns1u0" id="6BxgBHb9Wc1" role="iSaTp">
+                            <ref role="ns1xF" to="kqnc:JOGAOsVt2u" resolve="upperBound" />
+                            <node concept="nsMwS" id="6BxgBHb9Wc7" role="ns1xD">
+                              <ref role="nsMwP" to="kqnc:39Sam6YgyvP" resolve="parameter" />
+                              <node concept="a7P8L" id="6BxgBHb9Wce" role="iSaTp">
+                                <ref role="a7OzE" node="3MFPGC50KDK" resolve="SElem" />
                               </node>
                             </node>
                           </node>
@@ -458,10 +446,8 @@
                         <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
                         <node concept="nsMwS" id="6BxgBHb9W8t" role="ns1xD">
                           <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="6BxgBHb9W8u" role="nsMwV">
-                            <node concept="a7P8L" id="6BxgBHb9W8v" role="1nq8_t">
-                              <ref role="a7OzE" node="6BxgBHb9W8F" resolve="TElem" />
-                            </node>
+                          <node concept="a7P8L" id="6BxgBHb9W8v" role="iSaTp">
+                            <ref role="a7OzE" node="6BxgBHb9W8F" resolve="TElem" />
                           </node>
                         </node>
                       </node>
@@ -474,10 +460,8 @@
                         <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
                         <node concept="nsMwS" id="6BxgBHb9W8z" role="ns1xD">
                           <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="6BxgBHb9W8$" role="nsMwV">
-                            <node concept="a7P8L" id="6BxgBHb9W8_" role="1nq8_t">
-                              <ref role="a7OzE" node="6BxgBHb9W8E" resolve="SElem" />
-                            </node>
+                          <node concept="a7P8L" id="6BxgBHb9W8_" role="iSaTp">
+                            <ref role="a7OzE" node="6BxgBHb9W8E" resolve="SElem" />
                           </node>
                         </node>
                       </node>
@@ -581,10 +565,8 @@
                         <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
                         <node concept="nsMwS" id="2GIrmkQ2JlQ" role="ns1xD">
                           <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="2GIrmkQ2JlV" role="nsMwV">
-                            <node concept="a7P8L" id="2GIrmkQ2JlU" role="1nq8_t">
-                              <ref role="a7OzE" node="3MFPGC50D2g" resolve="SElem" />
-                            </node>
+                          <node concept="a7P8L" id="2GIrmkQ2JlU" role="iSaTp">
+                            <ref role="a7OzE" node="3MFPGC50D2g" resolve="SElem" />
                           </node>
                         </node>
                       </node>
@@ -642,10 +624,8 @@
                         <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
                         <node concept="nsMwS" id="QTGPMEwRUC" role="ns1xD">
                           <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="QTGPMEwRUD" role="nsMwV">
-                            <node concept="a7P8L" id="QTGPMEwRUE" role="1nq8_t">
-                              <ref role="a7OzE" node="QTGPMEwRUK" resolve="SElem" />
-                            </node>
+                          <node concept="a7P8L" id="QTGPMEwRUE" role="iSaTp">
+                            <ref role="a7OzE" node="QTGPMEwRUK" resolve="SElem" />
                           </node>
                         </node>
                       </node>
@@ -706,13 +686,11 @@
                         </node>
                         <node concept="nsMwS" id="QTGPMEwRV1" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
-                          <node concept="1nq8_$" id="QTGPMEwRV2" role="nsMwV">
-                            <node concept="Hz6ka" id="QTGPMEwRV3" role="1nq8_t">
-                              <node concept="KCUsM" id="QTGPMEwRV4" role="Hz6kd">
-                                <node concept="3wAshV" id="QTGPMEwRV5" role="KCVpo">
-                                  <node concept="a7P8L" id="QTGPMEwRV6" role="3wAq21">
-                                    <ref role="a7OzE" node="QTGPMEwRUJ" resolve="TElem" />
-                                  </node>
+                          <node concept="Hz6ka" id="QTGPMEwRV3" role="iSaTp">
+                            <node concept="KCUsM" id="QTGPMEwRV4" role="Hz6kd">
+                              <node concept="3wAshV" id="QTGPMEwRV5" role="KCVpo">
+                                <node concept="a7P8L" id="QTGPMEwRV6" role="3wAq21">
+                                  <ref role="a7OzE" node="QTGPMEwRUJ" resolve="TElem" />
                                 </node>
                               </node>
                             </node>
@@ -764,10 +742,8 @@
                         <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
                         <node concept="nsMwS" id="2GIrmkQ2Jmk" role="ns1xD">
                           <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="2GIrmkQ2Jmp" role="nsMwV">
-                            <node concept="a7P8L" id="2GIrmkQ2Jmo" role="1nq8_t">
-                              <ref role="a7OzE" node="3MFPGC50Fa8" resolve="TElem" />
-                            </node>
+                          <node concept="a7P8L" id="2GIrmkQ2Jmo" role="iSaTp">
+                            <ref role="a7OzE" node="3MFPGC50Fa8" resolve="TElem" />
                           </node>
                         </node>
                       </node>
@@ -830,13 +806,11 @@
                         </node>
                         <node concept="nsMwS" id="3MFPGC50Fak" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
-                          <node concept="1nq8_$" id="4NtT$ZxGOm4" role="nsMwV">
-                            <node concept="Hz6ka" id="4NtT$ZxGOm3" role="1nq8_t">
-                              <node concept="KCUsM" id="4NtT$ZxGOm9" role="Hz6kd">
-                                <node concept="3wAshV" id="4NtT$ZxGOmf" role="KCVpo">
-                                  <node concept="a7P8L" id="4NtT$ZxGOme" role="3wAq21">
-                                    <ref role="a7OzE" node="3MFPGC50Fa8" resolve="TElem" />
-                                  </node>
+                          <node concept="Hz6ka" id="4NtT$ZxGOm3" role="iSaTp">
+                            <node concept="KCUsM" id="4NtT$ZxGOm9" role="Hz6kd">
+                              <node concept="3wAshV" id="4NtT$ZxGOmf" role="KCVpo">
+                                <node concept="a7P8L" id="4NtT$ZxGOme" role="3wAq21">
+                                  <ref role="a7OzE" node="3MFPGC50Fa8" resolve="TElem" />
                                 </node>
                               </node>
                             </node>
@@ -883,10 +857,8 @@
                         <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
                         <node concept="nsMwS" id="61SyIbXrh2X" role="ns1xD">
                           <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="61SyIbXrh32" role="nsMwV">
-                            <node concept="a7P8L" id="61SyIbXrh31" role="1nq8_t">
-                              <ref role="a7OzE" node="61SyIbXrh2w" resolve="LeftE" />
-                            </node>
+                          <node concept="a7P8L" id="61SyIbXrh31" role="iSaTp">
+                            <ref role="a7OzE" node="61SyIbXrh2w" resolve="LeftE" />
                           </node>
                         </node>
                       </node>
@@ -899,10 +871,8 @@
                         <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
                         <node concept="nsMwS" id="61SyIbXrh35" role="ns1xD">
                           <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="61SyIbXrh3a" role="nsMwV">
-                            <node concept="a7P8L" id="61SyIbXrh39" role="1nq8_t">
-                              <ref role="a7OzE" node="61SyIbXrh2R" resolve="RightE" />
-                            </node>
+                          <node concept="a7P8L" id="61SyIbXrh39" role="iSaTp">
+                            <ref role="a7OzE" node="61SyIbXrh2R" resolve="RightE" />
                           </node>
                         </node>
                       </node>
@@ -958,10 +928,8 @@
                         <ref role="ns1xF" node="3MFPGC50Ab3" resolve="sequence" />
                         <node concept="nsMwS" id="61SyIbXrh4H" role="ns1xD">
                           <ref role="nsMwP" node="3MFPGC50Aiu" resolve="elem" />
-                          <node concept="1nq8_$" id="61SyIbXrh4M" role="nsMwV">
-                            <node concept="a7P8L" id="61SyIbXrh4L" role="1nq8_t">
-                              <ref role="a7OzE" node="61SyIbXrh3t" resolve="ResE" />
-                            </node>
+                          <node concept="a7P8L" id="61SyIbXrh4L" role="iSaTp">
+                            <ref role="a7OzE" node="61SyIbXrh3t" resolve="ResE" />
                           </node>
                         </node>
                       </node>
