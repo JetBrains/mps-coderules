@@ -2443,11 +2443,6 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="4NtT$ZxGTOa" role="3bR37C">
-          <node concept="3bR9La" id="4NtT$ZxGTOb" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:7BVjoXzUxkQ" resolve="jetbrains.mps.logic" />
-          </node>
-        </node>
         <node concept="1BupzO" id="4NtT$ZxGTOk" role="3bR31x">
           <property role="3ZfqAx" value="models" />
           <property role="1Hdu6h" value="true" />
@@ -2630,6 +2625,11 @@
         <node concept="1SiIV0" id="4XsNDZX9shP" role="3bR37C">
           <node concept="3bR9La" id="4XsNDZX9shQ" role="1SiIV1">
             <ref role="3bR37D" to="zqd8:4XsNDZX1tUA" resolve="jetbrains.mps.coderules.testhelper" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="ZNYugskA_n" role="3bR37C">
+          <node concept="3bR9La" id="ZNYugskA_o" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
           </node>
         </node>
       </node>
