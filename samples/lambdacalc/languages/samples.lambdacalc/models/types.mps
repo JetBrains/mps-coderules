@@ -2,7 +2,7 @@
 <model ref="r:d628db6e-191f-4c0f-a802-15ad423aa41e(samples.lambdacalc.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="23" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
     <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="samples.lambdacalc" version="-1" />
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
@@ -394,7 +394,6 @@
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
         <child id="1149537088045275069" name="item" index="iSaTp" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
@@ -10243,8 +10242,10 @@
                             <ref role="ns1xF" node="3vXKzDNDVgC" resolve="Constraint" />
                             <node concept="nsMwS" id="47tET_W_5pl" role="ns1xD">
                               <ref role="nsMwP" node="47tET_W4Sc3" resolve="typeclass" />
-                              <node concept="37vLTw" id="47tET_W_5pp" role="nsMwV">
-                                <ref role="3cqZAo" node="47tET_WsEYM" resolve="tc" />
+                              <node concept="37jhX" id="ZNYugu2LiS" role="iSaTp">
+                                <node concept="37vLTw" id="47tET_W_5pp" role="37jj2">
+                                  <ref role="3cqZAo" node="47tET_WsEYM" resolve="tc" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -15531,8 +15532,10 @@
               <ref role="ns1xF" node="3vXKzDNDVgC" resolve="Constraint" />
               <node concept="nsMwS" id="5itBwM9nSQi" role="ns1xD">
                 <ref role="nsMwP" node="47tET_W4Sc3" resolve="typeclass" />
-                <node concept="3hN9Ij" id="7L5omgeUgbA" role="nsMwV">
-                  <ref role="3hLkJx" node="5itBwM9nSMV" resolve="tc" />
+                <node concept="37jhX" id="ZNYugu2LiT" role="iSaTp">
+                  <node concept="3hN9Ij" id="7L5omgeUgbA" role="37jj2">
+                    <ref role="3hLkJx" node="5itBwM9nSMV" resolve="tc" />
+                  </node>
                 </node>
               </node>
             </node>

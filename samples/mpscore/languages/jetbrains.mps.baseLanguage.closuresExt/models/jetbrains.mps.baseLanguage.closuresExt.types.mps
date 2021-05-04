@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="23" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="13" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
@@ -446,7 +446,6 @@
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
         <child id="1149537088045275069" name="item" index="iSaTp" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
@@ -1484,14 +1483,18 @@
                                           <ref role="ns1xF" to="kqnc:6u6$XO93ntc" resolve="feedback" />
                                           <node concept="nsMwS" id="6u6$XO96Vm8" role="ns1xD">
                                             <ref role="nsMwP" to="kqnc:6u6$XO93nuB" resolve="node" />
-                                            <node concept="37vLTw" id="6u6$XO9aKvp" role="nsMwV">
-                                              <ref role="3cqZAo" node="6u6$XO9aJnA" resolve="exitPoint" />
+                                            <node concept="37jhX" id="ZNYugu2Lj9" role="iSaTp">
+                                              <node concept="37vLTw" id="6u6$XO9aKvp" role="37jj2">
+                                                <ref role="3cqZAo" node="6u6$XO9aJnA" resolve="exitPoint" />
+                                              </node>
                                             </node>
                                           </node>
                                           <node concept="nsMwS" id="6u6$XO96Vm9" role="ns1xD">
                                             <ref role="nsMwP" to="kqnc:6u6$XO93nuN" resolve="msg" />
-                                            <node concept="Xl_RD" id="2MpDLe9_Ky4" role="nsMwV">
-                                              <property role="Xl_RC" value="incompatible types" />
+                                            <node concept="37jhX" id="ZNYugu2Lja" role="iSaTp">
+                                              <node concept="Xl_RD" id="2MpDLe9_Ky4" role="37jj2">
+                                                <property role="Xl_RC" value="incompatible types" />
+                                              </node>
                                             </node>
                                           </node>
                                         </node>
@@ -3045,14 +3048,18 @@
                   <ref role="ns1xF" to="kqnc:6u6$XO93ntc" resolve="feedback" />
                   <node concept="nsMwS" id="6u6$XO96Vm4" role="ns1xD">
                     <ref role="nsMwP" to="kqnc:6u6$XO93nuB" resolve="node" />
-                    <node concept="37vLTw" id="6u6$XO9aoZX" role="nsMwV">
-                      <ref role="3cqZAo" node="6u6$XO9annW" resolve="arg" />
+                    <node concept="37jhX" id="ZNYugu2Ljb" role="iSaTp">
+                      <node concept="37vLTw" id="6u6$XO9aoZX" role="37jj2">
+                        <ref role="3cqZAo" node="6u6$XO9annW" resolve="arg" />
+                      </node>
                     </node>
                   </node>
                   <node concept="nsMwS" id="6u6$XO96Vm5" role="ns1xD">
                     <ref role="nsMwP" to="kqnc:6u6$XO93nuN" resolve="msg" />
-                    <node concept="Xl_RD" id="2MpDLe9_IWQ" role="nsMwV">
-                      <property role="Xl_RC" value="incompatible types" />
+                    <node concept="37jhX" id="ZNYugu2Ljc" role="iSaTp">
+                      <node concept="Xl_RD" id="2MpDLe9_IWQ" role="37jj2">
+                        <property role="Xl_RC" value="incompatible types" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6160,8 +6167,10 @@
                                 <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                                 <node concept="nsMwS" id="554EtBH_$CP" role="ns1xD">
                                   <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                                  <node concept="3A2sRY" id="554EtBH_$CR" role="nsMwV">
-                                    <ref role="3A2yKK" node="554EtBH_$E2" resolve="cls" />
+                                  <node concept="37jhX" id="ZNYugu2Ljd" role="iSaTp">
+                                    <node concept="3A2sRY" id="554EtBH_$CR" role="37jj2">
+                                      <ref role="3A2yKK" node="554EtBH_$E2" resolve="cls" />
+                                    </node>
                                   </node>
                                 </node>
                                 <node concept="nsMwS" id="554EtBH_$CT" role="ns1xD">
@@ -6431,8 +6440,10 @@
                             <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                             <node concept="nsMwS" id="2uP4pEQ4oP" role="ns1xD">
                               <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                              <node concept="3A2sRY" id="2uP4pEQ4Da" role="nsMwV">
-                                <ref role="3A2yKK" node="2uP4pEQ4mG" resolve="cls" />
+                              <node concept="37jhX" id="ZNYugu2Lje" role="iSaTp">
+                                <node concept="3A2sRY" id="2uP4pEQ4Da" role="37jj2">
+                                  <ref role="3A2yKK" node="2uP4pEQ4mG" resolve="cls" />
+                                </node>
                               </node>
                             </node>
                           </node>

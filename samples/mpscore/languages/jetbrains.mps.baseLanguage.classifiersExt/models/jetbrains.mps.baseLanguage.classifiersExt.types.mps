@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="23" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -200,7 +200,6 @@
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
         <child id="1149537088045275069" name="item" index="iSaTp" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
@@ -1246,14 +1245,16 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="2q9s7fpQhq0" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="2OqwBi" id="2q9s7fpQhq1" role="nsMwV">
-                            <node concept="2c44tf" id="2q9s7fpQhq2" role="2Oq$k0">
-                              <node concept="3uibUv" id="2q9s7fpQhq3" role="2c44tc">
-                                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                          <node concept="37jhX" id="ZNYugu2LiY" role="iSaTp">
+                            <node concept="2OqwBi" id="2q9s7fpQhq1" role="37jj2">
+                              <node concept="2c44tf" id="2q9s7fpQhq2" role="2Oq$k0">
+                                <node concept="3uibUv" id="2q9s7fpQhq3" role="2c44tc">
+                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                                </node>
                               </node>
-                            </node>
-                            <node concept="3TrEf2" id="2q9s7fpQhq4" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
+                              <node concept="3TrEf2" id="2q9s7fpQhq4" role="2OqNvi">
+                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -1289,12 +1290,14 @@
               <ref role="ns1xF" node="2q9s7foUKiD" resolve="defaultClassifier" />
               <node concept="nsMwS" id="2q9s7foULVF" role="ns1xD">
                 <ref role="nsMwP" node="2q9s7foUKjg" resolve="classifier" />
-                <node concept="2OqwBi" id="2q9s7foULXk" role="nsMwV">
-                  <node concept="3j8tct" id="2q9s7foULX0" role="2Oq$k0">
-                    <ref role="3j8tcu" node="2q9s7foULiU" resolve="dc" />
-                  </node>
-                  <node concept="3TrEf2" id="2q9s7foUM_k" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp4f:hyWumMg" resolve="classifier" />
+                <node concept="37jhX" id="ZNYugu2LiZ" role="iSaTp">
+                  <node concept="2OqwBi" id="2q9s7foULXk" role="37jj2">
+                    <node concept="3j8tct" id="2q9s7foULX0" role="2Oq$k0">
+                      <ref role="3j8tcu" node="2q9s7foULiU" resolve="dc" />
+                    </node>
+                    <node concept="3TrEf2" id="2q9s7foUM_k" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tp4f:hyWumMg" resolve="classifier" />
+                    </node>
                   </node>
                 </node>
               </node>

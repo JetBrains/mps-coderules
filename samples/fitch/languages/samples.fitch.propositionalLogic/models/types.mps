@@ -2,7 +2,7 @@
 <model ref="r:30d249b0-c2b0-4934-8bd8-e1d7a37c3b3b(samples.fitch.propositionalLogic.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="22" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="23" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="13" />
@@ -171,7 +171,6 @@
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
         <child id="1149537088045275069" name="item" index="iSaTp" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
@@ -295,12 +294,14 @@
               <ref role="ns1xF" node="7VBaGntKJ7X" resolve="Const" />
               <node concept="nsMwS" id="5itBwM9U1$2" role="ns1xD">
                 <ref role="nsMwP" node="7VBaGntKJ7Z" resolve="name" />
-                <node concept="2OqwBi" id="5itBwM9U2m7" role="nsMwV">
-                  <node concept="3j8tct" id="5itBwM9U29A" role="2Oq$k0">
-                    <ref role="3j8tcu" node="5itBwM9U0o0" resolve="prop" />
-                  </node>
-                  <node concept="3TrcHB" id="5itBwM9U2CP" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                <node concept="37jhX" id="ZNYugu2LiN" role="iSaTp">
+                  <node concept="2OqwBi" id="5itBwM9U2m7" role="37jj2">
+                    <node concept="3j8tct" id="5itBwM9U29A" role="2Oq$k0">
+                      <ref role="3j8tcu" node="5itBwM9U0o0" resolve="prop" />
+                    </node>
+                    <node concept="3TrcHB" id="5itBwM9U2CP" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
                   </node>
                 </node>
               </node>
