@@ -423,7 +423,13 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup?,
                 val reactivated = layers.any { it.containsOccurrence(occurrence) }
 
                 // propagation history
-                if (propagation && reactivated) return nextGeneration().reset()
+                if (propagation && reactivated) {
+                    // TODO: need a better way to process occurrences that are activated but ignored
+                    // TODO: introduce a flag on ReteNode?
+                    // TODO: same concerns "unique signatures" and "consumed signatures"
+                    lastIntroduced = occurrence
+                    return nextGeneration().reset()
+                }
 
                 var firstAffected = -1
                 for ((idx, layer) in layers.withIndex()) {
