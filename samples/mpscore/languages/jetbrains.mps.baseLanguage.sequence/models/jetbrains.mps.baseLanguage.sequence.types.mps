@@ -37,11 +37,6 @@
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
     </language>
-    <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
-      <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
-        <child id="1196350785114" name="quotedNode" index="2c44tc" />
-      </concept>
-    </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
       <concept id="8456919074574710634" name="jetbrains.mps.logic.structure.ExpressionItem" flags="ng" index="37jhX">
         <child id="8456919074574710741" name="code" index="37jj2" />
@@ -69,9 +64,6 @@
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
-      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
-        <reference id="1138056516764" name="link" index="3Tt5mk" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -81,6 +73,9 @@
     <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules">
       <concept id="1618328391714763069" name="jetbrains.mps.lang.coderules.structure.MacroTable" flags="ng" index="0oKg$">
         <child id="1618328391714763070" name="macro" index="0oKgB" />
+      </concept>
+      <concept id="1149537088067116625" name="jetbrains.mps.lang.coderules.structure.NodeRefItem" flags="ng" index="h$QuP">
+        <reference id="1149537088067125001" name="ref" index="h$OrH" />
       </concept>
       <concept id="861509610434242029" name="jetbrains.mps.lang.coderules.structure.TermConstructor" flags="ng" index="ns1u0">
         <reference id="861509610434243078" name="decl" index="ns1xF" />
@@ -540,17 +535,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="QTGPMEwS2c" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Lqe" role="iSaTp">
-                            <node concept="2OqwBi" id="QTGPMEwS2d" role="37jj2">
-                              <node concept="2c44tf" id="QTGPMEwS2e" role="2Oq$k0">
-                                <node concept="3uibUv" id="QTGPMEwS2f" role="2c44tc">
-                                  <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="QTGPMEwS2g" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIk" role="iSaTp">
+                            <ref role="h$OrH" to="wyt6:~Iterable" resolve="Iterable" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="QTGPMEwS5l" role="ns1xD">
@@ -679,17 +665,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="QTGPMEwRUW" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Lqg" role="iSaTp">
-                            <node concept="2OqwBi" id="QTGPMEwRUX" role="37jj2">
-                              <node concept="2c44tf" id="QTGPMEwRUY" role="2Oq$k0">
-                                <node concept="3uibUv" id="QTGPMEwRUZ" role="2c44tc">
-                                  <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="QTGPMEwRV0" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIl" role="iSaTp">
+                            <ref role="h$OrH" to="wyt6:~Iterable" resolve="Iterable" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="QTGPMEwRV1" role="ns1xD">
@@ -801,17 +778,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="3MFPGC50Fah" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Lqh" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7_k" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7_l" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7_m" role="2c44tc">
-                                  <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7_n" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIm" role="iSaTp">
+                            <ref role="h$OrH" to="wyt6:~Iterable" resolve="Iterable" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="3MFPGC50Fak" role="ns1xD">

@@ -181,6 +181,9 @@
         <property id="7326790520856501351" name="severity" index="26X25f" />
         <child id="7326790520856501349" name="message" index="26X25d" />
       </concept>
+      <concept id="1149537088067116625" name="jetbrains.mps.lang.coderules.structure.NodeRefItem" flags="ng" index="h$QuP">
+        <reference id="1149537088067125001" name="ref" index="h$OrH" />
+      </concept>
       <concept id="861509610434242029" name="jetbrains.mps.lang.coderules.structure.TermConstructor" flags="ng" index="ns1u0">
         <reference id="861509610434243078" name="decl" index="ns1xF" />
         <child id="861509610434243076" name="override" index="ns1xD" />
@@ -1245,17 +1248,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="2q9s7fpQhq0" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2LiY" role="iSaTp">
-                            <node concept="2OqwBi" id="2q9s7fpQhq1" role="37jj2">
-                              <node concept="2c44tf" id="2q9s7fpQhq2" role="2Oq$k0">
-                                <node concept="3uibUv" id="2q9s7fpQhq3" role="2c44tc">
-                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="2q9s7fpQhq4" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIg" role="iSaTp">
+                            <ref role="h$OrH" to="wyt6:~Object" resolve="Object" />
                           </node>
                         </node>
                       </node>

@@ -250,6 +250,9 @@
         <reference id="6097203247219331496" name="extends" index="3tg4Y$" />
         <child id="1618328391714763070" name="macro" index="0oKgB" />
       </concept>
+      <concept id="1149537088067116625" name="jetbrains.mps.lang.coderules.structure.NodeRefItem" flags="ng" index="h$QuP">
+        <reference id="1149537088067125001" name="ref" index="h$OrH" />
+      </concept>
       <concept id="861509610434242029" name="jetbrains.mps.lang.coderules.structure.TermConstructor" flags="ng" index="ns1u0">
         <reference id="861509610434243078" name="decl" index="ns1xF" />
         <child id="861509610434243076" name="override" index="ns1xD" />
@@ -5503,17 +5506,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="1oUE7CX4Ntb" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Ljs" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7$k" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7$l" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7$m" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7$n" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIw" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~Collection" resolve="Collection" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="1oUE7CX4Ntd" role="ns1xD">
@@ -5589,17 +5583,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="1oUE7CX4NRA" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Ljt" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7$o" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7$p" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7$q" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7$r" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIx" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~List" resolve="List" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="1oUE7CX4NRD" role="ns1xD">
@@ -5675,17 +5660,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="1oUE7CX4NUB" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Lju" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7$s" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7$t" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7$u" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~LinkedList" resolve="LinkedList" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7$v" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIy" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~LinkedList" resolve="LinkedList" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="1oUE7CX4NUE" role="ns1xD">
@@ -5761,17 +5737,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="1oUE7CX4NVa" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Ljv" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7$w" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7$x" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7$y" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7$z" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIz" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~Deque" resolve="Deque" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="1oUE7CX4NVd" role="ns1xD">
@@ -5847,17 +5814,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="1oUE7CX4NZc" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Ljw" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7$$" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7$_" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7$A" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7$B" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgI$" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~Deque" resolve="Deque" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="1oUE7CX4NZf" role="ns1xD">
@@ -5933,17 +5891,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="1oUE7CX4NZJ" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Ljx" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7$C" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7$D" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7$E" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7$F" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgI_" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~Deque" resolve="Deque" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="1oUE7CX4NZM" role="ns1xD">
@@ -6019,17 +5968,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="1oUE7CX4O2k" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Ljy" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7$G" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7$H" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7$I" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7$J" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIA" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~Set" resolve="Set" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="1oUE7CX4O2n" role="ns1xD">
@@ -6105,17 +6045,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="1oUE7CX5kRc" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Ljz" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7$K" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7$L" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7$M" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~SortedSet" resolve="SortedSet" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7$N" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIB" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~SortedSet" resolve="SortedSet" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="1oUE7CX5kRf" role="ns1xD">
@@ -6200,17 +6131,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="1oUE7CX5kO1" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Lj$" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7$O" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7$P" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7$Q" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7$R" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIC" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~Map" resolve="Map" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="1oUE7CX5kO4" role="ns1xD">
@@ -6300,17 +6222,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="1oUE7CX5lrO" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2Lj_" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7$S" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7$T" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7$U" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~SortedMap" resolve="SortedMap" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7$V" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgID" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~SortedMap" resolve="SortedMap" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="1oUE7CX5lrR" role="ns1xD">
@@ -6403,17 +6316,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="1oUE7CX4O90" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2LjA" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7$W" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7$X" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7$Y" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7$Z" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIE" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~Iterator" resolve="Iterator" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="1oUE7CX4O93" role="ns1xD">
@@ -6501,17 +6405,8 @@
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                         <node concept="nsMwS" id="3Z1xyIwARfT" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="37jhX" id="ZNYugu2LjB" role="iSaTp">
-                            <node concept="2OqwBi" id="3CulEO1Y7_0" role="37jj2">
-                              <node concept="2c44tf" id="3CulEO1Y7_1" role="2Oq$k0">
-                                <node concept="3uibUv" id="3CulEO1Y7_2" role="2c44tc">
-                                  <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="3CulEO1Y7_3" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                              </node>
-                            </node>
+                          <node concept="h$QuP" id="ZNYuguvgIF" role="iSaTp">
+                            <ref role="h$OrH" to="33ny:~Iterator" resolve="Iterator" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="3Z1xyIwARfW" role="ns1xD">
@@ -20075,17 +19970,8 @@
                             <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                             <node concept="nsMwS" id="3Z1xyIwnvq0" role="ns1xD">
                               <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                              <node concept="37jhX" id="ZNYugu2Lks" role="iSaTp">
-                                <node concept="2OqwBi" id="3CulEO1Y7_4" role="37jj2">
-                                  <node concept="2c44tf" id="3CulEO1Y7_5" role="2Oq$k0">
-                                    <node concept="3uibUv" id="3CulEO1Y7_6" role="2c44tc">
-                                      <ref role="3uigEE" to="wyt6:~Comparable" resolve="Comparable" />
-                                    </node>
-                                  </node>
-                                  <node concept="3TrEf2" id="3CulEO1Y7_7" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                                  </node>
-                                </node>
+                              <node concept="h$QuP" id="ZNYuguvgIG" role="iSaTp">
+                                <ref role="h$OrH" to="wyt6:~Comparable" resolve="Comparable" />
                               </node>
                             </node>
                             <node concept="nsMwS" id="3Z1xyIwnvq3" role="ns1xD">
