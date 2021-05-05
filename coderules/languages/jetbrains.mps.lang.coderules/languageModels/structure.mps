@@ -1666,11 +1666,17 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="ZNYugt1SnT">
-    <property role="EcuMT" value="1149537088044500473" />
-    <property role="3GE5qa" value="term.feature" />
-    <property role="TrG5h" value="NodeRefFeature" />
-    <ref role="1TJDcQ" node="JOGAOsxiL_" resolve="TermFeature" />
+  <node concept="1TIwiD" id="ZNYuguo9Th">
+    <property role="EcuMT" value="1149537088067116625" />
+    <property role="TrG5h" value="NodeRefItem" />
+    <property role="34LRSv" value="^" />
+    <property role="R4oN_" value="reference to a node" />
+    <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    <node concept="1TJgyj" id="ZNYuguobW9" role="1TKVEi">
+      <property role="IQ2ns" value="1149537088067125001" />
+      <property role="20kJfa" value="ref" />
+      <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
   </node>
 </model>
 

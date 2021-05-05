@@ -1943,6 +1943,33 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6PWFJfG6NeX" role="jymVt" />
+    <node concept="3clFb_" id="ZNYuguqmlg" role="jymVt">
+      <property role="TrG5h" value="resolve" />
+      <node concept="37vLTG" id="ZNYuguqqMw" role="3clF46">
+        <property role="TrG5h" value="nodePtr" />
+        <node concept="2sp9CU" id="ZNYuguqrYC" role="1tU5fm" />
+      </node>
+      <node concept="3Tqbb2" id="ZNYuguqnxb" role="3clF45" />
+      <node concept="3Tm1VV" id="ZNYuguqmlj" role="1B3o_S" />
+      <node concept="3clFbS" id="ZNYuguqmlk" role="3clF47">
+        <node concept="3clFbF" id="ZNYuguqyIx" role="3cqZAp">
+          <node concept="2OqwBi" id="ZNYuguqA4v" role="3clFbG">
+            <node concept="liA8E" id="ZNYuguqBju" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository)" resolve="resolve" />
+              <node concept="37vLTw" id="ZNYuguqCu1" role="37wK5m">
+                <ref role="3cqZAo" node="5yr01fEe0kS" resolve="repository" />
+              </node>
+            </node>
+            <node concept="2JrnkZ" id="ZNYuguqA4$" role="2Oq$k0">
+              <node concept="37vLTw" id="ZNYuguqyIv" role="2JrQYb">
+                <ref role="3cqZAo" node="ZNYuguqqMw" resolve="nodePtr" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="ZNYuguqkVJ" role="jymVt" />
     <node concept="3clFb_" id="5HVB6JR7NAD" role="jymVt">
       <property role="TrG5h" value="memoize" />
       <node concept="37vLTG" id="5HVB6JR7RzF" role="3clF46">
