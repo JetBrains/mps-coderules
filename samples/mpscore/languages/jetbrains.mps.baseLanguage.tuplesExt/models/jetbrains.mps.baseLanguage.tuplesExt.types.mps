@@ -252,6 +252,7 @@
       <concept id="861509610434276450" name="jetbrains.mps.lang.coderules.structure.TermTemplate" flags="ng" index="nspSf">
         <child id="861509610434276451" name="feature" index="nspSe" />
       </concept>
+      <concept id="861509610434294982" name="jetbrains.mps.lang.coderules.structure.ValueFeature" flags="ng" index="nssqF" />
       <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
         <reference id="861509610434435672" name="feature" index="nsMwP" />
         <child id="1149537088045275069" name="item" index="iSaTp" />
@@ -447,6 +448,57 @@
           <property role="TrG5h" value="Components" />
         </node>
         <node concept="VbTHi" id="3CulEO3zrrV" role="3vLBG7" />
+      </node>
+    </node>
+    <node concept="3iyZe8" id="127bLwWzyv8" role="0oKgB">
+      <ref role="3iRiWT" to="kqnc:5itBwMau8m1" resolve="lift" />
+      <node concept="3clFbS" id="127bLwWzyv9" role="3iwQuN">
+        <node concept="3Aqczg" id="127bLwWzyy6" role="3cqZAp">
+          <node concept="3A8Hvi" id="127bLwWzyy3" role="3Aqpz8">
+            <node concept="a7P8L" id="127bLwWzyyd" role="3A8wtg">
+              <ref role="a7OzE" node="127bLwWzyvc" resolve="Type" />
+            </node>
+            <node concept="ns1u0" id="127bLwWzyyQ" role="3A8w4Q">
+              <ref role="ns1xF" node="127bLwWzyiy" resolve="namedTuple" />
+              <node concept="nsMwS" id="127bLwWzyyW" role="ns1xD">
+                <ref role="nsMwP" node="127bLwWzysC" resolve="decl" />
+                <node concept="a7P8L" id="127bLwWzyzF" role="iSaTp">
+                  <ref role="a7OzE" node="127bLwWzyz2" resolve="Decl" />
+                </node>
+              </node>
+              <node concept="nsMwS" id="127bLwWzyzQ" role="ns1xD">
+                <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
+                <node concept="a7P8L" id="127bLwWzyzW" role="iSaTp">
+                  <ref role="a7OzE" node="127bLwWzyzq" resolve="Params" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uniRu" id="127bLwWzyva" role="3tb1AD">
+        <node concept="32pEOW" id="127bLwWzyvb" role="3vLBG7" />
+        <node concept="aZer4" id="127bLwWzyvc" role="3XD1gS">
+          <property role="TrG5h" value="Type" />
+        </node>
+      </node>
+      <node concept="3ixlbQ" id="127bLwWzyvd" role="3iweTQ">
+        <ref role="3ixz9q" to="cx9y:i2pR1d_" resolve="NamedTupleType" />
+        <node concept="3ixQyH" id="127bLwWzyve" role="3ix8rx">
+          <property role="TrG5h" value="namedTupleType" />
+        </node>
+      </node>
+      <node concept="3uniRu" id="127bLwWzyz1" role="3iJhzY">
+        <node concept="aZer4" id="127bLwWzyz2" role="3XD1gS">
+          <property role="TrG5h" value="Decl" />
+        </node>
+        <node concept="3Tqbb2" id="127bLwWzyz9" role="3vLBG7" />
+      </node>
+      <node concept="3uniRu" id="127bLwWzyzp" role="3iJhzY">
+        <node concept="aZer4" id="127bLwWzyzq" role="3XD1gS">
+          <property role="TrG5h" value="Params" />
+        </node>
+        <node concept="32pEOW" id="127bLwWzyz$" role="3vLBG7" />
       </node>
     </node>
     <node concept="3hwh0R" id="4E290qPYyfd" role="0oKgB">
@@ -1468,6 +1520,15 @@
       <node concept="nspSf" id="4E290qPYB6f" role="ns1xx">
         <node concept="nsiOd" id="4E290qPYBjo" role="nspSe">
           <property role="TrG5h" value="types" />
+        </node>
+      </node>
+    </node>
+    <node concept="ns1x$" id="127bLwWzyiy" role="ns1xc">
+      <property role="TrG5h" value="namedTuple" />
+      <ref role="ns1xW" to="kqnc:ZJPHcupkhk" resolve="parameterized" />
+      <node concept="nspSf" id="127bLwWzyiz" role="ns1xx">
+        <node concept="nssqF" id="127bLwWzysC" role="nspSe">
+          <property role="TrG5h" value="decl" />
         </node>
       </node>
     </node>
