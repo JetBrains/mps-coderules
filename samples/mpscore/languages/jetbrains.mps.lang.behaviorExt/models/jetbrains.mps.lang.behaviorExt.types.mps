@@ -273,9 +273,9 @@
                                   </node>
                                 </node>
                                 <node concept="ns1u0" id="2q9s7foHpWz" role="3AunhB">
-                                  <ref role="ns1xF" to="jxwi:3bgqfmmKxBI" resolve="concept" />
+                                  <ref role="ns1xF" to="jxwi:7LI_gNMWw2A" resolve="node" />
                                   <node concept="nsMwS" id="2q9s7foHpW$" role="ns1xD">
-                                    <ref role="nsMwP" to="jxwi:3lXUvG03UmI" resolve="concept" />
+                                    <ref role="nsMwP" to="jxwi:7LI_gNMWxb4" resolve="concept" />
                                     <node concept="37jhX" id="ZNYugu2LuN" role="iSaTp">
                                       <node concept="2OqwBi" id="2q9s7foHpW_" role="37jj2">
                                         <node concept="3A2sRY" id="2q9s7foHpWA" role="2Oq$k0">
