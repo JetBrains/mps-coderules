@@ -85,7 +85,7 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
          */
         fun expand(activated: Occurrence): DispatchingFront = DispatchingFront(this,
             ruleIndex.forOccurrenceWithMask(activated)
-                .mapNotNull { (rule, mask) ->
+                .map { (rule, mask) ->
                     if (!occId2tags.contains(activated.identity)) {
                         occId2tags.put(activated.identity, arrayListOf())
                     }
