@@ -246,7 +246,7 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
                         // all values should be accepted by a meta logical
                         wildcardSelectors[argIdx].set(ruleBit)
                     is Term             ->
-                        termSelectors.set(argIdx, termSelectors[argIdx].put(arg, ruleBit to headPos))
+                        termSelectors[argIdx].put(arg, ruleBit to headPos)
                     is Any              ->
                         value2indices.getOrPut(arg) { hashSetOf() }.add(ruleBit to headPos)
                     else                ->
@@ -264,7 +264,7 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
                         // all values should be accepted by a meta logical
                         wildcardSelectors[argIdx].clear(ruleBit)
                     is Term             ->
-                        termSelectors.set(argIdx, termSelectors[argIdx].remove(arg, ruleBit to headPos))
+                        termSelectors[argIdx].remove(arg, ruleBit to headPos)
                     is Any              ->
                         value2indices.get(arg)?.remove(ruleBit to headPos)
                     else                ->

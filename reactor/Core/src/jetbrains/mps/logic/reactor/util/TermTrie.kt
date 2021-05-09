@@ -38,13 +38,13 @@ import jetbrains.mps.unification.Term
  */
 interface TermTrie<T> {
 
-    fun put(term: Term, value: T): TermTrie<T>
+    fun put(term: Term, value: T)
 
-    fun remove(term: Term, value: T): TermTrie<T>
+    fun remove(term: Term, value: T) 
 
     fun lookupValues(term: Term): Iterable<T>
 
     fun allValues(): Iterable<T>
 }
 
-fun <T> termTrie(): TermTrie<T> = ClassicTermTrie<T>()
+fun <T> termTrie(): TermTrie<T> = ClassicIndexedTermTrie<T>()

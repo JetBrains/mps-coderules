@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.util
 
 import gnu.trove.map.hash.TIntIntHashMap
+import gnu.trove.map.hash.TIntObjectHashMap
 import jetbrains.mps.logic.reactor.logical.VarSymbol
 import jetbrains.mps.unification.Term
 import java.util.*
@@ -38,12 +39,16 @@ import kotlin.collections.ArrayList
  *
  * The implementation is based on the structure called "discrimination tree" as described in the chapter 26 of [1].
  *
+ * The indexed variant of the term trie adds in addiiton a possibility to index all values by an int value.
+ * An index may be specified in all put/remove and also to lookup methods, and limits the scope of
+ * internal nodes to be traversed, thus eliminating unnecessary calls. 
+ *
  * [1] Alan Robinson and Andrei Voronkov (Eds.). 2001. Handbook of Automated Reasoning.
  * Elsevier Sci. Pub. B. V., Amsterdam, The Netherlands, The Netherlands.
  * An implementation of TermTrie not relying on persistent data structures.
  */
 
-class ClassicTermTrie<T> : TermTrie<T> {
+class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
 
     private companion object {
 
@@ -64,26 +69,50 @@ class ClassicTermTrie<T> : TermTrie<T> {
     }
 
     override fun put(term: Term, value: T) {
-        putValue(term, value)
+        putValue(term, -1, value)
+    }
+
+    override fun put(term: Term, index: Int, value: T) {
+        putValue(term, index, value)
     }
 
     override fun remove(term: Term, value: T) {
-        removeValue(term, value)
+        removeValue(term, -1, value)
+    }
+
+    override fun remove(term: Term, index: Int, value: T) {
+        removeValue(term, index, value)
     }
 
     override fun lookupValues(term: Term): Iterable<T> {
         val result = ArrayList<T>()
-        visitMatching(term) { value -> result.add(value) }
+        visitMatching(term, root.allIndexMask()) { value, index -> result.add(value) }
         return result
+    }
+
+    override fun lookupValues(term: Term, indexMask: IndexMask): Iterable<T> {
+        val result = ArrayList<T>()
+        visitMatching(term, indexMask) { value, index -> result.add(value) }
+        return result
+    }
+
+    override fun forValuesWithIndex(term: Term, indexMask: IndexMask?, callback: (T, Int) -> Unit) {
+        visitMatching(term, indexMask) { value, index -> callback(value, index) }
     }
 
     override fun allValues(): Iterable<T> {
         val result = ArrayList<T>()
-        visitAll(root, { value -> result.add(value) })
+        visitAll(root, root.allIndexMask(), { value, index -> result.add(value) })
         return result
     }
-    
-    private fun putValue(matchTerm: Term, value: T) {
+
+    override fun allValues(indexMask: IndexMask): Iterable<T> {
+        val result = ArrayList<T>()
+        visitAll(root, indexMask, { value, index -> result.add(value) })
+        return result
+    }
+
+    private fun putValue(matchTerm: Term, index: Int, value: T) {
         val seen = IdentityHashMap<Term, Term>()
         val nodeStack = arrayListOf(root)
         val termStack = arrayListOf(matchTerm)
@@ -91,6 +120,8 @@ class ClassicTermTrie<T> : TermTrie<T> {
         while (!termStack.isEmpty()) {
             val node = nodeStack.peek()
             val term = termStack.pop()
+
+            node.addIndex(index)
 
             // dereferece the term only if it hasn't been dereferenced before
             val deref = deref(term).let { dt -> seen[dt]?.run { term } ?: dt.apply { seen[dt] = term } }
@@ -104,10 +135,10 @@ class ClassicTermTrie<T> : TermTrie<T> {
         }
 
         val head = nodeStack.pop()
-        head.addValue(value)
+        head.addValue(value, index)
     }
 
-    private fun removeValue(matchTerm: Term, value: T) {
+    private fun removeValue(matchTerm: Term, index: Int, value: T) {
         val seen = IdentityHashMap<Term, Term>()
         val nodeStack = arrayListOf(root)
         val termStack = arrayListOf(matchTerm)
@@ -132,21 +163,36 @@ class ClassicTermTrie<T> : TermTrie<T> {
             nodeStack.push(nextNode)
         }
 
-        var leaf = nodeStack.pop()
-        leaf.removeValue(value)
-        while (!leaf.isLeaf() && nodeStack.isNotEmpty()) {
-            val base = nodeStack.pop()
-            base.dropNext(leaf)
-            leaf = base
+        var head = nodeStack.pop()
+        if (head.removeValue(value, index)) {
+            while (nodeStack.isNotEmpty()) {
+                val base = nodeStack.pop()
+                base.removeIndex(index)
+                if (head.isLeaf()) {
+                    base.dropNext(head)
+                }
+                head = base
+            }
         }
     }
 
     /**
      * Call the visitor function with values of the given node and all its direct and indirect successors.
      */
-    private fun visitAll(node: PathNode<T>, visitor: (T) -> Unit) {
-        node.values().forEach(visitor)
-        node.allNext().forEach { visitAll(it, visitor) }
+    private fun visitAll(node: PathNode<T>, indexMask: IndexMask, visitor: (T, Int) -> Unit) {
+        node.forEachValueWithIndex(indexMask, visitor)
+        node.allNext(indexMask).forEach { visitAll(it, indexMask, visitor) }
+    }
+
+    private fun collectAllLeaves(node: PathNode<T>, indexMask: IndexMask?, leafs: MutableList<PathNode<T>>) {
+        val nodeStack = arrayListOf(node)
+        while (nodeStack.isNotEmpty()) {
+            val n = nodeStack.pop()
+            if (n.isLeaf()) leafs.add(n)
+            n.allNext(indexMask).forEach {
+                nodeStack.push(it)
+            }
+        }
     }
 
     private fun deref(term: Term): Term {
@@ -170,10 +216,11 @@ class ClassicTermTrie<T> : TermTrie<T> {
      * Given a pattern term, which may contain variables that are treated as wildcards,
      * call the passed visitor function with values of all matching nodes and all the nodes that precede them.
      */
-    private fun visitMatching(pattern: Term, visitor: (T) -> Unit) {
+    private fun visitMatching(pattern: Term, indexMask: IndexMask?, visitor: (T, Int) -> Unit) {
         val seenNonLeaf = IdentityHashMap<Term, Term>()
         val canonicTerms = IdentityHashMap<Term, Pair<Term, Any>>()
         val visitStack = arrayListOf(listOf(root) to listOf(pattern))
+        val allLeaves = arrayListOf<PathNode<T>>()
 
         while (!visitStack.isEmpty()) {
             val (bases, ptnTerms) = visitStack.pop()
@@ -193,24 +240,26 @@ class ClassicTermTrie<T> : TermTrie<T> {
                         if (!ptnTail.isEmpty()) {
                             // skip the current node
                             // match the patterns tail with the current node's direct successors
-                            val (wcdTerms, wcdBases) = base.terms2bases()
-                            wcdTerms.forEach { it.values().forEach (visitor) }
+                            val (wcdTerms, wcdBases) = base.terms2bases(indexMask)
+                            wcdTerms.forEach { if (it.isLeaf()) allLeaves.add(it) /*it.forEachValueWithIndex(indexMask, visitor)*/ }
                             visitStack.push(wcdBases to ptnTail)
 
                         } else {
                             // wildcard consumes the rest of the trie
-                            base.allNext().forEach { visitAll(it, visitor) }
+                            base.allNext(indexMask).forEach { collectAllLeaves(it, indexMask, allLeaves) }
                         }
 
                     } else {
                         base.next(WILDCARD)?.let { nn ->
-                            nn.values().forEach(visitor)
+                            if (nn.isLeaf()) allLeaves.add(nn)
+//                            nn.forEachValueWithIndex(indexMask, visitor)
                             if (!ptnTail.isEmpty()) {
                                 visitStack.push(listOf(nn) to ptnTail)
                             }
                         }
                         base.next(sym)?.let { nn ->
-                            nn.values().forEach(visitor)
+                            if (nn.isLeaf()) allLeaves.add(nn)
+//                            nn.forEachValueWithIndex(indexMask, visitor)
 
                             // prepend this patternTerm's arguments to the tail pattern terms
                             val newTail = ArrayList(term.arguments())
@@ -226,6 +275,13 @@ class ClassicTermTrie<T> : TermTrie<T> {
                 }
             }
         }
+
+        indexMask?.forEach { index ->
+            allLeaves.forEach { it.forEachValueWithIndex(index, visitor) }
+            true
+        } ?: run {
+            allLeaves.forEach { it.forEachValue(visitor) }
+        }
     }
     
     /**
@@ -234,13 +290,42 @@ class ClassicTermTrie<T> : TermTrie<T> {
     private class PathNode<T>(val symbol: Any,
                               val arity: Int)
     {
-        private val index = TIntIntHashMap() // map of index cardinalities
+        private val indexCardinalities = TIntIntHashMap() // map of index cardinalities
 
         private val next = HashMap<Any, PathNode<T>>(8)
 
-        private val values = IdentityHashMap<T, Any>()
+        private val indexedValues = TIntObjectHashMap<HashSet<T>>()
 
-        fun values(): Iterable<T> = values.keys
+        fun allIndexMask(): IndexMask = indexCardinalities.keySet()
+
+        fun addIndex(index: Int) {
+            val card = if (indexCardinalities.contains(index)) indexCardinalities.get(index) else 0
+            indexCardinalities.put(index, card + 1)            
+        }
+
+        fun removeIndex(index: Int) {
+            val card = if (indexCardinalities.contains(index)) indexCardinalities.get(index) else 0
+            assert(card > 0)
+            if (card > 1) indexCardinalities.put(index, card - 1) else indexCardinalities.remove(index)
+        }
+
+        fun forEachValue(callback: (T, Int) -> Unit ) {
+            indexedValues.forEachEntry { index, values ->
+                values.forEach { callback(it, index) }
+                true
+            }
+        }
+
+        fun forEachValueWithIndex(indexMask: IndexMask, callback: (T, Int) -> Unit ) {
+            indexMask.forEach { index ->
+                if (indexedValues.containsKey(index)) { indexedValues.get(index).forEach { callback(it, index) } }
+                true
+            }
+        }
+
+        fun forEachValueWithIndex(index: Int, callback: (T, Int) -> Unit ) {
+            if (indexedValues.containsKey(index)) { indexedValues.get(index).forEach { callback(it, index) } }
+        }
 
         fun isLeaf(): Boolean = next.isEmpty()
 
@@ -249,7 +334,20 @@ class ClassicTermTrie<T> : TermTrie<T> {
         /**
          * Returns all trie nodes that are direct successors of this one.
          */
-        fun allNext(): List<PathNode<T>> = next.values.toList()
+        fun allNext(indexMask: IndexMask?): List<PathNode<T>>  {
+            val res = arrayListOf<PathNode<T>>()
+            next.values.forEach { n ->
+                // containsAny ~~ NOT( all( NOT(contains))
+                if (indexMask != null) {
+                    if (!n.indexCardinalities.forEach { idx -> !indexMask.contains(idx) }) {
+                        res.add(n)
+                    }
+                } else {
+                    res.add(n)
+                }
+            }
+            return res
+        }
 
         /**
          * Helper method for processing a wildcard in pattern.
@@ -268,7 +366,7 @@ class ClassicTermTrie<T> : TermTrie<T> {
          * The size of a list representing a flattened term is equal to
          * the sum of arities of all symbols in this list plus 1.
          */
-        fun terms2bases(): Pair<List<PathNode<T>>, List<PathNode<T>>> {
+        fun terms2bases(indexMask: IndexMask?): Pair<List<PathNode<T>>, List<PathNode<T>>> {
 
             // for every current node there is a number
             // initially 0
@@ -278,7 +376,7 @@ class ClassicTermTrie<T> : TermTrie<T> {
             val terms = ArrayList<PathNode<T>>()
             val bases = ArrayList<PathNode<T>>()
 
-            val stack = arrayListOf(allNext() to 0)
+            val stack = arrayListOf(allNext(indexMask) to 0)
 
             while (stack.isNotEmpty()) {
                 val (nn, count) = stack.pop()
@@ -289,7 +387,7 @@ class ClassicTermTrie<T> : TermTrie<T> {
 
                     } else {
                         terms.add(n)
-                        stack.push(n.allNext() to (newCount - 1))
+                        stack.push(n.allNext(indexMask) to (newCount - 1))
                     }
                 }
             }
@@ -298,12 +396,20 @@ class ClassicTermTrie<T> : TermTrie<T> {
         }
 
 
-        fun addValue(value: T) {
-            values[value] = KEYHOLDER
+        fun addValue(value: T, index: Int) {
+            addIndex(index)
+            (indexedValues.get(index) ?: hashSetOf<T>().also { indexedValues.put(index, it) }).add(value)
         }
 
-        fun removeValue(value: T) {
-            values.remove(value)
+        fun removeValue(value: T, index: Int): Boolean {
+            if (indexedValues.get(index)?.remove(value) ?: false) {
+                if (indexedValues.get(index)?.isEmpty() ?: false) {
+                    indexedValues.remove(index)
+                }
+                removeIndex(index)
+                return true
+            }
+            return false
         }
 
         inline fun nextOrDefault(symbol: Any,

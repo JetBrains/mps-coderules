@@ -28,7 +28,7 @@ class TestTermTrie {
         assertEquals(setOf("foo", "bar", "qux", "blah"), trie1.allValues().toSet())
         assertEquals(setOf("bar"), trie1.lookupValues(t2).toSet())
 
-        val trie2 = trie1.put(t2, "bazz")
+        val trie2 = trie1.also { it.put(t2, "bazz") }
         assertEquals(setOf("foo", "bar", "qux", "blah", "bazz"), trie2.allValues().toSet())
 
         assertEquals(setOf("bar", "bazz"), trie2.lookupValues(t2).toSet())
@@ -36,7 +36,7 @@ class TestTermTrie {
         assertEquals(setOf("qux"), trie2.lookupValues(t3).toSet())
         assertEquals(setOf("blah"), trie2.lookupValues(t4).toSet())
 
-        val trie3 = trie2.put(t4, "shmoo")
+        val trie3 = trie2.also { it.put(t4, "shmoo") }
         assertEquals(setOf("foo", "bar", "qux", "blah", "bazz", "shmoo"), trie3.allValues().toSet())
         assertEquals(setOf("blah", "shmoo"), trie3.lookupValues(t4).toSet())
     }
@@ -59,16 +59,16 @@ class TestTermTrie {
         assertEquals(setOf("foo", "bar", "qux", "blah"), trie1.allValues().toSet())
         assertEquals(setOf("bar"), trie1.lookupValues(t2).toSet())
 
-        val trie2 = trie1.remove(t2, "bazz")
+        val trie2 = trie1.also { it.remove(t2, "bazz") }
         assertEquals(setOf("foo", "bar", "qux", "blah"), trie2.allValues().toSet())
         assertEquals(setOf("bar"), trie2.lookupValues(t2).toSet())
 
-        val trie3 = trie2.remove(t2, "bar")
+        val trie3 = trie2.also { it.remove(t2, "bar") }
         assertEquals(setOf("foo", "qux", "blah"), trie3.allValues().toSet())
         assertEquals(setOf<Any>(), trie3.lookupValues(t2).toSet())
 
 
-        val trie4 = trie3.remove(t3, "qux")
+        val trie4 = trie3.also { it.remove(t3, "qux") }
         assertEquals(setOf("foo", "blah"), trie4.allValues().toSet())
         assertEquals(setOf<Any>(), trie4.lookupValues(t3).toSet())
         assertEquals(setOf("blah"), trie4.lookupValues(t4).toSet())
@@ -89,17 +89,17 @@ class TestTermTrie {
         assertEquals(setOf("foo"), trie1.lookupValues(t1).toSet())
         assertEquals(setOf("bar"), trie1.lookupValues(t2).toSet())
 
-        val trie2 = trie1.remove(t2, "bar")
+        val trie2 = trie1.also { it.remove(t2, "bar") }
         assertEquals(setOf("foo"), trie2.allValues().toSet())
         assertEquals(setOf("foo"), trie2.lookupValues(t1).toSet())
         assertEquals(setOf<Any>(), trie2.lookupValues(t2).toSet())
 
-        val trie3 = trie2.put(t2, "bazz")
+        val trie3 = trie2.also { it.put(t2, "bazz") }
         assertEquals(setOf("foo", "bazz"), trie3.allValues().toSet())
         assertEquals(setOf("foo"), trie3.lookupValues(t1).toSet())
         assertEquals(setOf("bazz"), trie3.lookupValues(t2).toSet())
 
-        val trie4 = trie3.remove(t1, "foo")
+        val trie4 = trie3.also { it.remove(t1, "foo") }
         assertEquals(setOf("bazz"), trie4.allValues().toSet())
         assertEquals(setOf<Any>(), trie4.lookupValues(t1).toSet())
         assertEquals(setOf("bazz"), trie4.lookupValues(t2).toSet())
@@ -127,7 +127,7 @@ class TestTermTrie {
         assertEquals(setOf("t3", "t4", "t5"), tt.lookupValues(parseTerm("f{g{b X} a}")).toSet())
         assertEquals(setOf("t1", "t3", "t4", "t5"), tt.lookupValues(parseTerm("f{g{X Y} a}")).toSet())
 
-        val tt2 = tt.remove(t4, "t4")
+        val tt2 = tt.also { it.remove(t4, "t4") }
         assertEquals(setOf("t3", "t5"), tt2.lookupValues(parseTerm("f{g{b X} a}")).toSet())
         assertEquals(setOf("t1", "t3", "t5"), tt2.lookupValues(parseTerm("f{g{X Y} a}")).toSet())
 
@@ -247,8 +247,8 @@ class TestTermTrie {
         assertEquals(setOf("foo", "bar", "bazz", "qux"), trie1.lookupValues(parseTerm("a{X c}")).toSet())
         assertEquals(setOf("foo", "bazz", "qux"), trie1.lookupValues(parseTerm("a{c c}")).toSet())
 
-        val trie2 = trie1.remove(t2, "bar")
-        val trie3 = trie2.put(t2, "blah")
+        val trie2 = trie1.also { it.remove(t2, "bar") }
+        val trie3 = trie2.also { it.put(t2, "blah") }
 
         assertEquals(setOf("foo", "qux", "blah"), trie3.lookupValues(parseTerm("a{b X}")).toSet())
         assertEquals(setOf("foo", "bazz", "qux", "blah"), trie3.lookupValues(parseTerm("a{X c}")).toSet())
@@ -320,12 +320,11 @@ class TestTermTrie {
 
     }
 
-    fun <T> T.runs(vararg blocks: T.() -> T): T {
-        var t = this
+    fun <T> T.runs(vararg blocks: T.() -> Unit): T {
         for (blk in blocks) {
-            t = t.blk()
+            blk()
         }
-        return t
+        return this
     }
 
 }
