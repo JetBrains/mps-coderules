@@ -421,7 +421,7 @@
                       </node>
                     </node>
                     <node concept="a7P8L" id="4E290qPYH3l" role="3jbY8V">
-                      <ref role="a7OzE" node="6$MmqWfmrsz" resolve="ParamTypes" />
+                      <ref role="a7OzE" node="6$MmqWfmrsz" resolve="ParamT" />
                       <node concept="37vLTw" id="4E290qPYH4_" role="3gCZO6">
                         <ref role="3cqZAo" node="4E290qPYBov" resolve="i" />
                       </node>
@@ -454,16 +454,23 @@
                 </node>
               </node>
             </node>
-            <node concept="3Aqczg" id="2MpDLe9woYf" role="3cqZAp">
-              <node concept="3A8Hvi" id="2MpDLe9woY9" role="3Aqpz8">
-                <node concept="a7P8L" id="2MpDLe9woYF" role="3A8wtg">
-                  <ref role="a7OzE" node="2MpDLe9worb" resolve="ParamTypesList" />
+            <node concept="3Aqczg" id="IFW4V1wL34" role="3cqZAp">
+              <node concept="3Aqt3T" id="IFW4V1wL32" role="3Aqpz8">
+                <ref role="3AqCNq" to="kqnc:7XekScW7SL3" resolve="stripLowerAll" />
+                <node concept="Hz6ka" id="IFW4V1wL7C" role="3AunhB">
+                  <node concept="1Pxxm1" id="IFW4V1wL7D" role="Hz6kd">
+                    <node concept="3wAshV" id="IFW4V1wL7E" role="1Pxxm2">
+                      <node concept="a7P8L" id="IFW4V1wL9w" role="3wAq21">
+                        <ref role="a7OzE" node="IFW4V1wL3F" resolve="InvParamT" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
-                <node concept="Hz6ka" id="2MpDLe9wytD" role="3A8w4Q">
-                  <node concept="1Pxxm1" id="2MpDLe9w$zf" role="Hz6kd">
-                    <node concept="3wAshV" id="2MpDLe9w$zi" role="1Pxxm2">
-                      <node concept="a7P8L" id="2MpDLe9w$zh" role="3wAq21">
-                        <ref role="a7OzE" node="6$MmqWfmrsz" resolve="ParamTypes" />
+                <node concept="Hz6ka" id="IFW4V1wL7p" role="3AunhB">
+                  <node concept="1Pxxm1" id="IFW4V1wL7q" role="Hz6kd">
+                    <node concept="3wAshV" id="IFW4V1wL7r" role="1Pxxm2">
+                      <node concept="a7P8L" id="IFW4V1wL7s" role="3wAq21">
+                        <ref role="a7OzE" node="6$MmqWfmrsz" resolve="ParamT" />
                       </node>
                     </node>
                   </node>
@@ -477,7 +484,7 @@
                   <ref role="3hLkJx" node="6$MmqWfmoJj" resolve="resultType" />
                 </node>
                 <node concept="a7P8L" id="6$MmqWfmw1D" role="3jbY8V">
-                  <ref role="a7OzE" node="6$MmqWfmrtC" resolve="ResultType" />
+                  <ref role="a7OzE" node="6$MmqWfmrtC" resolve="ResT" />
                 </node>
                 <node concept="3jhG_Y" id="554EtBHzVD3" role="3jhGvd">
                   <node concept="3jhG_Z" id="554EtBHzVD5" role="3jhGob">
@@ -486,6 +493,17 @@
                       <ref role="3hLkJx" node="554EtBHzVCE" resolve="subs" />
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3Aqczg" id="IFW4V1wLde" role="3cqZAp">
+              <node concept="3Aqt3T" id="IFW4V1wLdc" role="3Aqpz8">
+                <ref role="3AqCNq" to="kqnc:7XekScW7Slx" resolve="stripUpper" />
+                <node concept="a7P8L" id="IFW4V1wLiR" role="3AunhB">
+                  <ref role="a7OzE" node="IFW4V1wL1a" resolve="InvResT" />
+                </node>
+                <node concept="a7P8L" id="IFW4V1wLjR" role="3AunhB">
+                  <ref role="a7OzE" node="6$MmqWfmrtC" resolve="ResT" />
                 </node>
               </node>
             </node>
@@ -529,14 +547,14 @@
               <ref role="ns1xF" node="6$MmqWflYd6" resolve="function" />
               <node concept="nsMwS" id="6$MmqWfmpv5" role="ns1xD">
                 <ref role="nsMwP" node="6$MmqWflYdw" resolve="params" />
-                <node concept="a7P8L" id="2MpDLe9wpWd" role="iSaTp">
-                  <ref role="a7OzE" node="2MpDLe9worb" resolve="ParamTypesList" />
+                <node concept="a7P8L" id="IFW4V1wLu9" role="iSaTp">
+                  <ref role="a7OzE" node="IFW4V1wL3F" resolve="InvParamT" />
                 </node>
               </node>
               <node concept="nsMwS" id="6$MmqWfmwCT" role="ns1xD">
                 <ref role="nsMwP" node="6$MmqWflYdg" resolve="result" />
-                <node concept="a7P8L" id="6$MmqWfmwD0" role="iSaTp">
-                  <ref role="a7OzE" node="6$MmqWfmrtC" resolve="ResultType" />
+                <node concept="a7P8L" id="IFW4V1wLuF" role="iSaTp">
+                  <ref role="a7OzE" node="IFW4V1wL1a" resolve="InvResT" />
                 </node>
               </node>
             </node>
@@ -551,7 +569,7 @@
       </node>
       <node concept="3uniRu" id="6$MmqWfmrsy" role="3hEOkk">
         <node concept="aZer4" id="6$MmqWfmrsz" role="3XD1gS">
-          <property role="TrG5h" value="ParamTypes" />
+          <property role="TrG5h" value="ParamT" />
           <node concept="2OqwBi" id="6$MmqWfmthi" role="3gj$pD">
             <node concept="3hN9Ij" id="6$MmqWfmruz" role="2Oq$k0">
               <ref role="3hLkJx" node="6$MmqWfmoJc" resolve="paramTypes" />
@@ -559,19 +577,25 @@
             <node concept="34oBXx" id="6$MmqWfmvkw" role="2OqNvi" />
           </node>
         </node>
+        <node concept="aZer4" id="IFW4V1wL3F" role="3XD1gS">
+          <property role="TrG5h" value="InvParamT" />
+          <node concept="2OqwBi" id="IFW4V1wL3G" role="3gj$pD">
+            <node concept="3hN9Ij" id="IFW4V1wL3H" role="2Oq$k0">
+              <ref role="3hLkJx" node="6$MmqWfmoJc" resolve="paramTypes" />
+            </node>
+            <node concept="34oBXx" id="IFW4V1wL3I" role="2OqNvi" />
+          </node>
+        </node>
         <node concept="32pEOW" id="6$MmqWfmruf" role="3vLBG7" />
       </node>
       <node concept="3uniRu" id="6$MmqWfmrtB" role="3hEOkk">
         <node concept="aZer4" id="6$MmqWfmrtC" role="3XD1gS">
-          <property role="TrG5h" value="ResultType" />
+          <property role="TrG5h" value="ResT" />
+        </node>
+        <node concept="aZer4" id="IFW4V1wL1a" role="3XD1gS">
+          <property role="TrG5h" value="InvResT" />
         </node>
         <node concept="32pEOW" id="6$MmqWfmrtR" role="3vLBG7" />
-      </node>
-      <node concept="3uniRu" id="2MpDLe9wora" role="3hEOkk">
-        <node concept="aZer4" id="2MpDLe9worb" role="3XD1gS">
-          <property role="TrG5h" value="ParamTypesList" />
-        </node>
-        <node concept="VbTHi" id="2MpDLe9worw" role="3vLBG7" />
       </node>
     </node>
   </node>
