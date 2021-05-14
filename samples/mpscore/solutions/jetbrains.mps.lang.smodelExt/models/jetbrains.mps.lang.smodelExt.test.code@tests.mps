@@ -233,6 +233,35 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="72yxqve1rRL" role="1SL9yI">
+      <property role="TrG5h" value="streams" />
+      <node concept="3cqZAl" id="72yxqve1rRM" role="3clF45" />
+      <node concept="3clFbS" id="72yxqve1rRN" role="3clF47">
+        <node concept="2Hmddi" id="72yxqve1rRO" role="3cqZAp">
+          <node concept="2OqwBi" id="72yxqve1rRP" role="2Hmdds">
+            <node concept="2YIFZM" id="72yxqve1rRQ" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="72yxqve1rRR" role="37wK5m">
+                <node concept="2WthIp" id="72yxqve1rRS" role="2Oq$k0" />
+                <node concept="2XshWL" id="72yxqve1rRT" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="72yxqve1rRU" role="2XxRq1">
+                    <node concept="ZC_QK" id="72yxqve1rT9" role="2tJFKM">
+                      <ref role="2aWVGs" to="ar5v:7hlgk9K_dCC" resolve="Streams" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="72yxqve1rRW" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="72yxqve1rRX" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
