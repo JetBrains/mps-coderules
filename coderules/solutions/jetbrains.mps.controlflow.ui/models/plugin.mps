@@ -452,21 +452,26 @@
                 </node>
               </node>
             </node>
-            <node concept="2YIFZM" id="78H58oetzW2" role="33vP2m">
-              <ref role="37wK5l" to="vrzs:7P_FdVPW9uU" resolve="allForModel" />
-              <ref role="1Pybhc" to="vrzs:7km57Pkjxf4" resolve="ControlflowAspect" />
-              <node concept="2OqwBi" id="78H58oetzW3" role="37wK5m">
-                <node concept="37vLTw" id="78H58oetzW4" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6hqFpWnfbDy" resolve="containingRoot" />
+            <node concept="2OqwBi" id="IFW4V2DCrd" role="33vP2m">
+              <node concept="2YIFZM" id="IFW4V2DBO6" role="2Oq$k0">
+                <ref role="37wK5l" to="vrzs:78H58oeCBNZ" resolve="aspectLookup" />
+                <ref role="1Pybhc" to="vrzs:7km57Pkjxf4" resolve="ControlflowAspect" />
+                <node concept="2OqwBi" id="IFW4V2DBOa" role="37wK5m">
+                  <node concept="37vLTw" id="IFW4V2DBOb" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6hqFpWnfhk_" resolve="mpsProject" />
+                  </node>
+                  <node concept="liA8E" id="IFW4V2DBOc" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
+                  </node>
                 </node>
-                <node concept="I4A8Y" id="78H58oetzW5" role="2OqNvi" />
               </node>
-              <node concept="2OqwBi" id="78H58oetzW6" role="37wK5m">
-                <node concept="37vLTw" id="78H58oetzW7" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6hqFpWnfhk_" resolve="mpsProject" />
-                </node>
-                <node concept="liA8E" id="78H58oetzW8" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
+              <node concept="liA8E" id="IFW4V2DCTu" role="2OqNvi">
+                <ref role="37wK5l" to="fqlx:NKt6ynoYr0" resolve="allForModel" />
+                <node concept="2OqwBi" id="IFW4V2DBO7" role="37wK5m">
+                  <node concept="37vLTw" id="IFW4V2DBO8" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6hqFpWnfbDy" resolve="containingRoot" />
+                  </node>
+                  <node concept="I4A8Y" id="IFW4V2DBO9" role="2OqNvi" />
                 </node>
               </node>
             </node>
@@ -885,6 +890,9 @@
               <node concept="2YIFZM" id="3KN3A4vD2Js" role="33vP2m">
                 <ref role="37wK5l" to="vrzs:78H58oeCBNZ" resolve="aspectLookup" />
                 <ref role="1Pybhc" to="vrzs:7km57Pkjxf4" resolve="ControlflowAspect" />
+                <node concept="37vLTw" id="IFW4V2tyj5" role="37wK5m">
+                  <ref role="3cqZAo" node="7WKNeR8SQxI" resolve="repository" />
+                </node>
               </node>
             </node>
           </node>
@@ -907,14 +915,6 @@
                   <ref role="37wK5l" to="fqlx:7mB3viLmii2" resolve="allForNodes" />
                   <node concept="37vLTw" id="3KN3A4vD8om" role="37wK5m">
                     <ref role="3cqZAo" node="6hqFpWnfpcc" resolve="nodes" />
-                  </node>
-                  <node concept="2OqwBi" id="3KN3A4vDcVU" role="37wK5m">
-                    <node concept="37vLTw" id="3KN3A4vDc5s" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6hqFpWnfkNg" resolve="mpsProject" />
-                    </node>
-                    <node concept="liA8E" id="3KN3A4vDe3E" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
-                    </node>
                   </node>
                 </node>
               </node>

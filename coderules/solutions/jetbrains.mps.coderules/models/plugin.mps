@@ -34,6 +34,7 @@
     <import index="1yqb" ref="r:bd76f794-cfad-45dd-9c1c-e3203d1c5c7a(jetbrains.mps.coderules.service)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
+    <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="unkn" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex(jetbrains.mps.coderules/)" implicit="true" />
   </imports>
   <registry>
@@ -8341,6 +8342,30 @@
       <node concept="3cqZAl" id="1_Anebx$Fkp" role="3clF45" />
     </node>
     <node concept="3Tm1VV" id="39eNUjm3TK_" role="1B3o_S" />
+  </node>
+  <node concept="2uRRBC" id="IFW4V2uR81">
+    <property role="3GE5qa" value="lifecycle" />
+    <property role="TrG5h" value="AspectLookupLifecycle" />
+    <node concept="2uRRBj" id="IFW4V2uR82" role="2uRRBE">
+      <node concept="3clFbS" id="IFW4V2uR83" role="2VODD2">
+        <node concept="3clFbF" id="IFW4V2uR84" role="3cqZAp">
+          <node concept="2YIFZM" id="IFW4V2uR85" role="3clFbG">
+            <ref role="1Pybhc" to="fqlx:IFW4V2uswu" resolve="AspectLookup.AspectLookupCoordinator" />
+            <ref role="37wK5l" to="fqlx:IFW4V2uAhM" resolve="init" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2uRRBI" id="IFW4V2uR86" role="2uRRBF">
+      <node concept="3clFbS" id="IFW4V2uR87" role="2VODD2">
+        <node concept="3clFbF" id="IFW4V2uRwY" role="3cqZAp">
+          <node concept="2YIFZM" id="IFW4V2uRy4" role="3clFbG">
+            <ref role="37wK5l" to="fqlx:IFW4V2uCEF" resolve="dispose" />
+            <ref role="1Pybhc" to="fqlx:IFW4V2uswu" resolve="AspectLookup.AspectLookupCoordinator" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

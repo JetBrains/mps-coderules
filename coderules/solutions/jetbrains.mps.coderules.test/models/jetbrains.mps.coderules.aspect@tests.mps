@@ -2228,6 +2228,25 @@
   <node concept="312cEu" id="6nx4rRkXZkf">
     <property role="TrG5h" value="MockAspectDiscoverable" />
     <node concept="2tJIrI" id="6nx4rRkXZmo" role="jymVt" />
+    <node concept="3clFb_" id="IFW4V2y54C" role="jymVt">
+      <property role="TrG5h" value="aspectClass" />
+      <node concept="3uibUv" id="IFW4V2y54D" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+        <node concept="3uibUv" id="IFW4V2y54H" role="11_B2D">
+          <ref role="3uigEE" node="6nx4rRkXZmQ" resolve="MockLanguageAspect" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="IFW4V2y54F" role="1B3o_S" />
+      <node concept="3clFbS" id="IFW4V2y54I" role="3clF47">
+        <node concept="3clFbF" id="IFW4V2y54L" role="3cqZAp">
+          <node concept="10Nm6u" id="IFW4V2y54K" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="IFW4V2y54J" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="IFW4V2y4M_" role="jymVt" />
     <node concept="3clFb_" id="6nx4rRkXZ$Y" role="jymVt">
       <property role="TrG5h" value="discover" />
       <node concept="37vLTG" id="6nx4rRkXZ$Z" role="3clF46">

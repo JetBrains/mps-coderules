@@ -19,6 +19,7 @@
     <dependency reexport="true">bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)</dependency>
     <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)</dependency>
     <dependency reexport="false">f113d56b-63e3-4120-a89c-2f5dcb8c6290(jetbrains.mps.coderules.runtime)</dependency>
+    <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="11" />
