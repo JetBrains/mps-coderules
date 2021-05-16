@@ -17,8 +17,7 @@
 package jetbrains.mps.logic.reactor.program;
 
 
-import java.util.Collections;
-import java.util.List;
+import java.util.Objects;
 
 /**
  * A constraint rule description.
@@ -28,18 +27,7 @@ import java.util.List;
 public abstract class Rule {
 
     public abstract Rule.Kind kind();
-
-    /**
-     * A list of objects identifying the segment this rule belongs to. An empty segment path signifies the root segment.
-     * An occurrence produced from the root segment can be processed by any rule in the program.
-     * An occurrence produced from segment identified by a path P can be processed by a rule from any segment that
-     * has P as the path prefix.
-     */
-    // TODO Make abstract
-    public List<Object> segmentPath() {
-        return Collections.emptyList();
-    }
-
+    
     public boolean isBasis() { return false; }
 
     /**
@@ -66,29 +54,26 @@ public abstract class Rule {
 
     public static final class Tag {
 
+        /**
+         * The name of the template that created this rule.
+         * @deprecated
+         */
         public String groupName() { return group; }
 
-        public String name() { return name; }
-
         /**
-         * Rule is "stable" if it has no unique part
-         * and its name coincides with unique tag.
-         * @return true if rule has no unique part
+         *
+         * @param groupName template that created this rule
+         * @param tagName
+         * @param uniquePart
          */
-        public boolean stable() { return utag.length() == name.length(); }
-
-        public Tag(String groupPrefix, String commonPart, Object uniquePart) {
-            if (!commonPart.startsWith(groupPrefix)) {
+        public Tag(String groupName, String tagName, Object uniquePart) {
+            if (!tagName.startsWith(groupName)) {
                 throw new IllegalArgumentException();
             }
-            StringBuilder utagSb = new StringBuilder(commonPart);
-            if (uniquePart != null) {
-                utagSb.append('_').append(uniquePart);
-            }
-            this.group = groupPrefix;
-            this.name = commonPart;
-            this.utag = utagSb.toString();
-            this.hash = utag.hashCode();
+            this.group = groupName;
+            this.tag = tagName;
+            this.id = uniquePart;
+            this.hash = Objects.hash(tag, id);
         }
 
         @Deprecated
@@ -98,20 +83,20 @@ public abstract class Rule {
         public int hashCode() { return hash; }
 
         @Override
-        public boolean equals(Object obj) {
-            if (obj == null) return false;
-            if (this == obj) return true;
-            // FIXME WTF? NB: allow equality to String
-            return this.toString().equals(obj.toString());
+        public boolean equals(Object that) {
+            if (that == null) return false;
+            if (this == that) return true;
+            if (!(that instanceof Tag)) return false;
+            return Objects.equals(this.id, ((Tag) that).id) && Objects.equals(this.tag, ((Tag) that).tag);
         }
 
         @Override
-        public String toString() { return utag; }
+        public String toString() { return tag; }
 
         private final int hash;
         private final String group;
-        private final String name;
-        private final String utag;
+        private final String tag;
+        private final Object id;
     }
 
 }

@@ -125,7 +125,7 @@ fun Builder.insertRulesWhen(at: (Rule) -> Boolean, vararg ruleBuilders: () -> Ru
     updateBuilder(this, arrayOf(insertRulesInHandlerWhen(at, "test", rulesLists.first(), * ruleBuilders)))
 
 fun rule(tag: String, vararg component: RuleBuilder.() -> Unit): () -> Rule = {
-    val rb = RuleBuilder(tag, emptyList())
+    val rb = RuleBuilder(tag)
     for (cmp in component) {
         rb.cmp()
     }

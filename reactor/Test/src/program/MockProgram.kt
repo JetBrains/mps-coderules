@@ -43,7 +43,7 @@ class HandlerBuilder(val name: String) {
     fun toHandler(): RulesList = MockHandler(name, rules.values.toList())
 }
 
-class RuleBuilder(val tag: String, val segmentPath: List<Any>) {
+class RuleBuilder(val tag: String) {
     val kept = ArrayList<Constraint>()
     val replaced = ArrayList<Constraint>()
     val guard = ArrayList<Predicate>()
@@ -62,7 +62,7 @@ class RuleBuilder(val tag: String, val segmentPath: List<Any>) {
         if (alt || body.isEmpty()) body.add(ArrayList<AndItem>())
         body.last().addAll(andItem)
     }
-    fun toRule(): Rule = MockRule(Rule.Tag(tag), segmentPath, kept, replaced, guard, body)
+    fun toRule(): Rule = MockRule(Rule.Tag(tag), kept, replaced, guard, body)
 }
 
 class MockHandler(
@@ -76,15 +76,12 @@ class MockHandler(
 
 class MockRule(
     val tag: Rule.Tag,
-    val segmentPath: List<Any>,
     val kept: Collection<Constraint>,
     val replaced: Collection<Constraint>,
     val guard: Collection<Predicate>,
     val body: Collection<Collection<AndItem>>) : Rule() {
 
     override fun kind(): Kind = TODO()
-
-    override fun segmentPath(): List<Any> = segmentPath
 
     override fun uniqueTag() = tag
 

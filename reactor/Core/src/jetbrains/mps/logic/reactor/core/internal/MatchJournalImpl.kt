@@ -48,7 +48,7 @@ internal open class MatchJournalImpl(
 
         val rulesWithOrigin = HashSet<Any>(4)
 
-        override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().uniqueTag().name()}, $entries)"
+        override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().uniqueTag().toString()}, $entries)"
     }
 
     private class OccChunkImpl(override val occ: Occurrence) : ChunkImpl(), Justified by occ, OccChunk {
