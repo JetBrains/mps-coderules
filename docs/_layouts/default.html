@@ -9,11 +9,16 @@
     {% include head.html %}
   </head>
   <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
       {% include header.html %}
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">
-          <a id="site-title" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
+          <a class="mdl-layout-icon" href="{{ '/' | absolute_url }}">
+            {% if site.logo %}
+              <img src="{{ site.logo | absolute_url }}" alt="" id="site-logo"/>
+            {% endif %}
+          </a>
+<!--          <a id="site-title" href="{{ '/' | absolute_url }}">{{ site.title }}</a>-->
         </span>
         <nav class="mdl-navigation">
           {% include menu.html %}

@@ -4,7 +4,7 @@
   id: examples
 
 - title: "All on Single Page"
-  url: "content/allpages.html"
+  url: "allpages"
   weight: 890
   tab: true
 
@@ -14,12 +14,12 @@
   id: links
 
 - title: "GitHub Project"
-  url: "https://github.com/fisakov/constraints-typechecking"
+  url: "https://github.com/jetbrains/mps-coderules"
   parent: links
   tab: true
 
-- title: "Latest Release"
-  url: "https://github.com/fisakov/constraints-typechecking/releases"
+- title: "Latest Builds"
+  url: "https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20211_Distribution_MpsCodeRules"
   parent: links
   tab: true
 

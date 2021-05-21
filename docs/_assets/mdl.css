@@ -20,10 +20,6 @@
   min-height: calc(100vh - 120px);
 }
 
-.mdl-layout__header-row {
-  /* color: #fff; */
-}
-
 .mdl-layout__header-row > .mdl-navigation > .mdl-navigation__link {
   color: #fff;
   font-size: 20px;
@@ -263,6 +259,11 @@ td{
   line-height: 32px;
   margin-top: 32px;
   /* margin-bottom: 32px; */
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .parent {

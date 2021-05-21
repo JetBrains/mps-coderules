@@ -1,5 +1,5 @@
 # Site settings
-title: MPS Code Rules
+title: MPS CodeRules
 email: fedor.isakov@jetbrains.com
 description: >- # this means to ignore newlines until "baseurl:"
   Code Rules is a language framework and runtime for running logical
@@ -8,9 +8,9 @@ baseurl: "/mps-coderules" # the subpath of your site, e.g. /blog
 url: "https://jetbrains.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jetbrains_mps
 github_username:  jetbrains
-time: 2018-09-05
-revision: 0.5.0
-copyright: JetBrains s.r.o.
+time: 2021-05-21
+revision: 0.9.0
+copyright: JetBrains
 copyright_url: "https://jetbrains.com"
 homepage: "https://jetbrains.com/mps"
 homepage_title: "JetBrains MPS"

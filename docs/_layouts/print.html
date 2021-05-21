@@ -9,14 +9,15 @@
     <div class="mdl-cell mdl-cell--10-col">
       <div class="page-content">
         <div class="content">
-          <span class="mdl-layout-title">
-            <h1 id="title">
-              {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}
-            </h1>
-          </span>
-          {{ content }}
-          <p>Revision: {{ site.revision }}</p>
-          <p>Date: {{ site.time | date: "%-d %b, %Y" }}</p>
+<!--          <span class="mdl-layout-title">-->
+<!--            <h1 id="title">-->
+<!--              {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}-->
+<!--            </h1>-->
+<!--          </span>-->
+<!--          {{ content }}-->
+          <p style="text-align: right">{{site.url}}{{site.baseurl}}</p>
+          <p style="text-align: right">Revision: {{ site.revision }}</p>
+          <p style="text-align: right">Date: {{ site.time | date: "%-d %b, %Y" }}</p>
           {% assign sorted_pages = site.pages | sort: 'weight' %}
           {% for p in sorted_pages %}
             {% if p.menu != false and p.weight != nil %}

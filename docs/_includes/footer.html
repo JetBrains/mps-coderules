@@ -9,7 +9,9 @@
   </div>
   <div class="mdl-mini-footer__right-section">
     <ul class="mdl-mini-footer__link-list">
-      {% if site.homepage %}<li><a href="{{ site.homepage}}">{% if site.homepage_title %}{{ site.homepage_title}}{% else %}Home{% endif %}</a></li>{% endif %}
+      <li class="metadata">Revision: {{ site.revision }}</li>
+      <li class="metadata">Date: {{ site.time | date: "%-d %b, %Y" }}</li>
+<!--      {% if site.homepage %}<li><a href="{{ site.homepage}}">{% if site.homepage_title %}{{ site.homepage_title}}{% else %}Home{% endif %}</a></li>{% endif %}-->
     </ul>
   </div>
 </footer>
