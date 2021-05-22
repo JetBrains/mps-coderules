@@ -5,11 +5,12 @@ menu: Typechecking BL
 parent: examples
 weight: 510
 github-path: /tree/master/samples/mpscore
+permalink: :basename
 ---
 
-# Typechecking BaseLanguage
+## Typechecking BaseLanguage
 
-Short explanation of the architecture of BL-specific type system built with *code rules*.
+Short introduction to the architecture of BL-specific type system built with *CodeRules*.
 
 This sample is the main result of developing code rules. It is still work in progress, but the main areas of type checking BaseLanguage have been covered. Here we briefly touch on the implementation details.
 

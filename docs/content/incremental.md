@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Incremental Algorithm
-weight: 80
+menu: false
 ---
 
 # Incremental Algorithm

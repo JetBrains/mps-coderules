@@ -5,9 +5,10 @@ menu: Typechecking STLC
 parent: examples
 weight: 550
 github-path: /tree/master/samples/lambdacalc
+permalink: :basename
 ---
 
-# Typechecking Extended STLC
+## Typechecking Extended STLC
 
 Simply Typed Lambda Calculus (STLC) is a famous example favored by textbook authors.
 This sample demonstrates how a classical type checking algorithm (Hindley-Milner[^hm]) designed for this language can be implemented using Code Rules.

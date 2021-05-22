@@ -5,11 +5,12 @@ menu: Fitch Proofs
 parent: examples
 weight: 560
 github-path: /tree/master/samples/fitch
+permalink: :basename
 ---
 
-# Fitch Proof Validation
+## Fitch Proof Validation
 
-This example demonstrates the use of *code rules* to implement validation of logical proofs written using Fitch system. The idea of this implementation originates in the proof checking tool provided as part of an inroductory course on logic by Stanford University[^inlog]. This overview serves for quick introduction, and more detailed information can be found at project’s home page (see the link on top of this page).
+This example demonstrates the use of *CodeRules* to implement validation of logical proofs written using Fitch system. The idea of this implementation originates in the proof checking tool provided as part of an inroductory course on logic by Stanford University[^inlog]. This overview serves for quick introduction, and more detailed information can be found at project’s home page (see the link on top of this page).
 
 The four languages in this example define the structure of proofs (samples.fitch), the structure of three kinds of logic: Propositional logic, Herbrand logic, and First Order logic (samples.fitch.*logic).
 

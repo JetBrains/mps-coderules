@@ -4,17 +4,10 @@
 
 There are a few points that are critical for performance of Reactor library. 
 
-1. Indexing of productions by constraint symbol and arguments;
-2. Dealing with factorial expansion when searching for a match;
-3. Matching of constraint occurrence with production’s constraint;
-4. Unification.
-
-### Incremental processing of code rules
-
-How can we have incremental type checking? 
-
-1. Can a program be analysed and code rules applied in such a way, so that the constraints program is updated incrementally, and
-2. Can we launch constraints program (provided there are some constraints in the store), so that only the necessary productions are triggered as required by the changes.
+1. [x] Indexing of productions by constraint symbol and arguments;
+2. [x] Dealing with factorial expansion when searching for a match;
+3. [x] Matching of constraint occurrence with production’s constraint;
+4. [x] Unification.
 
 ### Properties of user-defined type system
 

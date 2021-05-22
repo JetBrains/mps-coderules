@@ -1,14 +1,14 @@
 ---
 layout: page
-title: Reactor Operation
-parent: content/processing.md
-weight: 56
+title: Operation of Constraints Processing System
+menu: false
 ---
-# Reactor Operation
+
+## Operation of Constraints Processing
 
 This section provides an in-depth look into the inner operations of constraints processing. 
 
-## Definitions
+#### Definitions
 
 Program is defined as an ordered set of rules $P = \lbrace r_n \rbrace$. Every rule is defined as a tuple $\langle H^+, H^-, G, B \rangle$, with $H^+$ and $H^-$ corresponding to kept and discarded parts of rule’s head, respectively; $G$ is a conjunction of predicates constituting rule’s guard; $B$ being a conjunction of constraints and predicates defined in rule’s body.
 
@@ -30,7 +30,7 @@ At every moment a state of program evaluation is described by a tuple $S = \lang
 
 State transitions are functions that make modifications to one or several features of a state and produce a new state: $T(S) = S^\prime= S[O \mapsto O^\prime, K \mapsto K^\prime, V_a \mapsto {V_a}^\prime]$
 
-## Basic operations
+#### Basic operations
 
 The operations necessary for transitioning between states are described in terms of following procedures: $\mathtt{ask}$, $\mathtt{tell}$, $\mathtt{new}$, and $\mathtt{findMatch}$. The former two concern only predicates — $\mathtt{ask}$ inquires if the predicate is satisfied, whereas $\mathtt{tell}$ asserts the predicate. In case $\mathtt{tell}$ invokes a non-satisfiable predicate, such as $\mathtt{false}$, an exception is raised. 
 
@@ -50,7 +50,7 @@ The process just described is repeated with active occurrence $c^\star$ as long 
 
 As mentioned above, unification predicate can have a side effect which alters the state of some logical variable(s) $x \in V_a$. As all constraint occurrences are observers of their arguments, a change in logical variable’s state causes all alive occurrences that have it as one of their arguments to be re-activated. A re-activated occurrence is processed immediately, exactly as if it has been newly introduced. 
 
-### Summary of findMatch 
+#### Summary of findMatch 
 
 We provide here a compact representation of $\mathtt{findMatch}$ procedure in pseudo-code that combines everything that has been said before. 
 
@@ -126,17 +126,17 @@ c^\star \text{ is discarded} \\\
 \text{end}\\\
 \end{array}$$
 
-## Extended operations
+#### Extended operations
 
-### Alternative body branches
+#### Alternative body branches
 
 ***Alternative body branches***
 
-### Disjunctions in rule’s body
+#### Disjunctions in rule’s body
 
 ***Disjunction-semantics***
 
-### Incremental program evaluation
+#### Incremental program evaluation
 
 ***Incremental evaluation***
 

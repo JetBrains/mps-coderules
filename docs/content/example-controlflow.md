@@ -1,9 +1,8 @@
 ---
 layout: page
 title: Control Flow Analysis of BaseLanguage
-menu: Control Flow BL
-parent: examples
-weight: 520
+menu: false
+permalink: :basename
 ---
 
 # Control Flow Analysis
