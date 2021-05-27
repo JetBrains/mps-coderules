@@ -1,4 +1,4 @@
 ---
-redirect:   content
+redirect:   about
 layout:     redirect
 ---
