@@ -2986,8 +2986,8 @@
       <node concept="3EZMnI" id="4jcOV4hEDuK" role="3EZMnx">
         <ref role="1k5W1q" to="qgy9:7ksQUDZuyMD" resolve="Backquote" />
         <node concept="PMmxH" id="4jcOV4hEDuL" role="3EZMnx">
-          <ref role="1k5W1q" node="7ksQUDZpd8b" resolve="ConstraintKeyword" />
           <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+          <ref role="1k5W1q" node="2SN3Mm4UaX7" resolve="AuxiliaryKeyword" />
         </node>
         <node concept="3F0ifn" id="3pRhUEYCdYO" role="3EZMnx">
           <property role="3F0ifm" value="$" />
