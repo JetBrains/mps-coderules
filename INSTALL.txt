@@ -2,7 +2,7 @@
 
 Prerequisites:
 
-- Oracle JDK 1.8
+- JDK 11 
 - Maven 3
 
 ** NOTE: ** in order to open any of the sample projects follow the steps below
