@@ -51,7 +51,6 @@
         <module reference="a43bf4aa-fe3f-45e1-94ea-7af1070e5b83(jetbrains.mps.baseLanguage.blTypesExt)" version="0" />
         <module reference="31b0f8ff-ca62-4b12-8f30-d88d351a9c52(jetbrains.mps.baseLanguage.blTypesExt#01)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
-        <module reference="9e98f4e2-decf-4e97-bf80-9109e8b759aa(jetbrains.mps.lang.feedback.context)" version="0" />
       </dependencyVersions>
       <mapping-priorities />
     </generator>
@@ -103,7 +102,6 @@
     <module reference="a43bf4aa-fe3f-45e1-94ea-7af1070e5b83(jetbrains.mps.baseLanguage.blTypesExt)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />
-    <module reference="9e98f4e2-decf-4e97-bf80-9109e8b759aa(jetbrains.mps.lang.feedback.context)" version="0" />
   </dependencyVersions>
   <extendedLanguages>
     <extendedLanguage>ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)</extendedLanguage>
