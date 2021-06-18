@@ -3382,7 +3382,7 @@
       <node concept="3981dG" id="65DJywFjdtY" role="39821P">
         <node concept="3_J27D" id="65DJywFjdtZ" role="Nbhlr">
           <node concept="3Mxwew" id="65DJywFjdwr" role="3MwsjC">
-            <property role="3MwjfP" value="jebtrains.mps.coderules-0.9-SNAPSHOT.zip" />
+            <property role="3MwjfP" value="jetbrains.mps.coderules-0.9-SNAPSHOT.zip" />
           </node>
         </node>
         <node concept="m$_wl" id="65DJywFjdwt" role="39821P">
@@ -3546,6 +3546,9 @@
             </node>
             <node concept="L2wRC" id="5s5QomKFkTc" role="39821P">
               <ref role="L2wRA" node="46o4wsH5PJF" resolve="jetbrains.mps.typechecking.annotation" />
+            </node>
+            <node concept="L2wRC" id="77GimjbTVc7" role="39821P">
+              <ref role="L2wRA" node="3PhVAH_WgTu" resolve="jetbrains.mps.coderules.build" />
             </node>
           </node>
           <node concept="398223" id="65DJywFkElN" role="39821P">
