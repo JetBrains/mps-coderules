@@ -119,12 +119,16 @@ task generateUpdatePluginsXml {
          plugins {
            plugin( id: "jetbrains.mps.coderules" ,
                    url: baseUrl + "/$System.env.BUILD_NUMBER" + zip1 ,
-                   version: "${version}" )
-           { }
+                   version: "${version}" ) {
+             name { "MPS Coderules Typechecking" }
+             description { "Typechecking with Coderules (experimental)" }
+           }
            plugin( id: "jetbrains.mps.core.types" ,
                    url: baseUrl + "/$System.env.BUILD_NUMBER" + zip2 ,
-                   version: "${version}" )
-           { }
+                   version: "${version}" ) { 
+             name { "MPS Core Types" }
+             description { "Types for core MPS languages (experimental)" }
+           }
        }
     }
   }
