@@ -345,6 +345,7 @@
         <property role="TrG5h" value="jetbrains.mps.logic.reactor" />
         <property role="3LESm3" value="bbf5c548-7111-4a53-a117-cdefc664cf34" />
         <property role="2GAjPV" value="true" />
+        <property role="BnDLt" value="true" />
         <node concept="55IIr" id="7BVjoXzUxoU" role="3LF7KH">
           <node concept="2Ry0Ak" id="7BVjoXzUxpK" role="iGT6I">
             <property role="2Ry0Am" value="coderules" />
@@ -1488,11 +1489,6 @@
         <node concept="1SiIV0" id="4XsNDZX1udo" role="3bR37C">
           <node concept="3bR9La" id="4XsNDZX1udp" role="1SiIV1">
             <ref role="3bR37D" to="ffeo:7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="4XsNDZX1udq" role="3bR37C">
-          <node concept="3bR9La" id="4XsNDZX1udr" role="1SiIV1">
-            <ref role="3bR37D" node="7mB3viLwG3m" resolve="jetbrains.mps.coderules.typechecking.test" />
           </node>
         </node>
         <node concept="1SiIV0" id="4XsNDZX1uds" role="3bR37C">
@@ -3446,7 +3442,7 @@
             <node concept="L2wRC" id="5wYq9r5FcuF" role="39821P">
               <ref role="L2wRA" node="NKt6yn9_8p" resolve="jetbrains.mps.coderules" />
               <node concept="3yLZsm" id="5wYq9r5FcuG" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/reactive-streams-1.0.0.final-0.7.jar" />
+                <property role="3yLZsk" value="../lib/reactive-streams-1.0.0.final.jar" />
                 <node concept="398BVA" id="5wYq9r5FcuH" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                   <node concept="2Ry0Ak" id="5wYq9r5FcuI" role="iGT6I">
@@ -3467,7 +3463,7 @@
                 </node>
               </node>
               <node concept="3yLZsm" id="5wYq9r5FcuN" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/rxjava-2.2.1.8jar" />
+                <property role="3yLZsk" value="../lib/rxjava-2.2.18.jar" />
                 <node concept="398BVA" id="5wYq9r5FcuO" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                   <node concept="2Ry0Ak" id="5wYq9r5FcuP" role="iGT6I">
