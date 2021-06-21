@@ -110,19 +110,20 @@ task generateUpdatePluginsXml {
     mkdir(updatesDir)
 
     def baseUrl = "https://teamcity.jetbrains.com/guestAuth/repository/download/MPS_20${buildNumber()[0][1]}_Distribution_MpsCodeRules"
-    def zip1 = "/jetbrains.mps.coderules-0.9-SNAPSHOT.zip"
-    def zip2 = "/jetbrains.mps.core.types-0.9-SNAPSHOT.zip"
+    def version = "${buildNumber()[0][1]}-0.9-b${buildNumber()[0][4]}"
+    def zip1 = "/jetbrains.mps.coderules-${version}.zip"
+    def zip2 = "/jetbrains.mps.core.types-${version}.zip"
 
     file(updatesDir + "/updatePlugins.xml").withWriter { w ->
        new MarkupBuilder(new IndentPrinter(w, "    ", true)).
          plugins {
            plugin( id: "jetbrains.mps.coderules" ,
                    url: baseUrl + "/$System.env.BUILD_NUMBER" + zip1 ,
-                   version: "0.9-b${buildNumber()[0][4]}" )
+                   version: "${version}" )
            { }
            plugin( id: "jetbrains.mps.core.types" ,
                    url: baseUrl + "/$System.env.BUILD_NUMBER" + zip2 ,
-                   version: "0.9-b${buildNumber()[0][4]}" )
+                   version: "${version}" )
            { }
        }
     }
@@ -137,6 +138,7 @@ ant.importBuild('build.xml') { antTarget ->
     'coderules-'+antTarget
 }
 ant.properties.'ci.build.num' = "${buildNumber().find() ? buildNumber()[0][4] : '9999'}".toString()
+ant.properties.'ci.build.tag' = "${buildNumber().find() ? buildNumber()[0][4] : 'SNAPSHOT'}".toString()
 ant.properties.'ci.mps.release' = "${buildNumber().find() ? buildNumber()[0][1] : '211'}".toString()
 
 // ensure 'setup' runs before 'fetchDependencies' and 'declare-mps-tasks'

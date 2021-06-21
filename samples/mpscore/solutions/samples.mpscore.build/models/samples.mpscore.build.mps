@@ -190,6 +190,16 @@
         </node>
       </node>
     </node>
+    <node concept="2kB4xC" id="C1f6iDxxIR" role="1l3spd">
+      <property role="TrG5h" value="ci.build.tag" />
+      <node concept="aVJcg" id="C1f6iDxxJm" role="aVJcv">
+        <node concept="NbPM2" id="C1f6iDxxJl" role="aVJcq">
+          <node concept="3Mxwew" id="C1f6iDxxJk" role="3MwsjC">
+            <property role="3MwjfP" value="SNAPSHOT" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2kB4xC" id="5Hdh9$IhmQ$" role="1l3spd">
       <property role="TrG5h" value="ci.mps.release" />
       <node concept="aVJcg" id="5Hdh9$IhmQ_" role="aVJcv">
@@ -377,7 +387,19 @@
       <node concept="3981dG" id="53G0zZLgOeZ" role="39821P">
         <node concept="3_J27D" id="53G0zZLgOf1" role="Nbhlr">
           <node concept="3Mxwew" id="53G0zZLgOfw" role="3MwsjC">
-            <property role="3MwjfP" value="jetbrains.mps.core.types-0.9-SNAPSHOT.zip" />
+            <property role="3MwjfP" value="jetbrains.mps.core.types-" />
+          </node>
+          <node concept="3Mxwey" id="C1f6iDzol1" role="3MwsjC">
+            <ref role="3Mxwex" node="5Hdh9$IhmQ$" resolve="ci.mps.release" />
+          </node>
+          <node concept="3Mxwew" id="C1f6iDzol0" role="3MwsjC">
+            <property role="3MwjfP" value="-0.9-b" />
+          </node>
+          <node concept="3Mxwey" id="C1f6iDxxPK" role="3MwsjC">
+            <ref role="3Mxwex" node="C1f6iDxxIR" resolve="ci.build.tag" />
+          </node>
+          <node concept="3Mxwew" id="C1f6iDxxPJ" role="3MwsjC">
+            <property role="3MwjfP" value=".zip" />
           </node>
         </node>
         <node concept="m$_wl" id="53G0zZLgOfy" role="39821P">
