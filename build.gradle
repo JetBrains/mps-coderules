@@ -120,14 +120,14 @@ task generateUpdatePluginsXml {
            plugin( id: "jetbrains.mps.coderules" ,
                    url: baseUrl + "/$System.env.BUILD_NUMBER" + zip1 ,
                    version: "${version}" ) {
-             name { "MPS Coderules Typechecking" }
-             description { "Typechecking with Coderules (experimental)" }
+             name { mkp.yield("MPS Coderules Typechecking") }
+             description { mkp.yield("Typechecking with Coderules (experimental)") }
            }
            plugin( id: "jetbrains.mps.core.types" ,
                    url: baseUrl + "/$System.env.BUILD_NUMBER" + zip2 ,
                    version: "${version}" ) { 
-             name { "MPS Core Types" }
-             description { "Types for core MPS languages (experimental)" }
+             name { mkp.yield("MPS Core Types") }
+             description { mkp.yield("Types for core MPS languages (experimental)") }
            }
        }
     }
