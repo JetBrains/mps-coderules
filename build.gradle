@@ -12,9 +12,9 @@ import java.util.regex.*
 // build.xml file have cyclic dependencies. This needs to be fixed in build
 // script, and build.xml regenerated.
 
-//plugins {
+// plugins {
 //  id "com.dorongold.task-tree" version "1.5"
-//}
+// }
 
 defaultTasks 'assemble'
 
@@ -181,6 +181,17 @@ assemble {
       ':samples:mpscore:mpscore-assemble',
       ':samples:lambdacalc:lambdacalc-assemble',
       ':samples:fitch:fitch-assemble'
+    ]
+  }
+}
+
+clean {
+  dependsOn {
+    [
+      ':coderules-clean', ':coderules-cleanSources',
+      ':samples:mpscore:mpscore-clean', ':samples:mpscore:mpscore-cleanSources',
+      ':samples:lambdacalc:lambdacalc-clean', ':samples:lambdacalc:lambdacalc-cleanSources',
+      ':samples:fitch:fitch-clean', ':samples:fitch:fitch-cleanSources'
     ]
   }
 }
