@@ -1,58 +1,56 @@
-# MPS Code Rules
+# MPS CodeRules
 
-An experimental feature of [JetBrains MPS](https://jetbrains.com/mps). Code rules allow to create various code analyses employing constraints handling. The examples are provided, including type checking and control flow analysis of code written using MPS’s baseLanguage.
+An experimental feature of [JetBrains MPS](https://jetbrains.com/mps), *Coderules* is collection of languages that allow to utilize logical programming approach for solving typechecking and related problems.
+
+[JetBrains MPS](https://www.jetbrains.com/mps/) is a project developed by [JetBrains](http://www.jetbrains.com/?fromFooter).
 
 ## Documentation
 
-**NEW!** The documentation [website](http://jetbrains.github.io/mps-coderules/) is available.  
+The [documentation](http://jetbrains.github.io/mps-coderules/) is available online.  
+
+## Installation
+
+1. Download the two plugins from [this](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20211_Distribution_MpsCodeRules&state=successful) build configuration (see "artifacts" of the last successful build):
+
+- `jetbrains.mps.coderules-211-*.zip` (Coderules and related languages and accessory solutions)
+- `jetbrains.mps.core-types-211-*.zip` (Type definitions for core MPS languages)
+
+2. Install both plugins by choosing "Install Plugin from Disk.." option from "Manage..." menu of Plugins page in the preferences.
+3. Restart MPS.
 
 ## Status
-| TeamCity EAP |
-|:--|
-| [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20211_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20211_Distribution_MpsCodeRules) |
-
+| TeamCity | TeamCity EAP |
+|:--|:--|
+| [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20211_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20211_Distribution_MpsCodeRules) | [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20212_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20212_Distribution_MpsCodeRules) |
 
 The status of this project is **pre-release**. Don’t rely on any of the language features or the API to be stable. The purpose of this project is to show the new technology and collect early feedback.
-
-Latest release can be found [here](https://github.com/jetbrains/mps-coderules/releases).
-
-The author can be reached by email `fedor.isakov` (AT) `jetbrains.com` or by [Twitter](https://twitter.com/fisakov).
-
-[JetBrains MPS](https://www.jetbrains.com/mps/) is a project developed by [JetBrains](http://www.jetbrains.com/?fromFooter) and is available via [web](https://www.jetbrains.com/mps/) and [Twitter](http://twitter.com/jetbrains_mps).
 
 ## Overview
 
 This project is the result of ongoing research done within MPS team in the area of code analysis using constraints handling, in particular [CHR](http://www.informatik.uni-ulm.de/pm/fileadmin/pm/home/fruehwirth/constraint-handling-rules-book.html).
+                                                                     
+Analysis of source model with CodeRules can be described as a two-phase process.
 
-Code rules serve as templates that produce constraint rules. Both transformation to constraint rules and evaluating is done in-memory at the time analysis is launched. Constraint rules are processed by the embedded [engine](reactor).
+1. Collecting rule tables and applying rule templates.
+2. Processing constraint rules collected in the first stage.
 
-Samples included with this project demonstrate how *coderules* can be used for solving concrete tasks connected with source code analysis.
+In the first phase, languages used by the model being analysed and surveyed for the appropriate CodeRules aspect model, which is types in case of type checking. *Coderules* allow for extensions to be provided by derived languages. Extensions have higher priority, so it’s easy to override the built-in behaviour.
 
+The outcome of this phase is a constraint rules program, which is a collection of rule tables, which in turn represent lists of constraint rules. This “program” however, exists in memory only as it does not have any textual representation.
+
+In the second phase the constraints program that was created in phase one is evaluated. The semantics of constraints processing is compatible with regular Java semantics.
+
+## Samples
+
+- [Type checking](samples/mpscore) for core MPS languages.
 - [Type checking of lambda calculus](samples/lambdacalc) shows the implementation of standard type checking algorithm.
 - [Proof validation](samples/fitch) using Fitch system demonstrates how logical inference can be done.
-- [Type checking and control flow analysis](samples/mpscore) for core MPS languages.
 
-*Coderules* allow for extensions to be provided by derived languages. Extensions have higher priority, so it’s easy to override the built-in behaviour.
+## Sources 
 
-The semantics of constraints handling is compatible with regular Java semantics, so *coderules* can be safely embedded into the user code. There also exists support for launching arbitrary code from when processing constraints.
+The source code can be opened with the last release of JetBrains MPS. See INSTALL.txt for information on how to set up the project.
 
-Parallel or background execution of *coderules* is possible thanks to the reactive extensions, in particular rxjava, which is used by the implementation.
-
-See [implementation notes](coderules/README.md) for more information.
-
-## Dependencies
-
-The source code can be opened with the latest version of JetBrains MPS. The plugin that is created with the build script is also compatible with the same version of MPS.
-
-## Project structure
-
-- **reactor** - contains the implementation of constraint processing engine
-- **coderules** - implementation and tests
-- **samples** - sample projects using *coderules*
-
-## Installation
-
-See [INSTALL.txt](INSTALL.txt).
+The author can be reached by email `fedor.isakov`@`jetbrains.com` or by [Twitter](https://twitter.com/fisakov).
 
 ## License
 
