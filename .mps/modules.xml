@@ -2,6 +2,7 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="$PROJECT_DIR$/coderules/devkits/jetbrains.mps.devkit.aspect.types/jetbrains.mps.devkit.aspect.types.devkit" folder="typechecking.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/jetbrains.mps.lang.coderules.mpl" folder="coderules.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/runtime/jetbrains.mps.lang.coderules.runtime.msd" folder="coderules.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.controlflow/jetbrains.mps.lang.controlflow.mpl" folder="exp.controlflow" />

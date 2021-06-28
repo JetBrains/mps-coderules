@@ -24,6 +24,7 @@
   <property name="mpsBootstrapCore.version.eap" value="${import.mps.mpsBootstrapCore.version.eap}" />
   <property name="mpsBootstrapCore.version" value="${import.mps.mpsBootstrapCore.version}" />
   <property name="coderules.ci.build.num" value="${import.coderules.coderules.ci.build.num}" />
+  <property name="coderules.ci.build.tag" value="${import.coderules.coderules.ci.build.tag}" />
   <property name="coderules.ci.mps.release" value="${import.coderules.coderules.ci.mps.release}" />
   <property name="coderules.test.jvmargs" value="${import.coderules.coderules.test.jvmargs}" />
   <property name="environment" value="env" />
@@ -76,6 +77,7 @@
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" kind="cl" />
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="cl" />
           <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
+          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" kind="cl" />
           <module ref="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" kind="cl" />
         </dependencies>
@@ -83,9 +85,11 @@
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
           <language id="l:ed6d7656-532c-4bc2-81d1-af945aeb8280:jetbrains.mps.baseLanguage.blTypes" />
           <language id="l:774bf8a0-62e5-41e1-af63-f4812e60e48b:jetbrains.mps.baseLanguage.checkedDots" />
+          <language id="l:443f4c36-fcf5-4eb6-9500-8d06ed259e3e:jetbrains.mps.baseLanguage.classifiers" />
           <language id="l:fd392034-7849-419d-9071-12563d152375:jetbrains.mps.baseLanguage.closures" />
           <language id="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" />
           <language id="l:f2801650-65d5-424e-bb1b-463a8781b786:jetbrains.mps.baseLanguage.javadoc" />
+          <language id="l:96ee7a94-411d-4cf8-9b94-96cad7e52411:jetbrains.mps.baseLanguage.jdk7" />
           <language id="l:760a0a8c-eabb-4521-8bfd-65db761a9ba3:jetbrains.mps.baseLanguage.logging" />
           <language id="l:daafa647-f1f7-4b0b-b096-69cd7c8408c0:jetbrains.mps.baseLanguage.regexp" />
           <language id="l:a247e09e-2435-45ba-b8d2-07e93feba96a:jetbrains.mps.baseLanguage.tuples" />
@@ -210,7 +214,7 @@
       <zipfileset file="${basedir}/solutions/samples.lambdacalc.demo/samples.lambdacalc.demo.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-samples.lambdacalc.demo-models" prefix="module/models" />
     </jar>
-    <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version.major=${mpsBootstrapCore.version.major}${line.separator}mpsBootstrapCore.version.minor=${mpsBootstrapCore.version.minor}${line.separator}mpsBootstrapCore.version.bugfixNr=${mpsBootstrapCore.version.bugfixNr}${line.separator}mpsBootstrapCore.version.eap=${mpsBootstrapCore.version.eap}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}coderules.ci.build.num=${coderules.ci.build.num}${line.separator}coderules.ci.mps.release=${coderules.ci.mps.release}${line.separator}coderules.test.jvmargs=${coderules.test.jvmargs}</echo>
+    <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version.major=${mpsBootstrapCore.version.major}${line.separator}mpsBootstrapCore.version.minor=${mpsBootstrapCore.version.minor}${line.separator}mpsBootstrapCore.version.bugfixNr=${mpsBootstrapCore.version.bugfixNr}${line.separator}mpsBootstrapCore.version.eap=${mpsBootstrapCore.version.eap}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}coderules.ci.build.num=${coderules.ci.build.num}${line.separator}coderules.ci.build.tag=${coderules.ci.build.tag}${line.separator}coderules.ci.mps.release=${coderules.ci.mps.release}${line.separator}coderules.test.jvmargs=${coderules.test.jvmargs}</echo>
   </target>
   
   <target name="buildDependents" />
@@ -247,6 +251,7 @@
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.devkit.aspect.types.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
@@ -537,6 +542,7 @@
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" />
+      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.devkit.aspect.types.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />

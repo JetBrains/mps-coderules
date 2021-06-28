@@ -15,9 +15,14 @@
       <concept id="3433054418424672374" name="jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor" flags="ng" index="3vrhyV">
         <child id="6106419185511570295" name="mainLanguages" index="QG$2i" />
         <child id="6106419185511570301" name="additionalLanguages" index="QG$2o" />
+        <child id="8222125370833980146" name="devkit" index="TkT64" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="8222125370833354011" name="jetbrains.mps.lang.smodel.structure.DevkitPointer" flags="ng" index="T9mpH">
+        <property id="8222125370833354012" name="devkitName" index="T9mpE" />
+        <property id="8222125370833354013" name="devkitId" index="T9mpF" />
+      </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
@@ -38,6 +43,10 @@
     <node concept="2V$Bhx" id="5MK8bDyOYCL" role="QG$2o">
       <property role="2V$B1T" value="c4803b19-6d89-4a3b-bf82-390769514add" />
       <property role="2V$B1Q" value="jetbrains.mps.lang.coderules" />
+    </node>
+    <node concept="T9mpH" id="C1f6iDDJI1" role="TkT64">
+      <property role="T9mpF" value="888618cf-7697-4adc-80cd-8c6ea3486ef7" />
+      <property role="T9mpE" value="jetbrains.mps.devkit.aspect.types" />
     </node>
   </node>
 </model>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dev-kit name="jetbrains.mps.devkit.aspect.types" uuid="888618cf-7697-4adc-80cd-8c6ea3486ef7">
+  <exported-language name="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" />
+  <exported-language name="c4803b19-6d89-4a3b-bf82-390769514add(jetbrains.mps.lang.coderules)" />
+  <exported-language name="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" />
+  <extendedDevKits>
+    <extendedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</extendedDevKit>
+  </extendedDevKits>
+  <exported-solutions>
+    <exported-solution>f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)</exported-solution>
+  </exported-solutions>
+  <generation-plan model="r:32ed3462-7683-4dc2-8b0b-8bb7ef0f8860(jetbrains.mps.lang.descriptor.aspects.types@genplan)" />
+</dev-kit>
+
