@@ -1,5 +1,21 @@
 import groovy.xml.MarkupBuilder
 import java.util.regex.*
+import java.util.zip.*
+import java.io.*
+import com.jetbrains.plugin.blockmap.core.BlockMap
+import com.jetbrains.plugin.blockmap.core.FileHash
+import com.fasterxml.jackson.databind.ObjectMapper
+
+buildscript {
+    repositories {
+       mavenCentral()
+    }
+    dependencies {
+       classpath group: 'org.jetbrains.intellij', name: 'blockmap', version: '1.0.5'
+       // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+       classpath group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
+    }
+}
 
 // In case gradle build fails to execute any of the tasks imported from
 // buid.xml, try the following steps: 
@@ -134,6 +150,25 @@ task generateUpdatePluginsXml {
   }
 }
 
+task createBlockmap {
+  onlyIf {
+    buildNumber().find()
+  }
+  doLast {
+    def version = "${buildNumber()[0][1]}-0.9-b${buildNumber()[0][4]}"
+    def path = "build/artifacts/coderules"
+    def distFile = file("${path}/jetbrains.mps.coderules-${version}.zip")
+    def blockMapFileZipFile = new File(distFile.absolutePath + ".blockmap.zip")
+    def blockMapFileZip = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(blockMapFileZipFile)))
+    blockMapFileZip.putNextEntry(new ZipEntry("blockmap.json"))
+    blockMapFileZip.write(new ObjectMapper().writeValueAsBytes(new BlockMap(new BufferedInputStream(new FileInputStream(distFile)), "SHA-256")))
+    blockMapFileZip.closeEntry()
+    blockMapFileZip.close()
+    def distFileHash = new File(distFile.absolutePath + ".hash.json")
+    distFileHash.append(new ObjectMapper().writeValueAsString(new FileHash(new BufferedInputStream(new FileInputStream(distFile)), "SHA-256")))
+  }
+}
+
 ant.taskdef(name: 'junit',
             classname: 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTask',
             classpath: configurations.junitAnt.asPath)
@@ -170,7 +205,10 @@ ant.properties.'ci.mps.release' = "${buildNumber().find() ? buildNumber()[0][1] 
 
 'coderules-assemble' {
   finalizedBy {
-    'generateUpdatePluginsXml'
+    [
+      'generateUpdatePluginsXml',
+      'createBlockmap'
+    ]
   }
 }
 

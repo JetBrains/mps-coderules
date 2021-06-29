@@ -1,3 +1,20 @@
+import java.util.zip.*
+import java.io.*
+import com.jetbrains.plugin.blockmap.core.BlockMap
+import com.jetbrains.plugin.blockmap.core.FileHash
+import com.fasterxml.jackson.databind.ObjectMapper
+
+buildscript {
+    repositories {
+       mavenCentral()
+    }
+    dependencies {
+       classpath group: 'org.jetbrains.intellij', name: 'blockmap', version: '1.0.5'
+       // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+       classpath group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
+    }
+}
+
 configurations {
     junitAnt
 }
@@ -7,6 +24,25 @@ dependencies {
   junitAnt 'junit:junit:4.8.2'
   junitAnt('org.apache.ant:ant-junit:1.9.2') {
       transitive = false
+  }
+}
+
+task createBlockmap {
+  onlyIf {
+    buildNumber().find()
+  }
+  doLast {
+    def version = "${buildNumber()[0][1]}-0.9-b${buildNumber()[0][4]}"
+    def path = "build/artifacts/mpscore"
+    def distFile = file("${path}/jetbrains.mps.core.types-${version}.zip")
+    def blockMapFileZipFile = new File(distFile.absolutePath + ".blockmap.zip")
+    def blockMapFileZip = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(blockMapFileZipFile)))
+    blockMapFileZip.putNextEntry(new ZipEntry("blockmap.json"))
+    blockMapFileZip.write(new ObjectMapper().writeValueAsBytes(new BlockMap(new BufferedInputStream(new FileInputStream(distFile)), "SHA-256")))
+    blockMapFileZip.closeEntry()
+    blockMapFileZip.close()
+    def distFileHash = new File(distFile.absolutePath + ".hash.json")
+    distFileHash.append(new ObjectMapper().writeValueAsString(new FileHash(new BufferedInputStream(new FileInputStream(distFile)), "SHA-256")))
   }
 }
 
@@ -40,6 +76,12 @@ ant.properties.'ci.mps.release' = "${buildNumber().find() ? buildNumber()[0][1] 
 'mpscore-generate' {
   dependsOn {
     ':coderules-assemble'
+  }
+}
+
+'mpscore-assemble' {
+  finalizedBy {
+    'createBlockmap'
   }
 }
 
