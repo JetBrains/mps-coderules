@@ -2498,6 +2498,15 @@
           <ref role="3uigEE" node="5itBwM86qUH" resolve="ExpandMacroTemplate.Token" />
         </node>
       </node>
+      <node concept="2AHcQZ" id="C1f6iEluMz" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+        <node concept="2B6LJw" id="C1f6iEyX7g" role="2B76xF">
+          <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
+          <node concept="3clFbT" id="C1f6iEyXm1" role="2B70Vg">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="At0yqM7GVd" role="jymVt" />
     <node concept="3clFb_" id="At0yqM7GUY" role="jymVt">
@@ -2536,6 +2545,66 @@
         <property role="TrG5h" value="T" />
         <node concept="3uibUv" id="At0yqM7GVc" role="3ztrMU">
           <ref role="3uigEE" node="5itBwM86qUH" resolve="ExpandMacroTemplate.Token" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="C1f6iEyM1v" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+        <node concept="2B6LJw" id="C1f6iEyXxQ" role="2B76xF">
+          <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
+          <node concept="3clFbT" id="C1f6iEyXK3" role="2B70Vg">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="C1f6iEysUF" role="jymVt" />
+    <node concept="3clFb_" id="C1f6iEyrah" role="jymVt">
+      <property role="TrG5h" value="expandMacro" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="37vLTG" id="C1f6iEyuh2" role="3clF46">
+        <property role="TrG5h" value="ruleInput" />
+        <node concept="3Tqbb2" id="C1f6iEyvAg" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="C1f6iEyrai" role="3clF46">
+        <property role="TrG5h" value="macroConceptInput" />
+        <node concept="3bZ5Sz" id="C1f6iEyraj" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="C1f6iEyrak" role="3clF46">
+        <property role="TrG5h" value="prototypeTemplateRef" />
+        <node concept="3uibUv" id="C1f6iEyral" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="C1f6iEyram" role="3clF46">
+        <property role="TrG5h" value="proc" />
+        <node concept="3uibUv" id="C1f6iEyran" role="1tU5fm">
+          <ref role="3uigEE" to="82uw:~Function" resolve="Function" />
+          <node concept="3qUtgH" id="C1f6iEyrao" role="11_B2D">
+            <node concept="16syzq" id="C1f6iEyrap" role="3qUvdb">
+              <ref role="16sUi3" node="C1f6iEyrau" resolve="T" />
+            </node>
+          </node>
+          <node concept="3uibUv" id="C1f6iEyraq" role="11_B2D">
+            <ref role="3uigEE" node="7eGEHDlc$ap" resolve="RuleBuilder" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="C1f6iEyrar" role="3clF45">
+        <ref role="3uigEE" node="7eGEHDlc$ap" resolve="RuleBuilder" />
+      </node>
+      <node concept="3Tm1VV" id="C1f6iEyras" role="1B3o_S" />
+      <node concept="3clFbS" id="C1f6iEyrat" role="3clF47" />
+      <node concept="16euLQ" id="C1f6iEyrau" role="16eVyc">
+        <property role="TrG5h" value="T" />
+        <node concept="3uibUv" id="C1f6iEyrav" role="3ztrMU">
+          <ref role="3uigEE" node="5itBwM86qUH" resolve="ExpandMacroTemplate.Token" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="C1f6iEyP_C" role="lGtFl">
+        <node concept="TZ5HA" id="C1f6iEyP_D" role="TZ5H$">
+          <node concept="1dT_AC" id="C1f6iEyP_E" role="1dT_Ay">
+            <property role="1dT_AB" value="Overloaded variant of the default expandMacro method accepting the concept instead of the macro input node." />
+          </node>
         </node>
       </node>
     </node>
