@@ -79,12 +79,6 @@ ant.properties.'ci.mps.release' = "${buildNumber().find() ? buildNumber()[0][1] 
   }
 }
 
-'mpscore-assemble' {
-  finalizedBy {
-    'createBlockmap'
-  }
-}
-
 assemble {
   dependsOn {
     'mpscore-assemble'
