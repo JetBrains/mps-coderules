@@ -1,0 +1,10 @@
+<plugins>
+    <plugin id='jetbrains.mps.coderules' url='https://github.com/JetBrains/mps-coderules/releases/download/v211-0.9-b192/jetbrains.mps.coderules-211-0.9-b192.zip' version='211-0.9-b192'>
+        <name>MPS Coderules Typechecking</name>
+        <description>Typechecking with Coderules (experimental)</description>
+    </plugin>
+    <plugin id='jetbrains.mps.core.types' url='https://github.com/JetBrains/mps-coderules/releases/download/v211-0.9-b192/jetbrains.mps.core.types-211-0.9-b192.zip' version='211-0.9-b192'>
+        <name>MPS Core Types</name>
+        <description>Types for core MPS languages (experimental)</description>
+    </plugin>
+</plugins>
