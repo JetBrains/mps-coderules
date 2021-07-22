@@ -2745,6 +2745,106 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="7lmP5gAmsdQ" role="3acgRq">
+      <ref role="30HIoZ" to="wq2x:7lmP5gAmrye" resolve="IsGroundTermConstraint" />
+      <node concept="1Koe21" id="7lmP5gAmsdR" role="1lVwrX">
+        <node concept="3clFb_" id="7lmP5gAmsdS" role="1Koe22">
+          <property role="TrG5h" value="context" />
+          <node concept="3cqZAl" id="7lmP5gAmsdT" role="3clF45" />
+          <node concept="3Tm1VV" id="7lmP5gAmsdU" role="1B3o_S" />
+          <node concept="3clFbS" id="7lmP5gAmsdV" role="3clF47">
+            <node concept="3clFbF" id="7lmP5gAmsdW" role="3cqZAp">
+              <node concept="2OqwBi" id="7lmP5gAmsdX" role="3clFbG">
+                <node concept="2OqwBi" id="7lmP5gAmsdY" role="2Oq$k0">
+                  <node concept="2ShNRf" id="7lmP5gAmsdZ" role="2Oq$k0">
+                    <node concept="1pGfFk" id="7lmP5gAmse0" role="2ShVmc">
+                      <ref role="37wK5l" to="i348:4sSe4$oM2B4" resolve="PredicateBuilder" />
+                      <node concept="10M0yZ" id="7lmP5gAmvtU" role="37wK5m">
+                        <ref role="3cqZAo" to="cxk7:7lmP5gAgJxn" resolve="GROUND_SYM" />
+                        <ref role="1PxDUh" to="cxk7:7lmP5gAgjDe" resolve="TermPredicate" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="7lmP5gAmse2" role="2OqNvi">
+                    <ref role="37wK5l" to="i348:4sSe4$oM2Bb" resolve="withArguments" />
+                    <node concept="10Nm6u" id="7lmP5gAmse3" role="37wK5m">
+                      <node concept="29HgVG" id="7lmP5gAmse4" role="lGtFl">
+                        <node concept="3NFfHV" id="7lmP5gAmse5" role="3NFExx">
+                          <node concept="3clFbS" id="7lmP5gAmse6" role="2VODD2">
+                            <node concept="3clFbF" id="7lmP5gAmse7" role="3cqZAp">
+                              <node concept="2OqwBi" id="7lmP5gAmse8" role="3clFbG">
+                                <node concept="3TrEf2" id="7lmP5gAmyOz" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="wq2x:7lmP5gAmruH" resolve="term" />
+                                </node>
+                                <node concept="30H73N" id="7lmP5gAmsea" role="2Oq$k0" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="7lmP5gAmseb" role="2OqNvi">
+                  <ref role="37wK5l" to="i348:4sSe4$oM2Bs" resolve="toPredicate" />
+                </node>
+                <node concept="raruj" id="7lmP5gAmsec" role="lGtFl" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="7lmP5gAmv_K" role="3acgRq">
+      <ref role="30HIoZ" to="wq2x:7lmP5gAms1l" resolve="IsNongroundTermConstraint" />
+      <node concept="1Koe21" id="7lmP5gAmv_L" role="1lVwrX">
+        <node concept="3clFb_" id="7lmP5gAmv_M" role="1Koe22">
+          <property role="TrG5h" value="context" />
+          <node concept="3cqZAl" id="7lmP5gAmv_N" role="3clF45" />
+          <node concept="3Tm1VV" id="7lmP5gAmv_O" role="1B3o_S" />
+          <node concept="3clFbS" id="7lmP5gAmv_P" role="3clF47">
+            <node concept="3clFbF" id="7lmP5gAmv_Q" role="3cqZAp">
+              <node concept="2OqwBi" id="7lmP5gAmv_R" role="3clFbG">
+                <node concept="2OqwBi" id="7lmP5gAmv_S" role="2Oq$k0">
+                  <node concept="2ShNRf" id="7lmP5gAmv_T" role="2Oq$k0">
+                    <node concept="1pGfFk" id="7lmP5gAmv_U" role="2ShVmc">
+                      <ref role="37wK5l" to="i348:4sSe4$oM2B4" resolve="PredicateBuilder" />
+                      <node concept="10M0yZ" id="7lmP5gAmyvr" role="37wK5m">
+                        <ref role="3cqZAo" to="cxk7:7lmP5gAh361" resolve="NONGROUND_SYM" />
+                        <ref role="1PxDUh" to="cxk7:7lmP5gAgjDe" resolve="TermPredicate" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="7lmP5gAmv_W" role="2OqNvi">
+                    <ref role="37wK5l" to="i348:4sSe4$oM2Bb" resolve="withArguments" />
+                    <node concept="10Nm6u" id="7lmP5gAmv_X" role="37wK5m">
+                      <node concept="29HgVG" id="7lmP5gAmv_Y" role="lGtFl">
+                        <node concept="3NFfHV" id="7lmP5gAmv_Z" role="3NFExx">
+                          <node concept="3clFbS" id="7lmP5gAmvA0" role="2VODD2">
+                            <node concept="3clFbF" id="7lmP5gAmvA1" role="3cqZAp">
+                              <node concept="2OqwBi" id="7lmP5gAmvA2" role="3clFbG">
+                                <node concept="3TrEf2" id="7lmP5gAmz6y" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="wq2x:7lmP5gAmruH" resolve="term" />
+                                </node>
+                                <node concept="30H73N" id="7lmP5gAmvA4" role="2Oq$k0" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="7lmP5gAmvA5" role="2OqNvi">
+                  <ref role="37wK5l" to="i348:4sSe4$oM2Bs" resolve="toPredicate" />
+                </node>
+                <node concept="raruj" id="7lmP5gAmvA6" role="lGtFl" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="5WBVN_MTd1c" role="3acgRq">
       <ref role="30HIoZ" to="wq2x:5WBVN_MT8FC" resolve="LateExpressionItem" />
       <node concept="30G5F_" id="7lt0LtQruqd" role="30HLyM">

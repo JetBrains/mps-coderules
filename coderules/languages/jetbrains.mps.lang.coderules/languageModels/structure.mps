@@ -1678,5 +1678,33 @@
       <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7lmP5gAmrrX">
+    <property role="EcuMT" value="8455178808320440061" />
+    <property role="3GE5qa" value="constraint.term" />
+    <property role="TrG5h" value="TermConstraint" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    <node concept="1TJgyj" id="7lmP5gAmruH" role="1TKVEi">
+      <property role="IQ2ns" value="8455178808320440237" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="term" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7lmP5gAmrye">
+    <property role="EcuMT" value="8455178808320440462" />
+    <property role="3GE5qa" value="constraint.term" />
+    <property role="TrG5h" value="IsGroundTermConstraint" />
+    <property role="34LRSv" value="isGround" />
+    <ref role="1TJDcQ" node="7lmP5gAmrrX" resolve="TermConstraint" />
+  </node>
+  <node concept="1TIwiD" id="7lmP5gAms1l">
+    <property role="EcuMT" value="8455178808320442453" />
+    <property role="3GE5qa" value="constraint.term" />
+    <property role="TrG5h" value="IsNongroundTermConstraint" />
+    <property role="34LRSv" value="isNonground" />
+    <ref role="1TJDcQ" node="7lmP5gAmrrX" resolve="TermConstraint" />
+  </node>
 </model>
 
