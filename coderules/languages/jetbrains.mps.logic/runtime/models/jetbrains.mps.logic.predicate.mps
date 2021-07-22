@@ -7726,7 +7726,7 @@
             <node concept="1pGfFk" id="5uFPQ7CiQse" role="2ShVmc">
               <ref role="37wK5l" node="5$WbtTOYsLU" resolve="LogicalPredicate" />
               <node concept="37vLTw" id="5uFPQ7CiQsz" role="37wK5m">
-                <ref role="3cqZAo" node="5uFPQ7C26$b" resolve="BOUND_SYM" />
+                <ref role="3cqZAo" node="5uFPQ7C26$b" resolve="NONFREE_SYM" />
               </node>
               <node concept="37vLTw" id="5uFPQ7CiQC4" role="37wK5m">
                 <ref role="3cqZAo" node="5uFPQ7CiQiV" resolve="logical" />
@@ -7829,7 +7829,7 @@
     </node>
     <node concept="2tJIrI" id="7lt0LtQvKbv" role="jymVt" />
     <node concept="Wx3nA" id="5uFPQ7C26$b" role="jymVt">
-      <property role="TrG5h" value="BOUND_SYM" />
+      <property role="TrG5h" value="NONFREE_SYM" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="5uFPQ7C26Lh" role="1B3o_S" />
       <node concept="3uibUv" id="5uFPQ7C26Oo" role="1tU5fm">
@@ -7842,7 +7842,7 @@
             <ref role="1Y3XeK" node="7lt0LtQvaw_" resolve="PredicateSymbolExt" />
             <ref role="37wK5l" node="7lt0LtQva_c" resolve="PredicateSymbolExt" />
             <node concept="Xl_RD" id="5uFPQ7C272B" role="37wK5m">
-              <property role="Xl_RC" value="isNonVar" />
+              <property role="Xl_RC" value="isNonfree" />
             </node>
             <node concept="3cmrfG" id="5uFPQ7C276T" role="37wK5m">
               <property role="3cmrfH" value="1" />
@@ -7914,7 +7914,7 @@
             <ref role="1Y3XeK" node="7lt0LtQvaw_" resolve="PredicateSymbolExt" />
             <ref role="37wK5l" node="7lt0LtQva_c" resolve="PredicateSymbolExt" />
             <node concept="Xl_RD" id="5uFPQ7C279D" role="37wK5m">
-              <property role="Xl_RC" value="isVar" />
+              <property role="Xl_RC" value="isFree" />
             </node>
             <node concept="3cmrfG" id="5uFPQ7C279E" role="37wK5m">
               <property role="3cmrfH" value="1" />
@@ -8061,7 +8061,7 @@
                   <ref role="1Pybhc" to="w7la:~Solver$Result" resolve="Solver.Result" />
                   <ref role="37wK5l" to="w7la:~Solver$Result.FAIL(java.lang.String)" resolve="FAIL" />
                   <node concept="Xl_RD" id="2gPa6JH_1Z2" role="37wK5m">
-                    <property role="Xl_RC" value="logical bound state is inconsistent" />
+                    <property role="Xl_RC" value="logical assignment state is inconsistent" />
                   </node>
                 </node>
               </node>
@@ -10166,7 +10166,7 @@
               <node concept="3clFbS" id="7lmP5gAgJxH" role="3clF47">
                 <node concept="3clFbF" id="7lmP5gAgJxI" role="3cqZAp">
                   <node concept="1rXfSq" id="7lmP5gAgUSg" role="3clFbG">
-                    <ref role="37wK5l" node="7lmP5gAh40X" resolve="NONGROUND" />
+                    <ref role="37wK5l" node="7lmP5gAgMxo" resolve="GROUND" />
                     <node concept="AH0OO" id="7lmP5gAgXj_" role="37wK5m">
                       <node concept="3cmrfG" id="7lmP5gAgXLH" role="AHEQo">
                         <property role="3cmrfH" value="0" />

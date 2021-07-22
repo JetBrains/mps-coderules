@@ -2711,7 +2711,7 @@
                       <ref role="37wK5l" to="i348:4sSe4$oM2B4" resolve="PredicateBuilder" />
                       <node concept="10M0yZ" id="4sSe4$oNyeb" role="37wK5m">
                         <ref role="1PxDUh" to="cxk7:5$WbtTOYoMb" resolve="LogicalPredicate" />
-                        <ref role="3cqZAo" to="cxk7:5uFPQ7C26$b" resolve="BOUND_SYM" />
+                        <ref role="3cqZAo" to="cxk7:5uFPQ7C26$b" resolve="NONFREE_SYM" />
                       </node>
                     </node>
                   </node>

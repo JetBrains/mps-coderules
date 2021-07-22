@@ -353,7 +353,7 @@
   <node concept="1TIwiD" id="60B5zVEVSFB">
     <property role="3GE5qa" value="constraint.variable" />
     <property role="TrG5h" value="IsboundVariableConstraint" />
-    <property role="34LRSv" value="isAssigned" />
+    <property role="34LRSv" value="isNonfree" />
     <property role="EcuMT" value="6928531011218148071" />
     <ref role="1TJDcQ" node="60B5zVESvAi" resolve="LogicVariableConstraint" />
   </node>
