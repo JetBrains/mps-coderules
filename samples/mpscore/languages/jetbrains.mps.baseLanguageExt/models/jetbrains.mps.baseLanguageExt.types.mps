@@ -54421,8 +54421,8 @@
             <node concept="YeOm9" id="74XSvywIt5R" role="2ShVmc">
               <node concept="1Y3b0j" id="74XSvywIt5S" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <ref role="37wK5l" node="74XSvywaYHS" resolve="HierarchyGraph" />
                 <ref role="1Y3XeK" node="rZZ6H4XHN" resolve="ClassHierarchyGraph" />
+                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 <node concept="3Tm1VV" id="74XSvywIt5T" role="1B3o_S" />
                 <node concept="3clFb_" id="74XSvywIt5V" role="jymVt">
                   <property role="TrG5h" value="createWalker" />
@@ -54581,8 +54581,8 @@
             <node concept="YeOm9" id="74XSvywGI70" role="2ShVmc">
               <node concept="1Y3b0j" id="74XSvywGI73" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <ref role="37wK5l" node="74XSvywaYHS" resolve="HierarchyGraph" />
                 <ref role="1Y3XeK" node="rZZ6H4XHN" resolve="ClassHierarchyGraph" />
+                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 <node concept="3Tm1VV" id="74XSvywGI74" role="1B3o_S" />
                 <node concept="3clFb_" id="74XSvywGIMV" role="jymVt">
                   <property role="TrG5h" value="createWalker" />
