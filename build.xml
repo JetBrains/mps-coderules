@@ -7,7 +7,7 @@
   <property name="build.layout" location="${build.dir}/artifacts/coderules" />
   <property name="ci.build.num" value="9999" />
   <property name="ci.build.tag" value="SNAPSHOT" />
-  <property name="ci.mps.release" value="211" />
+  <property name="ci.mps.release" value="212" />
   <property name="test.jvmargs" value="-Xss2048k -Xmx2048m" />
   <property name="mps.macro.coderules_home" location="${basedir}" />
   <property name="mps_home" location="${basedir}/MPS_HOME" />
@@ -1769,7 +1769,7 @@
         <description>Typechecking with Coderules (experimental)</description>
         <version>${ci.mps.release}-0.9-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
-        <idea-version since-build="211.1" />
+        <idea-version since-build="212.1" />
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
