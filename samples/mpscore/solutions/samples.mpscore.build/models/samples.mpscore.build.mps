@@ -151,6 +151,7 @@
       <concept id="763829979718664966" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleResources" flags="ng" index="3rtmxn">
         <child id="763829979718664967" name="files" index="3rtmxm" />
       </concept>
+      <concept id="4297162197620964123" name="jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions" flags="ng" index="1wNqPr" />
       <concept id="5507251971038816436" name="jetbrains.mps.build.mps.structure.BuildMps_Generator" flags="ng" index="1yeLz9" />
       <concept id="4278635856200817744" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot" flags="ng" index="1BupzO">
         <property id="8137134783396907368" name="convert2binary" index="1Hdu6h" />
@@ -3350,6 +3351,7 @@
         </node>
       </node>
     </node>
+    <node concept="1wNqPr" id="7lmP5gB1PvM" role="3989C9" />
   </node>
 </model>
 

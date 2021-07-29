@@ -3189,7 +3189,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" skipUnmodifiedModels="${mps.generator.skipUnmodifiedModels}" logLevel="${mps.ant.log}">
+    <generate strictMode="false" parallelMode="false" useInplaceTransform="false" hideWarnings="false" createStaticRefs="false" fork="true" skipUnmodifiedModels="${mps.generator.skipUnmodifiedModels}" logLevel="${mps.ant.log}">
       <plugin path="${artifacts.mps}/plugins/mps-build" />
       <plugin path="${artifacts.mps}/plugins/mps-core" />
       <plugin path="${artifacts.mps}/plugins/mps-testing" />
