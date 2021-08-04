@@ -21,9 +21,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
-        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -45,9 +42,6 @@
       </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="8356039341262087992" name="line" index="1aUNEU" />
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
@@ -88,13 +82,6 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU">
-        <reference id="7400021826771268269" name="concept" index="2sp9C9" />
-      </concept>
-      <concept id="4065387505485742749" name="jetbrains.mps.lang.smodel.structure.AbstractPointerResolveOperation" flags="ng" index="2yCiFS">
-        <child id="3648723375513868575" name="repositoryArg" index="Vysub" />
-      </concept>
-      <concept id="3648723375513868532" name="jetbrains.mps.lang.smodel.structure.NodePointer_ResolveOperation" flags="ng" index="Vyspw" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -111,14 +98,6 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
-    <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
-      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="nn" index="3oM_SD">
-        <property id="155656958578482949" name="value" index="3oM_SC" />
-      </concept>
-      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="nn" index="1PaTwC">
-        <child id="2535923850359271783" name="elements" index="1PaTwD" />
-      </concept>
-    </language>
   </registry>
   <node concept="1YbPZF" id="7lmP5gAYhwd">
     <property role="TrG5h" value="typeof_TypecheckingQueryParameter" />
@@ -126,8 +105,8 @@
       <node concept="3cpWs8" id="7lmP5gAYjvY" role="3cqZAp">
         <node concept="3cpWsn" id="7lmP5gAYjvZ" role="3cpWs9">
           <property role="TrG5h" value="queryInterface" />
-          <node concept="2sp9CU" id="7lmP5gAYjtN" role="1tU5fm">
-            <ref role="2sp9C9" to="tpee:g7pOWCK" resolve="Classifier" />
+          <node concept="3Tqbb2" id="3vih5251cHm" role="1tU5fm">
+            <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
           </node>
           <node concept="2OqwBi" id="7lmP5gAYjw0" role="33vP2m">
             <node concept="2OqwBi" id="7lmP5gAYjw1" role="2Oq$k0">
@@ -139,60 +118,7 @@
               </node>
             </node>
             <node concept="2qgKlT" id="7lmP5gAYjw4" role="2OqNvi">
-              <ref role="37wK5l" to="h103:7lmP5gAXQfi" resolve="getQueryInterface" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3SKdUt" id="7lmP5gAYlfx" role="3cqZAp">
-        <node concept="1PaTwC" id="7lmP5gAYlfy" role="1aUNEU">
-          <node concept="3oM_SD" id="7lmP5gAYlhb" role="1PaTwD">
-            <property role="3oM_SC" value="FIXME" />
-          </node>
-          <node concept="3oM_SD" id="7lmP5gAYlhd" role="1PaTwD">
-            <property role="3oM_SC" value="no" />
-          </node>
-          <node concept="3oM_SD" id="7lmP5gAYlhg" role="1PaTwD">
-            <property role="3oM_SC" value="other" />
-          </node>
-          <node concept="3oM_SD" id="7lmP5gAYlhk" role="1PaTwD">
-            <property role="3oM_SC" value="way" />
-          </node>
-          <node concept="3oM_SD" id="7lmP5gAYlhp" role="1PaTwD">
-            <property role="3oM_SC" value="to" />
-          </node>
-          <node concept="3oM_SD" id="7lmP5gAYlhv" role="1PaTwD">
-            <property role="3oM_SC" value="get" />
-          </node>
-          <node concept="3oM_SD" id="7lmP5gAYlhA" role="1PaTwD">
-            <property role="3oM_SC" value="the" />
-          </node>
-          <node concept="3oM_SD" id="7lmP5gAYlhI" role="1PaTwD">
-            <property role="3oM_SC" value="required" />
-          </node>
-          <node concept="3oM_SD" id="7lmP5gAYlhR" role="1PaTwD">
-            <property role="3oM_SC" value="repository" />
-          </node>
-          <node concept="3oM_SD" id="7lmP5gAYli1" role="1PaTwD">
-            <property role="3oM_SC" value="atm" />
-          </node>
-        </node>
-      </node>
-      <node concept="3cpWs8" id="7lmP5gAYl45" role="3cqZAp">
-        <node concept="3cpWsn" id="7lmP5gAYl46" role="3cpWs9">
-          <property role="TrG5h" value="cls" />
-          <node concept="3Tqbb2" id="7lmP5gAYl0u" role="1tU5fm">
-            <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
-          </node>
-          <node concept="2OqwBi" id="7lmP5gAYl47" role="33vP2m">
-            <node concept="37vLTw" id="7lmP5gAYl48" role="2Oq$k0">
-              <ref role="3cqZAo" node="7lmP5gAYjvZ" resolve="queryInterface" />
-            </node>
-            <node concept="Vyspw" id="7lmP5gAYl49" role="2OqNvi">
-              <node concept="2YIFZM" id="7lmP5gAYl4a" role="Vysub">
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance()" resolve="getInstance" />
-                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-              </node>
+              <ref role="37wK5l" to="h103:3vih52511I4" resolve="getQueryClassfier" />
             </node>
           </node>
         </node>
@@ -214,7 +140,7 @@
                 <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                 <property role="3hQQBS" value="ClassifierType" />
                 <node concept="37vLTw" id="7lmP5gAYlw2" role="2c44t1">
-                  <ref role="3cqZAo" node="7lmP5gAYl46" resolve="cls" />
+                  <ref role="3cqZAo" node="7lmP5gAYjvZ" resolve="queryInterface" />
                 </node>
               </node>
             </node>

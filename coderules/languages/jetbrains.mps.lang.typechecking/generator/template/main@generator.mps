@@ -349,7 +349,7 @@
               <node concept="2OqwBi" id="7lmP5gAXS4n" role="3clFbG">
                 <node concept="30H73N" id="7lmP5gAXRSw" role="2Oq$k0" />
                 <node concept="2qgKlT" id="7lmP5gAXSi1" role="2OqNvi">
-                  <ref role="37wK5l" to="h103:7lmP5gAXQfi" resolve="getQueryInterface" />
+                  <ref role="37wK5l" to="h103:3vih52511I4" resolve="getQueryClassfier" />
                 </node>
               </node>
             </node>
