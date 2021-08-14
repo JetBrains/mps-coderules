@@ -875,35 +875,35 @@
         <node concept="3LEDTy" id="5XWz8xxbpMu" role="3LEDUa">
           <ref role="3LEDTV" node="5XWz8xxbp0o" resolve="jetbrains.mps.lang.types" />
         </node>
-        <node concept="3LEDTy" id="2A2kySria77" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L25" resolve="jetbrains.mps.baseLanguage.jdk7" />
-        </node>
-        <node concept="3LEDTy" id="2A2kySria78" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6KZA" resolve="jetbrains.mps.baseLanguage.classifiers" />
-        </node>
-        <node concept="3LEDTy" id="2A2kySria79" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L4p" resolve="jetbrains.mps.lang.behavior" />
-        </node>
-        <node concept="3LEDTy" id="2A2kySria7a" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
-        </node>
-        <node concept="3LEDTy" id="2A2kySria7b" role="3LEDUa">
+        <node concept="3LEDTy" id="655KWpvtKF2" role="3LEDUa">
           <ref role="3LEDTV" to="ffeo:7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
         </node>
-        <node concept="3LEDTy" id="2A2kySria7c" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L0h" resolve="jetbrains.mps.baseLanguage.collections" />
+        <node concept="3LEDTy" id="655KWpvtKF3" role="3LEDUa">
+          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L25" resolve="jetbrains.mps.baseLanguage.jdk7" />
         </node>
-        <node concept="3LEDTy" id="2A2kySria7d" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L9c" resolve="jetbrains.mps.lang.quotation" />
+        <node concept="3LEDTy" id="655KWpvtKF4" role="3LEDUa">
+          <ref role="3LEDTV" to="ffeo:7Kfy9QB6KZA" resolve="jetbrains.mps.baseLanguage.classifiers" />
         </node>
-        <node concept="3LEDTy" id="2A2kySria7e" role="3LEDUa">
+        <node concept="3LEDTy" id="655KWpvtKF5" role="3LEDUa">
           <ref role="3LEDTV" to="ffeo:7Kfy9QB6L68" resolve="jetbrains.mps.lang.descriptor" />
         </node>
-        <node concept="3LEDTy" id="2A2kySria7f" role="3LEDUa">
+        <node concept="3LEDTy" id="655KWpvtKF6" role="3LEDUa">
           <ref role="3LEDTV" to="ffeo:7Kfy9QB6KZG" resolve="jetbrains.mps.baseLanguage.closures" />
         </node>
-        <node concept="3LEDTy" id="2A2kySria7g" role="3LEDUa">
+        <node concept="3LEDTy" id="655KWpvtKF7" role="3LEDUa">
+          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L9c" resolve="jetbrains.mps.lang.quotation" />
+        </node>
+        <node concept="3LEDTy" id="655KWpvtKF8" role="3LEDUa">
+          <ref role="3LEDTV" to="ffeo:7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
+        </node>
+        <node concept="3LEDTy" id="655KWpvtKF9" role="3LEDUa">
           <ref role="3LEDTV" to="ffeo:7Kfy9QB6L2F" resolve="jetbrains.mps.baseLanguage.tuples" />
+        </node>
+        <node concept="3LEDTy" id="655KWpvtKFa" role="3LEDUa">
+          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L0h" resolve="jetbrains.mps.baseLanguage.collections" />
+        </node>
+        <node concept="3LEDTy" id="655KWpvtKFb" role="3LEDUa">
+          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L4p" resolve="jetbrains.mps.lang.behavior" />
         </node>
       </node>
       <node concept="1E1JtA" id="NKt6yomVLS" role="2G$12L">

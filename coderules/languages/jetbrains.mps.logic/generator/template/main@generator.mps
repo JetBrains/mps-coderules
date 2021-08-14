@@ -78,6 +78,7 @@
       </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
@@ -995,27 +996,21 @@
         </node>
       </node>
     </node>
-    <node concept="3aamgX" id="1mP5b6jO$89" role="3acgRq">
+    <node concept="3aamgX" id="2BFWJjNVq8M" role="3acgRq">
       <ref role="30HIoZ" to="5j4j:1mP5b6jNC0S" resolve="LogicalType" />
-      <node concept="1Koe21" id="1mP5b6jOPxk" role="1lVwrX">
-        <node concept="3clFbS" id="1mP5b6jOPD0" role="1Koe22">
-          <node concept="3cpWs8" id="1mP5b6jOPFS" role="3cqZAp">
-            <node concept="3cpWsn" id="1mP5b6jOPFT" role="3cpWs9">
-              <property role="TrG5h" value="lv" />
-              <node concept="3uibUv" id="dfChU1kjs$" role="1tU5fm">
-                <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
-                <node concept="raruj" id="dfChU1koS6" role="lGtFl" />
-                <node concept="29HgVG" id="1sCZQVfbz8D" role="lGtFl">
-                  <node concept="3NFfHV" id="1sCZQVfbz8E" role="3NFExx">
-                    <node concept="3clFbS" id="1sCZQVfbz8F" role="2VODD2">
-                      <node concept="3clFbF" id="1sCZQVfbzSC" role="3cqZAp">
-                        <node concept="1UaxmW" id="1sCZQVfbzS_" role="3clFbG">
-                          <node concept="30H73N" id="1sCZQVfbzUq" role="1Ub_4B" />
-                          <node concept="1YaCAy" id="1sCZQVfb$2l" role="1Ub_4A">
-                            <property role="TrG5h" value="classifierType" />
-                            <ref role="1YaFvo" to="tpee:g7uibYu" resolve="ClassifierType" />
-                          </node>
-                        </node>
+      <node concept="1Koe21" id="2BFWJjNVq8N" role="1lVwrX">
+        <node concept="3uibUv" id="2BFWJjNVqus" role="1Koe22">
+          <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+          <node concept="3uibUv" id="2BFWJjNVqGh" role="11_B2D">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+            <node concept="29HgVG" id="2BFWJjNVqH2" role="lGtFl">
+              <node concept="3NFfHV" id="2BFWJjNVqH5" role="3NFExx">
+                <node concept="3clFbS" id="2BFWJjNVqH6" role="2VODD2">
+                  <node concept="3clFbF" id="2BFWJjNVqHb" role="3cqZAp">
+                    <node concept="2OqwBi" id="2BFWJjNVqT4" role="3clFbG">
+                      <node concept="30H73N" id="2BFWJjNVqHa" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="2BFWJjNVr8y" role="2OqNvi">
+                        <ref role="3Tt5mk" to="5j4j:5zfvpQ71CIE" resolve="dataType" />
                       </node>
                     </node>
                   </node>
@@ -1023,6 +1018,7 @@
               </node>
             </node>
           </node>
+          <node concept="raruj" id="2BFWJjNVqGe" role="lGtFl" />
         </node>
       </node>
     </node>
