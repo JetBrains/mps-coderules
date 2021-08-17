@@ -7,6 +7,7 @@
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/runtime/jetbrains.mps.lang.coderules.runtime.msd" folder="coderules.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.controlflow/jetbrains.mps.lang.controlflow.mpl" folder="exp.controlflow" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.typechecking/jetbrains.mps.lang.typechecking.mpl" folder="typechecking.lang" />
+      <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.types/jetbrains.mps.lang.types.mpl" folder="typechecking.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="coderules.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="coderules.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" folder="typechecking.annotation" />

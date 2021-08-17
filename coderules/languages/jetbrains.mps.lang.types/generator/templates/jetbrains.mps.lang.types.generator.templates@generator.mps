@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:7be25111-db66-40e7-be84-6d98fca6b94a(main@generator)">
+<model ref="r:78427850-493c-4a8f-bd84-a43042af6010(jetbrains.mps.lang.types.generator.templates@generator)">
   <persistence version="9" />
   <languages>
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="2" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
-    <import index="z0r2" ref="r:9d6fe210-6699-4ffe-b3e4-567da3cd1f1d(jetbrains.mps.lang.controlflow.structure)" />
+    <import index="cmcw" ref="r:def76fd6-1aa7-4c6c-9d77-632f565496a5(jetbrains.mps.lang.typechecking.plugin)" />
     <import index="ba7m" ref="r:4c5ac278-3ad7-4902-ab86-6c60b350f168(jetbrains.mps.lang.aspect.generator.template.main@generator)" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
+    <import index="u46i" ref="r:c2760840-3210-4ad4-9e64-a2dfd53620e1(jetbrains.mps.lang.typechecking.aspect)" />
     <import index="ucur" ref="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)" />
-    <import index="vrzs" ref="r:bf5143f7-9856-43e8-8ae7-57cecc1fe6a9(jetbrains.mps.lang.controlflow.aspect)" />
-    <import index="w57s" ref="r:1e2f03b6-f778-4cc1-92d4-edb9161f4aa6(jetbrains.mps.lang.controlflow.plugin)" />
-    <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
-    <import index="xnrr" ref="r:4fd33103-fc30-42f4-a8cf-d1e858f21988(jetbrains.mps.lang.coderules.program.analysis)" />
-    <import index="ogv8" ref="r:c0702ee3-be79-48ac-aa39-b7cd0d895de6(jetbrains.mps.lang.coderules.generator.template.main@generator)" />
-    <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -114,6 +113,7 @@
         <child id="1722980698497626405" name="actualArgument" index="v9R3O" />
       </concept>
       <concept id="1167087469898" name="jetbrains.mps.lang.generator.structure.CreateRootRule" flags="lg" index="2VPoh5">
+        <reference id="1200923511980" name="label" index="2sBCQV" />
         <reference id="1167087469901" name="templateNode" index="2VPoh2" />
         <child id="1167087469900" name="conditionFunction" index="2VPoh3" />
       </concept>
@@ -199,18 +199,15 @@
       </concept>
     </language>
   </registry>
-  <node concept="bUwia" id="78H58oe2rze">
+  <node concept="bUwia" id="sL9MTQs0iE">
     <property role="TrG5h" value="main" />
   </node>
   <node concept="bUwia" id="7km57PkeXwx">
     <property role="TrG5h" value="aspect" />
     <property role="3GE5qa" value="aspect" />
-    <node concept="2rT7sh" id="5EDW3XF64MJ" role="2rTMjI">
-      <property role="TrG5h" value="manifest" />
-      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
-    </node>
     <node concept="2VPoh5" id="7km57PkeXwI" role="2VS0gm">
       <ref role="2VPoh2" node="7km57PkeUQV" resolve="AspectDescriptor" />
+      <ref role="2sBCQV" node="sL9MTQx8Am" resolve="aspectDescriptor" />
       <node concept="2VP$b9" id="7km57PkeXwK" role="2VPoh3">
         <node concept="3clFbS" id="7km57PkeXwL" role="2VODD2">
           <node concept="3clFbF" id="78H58odLysS" role="3cqZAp">
@@ -219,13 +216,13 @@
                 <node concept="1iwH7S" id="78H58odLysQ" role="2Oq$k0" />
                 <node concept="2g92yo" id="78H58odLyR4" role="2OqNvi">
                   <node concept="Xl_RD" id="78H58odLvyN" role="2fWi3N">
-                    <property role="Xl_RC" value="CONTROLFLOW_ASPECT_RUNTIME" />
+                    <property role="Xl_RC" value="TYPES_ASPECT_RUNTIME" />
                   </node>
                 </node>
               </node>
               <node concept="2tJFMh" id="78H58odQ5Tl" role="37vLTx">
-                <node concept="ZC_QK" id="78H58oe2APM" role="2tJFKM">
-                  <ref role="2aWVGs" to="vrzs:7km57Pkjxf4" resolve="ControlflowAspect" />
+                <node concept="ZC_QK" id="78H58odQ61O" role="2tJFKM">
+                  <ref role="2aWVGs" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
                 </node>
               </node>
             </node>
@@ -237,12 +234,20 @@
                 <node concept="1st3f0" id="7km57PkeY4N" role="2OqNvi" />
               </node>
               <node concept="3zA4fs" id="7km57PkeZxH" role="2OqNvi">
-                <ref role="3zA4av" to="w57s:7km57PkcIgQ" resolve="controlflow" />
+                <ref role="3zA4av" to="cmcw:7km57PkcIgQ" resolve="types" />
               </node>
             </node>
           </node>
         </node>
       </node>
+    </node>
+    <node concept="2rT7sh" id="5EDW3XF64MJ" role="2rTMjI">
+      <property role="TrG5h" value="manifest" />
+      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
+    </node>
+    <node concept="2rT7sh" id="sL9MTQx8Am" role="2rTMjI">
+      <property role="TrG5h" value="aspectDescriptor" />
+      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
   </node>
   <node concept="jVnub" id="7km57PkguX9">
@@ -262,11 +267,11 @@
             <node concept="LkI2h" id="7km57PkgwKW" role="2OqNvi" />
           </node>
           <node concept="Xl_RD" id="2aiW7Bvrvo" role="3uHU7w">
-            <property role="Xl_RC" value=".ControlflowAspectDescriptor" />
+            <property role="Xl_RC" value=".TypesAspectDescriptor" />
           </node>
         </node>
         <node concept="3B5_sB" id="2hteS6Cje6U" role="v9R3O">
-          <ref role="3B5MYn" to="vrzs:7km57Pkjxf4" resolve="ControlflowAspect" />
+          <ref role="3B5MYn" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
         </node>
       </node>
       <node concept="30G5F_" id="7km57PkgvmR" role="30HLyM">
@@ -277,7 +282,7 @@
                 <ref role="v3LJV" node="7km57Pkgvk2" resolve="model" />
               </node>
               <node concept="3zA4fs" id="7km57PkuzZL" role="2OqNvi">
-                <ref role="3zA4av" to="w57s:7km57PkcIgQ" resolve="controlflow" />
+                <ref role="3zA4av" to="cmcw:7km57PkcIgQ" resolve="types" />
               </node>
             </node>
           </node>
@@ -300,18 +305,18 @@
       </node>
       <node concept="3Tm1VV" id="5EDW3XF61YN" role="1B3o_S" />
       <node concept="3clFbS" id="5EDW3XF61YQ" role="3clF47">
-        <node concept="3clFbF" id="1LBj9w_9WJm" role="3cqZAp">
-          <node concept="10Nm6u" id="33gEJyRAt9D" role="3clFbG" />
+        <node concept="3clFbF" id="sL9MTQ$MeO" role="3cqZAp">
+          <node concept="10Nm6u" id="sL9MTQ$MeN" role="3clFbG" />
         </node>
       </node>
       <node concept="2AHcQZ" id="5EDW3XF61YR" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
-      <node concept="1W57fq" id="33gEJyRAsEs" role="lGtFl">
-        <node concept="3IZrLx" id="33gEJyRAsEt" role="3IZSJc">
-          <node concept="3clFbS" id="33gEJyRAsEu" role="2VODD2">
-            <node concept="3clFbF" id="33gEJyRAsMn" role="3cqZAp">
-              <node concept="3clFbT" id="33gEJyRAsMm" role="3clFbG" />
+      <node concept="1W57fq" id="sL9MTQ$MiC" role="lGtFl">
+        <node concept="3IZrLx" id="sL9MTQ$MiD" role="3IZSJc">
+          <node concept="3clFbS" id="sL9MTQ$MiE" role="2VODD2">
+            <node concept="3clFbF" id="sL9MTQ$Moz" role="3cqZAp">
+              <node concept="3clFbT" id="sL9MTQ$Moy" role="3clFbG" />
             </node>
           </node>
         </node>
@@ -332,8 +337,8 @@
             <node concept="3cpWs3" id="NKt6yobexy" role="3clFbG">
               <node concept="3zGtF$" id="NKt6yobeK7" role="3uHU7w" />
               <node concept="2YIFZM" id="NKt6yobdr_" role="3uHU7B">
-                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                 <ref role="37wK5l" to="18ew:~NameUtil.capitalize(java.lang.String)" resolve="capitalize" />
+                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                 <node concept="2OqwBi" id="NKt6yoeFjY" role="37wK5m">
                   <node concept="2OqwBi" id="NKt6yoeDy6" role="2Oq$k0">
                     <node concept="2JrnkZ" id="NKt6yoeDaY" role="2Oq$k0">
@@ -369,7 +374,7 @@
                   <node concept="1iwH7S" id="78H58odQ5ek" role="2Oq$k0" />
                   <node concept="2g92yo" id="78H58odQ5el" role="2OqNvi">
                     <node concept="Xl_RD" id="78H58odQ5em" role="2fWi3N">
-                      <property role="Xl_RC" value="CONTROLFLOW_ASPECT_RUNTIME" />
+                      <property role="Xl_RC" value="TYPES_ASPECT_RUNTIME" />
                     </node>
                   </node>
                 </node>

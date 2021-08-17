@@ -179,6 +179,7 @@ ant.importBuild('build.xml') { antTarget ->
 ant.properties.'ci.build.num' = "${buildNumber().find() ? buildNumber()[0][4] : '9999'}".toString()
 ant.properties.'ci.build.tag' = "${buildNumber().find() ? buildNumber()[0][4] : 'SNAPSHOT'}".toString()
 ant.properties.'ci.mps.release' = "${buildNumber().find() ? buildNumber()[0][1] : '212'}".toString()
+ant.properties.'mps.ant.log' = "debug"
 
 // ensure 'setup' runs before 'fetchDependencies' and 'declare-mps-tasks'
 'coderules-fetchDependencies' {

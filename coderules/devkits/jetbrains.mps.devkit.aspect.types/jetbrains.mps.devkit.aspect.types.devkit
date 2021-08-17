@@ -3,6 +3,7 @@
   <exported-language name="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" />
   <exported-language name="c4803b19-6d89-4a3b-bf82-390769514add(jetbrains.mps.lang.coderules)" />
   <exported-language name="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" />
+  <exported-language name="afc17aaf-3a3d-4d69-a38d-db90d5e858c6(jetbrains.mps.lang.types)" />
   <extendedDevKits>
     <extendedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</extendedDevKit>
   </extendedDevKits>
