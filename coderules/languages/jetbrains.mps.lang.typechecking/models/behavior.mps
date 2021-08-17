@@ -82,12 +82,16 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>
   <node concept="13h7C7" id="7lmP5gAXQeM">
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="zfi7:7lmP5gALJP$" resolve="TypecheckingQueryTemplate" />
     <node concept="13i0hz" id="3vih52511I4" role="13h7CS">
       <property role="TrG5h" value="getQueryClassfier" />
@@ -116,6 +120,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7lmP5gAXSzm">
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="zfi7:7lmP5gALJQ1" resolve="CheckQueryTemplate" />
     <node concept="13hLZK" id="7lmP5gAXSzn" role="13h7CW">
       <node concept="3clFbS" id="7lmP5gAXSzo" role="2VODD2" />
@@ -144,6 +149,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7lmP5gAXT$3">
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="zfi7:7lmP5gALKDQ" resolve="TypeofQueryTemplate" />
     <node concept="13hLZK" id="7lmP5gAXT$4" role="13h7CW">
       <node concept="3clFbS" id="7lmP5gAXT$5" role="2VODD2" />
@@ -172,6 +178,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7lmP5gAYgV9">
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="zfi7:7lmP5gAYc5S" resolve="TypecheckingQueryParameter" />
     <node concept="13i0hz" id="7lmP5gAYgVD" role="13h7CS">
       <property role="TrG5h" value="getTypecheckingQueryTemplate" />
@@ -199,6 +206,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7lmP5gAYJ47">
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="zfi7:7lmP5gAYIZq" resolve="ConvertsQueryTemplate" />
     <node concept="13hLZK" id="7lmP5gAYJ48" role="13h7CW">
       <node concept="3clFbS" id="7lmP5gAYJ49" role="2VODD2" />
@@ -227,6 +235,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7lmP5gAYJq0">
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="zfi7:7lmP5gAYJev" resolve="CoerceToQueryTemplate" />
     <node concept="13hLZK" id="7lmP5gAYJq1" role="13h7CW">
       <node concept="3clFbS" id="7lmP5gAYJq2" role="2VODD2" />
