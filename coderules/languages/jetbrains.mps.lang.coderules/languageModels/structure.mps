@@ -1392,6 +1392,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="getter" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="1vAI4X$PolV" role="lGtFl" />
     </node>
     <node concept="t5JxF" id="3MfP0fwg5uK" role="lGtFl">
       <property role="t5JxN" value="Defines a term feature." />
@@ -1447,8 +1448,17 @@
     <property role="34LRSv" value="value" />
     <property role="3GE5qa" value="term.feature" />
     <ref role="1TJDcQ" node="JOGAOsxiL_" resolve="TermFeature" />
+    <node concept="1TJgyj" id="1vAI4X$P8hj" role="1TKVEi">
+      <property role="IQ2ns" value="1722266558649369683" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="type" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
     <node concept="t5JxF" id="3MfP0fwg5w9" role="lGtFl">
       <property role="t5JxN" value="Feature declaration of an Object value." />
+    </node>
+    <node concept="PrWs8" id="1vAI4X$TLdh" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="JOGAOsxanH">
