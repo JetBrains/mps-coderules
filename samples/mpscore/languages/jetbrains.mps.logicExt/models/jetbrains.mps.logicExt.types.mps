@@ -36,7 +36,6 @@
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
-      <concept id="1068431790189" name="jetbrains.mps.baseLanguage.structure.Type" flags="in" index="33vP2l" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -75,20 +74,27 @@
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
-      <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
-        <child id="1196350785111" name="expression" index="2c44t1" />
-      </concept>
-      <concept id="1196350785112" name="jetbrains.mps.lang.quotation.structure.Antiquotation" flags="ng" index="2c44te" />
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
+      </concept>
+      <concept id="5455284157994012186" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink" flags="ng" index="2pIpSj">
+        <reference id="5455284157994012188" name="link" index="2pIpSl" />
+        <child id="1595412875168045827" name="initValue" index="28nt2d" />
+      </concept>
+      <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
+        <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
+      </concept>
+      <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
+        <reference id="5455284157993910961" name="concept" index="2pJxaS" />
+        <child id="5455284157993911099" name="values" index="2pJxcM" />
+      </concept>
+      <concept id="8182547171709752110" name="jetbrains.mps.lang.quotation.structure.NodeBuilderExpression" flags="nn" index="36biLy">
+        <child id="8182547171709752112" name="expression" index="36biLW" />
       </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
       <concept id="8456919074574710634" name="jetbrains.mps.logic.structure.ExpressionItem" flags="ng" index="37jhX">
         <child id="8456919074574710741" name="code" index="37jj2" />
-      </concept>
-      <concept id="1564179198502666296" name="jetbrains.mps.logic.structure.LogicalType" flags="ig" index="26uTi9">
-        <child id="6399471711045454762" name="dataType" index="3vMvoR" />
       </concept>
       <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ng" index="29MRiA">
         <child id="6399471711045617306" name="dataType" index="3vLBG7" />
@@ -2512,12 +2518,14 @@
                   <node concept="3I6s7M" id="6Dg__VK8MXc" role="3I6sU7">
                     <node concept="3A8Hvi" id="6Dg__VK8MXi" role="3I6s78">
                       <node concept="HKQnh" id="6Dg__VK8N2I" role="3A8w4Q">
-                        <node concept="2c44tf" id="6Dg__VK8N6G" role="HKQng">
-                          <node concept="26uTi9" id="6Dg__VK8NaQ" role="2c44tc">
-                            <node concept="33vP2l" id="6Dg__VK8Nd2" role="3vMvoR">
-                              <node concept="2c44te" id="6Dg__VK8Nfd" role="lGtFl">
-                                <node concept="1Ft4W6" id="6Dg__VK8Nhj" role="2c44t1">
-                                  <node concept="a7P8L" id="6Dg__VK8S4S" role="1FtiSR">
+                        <node concept="2pJPEk" id="m2$eFfraKw" role="HKQng">
+                          <node concept="2pJPED" id="m2$eFfraKy" role="2pJPEn">
+                            <ref role="2pJxaS" to="5j4j:1mP5b6jNC0S" resolve="LogicalType" />
+                            <node concept="2pIpSj" id="m2$eFfraKU" role="2pJxcM">
+                              <ref role="2pIpSl" to="5j4j:5zfvpQ71CIE" resolve="dataType" />
+                              <node concept="36biLy" id="m2$eFfraLb" role="28nt2d">
+                                <node concept="1Ft4W6" id="m2$eFfraLn" role="36biLW">
+                                  <node concept="a7P8L" id="m2$eFfraLm" role="1FtiSR">
                                     <ref role="a7OzE" node="6Dg__VK8Mla" resolve="DNode" />
                                   </node>
                                 </node>
