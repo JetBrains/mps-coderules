@@ -11,6 +11,7 @@
 **/.mps/product-workspace.xml
 **/lib/*
 **/.DS_Store
+**/.mps-caches/*
 .gradle
 out
 build/*
