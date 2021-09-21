@@ -223,6 +223,9 @@
         <child id="6856711987714624233" name="code" index="HKQng" />
       </concept>
       <concept id="2381360340662937504" name="jetbrains.mps.lang.coderules.structure.TermType" flags="ig" index="32pEOW" />
+      <concept id="6097203247164180547" name="jetbrains.mps.lang.coderules.structure.ExpandMacroParameterReference" flags="ng" index="3i2tpf">
+        <reference id="6097203247164235646" name="declaration" index="3i285M" />
+      </concept>
       <concept id="6097203247156088058" name="jetbrains.mps.lang.coderules.structure.ExpandMacroInputSpecification" flags="ng" index="3ixlbQ">
         <reference id="6097203247156276310" name="applicableConcept" index="3ixz9q" />
         <child id="6097203247156107501" name="input" index="3ix8rx" />
@@ -242,6 +245,14 @@
         <reference id="6097203247182937177" name="template" index="3jbY9l" />
         <child id="6097203247182937145" name="input" index="3jbY8P" />
         <child id="6097203247182937143" name="logical" index="3jbY8V" />
+        <child id="6097203247185615297" name="arglist" index="3jhGvd" />
+      </concept>
+      <concept id="6097203247185614706" name="jetbrains.mps.lang.coderules.structure.ExpandMacroConstraintArglist" flags="ng" index="3jhG_Y">
+        <child id="6097203247185614855" name="binding" index="3jhGob" />
+      </concept>
+      <concept id="6097203247185614707" name="jetbrains.mps.lang.coderules.structure.ExpandMacroConstraintArgBinding" flags="ng" index="3jhG_Z">
+        <reference id="6097203247185614710" name="declaration" index="3jhG_U" />
+        <child id="6097203247185614708" name="argument" index="3jhG_S" />
       </concept>
       <concept id="6097203247184206287" name="jetbrains.mps.lang.coderules.structure.CallMacroConstraint" flags="ng" index="3jm4v3">
         <reference id="6097203247184207800" name="template" index="3jm46O" />
@@ -2407,6 +2418,14 @@
             </node>
             <node concept="a7P8L" id="6Dg__VK8zqf" role="3jbY8V">
               <ref role="a7OzE" node="6Dg__VK8zef" resolve="DType" />
+            </node>
+            <node concept="3jhG_Y" id="6cGbuqP1B3X" role="3jhGvd">
+              <node concept="3jhG_Z" id="6cGbuqP1B3Z" role="3jhGob">
+                <ref role="3jhG_U" to="kqnc:5itBwMaLICh" resolve="substitution" />
+                <node concept="3i2tpf" id="6cGbuqP1B43" role="3jhG_S">
+                  <ref role="3i285M" to="kqnc:5itBwMaLICh" resolve="substitution" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

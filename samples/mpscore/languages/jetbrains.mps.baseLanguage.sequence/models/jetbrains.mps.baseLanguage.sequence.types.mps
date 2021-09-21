@@ -111,6 +111,14 @@
         <reference id="6097203247182937177" name="template" index="3jbY9l" />
         <child id="6097203247182937145" name="input" index="3jbY8P" />
         <child id="6097203247182937143" name="logical" index="3jbY8V" />
+        <child id="6097203247185615297" name="arglist" index="3jhGvd" />
+      </concept>
+      <concept id="6097203247185614706" name="jetbrains.mps.lang.coderules.structure.ExpandMacroConstraintArglist" flags="ng" index="3jhG_Y">
+        <child id="6097203247185614855" name="binding" index="3jhGob" />
+      </concept>
+      <concept id="6097203247185614707" name="jetbrains.mps.lang.coderules.structure.ExpandMacroConstraintArgBinding" flags="ng" index="3jhG_Z">
+        <reference id="6097203247185614710" name="declaration" index="3jhG_U" />
+        <child id="6097203247185614708" name="argument" index="3jhG_S" />
       </concept>
       <concept id="6097203247184206287" name="jetbrains.mps.lang.coderules.structure.CallMacroConstraint" flags="ng" index="3jm4v3">
         <reference id="6097203247184207800" name="template" index="3jm46O" />
@@ -200,6 +208,14 @@
                 </node>
                 <node concept="a7P8L" id="1oUE7CX4epE" role="3jbY8V">
                   <ref role="a7OzE" node="1oUE7CX4eol" resolve="Type" />
+                </node>
+                <node concept="3jhG_Y" id="6cGbuqP0Be8" role="3jhGvd">
+                  <node concept="3jhG_Z" id="6cGbuqP0BSb" role="3jhGob">
+                    <ref role="3jhG_U" to="kqnc:5itBwMaLICh" resolve="substitution" />
+                    <node concept="3hN9Ij" id="6cGbuqP0BSf" role="3jhG_S">
+                      <ref role="3hLkJx" node="1oUE7CXkYVc" resolve="subs" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
