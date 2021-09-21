@@ -102,7 +102,7 @@
   </registry>
   <node concept="1YbPZF" id="7lmP5gAYhwd">
     <property role="TrG5h" value="typeof_TypecheckingQueryParameter" />
-    <property role="3GE5qa" value="query" />
+    <property role="3GE5qa" value="typecheckingQuery" />
     <node concept="3clFbS" id="7lmP5gAYhwe" role="18ibNy">
       <node concept="3cpWs8" id="7lmP5gAYjvY" role="3cqZAp">
         <node concept="3cpWsn" id="7lmP5gAYjvZ" role="3cpWs9">

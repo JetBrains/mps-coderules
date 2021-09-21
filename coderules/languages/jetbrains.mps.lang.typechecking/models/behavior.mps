@@ -70,9 +70,17 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
+      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+        <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -91,7 +99,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="7lmP5gAXQeM">
-    <property role="3GE5qa" value="query" />
+    <property role="3GE5qa" value="typecheckingQuery" />
     <ref role="13h7C2" to="zfi7:7lmP5gALJP$" resolve="TypecheckingQueryTemplate" />
     <node concept="13i0hz" id="3vih52511I4" role="13h7CS">
       <property role="TrG5h" value="getQueryClassfier" />
@@ -120,7 +128,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7lmP5gAXSzm">
-    <property role="3GE5qa" value="query" />
+    <property role="3GE5qa" value="typecheckingQuery" />
     <ref role="13h7C2" to="zfi7:7lmP5gALJQ1" resolve="CheckQueryTemplate" />
     <node concept="13hLZK" id="7lmP5gAXSzn" role="13h7CW">
       <node concept="3clFbS" id="7lmP5gAXSzo" role="2VODD2" />
@@ -149,7 +157,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7lmP5gAXT$3">
-    <property role="3GE5qa" value="query" />
+    <property role="3GE5qa" value="typecheckingQuery" />
     <ref role="13h7C2" to="zfi7:7lmP5gALKDQ" resolve="TypeofQueryTemplate" />
     <node concept="13hLZK" id="7lmP5gAXT$4" role="13h7CW">
       <node concept="3clFbS" id="7lmP5gAXT$5" role="2VODD2" />
@@ -178,7 +186,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7lmP5gAYgV9">
-    <property role="3GE5qa" value="query" />
+    <property role="3GE5qa" value="typecheckingQuery" />
     <ref role="13h7C2" to="zfi7:7lmP5gAYc5S" resolve="TypecheckingQueryParameter" />
     <node concept="13i0hz" id="7lmP5gAYgVD" role="13h7CS">
       <property role="TrG5h" value="getTypecheckingQueryTemplate" />
@@ -206,7 +214,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7lmP5gAYJ47">
-    <property role="3GE5qa" value="query" />
+    <property role="3GE5qa" value="typecheckingQuery" />
     <ref role="13h7C2" to="zfi7:7lmP5gAYIZq" resolve="ConvertsQueryTemplate" />
     <node concept="13hLZK" id="7lmP5gAYJ48" role="13h7CW">
       <node concept="3clFbS" id="7lmP5gAYJ49" role="2VODD2" />
@@ -235,7 +243,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7lmP5gAYJq0">
-    <property role="3GE5qa" value="query" />
+    <property role="3GE5qa" value="typecheckingQuery" />
     <ref role="13h7C2" to="zfi7:7lmP5gAYJev" resolve="CoerceToQueryTemplate" />
     <node concept="13hLZK" id="7lmP5gAYJq1" role="13h7CW">
       <node concept="3clFbS" id="7lmP5gAYJq2" role="2VODD2" />
@@ -261,6 +269,34 @@
       <node concept="3Tqbb2" id="3vih52518PS" role="3clF45">
         <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
       </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="1vAI4X$KvCS">
+    <property role="3GE5qa" value="typeTerm" />
+    <ref role="13h7C2" to="zfi7:6wBZuQUG1yn" resolve="TypeNodeBuilder" />
+    <node concept="13i0hz" id="1vAI4X$KvKn" role="13h7CS">
+      <property role="TrG5h" value="getTypeTermDeclaration" />
+      <node concept="3Tm1VV" id="1vAI4X$KvKo" role="1B3o_S" />
+      <node concept="3Tqbb2" id="1vAI4X$KvN3" role="3clF45">
+        <ref role="ehGHo" to="zfi7:6wBZuQUFd0b" resolve="TypeTermDeclaration" />
+      </node>
+      <node concept="3clFbS" id="1vAI4X$KvKq" role="3clF47">
+        <node concept="3clFbF" id="1vAI4X$Kwv_" role="3cqZAp">
+          <node concept="1PxgMI" id="1vAI4X$Kx9D" role="3clFbG">
+            <property role="1BlNFB" value="true" />
+            <node concept="chp4Y" id="1vAI4X$Kxg5" role="3oSUPX">
+              <ref role="cht4Q" to="zfi7:6wBZuQUFd0b" resolve="TypeTermDeclaration" />
+            </node>
+            <node concept="2OqwBi" id="1vAI4X$KwDU" role="1m5AlR">
+              <node concept="13iPFW" id="1vAI4X$Kwv$" role="2Oq$k0" />
+              <node concept="1mfA1w" id="1vAI4X$KwQg" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="1vAI4X$KvCT" role="13h7CW">
+      <node concept="3clFbS" id="1vAI4X$KvCU" role="2VODD2" />
     </node>
   </node>
 </model>
