@@ -22,6 +22,7 @@
     <import index="h103" ref="r:9c80bc3e-1982-4e7d-8fe4-1b25a1c02635(jetbrains.mps.lang.typechecking.behavior)" />
     <import index="zfi7" ref="r:39840d4e-f61c-4452-88c5-75b1eb10e892(jetbrains.mps.lang.typechecking.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.coderules.behavior)" implicit="true" />
@@ -220,19 +221,20 @@
       <concept id="1217026863835" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel" flags="nn" index="1st3f0" />
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
-      <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
-        <child id="1196350785111" name="expression" index="2c44t1" />
-      </concept>
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
       </concept>
-      <concept id="4056363777117001481" name="jetbrains.mps.lang.quotation.structure.StringToTypedValueMigrationInfo" flags="ng" index="AAgTk">
-        <property id="2173356959483005420" name="stringValueMigrated" index="3qcH_f" />
+      <concept id="5455284157993911077" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty" flags="ng" index="2pJxcG">
+        <reference id="5455284157993911078" name="property" index="2pJxcJ" />
+        <child id="1595412875168045201" name="initValue" index="28ntcv" />
       </concept>
-      <concept id="1196866233735" name="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" flags="ng" index="2EMmih" />
-    </language>
-    <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
-      <concept id="1185281562361" name="jetbrains.mps.lang.typesystem.structure.RuntimeErrorType" flags="in" index="3SilvE" />
+      <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
+        <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
+      </concept>
+      <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
+        <reference id="5455284157993910961" name="concept" index="2pJxaS" />
+        <child id="5455284157993911099" name="values" index="2pJxcM" />
+      </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
       <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ng" index="29MRiA">
@@ -1042,19 +1044,18 @@
             <node concept="3xSepi" id="6E2cNicdik$" role="3xSepv">
               <node concept="3Aq9E8" id="5QftlvwZ26t" role="3xSepj">
                 <node concept="3I6sU6" id="5QftlvwZ26u" role="3Ip0Jz">
-                  <node concept="3I6s7M" id="7lt0LtQlvjt" role="3I6sU7">
-                    <node concept="3A8Hvi" id="5TfjU0xvr7i" role="3I6s78">
-                      <node concept="a7P8L" id="7lt0LtQlvqb" role="3A8wtg">
+                  <node concept="3I6s7M" id="64CVkH5hcQf" role="3I6sU7">
+                    <node concept="3A8Hvi" id="64CVkH5hcQg" role="3I6s78">
+                      <node concept="a7P8L" id="64CVkH5hcQh" role="3A8wtg">
                         <ref role="a7OzE" node="5QftlvwZ25T" resolve="Node" />
                       </node>
-                      <node concept="HKQnh" id="7lt0LtQlvqj" role="3A8w4Q">
-                        <node concept="2c44tf" id="6EY0p2yN7hp" role="HKQng">
-                          <node concept="3SilvE" id="6EY0p2yPlzE" role="2c44tc">
-                            <node concept="2EMmih" id="6EY0p2yPlzG" role="lGtFl">
-                              <property role="P4ACc" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1185281562361/1185281562362" />
-                              <property role="2qtEX9" value="errorText" />
-                              <property role="3qcH_f" value="true" />
-                              <node concept="Xl_RD" id="6EY0p2yN7iy" role="2c44t1">
+                      <node concept="HKQnh" id="64CVkH5hcR5" role="3A8w4Q">
+                        <node concept="2pJPEk" id="64CVkH5hcRa" role="HKQng">
+                          <node concept="2pJPED" id="64CVkH5hcRb" role="2pJPEn">
+                            <ref role="2pJxaS" to="tpd4:hfSilrT" resolve="RuntimeErrorType" />
+                            <node concept="2pJxcG" id="64CVkH5hfN3" role="2pJxcM">
+                              <ref role="2pJxcJ" to="tpd4:hfSilrU" resolve="errorText" />
+                              <node concept="Xl_RD" id="64CVkH5hfNq" role="28ntcv">
                                 <property role="Xl_RC" value="type is unknown" />
                               </node>
                             </node>
@@ -1104,28 +1105,27 @@
             <node concept="3xSepi" id="6E2cNicdik_" role="3xSepv">
               <node concept="3Aq9E8" id="27bTNFf1_GS" role="3xSepj">
                 <node concept="3I6sU6" id="27bTNFf1_GT" role="3Ip0Jz">
-                  <node concept="3I6s7M" id="27bTNFf1_GU" role="3I6sU7">
-                    <node concept="3A8Hvi" id="5TfjU0xvr7j" role="3I6s78">
-                      <node concept="a7P8L" id="27bTNFf1_Pq" role="3A8wtg">
+                  <node concept="3I6s7M" id="64CVkH5hfS2" role="3I6sU7">
+                    <node concept="3A8Hvi" id="64CVkH5hfS3" role="3I6s78">
+                      <node concept="a7P8L" id="64CVkH5hfS4" role="3A8wtg">
                         <ref role="a7OzE" node="5TXeSYSHyVo" resolve="Node" />
                       </node>
-                      <node concept="HKQnh" id="27bTNFf1_GX" role="3A8w4Q">
-                        <node concept="2c44tf" id="27bTNFf1_GY" role="HKQng">
-                          <node concept="3SilvE" id="27bTNFf1_GZ" role="2c44tc">
-                            <node concept="2EMmih" id="27bTNFf1_H0" role="lGtFl">
-                              <property role="P4ACc" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1185281562361/1185281562362" />
-                              <property role="2qtEX9" value="errorText" />
-                              <property role="3qcH_f" value="true" />
-                              <node concept="3cpWs3" id="27bTNFf1_H1" role="2c44t1">
-                                <node concept="Xl_RD" id="27bTNFf1_H2" role="3uHU7w">
+                      <node concept="HKQnh" id="64CVkH5hfS5" role="3A8w4Q">
+                        <node concept="2pJPEk" id="64CVkH5hg6W" role="HKQng">
+                          <node concept="2pJPED" id="64CVkH5hg6Y" role="2pJPEn">
+                            <ref role="2pJxaS" to="tpd4:hfSilrT" resolve="RuntimeErrorType" />
+                            <node concept="2pJxcG" id="64CVkH5hg7o" role="2pJxcM">
+                              <ref role="2pJxcJ" to="tpd4:hfSilrU" resolve="errorText" />
+                              <node concept="3cpWs3" id="64CVkH5hg7J" role="28ntcv">
+                                <node concept="Xl_RD" id="64CVkH5hg7K" role="3uHU7w">
                                   <property role="Xl_RC" value="]" />
                                 </node>
-                                <node concept="3cpWs3" id="27bTNFf1_H3" role="3uHU7B">
-                                  <node concept="Xl_RD" id="27bTNFf1_H4" role="3uHU7B">
+                                <node concept="3cpWs3" id="64CVkH5hg7L" role="3uHU7B">
+                                  <node concept="Xl_RD" id="64CVkH5hg7M" role="3uHU7B">
                                     <property role="Xl_RC" value="unreifiable type [" />
                                   </node>
-                                  <node concept="1Ft4W6" id="7zIaaskbYIr" role="3uHU7w">
-                                    <node concept="a7P8L" id="27bTNFf1_Un" role="1FtiSR">
+                                  <node concept="1Ft4W6" id="64CVkH5hg7N" role="3uHU7w">
+                                    <node concept="a7P8L" id="64CVkH5hg7O" role="1FtiSR">
                                       <ref role="a7OzE" node="5TXeSYSHyVq" resolve="Type" />
                                     </node>
                                   </node>
