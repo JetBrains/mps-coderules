@@ -1716,5 +1716,23 @@
     <property role="34LRSv" value="isNonground" />
     <ref role="1TJDcQ" node="7lmP5gAmrrX" resolve="TermConstraint" />
   </node>
+  <node concept="1TIwiD" id="4qGA5WCQQZu">
+    <property role="EcuMT" value="5092612813123973086" />
+    <property role="TrG5h" value="CustomSessionParameter" />
+    <property role="34LRSv" value="session parameter" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="4qGA5WCSfbf" role="1TKVEi">
+      <property role="IQ2ns" value="5092612813124334287" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="key" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyi" id="4qGA5WCR1kh" role="1TKVEl">
+      <property role="IQ2nx" value="5092612813124015377" />
+      <property role="TrG5h" value="paramName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
 </model>
 
