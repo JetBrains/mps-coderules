@@ -241,10 +241,6 @@
         </node>
       </node>
     </node>
-    <node concept="2rT7sh" id="5EDW3XF64MJ" role="2rTMjI">
-      <property role="TrG5h" value="manifest" />
-      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
-    </node>
     <node concept="2rT7sh" id="sL9MTQx8Am" role="2rTMjI">
       <property role="TrG5h" value="aspectDescriptor" />
       <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />

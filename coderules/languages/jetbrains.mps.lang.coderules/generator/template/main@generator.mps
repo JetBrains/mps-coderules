@@ -19514,8 +19514,12 @@
       </node>
     </node>
     <node concept="2VPoh5" id="5EDW3XF65RC" role="2VS0gm">
-      <ref role="2sBCQV" to="x1xb:5EDW3XF64MJ" resolve="manifest" />
       <ref role="2VPoh2" node="5EDW3XF62FH" resolve="Manifest" />
+      <ref role="2sBCQV" node="5EDW3XF64MJ" resolve="manifest" />
+    </node>
+    <node concept="2rT7sh" id="5EDW3XF64MJ" role="2rTMjI">
+      <property role="TrG5h" value="manifest" />
+      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
   </node>
   <node concept="13MO4I" id="sL9MTQxkHa">
@@ -19552,7 +19556,7 @@
                           <node concept="2OqwBi" id="sL9MTQxoGG" role="33vP2m">
                             <node concept="1iwH7S" id="sL9MTQxoGH" role="2Oq$k0" />
                             <node concept="1iwH7d" id="sL9MTQxoGI" role="2OqNvi">
-                              <ref role="1iwH7c" to="x1xb:5EDW3XF64MJ" resolve="manifest" />
+                              <ref role="1iwH7c" node="5EDW3XF64MJ" resolve="manifest" />
                             </node>
                           </node>
                         </node>
