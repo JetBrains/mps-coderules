@@ -1710,6 +1710,7 @@
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
       <jvmarg value="-Didea.config.path=${build.mps.config.path}" />
       <jvmarg value="-Didea.system.path=${build.mps.system.path}" />
+      <jvmarg value="-Didea.log.config.file=${basedir}/log.xml"/>
       
       <classpath>
         <fileset dir="${build.tmp}">
