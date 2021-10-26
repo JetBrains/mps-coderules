@@ -144,7 +144,7 @@
     <property role="EcuMT" value="7505246501517400215" />
     <property role="TrG5h" value="TypeNodeBuilder" />
     <property role="3GE5qa" value="typeTerm" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6wBZuQUG57q" role="1TKVEi">
       <property role="IQ2ns" value="7505246501517414874" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

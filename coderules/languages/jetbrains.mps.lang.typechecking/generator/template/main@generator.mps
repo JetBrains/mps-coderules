@@ -540,7 +540,7 @@
       </node>
     </node>
     <node concept="2VPoh5" id="j$DTRie5QM" role="2VS0gm">
-      <ref role="2VPoh2" node="j$DTRidoLS" resolve="_RecoverType_" />
+      <ref role="2VPoh2" node="j$DTRidoLS" resolve="_RecoverType_Default_" />
       <ref role="2sBCQV" node="4LE1vMPhNy4" resolve="recoverTypeDefault" />
       <node concept="2VP$b9" id="j$DTRie5QN" role="2VPoh3">
         <node concept="3clFbS" id="j$DTRie5QO" role="2VODD2">
@@ -588,7 +588,7 @@
       </node>
     </node>
     <node concept="2VPoh5" id="4qGA5WCFx$y" role="2VS0gm">
-      <ref role="2VPoh2" node="7lmP5gAtYRF" resolve="ExpectTypeMacro" />
+      <ref role="2VPoh2" node="7lmP5gAtYRF" resolve="_ExpectTypeMacro_" />
       <ref role="2sBCQV" node="4qGA5WCFyqy" resolve="expectType" />
       <node concept="2VP$b9" id="4qGA5WCFx$z" role="2VPoh3">
         <node concept="3clFbS" id="4qGA5WCFx$$" role="2VODD2">
@@ -1179,7 +1179,7 @@
   <node concept="0oKg$" id="7lmP5gAtYRF">
     <property role="TrG5h" value="_ExpectTypeMacro_" />
     <node concept="3iyZe8" id="7lmP5gAtYUv" role="0oKgB">
-      <ref role="3iRiWT" node="7lmP5gAtYUr" resolve="expectType" />
+      <ref role="3iRiWT" node="7lmP5gAtYUr" resolve="_expectType_" />
       <node concept="3clFbS" id="7lmP5gAtYUw" role="3iwQuN">
         <node concept="3Aqczg" id="7lmP5gAtYZ1" role="3cqZAp">
           <node concept="3Aqt3T" id="7lmP5gAtYYZ" role="3Aqpz8">
@@ -1264,7 +1264,7 @@
       <property role="TrG5h" value="term" />
       <node concept="nspSf" id="1vAI4X$GmRS" role="ns1xx" />
       <node concept="1WS0z7" id="1vAI4X$GmRX" role="lGtFl">
-        <ref role="2rW$FS" node="1vAI4X$KFA0" resolve="termDeclaration" />
+        <ref role="2rW$FS" node="1vAI4X$KFA0" resolve="typeTerm_term" />
         <node concept="3JmXsc" id="1vAI4X$GmRY" role="3Jn$fo">
           <node concept="3clFbS" id="1vAI4X$GmRZ" role="2VODD2">
             <node concept="3clFbF" id="1vAI4X$GmUI" role="3cqZAp">

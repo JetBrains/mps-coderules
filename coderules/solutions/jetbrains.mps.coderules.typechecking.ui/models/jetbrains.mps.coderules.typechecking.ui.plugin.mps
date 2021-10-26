@@ -3164,12 +3164,12 @@
             <node concept="3cpWsn" id="4LE1vMP67A5" role="3cpWs9">
               <property role="TrG5h" value="typeCollector" />
               <node concept="3uibUv" id="4LE1vMP673a" role="1tU5fm">
-                <ref role="3uigEE" to="tj24:5MNibENhpkH" resolve="TypeCollector" />
+                <ref role="3uigEE" to="tj24:5MNibENhpkH" resolve="TypecheckingState.TypeCollector" />
               </node>
               <node concept="2ShNRf" id="4LE1vMP67A6" role="33vP2m">
                 <node concept="HV5vD" id="4LE1vMP67A7" role="2ShVmc">
                   <property role="373rjd" value="true" />
-                  <ref role="HV5vE" to="tj24:5MNibENhpkH" resolve="TypeCollector" />
+                  <ref role="HV5vE" to="tj24:5MNibENhpkH" resolve="TypecheckingState.TypeCollector" />
                 </node>
               </node>
             </node>
@@ -3186,7 +3186,7 @@
                   <ref role="1PxDUh" to="tj24:4Z$O9mrQIzY" resolve="TypecheckingState" />
                 </node>
                 <node concept="37vLTw" id="4LE1vMP67A8" role="37wK5m">
-                  <ref role="3cqZAo" node="4LE1vMP67A5" resolve="collector" />
+                  <ref role="3cqZAo" node="4LE1vMP67A5" resolve="typeCollector" />
                 </node>
               </node>
             </node>

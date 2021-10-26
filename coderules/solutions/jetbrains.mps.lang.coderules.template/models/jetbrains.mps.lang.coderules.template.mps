@@ -7981,7 +7981,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="4qGA5WD0pSL" role="3clF45">
-          <ref role="3uigEE" node="5itBwM86qUH" resolve="Token" />
+          <ref role="3uigEE" node="5itBwM86qUH" resolve="ExpandMacroTemplate.Token" />
         </node>
         <node concept="3Tm1VV" id="4qGA5WD0pSM" role="1B3o_S" />
         <node concept="3clFbS" id="4qGA5WD0pSN" role="3clF47" />

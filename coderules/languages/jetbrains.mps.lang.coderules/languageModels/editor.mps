@@ -4239,7 +4239,7 @@
     <property role="3GE5qa" value="term" />
     <ref role="1XX52x" to="wq2x:JOGAOsxaC9" resolve="TermDeclaration" />
     <node concept="PMmxH" id="6wBZuQUGvdm" role="2wV5jI">
-      <ref role="PMmxG" node="6wBZuQUGpjH" resolve="TermDeclaration_Editor" />
+      <ref role="PMmxG" node="6wBZuQUGpjH" resolve="TermDeclaration_Default" />
     </node>
   </node>
   <node concept="1h_SRR" id="4vr5SAprGdP">

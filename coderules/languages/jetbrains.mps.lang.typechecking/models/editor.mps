@@ -451,7 +451,7 @@
     <ref role="1XX52x" to="zfi7:6wBZuQUFd0b" resolve="TypeTermDeclaration" />
     <node concept="3EZMnI" id="4MEOIDFttNp" role="2wV5jI">
       <node concept="PMmxH" id="6wBZuQUGw5w" role="3EZMnx">
-        <ref role="PMmxG" to="vxmb:6wBZuQUGpjH" resolve="TermDeclaration_Editor" />
+        <ref role="PMmxG" to="vxmb:6wBZuQUGpjH" resolve="TermDeclaration_Default" />
       </node>
       <node concept="3F0ifn" id="6wBZuQUGwsL" role="3EZMnx">
         <property role="3F0ifm" value="-&gt;" />
