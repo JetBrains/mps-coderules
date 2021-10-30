@@ -10,10 +10,10 @@ The [documentation](http://jetbrains.github.io/mps-coderules/) is available onli
 
 ## Installation
 
-1. Download the two plugins from [this](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20211_Distribution_MpsCodeRules&state=successful) build configuration (see "artifacts" of the last successful build):
+1. Download the two plugins from [this](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20212_Distribution_MpsCodeRules&state=successful) build configuration (see "artifacts" of the last successful build):
 
-- `jetbrains.mps.coderules-211-*.zip` (Coderules and related languages and accessory solutions)
-- `jetbrains.mps.core-types-211-*.zip` (Type definitions for core MPS languages)
+- `jetbrains.mps.coderules-212-*.zip` (Coderules and related languages and accessory solutions)
+- `jetbrains.mps.core-types-212-*.zip` (Type definitions for core MPS languages)
 
 2. Install both plugins by choosing "Install Plugin from Disk.." option from "Manage..." menu of Plugins page in the preferences.
 3. Restart MPS.
@@ -21,7 +21,7 @@ The [documentation](http://jetbrains.github.io/mps-coderules/) is available onli
 ## Status
 | TeamCity | TeamCity EAP |
 |:--|:--|
-| [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20211_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20211_Distribution_MpsCodeRules) | [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20212_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20212_Distribution_MpsCodeRules) |
+| [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20212_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20212_Distribution_MpsCodeRules) | [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20213_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20213_Distribution_MpsCodeRules) |
 
 The status of this project is **pre-release**. Don’t rely on any of the language features or the API to be stable. The purpose of this project is to show the new technology and collect early feedback.
 
