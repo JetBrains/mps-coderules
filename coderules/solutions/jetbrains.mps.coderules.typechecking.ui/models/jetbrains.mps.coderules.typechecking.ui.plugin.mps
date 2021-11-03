@@ -3837,6 +3837,17 @@
                 <node concept="2YIFZM" id="5EDW3XEpy4e" role="37wK5m">
                   <ref role="37wK5l" to="tj24:5EDW3XDYggE" resolve="check" />
                   <ref role="1Pybhc" to="tj24:5EDW3XDYg8Y" resolve="TypecheckingQueries" />
+                  <node concept="2OqwBi" id="6v6oK24NjHo" role="37wK5m">
+                    <node concept="2OqwBi" id="6v6oK24Njr0" role="2Oq$k0">
+                      <node concept="2WthIp" id="6v6oK24Njr3" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="6v6oK24Njr5" role="2OqNvi">
+                        <ref role="2WH_rO" node="7WKNeR8Ragu" resolve="node" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="6v6oK24Nk6q" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SNode.getContainingRoot()" resolve="getContainingRoot" />
+                    </node>
+                  </node>
                   <node concept="1bVj0M" id="5EDW3XEpy8I" role="37wK5m">
                     <node concept="3clFbS" id="5EDW3XEpy8J" role="1bW5cS" />
                     <node concept="37vLTG" id="5EDW3XEpycy" role="1bW2Oz">
@@ -3962,6 +3973,17 @@
                   <node concept="2YIFZM" id="5EDW3XEpzdD" role="37wK5m">
                     <ref role="1Pybhc" to="tj24:5EDW3XDYg8Y" resolve="TypecheckingQueries" />
                     <ref role="37wK5l" to="tj24:5EDW3XDYggE" resolve="check" />
+                    <node concept="2OqwBi" id="6v6oK24Nl2w" role="37wK5m">
+                      <node concept="2OqwBi" id="6v6oK24NkJU" role="2Oq$k0">
+                        <node concept="2WthIp" id="6v6oK24NkJX" role="2Oq$k0" />
+                        <node concept="1DTwFV" id="6v6oK24NkJZ" role="2OqNvi">
+                          <ref role="2WH_rO" node="3IIf9O_okk5" resolve="node" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="6v6oK24Nl$n" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SNode.getContainingRoot()" resolve="getContainingRoot" />
+                      </node>
+                    </node>
                     <node concept="1bVj0M" id="5EDW3XEpzdE" role="37wK5m">
                       <node concept="3clFbS" id="5EDW3XEpzdF" role="1bW5cS" />
                       <node concept="37vLTG" id="5EDW3XEpzdG" role="1bW2Oz">

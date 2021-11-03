@@ -3516,6 +3516,12 @@
                       <node concept="2YIFZM" id="5EDW3XEzAnI" role="37wK5m">
                         <ref role="37wK5l" to="tj24:5EDW3XDYggE" resolve="check" />
                         <ref role="1Pybhc" to="tj24:5EDW3XDYg8Y" resolve="TypecheckingQueries" />
+                        <node concept="2OqwBi" id="6v6oK24NibG" role="37wK5m">
+                          <node concept="37vLTw" id="6v6oK24NibH" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7mB3viLf32I" resolve="demo" />
+                          </node>
+                          <node concept="2Rxl7S" id="6v6oK24NibI" role="2OqNvi" />
+                        </node>
                         <node concept="37vLTw" id="7gOEBI$hjpf" role="37wK5m">
                           <ref role="3cqZAo" node="7gOEBI$hd0J" resolve="typeCollector" />
                         </node>
