@@ -3765,13 +3765,13 @@
     </node>
   </node>
   <node concept="Zd50a" id="4vBwiiVq9ko">
-    <property role="TrG5h" value="MacOSX" />
+    <property role="TrG5h" value="Classic" />
     <property role="Zd52Q" value="1mJS7WEAV1T/Mac_OS_X" />
     <property role="Z2u3V" value="false" />
     <node concept="Zd509" id="4vBwiiVq9kp" role="Zd508">
       <ref role="1bYAoF" node="4vBwiiVgYfo" resolve="ShowNodeType" />
       <node concept="pLAjd" id="4vBwiiVq9kq" role="Zd501">
-        <property role="pLAjc" value="ctrl+shift" />
+        <property role="pLAjc" value="ctrl+alt+shift" />
         <property role="pLAjf" value="VK_P" />
         <property role="3hacHL" value="5SFo3Mf0QpD/replace_all" />
       </node>
@@ -3784,7 +3784,7 @@
     <node concept="Zd509" id="4vBwiiVq9ks" role="Zd508">
       <ref role="1bYAoF" node="4vBwiiVgYfo" resolve="ShowNodeType" />
       <node concept="pLAjd" id="4vBwiiVq9kt" role="Zd501">
-        <property role="pLAjc" value="ctrl+shift" />
+        <property role="pLAjc" value="ctrl+alt+shift" />
         <property role="pLAjf" value="VK_P" />
         <property role="3hacHL" value="5SFo3Mf0QpD/replace_all" />
       </node>
