@@ -3115,6 +3115,44 @@
             </node>
           </node>
           <node concept="3clFbH" id="6nFpYluogsH" role="3cqZAp" />
+          <node concept="3clFbJ" id="1PN9XOG$3xl" role="3cqZAp">
+            <node concept="3clFbS" id="1PN9XOG$3xn" role="3clFbx">
+              <node concept="3clFbF" id="1PN9XOG$8yU" role="3cqZAp">
+                <node concept="2OqwBi" id="1PN9XOG$8yV" role="3clFbG">
+                  <node concept="2YIFZM" id="1PN9XOG$8yW" role="2Oq$k0">
+                    <ref role="1Pybhc" to="jkny:~ToolWindowManager" resolve="ToolWindowManager" />
+                    <ref role="37wK5l" to="jkny:~ToolWindowManager.getInstance(com.intellij.openapi.project.Project)" resolve="getInstance" />
+                    <node concept="37vLTw" id="1PN9XOG$8yX" role="37wK5m">
+                      <ref role="3cqZAo" node="6hqFpWnfoA9" resolve="ideaProject" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1PN9XOG$8yY" role="2OqNvi">
+                    <ref role="37wK5l" to="jkny:~ToolWindowManager.notifyByBalloon(java.lang.String,com.intellij.openapi.ui.MessageType,java.lang.String)" resolve="notifyByBalloon" />
+                    <node concept="Xl_RD" id="1PN9XOG$8yZ" role="37wK5m">
+                      <property role="Xl_RC" value="Activation Trace" />
+                    </node>
+                    <node concept="10M0yZ" id="1PN9XOG$9iL" role="37wK5m">
+                      <ref role="1PxDUh" to="jkm4:~MessageType" resolve="MessageType" />
+                      <ref role="3cqZAo" to="jkm4:~MessageType.WARNING" resolve="WARNING" />
+                    </node>
+                    <node concept="Xl_RD" id="1PN9XOG$aMd" role="37wK5m">
+                      <property role="Xl_RC" value="Nothing to do: no typechecking aspects detected" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs6" id="1PN9XOG$ise" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="1PN9XOG$6oz" role="3clFbw">
+              <node concept="37vLTw" id="1PN9XOG$5$h" role="2Oq$k0">
+                <ref role="3cqZAo" node="3KN3A4vDlEh" resolve="clique" />
+              </node>
+              <node concept="liA8E" id="1PN9XOG$7Tw" role="2OqNvi">
+                <ref role="37wK5l" to="fqlx:4ekZiHe4j$O" resolve="isEmpty" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="1PN9XOG$1BG" role="3cqZAp" />
           <node concept="3cpWs8" id="6nFpYluoeMU" role="3cqZAp">
             <node concept="3cpWsn" id="6nFpYluoeMV" role="3cpWs9">
               <property role="TrG5h" value="session" />
