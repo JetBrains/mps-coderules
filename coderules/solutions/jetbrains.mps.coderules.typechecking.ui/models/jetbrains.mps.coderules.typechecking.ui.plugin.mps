@@ -65,9 +65,11 @@
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="tqvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.tempmodel(MPS.Core/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
+    <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
+      <concept id="1204908117386" name="jetbrains.mps.lang.plugin.structure.Separator" flags="ng" index="2a7GMi" />
       <concept id="1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" flags="ng" index="ftmFs">
         <child id="1207145201301" name="reference" index="ftvYc" />
       </concept>
@@ -399,22 +401,23 @@
     <property role="TrG5h" value="TypecheckingEditorGroup" />
     <property role="3GE5qa" value="action" />
     <node concept="ftmFs" id="2Rw7mr8T79R" role="ftER_">
+      <node concept="tCFHf" id="1PN9XOH07Ge" role="ftvYc">
+        <ref role="tCJdB" node="4vBwiiVgYfo" resolve="ShowNodeType" />
+      </node>
       <node concept="tCFHf" id="7WKNeR8U80T" role="ftvYc">
         <ref role="tCJdB" node="7WKNeR8Q7e5" resolve="LaunchTypecheckingQuery" />
       </node>
       <node concept="tCFHf" id="3IIf9O_oSqi" role="ftvYc">
         <ref role="tCJdB" node="3IIf9O_okk0" resolve="LaunchTypecheckingQueryWithTrace" />
       </node>
-      <node concept="tCFHf" id="41ox5VnrVW_" role="ftvYc">
-        <ref role="tCJdB" node="41ox5VnrUX7" resolve="ClearTypes" />
-      </node>
       <node concept="tCFHf" id="3YJ7yg2O3a6" role="ftvYc">
         <ref role="tCJdB" node="3YJ7yg2LgPI" resolve="FindApplicableTemplates" />
       </node>
+      <node concept="2a7GMi" id="1PN9XOGZRUO" role="ftvYc" />
     </node>
     <node concept="tT9cl" id="2Rw7mr8T789" role="2f5YQi">
-      <ref role="tU$_T" to="ekwn:1xsN4xJX8VI" resolve="EditorPopup" />
-      <ref role="2f8Tey" to="ekwn:1xsN4xJX8VY" resolve="debug" />
+      <ref role="tU$_T" to="tprs:1GlxrIveqTo" resolve="DebugActions" />
+      <ref role="2f8Tey" to="tprs:6f0maSpvK1u" resolve="types" />
     </node>
   </node>
   <node concept="sE7Ow" id="41ox5VnrUX7">
@@ -848,7 +851,7 @@
   </node>
   <node concept="sE7Ow" id="3YJ7yg2LgPI">
     <property role="TrG5h" value="FindApplicableTemplates" />
-    <property role="2uzpH1" value="Find Applicable Templates" />
+    <property role="2uzpH1" value="Find Applicable Typechecking Templates" />
     <property role="3GE5qa" value="action" />
     <node concept="1DS2jV" id="3YJ7yg2OPyo" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />
@@ -3412,22 +3415,26 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="7WKNeR8TcYx" role="3cqZAp">
-            <node concept="2OqwBi" id="7WKNeR8TcYy" role="3clFbG">
-              <node concept="37vLTw" id="7WKNeR8TcYz" role="2Oq$k0">
-                <ref role="3cqZAo" node="7WKNeR8TcXs" resolve="steps" />
-              </node>
-              <node concept="TSZUe" id="7WKNeR8TcY$" role="2OqNvi">
-                <node concept="2ShNRf" id="7WKNeR8TcY_" role="25WWJ7">
-                  <node concept="1pGfFk" id="7WKNeR8TcYA" role="2ShVmc">
-                    <ref role="37wK5l" node="1pPth$lGTrm" resolve="HighlightingStep" />
-                    <node concept="37vLTw" id="7WKNeR8TjKr" role="37wK5m">
-                      <ref role="3cqZAo" node="6hqFpWnfwwm" resolve="editorComponent" />
-                    </node>
-                    <node concept="2OqwBi" id="7WKNeR8TcYC" role="37wK5m">
-                      <node concept="Xjq3P" id="7WKNeR8TcYD" role="2Oq$k0" />
-                      <node concept="2OwXpG" id="7WKNeR8TcYE" role="2OqNvi">
-                        <ref role="2Oxat5" node="6hqFpWnfkNg" resolve="mpsProject" />
+          <node concept="1X3_iC" id="1PN9XOGZQig" role="lGtFl">
+            <property role="3V$3am" value="statement" />
+            <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+            <node concept="3clFbF" id="7WKNeR8TcYx" role="8Wnug">
+              <node concept="2OqwBi" id="7WKNeR8TcYy" role="3clFbG">
+                <node concept="37vLTw" id="7WKNeR8TcYz" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7WKNeR8TcXs" resolve="steps" />
+                </node>
+                <node concept="TSZUe" id="7WKNeR8TcY$" role="2OqNvi">
+                  <node concept="2ShNRf" id="7WKNeR8TcY_" role="25WWJ7">
+                    <node concept="1pGfFk" id="7WKNeR8TcYA" role="2ShVmc">
+                      <ref role="37wK5l" node="1pPth$lGTrm" resolve="HighlightingStep" />
+                      <node concept="37vLTw" id="7WKNeR8TjKr" role="37wK5m">
+                        <ref role="3cqZAo" node="6hqFpWnfwwm" resolve="editorComponent" />
+                      </node>
+                      <node concept="2OqwBi" id="7WKNeR8TcYC" role="37wK5m">
+                        <node concept="Xjq3P" id="7WKNeR8TcYD" role="2Oq$k0" />
+                        <node concept="2OwXpG" id="7WKNeR8TcYE" role="2OqNvi">
+                          <ref role="2Oxat5" node="6hqFpWnfkNg" resolve="mpsProject" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -3724,7 +3731,7 @@
   <node concept="sE7Ow" id="4vBwiiVgYfo">
     <property role="3GE5qa" value="action" />
     <property role="TrG5h" value="ShowNodeType" />
-    <property role="2uzpH1" value="Show Node Type" />
+    <property role="2uzpH1" value="Show Local Type (experimental)" />
     <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="4vBwiiVi7Nn" role="1NuT2Z">
       <property role="TrG5h" value="cell" />
@@ -3831,7 +3838,7 @@
   <node concept="sE7Ow" id="7WKNeR8Q7e5">
     <property role="3GE5qa" value="action" />
     <property role="TrG5h" value="LaunchTypecheckingQuery" />
-    <property role="2uzpH1" value="Launch Typechecking" />
+    <property role="2uzpH1" value="Launch Typechecking (experimental)" />
     <node concept="1DS2jV" id="7WKNeR8Ragq" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />
       <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -3966,7 +3973,7 @@
   <node concept="sE7Ow" id="3IIf9O_okk0">
     <property role="3GE5qa" value="action" />
     <property role="TrG5h" value="LaunchTypecheckingQueryWithTrace" />
-    <property role="2uzpH1" value="Launch Typechecking with Trace" />
+    <property role="2uzpH1" value="Launch Typechecking with Trace (experimental)" />
     <node concept="1DS2jV" id="3IIf9O_okk1" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />
       <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
