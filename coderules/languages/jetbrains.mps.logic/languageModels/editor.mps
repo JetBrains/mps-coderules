@@ -811,30 +811,6 @@
     </node>
     <node concept="14StLt" id="7ksQUDZuyMD" role="V601i">
       <property role="TrG5h" value="Backquote" />
-      <node concept="30gYXW" id="7ksQUDZuyNr" role="3F10Kt">
-        <node concept="mot77" id="1iWwVK2DW08" role="VblUZ">
-          <node concept="3clFbS" id="1iWwVK2DW0i" role="2VODD2">
-            <node concept="3clFbF" id="1iWwVK2DWcA" role="3cqZAp">
-              <node concept="10M0yZ" id="1iWwVK2DWc_" role="3clFbG">
-                <ref role="1PxDUh" node="7ksQUDZtHks" resolve="CustomColors" />
-                <ref role="3cqZAo" node="1iWwVK2DV36" resolve="BG_TEXT_EXPRESSION" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="Veino" id="7ksQUDZuyN_" role="3F10Kt">
-        <node concept="mot77" id="1iWwVK2DWod" role="VblUZ">
-          <node concept="3clFbS" id="1iWwVK2DWon" role="2VODD2">
-            <node concept="3clFbF" id="1iWwVK2DWvG" role="3cqZAp">
-              <node concept="10M0yZ" id="1iWwVK2DWvF" role="3clFbG">
-                <ref role="1PxDUh" node="7ksQUDZtHks" resolve="CustomColors" />
-                <ref role="3cqZAo" node="1iWwVK2DV36" resolve="BG_TEXT_EXPRESSION" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="VQ3r3" id="7ksQUDZuOmp" role="3F10Kt">
         <property role="2USNnj" value="gtbM8PH/underlined" />
       </node>
