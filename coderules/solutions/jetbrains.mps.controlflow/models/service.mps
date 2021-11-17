@@ -21,6 +21,9 @@
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="psoy" ref="r:78313117-90ee-47a5-a91e-b5213df7f611(jetbrains.mps.coderules.runtime.result)" />
+    <import index="tpib" ref="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" />
+    <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
+    <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -186,6 +189,23 @@
   <node concept="312cEu" id="78H58oeu6dG">
     <property role="TrG5h" value="ControlflowStep" />
     <node concept="2tJIrI" id="78H58oeu6M4" role="jymVt" />
+    <node concept="Wx3nA" id="1G9Y_Qv7rZx" role="jymVt">
+      <property role="TrG5h" value="TRACE_EVENTS" />
+      <node concept="3Tm1VV" id="1G9Y_Qv7rZy" role="1B3o_S" />
+      <node concept="2YIFZM" id="2j1FRbx5XZe" role="33vP2m">
+        <ref role="1Pybhc" to="1yqb:2daneBOWXQd" resolve="Effect" />
+        <ref role="37wK5l" to="1yqb:6BMBBPD1Gnj" resolve="valueKey" />
+        <node concept="3VsKOn" id="2j1FRbx5ZqP" role="37wK5m">
+          <ref role="3VsUkX" to="31yc:2ceN1hCYUQN" resolve="TraceEvents" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="2j1FRbx609Y" role="1tU5fm">
+        <ref role="3uigEE" to="1yqb:2daneBOX7Tv" resolve="ValueKey" />
+        <node concept="3uibUv" id="2j1FRbx61sA" role="11_B2D">
+          <ref role="3uigEE" to="31yc:2ceN1hCYUQN" resolve="TraceEvents" />
+        </node>
+      </node>
+    </node>
     <node concept="Wx3nA" id="2daneBP_Jiy" role="jymVt">
       <property role="TrG5h" value="REPORT_ITEMS" />
       <node concept="3Tm1VV" id="2daneBP_Jiz" role="1B3o_S" />
@@ -206,6 +226,30 @@
         <node concept="_YKpA" id="2j1FRbx5u26" role="3PaCim">
           <node concept="3uibUv" id="2j1FRbx5uBa" role="_ZDj9">
             <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="Wx3nA" id="1PN9XOHxyoK" role="jymVt">
+      <property role="TrG5h" value="MESSAGES" />
+      <node concept="3Tm1VV" id="1PN9XOHxyoL" role="1B3o_S" />
+      <node concept="3uibUv" id="1PN9XOHxyoM" role="1tU5fm">
+        <ref role="3uigEE" to="1yqb:2daneBOX7Tv" resolve="ValueKey" />
+        <node concept="_YKpA" id="1PN9XOHxyoN" role="11_B2D">
+          <node concept="3uibUv" id="1PN9XOHxyoO" role="_ZDj9">
+            <ref role="3uigEE" to="et5u:~IMessage" resolve="IMessage" />
+          </node>
+        </node>
+      </node>
+      <node concept="2YIFZM" id="1PN9XOHxyoP" role="33vP2m">
+        <ref role="1Pybhc" to="1yqb:2daneBOWXQd" resolve="Effect" />
+        <ref role="37wK5l" to="1yqb:2j1FRbwXsxX" resolve="valueKey" />
+        <node concept="Xl_RD" id="1PN9XOHxyoQ" role="37wK5m">
+          <property role="Xl_RC" value="messages" />
+        </node>
+        <node concept="_YKpA" id="1PN9XOHxyoR" role="3PaCim">
+          <node concept="3uibUv" id="1PN9XOHxyoS" role="_ZDj9">
+            <ref role="3uigEE" to="et5u:~IMessage" resolve="IMessage" />
           </node>
         </node>
       </node>
