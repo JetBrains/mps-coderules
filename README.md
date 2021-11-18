@@ -8,8 +8,6 @@ An experimental feature of [JetBrains MPS](https://jetbrains.com/mps), *Coderule
 
 The [documentation](http://jetbrains.github.io/mps-coderules/) is available online.  
 
-**NEW** A [tutorial on building a typesystem with Coderules]( https://stepik.org/course/101057/info) is available. Created by Václav Pech.  
-
 ## Installation
 
 1. Download the two plugins from [this](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20212_Distribution_MpsCodeRules&state=successful) build configuration (see "artifacts" of the last successful build):
