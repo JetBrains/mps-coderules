@@ -3058,7 +3058,7 @@
                   <node concept="liA8E" id="1PN9XOG$8yY" role="2OqNvi">
                     <ref role="37wK5l" to="jkny:~ToolWindowManager.notifyByBalloon(java.lang.String,com.intellij.openapi.ui.MessageType,java.lang.String)" resolve="notifyByBalloon" />
                     <node concept="Xl_RD" id="1PN9XOG$8yZ" role="37wK5m">
-                      <property role="Xl_RC" value="Activation Trace" />
+                      <property role="Xl_RC" value="Event Log" />
                     </node>
                     <node concept="10M0yZ" id="1PN9XOG$9iL" role="37wK5m">
                       <ref role="1PxDUh" to="jkm4:~MessageType" resolve="MessageType" />
@@ -3592,7 +3592,7 @@
                                       <node concept="liA8E" id="7WKNeR8SQyT" role="2OqNvi">
                                         <ref role="37wK5l" to="jkny:~ToolWindowManager.notifyByBalloon(java.lang.String,com.intellij.openapi.ui.MessageType,java.lang.String)" resolve="notifyByBalloon" />
                                         <node concept="Xl_RD" id="7WKNeR8SQyU" role="37wK5m">
-                                          <property role="Xl_RC" value="Activation Trace" />
+                                          <property role="Xl_RC" value="Event Log" />
                                         </node>
                                         <node concept="37vLTw" id="3MwxBzG62ZC" role="37wK5m">
                                           <ref role="3cqZAo" node="3MwxBzG5WQP" resolve="type" />
