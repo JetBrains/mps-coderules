@@ -9,8 +9,8 @@
     <import index="zfi7" ref="r:39840d4e-f61c-4452-88c5-75b1eb10e892(jetbrains.mps.lang.typechecking.structure)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
-    <import index="vxmb" ref="r:3345f3eb-f61a-42bd-88eb-d9032a80e9a6(jetbrains.mps.lang.coderules.editor)" implicit="true" />
     <import index="qgy9" ref="r:5195f849-566d-46a3-bb0a-7ae9911e2652(jetbrains.mps.logic.editor)" implicit="true" />
+    <import index="vxmb" ref="r:3345f3eb-f61a-42bd-88eb-d9032a80e9a6(jetbrains.mps.lang.coderules.editor)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -84,6 +84,7 @@
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
+        <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
@@ -164,13 +165,20 @@
     <node concept="3EZMnI" id="7lmP5gALJrL" role="2wV5jI">
       <node concept="PMmxH" id="7lmP5gALJrS" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="qgy9:4aJUH_hW38r" resolve="RuleKeyword" />
       </node>
       <node concept="3F0ifn" id="5EDW3XE0PmJ" role="3EZMnx">
-        <property role="3F0ifm" value="" />
+        <property role="3F0ifm" value=" " />
+        <node concept="VPxyj" id="1PN9XOI6_1I" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
         <node concept="VPM3Z" id="5EDW3XE0PmK" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
-        <node concept="pVoyu" id="5EDW3XE0PmL" role="3F10Kt">
+        <node concept="pVoyu" id="1PN9XOI6_1R" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="1PN9XOI6_1S" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -374,12 +382,14 @@
           <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         </node>
         <node concept="3F0A7n" id="5hSMZ_lNwqI" role="3EZMnx">
+          <property role="1cu_pB" value="gtguBGO/firstEditableCell" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="3EZMnI" id="7LI_gNMlkLy" role="3EZMnx">
           <node concept="VPM3Z" id="7LI_gNMlkL$" role="3F10Kt" />
           <node concept="3F0ifn" id="7LI_gNMllqp" role="3EZMnx">
             <property role="3F0ifm" value="extends" />
+            <ref role="1k5W1q" to="qgy9:4aJUH_hW38r" resolve="RuleKeyword" />
           </node>
           <node concept="1iCGBv" id="7LI_gNMllzg" role="3EZMnx">
             <ref role="1NtTu8" to="zfi7:6wBZuQUF9QY" resolve="extended" />

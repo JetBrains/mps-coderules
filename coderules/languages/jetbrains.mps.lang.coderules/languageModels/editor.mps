@@ -920,6 +920,7 @@
         <ref role="1k5W1q" to="qgy9:4aJUH_hW38r" resolve="RuleKeyword" />
       </node>
       <node concept="3F0A7n" id="6p0DfM0dsvN" role="3EZMnx">
+        <property role="1cu_pB" value="gtguBGO/firstEditableCell" />
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <ref role="1k5W1q" to="tpen:hFIVf2f" resolve="ClassName" />
         <node concept="A1WHu" id="5itBwM9RyDo" role="3vIgyS">
@@ -1716,6 +1717,7 @@
           <ref role="1k5W1q" to="qgy9:4aJUH_hW38r" resolve="RuleKeyword" />
         </node>
         <node concept="3F0A7n" id="1pPth$m5Qhl" role="3EZMnx">
+          <property role="1cu_pB" value="gtguBGO/firstEditableCell" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="A1WHu" id="5itBwM9RA0z" role="3vIgyS">
             <ref role="A1WHt" node="5itBwM9RySP" resolve="MacroTable_Extends" />
@@ -4280,12 +4282,14 @@
           <ref role="1k5W1q" to="qgy9:4aJUH_hW38r" resolve="RuleKeyword" />
         </node>
         <node concept="3F0A7n" id="5hSMZ_lNwqI" role="3EZMnx">
+          <property role="1cu_pB" value="gtguBGO/firstEditableCell" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="3EZMnI" id="7LI_gNMlkLy" role="3EZMnx">
           <node concept="VPM3Z" id="7LI_gNMlkL$" role="3F10Kt" />
           <node concept="3F0ifn" id="7LI_gNMllqp" role="3EZMnx">
             <property role="3F0ifm" value="extends" />
+            <ref role="1k5W1q" to="qgy9:4aJUH_hW38r" resolve="RuleKeyword" />
           </node>
           <node concept="1iCGBv" id="7LI_gNMllzg" role="3EZMnx">
             <ref role="1NtTu8" to="wq2x:7LI_gNMkNTa" resolve="extended" />
@@ -4431,6 +4435,7 @@
         <ref role="1k5W1q" to="qgy9:4aJUH_hW38r" resolve="RuleKeyword" />
       </node>
       <node concept="3F0A7n" id="5EDW3XE0P0D" role="3EZMnx">
+        <property role="1cu_pB" value="gtguBGO/firstEditableCell" />
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <ref role="1k5W1q" to="tpen:hFIVf2f" resolve="ClassName" />
       </node>
