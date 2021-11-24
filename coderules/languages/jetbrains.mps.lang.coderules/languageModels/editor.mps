@@ -527,6 +527,9 @@
       <concept id="1176109685393" name="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" flags="nn" index="3lApI0">
         <child id="6750920497477143611" name="conceptArgument" index="3MHPDn" />
       </concept>
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
       <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
@@ -1563,6 +1566,9 @@
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <ref role="1k5W1q" node="7ksQUDZpyGq" resolve="Constraint" />
         <node concept="Vb9p2" id="7xE5ZvRYuIK" role="3F10Kt" />
+        <node concept="A1WHr" id="1PN9XOIJWVM" role="3vIgyS">
+          <ref role="2ZyFGn" to="wq2x:60B5zVESvAi" resolve="LogicVariableConstraint" />
+        </node>
       </node>
       <node concept="3F0ifn" id="60B5zVESIG7" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -8940,6 +8946,134 @@
       <node concept="3cWJ9i" id="59P$gGgcyoz" role="1Qtc8$">
         <node concept="CtIbL" id="59P$gGgcyo_" role="CtIbM">
           <property role="CtIbK" value="1A4kJjlVmVt/LEFT" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3ICUPy" id="1PN9XOIIznA">
+    <property role="3GE5qa" value="constraint.variable" />
+    <ref role="aqKnT" to="wq2x:60B5zVESvAi" resolve="LogicVariableConstraint" />
+    <node concept="22hDWj" id="1PN9XOIIznB" role="22hAXT" />
+    <node concept="1Qtc8_" id="1PN9XOIIznD" role="IW6Ez">
+      <node concept="3eGOoe" id="1PN9XOIIznH" role="1Qtc8$" />
+      <node concept="IWgqT" id="1PN9XOIIznK" role="1Qtc8A">
+        <node concept="1hCUdq" id="1PN9XOIIznL" role="1hCUd6">
+          <node concept="3clFbS" id="1PN9XOIIznM" role="2VODD2">
+            <node concept="3clFbF" id="1PN9XOIIzt1" role="3cqZAp">
+              <node concept="2OqwBi" id="1PN9XOIIzSy" role="3clFbG">
+                <node concept="35c_gC" id="1PN9XOIIzt0" role="2Oq$k0">
+                  <ref role="35c_gD" to="wq2x:60B5zVESBMM" resolve="IsfreeVariableConstraint" />
+                </node>
+                <node concept="3n3YKJ" id="1PN9XOII$ew" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="IWg2L" id="1PN9XOIIznN" role="IWgqQ">
+          <node concept="3clFbS" id="1PN9XOIIznO" role="2VODD2">
+            <node concept="3clFbF" id="1PN9XOIIALd" role="3cqZAp">
+              <node concept="2OqwBi" id="1PN9XOIIBJC" role="3clFbG">
+                <node concept="2OqwBi" id="1PN9XOIIBoo" role="2Oq$k0">
+                  <node concept="2OqwBi" id="1PN9XOIIALI" role="2Oq$k0">
+                    <node concept="7Obwk" id="1PN9XOIIALc" role="2Oq$k0" />
+                    <node concept="1_qnLN" id="1PN9XOIIBdH" role="2OqNvi">
+                      <ref role="1_rbq0" to="wq2x:60B5zVESBMM" resolve="IsfreeVariableConstraint" />
+                    </node>
+                  </node>
+                  <node concept="3TrEf2" id="1PN9XOIIB$w" role="2OqNvi">
+                    <ref role="3Tt5mk" to="wq2x:60B5zVESBfb" resolve="variable" />
+                  </node>
+                </node>
+                <node concept="2oxUTD" id="1PN9XOIIBXu" role="2OqNvi">
+                  <node concept="2OqwBi" id="1PN9XOIICi8" role="2oxUTC">
+                    <node concept="2OqwBi" id="1PN9XOIICaS" role="2Oq$k0">
+                      <node concept="7Obwk" id="1PN9XOIIBZZ" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1PN9XOIICeG" role="2OqNvi">
+                        <ref role="3Tt5mk" to="wq2x:60B5zVESBfb" resolve="variable" />
+                      </node>
+                    </node>
+                    <node concept="3YRAZt" id="1PN9XOIICoy" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="27VH4U" id="1PN9XOII$l0" role="2jiSrf">
+          <node concept="3clFbS" id="1PN9XOII$l1" role="2VODD2">
+            <node concept="3clFbF" id="1PN9XOII$pw" role="3cqZAp">
+              <node concept="3fqX7Q" id="1PN9XOII_rF" role="3clFbG">
+                <node concept="2OqwBi" id="1PN9XOII_rH" role="3fr31v">
+                  <node concept="7Obwk" id="1PN9XOII_rI" role="2Oq$k0" />
+                  <node concept="1mIQ4w" id="1PN9XOII_rJ" role="2OqNvi">
+                    <node concept="chp4Y" id="1PN9XOII_rK" role="cj9EA">
+                      <ref role="cht4Q" to="wq2x:60B5zVESBMM" resolve="IsfreeVariableConstraint" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="IWgqT" id="1PN9XOIICGv" role="1Qtc8A">
+        <node concept="1hCUdq" id="1PN9XOIICGw" role="1hCUd6">
+          <node concept="3clFbS" id="1PN9XOIICGx" role="2VODD2">
+            <node concept="3clFbF" id="1PN9XOIICGy" role="3cqZAp">
+              <node concept="2OqwBi" id="1PN9XOIICGz" role="3clFbG">
+                <node concept="35c_gC" id="1PN9XOIICG$" role="2Oq$k0">
+                  <ref role="35c_gD" to="wq2x:60B5zVEVSFB" resolve="IsboundVariableConstraint" />
+                </node>
+                <node concept="3n3YKJ" id="1PN9XOIICG_" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="IWg2L" id="1PN9XOIICGA" role="IWgqQ">
+          <node concept="3clFbS" id="1PN9XOIICGB" role="2VODD2">
+            <node concept="3clFbF" id="1PN9XOIICGC" role="3cqZAp">
+              <node concept="2OqwBi" id="1PN9XOIICGD" role="3clFbG">
+                <node concept="2OqwBi" id="1PN9XOIICGE" role="2Oq$k0">
+                  <node concept="2OqwBi" id="1PN9XOIICGF" role="2Oq$k0">
+                    <node concept="7Obwk" id="1PN9XOIICGG" role="2Oq$k0" />
+                    <node concept="1_qnLN" id="1PN9XOIICGH" role="2OqNvi">
+                      <ref role="1_rbq0" to="wq2x:60B5zVEVSFB" resolve="IsboundVariableConstraint" />
+                    </node>
+                  </node>
+                  <node concept="3TrEf2" id="1PN9XOIICGI" role="2OqNvi">
+                    <ref role="3Tt5mk" to="wq2x:60B5zVESBfb" resolve="variable" />
+                  </node>
+                </node>
+                <node concept="2oxUTD" id="1PN9XOIICGJ" role="2OqNvi">
+                  <node concept="2OqwBi" id="1PN9XOIICGK" role="2oxUTC">
+                    <node concept="2OqwBi" id="1PN9XOIICGL" role="2Oq$k0">
+                      <node concept="7Obwk" id="1PN9XOIICGM" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1PN9XOIICGN" role="2OqNvi">
+                        <ref role="3Tt5mk" to="wq2x:60B5zVESBfb" resolve="variable" />
+                      </node>
+                    </node>
+                    <node concept="3YRAZt" id="1PN9XOIICGO" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="27VH4U" id="1PN9XOIICGP" role="2jiSrf">
+          <node concept="3clFbS" id="1PN9XOIICGQ" role="2VODD2">
+            <node concept="3clFbF" id="1PN9XOIICGR" role="3cqZAp">
+              <node concept="3fqX7Q" id="1PN9XOIICGS" role="3clFbG">
+                <node concept="2OqwBi" id="1PN9XOIICGT" role="3fr31v">
+                  <node concept="7Obwk" id="1PN9XOIICGU" role="2Oq$k0" />
+                  <node concept="1mIQ4w" id="1PN9XOIICGV" role="2OqNvi">
+                    <node concept="chp4Y" id="1PN9XOIICGW" role="cj9EA">
+                      <ref role="cht4Q" to="wq2x:60B5zVEVSFB" resolve="IsboundVariableConstraint" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
