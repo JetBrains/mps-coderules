@@ -304,6 +304,9 @@
       <property role="IQ2ns" value="7368070394770793930" />
       <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
+    <node concept="PrWs8" id="1PN9XOIMNLH" role="PzmwI">
+      <ref role="PrY4T" node="1PN9XOIMNKV" resolve="Queryable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5NuEpF1if3e">
     <property role="3GE5qa" value="rule" />
@@ -342,6 +345,9 @@
       <property role="IQ2ns" value="6928531011217290187" />
       <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
+    <node concept="PrWs8" id="1PN9XOIMNL5" role="PzmwI">
+      <ref role="PrY4T" node="1PN9XOIMNKV" resolve="Queryable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="60B5zVESBMM">
     <property role="TrG5h" value="IsfreeVariableConstraint" />
@@ -373,6 +379,9 @@
     </node>
     <node concept="PrWs8" id="hYA4RDX4O0" role="PzmwI">
       <ref role="PrY4T" node="1HWyn8iLEBo" resolve="LateParameter" />
+    </node>
+    <node concept="PrWs8" id="1PN9XOIMNL2" role="PzmwI">
+      <ref role="PrY4T" node="1PN9XOIMNKV" resolve="Queryable" />
     </node>
   </node>
   <node concept="1TIwiD" id="1CgWc1Tyjkw">
@@ -552,6 +561,9 @@
       <property role="20kJfa" value="right" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+    <node concept="PrWs8" id="1PN9XOIMNKW" role="PzmwI">
+      <ref role="PrY4T" node="1PN9XOIMNKV" resolve="Queryable" />
     </node>
   </node>
   <node concept="1TIwiD" id="60zk4o7reud">
@@ -972,7 +984,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="item" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+      <ref role="20lvS9" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
     </node>
   </node>
   <node concept="1TIwiD" id="6E2cNiboHlA">
@@ -1701,6 +1713,9 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
+    <node concept="PrWs8" id="1PN9XOIMNLF" role="PzmwI">
+      <ref role="PrY4T" node="1PN9XOIMNKV" resolve="Queryable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7lmP5gAmrye">
     <property role="EcuMT" value="8455178808320440462" />
@@ -1733,6 +1748,11 @@
       <property role="TrG5h" value="paramName" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+  </node>
+  <node concept="PlHQZ" id="1PN9XOIMNKV">
+    <property role="EcuMT" value="2122083680347962427" />
+    <property role="3GE5qa" value="constraint" />
+    <property role="TrG5h" value="Queryable" />
   </node>
 </model>
 
