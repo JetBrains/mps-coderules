@@ -14,6 +14,11 @@
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
@@ -24,6 +29,7 @@
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
         <property id="1071599776563" name="role" index="20kJfa" />
@@ -56,6 +62,9 @@
       <property role="20kJfa" value="template" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="7lmP5gALJP$" resolve="TypecheckingQueryTemplate" />
+    </node>
+    <node concept="1QGGSu" id="5KF1HX_Xb9R" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/tcqueryTable.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="7lmP5gALJP$">
@@ -126,6 +135,9 @@
       <property role="20kJfa" value="extended" />
       <ref role="20ksaX" to="wq2x:7LI_gNMkNTa" resolve="extended" />
       <ref role="20lvS9" node="6wBZuQUF2vT" resolve="TypeTermTable" />
+    </node>
+    <node concept="1QGGSu" id="5KF1HX_Xb9P" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/tctermTable.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="6wBZuQUFd0b">

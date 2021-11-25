@@ -11,11 +11,17 @@
   </languages>
   <imports />
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
+      </concept>
+    </language>
     <language id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect">
       <concept id="3433054418424672374" name="jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor" flags="ng" index="3vrhyV">
         <child id="6106419185511570295" name="mainLanguages" index="QG$2i" />
         <child id="6106419185511570301" name="additionalLanguages" index="QG$2o" />
         <child id="8222125370833980146" name="devkit" index="TkT64" />
+        <child id="3433054418425083029" name="icon" index="3vqPLo" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -47,6 +53,9 @@
     <node concept="T9mpH" id="C1f6iDDJI1" role="TkT64">
       <property role="T9mpF" value="888618cf-7697-4adc-80cd-8c6ea3486ef7" />
       <property role="T9mpE" value="jetbrains.mps.devkit.aspect.types" />
+    </node>
+    <node concept="1QGGSu" id="1PN9XOIV6mk" role="3vqPLo">
+      <property role="1iqoE4" value="${module}/icons/typesModel.png" />
     </node>
   </node>
 </model>

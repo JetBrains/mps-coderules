@@ -15,6 +15,11 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="3348158742936976480" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ng" index="25R33">
         <property id="1421157252384165432" name="memberId" index="3tVfz5" />
@@ -82,6 +87,7 @@
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -140,6 +146,9 @@
     </node>
     <node concept="t5JxF" id="7LI_gNMj$_R" role="lGtFl">
       <property role="t5JxN" value="!! FIXME rename to RuleTable !!" />
+    </node>
+    <node concept="1QGGSu" id="1PN9XOIUZXY" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/ruleTable.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0a3d3">
@@ -457,6 +466,9 @@
     </node>
     <node concept="PrWs8" id="b5g$pBzjBf" role="PzmwI">
       <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="Commentable" />
+    </node>
+    <node concept="1QGGSu" id="1PN9XOIV34D" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/macroTable.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="PB1R3Y7Ed7">
@@ -1552,6 +1564,9 @@
     <node concept="t5JxF" id="3MfP0fwg5uO" role="lGtFl">
       <property role="t5JxN" value="Contains term declarations." />
     </node>
+    <node concept="1QGGSu" id="1PN9XOIUZYd" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/termTable.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="JOGAOsxiLy">
     <property role="EcuMT" value="861509610434276450" />
@@ -1618,6 +1633,9 @@
     </node>
     <node concept="PrWs8" id="5EDW3XE0OBD" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="1QGGSu" id="1PN9XOIV34F" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/queryTable.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="5EDW3XEaQl5">
