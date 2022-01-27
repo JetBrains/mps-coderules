@@ -1,4 +1,4 @@
-# Code Rules
+# Coderules
 
 /todo-intro.md
 

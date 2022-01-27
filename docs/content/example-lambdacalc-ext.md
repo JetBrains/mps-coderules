@@ -11,10 +11,10 @@ permalink: :basename
 ## Typechecking Extended STLC
 
 Simply Typed Lambda Calculus (STLC) is a famous example favored by textbook authors.
-This sample demonstrates how a classical type checking algorithm (Hindley-Milner[^hm]) designed for this language can be implemented using Code Rules.
+This sample demonstrates how a classical type checking algorithm (Hindley-Milner[^hm]) designed for this language can be implemented using Coderules.
 It also presents two substantial extensions to basic Hindley-Milner type inference: type annotations and typeclasses from Haskell.
-They will be discussed in succession, highlighting some of the useful features of Code Rules language and implementation challenges that typesystem itself introduces.
-These extensions show that even an advanced typesystem can be implemented using Code Rules, and in a natural way rule-based way.
+They will be discussed in succession, highlighting some of the useful features of Coderules language and implementation challenges that typesystem itself introduces.
+These extensions show that even an advanced typesystem can be implemented using Coderules, and in a natural way rule-based way.
 
 For purposes of keeping this sample a bit simpler, we keep the language confined to boolean values. Aside of boolean constants `True` and `False`, the mandatory lambda abstraction and application, `let-in` expression, and `if-then-else`, we have in addition defined pairs of values and `fix` operator to support recursion.
 
@@ -53,7 +53,7 @@ The basic type inference is covered by the several handlers: handler `typeOf` th
 #### Cons-list
 
 Handler `consList` is a straightforward implementation of Cons-list, present in all functional programming languages. Implementation consists of `Cons` and `Nil` data forms, `append` constraint and two rules that process it, one for common case and one for base case (when one of the input lists is empty).
-There's also a helper function, that translates lists embedded in Code Rules to these ad-hoc Cons-lists.
+There's also a helper function, that translates lists embedded in Coderules to these ad-hoc Cons-lists.
 
 ![append rule](img/ex-stlc/append.png)  
 _(single rule implementing cons-list)_
@@ -211,15 +211,15 @@ Next, we turn our attention to the extensions to STLC.
 
 ### Type Annotations
 
-Extension of STLC with type annotations demonstrates two important points: a usage of Code Rules macros and an implementation of a relation between types in the form of constraint. Relations on types are present in many typesystems, and probably the most widespread example is a subtyping relation (e.g. `isSubtype(type1, type2)`). As a matter of fact, the `subsumed` relation, presented here, is a form of subtyping too, as explained below.
+Extension of STLC with type annotations demonstrates two important points: a usage of Coderules macros and an implementation of a relation between types in the form of constraint. Relations on types are present in many typesystems, and probably the most widespread example is a subtyping relation (e.g. `isSubtype(type1, type2)`). As a matter of fact, the `subsumed` relation, presented here, is a form of subtyping too, as explained below.
 
 
 #### Macros
 
-Code Rules macros can help to keep the formulation of a typesystem cleaner, by moving out to a macro table some routine tasks, such as creating complex terms or building dataform representations of SNodes.
+Coderules macros can help to keep the formulation of a typesystem cleaner, by moving out to a macro table some routine tasks, such as creating complex terms or building dataform representations of SNodes.
 For such cases macros can be viewed as a form of constructors, when creation of a dataform requires, for example, recursive creation of subterms or production of constraints.
 
-In this lambda calculus there's a single macro table called `types` for translation of SNodes, representing type annotations, to corresponding dataforms for manipulation in Code Rules program.
+In this lambda calculus there's a single macro table called `types` for translation of SNodes, representing type annotations, to corresponding dataforms for manipulation in Coderules program.
 
 A typical example of a macro is for the function type. It recursively invokes macros for its argument and result types.
 
@@ -270,7 +270,7 @@ In essence, this is all that is special about type annotations.
 Most of the work and complexity is about `subsumed` relation to make the typesystem more expressive: it is concerned with higher-rank types.
 We can substitute all occurrences of `subsumed` constraint for the unification predicate and get a usual STLC with simple type annotations, that must be equivalent to inferred types everywhere.
 
-The following discussion is mostly concerned with a description of aspects of the typesystem and less so with Code Rules.
+The following discussion is mostly concerned with a description of aspects of the typesystem and less so with Coderules.
 
 
 #### Higher-Rank Polymorphism
@@ -322,10 +322,10 @@ It means that if type `A` can be instantiated to type `B`, then type `A` is more
 This relation `subsumed(B, A)` can be read as: _“type B is subsumed by type A”_  that means _“type B is less polymorphic than type A”_.
 A minor note is that directions of `subsumed` and `dsk` relations are opposite, so where `dsk(A, B)` holds, there `subsumed(B, A)` holds.
 
-Although `dsk` and `subsumed` behave in the same way, there're some important differences between theoretical treatment of this relation and its implementation in Code Rules.
-Formal definition of a `dsk` needs to take into account some details, which in the case of `subsumed` are handled by Code Rules.
-For example, tracking variable names to avoid invalid cyclic substitutions (that is, to perform _occurs check_), that in Code Rules is done during unification.  <!-- **TODO** something else? -->
-So Code Rules can actually reduce the burden lying on a developer implementing a typesystem and trying to closely follow its theoretical treatment.
+Although `dsk` and `subsumed` behave in the same way, there're some important differences between theoretical treatment of this relation and its implementation in Coderules.
+Formal definition of a `dsk` needs to take into account some details, which in the case of `subsumed` are handled by Coderules.
+For example, tracking variable names to avoid invalid cyclic substitutions (that is, to perform _occurs check_), that in Coderules is done during unification.  <!-- **TODO** something else? -->
+So Coderules can actually reduce the burden lying on a developer implementing a typesystem and trying to closely follow its theoretical treatment.
 
 Subsumption proceeds by pattern matching on types in question.
 As we computing a relation between polymorphic (i.e. universal) types, the most important rules are concerned, of course, with universal quantifiers.
@@ -373,7 +373,7 @@ Rule for a pair type is straightforward.
 ![](img/ex-stlc/subsumption_Pair.png)  
 _(subsumption rule for pair type)_
 
-That's how implementation of a complex relation on types can look like in Code Rules.
+That's how implementation of a complex relation on types can look like in Coderules.
 
 
 
@@ -381,10 +381,10 @@ That's how implementation of a complex relation on types can look like in Code R
 ### Typeclasses
 
 Haskell typeclasses are one of the most important and complex features of its typesystem, that distinguishes Haskell among other well-known functional languages.
-Implementing typeclasees using Code Rules shows that it has expressive power that is sufficient even for the advanced typesystems.
+Implementing typeclasees using Coderules shows that it has expressive power that is sufficient even for the advanced typesystems.
 This implementation partly relies on the reference Haskell typechecker[^thih].
 
-_Note about notions: by the word "constraints" are meant Code Rules constraints, whereas typeclass constraints are called in this qualified way ("typeclass constraints"), or with an uppercase letter ("Constraints") to avoid ambiguity._
+_Note about notions: by the word "constraints" are meant Coderules constraints, whereas typeclass constraints are called in this qualified way ("typeclass constraints"), or with an uppercase letter ("Constraints") to avoid ambiguity._
 
 
 #### Typeclass Constraints
@@ -427,7 +427,7 @@ _(set data structure implementation)_
 
 The beauty of such representation of a set is that merging sets comes essentially for free and, moreover, is performed implicitly.
 To merge two sets a programmer only needs to unify their handles.
-And there one crucial feature of Code Rules enters the picture: constraint reactivation.
+And there one crucial feature of Coderules enters the picture: constraint reactivation.
 When arguments of inactive constraints in the constraint store change (for example, are unified with something), these constraints are reactivated.
 
 Consider the following example.
@@ -437,7 +437,7 @@ Due to automatic reactivation, all inactive constraints in the store that refer 
 Because of this they will be tested for matching on the rule maintaining set invariant.
 In this particular case it will be triggered on the constraints `set(S1, a)` and `set(S2, a)` (remember, here `S1=S2`) and discard one of them.
 After this constraint store will contain only three `set` constraints (`set(S1, a)`, `set(S1, b)` and `set(S1, c)`), representing the result of merging `{a, b}` and `{a, c}`, a set `{a, b, c}`.
-The implementation of a set is also an example of one useful Code Rules pattern: maintaining some invariant assumed by other rules using a top-level rule, that will be matched first and ensure invariant.
+The implementation of a set is also an example of one useful Coderules pattern: maintaining some invariant assumed by other rules using a top-level rule, that will be matched first and ensure invariant.
 
 Handler `set` also declares several utility functions with straightforward implementations:
 - copying a set;

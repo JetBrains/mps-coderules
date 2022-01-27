@@ -26,7 +26,7 @@ Consider how type of a method call is calculated: details aside, in essence *whe
 ![](img/intro-methodcall-550.png)  
 _(example of processing method arguments)_
 
-Code rules may have a solution to these and other issues. The core idea is to employ a **constraints processing system** to process facts and relations, collectively known as constraints, with the user being in full control of what constraint rules to generate for given source model. With **logical variables** representing unknowns, and with support for **pattern matching** making use of term algebra and unification, it should be straightforward to define the core of type inference or a similar framework without having to rely on opaque implementation and pre-defined relations.
+Coderules may have a solution to these and other issues. The core idea is to employ a **constraints processing system** to process facts and relations, collectively known as constraints, with the user being in full control of what constraint rules to generate for given source model. With **logical variables** representing unknowns, and with support for **pattern matching** making use of term algebra and unification, it should be straightforward to define the core of type inference or a similar framework without having to rely on opaque implementation and pre-defined relations.
 
 To illustrate the idea, let’s look at a couple of examples. These are taken from the typesystem implementation for BaseLanguage.
 

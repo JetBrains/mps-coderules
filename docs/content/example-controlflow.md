@@ -7,7 +7,7 @@ permalink: :basename
 
 # Control Flow Analysis
 
-This sample demonstrates how *code rules* can be used for building a complicated analysis, which otherwise requires creating a DSL and runtime library to implement the logic of analysis. The control flow analysis presented here is far from being complete, and serves demo purposes only.  
+This sample demonstrates how *coderules* can be used for building a complicated analysis, which otherwise requires creating a DSL and runtime library to implement the logic of analysis. The control flow analysis presented here is far from being complete, and serves demo purposes only.  
 
 Language `jetbrains.mps.lang.controlflow` declares an aspect for storing control flow rules. An aspect model `controlflow` in language `jetbrains.mps.baseLanguage.ext` contains the implementation of control flow analysis.
 

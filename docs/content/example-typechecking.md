@@ -12,7 +12,7 @@ permalink: :basename
 
 Short introduction to the architecture of BL-specific typesystem built with *CodeRules*.
 
-This sample is the main result of developing code rules. It is still work in progress, but the main areas of type checking BaseLanguage have been covered. Here we briefly touch on the implementation details.
+This sample is the main result of developing coderules. It is still work in progress, but the main areas of type checking BaseLanguage have been covered. Here we briefly touch on the implementation details.
 
 First, all the BaseLanguage types have corresponding dataforms, and in addition there are definitions of types that are only ever used during type checking, such as capture type.
 

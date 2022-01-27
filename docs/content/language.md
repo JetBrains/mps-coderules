@@ -36,7 +36,7 @@ One important feature of CodeRules is the ability to abstract away from type str
 
 ### Language Aspect
 
-Code rules are defined in tables, which are root concepts of language `jetbrains.mps.lang.coderules`. Rule tables and other related roots should be created in a language’s aspect model corresponding to the specific kind of analysis performed. The language `jetbrains.mps.lang.typechecking` declares the aspect `types`.
+Coderules are defined in tables, which are root concepts of language `jetbrains.mps.lang.coderules`. Rule tables and other related roots should be created in a language’s aspect model corresponding to the specific kind of analysis performed. The language `jetbrains.mps.lang.typechecking` declares the aspect `types`.
 
 ### Root concepts
 
