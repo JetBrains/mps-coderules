@@ -9,7 +9,7 @@ There are a few points that are critical for performance of Reactor library.
 3. [x] Matching of constraint occurrence with production’s constraint;
 4. [x] Unification.
 
-### Properties of user-defined type system
+### Properties of user-defined typesystem
 
 What properties can be asserted of a constraints production system?
 

@@ -13,8 +13,8 @@ permalink: :basename
 Simply Typed Lambda Calculus (STLC) is a famous example favored by textbook authors.
 This sample demonstrates how a classical type checking algorithm (Hindley-Milner[^hm]) designed for this language can be implemented using Code Rules.
 It also presents two substantial extensions to basic Hindley-Milner type inference: type annotations and typeclasses from Haskell.
-They will be discussed in succession, highlighting some of the useful features of Code Rules language and implementation challenges that type system itself introduces.
-These extensions show that even an advanced type system can be implemented using Code Rules, and in a natural way rule-based way.
+They will be discussed in succession, highlighting some of the useful features of Code Rules language and implementation challenges that typesystem itself introduces.
+These extensions show that even an advanced typesystem can be implemented using Code Rules, and in a natural way rule-based way.
 
 For purposes of keeping this sample a bit simpler, we keep the language confined to boolean values. Aside of boolean constants `True` and `False`, the mandatory lambda abstraction and application, `let-in` expression, and `if-then-else`, we have in addition defined pairs of values and `fix` operator to support recursion.
 
@@ -27,7 +27,7 @@ The required extensions for GHC are:
 
 <!-- ~some disclaimer: why typing rules may be different from more traditional type formulations, see below -->
 
-The dataform table is trivial, there're two terms used in Cons-list implementation (`Cons` and `Nil`), term `Constraint` used in the part of type system concerned with typeclasses, and other expected terms for types (`Fun` for function type, `Forall` for universal types etc.).
+The dataform table is trivial, there're two terms used in Cons-list implementation (`Cons` and `Nil`), term `Constraint` used in the part of typesystem concerned with typeclasses, and other expected terms for types (`Fun` for function type, `Forall` for universal types etc.).
 
 ![DataForm Table](img/ex-stlc/dataform-table-wider.png)  
 _(dataform table)_
@@ -211,12 +211,12 @@ Next, we turn our attention to the extensions to STLC.
 
 ### Type Annotations
 
-Extension of STLC with type annotations demonstrates two important points: a usage of Code Rules macros and an implementation of a relation between types in the form of constraint. Relations on types are present in many type systems, and probably the most widespread example is a subtyping relation (e.g. `isSubtype(type1, type2)`). As a matter of fact, the `subsumed` relation, presented here, is a form of subtyping too, as explained below.
+Extension of STLC with type annotations demonstrates two important points: a usage of Code Rules macros and an implementation of a relation between types in the form of constraint. Relations on types are present in many typesystems, and probably the most widespread example is a subtyping relation (e.g. `isSubtype(type1, type2)`). As a matter of fact, the `subsumed` relation, presented here, is a form of subtyping too, as explained below.
 
 
 #### Macros
 
-Code Rules macros can help to keep the formulation of a type system cleaner, by moving out to a macro table some routine tasks, such as creating complex terms or building dataform representations of SNodes.
+Code Rules macros can help to keep the formulation of a typesystem cleaner, by moving out to a macro table some routine tasks, such as creating complex terms or building dataform representations of SNodes.
 For such cases macros can be viewed as a form of constructors, when creation of a dataform requires, for example, recursive creation of subterms or production of constraints.
 
 In this lambda calculus there's a single macro table called `types` for translation of SNodes, representing type annotations, to corresponding dataforms for manipulation in Code Rules program.
@@ -267,10 +267,10 @@ In this case we check against the type of inferred expression, analogously to th
 _(annotated expression also includes `subsumed` check)_
 
 In essence, this is all that is special about type annotations.
-Most of the work and complexity is about `subsumed` relation to make the type system more expressive: it is concerned with higher-rank types.
+Most of the work and complexity is about `subsumed` relation to make the typesystem more expressive: it is concerned with higher-rank types.
 We can substitute all occurrences of `subsumed` constraint for the unification predicate and get a usual STLC with simple type annotations, that must be equivalent to inferred types everywhere.
 
-The following discussion is mostly concerned with a description of aspects of the type system and less so with Code Rules.
+The following discussion is mostly concerned with a description of aspects of the typesystem and less so with Code Rules.
 
 
 #### Higher-Rank Polymorphism
@@ -279,14 +279,14 @@ Type annotations provide us with a better understanding of the code.
 For example, in Haskell it is considered a good practice to write type annotations for all top-level definitions.
 But code documentation is not the only application of type annotations.
 
-Hindley-Milner type inference is a very powerful type system and allows to write very generic programs without type annotations at all.
-But that conciseness comes at a price. This type system doesn't cover all terms that a programmer <!-- (even a sane programmer) --> would like to write.
-For example, this construct is not typeable within Hindley-Milner type system: `let f = (\g → (g True, g 42)) in f (\x → x)`, but `f` here could have a type `(∀a.a → a) → (Bool, Int)`.
+Hindley-Milner type inference is a very powerful typesystem and allows to write very generic programs without type annotations at all.
+But that conciseness comes at a price. This typesystem doesn't cover all terms that a programmer <!-- (even a sane programmer) --> would like to write.
+For example, this construct is not typeable within Hindley-Milner typesystem: `let f = (\g → (g True, g 42)) in f (\x → x)`, but `f` here could have a type `(∀a.a → a) → (Bool, Int)`.
 You can also imagine a case, where you want to operate on heterogeneous lists with a polymorphic function: `f (g :: (∀c. [c] → Int) = g ["hello"] + g [1,2]`. Here `f` has a type `f :: (∀c. [c] → Int) → Int`.
 And this is a perfectly sane case for functional programming!
 
 There comes a notion of higher-rank polymorphism.
-Hindley-Milner type system can only infer rank-1 types.
+Hindley-Milner typesystem can only infer rank-1 types.
 Rank-1 types have only a single outer-most universal quantifier.
 For example, a familiar function `map` has a type `map :: ∀a b. (a → b) → [a] → [b]`.
 If a type contains quantifiers only to the right sides of arrows, it is a rank-1 type too.
@@ -307,8 +307,8 @@ For example, these are rank-2 types: `(∀a. a → a) → Bool` and `(Bool → (
 Higher-ranked types can't be inferred without a help from the programmer in the form of type annotations.
 Programmer can provide type annotations in the cases where he needs something more expressive.
 Actually, rank-2 types are sufficient for most of the use cases, but the machinery required for typing them contains all of the features needed for typing arbitrary higher-ranked types.
-This case, where programmer can make some types more general then they would be inferred, requires a noticeably more involved type system.
-Theoretical treatment of type systems handling type annotations on top of Hindley-Milner type inference can be found in several papers, with a closest one to the current implementation in [^spjones2007] (and this paper, probably, is more accessible).
+This case, where programmer can make some types more general then they would be inferred, requires a noticeably more involved typesystem.
+Theoretical treatment of typesystems handling type annotations on top of Hindley-Milner type inference can be found in several papers, with a closest one to the current implementation in [^spjones2007] (and this paper, probably, is more accessible).
 
 For the implementation it means that we need to check that the type annotation provided for a term agrees with all its usages.
 Specifically, that the term (i.e. its type) can be instantiated to the type, required by its usage.
@@ -325,7 +325,7 @@ A minor note is that directions of `subsumed` and `dsk` relations are opposite, 
 Although `dsk` and `subsumed` behave in the same way, there're some important differences between theoretical treatment of this relation and its implementation in Code Rules.
 Formal definition of a `dsk` needs to take into account some details, which in the case of `subsumed` are handled by Code Rules.
 For example, tracking variable names to avoid invalid cyclic substitutions (that is, to perform _occurs check_), that in Code Rules is done during unification.  <!-- **TODO** something else? -->
-So Code Rules can actually reduce the burden lying on a developer implementing a type system and trying to closely follow its theoretical treatment.
+So Code Rules can actually reduce the burden lying on a developer implementing a typesystem and trying to closely follow its theoretical treatment.
 
 Subsumption proceeds by pattern matching on types in question.
 As we computing a relation between polymorphic (i.e. universal) types, the most important rules are concerned, of course, with universal quantifiers.
@@ -380,8 +380,8 @@ That's how implementation of a complex relation on types can look like in Code R
 
 ### Typeclasses
 
-Haskell typeclasses are one of the most important and complex features of its type system, that distinguishes Haskell among other well-known functional languages.
-Implementing typeclasees using Code Rules shows that it has expressive power that is sufficient even for the advanced type systems.
+Haskell typeclasses are one of the most important and complex features of its typesystem, that distinguishes Haskell among other well-known functional languages.
+Implementing typeclasees using Code Rules shows that it has expressive power that is sufficient even for the advanced typesystems.
 This implementation partly relies on the reference Haskell typechecker[^thih].
 
 _Note about notions: by the word "constraints" are meant Code Rules constraints, whereas typeclass constraints are called in this qualified way ("typeclass constraints"), or with an uppercase letter ("Constraints") to avoid ambiguity._
@@ -389,18 +389,18 @@ _Note about notions: by the word "constraints" are meant Code Rules constraints,
 
 #### Typeclass Constraints
 
-In essence, typeclasses extend type system by adding a kind of requirements, Constraints on type variables that are bound by universal quantifier.
-Type system needs to carefully track that universal types are instantiated only to the types satisfying their Constraints, and that the types are generalized to universal types properly, without leaving out any Constraints.
+In essence, typeclasses extend typesystem by adding a kind of requirements, Constraints on type variables that are bound by universal quantifier.
+Typesystem needs to carefully track that universal types are instantiated only to the types satisfying their Constraints, and that the types are generalized to universal types properly, without leaving out any Constraints.
 
 For example, we can instantiate a universal type `∀ a. (C1 a, C2 a) ⇒ (a, a) → a` only to a type that satisfies both Constraints `C1` and `C2`.
 Or, in case of a generalization, given a function `mappend ∷ ∀ a. Monoid a ⇒ a → a → a`, for a function `f` in `let f = (\x → mappend x x)` we must infer a type `∀ t. Monoid t ⇒ t → t`.
 
-Everything else is mostly a matter of other language aspects (structure, editor and constraints aspects) and not of a type system.
-Still, it's important to note, that type system doesn't need to check that type variables are properly scoped, because it is handled by "constraints" language aspect.
-It slightly simplifies the type system.
+Everything else is mostly a matter of other language aspects (structure, editor and constraints aspects) and not of a typesystem.
+Still, it's important to note, that typesystem doesn't need to check that type variables are properly scoped, because it is handled by "constraints" language aspect.
+It slightly simplifies the typesystem.
     <!-- MAYBE MOVE IN PREVIOUS SECTION ABOUT STLC? -->
 
-So, existing type system needs to be modified only in the places concerned with universal types:
+So, existing typesystem needs to be modified only in the places concerned with universal types:
 - modification of generalization & instantiation of type variables in `forall` handler;
 - straightforward additions in macro table `types` and `recover` handler.
 
@@ -529,7 +529,7 @@ Here we first need to find an instance for pairs, and then additionally check it
 
 The last rule simply fails in case when no matching instance is found.
 The typecheck is failed by triggering `eval(false)`.
-Of course, it isn't the best mechanism for reporting type system errors, but it's a temporary solution.
+Of course, it isn't the best mechanism for reporting typesystem errors, but it's a temporary solution.
 
 <!-- ![](img/ex-stlc/instanceCheck.png)   -->
 ![](img/ex-stlc/instanceCheck(3-5).png)  

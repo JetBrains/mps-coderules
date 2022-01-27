@@ -12,14 +12,14 @@ Type inference and type checking is a problematic area for language authors  —
 
 *CodeRules* is a new technology that brings logic programming in the form of constraints processing as a vehicle for implementing type inference.
 
-Type system in MPS is traditionally defined with help of type checking rules, in particular inference rules, which allow for making logical statements about types, such as “*is a*” or “*is a subtype of*”, enabling the internal engine to infer the specific type, deriving it from a collection of such statements, which are referred to as type equations and inequalities.
+Typesystem in MPS is traditionally defined with help of type checking rules, in particular inference rules, which allow for making logical statements about types, such as “*is a*” or “*is a subtype of*”, enabling the internal engine to infer the specific type, deriving it from a collection of such statements, which are referred to as type equations and inequalities.
 
 ![](img/intro-assignment-550.png)  
 _(statement in `j.m.lang.typesystem` language)_
 
 Albeit brief and concise, this notation leaves many questions unanswered when it comes to how exactly the system of equations and inequalities is processed. In other words, type inference is — for the most part — left up to the internal engine to decide. 
 
-This limits the options for the author of type system to control how exactly subtyping is defined, and what happens with type parameters when computing sub- or supertype. Java, for instance, has several kinds of “conversions” with clearly defined rules controlling how types are transformed and what types are compatible in certain situations. All of this has to be emulated with “strong” and “weak” subtyping in MPS.  
+This limits the options for the author of typesystem to control how exactly subtyping is defined, and what happens with type parameters when computing sub- or supertype. Java, for instance, has several kinds of “conversions” with clearly defined rules controlling how types are transformed and what types are compatible in certain situations. All of this has to be emulated with “strong” and “weak” subtyping in MPS.  
 
 Consider how type of a method call is calculated: details aside, in essence *when_concrete* has to be applied to types of each argument. Then we should either turn to inequalities and rely on the inference engine, or analyse the type structure and run closing computation when the *last* unknown type is finalised.
 
@@ -28,7 +28,7 @@ _(example of processing method arguments)_
 
 Code rules may have a solution to these and other issues. The core idea is to employ a **constraints processing system** to process facts and relations, collectively known as constraints, with the user being in full control of what constraint rules to generate for given source model. With **logical variables** representing unknowns, and with support for **pattern matching** making use of term algebra and unification, it should be straightforward to define the core of type inference or a similar framework without having to rely on opaque implementation and pre-defined relations.
 
-To illustrate the idea, let’s look at a couple of examples. These are taken from the type system implementation for BaseLanguage.
+To illustrate the idea, let’s look at a couple of examples. These are taken from the typesystem implementation for BaseLanguage.
 
 Type checking assignment expression could look like the following. What the code says is basically: once left and right sides of the assignment have types (not necessarily ground types), test if left side’s type converts to right side’s. Constraint `convertsTo/2` is defined in the same aspect, and the typesystem author has full control how it deals with type parameters, for example.
 

@@ -10,7 +10,7 @@ permalink: :basename
 
 ## Typechecking BaseLanguage
 
-Short introduction to the architecture of BL-specific type system built with *CodeRules*.
+Short introduction to the architecture of BL-specific typesystem built with *CodeRules*.
 
 This sample is the main result of developing code rules. It is still work in progress, but the main areas of type checking BaseLanguage have been covered. Here we briefly touch on the implementation details.
 
