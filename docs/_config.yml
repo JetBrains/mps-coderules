@@ -1,5 +1,5 @@
 # Site settings
-title: MPS CodeRules
+title: MPS Coderules
 email: fedor.isakov@jetbrains.com
 description: >- # this means to ignore newlines until "baseurl:"
   Coderules is a language framework and runtime for running logical

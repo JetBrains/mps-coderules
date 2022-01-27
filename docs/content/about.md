@@ -6,7 +6,7 @@ layout: page
 permalink: :basename
 ---
                                           
-## MPS CodeRules
+## About Coderules
 
 Type inference and type checking is a problematic area for language authors  — users of [JetBrains MPS](https://jetbrains.com/mps), because of inherent intricacies of the problem itself and sometimes less than adequate support from the framework.
 
