@@ -37,6 +37,7 @@
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="jpi6" ref="r:4c913df4-f2d5-43f7-af56-6bccd35aeb11(jetbrains.mps.lang.coderules.terms)" />
+    <import index="ntzd" ref="r:bf32fdbc-530f-4631-ba64-3e7b620ac47f(jetbrains.mps.baseLanguage.util)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -40253,11 +40254,11 @@
           <node concept="3cpWsn" id="2r0d$DFaQc0" role="3cpWs9">
             <property role="TrG5h" value="finder" />
             <node concept="3uibUv" id="29sKO70xzl0" role="1tU5fm">
-              <ref role="3uigEE" to="pz2c:7k6J8c3tHRH" resolve="OverridingMethodsCalculator" />
+              <ref role="3uigEE" to="ntzd:7k6J8c3tHRH" resolve="OverridingMethodsCalculator" />
             </node>
             <node concept="2ShNRf" id="2r0d$DFaQc2" role="33vP2m">
               <node concept="1pGfFk" id="2r0d$DFaQc3" role="2ShVmc">
-                <ref role="37wK5l" to="pz2c:7k6J8c3tHYR" resolve="OverridingMethodsCalculator" />
+                <ref role="37wK5l" to="ntzd:7k6J8c3tHYR" resolve="OverridingMethodsCalculator" />
                 <node concept="3A2sRY" id="29sKO70xzkJ" role="37wK5m">
                   <ref role="3A2yKK" node="29sKO70xfxm" resolve="cls" />
                 </node>
@@ -40274,7 +40275,7 @@
               <ref role="3cqZAo" node="2r0d$DFaQc0" resolve="finder" />
             </node>
             <node concept="liA8E" id="29sKO70x$8E" role="2OqNvi">
-              <ref role="37wK5l" to="pz2c:7k6J8c3tHRI" resolve="getOverridingMethods" />
+              <ref role="37wK5l" to="ntzd:7k6J8c3tHRI" resolve="getOverridingMethods" />
             </node>
           </node>
           <node concept="3clFbS" id="29sKO70xzl_" role="2LFqv$">
@@ -40291,7 +40292,7 @@
                     <ref role="3cqZAo" node="2r0d$DFaQc0" resolve="finder" />
                   </node>
                   <node concept="liA8E" id="2r0d$DFaQcs" role="2OqNvi">
-                    <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getBaseMethods" />
+                    <ref role="37wK5l" to="ntzd:7k6J8c3tHRT" resolve="getBaseMethods" />
                     <node concept="2GrUjf" id="2r0d$DFaQct" role="37wK5m">
                       <ref role="2Gs0qQ" node="29sKO70xzlx" resolve="overridingMethod" />
                     </node>
