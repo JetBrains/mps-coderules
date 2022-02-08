@@ -268,7 +268,7 @@
                                   <ref role="3cqZAo" node="1vAI4X$N8Tq" resolve="it" />
                                 </node>
                                 <node concept="2qgKlT" id="1vAI4X$N8Tp" role="2OqNvi">
-                                  <ref role="37wK5l" to="x5bw:7c96q9tCSX_" resolve="childFeatures" />
+                                  <ref role="37wK5l" to="x5bw:7c96q9tCSX_" resolve="allChildFeatures" />
                                 </node>
                               </node>
                             </node>
