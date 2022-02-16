@@ -22,10 +22,14 @@
       <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
         <property id="6666499814681415862" name="tagName" index="2pNNFO" />
         <child id="6666499814681415861" name="attributes" index="2pNNFR" />
+        <child id="1622293396948928802" name="content" index="3o6s8t" />
       </concept>
       <concept id="6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" flags="ng" index="2pNUuL">
         <property id="6666499814681447926" name="attrName" index="2pNUuO" />
         <child id="6666499814681541918" name="value" index="2pMdts" />
+      </concept>
+      <concept id="1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" flags="nn" index="3o6iSG">
+        <property id="1622293396948953704" name="value" index="3o6i5n" />
       </concept>
     </language>
     <language id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests">
@@ -115,11 +119,15 @@
         <property id="7832771629084799702" name="name" index="2iUeEt" />
         <property id="7832771629084799701" name="url" index="2iUeEu" />
       </concept>
+      <concept id="6592112598314586625" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup" flags="ng" index="m$f5U">
+        <reference id="6592112598314586626" name="group" index="m$f5T" />
+      </concept>
       <concept id="6592112598314498932" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin" flags="ng" index="m$_wf">
         <property id="6592112598314498927" name="id" index="m$_wk" />
         <child id="1359186315025500371" name="xml" index="20twgj" />
         <child id="7832771629084912518" name="vendor" index="2iVFfd" />
         <child id="6592112598314498931" name="version" index="m$_w8" />
+        <child id="6592112598314499050" name="content" index="m$_yh" />
         <child id="6592112598314499028" name="dependencies" index="m$_yJ" />
         <child id="6592112598314499021" name="name" index="m$_yQ" />
         <child id="6592112598314855574" name="containerName" index="m_cZH" />
@@ -206,7 +214,7 @@
       <node concept="aVJcg" id="5Hdh9$IhmQ_" role="aVJcv">
         <node concept="NbPM2" id="5Hdh9$IhmQA" role="aVJcq">
           <node concept="3Mxwew" id="5Hdh9$IhmQB" role="3MwsjC">
-            <property role="3MwjfP" value="212" />
+            <property role="3MwjfP" value="213" />
           </node>
         </node>
       </node>
@@ -225,7 +233,7 @@
       <property role="m$_wk" value="jetbrains.mps.core.types" />
       <node concept="3_J27D" id="7BVjoXzUx68" role="m$_yQ">
         <node concept="3Mxwew" id="7BVjoXzUx6h" role="3MwsjC">
-          <property role="3MwjfP" value="MPS Core Types" />
+          <property role="3MwjfP" value="MPS Coderules Core Types" />
         </node>
       </node>
       <node concept="3_J27D" id="7BVjoXzUx69" role="m_cZH">
@@ -246,7 +254,7 @@
       </node>
       <node concept="3_J27D" id="3AC_dXTSEnT" role="3s6cr7">
         <node concept="3Mxwew" id="3AC_dXTSEnV" role="3MwsjC">
-          <property role="3MwjfP" value="Types for core MPS languages (experimental)" />
+          <property role="3MwjfP" value="Types for core MPS languages with Coderules (experimental)" />
         </node>
       </node>
       <node concept="2iUeEo" id="3AC_dXTSEsp" role="2iVFfd">
@@ -258,12 +266,27 @@
         <node concept="2pNUuL" id="5Hdh9$IhmW_" role="2pNNFR">
           <property role="2pNUuO" value="since-build" />
           <node concept="2pMdtt" id="5Hdh9$IhnkA" role="2pMdts">
-            <property role="2pMdty" value="212.1" />
+            <property role="2pMdty" value="213.1" />
           </node>
+        </node>
+      </node>
+      <node concept="2pNNFK" id="2fVm_54SZ$e" role="20twgj">
+        <property role="2pNNFO" value="change-notes" />
+        <node concept="3o6iSG" id="2fVm_54SZHp" role="3o6s8t">
+          <property role="3o6i5n" value="First public EAP" />
         </node>
       </node>
       <node concept="m$_yC" id="77GimjbRIwv" role="m$_yJ">
         <ref role="m$_y1" to="zqd8:7BVjoXzUx67" resolve="jetbrains.mps.coderules" />
+      </node>
+      <node concept="m$f5U" id="2fVm_54UfKS" role="m$_yh">
+        <ref role="m$f5T" node="61G6TdEeKRG" resolve="lang" />
+      </node>
+      <node concept="m$f5U" id="2fVm_54UfJU" role="m$_yh">
+        <ref role="m$f5T" node="69UmpDmJW20" resolve="baseLanguageExt" />
+      </node>
+      <node concept="m$f5U" id="2fVm_54UfLS" role="m$_yh">
+        <ref role="m$f5T" node="7LI_gNMBoD8" resolve="coderulesExt" />
       </node>
     </node>
     <node concept="398rNT" id="5VQ8Sex_oaS" role="1l3spd">
