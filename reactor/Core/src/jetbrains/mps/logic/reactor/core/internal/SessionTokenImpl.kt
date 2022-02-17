@@ -22,7 +22,6 @@ import jetbrains.mps.logic.reactor.core.RuleIndex
 import jetbrains.mps.logic.reactor.evaluation.MatchJournalView
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.program.Rule
-import jetbrains.mps.logic.reactor.util.Profiler
 
 data class SessionTokenImpl(
     private val journalView: MatchJournal.View,
@@ -30,8 +29,7 @@ data class SessionTokenImpl(
     private val frontState: DispatchingFrontState,
     val ruleIndex: RuleIndex,
     val logicalState: LogicalState,
-    val principalObservers: PrincipalObserverDispatcher = PrincipalObserverDispatcher.EMPTY,
-    var profiler: Profiler? = null
+    val principalObservers: PrincipalObserverDispatcher = PrincipalObserverDispatcher.EMPTY
 ) : SessionToken
 {
     override fun getJournalView(): MatchJournalView = journalView
