@@ -5,7 +5,6 @@
       <sourceRoot location="models" />
     </modelRoot>
     <modelRoot contentPath="${module}/lib" type="java_classes">
-      <sourceRoot location="." />
       <sourceRoot location="reactive-streams-1.0.0.final.jar" />
       <sourceRoot location="rxjava-2.2.18.jar" />
       <sourceRoot location="rxjava2-swing-0.3.7.jar" />
