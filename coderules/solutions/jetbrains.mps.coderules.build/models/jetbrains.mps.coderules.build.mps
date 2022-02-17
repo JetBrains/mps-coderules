@@ -302,9 +302,6 @@
           <property role="3o6i5n" value="First public EAP" />
         </node>
       </node>
-      <node concept="2pNNFK" id="2fVm_54SZBF" role="20twgj">
-        <property role="2pNNFO" value="depends" />
-      </node>
       <node concept="m$_yB" id="2ABzB2CYN_W" role="m$_yh">
         <ref role="m$_yA" node="7BVjoXzUxkQ" resolve="jetbrains.mps.logic" />
       </node>
