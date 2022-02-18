@@ -3362,6 +3362,7 @@
         <description>Types for core MPS languages with Coderules (experimental)</description>
         <version>${ci.mps.release}-0.9-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
+        <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
         <idea-version since-build="213.1" />
         <change-notes>First public EAP</change-notes>
@@ -3381,6 +3382,7 @@
         <description>Types for core MPS languages with Coderules (experimental)</description>
         <version>${ci.mps.release}-0.9-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
+        <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
         <idea-version since-build="213.1" />
         <change-notes>First public EAP</change-notes>

@@ -231,6 +231,9 @@
     </node>
     <node concept="m$_wf" id="7BVjoXzUx67" role="3989C9">
       <property role="m$_wk" value="jetbrains.mps.core.types" />
+      <node concept="m$_yC" id="3cBtKDs8BhF" role="m$_yJ">
+        <ref role="m$_y1" to="ffeo:4k71ibbKLe8" resolve="jetbrains.mps.core" />
+      </node>
       <node concept="3_J27D" id="7BVjoXzUx68" role="m$_yQ">
         <node concept="3Mxwew" id="7BVjoXzUx6h" role="3MwsjC">
           <property role="3MwjfP" value="MPS Coderules Core Types" />
