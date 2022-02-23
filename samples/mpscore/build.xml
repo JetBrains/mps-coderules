@@ -3364,6 +3364,7 @@
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
+        <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="213.1" />
         <change-notes>First public EAP</change-notes>
         
@@ -3384,6 +3385,7 @@
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
+        <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="213.1" />
         <change-notes>First public EAP</change-notes>
         

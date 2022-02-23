@@ -55,6 +55,7 @@
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.testing</depends>
         <depends>jetbrains.mps.build</depends>
+        <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="213.1" />
         <change-notes>First public EAP</change-notes>
         
@@ -76,6 +77,7 @@
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.testing</depends>
         <depends>jetbrains.mps.build</depends>
+        <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="213.1" />
         <change-notes>First public EAP</change-notes>
         
@@ -3436,6 +3438,7 @@
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.testing</depends>
         <depends>jetbrains.mps.build</depends>
+        <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="213.1" />
         <change-notes>First public EAP</change-notes>
         
@@ -3457,6 +3460,7 @@
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.testing</depends>
         <depends>jetbrains.mps.build</depends>
+        <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="213.1" />
         <change-notes>First public EAP</change-notes>
         

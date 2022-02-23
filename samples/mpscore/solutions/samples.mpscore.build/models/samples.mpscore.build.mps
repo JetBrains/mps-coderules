@@ -264,6 +264,12 @@
         <property role="2iUeEt" value="JetBrains s.r.o." />
         <property role="2iUeEu" value="jetbrains.com/mps" />
       </node>
+      <node concept="2pNNFK" id="5GCTx2jx5$m" role="20twgj">
+        <property role="2pNNFO" value="depends" />
+        <node concept="3o6iSG" id="5GCTx2jx5AH" role="3o6s8t">
+          <property role="3o6i5n" value="com.intellij.modules.platform" />
+        </node>
+      </node>
       <node concept="2pNNFK" id="5Hdh9$IhmUh" role="20twgj">
         <property role="2pNNFO" value="idea-version" />
         <node concept="2pNUuL" id="5Hdh9$IhmW_" role="2pNNFR">
