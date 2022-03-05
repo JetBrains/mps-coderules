@@ -47,10 +47,6 @@ internal class ConstraintsProcessing(
     // fixme: can get rid of inheritance from journal, use composition instead
 ) : StoreAwareJournalImpl(journal, logicalState), IncrSpecHolder {
 
-    private var incrementalProcessing: ProcessingStrategy = EmptyProcessing()
-
-    fun setStrategy(strategy: ProcessingStrategy) { this.incrementalProcessing = strategy }
-
     fun getFrontState(): DispatchingFrontState = dispatchingFront.state()
 
     fun engage(controller: Controller) {
@@ -90,7 +86,6 @@ internal class ConstraintsProcessing(
             active.stored = true
             logActivation(active)
             active.revive(logicalState)
-            incrementalProcessing.processActivated(active, logicalState)
         }
         assert(active.alive)
 
@@ -101,7 +96,7 @@ internal class ConstraintsProcessing(
         }
 
         val matches = dispatchingFront.matches().toList()
-        val currentMatches = incrementalProcessing.processOccurrenceMatches(active, matches)
+        val currentMatches = matches
 
         val outStatus = processMatches(controller, active, currentMatches, parent, inStatus)
 
@@ -130,10 +125,7 @@ internal class ConstraintsProcessing(
     private fun processMatch(controller: Controller, match: RuleMatchEx, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus =
         inStatus
             .let {
-                //fixme: refactor this abort logic?
-                if (incrementalProcessing.offerMatch(match)) {
-                    controller.offerMatch(match, inStatus)
-                } else inStatus.abort(DetailedFeedback("incremental processing omitted match"))
+                controller.offerMatch(match, inStatus)
             }
             .let {
                 when (it) {
@@ -149,7 +141,6 @@ internal class ConstraintsProcessing(
                     else -> it
                 }
             }
-            .also { incrementalProcessing.processMatch(match) }
             .also { trace.trigger(match) }
             .also { accept(controller, match) }
             .then { controller.processBody(match, parent, it) }

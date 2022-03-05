@@ -70,7 +70,6 @@ internal data class SessionParts(
     val logicalState: LogicalState,
     val controller: ControllerImpl,
     val processing: ConstraintsProcessing,
-    val strategy: ProcessingStrategy,
     val principalObservers: PrincipalObserverDispatcher
 ) {
     val frontState: DispatchingFrontState get() = processing.getFrontState()
@@ -102,7 +101,7 @@ internal class EvaluationSessionImpl private constructor (
 
         fun getSession(token: SessionTokenImpl?): SessionParts {
             val ruleIndex = token
-                ?.let { it.ruleIndex }
+                ?.ruleIndex
                 ?.also { it.updateIndexFromRules(program.rules()) }
                 ?: RuleIndex(program.rules())
 
@@ -110,13 +109,11 @@ internal class EvaluationSessionImpl private constructor (
             val logicalState = LogicalState()
             val dispatchingFront = Dispatcher(ruleIndex).front()
 
-            val processingStrategy = EmptyProcessing()
             val processing = ConstraintsProcessing(dispatchingFront, journal, logicalState, incrementality, trace, profiler)
-            processing.setStrategy(processingStrategy)
 
             val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
 
-            return SessionParts(ruleIndex, journal, logicalState, controller, processing, processingStrategy, PrincipalObserverDispatcher.EMPTY)
+            return SessionParts(ruleIndex, journal, logicalState, controller, processing, PrincipalObserverDispatcher.EMPTY)
         }
 
         override fun endSession(session: SessionParts): SessionToken = with(session) {
@@ -127,10 +124,10 @@ internal class EvaluationSessionImpl private constructor (
             val status = run(main)
             controller.shutDown()
             val newToken = endSession(session)
-            return EvaluationResultImpl(newToken, status, strategy.invalidatedFeedback(), strategy.invalidatedRules())
+            return EvaluationResultImpl(newToken, status, emptySet(), emptyList())
         }
 
-        protected fun SessionParts.run(main: Constraint): FeedbackStatus = strategy.run(processing, controller, main)
+        protected fun SessionParts.run(main: Constraint): FeedbackStatus = controller.activate(main)
 
     }
     
