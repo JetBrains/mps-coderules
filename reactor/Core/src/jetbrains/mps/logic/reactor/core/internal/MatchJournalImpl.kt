@@ -207,6 +207,7 @@ internal open class MatchJournalImpl(
         reset(pastPos, false)
     }
 
+    // TBR
     private fun reset(pastPos: MatchJournal.Pos, removing: Boolean) {
         __cursor.moveToPastRemoving(pastPos) {
             popAncestor()

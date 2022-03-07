@@ -29,9 +29,11 @@ interface IncrSpecHolder {
     val Occurrence.isPrincipal get() = ispec.isPrincipal(this.constraint())
 
     val RuleMatch.isPrincipal get() = ispec.isPrincipal(this.rule())
+
     val Rule.isPrincipal get() = ispec.isPrincipal(this)
 
     val RuleMatch.isWeakPrincipal get() = ispec.isWeakPrincipal(this.rule())
+
     val Rule.isWeakPrincipal get() = ispec.isWeakPrincipal(this)
 
 }

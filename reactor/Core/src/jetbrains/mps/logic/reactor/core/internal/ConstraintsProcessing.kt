@@ -80,8 +80,6 @@ internal class ConstraintsProcessing(
      * This method may be called at most once for a fresh state frame.
      */
     fun processActivated(controller: Controller, active: Occurrence, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus {
-        push()
-
         if (!active.stored) {
             active.stored = true
             logActivation(active)

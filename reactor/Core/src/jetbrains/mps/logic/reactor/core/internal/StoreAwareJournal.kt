@@ -26,9 +26,7 @@ import java.lang.IllegalArgumentException
  */
 interface StoreAwareJournal : MatchJournal, LogicalStateObservable {
 
-     // Only for testing push() in Impl
-    fun testPush()
-
+    @Deprecated("Obsolete")
     fun resetStore()
 
     // for tests
@@ -47,31 +45,24 @@ internal open class StoreAwareJournalImpl(private val journal: MatchJournal,
 {
 
     private class FramePos(
-        val frame: LogicalStateFrame,
         chunk: MatchJournal.Chunk,
         entriesCount: Int = 0
     ) : MatchJournal.Pos(chunk, entriesCount)
 
 
-    fun push() = logicalState.push()
-
-    override fun testPush() { logicalState.push() }
-
     // Reset only store & history position, don't modify history
     override fun resetStore() {
-        logicalState.reset()
         this.resetCursor()
     }
 
 
     override fun currentPos(): MatchJournal.Pos =
-        FramePos(logicalState.currentFrame(), journal.currentPos().chunk, journal.currentPos().entriesCount)
+        FramePos(journal.currentPos().chunk, journal.currentPos().entriesCount)
 
     // Throw away recently added chunks and reset store accordingly
     // NB: not checking that chunks are actually recently added, from this exec session
     override fun reset(pastPos: MatchJournal.Pos) {
         if (pastPos is FramePos) {
-            logicalState.reset(pastPos.frame)
             journal.reset(pastPos)
         } else {
             throw IllegalArgumentException()

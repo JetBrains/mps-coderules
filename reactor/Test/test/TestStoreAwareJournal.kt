@@ -357,7 +357,6 @@ class TestStoreAwareJournal {
 
                 // execute program
 
-                hist.testPush()
                 logExpand("foo")
 
                 logFirstMatch()
@@ -433,8 +432,6 @@ class TestStoreAwareJournal {
                 hist.currentPos().chunk shouldBeSame curChunk
 
 
-                // push happens before constraints in body are activated
-                hist.testPush()
                 // last production from rule2
                 logExpand(quxOcc)
 
@@ -450,7 +447,6 @@ class TestStoreAwareJournal {
                 val oldStore = hist.storeView().allOccurrences()
                 val savedPos = hist.currentPos()
 
-                hist.testPush()
                 logExpandJustified("last")
 
                 hist.view().chunks.size shouldBe 5 + initialJournalSize

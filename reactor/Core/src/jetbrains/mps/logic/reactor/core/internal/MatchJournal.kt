@@ -81,12 +81,14 @@ interface MatchJournal :  EvidenceSource {
     /**
      * Same as [resetCursor], moves [cursor] before [initialChunk].
      */
+    @Deprecated("Obsolete TBR")
     fun resetCursor() = resetCursor(Pos(initialChunk(), 0))
 
     /**
      * Moves [cursor] before [pastPos], so that [ChunkReader.next] is [pastPos].
      * Doesn't modify journal contents, as opposed to [reset].
      */
+    @Deprecated("Obsolete TBR")
     fun resetCursor(pastPos: Pos)
 
     /**
