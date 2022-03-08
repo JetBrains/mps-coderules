@@ -26,21 +26,13 @@ interface ChunkReader {
 
     infix fun at(pos: MatchJournal.Pos) = current === pos.chunk
     infix fun at(chunk: MatchJournal.Chunk) = current === chunk
-
-    infix fun atNext(pos: MatchJournal.Pos) = next === pos.chunk
-    infix fun atNext(chunk: MatchJournal.Chunk) = next === chunk
 }
 
 interface JournalIterator: ChunkReader, Iterator<MatchJournal.Chunk>
 
-interface RemovingJournalIterator: JournalIterator {
-    fun removeNext()
-}
-
-interface MutableJournalIterator: RemovingJournalIterator {
+interface MutableJournalIterator: JournalIterator {
     fun add(chunk: MatchJournal.Chunk)
 }
-
 
 internal infix fun JournalIterator.assertAt(pos: MatchJournal.Pos) {
     if (!(this at pos)) throw IllegalStateException("Position wasn't found in journal: $pos")

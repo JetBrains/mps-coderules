@@ -63,20 +63,11 @@ interface MatchJournal :  EvidenceSource {
     fun currentPos(): Pos
 
     /**
-     * Indicates whether journal's pos points to its end.
-     */
-    fun isFront(): Boolean
-
-
-    /**
-     * Returns read-only [JournalIterator] that allows to remove future [Chunk]s.
-     */
-    fun iterator(): JournalIterator
-
-    /**
      * Returns internal [JournalIterator] that allows to remove future [Chunk]s.
      */
-    val cursor: RemovingJournalIterator
+    @Deprecated("Obsolete TBR")
+    val cursor: JournalIterator
+        get() = TODO()
 
     /**
      * Same as [resetCursor], moves [cursor] before [initialChunk].
@@ -118,62 +109,8 @@ interface MatchJournal :  EvidenceSource {
      */
     fun storeView(): StoreView
 
-    /**
-     * Returns [Index] for current state of [MatchJournal].
-     */
-    fun index(): Index
-
     fun basisRuleTags(chunk: Chunk): List<Any>
-
-    /**
-     * Simplifies some search operations on [MatchJournal].
-     * Also serves as a comparator for positions: later in journal means greater.
-     */
-    interface Index : ComparatorExt<Pos> {
-
-        /**
-         * Returns [Comparator] for [Chunk]s based on their [Pos] in this [Index].
-         */
-        val chunkComparator: Comparator<Chunk> get
-
-        /**
-         * Returns [true] for indexed [Chunk]s.
-         * [Index] is a snapshot of [MatchJournal],
-         * so new additions to journal aren't indexed.
-         */
-        fun isKnown(chunk: Chunk): Boolean
-
-        /**
-         * Same as [isKnown], but for [Occurrence].
-         * Returns [true] for indexed [Occurrence]s.
-         */
-        fun isKnown(occ: Occurrence): Boolean = activatingChunkOf(occ) != null
-
-        /**
-         * Returns [Chunk] corresponding to [occ] activation.
-         * Returns null for non-principal occurrences & those not from indexed session.
-         */
-        fun activatingChunkOf(occ: Occurrence): OccChunk?
-
-        /**
-         * Returns [Pos] at which provided [RuleMatch] was triggered.
-         * Returns null for non-principal rules & those not from indexed session.
-         */
-        fun activationPos(match: RuleMatchEx): OccChunk?
-
-        /**
-         * Returns [MatchChunk] corresponding to [RuleMatch] where [occ] was activated.
-         * Returns null for non-principal occurrences & those not from indexed session.
-         */
-        fun matchChunkOf(occChunk: OccChunk): MatchChunk?
-
-        /**
-         * Length of the indexed [MatchJournal]
-         */
-        val size: Int
-    }
-
-
+    
     /**
      * Immutable snapshot of [MatchJournal].
      */
@@ -227,12 +164,6 @@ interface MatchJournal :  EvidenceSource {
      * [Chunk] corresponding to a [RuleMatch] of a principal [Rule].
      */
     interface MatchChunk : Chunk {
-
-        /**
-         * Returns true if this [Chunk] depends on changes to specified rule.
-         * Relevant for rules with origin. Doesn't include rule from [match].
-         */
-        fun dependsOnRule(utag: Any): Boolean
 
         /**
          * [RuleMatch] which defines this [Chunk]

@@ -40,13 +40,9 @@ internal open class MatchJournalImpl(
     }
 
     private class MatchChunkImpl(override val evidence: Evidence, override val match: RuleMatch) : ChunkImpl(), MatchChunk {
-        override fun dependsOnRule(utag: Any): Boolean = rulesWithOrigin.contains(utag)
-
         override fun justifications(): Justifications = justifications
 
         private val justifications = match.collectJustifications(evidence)
-
-        val rulesWithOrigin = HashSet<Any>(4)
 
         override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().uniqueTag().toString()}, $entries)"
     }
@@ -76,7 +72,6 @@ internal open class MatchJournalImpl(
     // invariant: never empty
     private val ancestorChunksStack: MutableList<MatchChunk>
 
-
     private var evidenceSeed: Evidence = 0
 
     final override val nullEvidence: Evidence = CornerChunk.evidence
@@ -104,12 +99,6 @@ internal open class MatchJournalImpl(
     }
 
     constructor(view: MatchJournal.View? = null) : this(IncrementalSpec.DefaultSpec, view)
-
-
-    override fun iterator(): JournalIterator = JournalIteratorImpl(hist.listIterator())
-
-    override val cursor: RemovingJournalIterator get() = __cursor
-
 
     override fun logMatch(match: RuleMatch): MatchChunk? {
         val added: MatchChunk?
@@ -166,12 +155,6 @@ internal open class MatchJournalImpl(
                 child.justifyByAll(moreJustified)
             }
         }
-
-        match.rule().let {
-            if (it.isWeakPrincipal) {
-                (parent as MatchChunkImpl).rulesWithOrigin.add(it.uniqueTag())
-            }
-        }
     }
 
     override fun logActivation(occ: Occurrence): OccChunk? {
@@ -194,9 +177,6 @@ internal open class MatchJournalImpl(
     override fun parentChunk(): MatchChunk = ancestorChunksStack.peek()!!
 
     override fun currentPos(): MatchJournal.Pos = __cursor.current.toPos()
-
-    override fun isFront(): Boolean = __cursor.atEnd()
-
 
     override fun reset(pastPos: MatchJournal.Pos) {
         reset(pastPos, true)
@@ -241,8 +221,6 @@ internal open class MatchJournalImpl(
     override fun view() = MatchJournal.View(ArrayList(hist), evidenceSeed)
 
     override fun storeView(): StoreView = StoreViewImpl(allOccurrences())
-
-    override fun index(): MatchJournal.Index = IndexImpl(hist)
 
     override fun basisRuleTags(chunk: Chunk): List<Any> {
         val ptags = mutableListOf<Any>()
@@ -347,12 +325,6 @@ internal open class MatchJournalImpl(
             indexChunk(chunk)
         }
 
-        override fun removeNext() {
-            it.next()
-            it.remove()
-            updateNext()
-        }
-
         /**
          * Walk in journal in direct order ([from] -> [current])
          * while applying [action] to each visited [Chunk]
@@ -414,68 +386,7 @@ internal open class MatchJournalImpl(
 
         val last: E get() = if (l is LinkedList<E>) l.last else l.last()
     }
-
-    private class IndexImpl(chunks: List<Chunk>): MatchJournal.Index
-    {
-        private val chunkOrder = HashMap<Id<Chunk>, Int>()
-        private val occChunks = HashMap<Int, OccChunk>()
-        private val parentMatches = HashMap<OccChunk, MatchChunk>()
-
-        init {
-            var index: Int = chunks.size
-            val orphansYet = hashSetOf<OccChunk>()
-            chunks.reversed().forEach { chunk ->
-                if (!(chunk is CornerChunk)) {
-                    chunkOrder[Id(chunk)] = --index
-                }
-
-                when (chunk) {
-                    is OccChunk -> {
-                        occChunks[chunk.occ.identity] = chunk
-
-                        orphansYet.add(chunk)
-                    }
-                    is MatchChunk -> orphansYet.removeIf{ orphan ->
-                        // first met justifying MatchChunk is parent
-                        if (orphan.justifiedBy(chunk)) {
-                            parentMatches[orphan] = chunk
-                            true
-                        } else false
-                    }
-                }
-            }
-        }
-
-        override val size: Int = chunks.size
-
-        override fun isKnown(chunk: Chunk): Boolean = chunkOrder.containsKey(Id(chunk))
-
-        override fun activatingChunkOf(occ: Occurrence) = occChunks[occ.identity]
-
-        override fun activationPos(match: RuleMatchEx): OccChunk? =
-            // The latest matched occurrence from match's head is (by definition)
-            //  the occurrence which activated this match.
-            match.allHeads()
-                .mapNotNull(this::activatingChunkOf)
-                .maxBy { orderOf(it)!! } // compare positions: find latest
-
-        override fun matchChunkOf(occChunk: OccChunk): MatchChunk? = parentMatches[occChunk]
-
-        override val chunkComparator: Comparator<Chunk> get() = compareBy<Chunk>(this::orderOfThrow)
-
-        override fun compare(lhs: Pos, rhs: Pos): Int =
-            compareBy<Pos>{ orderOfThrow(it.chunk) }
-                .thenComparingInt { it.entriesCount }
-                .compare(lhs, rhs)
-
-        private fun orderOf(chunk: Chunk): Int? = chunkOrder[Id(chunk)]
-
-        private fun orderOfThrow(chunk: Chunk): Int = when (val ord = orderOf(chunk)) {
-            null -> throw IllegalStateException("Chunk (${chunk.evidence}) must be known by journal index!")
-            else -> ord
-        }
-    }
-
+    
     /**
      * Mock RuleMatch for use only in initial Chunk
      */

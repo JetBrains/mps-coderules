@@ -22,15 +22,19 @@ public interface IncrementalSpec {
 
     boolean isPrincipal(Constraint ctr);
     boolean isPrincipal(Rule rule);
-    boolean isWeakPrincipal(Rule rule);
+
+    @Deprecated(forRemoval = true)
+    default boolean isWeakPrincipal(Rule rule) {return false; }
 
     @NotNull
-    Enabled ability();
+    @Deprecated(forRemoval = true)
+    default Enabled ability() { throw new UnsupportedOperationException(); }
     @NotNull
-    IncrLevel incrLevel();
+    @Deprecated(forRemoval = true)
+    default IncrLevel incrLevel() { throw new UnsupportedOperationException(); }
     @NotNull
-    AssertLevel assertLevel();
-
+    @Deprecated(forRemoval = true)
+    default AssertLevel assertLevel()  { throw new UnsupportedOperationException(); }
 
     enum IncrLevel {
         Preamble, Full;
