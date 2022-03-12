@@ -98,13 +98,13 @@ interface MatchJournal :  EvidenceSource {
      */
     fun replay(futurePos: Pos)
 
-
     /**
      * Returns snapshot of the journal.
      */
     fun view(): View
 
     /**
+     * For tests only.
      * Returns [StoreView] of the journal from the beginning to its current position.
      */
     fun storeView(): StoreView
@@ -115,8 +115,6 @@ interface MatchJournal :  EvidenceSource {
      * Immutable snapshot of [MatchJournal].
      */
     data class View(val chunks: List<Chunk>, val evidenceSeed: Evidence) : MatchJournalView {
-
-        constructor() : this(emptyList<Chunk>(), 0)
 
         override fun getStoreView(): StoreView = StoreViewImpl(
             chunks.flatMap { it.entries() }.allOccurrences().asSequence()
@@ -143,20 +141,6 @@ interface MatchJournal :  EvidenceSource {
          */
         fun entries(): List<Entry>
 
-        /**
-         * Checks whether this [Chunk] has no ancestors (not counting [MatchJournal.initialChunk])
-         */
-        fun isTopLevel(): Boolean = justifications().size() <= 1
-
-        /**
-         * Same as [entries], but returns only activated [Occurrence]s.
-         */
-        fun activatedLog(): List<Occurrence> = entries().filter { !it.discarded }.map { it.occ }
-
-        /**
-         * Same as [entries], but returns only discarded [Occurrence]s.
-         */
-        fun discardedLog(): List<Occurrence> = entries().filter { it.discarded }.map { it.occ }
         fun toPos(): Pos = Pos(this, entries().size)
     }
 

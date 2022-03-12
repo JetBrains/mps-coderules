@@ -49,8 +49,7 @@ class TestIncrementalProgram {
     }
 
     private fun Builder.launch(name: String, incrSpec: IncrementalSpec, resultHandler: (EvaluationResult) -> Unit)
-        : Pair<Builder, EvaluationResult>
-    {
+        : Pair<Builder, EvaluationResult> {
         val result = EvaluationSession.newSession(program(name))
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
             .withIncrSpec(incrSpec)
@@ -60,9 +59,8 @@ class TestIncrementalProgram {
         return this to result
     }
 
-    private fun Builder.relaunch(name: String, incrSpec: IncrementalSpec, sessionToken: SessionToken, resultHandler: (EvaluationResult) -> Unit )
-        : Pair<Builder, EvaluationResult>
-    {
+    private fun Builder.relaunch(name: String, incrSpec: IncrementalSpec, sessionToken: SessionToken, resultHandler: (EvaluationResult) -> Unit)
+        : Pair<Builder, EvaluationResult> {
         val prog = program(name)
         val result = EvaluationSession.newSession(prog)
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
@@ -81,14 +79,18 @@ class TestIncrementalProgram {
         it.entries().map { entry -> !entry.discarded to entry.occ.constraint().symbol() }
     }
 
-//    private fun EvaluationResult.lastChunk() = this.token().chunks().last()
-    private fun EvaluationResult.lastChunk() = this.token().chunks().let { it[it.size-2] }
+    //    private fun EvaluationResult.lastChunk() = this.token().chunks().last()
+    private fun EvaluationResult.lastChunk() = this.token().chunks().let { it[it.size - 2] }
 
     private fun EvaluationResult.countChunks() = this.token().chunks().size
 
     private fun Iterable<Occurrence>.constraintSymbols() = this.map { it.constraint.symbol() }
 
-    private fun EvaluationResult.lastChunkSymbols() = this.lastChunk().activatedLog().constraintSymbols()
+    private fun EvaluationResult.lastChunkSymbols() = lastChunk()
+                                                        .entries()
+                                                        .filter { !it.discarded }
+                                                        .map { it.occ }
+                                                        .constraintSymbols()
 
     private fun ConstraintOccurrence.firstValue(): Any? = (arguments().first() as? Logical<*>)?.value()
 
@@ -143,17 +145,17 @@ class TestIncrementalProgram {
                 headReplaced(
                     pconstraint("bar")
                 ),
-                body( ))
+                body())
         ).launch("addRule", progSpec) { result ->
             storeSnapshot = result.storeView().constraintSymbols()
             storeSnapshot shouldBe setOf(sym0("foo"))
 
         }.also { (builder, evalRes) ->
             builder
-            .removeRules(listOf("bar"))
-            .relaunch("no changes", progSpec, evalRes.token()) { result ->
-                result.storeView().constraintSymbols() shouldBe storeSnapshot
-            }
+                .removeRules(listOf("bar"))
+                .relaunch("no changes", progSpec, evalRes.token()) { result ->
+                    result.storeView().constraintSymbols() shouldBe storeSnapshot
+                }
         }
     }
 
@@ -313,7 +315,7 @@ class TestIncrementalProgram {
             ).relaunch("atStart", progSpec, evalRes.token()) { result ->
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"), sym0("bar"))
-                result.countChunks() shouldBe nPrincipalMatches+1
+                result.countChunks() shouldBe nPrincipalMatches + 1
                 result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
             }
         }
@@ -860,10 +862,10 @@ class TestIncrementalProgram {
             builder.removeRules(listOf("baz.qux"))
                 .relaunch("removed", progSpec, evalRes.token()) { result ->
 
-                result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"))
-                result.lastChunkSymbols() shouldBe listOf(sym0("baz"))
-                result.countChunks() shouldBe (nPrincipalMatches - 1)
-            }
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"))
+                    result.lastChunkSymbols() shouldBe listOf(sym0("baz"))
+                    result.countChunks() shouldBe (nPrincipalMatches - 1)
+                }
         }
     }
 
@@ -1326,7 +1328,7 @@ class TestIncrementalProgram {
         ).launch("launch", progSpec) { result ->
 
             result.storeView().constraintSymbols() shouldBe setOf(sym0("important"))
-            assertTrue( result.lastChunk().let { it is MatchJournal.MatchChunk && it.match.rule().uniqueTag().toString() == "foo" } )
+            assertTrue(result.lastChunk().let { it is MatchJournal.MatchChunk && it.match.rule().uniqueTag().toString() == "foo" })
 
         }.also { (builder, evalRes) ->
 
@@ -1341,7 +1343,7 @@ class TestIncrementalProgram {
                 listOf("bar")
             ).relaunch("invalidate bar", progSpec, evalRes.token()) { result ->
 
-                result.storeView().constraintSymbols() shouldBe setOf( sym0("bar"), sym0("expected") )
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("expected"))
             }
         }
     }
@@ -1465,7 +1467,7 @@ class TestIncrementalProgram {
                 listOf("bar")
             ).relaunch("invalidate bar", progSpec, evalRes.token()) { result ->
 
-                result.storeView().constraintSymbols() shouldBe setOf( sym0("bar"), sym0("expected"), sym0("expected2") )
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("expected"), sym0("expected2"))
                 val occInstances2 = result.storeView().allOccurrences().filter { it.constraint().symbol() == sym0("expected2") }
                 // instance of occurrence from the second run must be different ---
                 // if it's same it means that "fooChild" rule wasn't invalidated!
@@ -1571,7 +1573,7 @@ class TestIncrementalProgram {
                             pconstraint("foo", X)
                         ),
                         body(
-                            statement({ x, y -> eq(x,y) }, X, Y),
+                            statement({ x, y -> eq(x, y) }, X, Y),
                             constraint("hasBound", Y)
                         ))
 
@@ -1625,7 +1627,7 @@ class TestIncrementalProgram {
                             expression({ x -> !x.isBound }, X)
                         ),
                         body(
-                            constraint("expected" )
+                            constraint("expected")
                         ))
                 )
                 .relaunch("relaunch", progSpec, evalRes.token()) { result ->
@@ -1664,7 +1666,7 @@ class TestIncrementalProgram {
                     expression({ x -> !x.isBound }, X)
                 ),
                 body(
-                    constraint("unexpected" )
+                    constraint("unexpected")
                 ))
 
         ).launch("normal run", progSpec) { result ->
@@ -1712,7 +1714,7 @@ class TestIncrementalProgram {
                     pconstraint("foo", X)
                 ),
                 body(
-                    statement({ x, y -> eq(x,y) }, X, Y),
+                    statement({ x, y -> eq(x, y) }, X, Y),
                     constraint("hasBound", Y)
                 )),
             rule("bindVar",
@@ -1739,7 +1741,7 @@ class TestIncrementalProgram {
                             expression({ x -> !x.isBound }, X)
                         ),
                         body(
-                            constraint("expected" )
+                            constraint("expected")
                         ))
                 )
                 .relaunch("relaunch", progSpec, evalRes.token()) { result ->
@@ -1792,7 +1794,7 @@ class TestIncrementalProgram {
                             expression({ x -> !x.isBound }, X)
                         ),
                         body(
-                            constraint("expected" )
+                            constraint("expected")
                         ))
                 )
                 .relaunch("relaunch", progSpec, evalRes.token()) { result ->
@@ -1831,14 +1833,14 @@ class TestIncrementalProgram {
                     expression({ x -> !x.isBound }, X)
                 ),
                 body(
-                    constraint("expected" )
+                    constraint("expected")
                 )),
             rule("produceBound",
                 headKept(
                     pconstraint("foo", X)
                 ),
                 body(
-                    statement({ x, y -> eq(x,y) }, X, Y),
+                    statement({ x, y -> eq(x, y) }, X, Y),
                     constraint("hasBound", Y)
                 )),
             rule("bindVar",
@@ -1924,7 +1926,7 @@ class TestIncrementalProgram {
                             pconstraint("bar", Y)
                         ),
                         body(
-                            statement({ x, y -> eq(x,y) }, X, Y)
+                            statement({ x, y -> eq(x, y) }, X, Y)
                         ))
                 )
                 .relaunch("relaunch", progSpec, evalRes.token()) { result ->
@@ -1935,7 +1937,6 @@ class TestIncrementalProgram {
                 }
         }
     }
-
 
 
     @Test
@@ -2063,13 +2064,13 @@ class TestIncrementalProgram {
 
         }.also { (builder, evalRes) ->
             builder
-            .removeRules(listOf("process"))
-            .relaunch("removed write", progSpec, evalRes.token()) { result ->
+                .removeRules(listOf("process"))
+                .relaunch("removed write", progSpec, evalRes.token()) { result ->
 
-                // without 'write' resource isn't exhausted
-                result.storeView().constraintSymbols() shouldBe setOf(sym0("hasRead"), sym0("resource"), sym0("doProcess"))
-                result.storeView().occurrences(sym0("hasRead")).count() shouldBe 3
-            }
+                    // without 'write' resource isn't exhausted
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("hasRead"), sym0("resource"), sym0("doProcess"))
+                    result.storeView().occurrences(sym0("hasRead")).count() shouldBe 3
+                }
         }
     }
 
