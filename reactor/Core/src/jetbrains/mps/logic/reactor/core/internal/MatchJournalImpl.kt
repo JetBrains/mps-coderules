@@ -37,6 +37,7 @@ internal open class MatchJournalImpl(
     private abstract class ChunkImpl : Chunk {
         var entries: MutableList<Chunk.Entry> = mutableListOf()
         override fun entries(): List<Chunk.Entry> = entries
+        override fun addEntry(e: Chunk.Entry) = entries.add(e)
     }
 
     private class MatchChunkImpl(override val evidence: Evidence, override val match: RuleMatch) : ChunkImpl(), MatchChunk {
@@ -78,7 +79,6 @@ internal open class MatchJournalImpl(
 
     final override fun nextEvidence(): Evidence = evidenceSeed++
 
-
     init {
         if (view == null) {
             val initChunk = MatchChunkImpl(nextEvidence(), InitRuleMatch)
@@ -105,7 +105,7 @@ internal open class MatchJournalImpl(
 
         if (match.isPrincipal) {
             added = MatchChunkImpl(nextEvidence(), match)
-            __cursor.add(added)
+            __cursor.addChunk(added)
             trackAncestor(added)
             logAncestor(added)
         } else {
@@ -118,7 +118,7 @@ internal open class MatchJournalImpl(
         }
         // Log discarded occurrences
         (match as RuleMatchImpl).forEachReplaced { occ ->
-            __cursor.current.entries.add(Chunk.Entry(occ, true))
+            __cursor.addEntryToCurrent(Chunk.Entry(occ, true))
         }
 
         return added
@@ -163,11 +163,11 @@ internal open class MatchJournalImpl(
         trackAncestor(occ)
         if (occ.isPrincipal) {
             added = OccChunkImpl(occ)
-            __cursor.add(added)
+            __cursor.addChunk(added)
         } else {
             added = null
         }
-        __cursor.current.entries.add(Chunk.Entry(occ))
+        __cursor.addEntryToCurrent(Chunk.Entry(occ))
 
         return added
     }
@@ -176,7 +176,7 @@ internal open class MatchJournalImpl(
 
     override fun parentChunk(): MatchChunk = ancestorChunksStack.peek()!!
 
-    override fun currentPos(): MatchJournal.Pos = __cursor.current.toPos()
+    override fun currentPos(): MatchJournal.Pos = __cursor.currentPos()
 
     override fun reset(pastPos: MatchJournal.Pos) {
         __cursor.moveToPastRemoving(pastPos) {
@@ -252,45 +252,38 @@ internal open class MatchJournalImpl(
     /**
      * Provides [MatchJournal] look-ahead traverse.
      */
-    private open class JournalIteratorImpl(private val it: ListIterator<ChunkImpl>)
-        : JournalIterator, Iterator<Chunk> by it {
+    private open class AbstractChunkIterator(private val iter: ListIterator<ChunkImpl>) :   ChunkIterator,
+                                                                                            Iterator<Chunk> by iter
+    {
         protected var __next: ChunkImpl
         protected var __current: ChunkImpl
 
         init {
-            __current = it.next()
-            __next = it.next()
-            it.previous()
+            __current = iter.next()
+            __next = iter.next()
+            iter.previous()
 
             assert(__current is CornerChunk)
         }
 
-        final override val next: ChunkImpl get() = __next
-        final override val current: ChunkImpl get() = __current
+        val next: Chunk get() = __next
+        final override val current: Chunk get() = __current
 
         final override fun atStart(): Boolean = __current is CornerChunk
         final override fun atEnd(): Boolean = __next is CornerChunk
 
-        //        final override fun hasPrevious(): Boolean = !atStart()
         final override fun hasNext(): Boolean = !atEnd()
 
         override fun next(): Chunk = nextImpl()
 
-
         protected fun updateNext() {
-            assert(it.hasNext()) { "journal iterator must always have next chunk (maybe the final)" }
-            __next = it.next()
-            it.previous() // iterator always points between stored chunks
-        }
-
-        protected fun updatePrevious() {
-            assert(it.hasPrevious())
-            __current = it.previous()
-            it.next()
+            assert(iter.hasNext()) { "journal iterator must always have next chunk (maybe the final)" }
+            __next = iter.next()
+            iter.previous() // iterator always points between stored chunks
         }
 
         protected fun nextImpl(): Chunk {
-            __current = it.next()
+            __current = iter.next()
             assert(__current === __next)
             updateNext()
             return __current
@@ -302,8 +295,9 @@ internal open class MatchJournalImpl(
      * Represents [MatchJournal] state: additions & removals happen at pointed-to position.
      * [Cursor] points at position between [current] & [next].
      */
-    private inner class Cursor(private val it: MutableListIterator<ChunkImpl>)
-        : MutableJournalIterator, JournalIteratorImpl(it) {
+    private inner class Cursor(private val iter: MutableListIterator<ChunkImpl>) :  AbstractChunkIterator(iter),
+                                                                                    MutableChunkIterator
+    {
         /**
          * Replays [Chunk]s while iterating (see [replayChunk])
          */
@@ -312,8 +306,8 @@ internal open class MatchJournalImpl(
             return nextImpl()
         }
 
-        override fun add(chunk: Chunk) {
-            it.add(chunk as ChunkImpl)
+        override fun addChunk(chunk: Chunk) {
+            iter.add(chunk as ChunkImpl)
             __current = chunk
             indexChunk(chunk)
         }
@@ -326,14 +320,14 @@ internal open class MatchJournalImpl(
          * (i.e. no reset or replay of occurrences is performed).
          */
         inline fun applyToPast(from: Pos, action: (Chunk) -> Unit) {
-            val returnTo = current
+            val returnTo = __current
             // there's always at least initial chunk
             do {
-                __current = it.previous()
+                __current = iter.previous()
             } while (!(this at from))
 
             do {
-                __current = it.next()
+                __current = iter.next()
                 action(__current)
             } while (!(this at returnTo))
         }
@@ -347,13 +341,13 @@ internal open class MatchJournalImpl(
          */
         inline fun moveToPastRemoving(pastPos: Pos, action: (Chunk) -> Boolean) {
             while (!atStart()) {
-                __current = it.previous()
+                __current = iter.previous()
                 if (action(__current)) {
-                    it.remove()
+                    iter.remove()
                 }
                 if (this at pastPos) {
-                    __current = it.previous()
-                    it.next() // make it point right after __current
+                    __current = iter.previous()
+                    iter.next() // make it point right after __current
                     updateNext()
                     return
                 }
@@ -369,11 +363,11 @@ internal open class MatchJournalImpl(
          */
         inline fun moveToPastApplying(pastPos: Pos, action: (Chunk) -> Unit) {
             while (!atStart()) {
-                __current = it.previous()
+                __current = iter.previous()
                 action(__current)
                 if (this at pastPos) {
-                    __current = it.previous()
-                    it.next() // make it point right after __current
+                    __current = iter.previous()
+                    iter.next() // make it point right after __current
                     updateNext()
                     return
                 }
@@ -395,8 +389,6 @@ internal open class MatchJournalImpl(
         override fun iterator(): MutableIterator<E> = l.iterator()
         override fun listIterator(): MutableListIterator<E> = l.listIterator()
         override fun listIterator(index: Int): MutableListIterator<E> = l.listIterator(index)
-
-        val last: E get() = if (l is LinkedList<E>) l.last else l.last()
     }
 
     /**

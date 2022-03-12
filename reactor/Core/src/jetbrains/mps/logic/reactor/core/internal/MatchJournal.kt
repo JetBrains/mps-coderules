@@ -22,7 +22,6 @@ import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.program.*
 import jetbrains.mps.logic.reactor.util.Id
 import java.util.*
-import kotlin.Comparator
 
 typealias ChunkIndex = TIntObjectHashMap<MatchJournal.Chunk>
 
@@ -63,10 +62,10 @@ interface MatchJournal :  EvidenceSource {
     fun currentPos(): Pos
 
     /**
-     * Returns internal [JournalIterator] that allows to remove future [Chunk]s.
+     * Returns internal [ChunkIterator] that allows to remove future [Chunk]s.
      */
     @Deprecated("Obsolete TBR")
-    val cursor: JournalIterator
+    val cursor: ChunkIterator
         get() = TODO()
 
     /**
@@ -76,7 +75,7 @@ interface MatchJournal :  EvidenceSource {
     fun resetCursor() = resetCursor(Pos(initialChunk(), 0))
 
     /**
-     * Moves [cursor] before [pastPos], so that [ChunkReader.next] is [pastPos].
+     * Moves [cursor] before [pastPos], so that [ChunkIterator.next] is [pastPos].
      * Doesn't modify journal contents, as opposed to [reset].
      */
     @Deprecated("Obsolete TBR")
@@ -84,7 +83,7 @@ interface MatchJournal :  EvidenceSource {
 
     /**
      * Erase journal between [currentPos] (erased) and [pastPos] (not erased).
-     * Moves [cursor] at [pastPos], so that [ChunkReader.current] is [pastPos].
+     * Moves [cursor] at [pastPos], so that [ChunkIterator.current] is [pastPos].
      * @param pastPos position to reset to.
      * @throws IllegalStateException when position is not from the past (relative to [cursor]).
      */
@@ -141,6 +140,8 @@ interface MatchJournal :  EvidenceSource {
          */
         fun entries(): List<Entry>
 
+        fun addEntry(e: Entry): Boolean
+
         fun toPos(): Pos = Pos(this, entries().size)
     }
 
@@ -175,6 +176,27 @@ interface MatchJournal :  EvidenceSource {
     }
 }
 
+interface ChunkIterator: Iterator<MatchJournal.Chunk> {
+    val current: MatchJournal.Chunk
+
+    fun atStart(): Boolean
+    fun atEnd(): Boolean
+
+    fun currentPos(): MatchJournal.Pos = current.toPos()
+    fun addEntryToCurrent(e: MatchJournal.Chunk.Entry): Boolean = current.addEntry(e)
+
+    infix fun at(pos: MatchJournal.Pos) = current === pos.chunk
+    infix fun at(chunk: MatchJournal.Chunk) = current === chunk
+
+}
+
+interface MutableChunkIterator: ChunkIterator {
+    fun addChunk(chunk: MatchJournal.Chunk)
+}
+
+internal infix fun ChunkIterator.assertAt(pos: MatchJournal.Pos) {
+    if (!(this at pos)) throw IllegalStateException("Position wasn't found in journal: $pos")
+}
 
 internal class StoreViewImpl(occurrences: Sequence<Occurrence>) : StoreView {
 
