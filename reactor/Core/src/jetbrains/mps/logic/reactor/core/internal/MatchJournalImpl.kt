@@ -94,7 +94,7 @@ internal open class MatchJournalImpl(
 
         ancestorChunksStack = mutableListOf()
         __cursor = Cursor(hist.listIterator())
-        initialChunk = __cursor.next() as MatchChunk // advance at initial chunk
+        initialChunk = __cursor.initial() as MatchChunk // advance at initial chunk
         assert(initialChunk.match is InitRuleMatch)
     }
 
@@ -182,36 +182,19 @@ internal open class MatchJournalImpl(
         __cursor.moveToPastRemoving(pastPos) {
             popAncestor()
             resetOccurrences(it.entries())
-            it !== pastPos.chunk
         }
         // drop occurrences at final chunk
         with(pastPos.chunk as ChunkImpl) {
+            resetOccurrences(entries.subList(pastPos.entriesCount, entries.size))
             entries = entries.subList(0, pastPos.entriesCount)
         }
-        replay(pastPos)
-    }
-
-    override fun resetCursor(pastPos: Pos) {
-        __cursor.moveToPastApplying(pastPos) {
-            popAncestor()
-            resetOccurrences(it.entries())
-        }
+        __cursor assertAt pastPos
     }
 
     private fun popAncestor() {
         if (__cursor at ancestorChunksStack.peek()) ancestorChunksStack.pop()
     }
-
-    override fun replay(futurePos: Pos) {
-        while (!(__cursor at futurePos || __cursor.atEnd())) {
-            __cursor.next()
-        }
-        __cursor assertAt futurePos
-        // Chunks are replayed fully by ptr, this partial replay unneeded
-        //replayOccurrences(ptr.current.entries.take(futurePos.entriesCount))
-    }
-
-
+    
     // Note: returns View for the whole history regardless of current posPtr
     override fun view() = MatchJournal.View(ArrayList(hist), evidenceSeed)
 
@@ -252,8 +235,7 @@ internal open class MatchJournalImpl(
     /**
      * Provides [MatchJournal] look-ahead traverse.
      */
-    private open class AbstractChunkIterator(private val iter: ListIterator<ChunkImpl>) :   ChunkIterator,
-                                                                                            Iterator<Chunk> by iter
+    abstract private class AbstractChunkIterator(private val iter: ListIterator<ChunkImpl>) :   ChunkIterator
     {
         protected var __next: ChunkImpl
         protected var __current: ChunkImpl
@@ -266,15 +248,10 @@ internal open class MatchJournalImpl(
             assert(__current is CornerChunk)
         }
 
-        val next: Chunk get() = __next
         final override val current: Chunk get() = __current
 
         final override fun atStart(): Boolean = __current is CornerChunk
         final override fun atEnd(): Boolean = __next is CornerChunk
-
-        final override fun hasNext(): Boolean = !atEnd()
-
-        override fun next(): Chunk = nextImpl()
 
         protected fun updateNext() {
             assert(iter.hasNext()) { "journal iterator must always have next chunk (maybe the final)" }
@@ -293,16 +270,17 @@ internal open class MatchJournalImpl(
     /**
      * Provides [MatchJournal] modification and look-ahead traverse with [Chunk] replay.
      * Represents [MatchJournal] state: additions & removals happen at pointed-to position.
-     * [Cursor] points at position between [current] & [next].
+     * [Cursor] points at position between [current] & [initial].
      */
     private inner class Cursor(private val iter: MutableListIterator<ChunkImpl>) :  AbstractChunkIterator(iter),
-                                                                                    MutableChunkIterator
-    {
+                                                                                    MutableChunkIterator {
         /**
-         * Replays [Chunk]s while iterating (see [replayChunk])
+         * Replays [Chunk]s while iterating
          */
-        override fun next(): Chunk {
-            replayChunk(next)
+        fun initial(): Chunk {
+            assert(atStart())
+            assert(__next is MatchChunk)
+            logAncestor(__next as MatchChunk)
             return nextImpl()
         }
 
@@ -333,53 +311,28 @@ internal open class MatchJournalImpl(
         }
 
         /**
-         * Walk in journal in inverse order ([pastPos] <- [current]) while
-         * applying [action] to each [Chunk] (including [pastPos])
-         * and removing it if [action] returns true for it.
+         * Walk in journal in inverse order ([pastPos] <- [current]), excluding [pastPos]
+         * while applying [action] to each [Chunk] and removing it.
          *
-         * Contract: after the call [__next] points to [pastPos].
+         * Contract: after the call [__current] points to [pastPos].
          */
-        inline fun moveToPastRemoving(pastPos: Pos, action: (Chunk) -> Boolean) {
+        inline fun moveToPastRemoving(pastPos: Pos, action: (Chunk) -> Unit) {
             while (!atStart()) {
                 __current = iter.previous()
-                if (action(__current)) {
-                    iter.remove()
-                }
-                if (this at pastPos) {
-                    __current = iter.previous()
-                    iter.next() // make it point right after __current
-                    updateNext()
-                    return
-                }
-            }
-            this assertAt pastPos
-        }
-
-        /**
-         * Walk in journal in inverse order ([pastPos] <- [current]) while
-         * applying [action] to each [Chunk] (including [pastPos]).
-         *
-         * Contract: after the call [__next] points to [pastPos].
-         */
-        inline fun moveToPastApplying(pastPos: Pos, action: (Chunk) -> Unit) {
-            while (!atStart()) {
-                __current = iter.previous()
+                if (this at pastPos) break
                 action(__current)
-                if (this at pastPos) {
-                    __current = iter.previous()
-                    iter.next() // make it point right after __current
-                    updateNext()
-                    return
-                }
+                iter.remove()
+            }
+            if (this at pastPos) {
+                __current = iter.previous()
+                iter.next() // make it point right after __current
+                updateNext()
+                nextImpl()
+                updateNext()
             }
             this assertAt pastPos
         }
 
-        private fun replayChunk(chunk: Chunk) {
-            if (!atStart()) trackAncestor(chunk)
-            if (chunk is MatchChunk) logAncestor(chunk)
-            replayOccurrences(chunk.entries())
-        }
     }
 
     /**
@@ -423,7 +376,6 @@ internal fun RuleMatch.collectJustifications(vararg withEvidence: Evidence): Jus
         this.allHeads().forEach { allJss.addAll(it.justifications()) }
     }
 
-
 internal fun resetOccurrences(occSpecs: List<Chunk.Entry>) =
     // assume occSpecs are ordered in order of processing
     //  so, iterate over reversed list
@@ -436,18 +388,6 @@ internal fun resetOccurrences(occSpecs: List<Chunk.Entry>) =
             it.occ.stored = false
         }
     }
-
-internal fun replayOccurrences(occSpecs: List<Chunk.Entry>) =
-    occSpecs.forEach {
-        if (it.discarded) {
-            it.occ.alive = false
-            it.occ.stored = false
-        } else {
-            it.occ.alive = true
-            it.occ.stored = true
-        }
-    }
-
 
 internal fun <E> MutableList<E>.push(element: E) = this.add(element)
 internal fun <E> MutableList<E>.pop() = this.removeAt(this.size - 1)

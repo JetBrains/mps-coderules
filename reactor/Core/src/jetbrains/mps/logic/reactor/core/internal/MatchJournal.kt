@@ -67,20 +67,7 @@ interface MatchJournal :  EvidenceSource {
     @Deprecated("Obsolete TBR")
     val cursor: ChunkIterator
         get() = TODO()
-
-    /**
-     * Same as [resetCursor], moves [cursor] before [initialChunk].
-     */
-    @Deprecated("Obsolete TBR")
-    fun resetCursor() = resetCursor(Pos(initialChunk(), 0))
-
-    /**
-     * Moves [cursor] before [pastPos], so that [ChunkIterator.next] is [pastPos].
-     * Doesn't modify journal contents, as opposed to [reset].
-     */
-    @Deprecated("Obsolete TBR")
-    fun resetCursor(pastPos: Pos)
-
+    
     /**
      * Erase journal between [currentPos] (erased) and [pastPos] (not erased).
      * Moves [cursor] at [pastPos], so that [ChunkIterator.current] is [pastPos].
@@ -88,14 +75,6 @@ interface MatchJournal :  EvidenceSource {
      * @throws IllegalStateException when position is not from the past (relative to [cursor]).
      */
     fun reset(pastPos: Pos)
-
-    /**
-     * Replay activated and discarded occurrences logged in journal between current
-     * and provided positions. Advances journal position to specified position.
-     * Idempotent operation (can be called multiple times on same [Pos]]).
-     * @throws IllegalStateException when [futurePos] is not from the future (relative to [cursor]).
-     */
-    fun replay(futurePos: Pos)
 
     /**
      * Returns snapshot of the journal.
@@ -176,7 +155,7 @@ interface MatchJournal :  EvidenceSource {
     }
 }
 
-interface ChunkIterator: Iterator<MatchJournal.Chunk> {
+interface ChunkIterator {
     val current: MatchJournal.Chunk
 
     fun atStart(): Boolean
@@ -195,7 +174,8 @@ interface MutableChunkIterator: ChunkIterator {
 }
 
 internal infix fun ChunkIterator.assertAt(pos: MatchJournal.Pos) {
-    if (!(this at pos)) throw IllegalStateException("Position wasn't found in journal: $pos")
+    if (!(this at pos))
+        throw IllegalStateException("Position wasn't found in journal: $pos")
 }
 
 internal class StoreViewImpl(occurrences: Sequence<Occurrence>) : StoreView {

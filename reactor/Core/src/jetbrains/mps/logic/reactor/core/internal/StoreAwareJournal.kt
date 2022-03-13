@@ -26,9 +26,6 @@ import java.lang.IllegalArgumentException
  */
 interface StoreAwareJournal : MatchJournal, LogicalStateObservable {
 
-    @Deprecated("Obsolete")
-    fun resetStore()
-
     // for tests
     companion object {
         fun fromView(
@@ -48,13 +45,6 @@ internal open class StoreAwareJournalImpl(private val journal: MatchJournal,
         chunk: MatchJournal.Chunk,
         entriesCount: Int = 0
     ) : MatchJournal.Pos(chunk, entriesCount)
-
-
-    // Reset only store & history position, don't modify history
-    override fun resetStore() {
-        this.resetCursor()
-    }
-
 
     override fun currentPos(): MatchJournal.Pos =
         FramePos(journal.currentPos().chunk, journal.currentPos().entriesCount)
