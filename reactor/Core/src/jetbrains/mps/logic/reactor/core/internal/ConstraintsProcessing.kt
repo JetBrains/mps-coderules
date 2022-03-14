@@ -42,11 +42,10 @@ internal class ConstraintsProcessing(
     val logicalState: LogicalState,
     override val ispec: IncrementalSpec = IncrementalSpec.DefaultSpec,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
-    val profiler: Profiler? = null
-
-    // fixme: can get rid of inheritance from journal, use composition instead
-) : StoreAwareJournalImpl(journal, logicalState), IncrSpecHolder {
-
+    val profiler: Profiler? = null ) :  MatchJournal by journal,
+                                        LogicalStateObservable by LogicalState(),
+                                        IncrSpecHolder
+{
     fun getFrontState(): DispatchingFrontState = dispatchingFront.state()
 
     fun engage(controller: Controller) {

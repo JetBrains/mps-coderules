@@ -36,7 +36,7 @@ class TestStoreAwareJournal {
     private class JournalDispatcherHelper(
         dispatcher: Dispatcher,
         ispec: IncrementalSpec = LegacyMockIncrProgSpec,
-        val hist: StoreAwareJournal = StoreAwareJournal.fromView(ispec)
+        val hist: MatchJournal = MatchJournal.fromView(ispec)
     ) {
         val initialJournalSize = hist.view().chunks.size
 

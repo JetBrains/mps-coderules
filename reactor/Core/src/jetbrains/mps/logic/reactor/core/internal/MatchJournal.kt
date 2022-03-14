@@ -28,6 +28,14 @@ typealias ChunkIndex = TIntObjectHashMap<MatchJournal.Chunk>
 
 interface MatchJournal :  EvidenceSource {
 
+    // for tests
+    companion object {
+        fun fromView(
+            ispec: IncrementalSpec = IncrementalSpec.DefaultSpec,
+            view: MatchJournal.View? = null
+        ): MatchJournal = MatchJournalImpl(ispec, EvaluationTrace.NULL, view)
+    }
+
     /**
      * Add new [Chunk] for matches of principal rules.
      * Log occurrences discarded by match in current [Chunk].

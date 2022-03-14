@@ -19,6 +19,7 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.MatchJournal.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -31,6 +32,7 @@ import java.util.*
 
 internal open class MatchJournalImpl(
     override val ispec: IncrementalSpec,
+    val trace: EvaluationTrace = EvaluationTrace.NULL,
     view: MatchJournal.View? = null
 ) : MatchJournal, IncrSpecHolder {
 
@@ -98,7 +100,8 @@ internal open class MatchJournalImpl(
         assert(initialChunk.match is InitRuleMatch)
     }
 
-    constructor(view: MatchJournal.View? = null) : this(IncrementalSpec.DefaultSpec, view)
+    constructor(trace: EvaluationTrace = EvaluationTrace.NULL,
+                view: MatchJournal.View? = null) : this(IncrementalSpec.DefaultSpec, trace, view)
 
     override fun logMatch(match: RuleMatch): MatchChunk? {
         val added: MatchChunk?
