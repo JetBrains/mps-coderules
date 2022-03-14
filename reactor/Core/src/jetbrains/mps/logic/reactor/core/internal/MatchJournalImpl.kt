@@ -175,6 +175,27 @@ internal open class MatchJournalImpl(
         return added
     }
 
+    internal fun resetOccurrences(occSpecs: List<Chunk.Entry>) =
+    // assume occSpecs are ordered in order of processing
+        //  so, iterate over reversed list
+        occSpecs.asReversed().forEach {
+            if (it.discarded) {
+
+                trace.undoDiscard(it.occ)
+
+                it.occ.alive = true
+                it.occ.stored = true
+
+            } else {
+
+                trace.undoActivate(it.occ)
+
+                it.occ.alive = false
+                it.occ.stored = false
+            }
+        }
+
+
     override fun initialChunk(): MatchChunk = initialChunk
 
     override fun parentChunk(): MatchChunk = ancestorChunksStack.peek()!!
@@ -377,19 +398,6 @@ internal open class MatchJournalImpl(
 internal fun RuleMatch.collectJustifications(vararg withEvidence: Evidence): Justifications =
     justsOf(*withEvidence).also { allJss ->
         this.allHeads().forEach { allJss.addAll(it.justifications()) }
-    }
-
-internal fun resetOccurrences(occSpecs: List<Chunk.Entry>) =
-    // assume occSpecs are ordered in order of processing
-    //  so, iterate over reversed list
-    occSpecs.asReversed().forEach {
-        if (it.discarded) {
-            it.occ.alive = true
-            it.occ.stored = true
-        } else {
-            it.occ.alive = false
-            it.occ.stored = false
-        }
     }
 
 internal fun <E> MutableList<E>.push(element: E) = this.add(element)

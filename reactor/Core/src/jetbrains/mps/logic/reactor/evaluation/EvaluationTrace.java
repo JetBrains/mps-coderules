@@ -31,6 +31,8 @@ public interface EvaluationTrace {
 
     default void activate(ConstraintOccurrence occurrence) {}
 
+    default void undoActivate(ConstraintOccurrence occurrence) {}
+
     default void reactivate(ConstraintOccurrence occurrence) {}
 
     default void activateContinue(ConstraintOccurrence occurrence) {}
@@ -38,6 +40,8 @@ public interface EvaluationTrace {
     default void suspend(ConstraintOccurrence occurrence) {}
 
     default void discard(ConstraintOccurrence occurrence) {}
+
+    default void undoDiscard(ConstraintOccurrence occurrence) {}
 
     default void trying(RuleMatch ruleMatch) {}
 

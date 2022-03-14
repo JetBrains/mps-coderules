@@ -105,7 +105,7 @@ internal class EvaluationSessionImpl private constructor (
                 ?.also { it.updateIndexFromRules(program.rules()) }
                 ?: RuleIndex(program.rules())
 
-            val journal = MatchJournalImpl(incrementality)
+            val journal = MatchJournalImpl(incrementality, trace)
             val logicalState = LogicalState()
             val dispatchingFront = Dispatcher(ruleIndex).front()
 
