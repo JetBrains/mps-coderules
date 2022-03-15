@@ -544,20 +544,20 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="4psz3HH29As" role="3bR37C">
-          <node concept="1BurEX" id="4psz3HH29At" role="1SiIV1">
-            <node concept="398BVA" id="4psz3HH29Ag" role="1BurEY">
+        <node concept="1SiIV0" id="5GCTx2jKkrn" role="3bR37C">
+          <node concept="1BurEX" id="5GCTx2jKkro" role="1SiIV1">
+            <node concept="398BVA" id="5GCTx2jKkrb" role="1BurEY">
               <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-              <node concept="2Ry0Ak" id="4psz3HH29Ah" role="iGT6I">
+              <node concept="2Ry0Ak" id="5GCTx2jKkrc" role="iGT6I">
                 <property role="2Ry0Am" value="coderules" />
-                <node concept="2Ry0Ak" id="4psz3HH29Ai" role="2Ry0An">
+                <node concept="2Ry0Ak" id="5GCTx2jKkrd" role="2Ry0An">
                   <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="4psz3HH29Aj" role="2Ry0An">
+                  <node concept="2Ry0Ak" id="5GCTx2jKkre" role="2Ry0An">
                     <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="4psz3HH29Ak" role="2Ry0An">
+                    <node concept="2Ry0Ak" id="5GCTx2jKkrf" role="2Ry0An">
                       <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="4psz3HH29Al" role="2Ry0An">
-                        <property role="2Ry0Am" value="conreactor-core-0.9.14.jar" />
+                      <node concept="2Ry0Ak" id="5GCTx2jKkrg" role="2Ry0An">
+                        <property role="2Ry0Am" value="conreactor-core-0.9.15.jar" />
                       </node>
                     </node>
                   </node>
@@ -961,36 +961,6 @@
         </node>
         <node concept="3LEDTM" id="7hX1RbM_ZmG" role="3LEDUa">
           <ref role="3LEDTN" node="NKt6yomVLS" resolve="jetbrains.mps.lang.typechecking.runtime" />
-        </node>
-        <node concept="3LEDTy" id="2fVm_557sy2" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L25" resolve="jetbrains.mps.baseLanguage.jdk7" />
-        </node>
-        <node concept="3LEDTy" id="2fVm_557sy3" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
-        </node>
-        <node concept="3LEDTy" id="2fVm_557sy4" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6KZA" resolve="jetbrains.mps.baseLanguage.classifiers" />
-        </node>
-        <node concept="3LEDTy" id="2fVm_557sy5" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L4p" resolve="jetbrains.mps.lang.behavior" />
-        </node>
-        <node concept="3LEDTy" id="2fVm_557sy6" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L9c" resolve="jetbrains.mps.lang.quotation" />
-        </node>
-        <node concept="3LEDTy" id="2fVm_557sy7" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L0h" resolve="jetbrains.mps.baseLanguage.collections" />
-        </node>
-        <node concept="3LEDTy" id="2fVm_557sy8" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L68" resolve="jetbrains.mps.lang.descriptor" />
-        </node>
-        <node concept="3LEDTy" id="2fVm_557sy9" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
-        </node>
-        <node concept="3LEDTy" id="2fVm_557sya" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6L2F" resolve="jetbrains.mps.baseLanguage.tuples" />
-        </node>
-        <node concept="3LEDTy" id="2fVm_557syb" role="3LEDUa">
-          <ref role="3LEDTV" to="ffeo:7Kfy9QB6KZG" resolve="jetbrains.mps.baseLanguage.closures" />
         </node>
       </node>
       <node concept="1E1JtA" id="NKt6yomVLS" role="2G$12L">
@@ -3786,7 +3756,7 @@
                 </node>
               </node>
               <node concept="3yLZsm" id="4EvsDTBGxZq" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/conreactor-core-0.9.14.jar" />
+                <property role="3yLZsk" value="../lib/conreactor-core-0.9.15.jar" />
                 <node concept="398BVA" id="4EvsDTBGxZr" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                   <node concept="2Ry0Ak" id="4EvsDTBGxZs" role="iGT6I">
@@ -3798,7 +3768,7 @@
                         <node concept="2Ry0Ak" id="4EvsDTBGxZv" role="2Ry0An">
                           <property role="2Ry0Am" value="lib" />
                           <node concept="2Ry0Ak" id="4psz3HH29HS" role="2Ry0An">
-                            <property role="2Ry0Am" value="conreactor-core-0.9.14.jar" />
+                            <property role="2Ry0Am" value="conreactor-core-0.9.15.jar" />
                           </node>
                         </node>
                       </node>

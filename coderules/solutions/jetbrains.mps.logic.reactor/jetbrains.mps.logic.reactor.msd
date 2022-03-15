@@ -3,7 +3,7 @@
   <models>
     <modelRoot contentPath="${module}" type="java_classes">
       <sourceRoot location="lib/collection-0.7.jar" />
-      <sourceRoot location="lib/conreactor-core-0.9.14.jar" />
+      <sourceRoot location="lib/conreactor-core-0.9.15.jar" />
     </modelRoot>
   </models>
   <facets>
@@ -14,7 +14,7 @@
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/collection-0.7.jar" />
     <stubModelEntry path="${module}/lib/trove4j-3.0.3.jar" />
-    <stubModelEntry path="${module}/lib/conreactor-core-0.9.14.jar" />
+    <stubModelEntry path="${module}/lib/conreactor-core-0.9.15.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
