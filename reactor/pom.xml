@@ -14,7 +14,7 @@
 
     <groupId>jetbrains.mps.logic.conreactor</groupId>
     <artifactId>conreactor-main</artifactId>
-    <version>0.9.14</version>
+    <version>0.9.15</version>
     <packaging>pom</packaging>
 
     <dependencies>
