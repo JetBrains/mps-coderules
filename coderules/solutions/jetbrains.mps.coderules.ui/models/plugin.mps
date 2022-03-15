@@ -6841,6 +6841,44 @@
                 <node concept="3zACq4" id="3wxtToE6Z4d" role="3cqZAp" />
               </node>
             </node>
+            <node concept="3KbdKl" id="5GCTx2jUDoH" role="3KbHQx">
+              <node concept="Rm8GO" id="5GCTx2jUEfr" role="3Kbmr1">
+                <ref role="Rm8GQ" to="31yc:5GCTx2jPYZa" resolve="UNDO_ACTIVATE" />
+                <ref role="1Px2BO" to="31yc:6QkkSolNFFx" resolve="StoreEvent" />
+              </node>
+              <node concept="3clFbS" id="5GCTx2jUDoJ" role="3Kbo56">
+                <node concept="3clFbF" id="5GCTx2jUDoK" role="3cqZAp">
+                  <node concept="37vLTI" id="5GCTx2jUDoL" role="3clFbG">
+                    <node concept="Xl_RD" id="5GCTx2jUDoM" role="37vLTx">
+                      <property role="Xl_RC" value="terminated" />
+                    </node>
+                    <node concept="37vLTw" id="5GCTx2jUDoN" role="37vLTJ">
+                      <ref role="3cqZAo" node="6QkkSolR3Un" resolve="state" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3zACq4" id="5GCTx2jUDoO" role="3cqZAp" />
+              </node>
+            </node>
+            <node concept="3KbdKl" id="5GCTx2jUF48" role="3KbHQx">
+              <node concept="Rm8GO" id="5GCTx2jUFWA" role="3Kbmr1">
+                <ref role="Rm8GQ" to="31yc:5GCTx2jQ0Td" resolve="UNDO_DISCARD" />
+                <ref role="1Px2BO" to="31yc:6QkkSolNFFx" resolve="StoreEvent" />
+              </node>
+              <node concept="3clFbS" id="5GCTx2jUF4a" role="3Kbo56">
+                <node concept="3clFbF" id="5GCTx2jUF4b" role="3cqZAp">
+                  <node concept="37vLTI" id="5GCTx2jUF4c" role="3clFbG">
+                    <node concept="Xl_RD" id="5GCTx2jUF4d" role="37vLTx">
+                      <property role="Xl_RC" value="revived" />
+                    </node>
+                    <node concept="37vLTw" id="5GCTx2jUF4e" role="37vLTJ">
+                      <ref role="3cqZAo" node="6QkkSolR3Un" resolve="state" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3zACq4" id="5GCTx2jUF4f" role="3cqZAp" />
+              </node>
+            </node>
             <node concept="1LFfDK" id="6QkkSolR2dQ" role="3KbGdf">
               <node concept="3cmrfG" id="6QkkSolR2tP" role="1LF_Uc">
                 <property role="3cmrfH" value="1" />
