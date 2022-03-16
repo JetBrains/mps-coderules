@@ -249,26 +249,13 @@
     <echo message="generating" />
     <generate fork="true" logLevel="${mps.ant.log}">      
       <settings refid="m2m-0" />
+      <plugin path="${artifacts.coderules}/jetbrains.mps.coderules" />
+      <plugin path="${artifacts.mps}/plugins/mps-build" />
       <plugin path="${artifacts.mps}/plugins/mps-core" />
       <plugin path="${artifacts.mps}/plugins/mps-testing" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.testhelper.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.devkit.aspect.types.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.types.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.test.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.annotation.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.testlang.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/closures.runtime.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/collections.runtime.jar" />
@@ -451,22 +438,22 @@
         <fileset file="${artifacts.mps}/lib/eclipse.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.runtime.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.template.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="reactive-streams-1.0.0.final.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava-2.2.18.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.3.7.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.14.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.typechecking.runtime.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="reactive-streams-1.0.0.final.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava-2.2.18.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava2-swing-0.3.7.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.15.jar" />
       </classpath>
     </javac>
   </target>
@@ -522,51 +509,51 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.testhelper.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.testhelper.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.runtime.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.template.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="reactive-streams-1.0.0.final.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava-2.2.18.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.3.7.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.14.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.typechecking.runtime.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="reactive-streams-1.0.0.final.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava-2.2.18.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava2-swing-0.3.7.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.15.jar" />
       </classpath>
     </javac>
   </target>
   
   <target name="test.demo" depends="assemble">
     <path id="mps.libraries.path">
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.runtime.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.testhelper.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.devkit.aspect.types.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.types.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.test.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.annotation.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.testlang.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.testhelper.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.devkit.aspect.types.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.runtime.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.template.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.typechecking.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.typechecking.runtime.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.types.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.reactor.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.typechecking.annotation.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/closures.runtime.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/collections.runtime.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -688,6 +675,8 @@
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
+      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules" />
+      <pathelement location="${artifacts.mps}/plugins/mps-build" />
       <pathelement location="${artifacts.mps}/plugins/mps-core" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing" />
     </path>
