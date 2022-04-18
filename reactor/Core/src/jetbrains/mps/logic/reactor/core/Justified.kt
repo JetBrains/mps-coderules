@@ -70,35 +70,13 @@ interface Justified {
         this.justifications().contains(other.evidence)
 
     /**
-     * Checks whether this [Justified] entity is supported by any of the [others] [Justified] entities.
-     */
-    fun justifiedByAny(others: Collection<Justified>): Boolean =
-        others.any { this.justifiedBy(it) }
-
-    /**
-     * Checks whether this [Justified] entity is supported by the [others], and only by them.
-     */
-    fun justifiedOnlyBy(others: Collection<Justified>): Boolean {
-        val allEvidence = justsFromCollection(others.map { it.evidence })
-        allEvidence.add(evidence)
-        return allEvidence.containsAll(justifications())
-    }
-
-    /**
-     * Append [Justifications] from [other] entity to justifications of this [Justified].
-     * After the operation this.justifiedBy(other) returns true.
-     */
-    fun justifyBy(other: Justified): Unit {
-        // ensure operation doesn't break antisymmetric property of relation
-        assert(!other.justifiedBy(this) || this.evidence == other.evidence)
-
-        justifications().addAll(other.justifications())
-    }
-
-    /**
      * Append [Justifications] from all [others] entities to justifications of this [Justified]
      */
-    fun justifyByAll(others: Iterable<Justified>): Unit = others.forEach { justifyBy(it) }
+    fun addJustifications(others: Iterable<Justified>): Unit = others.forEach {
+        // ensure operation doesn't break antisymmetric property of relation
+        assert(!it.justifiedBy(this) || evidence == it.evidence)
+        justifications().addAll(it.justifications())
+    }
 }
 
 

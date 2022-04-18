@@ -117,7 +117,7 @@ internal class EvaluationSessionImpl private constructor (
         }
 
         override fun endSession(session: SessionParts): SessionToken = with(session) {
-            SessionTokenImpl(journal.view(), ruleIndex.toRules(), emptyFrontState(), ruleIndex, logicalState, principalObservers.apply { clearTriggerReceiver() })
+            SessionTokenImpl(journal.storeView(), ruleIndex.toRules(), emptyFrontState(), ruleIndex, logicalState, principalObservers.apply { clearTriggerReceiver() })
         }
 
         override fun runSession(session: SessionParts, main: Constraint): EvaluationResult = with(session) {
@@ -222,7 +222,7 @@ internal class EvaluationSessionImpl private constructor (
         val invalidRules: Collection<Any>
     ): EvaluationResult {
         override fun token() = token
-        override fun storeView(): StoreView = token.journalView.storeView
+        override fun storeView(): StoreView = token.storeView
         override fun feedback(): EvaluationFeedback? = if (status is FAILED) status.failure else null
         override fun invalidFeedbackKeys(): Collection<Any> = invalidFeedbackKeys
         override fun invalidRules(): Collection<Any> = invalidRules

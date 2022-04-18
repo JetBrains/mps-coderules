@@ -56,23 +56,6 @@ internal class ConstraintsProcessing(
         logicalState.clearController(controller)
     }
 
-    fun evaluate(controller: Controller, prototype: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus =
-        profiler.profile<FeedbackStatus>("activate_${prototype.constraint().symbol()}") {
-            // fixme: ensure justifications are tracked (incremented) correctly in processing & creator
-            // NB: provide new justifications instead of occ.justifications
-            with(JustifiedOccurrenceCreator(evidence(), initialChunk().justifications())) {
-
-                prototype.constraint.occurrence(
-                    controller.logicalStateObservable(), prototype.arguments(), prototype.logicalContext(), prototype.sourceRule()
-                ).let { occ ->
-                    trace.activate(occ)
-                    processActivated(controller, occ, initialChunk(), inStatus)
-                }
-
-            }
-        }
-
-
     /**
      * Called to update the state with the currently active constraint occurrence.
      * Calls the controller to process matches (if any) that were triggered.

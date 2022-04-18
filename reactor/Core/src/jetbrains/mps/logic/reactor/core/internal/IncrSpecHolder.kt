@@ -30,7 +30,7 @@ interface IncrSpecHolder {
 
     val RuleMatch.isPrincipal get() = ispec.isPrincipal(this.rule())
 
-    val Rule.isPrincipal get() = ispec.isPrincipal(this)
+//    val Rule.isPrincipal get() = ispec.isPrincipal(this)
 
     val RuleMatch.isWeakPrincipal get() = ispec.isWeakPrincipal(this.rule())
 

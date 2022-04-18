@@ -31,9 +31,8 @@ interface MatchJournal :  EvidenceSource {
     // for tests
     companion object {
         fun fromView(
-            ispec: IncrementalSpec = IncrementalSpec.DefaultSpec,
-            view: MatchJournal.View? = null
-        ): MatchJournal = MatchJournalImpl(ispec, EvaluationTrace.NULL, view)
+            ispec: IncrementalSpec = IncrementalSpec.DefaultSpec
+        ): MatchJournal = MatchJournalImpl(ispec, EvaluationTrace.NULL)
     }
 
     /**
@@ -41,13 +40,13 @@ interface MatchJournal :  EvidenceSource {
      * Log occurrences discarded by match in current [Chunk].
      * Returns added [Chunk], null for non-principal rules.
      */
-    fun logMatch(match: RuleMatch): MatchChunk?
+    fun logMatch(match: RuleMatch)
 
     /**
      * Log occurrence activation in current [Chunk].
      * Returns added [Chunk], null for non-principal occurrences.
      */
-    fun logActivation(occ: Occurrence): OccChunk?
+    fun logActivation(occ: Occurrence)
 
     /**
      * Returns nearest [MatchChunk] which justifies current chunk.
@@ -86,6 +85,7 @@ interface MatchJournal :  EvidenceSource {
 
     /**
      * Returns snapshot of the journal.
+     * FOR TESTS ONLY
      */
     fun view(): View
 
@@ -96,15 +96,17 @@ interface MatchJournal :  EvidenceSource {
     fun storeView(): StoreView
 
     fun basisRuleTags(chunk: Chunk): List<Any>
-    
+
+    // NB: returns same collection of justifications, not copy
+    fun justifications() = this.currentPos().chunk.justifications()
+
+    fun evidence() = this.currentPos().chunk.evidence
+
     /**
      * Immutable snapshot of [MatchJournal].
+     * FOR TESTS ONLY
      */
-    data class View(val chunks: List<Chunk>, val evidenceSeed: Evidence) : MatchJournalView {
-
-        override fun getStoreView(): StoreView = StoreViewImpl(
-            chunks.flatMap { it.entries() }.allOccurrences().asSequence()
-        )
+    data class View(val chunks: List<Chunk>, val evidenceSeed: Evidence) {
     }
 
     /**
@@ -176,46 +178,3 @@ interface ChunkIterator {
     infix fun at(chunk: MatchJournal.Chunk) = current === chunk
 
 }
-
-interface MutableChunkIterator: ChunkIterator {
-    fun addChunk(chunk: MatchJournal.Chunk)
-}
-
-internal infix fun ChunkIterator.assertAt(pos: MatchJournal.Pos) {
-    if (!(this at pos))
-        throw IllegalStateException("Position wasn't found in journal: $pos")
-}
-
-internal class StoreViewImpl(occurrences: Sequence<Occurrence>) : StoreView {
-
-    val allOccurrences = occurrences.toSet()
-
-    val allSymbols = allOccurrences.map { co -> co.constraint().symbol() }.toSet()
-
-    override fun constraintSymbols(): Iterable<ConstraintSymbol> = allSymbols
-
-    override fun allOccurrences(): Iterable<ConstraintOccurrence> = allOccurrences
-
-    override fun occurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
-        allOccurrences.filter { co -> co.constraint().symbol() == symbol }.toSet()
-
-}
-
-
-private fun Iterable<MatchJournal.Chunk.Entry>.allOccurrences(): List<Occurrence> {
-    val set = HashSet<Id<Occurrence>>()
-    for (it in this) {
-        val idOcc = Id(it.occ)
-        if (it.discarded) set.remove(idOcc) else set.add(idOcc)
-    }
-    return set.map { it.wrapped }
-}
-
-
-// NB: returns same collection of justifications, not copy
-fun MatchJournal.justifications() = this.currentPos().chunk.justifications()
-fun MatchJournal.evidence() = this.currentPos().chunk.evidence
-// todo: this should be more correct
-//fun MatchJournal.justifications() = this.parentChunk().justifications()
-//fun MatchJournal.evidence() = this.parentChunk().evidence
-

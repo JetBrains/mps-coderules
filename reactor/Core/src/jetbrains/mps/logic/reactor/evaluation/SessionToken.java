@@ -21,8 +21,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 
 public interface SessionToken {
-    @NotNull()
-    MatchJournalView getJournalView();
+    @NotNull
+    StoreView getStoreView();
+    
     @NotNull()
     Iterable<Rule> getRules();
 }
