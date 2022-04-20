@@ -6058,16 +6058,6 @@
       <node concept="3Tm1VV" id="5EDW3XF60ah" role="1B3o_S" />
       <node concept="3clFbS" id="5EDW3XF60ai" role="3clF47" />
     </node>
-    <node concept="2tJIrI" id="5EDW3XF5Zaw" role="jymVt" />
-    <node concept="3clFb_" id="2WtKs4tZlCC" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="programSpecBuilder" />
-      <node concept="3clFbS" id="2WtKs4tZlCF" role="3clF47" />
-      <node concept="3Tm1VV" id="2WtKs4tZlzz" role="1B3o_S" />
-      <node concept="3uibUv" id="5tAk4yVYbfK" role="3clF45">
-        <ref role="3uigEE" to="i348:5tAk4yVWROK" resolve="ProgramSpecBuilder" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="5EDW3XF5Zai" role="jymVt" />
     <node concept="312cEg" id="1LBj9w_9Vjc" role="jymVt">
       <property role="TrG5h" value="coderulesAspect" />

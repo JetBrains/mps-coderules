@@ -3252,21 +3252,8 @@
                 <ref role="3cqZAo" node="7WKNeR8TcXs" resolve="steps" />
               </node>
               <node concept="TSZUe" id="7WKNeR8TcYb" role="2OqNvi">
-                <node concept="2OqwBi" id="5tAk4yVTE76" role="25WWJ7">
-                  <node concept="37vLTw" id="5tAk4yVTD2S" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5tAk4yVTBuj" resolve="tcStep" />
-                  </node>
-                  <node concept="liA8E" id="5tAk4yVTxg2" role="2OqNvi">
-                    <ref role="37wK5l" to="tj24:5tAk4yVSZ1V" resolve="withProgramSpec" />
-                    <node concept="2OqwBi" id="5tAk4yVTy59" role="37wK5m">
-                      <node concept="37vLTw" id="5tAk4yVTxAu" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6nFpYluoeMV" resolve="session" />
-                      </node>
-                      <node concept="liA8E" id="5tAk4yVTyvs" role="2OqNvi">
-                        <ref role="37wK5l" to="hano:2WtKs4tZfgb" resolve="programSpec" />
-                      </node>
-                    </node>
-                  </node>
+                <node concept="37vLTw" id="5tAk4yVTD2S" role="25WWJ7">
+                  <ref role="3cqZAo" node="5tAk4yVTBuj" resolve="tcStep" />
                 </node>
               </node>
             </node>

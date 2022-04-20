@@ -8,6 +8,7 @@
     <use id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -24,9 +25,14 @@
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="nn" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -97,7 +103,9 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT" />
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
+      </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
@@ -631,6 +639,15 @@
       <ref role="3uigEE" to="i348:5tAk4yVWROK" resolve="ProgramSpecBuilder" />
     </node>
     <node concept="3Tm1VV" id="5tAk4yVVZI$" role="1B3o_S" />
+    <node concept="2AHcQZ" id="6AZXE2vtyQu" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+      <node concept="2B6LJw" id="6AZXE2vt_K4" role="2B76xF">
+        <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
+        <node concept="3clFbT" id="6AZXE2vt_NE" role="2B70Vg">
+          <property role="3clFbU" value="true" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="1H_6AUT3qmv">
     <property role="TrG5h" value="SimpleSpec" />
@@ -964,6 +981,15 @@
         </node>
       </node>
     </node>
+    <node concept="2AHcQZ" id="6AZXE2vtDU5" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+      <node concept="2B6LJw" id="6AZXE2vtEd4" role="2B76xF">
+        <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
+        <node concept="3clFbT" id="6AZXE2vtEgv" role="2B70Vg">
+          <property role="3clFbU" value="true" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="6b4eZz$Pl6e">
     <property role="1sVAO0" value="true" />
@@ -1091,6 +1117,15 @@
     </node>
     <node concept="3uibUv" id="5tAk4yVY8nR" role="1zkMxy">
       <ref role="3uigEE" to="i348:1H_6AUSXnyk" resolve="ProgramAnalysis" />
+    </node>
+    <node concept="2AHcQZ" id="6AZXE2vtCHg" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+      <node concept="2B6LJw" id="6AZXE2vtCV4" role="2B76xF">
+        <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
+        <node concept="3clFbT" id="6AZXE2vtCWG" role="2B70Vg">
+          <property role="3clFbU" value="true" />
+        </node>
+      </node>
     </node>
   </node>
 </model>
