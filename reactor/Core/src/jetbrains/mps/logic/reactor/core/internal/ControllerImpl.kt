@@ -32,9 +32,8 @@ import jetbrains.mps.logic.reactor.util.profile
 internal class ControllerImpl (
     val supervisor: Supervisor,
     val processing: ConstraintsProcessing,
-    override val ispec: IncrementalSpec = IncrementalSpec.DefaultSpec,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
-    val profiler: Profiler? = null) : Controller, IncrSpecHolder
+    val profiler: Profiler? = null) : Controller
 {
 
     init {
@@ -149,13 +148,11 @@ internal class ControllerImpl (
             }
 
             val savedPos = processing.currentPos()
-            var newParent: MatchJournal.MatchChunk = parent
+            val newParent: MatchJournal.MatchChunk = savedPos.chunk as MatchJournal.MatchChunk
 
-            if (match.isPrincipal) {
-                // This match corresponds to the last added chunk
-                assert( (savedPos.chunk as? MatchJournal.MatchChunk)?.match === match )
-                newParent = savedPos.chunk as MatchJournal.MatchChunk
-            }
+            // This match corresponds to the last added chunk
+            assert( (savedPos.chunk as? MatchJournal.MatchChunk)?.match === match )
+
             // fixme: fails in lambdacalc because of reactivated occurrences
             //  (parents ain't tracked correctly in this case)
 //            assert(newParent === processing.parentChunk())
@@ -381,11 +378,9 @@ fun createController(
             Dispatcher(ruleIndex).front(),
             MatchJournalImpl(),
             logicalState,
-            IncrementalSpec.DefaultSpec,
             trace,
             profiler
         ),
-        IncrementalSpec.DefaultSpec,
         trace,
         profiler
     )

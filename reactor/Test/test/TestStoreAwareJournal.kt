@@ -1,12 +1,10 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.*
 import jetbrains.mps.logic.reactor.program.Constraint
-import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.IncrementalSpec
 import jetbrains.mps.logic.reactor.program.Rule
 import org.junit.Test
 import org.junit.Assert.*
-import org.junit.Ignore
 
 /*
  * Copyright 2014-2019 JetBrains s.r.o.
@@ -27,16 +25,9 @@ import org.junit.Ignore
 
 class TestStoreAwareJournal {
 
-    private object LegacyMockIncrProgSpec : IncrementalSpec.StubSpec() {
-        override fun isPrincipal(ctr: Constraint): Boolean = ctr.isPrincipal
-        override fun isPrincipal(rule: Rule): Boolean = rule.all().any { it is Constraint && it.isPrincipal }
-        override fun ability(): IncrementalSpec.Enabled = IncrementalSpec.Enabled.Yes
-    }
-
     private class JournalDispatcherHelper(
         dispatcher: Dispatcher,
-        ispec: IncrementalSpec = LegacyMockIncrProgSpec,
-        val hist: MatchJournal = MatchJournal.fromView(ispec)
+        val hist: MatchJournal = MatchJournal.forTest()
     ) {
         val initialJournalSize = hist.view().chunks.size
 
@@ -153,7 +144,7 @@ class TestStoreAwareJournal {
 
 
                 with(hist) {
-                    view().chunks.size shouldBe 4 + initialJournalSize
+                    view().chunks.size shouldBe 5 + initialJournalSize
                     storeView().allOccurrences().count() shouldBe 1 // only "qux"
 
                     // reset to the very beginning
@@ -215,7 +206,8 @@ class TestStoreAwareJournal {
                 logFirstMatch()
                 logExpand("bazz")
                 // matched on rule with heads without justifications, should remain in the same chunk
-                hist.currentPos().chunk shouldBeSame curChunk
+                // NB! the above no longer holds as the "principal" stuff has been phased out
+//                hist.currentPos().chunk shouldBeSame curChunk
 
 
                 // last production from rule2
@@ -223,10 +215,10 @@ class TestStoreAwareJournal {
 
 
                 // rule4
-                hist.view().chunks.size shouldBe 3 + initialJournalSize
+                hist.view().chunks.size shouldBe 7 + initialJournalSize
                 logFirstMatch()
                 // match on the principal constraint must add the chunk
-                hist.view().chunks.size shouldBe 4 + initialJournalSize
+                hist.view().chunks.size shouldBe 8 + initialJournalSize
 
 
                 val oldState = hist.view()
@@ -235,7 +227,7 @@ class TestStoreAwareJournal {
 
                 logExpandJustified("last")
 
-                hist.view().chunks.size shouldBe 5 + initialJournalSize
+                hist.view().chunks.size shouldBe 9 + initialJournalSize
                 assertNotEquals(oldStore, hist.storeView().allOccurrences())
 
 

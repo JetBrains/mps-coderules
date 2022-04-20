@@ -18,6 +18,7 @@ package jetbrains.mps.logic.reactor.program;
 
 import org.jetbrains.annotations.NotNull;
 
+@Deprecated(forRemoval = true)
 public interface IncrementalSpec {
 
     boolean isPrincipal(Constraint ctr);

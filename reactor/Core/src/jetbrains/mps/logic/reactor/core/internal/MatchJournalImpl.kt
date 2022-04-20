@@ -31,9 +31,8 @@ import java.util.*
 
 
 internal open class MatchJournalImpl(
-    override val ispec: IncrementalSpec,
     val trace: EvaluationTrace = EvaluationTrace.NULL
-) : MatchJournal, IncrSpecHolder {
+) : MatchJournal {
 
     private abstract class ChunkImpl : Chunk {
         var entries: MutableList<Chunk.Entry> = mutableListOf()
@@ -94,21 +93,12 @@ internal open class MatchJournalImpl(
         assert(initialChunk.match is InitRuleMatch)
     }
 
-    constructor(trace: EvaluationTrace = EvaluationTrace.NULL) : this(IncrementalSpec.DefaultSpec, trace)
-
     override fun logMatch(match: RuleMatch) {
-        if (match.isPrincipal) {
-            val nextChunk = MatchChunkImpl(nextEvidence(), match)
-            __cursor.addChunk(nextChunk)
-            resetParentChunk(nextChunk)
-            pushParentChunk(nextChunk)
-        } else {
-            val dummy: Justified = MatchChunkImpl(nullEvidence, match) // collects justifications
-            resetParentChunk(dummy)
-            // If a non-principal match has any principal
-            // occurrences in head -- they must be tracked
-            collectJustificationsFrom(match)
-        }
+        val nextChunk = MatchChunkImpl(nextEvidence(), match)
+        __cursor.addChunk(nextChunk)
+        resetParentChunk(nextChunk)
+        pushParentChunk(nextChunk)
+
         // Log discarded occurrences
         (match as RuleMatchImpl).forEachReplaced { occ ->
             __cursor.addEntryToCurrent(Chunk.Entry(occ, true))
@@ -138,7 +128,7 @@ internal open class MatchJournalImpl(
 
         val moreJustified = match.allHeads().filter {
             // Filter to avoid justifying parent by its child!
-            it.isPrincipal && !it.justifiedBy(parent)
+            !it.justifiedBy(parent)
         }.toList()
 
         if (moreJustified.isNotEmpty()) {
@@ -150,9 +140,7 @@ internal open class MatchJournalImpl(
 
     override fun logActivation(occ: Occurrence)  {
         resetParentChunk(occ)
-        if (occ.isPrincipal) {
-            __cursor.addChunk(OccChunkImpl(occ))
-        }
+        __cursor.addChunk(OccChunkImpl(occ))
         __cursor.addEntryToCurrent(Chunk.Entry(occ))
     }
 

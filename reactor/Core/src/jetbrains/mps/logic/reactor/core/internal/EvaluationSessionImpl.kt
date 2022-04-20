@@ -32,7 +32,6 @@ internal typealias OccurrenceStore = Collection<Occurrence>
 
 internal fun emptyStore(): OccurrenceStore = emptyList()
 
-
 /**
  * Handles creation of the first and following sessions,
  * properly ending sessions and getting their results.
@@ -77,7 +76,6 @@ internal data class SessionParts(
 
 
 internal class EvaluationSessionImpl private constructor (
-    val incrementality: IncrementalSpec,
     val program: Program,
     val supervisor: Supervisor,
     val trace: EvaluationTrace,
@@ -105,13 +103,13 @@ internal class EvaluationSessionImpl private constructor (
                 ?.also { it.updateIndexFromRules(program.rules()) }
                 ?: RuleIndex(program.rules())
 
-            val journal = MatchJournalImpl(incrementality, trace)
+            val journal = MatchJournalImpl(trace)
             val logicalState = LogicalState()
             val dispatchingFront = Dispatcher(ruleIndex).front()
 
-            val processing = ConstraintsProcessing(dispatchingFront, journal, logicalState, incrementality, trace, profiler)
+            val processing = ConstraintsProcessing(dispatchingFront, journal, logicalState, trace, profiler)
 
-            val controller = ControllerImpl(supervisor, processing, incrementality, trace, profiler)
+            val controller = ControllerImpl(supervisor, processing, trace, profiler)
 
             return SessionParts(ruleIndex, journal, logicalState, controller, processing, PrincipalObserverDispatcher.EMPTY)
         }
@@ -137,8 +135,6 @@ internal class EvaluationSessionImpl private constructor (
 
         var evaluationTrace: EvaluationTrace = EvaluationTrace.NULL
 
-        var ispec: IncrementalSpec = IncrementalSpec.DefaultSpec
-
         var token: SessionToken? = null
 
         override fun withTrace(computingTracer: EvaluationTrace): EvaluationSession.Config {
@@ -152,7 +148,6 @@ internal class EvaluationSessionImpl private constructor (
         }
 
         override fun withIncrSpec(ispec: IncrementalSpec): EvaluationSession.Config {
-            this.ispec = ispec
             return this
         }
 
@@ -170,7 +165,7 @@ internal class EvaluationSessionImpl private constructor (
                 as MutableMap<String, String>?
             val profiler = durations?.let { Profiler() }
 
-            session = EvaluationSessionImpl(ispec, program, supervisor, evaluationTrace, profiler, parameters)
+            session = EvaluationSessionImpl(program, supervisor, evaluationTrace, profiler, parameters)
             Backend.ourBackend.ourSession.set(session)
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint

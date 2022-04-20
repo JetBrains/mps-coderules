@@ -40,11 +40,9 @@ internal class ConstraintsProcessing(
     private var dispatchingFront: Dispatcher.DispatchingFront,
     journal: MatchJournalImpl,
     val logicalState: LogicalState,
-    override val ispec: IncrementalSpec = IncrementalSpec.DefaultSpec,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
     val profiler: Profiler? = null ) :  MatchJournal by journal,
-                                        LogicalStateObservable by LogicalState(),
-                                        IncrSpecHolder
+                                        LogicalStateObservable by LogicalState()
 {
     fun getFrontState(): DispatchingFrontState = dispatchingFront.state()
 
@@ -159,7 +157,6 @@ internal class ConstraintsProcessing(
      * Encapsulates logic for deriving [Evidence] and [Justifications] for a new [Occurrence].
      */
     inner class JustifiedOccurrenceCreator(
-        private val savedEvidence: Evidence = evidence(),
         private val savedJustifications: Justifications = justifications()
     ) {
         fun Constraint.occurrence(
@@ -170,14 +167,8 @@ internal class ConstraintsProcessing(
         ): Occurrence {
 
             // By default share justifications (as a small optimization)
-            var evidence = savedEvidence
-            var justifications = savedJustifications
-
-            // For principal occurrences create new
-            if (ispec.isPrincipal(this)) {
-                evidence = nextEvidence()
-                justifications = justsCopy(savedJustifications).apply { add(evidence) }
-            }
+            val evidence = nextEvidence()
+            val justifications = justsCopy(savedJustifications).apply { add(evidence) }
 
             return Occurrence(
                 observable, this, logicalContext, arguments,

@@ -30,9 +30,7 @@ interface MatchJournal :  EvidenceSource {
 
     // for tests
     companion object {
-        fun fromView(
-            ispec: IncrementalSpec = IncrementalSpec.DefaultSpec
-        ): MatchJournal = MatchJournalImpl(ispec, EvaluationTrace.NULL)
+        fun forTest(): MatchJournal = MatchJournalImpl(EvaluationTrace.NULL)
     }
 
     /**
