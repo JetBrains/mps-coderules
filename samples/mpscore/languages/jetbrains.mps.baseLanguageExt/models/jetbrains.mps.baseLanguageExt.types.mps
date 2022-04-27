@@ -439,12 +439,6 @@
         <child id="1432138691741609743" name="tail" index="1Pxxm2" />
       </concept>
     </language>
-    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="6332851714983831325" name="jetbrains.mps.baseLanguage.logging.structure.MsgStatement" flags="ng" index="2xdQw9">
-        <property id="6332851714983843871" name="severity" index="2xdLsb" />
-        <child id="5721587534047265374" name="message" index="9lYJi" />
-      </concept>
-    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
@@ -30984,34 +30978,6 @@
                                   <ref role="37wK5l" node="2fVm_54aTpm" resolve="clearDeclarationSite" />
                                   <node concept="3hN9Ij" id="2fVm_54d9nw" role="37wK5m">
                                     <ref role="3hLkJx" node="5itBwMaSCVV" resolve="cls" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3clFbH" id="2fVm_54g5Ty" role="3cqZAp" />
-                            <node concept="2xdQw9" id="2fVm_54u8og" role="3cqZAp">
-                              <property role="2xdLsb" value="gZ5fh_4/error" />
-                              <node concept="3cpWs3" id="2fVm_54xx4P" role="9lYJi">
-                                <node concept="2OqwBi" id="2fVm_54xHv7" role="3uHU7w">
-                                  <node concept="1eOMI4" id="2fVm_54x_uw" role="2Oq$k0">
-                                    <node concept="3IkZw_" id="2fVm_54xDRD" role="1eOMHV">
-                                      <node concept="a7P8L" id="2fVm_54xDRE" role="3Ikct_">
-                                        <ref role="a7OzE" node="2fVm_546W2k" resolve="Bnd" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="liA8E" id="2fVm_54xMPh" role="2OqNvi">
-                                    <ref role="37wK5l" to="wyt6:~Object.getClass()" resolve="getClass" />
-                                  </node>
-                                </node>
-                                <node concept="3cpWs3" id="2fVm_54ul$C" role="3uHU7B">
-                                  <node concept="Xl_RD" id="2fVm_54u8oi" role="3uHU7B">
-                                    <property role="Xl_RC" value="**** Bnd: " />
-                                  </node>
-                                  <node concept="3IkZw_" id="2fVm_54uAwu" role="3uHU7w">
-                                    <node concept="a7P8L" id="2fVm_54uAwv" role="3Ikct_">
-                                      <ref role="a7OzE" node="2fVm_546W2k" resolve="Bnd" />
-                                    </node>
                                   </node>
                                 </node>
                               </node>
