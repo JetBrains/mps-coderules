@@ -962,7 +962,7 @@ class TestController {
                 evaluate(occurrence("main"))
 
             } finally {
-                failures.map { (f, t) -> "${f.getCause()!!.message}@${t}" }.toList() shouldBe
+                failures.map { (f, t) -> "${f.message}@${t}" }.toList() shouldBe
                     listOf("unhandled@rule2", "unhandled@rule1", "unhandled@main")
             }
         }
@@ -1019,7 +1019,7 @@ class TestController {
                 occurrences(recovered).map { it.arguments()[0] }.toSet() shouldBe setOf(1, 2)
             }
         }
-        failures.map { (f, t) -> "${f.getCause()!!.message}@$t" }.toList() shouldBe
+        failures.map { (f, t) -> "${f.message}@$t" }.toList() shouldBe
             listOf("handled@rule3", "handled@recoverable")
     }
 

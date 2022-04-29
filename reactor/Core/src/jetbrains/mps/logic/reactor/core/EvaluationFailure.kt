@@ -18,6 +18,7 @@ package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException
 import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
+import jetbrains.mps.logic.reactor.evaluation.Solver
 
 import java.util.ArrayList
 
@@ -34,61 +35,25 @@ import java.util.ArrayList
  * @author Fedor Isakov
  */
 class EvaluationFailure : Feedback {
+    
+    private val message: String
+    private val cause: Throwable
 
-    /**
-     * Returns all messages, from more specific to more generic.
-     */
-    val allMessages: List<String>
-        get() {
-            val result = ArrayList<String>()
-            var curr: EvaluationFailure? = this
-            while (curr != null) {
-                if (curr.getMessage() != null) result.add(curr.getMessage()!!)
-                curr = curr.reason
-            }
-            return result
-        }
-
-    private var reason: EvaluationFailure? = null
-    private var message: String? = null
-    private var cause: Throwable? = null
-
-    constructor(ex: Throwable?) {
+    constructor(ex: Throwable) {
         this.cause = ex
-        this.message = ex?.message
+        this.message = ex.message ?: "<no message>"
     }
 
-    constructor(message: String?, ex: Throwable?) {
-        this.cause = ex
-        this.message = message
+    constructor(result: Solver.Result) {
+        this.cause = result.cause ?: IllegalStateException()
+        this.message = result.message ?: "<no message>"
     }
 
-    /**
-     * // TODO need a smarter way to supercede previously reported failure with a more specific one
-     * Constructs a more specific failure given a generic one.
-     */
-    constructor(reason: EvaluationFailure, message: String) {
-        this.reason = reason
-        this.message = message
-    }
+    override fun getMessage() = message
 
-    override fun getMessage(): String? {
-        return message
-    }
+    override fun getDetails() = null
 
-    override fun getDetails(): Any? {
-        return null
-    }
+    override fun getSeverity() = Severity.FAILURE
 
-    override fun getSeverity(): EvaluationFeedback.Severity {
-        return EvaluationFeedback.Severity.FAILURE
-    }
-
-    override fun failureCause(): Throwable? {
-        return getCause()
-    }
-
-    fun getCause(): Throwable? {
-        return if (cause != null) cause else reason?.getCause()
-    }
+    override fun failureCause() = cause
 }
