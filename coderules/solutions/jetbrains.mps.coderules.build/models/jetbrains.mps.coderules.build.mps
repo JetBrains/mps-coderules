@@ -272,7 +272,7 @@
           <ref role="3Mxwex" node="5Hdh9$IhmQ$" resolve="ci.mps.release" />
         </node>
         <node concept="3Mxwew" id="2BiN_P7R7Wi" role="3MwsjC">
-          <property role="3MwjfP" value="-0.9-b" />
+          <property role="3MwjfP" value="-0.9.1-b" />
         </node>
         <node concept="3Mxwey" id="2BiN_P7R81m" role="3MwsjC">
           <ref role="3Mxwex" node="2BiN_P7R7jO" resolve="ci.build.num" />
@@ -305,7 +305,7 @@
       <node concept="2pNNFK" id="2fVm_54SZ$e" role="20twgj">
         <property role="2pNNFO" value="change-notes" />
         <node concept="3o6iSG" id="2fVm_54SZHp" role="3o6s8t">
-          <property role="3o6i5n" value="First public EAP" />
+          <property role="3o6i5n" value="Bugfixes and optimizations" />
         </node>
       </node>
       <node concept="m$_yB" id="2ABzB2CYN_W" role="m$_yh">
