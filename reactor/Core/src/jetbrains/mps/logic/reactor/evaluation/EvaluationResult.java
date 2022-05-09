@@ -29,8 +29,10 @@ public interface EvaluationResult {
     
     public EvaluationFeedback feedback();
 
+    @Deprecated(forRemoval = true)
     public Collection<Object> invalidFeedbackKeys();
 
+    @Deprecated(forRemoval = true)
     public Collection<Object> invalidRules();
 
 }
