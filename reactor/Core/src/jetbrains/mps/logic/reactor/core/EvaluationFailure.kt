@@ -40,13 +40,14 @@ class EvaluationFailure : Feedback {
     private val cause: Throwable
 
     constructor(ex: Throwable) {
-        this.cause = ex
+        this.cause = EvaluationFailureException(ex)
         this.message = ex.message ?: "<no message>"
     }
 
     constructor(result: Solver.Result) {
-        this.cause = result.cause ?: IllegalStateException()
         this.message = result.message ?: "<no message>"
+        this.cause = if (result.cause != null)  EvaluationFailureException(result.cause)
+                     else                       EvaluationFailureException(message)
     }
 
     override fun getMessage() = message
