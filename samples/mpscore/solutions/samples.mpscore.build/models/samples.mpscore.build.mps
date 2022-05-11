@@ -288,6 +288,9 @@
       <node concept="m$_yC" id="77GimjbRIwv" role="m$_yJ">
         <ref role="m$_y1" to="zqd8:7BVjoXzUx67" resolve="jetbrains.mps.coderules" />
       </node>
+      <node concept="m$_yC" id="3cBtKDs8Bns" role="m$_yJ">
+        <ref role="m$_y1" to="ffeo:5HVSRHdVm9a" resolve="jetbrains.mps.build" />
+      </node>
       <node concept="m$f5U" id="2fVm_54UfKS" role="m$_yh">
         <ref role="m$f5T" node="61G6TdEeKRG" resolve="lang" />
       </node>
