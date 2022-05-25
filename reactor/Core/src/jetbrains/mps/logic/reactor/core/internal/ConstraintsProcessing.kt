@@ -113,6 +113,7 @@ internal class ConstraintsProcessing(
 
                     }
                     is FeedbackStatus.FAILED -> {   // guard failed
+                        trace.reject(match)
                         return it.recover()         // return from the enclosing method
 
                     }
