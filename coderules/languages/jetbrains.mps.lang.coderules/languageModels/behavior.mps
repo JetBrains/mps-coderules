@@ -858,8 +858,8 @@
               <node concept="37vLTw" id="1vsv9tPobF9" role="2Oq$k0">
                 <ref role="3cqZAo" node="6xVZN2upvmU" resolve="ruleTemplate" />
               </node>
-              <node concept="3TrcHB" id="1vsv9tPobFa" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              <node concept="2qgKlT" id="9UUIHKbGjl" role="2OqNvi">
+                <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
               </node>
             </node>
             <node concept="Xl_RD" id="1vsv9tPobF7" role="3K4GZi">
