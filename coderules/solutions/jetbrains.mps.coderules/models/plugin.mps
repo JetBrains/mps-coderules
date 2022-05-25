@@ -12,6 +12,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text" version="0" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
@@ -70,6 +71,9 @@
       <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="8118189177080264853" name="jetbrains.mps.baseLanguage.structure.AlternativeType" flags="ig" index="nSUau">
+        <child id="8118189177080264854" name="alternative" index="nSUat" />
+      </concept>
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="nn" index="2tJIrI" />
       <concept id="1224573963862" name="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" flags="nn" index="uiWXb">
         <reference id="1224573974191" name="enumClass" index="uiZuM" />
@@ -123,6 +127,7 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
+      <concept id="4952749571008284462" name="jetbrains.mps.baseLanguage.structure.CatchVariable" flags="ng" index="XOnhg" />
       <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
         <child id="1182160096073" name="cls" index="YeSDq" />
       </concept>
@@ -255,6 +260,10 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="3093926081414150598" name="jetbrains.mps.baseLanguage.structure.MultipleCatchClause" flags="ng" index="3uVAMA">
+        <child id="8276990574895933173" name="catchBody" index="1zc67A" />
+        <child id="8276990574895933172" name="throwable" index="1zc67B" />
+      </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
@@ -270,6 +279,10 @@
       <concept id="1170075670744" name="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" flags="nn" index="1HWtB8">
         <child id="1170075728144" name="expression" index="1HWFw0" />
         <child id="1170075736412" name="block" index="1HWHxc" />
+      </concept>
+      <concept id="5351203823916750322" name="jetbrains.mps.baseLanguage.structure.TryUniversalStatement" flags="nn" index="3J1_TO">
+        <child id="8276990574886367510" name="catchClause" index="1zxBo5" />
+        <child id="8276990574886367508" name="body" index="1zxBo7" />
       </concept>
       <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
         <child id="1163668914799" name="condition" index="3K4Cdx" />
@@ -315,6 +328,13 @@
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -2630,59 +2650,95 @@
           </node>
         </node>
         <node concept="3clFbH" id="YGS68MFJji" role="3cqZAp" />
-        <node concept="1DcWWT" id="YGS68MESKf" role="3cqZAp">
-          <node concept="3clFbS" id="YGS68MESKg" role="2LFqv$">
-            <node concept="3clFbJ" id="YGS68MESKh" role="3cqZAp">
-              <node concept="3clFbS" id="YGS68MESKi" role="3clFbx">
-                <node concept="3clFbF" id="YGS68MESKj" role="3cqZAp">
-                  <node concept="2Sg_IR" id="YGS68MESKk" role="3clFbG">
-                    <node concept="1LFfDK" id="YGS68MESKl" role="2SgHGx">
-                      <node concept="3cmrfG" id="YGS68MESKm" role="1LF_Uc">
-                        <property role="3cmrfH" value="0" />
-                      </node>
-                      <node concept="37vLTw" id="YGS68MESKn" role="1LFl5Q">
-                        <ref role="3cqZAo" node="YGS68MESKv" resolve="ev" />
+        <node concept="3J1_TO" id="9UUIHKA83i" role="3cqZAp">
+          <node concept="3uVAMA" id="9UUIHKAbcy" role="1zxBo5">
+            <node concept="XOnhg" id="9UUIHKAbcz" role="1zc67B">
+              <property role="TrG5h" value="ex" />
+              <node concept="nSUau" id="9UUIHKAbc$" role="1tU5fm">
+                <node concept="3uibUv" id="9UUIHKAkxs" role="nSUat">
+                  <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="9UUIHKAbc_" role="1zc67A">
+              <node concept="RRSsy" id="9UUIHKBgqi" role="3cqZAp">
+                <property role="RRSoG" value="gZ5fh_4/error" />
+                <node concept="Xl_RD" id="9UUIHKBgqk" role="RRSoy">
+                  <property role="Xl_RC" value="unexpected exception" />
+                </node>
+                <node concept="37vLTw" id="9UUIHKBm$O" role="RRSow">
+                  <ref role="3cqZAo" node="9UUIHKAbcz" resolve="ex" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="9UUIHKAQOi" role="3cqZAp">
+                <node concept="2OqwBi" id="9UUIHKAQOj" role="3clFbG">
+                  <node concept="37vLTw" id="9UUIHKAQOk" role="2Oq$k0">
+                    <ref role="3cqZAo" node="YGS68MDFfZ" resolve="activationEventsConsumer" />
+                  </node>
+                  <node concept="liA8E" id="9UUIHKAQOl" role="2OqNvi">
+                    <ref role="37wK5l" node="2ceN1hD4UTW" resolve="clear" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="9UUIHKAOEl" role="3cqZAp" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="9UUIHKA83k" role="1zxBo7">
+            <node concept="1DcWWT" id="YGS68MESKf" role="3cqZAp">
+              <node concept="3clFbS" id="YGS68MESKg" role="2LFqv$">
+                <node concept="3clFbJ" id="YGS68MESKh" role="3cqZAp">
+                  <node concept="3clFbS" id="YGS68MESKi" role="3clFbx">
+                    <node concept="3clFbF" id="YGS68MESKj" role="3cqZAp">
+                      <node concept="2Sg_IR" id="YGS68MESKk" role="3clFbG">
+                        <node concept="1LFfDK" id="YGS68MESKl" role="2SgHGx">
+                          <node concept="3cmrfG" id="YGS68MESKm" role="1LF_Uc">
+                            <property role="3cmrfH" value="0" />
+                          </node>
+                          <node concept="37vLTw" id="YGS68MESKn" role="1LFl5Q">
+                            <ref role="3cqZAo" node="YGS68MESKv" resolve="ev" />
+                          </node>
+                        </node>
+                        <node concept="1LFfDK" id="YGS68MESKo" role="2SgG2M">
+                          <node concept="3cmrfG" id="YGS68MESKp" role="1LF_Uc">
+                            <property role="3cmrfH" value="2" />
+                          </node>
+                          <node concept="37vLTw" id="YGS68MESKq" role="1LFl5Q">
+                            <ref role="3cqZAo" node="YGS68MESKv" resolve="ev" />
+                          </node>
+                        </node>
                       </node>
                     </node>
-                    <node concept="1LFfDK" id="YGS68MESKo" role="2SgG2M">
-                      <node concept="3cmrfG" id="YGS68MESKp" role="1LF_Uc">
-                        <property role="3cmrfH" value="2" />
+                  </node>
+                  <node concept="1rXfSq" id="YGS68MESKr" role="3clFbw">
+                    <ref role="37wK5l" node="YGS68MEXTq" resolve="isEventAccepted" />
+                    <node concept="1LFfDK" id="YGS68MESKs" role="37wK5m">
+                      <node concept="3cmrfG" id="YGS68MESKt" role="1LF_Uc">
+                        <property role="3cmrfH" value="1" />
                       </node>
-                      <node concept="37vLTw" id="YGS68MESKq" role="1LFl5Q">
+                      <node concept="37vLTw" id="YGS68MESKu" role="1LFl5Q">
                         <ref role="3cqZAo" node="YGS68MESKv" resolve="ev" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="1rXfSq" id="YGS68MESKr" role="3clFbw">
-                <ref role="37wK5l" node="YGS68MEXTq" resolve="isEventAccepted" />
-                <node concept="1LFfDK" id="YGS68MESKs" role="37wK5m">
-                  <node concept="3cmrfG" id="YGS68MESKt" role="1LF_Uc">
-                    <property role="3cmrfH" value="1" />
+              <node concept="3cpWsn" id="YGS68MESKv" role="1Duv9x">
+                <property role="TrG5h" value="ev" />
+                <node concept="1LlUBW" id="YGS68MESKw" role="1tU5fm">
+                  <node concept="10Oyi0" id="YGS68MESKx" role="1Lm7xW" />
+                  <node concept="3uibUv" id="YGS68MESKy" role="1Lm7xW">
+                    <ref role="3uigEE" node="5X6ji59xezw" resolve="ActivationEvent" />
                   </node>
-                  <node concept="37vLTw" id="YGS68MESKu" role="1LFl5Q">
-                    <ref role="3cqZAo" node="YGS68MESKv" resolve="ev" />
+                  <node concept="1ajhzC" id="YGS68MESKz" role="1Lm7xW">
+                    <node concept="10Oyi0" id="YGS68MESK$" role="1ajw0F" />
+                    <node concept="3cqZAl" id="YGS68MESK_" role="1ajl9A" />
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-          <node concept="3cpWsn" id="YGS68MESKv" role="1Duv9x">
-            <property role="TrG5h" value="ev" />
-            <node concept="1LlUBW" id="YGS68MESKw" role="1tU5fm">
-              <node concept="10Oyi0" id="YGS68MESKx" role="1Lm7xW" />
-              <node concept="3uibUv" id="YGS68MESKy" role="1Lm7xW">
-                <ref role="3uigEE" node="5X6ji59xezw" resolve="ActivationEvent" />
-              </node>
-              <node concept="1ajhzC" id="YGS68MESKz" role="1Lm7xW">
-                <node concept="10Oyi0" id="YGS68MESK$" role="1ajw0F" />
-                <node concept="3cqZAl" id="YGS68MESK_" role="1ajl9A" />
+              <node concept="37vLTw" id="YGS68MESKA" role="1DdaDG">
+                <ref role="3cqZAo" node="YGS68MDK9y" resolve="activationEvents" />
               </node>
             </node>
-          </node>
-          <node concept="37vLTw" id="YGS68MESKA" role="1DdaDG">
-            <ref role="3cqZAo" node="YGS68MDK9y" resolve="activationEvents" />
           </node>
         </node>
       </node>
