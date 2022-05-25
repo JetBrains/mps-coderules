@@ -67,13 +67,10 @@ public abstract class Rule {
          * @param uniquePart
          */
         public Tag(String groupName, String tagName, Object uniquePart) {
-            if (!tagName.startsWith(groupName)) {
-                throw new IllegalArgumentException();
-            }
             this.group = groupName;
             this.tag = tagName;
             this.id = uniquePart;
-            this.hash = Objects.hash(tag, id);
+            this.hash = Objects.hash(tag, id, group);
         }
 
         @Deprecated
@@ -87,7 +84,9 @@ public abstract class Rule {
             if (that == null) return false;
             if (this == that) return true;
             if (!(that instanceof Tag)) return false;
-            return Objects.equals(this.id, ((Tag) that).id) && Objects.equals(this.tag, ((Tag) that).tag);
+            return  Objects.equals(this.id, ((Tag) that).id) &&
+                    Objects.equals(this.tag, ((Tag) that).tag) &&
+                    Objects.equals(this.group, ((Tag) that).group);
         }
 
         @Override
