@@ -196,6 +196,7 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -392,6 +393,9 @@
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
+      </concept>
+      <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
+        <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
       <concept id="1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" flags="nn" index="2HTt$P">
         <child id="1235573175711" name="elementType" index="2HTBi0" />
@@ -3301,9 +3305,12 @@
               </node>
               <node concept="3cpWs8" id="6OXbTD_oquh" role="3cqZAp">
                 <node concept="3cpWsn" id="6OXbTD_oqui" role="3cpWs9">
-                  <property role="TrG5h" value="queryTemplate" />
-                  <node concept="3uibUv" id="6OXbTD_oqtX" role="1tU5fm">
-                    <ref role="3uigEE" to="i348:6OXbTD$iNPP" resolve="QueryTemplate" />
+                  <property role="TrG5h" value="queryTemplates" />
+                  <node concept="_YKpA" id="9UUIHJASIe" role="1tU5fm">
+                    <node concept="3uibUv" id="9UUIHJASIf" role="_ZDj9">
+                      <ref role="3uigEE" to="i348:6OXbTD$iNPP" resolve="QueryTemplate" />
+                      <node concept="3qTvmN" id="9UUIHJBX4N" role="11_B2D" />
+                    </node>
                   </node>
                   <node concept="2OqwBi" id="6OXbTD_oquj" role="33vP2m">
                     <node concept="2OqwBi" id="6OXbTD_oquk" role="2Oq$k0">

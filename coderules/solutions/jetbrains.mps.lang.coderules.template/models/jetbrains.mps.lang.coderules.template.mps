@@ -1005,6 +1005,15 @@
       </node>
       <node concept="2tJIrI" id="7P_FdVQ_p0D" role="jymVt" />
       <node concept="3Tm1VV" id="7P_FdVPsDC1" role="1B3o_S" />
+      <node concept="2AHcQZ" id="9UUIHJHVd9" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <node concept="2B6LJw" id="9UUIHJHY8O" role="2B76xF">
+          <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
+          <node concept="3clFbT" id="9UUIHJHYcP" role="2B70Vg">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="6OXbTD$reOi" role="jymVt" />
     <node concept="3clFb_" id="6OXbTD$iO0w" role="jymVt">
@@ -1054,10 +1063,29 @@
     <node concept="3clFb_" id="7P_FdVPsDM6" role="jymVt">
       <property role="TrG5h" value="newQuery" />
       <node concept="3uibUv" id="7P_FdVPsDNI" role="3clF45">
-        <ref role="3uigEE" node="7P_FdVPsDC0" resolve="QueryTemplate.QueryConfigurable" />
+        <ref role="3uigEE" node="7P_FdVPsDC0" resolve="QueryConfigurable" />
       </node>
       <node concept="3Tm1VV" id="7P_FdVPsDM9" role="1B3o_S" />
-      <node concept="3clFbS" id="7P_FdVPsDMa" role="3clF47" />
+      <node concept="3clFbS" id="7P_FdVPsDMa" role="3clF47">
+        <node concept="YS8fn" id="9UUIHJI7iY" role="3cqZAp">
+          <node concept="2ShNRf" id="9UUIHJI7lL" role="YScLw">
+            <node concept="1pGfFk" id="9UUIHJI8t6" role="2ShVmc">
+              <property role="373rjd" value="true" />
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="9UUIHJHYd3" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+        <node concept="2B6LJw" id="9UUIHJI1aK" role="2B76xF">
+          <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
+          <node concept="3clFbT" id="9UUIHJI1cD" role="2B70Vg">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="2JFqV2" id="9UUIHJI2KX" role="2frcjj" />
     </node>
     <node concept="2tJIrI" id="6OXbTD$reMa" role="jymVt" />
     <node concept="16euLQ" id="6tPOoeT3qak" role="16eVyc">

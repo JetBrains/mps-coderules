@@ -18169,27 +18169,6 @@
             <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
           </node>
         </node>
-        <node concept="2tJIrI" id="tbauFy5uaX" role="jymVt" />
-        <node concept="3clFb_" id="tbauFy5uaY" role="jymVt">
-          <property role="1EzhhJ" value="false" />
-          <property role="TrG5h" value="newQuery" />
-          <node concept="3uibUv" id="tbauFy5uaZ" role="3clF45">
-            <ref role="3uigEE" to="i348:7P_FdVPsDC0" resolve="QueryTemplate.QueryConfigurable" />
-          </node>
-          <node concept="3Tm1VV" id="tbauFy5ub0" role="1B3o_S" />
-          <node concept="3clFbS" id="tbauFy5ub1" role="3clF47">
-            <node concept="3clFbF" id="tbauFy5ub2" role="3cqZAp">
-              <node concept="2ShNRf" id="tbauFy5ub3" role="3clFbG">
-                <node concept="HV5vD" id="tbauFy5ub4" role="2ShVmc">
-                  <ref role="HV5vE" node="tbauFy5ubj" resolve="__QueryTable._QueryTemplate.Configurable" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2AHcQZ" id="tbauFy5ub5" role="2AJF6D">
-            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-          </node>
-        </node>
         <node concept="2tJIrI" id="tbauFy5ub6" role="jymVt" />
         <node concept="3clFb_" id="tbauFy5ub7" role="jymVt">
           <property role="TrG5h" value="createToken" />

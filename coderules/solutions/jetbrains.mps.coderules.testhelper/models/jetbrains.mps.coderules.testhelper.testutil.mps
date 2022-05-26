@@ -197,6 +197,7 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
@@ -956,9 +957,12 @@
         </node>
         <node concept="3cpWs8" id="6OXbTD_oquh" role="3cqZAp">
           <node concept="3cpWsn" id="6OXbTD_oqui" role="3cpWs9">
-            <property role="TrG5h" value="queryTemplate" />
-            <node concept="3uibUv" id="6OXbTD_oqtX" role="1tU5fm">
-              <ref role="3uigEE" to="i348:6OXbTD$iNPP" resolve="QueryTemplate" />
+            <property role="TrG5h" value="queryTemplates" />
+            <node concept="_YKpA" id="9UUIHJBNGD" role="1tU5fm">
+              <node concept="3uibUv" id="9UUIHJBNGE" role="_ZDj9">
+                <ref role="3uigEE" to="i348:6OXbTD$iNPP" resolve="QueryTemplate" />
+                <node concept="3qTvmN" id="9UUIHJBQOE" role="11_B2D" />
+              </node>
             </node>
             <node concept="2OqwBi" id="6OXbTD_oquj" role="33vP2m">
               <node concept="2OqwBi" id="6OXbTD_oquk" role="2Oq$k0">
