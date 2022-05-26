@@ -279,6 +279,7 @@
       <concept id="1803469493727536395" name="jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList" flags="ng" index="hTh3S">
         <child id="1803469493727536396" name="concept" index="hTh3Z" />
       </concept>
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
         <child id="7400021826774799510" name="ref" index="2tJFKM" />
@@ -6204,8 +6205,11 @@
                 </node>
               </node>
               <node concept="1Ls8ON" id="7hlgk9K_IS7" role="21kp3f">
-                <node concept="3A2sRY" id="7hlgk9K_IS8" role="1Lso8e">
-                  <ref role="3A2yKK" node="7hlgk9K_IPE" resolve="cls" />
+                <node concept="2OqwBi" id="9UUIHKDk7v" role="1Lso8e">
+                  <node concept="3A2sRY" id="7hlgk9K_IS8" role="2Oq$k0">
+                    <ref role="3A2yKK" node="7hlgk9K_IPE" resolve="cls" />
+                  </node>
+                  <node concept="iZEcu" id="9UUIHKDlus" role="2OqNvi" />
                 </node>
                 <node concept="Xl_RD" id="7hlgk9K_IS9" role="1Lso8e">
                   <property role="Xl_RC" value="funmethod" />
@@ -6727,8 +6731,11 @@
                 </node>
               </node>
               <node concept="1Ls8ON" id="2hQbw6GLqLY" role="21kp3f">
-                <node concept="3A2sRY" id="2hQbw6GLqLZ" role="1Lso8e">
-                  <ref role="3A2yKK" node="554EtBH_$E2" resolve="cls" />
+                <node concept="2OqwBi" id="9UUIHKDl_5" role="1Lso8e">
+                  <node concept="3A2sRY" id="2hQbw6GLqLZ" role="2Oq$k0">
+                    <ref role="3A2yKK" node="554EtBH_$E2" resolve="cls" />
+                  </node>
+                  <node concept="iZEcu" id="9UUIHKDlGC" role="2OqNvi" />
                 </node>
                 <node concept="Xl_RD" id="2hQbw6GLqM0" role="1Lso8e">
                   <property role="Xl_RC" value="funmethod" />
@@ -16180,9 +16187,14 @@
                   </node>
                 </node>
               </node>
-              <node concept="2tJFMh" id="64$y60z7_2T" role="21kp3f">
-                <node concept="ZC_QK" id="64$y60z7_2U" role="2tJFKM">
-                  <ref role="2aWVGs" to="qbve:4PjiKAemR06" resolve="_FunctionTypes" />
+              <node concept="1Ls8ON" id="9UUIHKD3Xr" role="21kp3f">
+                <node concept="2tJFMh" id="64$y60z7_2T" role="1Lso8e">
+                  <node concept="ZC_QK" id="64$y60z7_2U" role="2tJFKM">
+                    <ref role="2aWVGs" to="qbve:4PjiKAemR06" resolve="_FunctionTypes" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="9UUIHKD7Vz" role="1Lso8e">
+                  <property role="Xl_RC" value="functionType" />
                 </node>
               </node>
             </node>

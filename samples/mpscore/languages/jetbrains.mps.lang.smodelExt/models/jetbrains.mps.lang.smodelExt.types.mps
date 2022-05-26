@@ -36,6 +36,11 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
+    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
+      <concept id="1238853782547" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" flags="nn" index="1Ls8ON">
+        <child id="1238853845806" name="component" index="1Lso8e" />
+      </concept>
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
@@ -6575,11 +6580,16 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="5HVB6JRenIa" role="21kp3f">
-                <node concept="3A2sRY" id="5HVB6JRenIb" role="2Oq$k0">
-                  <ref role="3A2yKK" node="6$6scRbXE2W" resolve="cd" />
+              <node concept="1Ls8ON" id="9UUIHKDr_D" role="21kp3f">
+                <node concept="2OqwBi" id="5HVB6JRenIa" role="1Lso8e">
+                  <node concept="3A2sRY" id="5HVB6JRenIb" role="2Oq$k0">
+                    <ref role="3A2yKK" node="6$6scRbXE2W" resolve="cd" />
+                  </node>
+                  <node concept="iZEcu" id="5HVB6JRenIc" role="2OqNvi" />
                 </node>
-                <node concept="iZEcu" id="5HVB6JRenIc" role="2OqNvi" />
+                <node concept="Xl_RD" id="9UUIHKDrOp" role="1Lso8e">
+                  <property role="Xl_RC" value="vertex" />
+                </node>
               </node>
             </node>
           </node>

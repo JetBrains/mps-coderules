@@ -22,6 +22,9 @@
       <concept id="1238852151516" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" flags="in" index="1LlUBW">
         <child id="1238852204892" name="componentType" index="1Lm7xW" />
       </concept>
+      <concept id="1238853782547" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" flags="nn" index="1Ls8ON">
+        <child id="1238853845806" name="component" index="1Lso8e" />
+      </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
@@ -713,9 +716,14 @@
                   </node>
                 </node>
               </node>
-              <node concept="2tJFMh" id="5cBWTAdFCas" role="21kp3f">
-                <node concept="ZC_QK" id="5cBWTAdFCaQ" role="2tJFKM">
-                  <ref role="2aWVGs" to="upz5:i1Qa2bW" resolve="Tuples" />
+              <node concept="1Ls8ON" id="9UUIHKDlQw" role="21kp3f">
+                <node concept="2tJFMh" id="5cBWTAdFCas" role="1Lso8e">
+                  <node concept="ZC_QK" id="5cBWTAdFCaQ" role="2tJFKM">
+                    <ref role="2aWVGs" to="upz5:i1Qa2bW" resolve="Tuples" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="9UUIHKDlS1" role="1Lso8e">
+                  <property role="Xl_RC" value="tuples" />
                 </node>
               </node>
             </node>
