@@ -1213,6 +1213,7 @@
   </node>
   <node concept="312cEu" id="6fdr4UgftiG">
     <property role="TrG5h" value="RuleTemplateIndex" />
+    <property role="3GE5qa" value="index" />
     <node concept="2tJIrI" id="20Ay2VeQfgH" role="jymVt" />
     <node concept="3clFbW" id="7P_FdVPIH2n" role="jymVt">
       <node concept="3cqZAl" id="7P_FdVPIH2p" role="3clF45" />
@@ -2011,6 +2012,7 @@
   </node>
   <node concept="312cEu" id="1hX44vNlSIA">
     <property role="TrG5h" value="MacroTemplateIndex" />
+    <property role="3GE5qa" value="index" />
     <node concept="2tJIrI" id="7DvO2Man0TP" role="jymVt" />
     <node concept="3clFbW" id="1hX44vNlSOK" role="jymVt">
       <node concept="3cqZAl" id="1hX44vNlSOM" role="3clF45" />
@@ -3268,6 +3270,7 @@
   </node>
   <node concept="312cEu" id="CGeqIk8WWU">
     <property role="TrG5h" value="RuleProcessingSession" />
+    <property role="3GE5qa" value="producer" />
     <node concept="2tJIrI" id="CGeqIk90l8" role="jymVt" />
     <node concept="3clFbW" id="7DvO2M9VeM1" role="jymVt">
       <node concept="3cqZAl" id="7DvO2M9VeM2" role="3clF45" />
@@ -3654,7 +3657,7 @@
   </node>
   <node concept="312cEu" id="3GlpCDSxTG7">
     <property role="TrG5h" value="ProgramProducer" />
-    <property role="3GE5qa" value="" />
+    <property role="3GE5qa" value="producer" />
     <node concept="2tJIrI" id="7WKNeR9b5Ef" role="jymVt" />
     <node concept="3clFbW" id="2gPa6JI$Zi_" role="jymVt">
       <node concept="37vLTG" id="2gPa6JI$ZiA" role="3clF46">
@@ -5414,6 +5417,7 @@
   </node>
   <node concept="312cEu" id="7WKNeR93NDF">
     <property role="TrG5h" value="QueryTemplateIndex" />
+    <property role="3GE5qa" value="index" />
     <node concept="2tJIrI" id="7WKNeR93NF5" role="jymVt" />
     <node concept="3clFbW" id="7WKNeR93OQV" role="jymVt">
       <node concept="3cqZAl" id="7WKNeR93OQX" role="3clF45" />
