@@ -1644,6 +1644,11 @@
             <ref role="3bR37D" node="5wYq9r5EBDN" resolve="jetbrains.mps.coderules.runtime" />
           </node>
         </node>
+        <node concept="1SiIV0" id="6TxWhgAyXKn" role="3bR37C">
+          <node concept="3bR9La" id="6TxWhgAyXKo" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:44LXwdzyvTi" resolve="Annotations" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="5pz4PwHqqGu" role="3989C9">
