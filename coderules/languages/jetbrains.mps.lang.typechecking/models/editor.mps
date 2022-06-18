@@ -531,7 +531,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4LE1vMPhz1V">
-    <ref role="1XX52x" to="zfi7:4LE1vMPhxmj" resolve="RecoverType" />
+    <ref role="1XX52x" to="zfi7:4LE1vMPhxmj" resolve="RecoverTypePseudoConstraint" />
     <node concept="3EZMnI" id="4LE1vMPhzr9" role="2wV5jI">
       <node concept="PMmxH" id="4LE1vMPhzra" role="3EZMnx">
         <ref role="1k5W1q" to="vxmb:7ksQUDZpd8b" resolve="ConstraintKeyword" />
@@ -563,6 +563,41 @@
         <ref role="1NtTu8" to="zfi7:4LE1vMPhyzS" resolve="type" />
       </node>
       <node concept="l2Vlx" id="4LE1vMPhzrj" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="5ij6i2UE8dO">
+    <ref role="1XX52x" to="zfi7:5ij6i2UE8c1" resolve="ExpectTypePseudoConstraint" />
+    <node concept="3EZMnI" id="5ij6i2UE8e2" role="2wV5jI">
+      <node concept="PMmxH" id="5ij6i2UE8e3" role="3EZMnx">
+        <ref role="1k5W1q" to="vxmb:7ksQUDZpd8b" resolve="ConstraintKeyword" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F0ifn" id="5ij6i2UE8e4" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;" />
+        <node concept="11L4FC" id="5ij6i2UE8e5" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="11LMrY" id="5ij6i2UE8e6" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="5ij6i2UE8e7" role="3EZMnx">
+        <ref role="1NtTu8" to="zfi7:5ij6i2UE8cf" resolve="typeNode" />
+      </node>
+      <node concept="3F0ifn" id="5ij6i2UE8e8" role="3EZMnx">
+        <property role="3F0ifm" value="&gt;" />
+        <node concept="11L4FC" id="5ij6i2UE8e9" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="5ij6i2UE8ea" role="3EZMnx">
+        <property role="3F0ifm" value="at" />
+        <ref role="1k5W1q" to="vxmb:7ksQUDZpd8b" resolve="ConstraintKeyword" />
+      </node>
+      <node concept="3F1sOY" id="5ij6i2UE8eb" role="3EZMnx">
+        <ref role="1NtTu8" to="zfi7:5ij6i2UE8ce" resolve="location" />
+      </node>
+      <node concept="l2Vlx" id="5ij6i2UE8ec" role="2iSdaV" />
     </node>
   </node>
 </model>

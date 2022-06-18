@@ -199,7 +199,7 @@
   </node>
   <node concept="1TIwiD" id="4LE1vMPhxmj">
     <property role="EcuMT" value="5506220077345019283" />
-    <property role="TrG5h" value="RecoverType" />
+    <property role="TrG5h" value="RecoverTypePseudoConstraint" />
     <property role="34LRSv" value="recover" />
     <ref role="1TJDcQ" to="wq2x:18kNIl0mxXI" resolve="PseudoConstraint" />
     <node concept="1TJgyj" id="4LE1vMPhyby" role="1TKVEi">
@@ -213,6 +213,26 @@
       <property role="IQ2ns" value="5506220077345024248" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5ij6i2UE8c1">
+    <property role="EcuMT" value="6094242349123666689" />
+    <property role="TrG5h" value="ExpectTypePseudoConstraint" />
+    <property role="34LRSv" value="expect type" />
+    <ref role="1TJDcQ" to="wq2x:18kNIl0mxXI" resolve="PseudoConstraint" />
+    <node concept="1TJgyj" id="5ij6i2UE8ce" role="1TKVEi">
+      <property role="IQ2ns" value="6094242349123666702" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="location" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="5ij6i2UE8cf" role="1TKVEi">
+      <property role="IQ2ns" value="6094242349123666703" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="typeNode" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
     </node>
