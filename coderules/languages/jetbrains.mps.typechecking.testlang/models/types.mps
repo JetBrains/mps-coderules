@@ -163,14 +163,14 @@
       <concept id="8455178808331006879" name="jetbrains.mps.lang.typechecking.structure.CoerceToQueryTemplate" flags="ng" index="1jF2vb" />
       <concept id="8455178808331005914" name="jetbrains.mps.lang.typechecking.structure.ConvertsQueryTemplate" flags="ng" index="1jF3Ie" />
       <concept id="8455178808330862968" name="jetbrains.mps.lang.typechecking.structure.TypecheckingQueryParameter" flags="ng" index="1jFxkG" />
-      <concept id="5092612813121140964" name="jetbrains.mps.lang.typechecking.structure.AssignTypePseudoConstraint" flags="ng" index="1I7a2V">
-        <child id="5092612813121165821" name="type" index="1I706y" />
-        <child id="5092612813121160125" name="location" index="1I71Jy" />
+      <concept id="6094242349123666689" name="jetbrains.mps.lang.typechecking.structure.ExpectTypePseudoConstraint" flags="ng" index="3IeTCx">
+        <child id="6094242349123666702" name="location" index="3IeTCI" />
+        <child id="6094242349123666703" name="typeNode" index="3IeTCJ" />
       </concept>
       <concept id="1722266558648635144" name="jetbrains.mps.lang.typechecking.structure.FeatureReferenceExpression" flags="ng" index="1NbZt7">
         <reference id="1722266558648637849" name="feature" index="1NbY7m" />
       </concept>
-      <concept id="5506220077345019283" name="jetbrains.mps.lang.typechecking.structure.RecoverType" flags="ng" index="3Tb11J">
+      <concept id="5506220077345019283" name="jetbrains.mps.lang.typechecking.structure.RecoverTypePseudoConstraint" flags="ng" index="3Tb11J">
         <child id="5506220077345022690" name="term" index="3Tb2su" />
         <child id="5506220077345024248" name="type" index="3Tb2O4" />
       </concept>
@@ -378,14 +378,14 @@
               <node concept="32pEOW" id="4qGA5WCGvCp" role="3vLBG7" />
             </node>
             <node concept="3xSepi" id="4qGA5WCGvMR" role="3xSepv">
-              <node concept="3Aq9E8" id="4qGA5WCGvMS" role="3xSepj">
-                <node concept="3I6sU6" id="4qGA5WCGvMT" role="3Ip0Jz">
-                  <node concept="3I6s7M" id="4qGA5WCGwaw" role="3I6sU7">
-                    <node concept="1I7a2V" id="4qGA5WCGwat" role="3I6s78">
-                      <node concept="3A2sRY" id="4qGA5WCGwcl" role="1I71Jy">
+              <node concept="3Aq9E8" id="5ij6i2V17BH" role="3xSepj">
+                <node concept="3I6sU6" id="5ij6i2V17BI" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="5ij6i2V182Z" role="3I6sU7">
+                    <node concept="3IeTCx" id="5ij6i2V182W" role="3I6s78">
+                      <node concept="3A2sRY" id="5ij6i2V18w3" role="3IeTCI">
                         <ref role="3A2yKK" node="7lt0LtPOZVo" resolve="bc" />
                       </node>
-                      <node concept="a7P8L" id="4qGA5WCGwbq" role="1I706y">
+                      <node concept="a7P8L" id="5ij6i2V18vX" role="3IeTCJ">
                         <ref role="a7OzE" node="4qGA5WCGvAZ" resolve="Type" />
                       </node>
                     </node>
