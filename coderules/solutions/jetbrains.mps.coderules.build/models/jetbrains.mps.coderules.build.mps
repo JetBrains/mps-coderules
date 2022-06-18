@@ -1358,6 +1358,11 @@
             <ref role="3bR37D" node="7BVjoXzUxkQ" resolve="jetbrains.mps.logic" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5ij6i2UEF32" role="3bR37C">
+          <node concept="3bR9La" id="5ij6i2UEF33" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6L9c" resolve="jetbrains.mps.lang.quotation" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="65DJywFj0Fi" role="2G$12L">
         <property role="BnDLt" value="true" />
