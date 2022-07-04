@@ -1511,6 +1511,11 @@
             <ref role="1Busuk" to="ffeo:7Kfy9QB6L6o" resolve="jetbrains.mps.lang.generator.generationContext" />
           </node>
         </node>
+        <node concept="1SiIV0" id="4ot3PHQpimo" role="3bR37C">
+          <node concept="3bR9La" id="4ot3PHQpimp" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:rD7wKO6k$" resolve="MPS.Generator" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="3Pxu0s7YEFB" role="2G$12L">
         <property role="BnDLt" value="true" />

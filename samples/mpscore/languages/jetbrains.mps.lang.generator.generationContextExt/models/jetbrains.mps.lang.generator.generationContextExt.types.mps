@@ -17,6 +17,7 @@
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="q1l8" ref="215c4c45-ba99-49f5-9ab7-4b6901a63cfd/java:jetbrains.mps.generator.template(MPS.Generator/)" />
     <import index="tpfh" ref="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
@@ -2517,7 +2518,7 @@
                         <node concept="nsMwS" id="3ZfjIHuuYKN" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
                           <node concept="h$QuP" id="ZNYuguvgIv" role="iSaTp">
-                            <ref role="h$OrH" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                            <ref role="h$OrH" to="q1l8:~TemplateQueryContext" resolve="TemplateQueryContext" />
                           </node>
                         </node>
                       </node>
