@@ -5262,7 +5262,7 @@
           </node>
           <node concept="3cpWs8" id="6TxWhgAk_4U" role="3cqZAp">
             <node concept="3cpWsn" id="6TxWhgAk_4V" role="3cpWs9">
-              <property role="TrG5h" value="font" />
+              <property role="TrG5h" value="textFont" />
               <node concept="3uibUv" id="6TxWhgAktyU" role="1tU5fm">
                 <ref role="3uigEE" to="z60i:~Font" resolve="Font" />
               </node>
@@ -5283,6 +5283,25 @@
                 </node>
                 <node concept="37vLTw" id="6TxWhgAk_52" role="3K4Cdx">
                   <ref role="3cqZAo" node="6iqrHsKQ5GL" resolve="framedStyle" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="4ot3PHQS3m3" role="3cqZAp">
+            <node concept="3cpWsn" id="4ot3PHQS3m4" role="3cpWs9">
+              <property role="TrG5h" value="iconFont" />
+              <node concept="3uibUv" id="4ot3PHQS3m5" role="1tU5fm">
+                <ref role="3uigEE" to="z60i:~Font" resolve="Font" />
+              </node>
+              <node concept="2OqwBi" id="4ot3PHQS3m7" role="33vP2m">
+                <node concept="37vLTw" id="4ot3PHQS3m8" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6iqrHsKPHx0" resolve="labelFont" />
+                </node>
+                <node concept="liA8E" id="4ot3PHQS3m9" role="2OqNvi">
+                  <ref role="37wK5l" to="z60i:~Font.deriveFont(float)" resolve="deriveFont" />
+                  <node concept="2$xPTn" id="4ot3PHQS3ma" role="37wK5m">
+                    <property role="2$xPTl" value="8.0f" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -5311,7 +5330,7 @@
                     <ref role="1PxDUh" to="exr9:~MPSColors" resolve="MPSColors" />
                   </node>
                   <node concept="37vLTw" id="6TxWhgAkXf8" role="37wK5m">
-                    <ref role="3cqZAo" node="6TxWhgAk_4V" resolve="font" />
+                    <ref role="3cqZAo" node="4ot3PHQS3m4" resolve="iconFont" />
                   </node>
                 </node>
               </node>
@@ -5340,8 +5359,8 @@
                     <ref role="3cqZAo" to="lzb2:~JBColor.LIGHT_GRAY" resolve="LIGHT_GRAY" />
                     <ref role="1PxDUh" to="exr9:~MPSColors" resolve="MPSColors" />
                   </node>
-                  <node concept="37vLTw" id="6TxWhgAl1VI" role="37wK5m">
-                    <ref role="3cqZAo" node="6TxWhgAk_4V" resolve="font" />
+                  <node concept="37vLTw" id="4ot3PHQTjFF" role="37wK5m">
+                    <ref role="3cqZAo" node="4ot3PHQS3m4" resolve="iconFont" />
                   </node>
                 </node>
               </node>
@@ -5397,7 +5416,7 @@
                   <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="Borders" />
                   <ref role="37wK5l" to="g1qu:~JBUI$Borders.empty(int,int,int,int)" resolve="empty" />
                   <node concept="3cmrfG" id="6TxWhgAtJde" role="37wK5m">
-                    <property role="3cmrfH" value="1" />
+                    <property role="3cmrfH" value="0" />
                   </node>
                   <node concept="3cmrfG" id="6TxWhgAtT$v" role="37wK5m">
                     <property role="3cmrfH" value="4" />
