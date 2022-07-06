@@ -14,6 +14,8 @@
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="2" />
+    <use id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text" version="0" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -76,8 +78,10 @@
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
     <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.coderules.typechecking.plugin)" />
-    <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
-    <import index="lzb2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui(MPS.IDEA/)" implicit="true" />
+    <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
+    <import index="lzb2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui(MPS.IDEA/)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="4b2m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.messages(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -4815,6 +4819,33 @@
         </node>
       </node>
       <node concept="3clFbS" id="6TxWhg_AqGw" role="3clF47">
+        <node concept="3clFbF" id="4ot3PHR1nJ6" role="3cqZAp">
+          <node concept="2OqwBi" id="4ot3PHR1FVg" role="3clFbG">
+            <node concept="2OqwBi" id="4ot3PHR1Ejr" role="2Oq$k0">
+              <node concept="2OqwBi" id="4ot3PHR1CGt" role="2Oq$k0">
+                <node concept="2YIFZM" id="4ot3PHR1A3j" role="2Oq$k0">
+                  <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                  <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication()" resolve="getApplication" />
+                </node>
+                <node concept="liA8E" id="4ot3PHR1CGu" role="2OqNvi">
+                  <ref role="37wK5l" to="1m72:~ComponentManager.getMessageBus()" resolve="getMessageBus" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4ot3PHR1Ejs" role="2OqNvi">
+                <ref role="37wK5l" to="4b2m:~MessageBus.connect(com.intellij.openapi.Disposable)" resolve="connect" />
+                <node concept="Xjq3P" id="4ot3PHR1Ejt" role="37wK5m" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4ot3PHR1FVh" role="2OqNvi">
+              <ref role="37wK5l" to="4b2m:~SimpleMessageBusConnection.subscribe(com.intellij.util.messages.Topic,java.lang.Object)" resolve="subscribe" />
+              <node concept="10M0yZ" id="4ot3PHR1FVi" role="37wK5m">
+                <ref role="1PxDUh" to="j936:~UISettingsListener" resolve="UISettingsListener" />
+                <ref role="3cqZAo" to="j936:~UISettingsListener.TOPIC" resolve="TOPIC" />
+              </node>
+              <node concept="Xjq3P" id="4ot3PHR1FVj" role="37wK5m" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="6TxWhgA5cBU" role="3cqZAp">
           <node concept="37vLTI" id="6TxWhgA5cBV" role="3clFbG">
             <node concept="2OqwBi" id="6TxWhgA5cBW" role="37vLTJ">
@@ -5706,18 +5737,8 @@
             <node concept="34_ZPX" id="5gVsyvEZ5zE" role="1tU5fm">
               <ref role="34A7Nh" to="qox2:uB9WAZagv8" resolve="Typechecking" />
             </node>
-            <node concept="10QFUN" id="7DmawKu3sHB" role="33vP2m">
-              <node concept="2OqwBi" id="6TxWhgAwZTN" role="10QFUP">
-                <node concept="37vLTw" id="7DmawKu3sH_" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6TxWhgAwPfP" resolve="project" />
-                </node>
-                <node concept="LR4Ub" id="7DmawKu3sHA" role="2OqNvi">
-                  <ref role="LR4Ua" to="qox2:uB9WAZagv8" resolve="Typechecking" />
-                </node>
-              </node>
-              <node concept="34_ZPX" id="7DmawKu3sHz" role="10QFUM">
-                <ref role="34A7Nh" to="qox2:uB9WAZagv8" resolve="Typechecking" />
-              </node>
+            <node concept="1rXfSq" id="4ot3PHR2iLp" role="33vP2m">
+              <ref role="37wK5l" node="4ot3PHR2iLm" resolve="preferenceComponent" />
             </node>
           </node>
         </node>
@@ -5759,23 +5780,32 @@
             <node concept="34_ZPX" id="6TxWhgAx2bl" role="1tU5fm">
               <ref role="34A7Nh" to="qox2:uB9WAZagv8" resolve="Typechecking" />
             </node>
-            <node concept="10QFUN" id="6TxWhgAx2bm" role="33vP2m">
-              <node concept="2OqwBi" id="6TxWhgAx2bn" role="10QFUP">
-                <node concept="37vLTw" id="6TxWhgAx2bo" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6TxWhgAwPfP" resolve="project" />
-                </node>
-                <node concept="LR4Ub" id="6TxWhgAx2bp" role="2OqNvi">
-                  <ref role="LR4Ua" to="qox2:uB9WAZagv8" resolve="Typechecking" />
-                </node>
-              </node>
-              <node concept="34_ZPX" id="6TxWhgAx2bq" role="10QFUM">
-                <ref role="34A7Nh" to="qox2:uB9WAZagv8" resolve="Typechecking" />
-              </node>
+            <node concept="1rXfSq" id="4ot3PHR2jNs" role="33vP2m">
+              <ref role="37wK5l" node="4ot3PHR2iLm" resolve="preferenceComponent" />
             </node>
           </node>
         </node>
         <node concept="3clFbJ" id="6TxWhgA$c0c" role="3cqZAp">
           <node concept="3clFbS" id="6TxWhgA$c0e" role="3clFbx">
+            <node concept="3cpWs8" id="4ot3PHR2CoE" role="3cqZAp">
+              <node concept="3cpWsn" id="4ot3PHR2CoF" role="3cpWs9">
+                <property role="TrG5h" value="changed" />
+                <node concept="10P_77" id="4ot3PHR2Cl$" role="1tU5fm" />
+                <node concept="3y3z36" id="4ot3PHR2CoG" role="33vP2m">
+                  <node concept="2OqwBi" id="4ot3PHR2CoH" role="3uHU7B">
+                    <node concept="37vLTw" id="4ot3PHR2CoI" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6TxWhgAx2bk" resolve="pref" />
+                    </node>
+                    <node concept="34pFcN" id="4ot3PHR2CoJ" role="2OqNvi">
+                      <ref role="2WH_rO" to="qox2:14pL6xi901F" resolve="typecheckingEnabled" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="4ot3PHR2CoK" role="3uHU7w">
+                    <ref role="3cqZAo" node="6TxWhgAx2CQ" resolve="enabled" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="6TxWhgAx3sO" role="3cqZAp">
               <node concept="37vLTI" id="6TxWhgAx46W" role="3clFbG">
                 <node concept="37vLTw" id="6TxWhgAx4xP" role="37vLTx">
@@ -5791,6 +5821,24 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbJ" id="4ot3PHR2CCp" role="3cqZAp">
+              <node concept="3clFbS" id="4ot3PHR2CCA" role="3clFbx">
+                <node concept="3clFbF" id="4ot3PHR2EYW" role="3cqZAp">
+                  <node concept="2OqwBi" id="4ot3PHR2FFZ" role="3clFbG">
+                    <node concept="2YIFZM" id="4ot3PHR2Ffr" role="2Oq$k0">
+                      <ref role="37wK5l" to="j936:~UISettings.getInstance()" resolve="getInstance" />
+                      <ref role="1Pybhc" to="j936:~UISettings" resolve="UISettings" />
+                    </node>
+                    <node concept="liA8E" id="4ot3PHR2Gox" role="2OqNvi">
+                      <ref role="37wK5l" to="j936:~UISettings.fireUISettingsChanged()" resolve="fireUISettingsChanged" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="37vLTw" id="4ot3PHR2CoL" role="3clFbw">
+                <ref role="3cqZAo" node="4ot3PHR2CoF" resolve="changed" />
+              </node>
+            </node>
           </node>
           <node concept="3y3z36" id="6TxWhgA$cTZ" role="3clFbw">
             <node concept="10Nm6u" id="6TxWhgA$dhi" role="3uHU7w" />
@@ -5802,6 +5850,25 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6TxWhgAwNJD" role="jymVt" />
+    <node concept="3clFb_" id="4ot3PHR2iLm" role="jymVt">
+      <property role="TrG5h" value="preferenceComponent" />
+      <node concept="3Tm6S6" id="4ot3PHR2iLn" role="1B3o_S" />
+      <node concept="34_ZPX" id="4ot3PHR2iLo" role="3clF45">
+        <ref role="34A7Nh" to="qox2:uB9WAZagv8" resolve="Typechecking" />
+      </node>
+      <node concept="3clFbS" id="4ot3PHR2iL9" role="3clF47">
+        <node concept="3cpWs6" id="4ot3PHR2iLi" role="3cqZAp">
+          <node concept="2OqwBi" id="4ot3PHR2iLf" role="3cqZAk">
+            <node concept="37vLTw" id="4ot3PHR2iLg" role="2Oq$k0">
+              <ref role="3cqZAo" node="6TxWhgAwPfP" resolve="project" />
+            </node>
+            <node concept="LR4Ub" id="4ot3PHR2iLh" role="2OqNvi">
+              <ref role="LR4Ua" to="qox2:uB9WAZagv8" resolve="Typechecking" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3Tm1VV" id="6TxWhgAwNGv" role="1B3o_S" />
   </node>
 </model>
