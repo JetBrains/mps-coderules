@@ -34,6 +34,8 @@
     <import index="bs09" ref="r:28026be8-9bf8-4f54-9319-0ca8a6d1299d(typechecking.samples.baseLanguage.helloWorld)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
+    <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.coderules.typechecking.plugin)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -462,6 +464,11 @@
                       <node concept="liA8E" id="61G6TdBScAp" role="2OqNvi">
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
+                    </node>
+                    <node concept="2YIFZM" id="7e$2hwaBtXS" role="37wK5m">
+                      <ref role="37wK5l" to="qox2:7e$2hwaAjW0" resolve="getProjectConfig" />
+                      <ref role="1Pybhc" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <node concept="1jxXqW" id="7e$2hwaBuHD" role="37wK5m" />
                     </node>
                   </node>
                 </node>

@@ -944,9 +944,15 @@
               <node concept="37vLTw" id="4XsNDZYjiYF" role="37wK5m">
                 <ref role="3cqZAo" node="6nFpYlun1LV" resolve="repository" />
               </node>
-              <node concept="2YIFZM" id="4XsNDZYjiYG" role="37wK5m">
-                <ref role="1Pybhc" to="31yc:7iCybvToiT5" resolve="Config" />
-                <ref role="37wK5l" to="31yc:7iCybvTs3lI" resolve="getInstance" />
+              <node concept="2YIFZM" id="7e$2hwaARc4" role="37wK5m">
+                <ref role="37wK5l" to="qox2:7e$2hwaAjW0" resolve="getProjectConfig" />
+                <ref role="1Pybhc" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                <node concept="2OqwBi" id="7e$2hwaARIH" role="37wK5m">
+                  <node concept="2WthIp" id="7e$2hwaARIK" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="7e$2hwaARIM" role="2OqNvi">
+                    <ref role="2WH_rO" node="3YJ7yg2LgUn" resolve="mpsProject" />
+                  </node>
+                </node>
               </node>
               <node concept="2YIFZM" id="4XsNDZYjiYH" role="37wK5m">
                 <ref role="1Pybhc" to="31yc:4MaHsBDdlvx" resolve="MessageLog" />
@@ -2464,9 +2470,12 @@
                       <node concept="37vLTw" id="1z4$59iLRGo" role="37wK5m">
                         <ref role="3cqZAo" node="2cnGCY$rO2g" resolve="repository" />
                       </node>
-                      <node concept="2YIFZM" id="1z4$59iLTYN" role="37wK5m">
-                        <ref role="37wK5l" to="31yc:7iCybvTs3lI" resolve="getInstance" />
-                        <ref role="1Pybhc" to="31yc:7iCybvToiT5" resolve="Config" />
+                      <node concept="2YIFZM" id="7e$2hwaAHic" role="37wK5m">
+                        <ref role="37wK5l" to="qox2:7e$2hwaAjW0" resolve="getProjectConfig" />
+                        <ref role="1Pybhc" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                        <node concept="37vLTw" id="7e$2hwaALml" role="37wK5m">
+                          <ref role="3cqZAo" node="6hqFpWnfkNg" resolve="mpsProject" />
+                        </node>
                       </node>
                       <node concept="2YIFZM" id="1z4$59iLPYY" role="37wK5m">
                         <ref role="1Pybhc" to="31yc:4MaHsBDdlvx" resolve="MessageLog" />
