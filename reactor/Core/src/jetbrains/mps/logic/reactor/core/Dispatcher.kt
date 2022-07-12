@@ -17,7 +17,6 @@
 package jetbrains.mps.logic.reactor.core
 
 import gnu.trove.map.hash.TIntObjectHashMap
-import org.jetbrains.kotlin.fir.resolve.getOrPut
 
 
 typealias DispatchingFrontState = Map<Any, RuleMatcher>
