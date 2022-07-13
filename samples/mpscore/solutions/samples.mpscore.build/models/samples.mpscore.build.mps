@@ -19,6 +19,9 @@
       <concept id="6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" flags="ng" index="2pMdtt">
         <property id="6666499814681541920" name="text" index="2pMdty" />
       </concept>
+      <concept id="6666499814681299066" name="jetbrains.mps.core.xml.structure.XmlCDATA" flags="ng" index="2pNm8S">
+        <property id="1622293396948985395" name="content" index="3o6aOc" />
+      </concept>
       <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
         <property id="6666499814681415862" name="tagName" index="2pNNFO" />
         <child id="6666499814681415861" name="attributes" index="2pNNFR" />
@@ -249,7 +252,7 @@
           <ref role="3Mxwex" node="5Hdh9$IhmQ$" resolve="ci.mps.release" />
         </node>
         <node concept="3Mxwew" id="2BiN_P7R7Wi" role="3MwsjC">
-          <property role="3MwjfP" value="-0.9-b" />
+          <property role="3MwjfP" value="-0.9.2-b" />
         </node>
         <node concept="3Mxwey" id="2BiN_P7R81m" role="3MwsjC">
           <ref role="3Mxwex" node="2BiN_P7R7jO" resolve="ci.build.num" />
@@ -275,14 +278,14 @@
         <node concept="2pNUuL" id="5Hdh9$IhmW_" role="2pNNFR">
           <property role="2pNUuO" value="since-build" />
           <node concept="2pMdtt" id="5Hdh9$IhnkA" role="2pMdts">
-            <property role="2pMdty" value="213.1" />
+            <property role="2pMdty" value="222.1" />
           </node>
         </node>
       </node>
       <node concept="2pNNFK" id="2fVm_54SZ$e" role="20twgj">
         <property role="2pNNFO" value="change-notes" />
-        <node concept="3o6iSG" id="2fVm_54SZHp" role="3o6s8t">
-          <property role="3o6i5n" value="First public EAP" />
+        <node concept="2pNm8S" id="2p5jUSWfCr8" role="3o6s8t">
+          <property role="3o6aOc" value="&lt;ul&gt;&lt;li&gt;Compatible with upcoming 2022 release of MPS&lt;/li&gt;&lt;li&gt;Bugfixes and optimizations&lt;/li&gt;&lt;/ul&gt;" />
         </node>
       </node>
       <node concept="m$_yC" id="77GimjbRIwv" role="m$_yJ">
