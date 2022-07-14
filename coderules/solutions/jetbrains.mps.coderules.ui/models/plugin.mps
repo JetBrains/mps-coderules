@@ -123,7 +123,6 @@
       <concept id="5896642449625981893" name="jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration" flags="ng" index="2wDNrl" />
       <concept id="1213888653896" name="jetbrains.mps.lang.plugin.structure.InitBlock" flags="in" index="2xpIHi" />
       <concept id="1213888677711" name="jetbrains.mps.lang.plugin.structure.DisposeBlock" flags="in" index="2xpOpl" />
-      <concept id="1213888797251" name="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project" flags="nn" index="2xqhHp" />
       <concept id="6938053545825350222" name="jetbrains.mps.lang.plugin.structure.ToolTab" flags="ng" index="2BLXyY">
         <child id="6938053545825381648" name="componentExpression" index="2BLOvw" />
         <child id="6938053545825381649" name="titleExpression" index="2BLOvx" />
@@ -26334,28 +26333,46 @@
     </node>
     <node concept="2xpIHi" id="7kbj6I70Ubk" role="uR5cp">
       <node concept="3clFbS" id="7kbj6I70Ubl" role="2VODD2">
-        <node concept="3clFbF" id="1PN9XOHYq0c" role="3cqZAp">
-          <node concept="2YIFZM" id="1PN9XOHYq0u" role="3clFbG">
-            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable)" resolve="invokeLater" />
-            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-            <node concept="1bVj0M" id="1PN9XOHYq1x" role="37wK5m">
-              <node concept="3clFbS" id="1PN9XOHYq1y" role="1bW5cS">
-                <node concept="3clFbF" id="1PN9XOHYqnE" role="3cqZAp">
-                  <node concept="2OqwBi" id="1PN9XOHYqE7" role="3clFbG">
-                    <node concept="2YIFZM" id="1PN9XOHYqq6" role="2Oq$k0">
-                      <ref role="37wK5l" node="7kbj6I71YHG" resolve="get" />
-                      <ref role="1Pybhc" node="7kbj6I70TX8" resolve="MessageViewComponent" />
-                      <node concept="2xqhHp" id="1PN9XOHYqs5" role="37wK5m" />
-                    </node>
-                    <node concept="liA8E" id="1PN9XOHYqR8" role="2OqNvi">
-                      <ref role="37wK5l" node="4MaHsBDzg27" resolve="getMessageSink" />
-                      <node concept="Xl_RD" id="1PN9XOHYqTP" role="37wK5m">
-                        <property role="Xl_RC" value="Messages" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
+        <node concept="3SKdUt" id="2p5jUSWixUT" role="3cqZAp">
+          <node concept="1PaTwC" id="2p5jUSWixUU" role="1aUNEU">
+            <node concept="3oM_SD" id="2p5jUSWixVe" role="1PaTwD">
+              <property role="3oM_SC" value="avoid" />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixVg" role="1PaTwD">
+              <property role="3oM_SC" value="initializing" />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixVj" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixVy" role="1PaTwD">
+              <property role="3oM_SC" value="tool" />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixVB" role="1PaTwD">
+              <property role="3oM_SC" value="here," />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixVH" role="1PaTwD">
+              <property role="3oM_SC" value="it's" />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixVO" role="1PaTwD">
+              <property role="3oM_SC" value="&quot;too" />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixVW" role="1PaTwD">
+              <property role="3oM_SC" value="early&quot;," />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixWq" role="1PaTwD">
+              <property role="3oM_SC" value="let" />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixW$" role="1PaTwD">
+              <property role="3oM_SC" value="it" />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixWJ" role="1PaTwD">
+              <property role="3oM_SC" value="be" />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixWV" role="1PaTwD">
+              <property role="3oM_SC" value="created" />
+            </node>
+            <node concept="3oM_SD" id="2p5jUSWixX8" role="1PaTwD">
+              <property role="3oM_SC" value="lazily" />
             </node>
           </node>
         </node>
