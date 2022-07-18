@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.evaluation;
 
 import jetbrains.mps.logic.reactor.core.DetailedFeedback;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Abstract feedback to be provided by the code being evaluated.
@@ -69,6 +70,7 @@ abstract public class EvaluationFeedback {
 
     abstract public Severity getSeverity();
 
+    @NotNull
     abstract public String getMessage();
 
     abstract public Object getDetails();
@@ -77,6 +79,7 @@ abstract public class EvaluationFeedback {
         return Severity.FAILURE.compareTo(getSeverity()) <= 0;
     }
 
+    @NotNull
     public Throwable failureCause() { throw new UnsupportedOperationException(); }
 
     public enum Severity {

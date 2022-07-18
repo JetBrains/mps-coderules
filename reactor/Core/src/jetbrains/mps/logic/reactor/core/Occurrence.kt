@@ -94,7 +94,6 @@ class Occurrence (observable: LogicalStateObservable,
 
     private fun handleFeedbackStatus(status: FeedbackStatus) {
         if (status is FeedbackStatus.FAILED) {
-            // FIXME failureCause() is nullable, can't throw null
             throw status.failure.failureCause()
         }
     }
