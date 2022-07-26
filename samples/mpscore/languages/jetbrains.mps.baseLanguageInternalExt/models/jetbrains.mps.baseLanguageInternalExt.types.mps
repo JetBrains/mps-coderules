@@ -12,6 +12,7 @@
     <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.baseLanguageExt.types)" />
     <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -30,6 +31,14 @@
       </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="8356039341262087992" name="line" index="1aUNEU" />
+      </concept>
+    </language>
+    <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
+      <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
+        <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
+      </concept>
+      <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
+        <reference id="5455284157993910961" name="concept" index="2pJxaS" />
       </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
@@ -65,6 +74,15 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking">
+      <concept id="7505246501517185035" name="jetbrains.mps.lang.typechecking.structure.TypeTermDeclaration" flags="ng" index="3iyMRA">
+        <child id="7505246501517407186" name="builder" index="3i_WSZ" />
+      </concept>
+      <concept id="7505246501517142009" name="jetbrains.mps.lang.typechecking.structure.TypeTermTable" flags="ng" index="3iyXCk" />
+      <concept id="7505246501517400215" name="jetbrains.mps.lang.typechecking.structure.TypeNodeBuilder" flags="ng" index="3i_YlU">
+        <child id="7505246501517414874" name="body" index="3i_UKR" />
       </concept>
     </language>
     <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
@@ -1388,15 +1406,22 @@
       </node>
     </node>
   </node>
-  <node concept="ns1xd" id="7ZvrONsSHYp">
+  <node concept="3iyXCk" id="7ZvrONsSHYp">
     <property role="TrG5h" value="InternTerms" />
     <ref role="2efqH6" to="kqnc:JOGAOsVt29" resolve="Terms" />
-    <node concept="ns1x$" id="7ZvrONsSHYs" role="ns1xc">
+    <node concept="3iyMRA" id="7ZvrONsSHYs" role="ns1xc">
       <property role="TrG5h" value="internClassifier" />
       <ref role="ns1xW" to="kqnc:4lCLOtwq2MF" resolve="type" />
       <node concept="nspSf" id="7ZvrONsSHYt" role="ns1xx">
         <node concept="nssqF" id="7ZvrONsSHY$" role="nspSe">
           <property role="TrG5h" value="classname" />
+        </node>
+      </node>
+      <node concept="3i_YlU" id="4APe_wKcc2O" role="3i_WSZ">
+        <node concept="2pJPEk" id="4APe_wKcc2P" role="3i_UKR">
+          <node concept="2pJPED" id="4APe_wKcc2Q" role="2pJPEn">
+            <ref role="2pJxaS" to="tpck:gw2VY9q" resolve="BaseConcept" />
+          </node>
         </node>
       </node>
     </node>

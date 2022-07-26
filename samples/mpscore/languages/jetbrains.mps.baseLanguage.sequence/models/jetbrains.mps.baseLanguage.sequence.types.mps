@@ -11,6 +11,7 @@
     <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.baseLanguageExt.types)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -32,6 +33,22 @@
       </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
+    </language>
+    <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
+      <concept id="5455284157994012186" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink" flags="ng" index="2pIpSj">
+        <reference id="5455284157994012188" name="link" index="2pIpSl" />
+        <child id="1595412875168045827" name="initValue" index="28nt2d" />
+      </concept>
+      <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
+        <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
+      </concept>
+      <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
+        <reference id="5455284157993910961" name="concept" index="2pJxaS" />
+        <child id="5455284157993911099" name="values" index="2pJxcM" />
+      </concept>
+      <concept id="8182547171709752110" name="jetbrains.mps.lang.quotation.structure.NodeBuilderExpression" flags="nn" index="36biLy">
+        <child id="8182547171709752112" name="expression" index="36biLW" />
       </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
@@ -64,6 +81,18 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
+    <language id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking">
+      <concept id="7505246501517185035" name="jetbrains.mps.lang.typechecking.structure.TypeTermDeclaration" flags="ng" index="3iyMRA">
+        <child id="7505246501517407186" name="builder" index="3i_WSZ" />
+      </concept>
+      <concept id="7505246501517142009" name="jetbrains.mps.lang.typechecking.structure.TypeTermTable" flags="ng" index="3iyXCk" />
+      <concept id="7505246501517400215" name="jetbrains.mps.lang.typechecking.structure.TypeNodeBuilder" flags="ng" index="3i_YlU">
+        <child id="7505246501517414874" name="body" index="3i_UKR" />
+      </concept>
+      <concept id="1722266558648635144" name="jetbrains.mps.lang.typechecking.structure.FeatureReferenceExpression" flags="ng" index="1NbZt7">
+        <reference id="1722266558648637849" name="feature" index="1NbY7m" />
+      </concept>
+    </language>
     <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules">
       <concept id="1618328391714763069" name="jetbrains.mps.lang.coderules.structure.MacroTable" flags="ng" index="0oKg$">
         <child id="1618328391714763070" name="macro" index="0oKgB" />
@@ -76,7 +105,6 @@
         <child id="861509610434243076" name="override" index="ns1xD" />
       </concept>
       <concept id="861509610434243104" name="jetbrains.mps.lang.coderules.structure.TermTable" flags="ng" index="ns1xd">
-        <reference id="8966267790978924106" name="extended" index="2efqH6" />
         <child id="861509610434243105" name="contents" index="ns1xc" />
       </concept>
       <concept id="861509610434243081" name="jetbrains.mps.lang.coderules.structure.TermDeclaration" flags="ng" index="ns1x$">
@@ -169,18 +197,6 @@
       <concept id="965748826975413063" name="jetbrains.mps.lang.coderules.structure.RulePartParameterDeclaration" flags="ng" index="3NuqgR" />
     </language>
   </registry>
-  <node concept="ns1xd" id="3MFPGC50_T2">
-    <property role="TrG5h" value="SequenceTerm" />
-    <ref role="2efqH6" to="kqnc:JOGAOsVt29" resolve="Terms" />
-    <node concept="ns1x$" id="3MFPGC50Ab3" role="ns1xc">
-      <property role="TrG5h" value="sequence" />
-      <node concept="nspSf" id="3MFPGC50Ab4" role="ns1xx">
-        <node concept="nstbe" id="3MFPGC50Aiu" role="nspSe">
-          <property role="TrG5h" value="elem" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="0oKg$" id="1oUE7CXmlxI">
     <property role="TrG5h" value="SequenceTypeMacro" />
     <node concept="3hwh0R" id="1oUE7CX4dOb" role="0oKgB">
@@ -947,6 +963,32 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3iyXCk" id="3MFPGC50_T2">
+    <property role="TrG5h" value="SequenceTerm" />
+    <node concept="3iyMRA" id="3MFPGC50Ab3" role="ns1xc">
+      <property role="TrG5h" value="sequence" />
+      <node concept="nspSf" id="3MFPGC50Ab4" role="ns1xx">
+        <node concept="nstbe" id="3MFPGC50Aiu" role="nspSe">
+          <property role="TrG5h" value="elem" />
+        </node>
+      </node>
+      <node concept="3i_YlU" id="4APe_wKcc6P" role="3i_WSZ">
+        <node concept="2pJPEk" id="4APe_wKcc6Q" role="3i_UKR">
+          <node concept="2pJPED" id="4APe_wKcc6R" role="2pJPEn">
+            <ref role="2pJxaS" to="tp2q:gKA3Dh4" resolve="SequenceType" />
+            <node concept="2pIpSj" id="4APe_wKcdDC" role="2pJxcM">
+              <ref role="2pIpSl" to="tp2q:gKA3Ige" resolve="elementType" />
+              <node concept="36biLy" id="4APe_wKcdDO" role="28nt2d">
+                <node concept="1NbZt7" id="4APe_wKcdDZ" role="36biLW">
+                  <ref role="1NbY7m" node="3MFPGC50Aiu" resolve="elem" />
                 </node>
               </node>
             </node>
