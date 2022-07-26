@@ -10,15 +10,25 @@
   </imports>
   <registry>
     <language id="7ab1a6fa-0a11-4b95-9e48-75f363d6cb00" name="jetbrains.mps.lang.generator.plan">
+      <concept id="869728027904920839" name="jetbrains.mps.lang.generator.plan.structure.CheckpointSynchronization" flags="ng" index="26qawf">
+        <child id="3750601816087335480" name="checkpoint" index="3pRG92" />
+      </concept>
       <concept id="3705377275350227759" name="jetbrains.mps.lang.generator.plan.structure.IncludePlan" flags="ng" index="NozSJ">
         <reference id="3705377275350227762" name="plan" index="NozSM" />
       </concept>
       <concept id="1820634577908471803" name="jetbrains.mps.lang.generator.plan.structure.Plan" flags="ng" index="2VgMpV">
         <child id="1820634577908471815" name="steps" index="2VgMA7" />
       </concept>
+      <concept id="1820634577908471809" name="jetbrains.mps.lang.generator.plan.structure.Checkpoint" flags="ng" index="2VgMA1">
+        <child id="3750601816081740498" name="cpSpec" index="3ps6aC" />
+      </concept>
       <concept id="1820634577908471810" name="jetbrains.mps.lang.generator.plan.structure.Transform" flags="ng" index="2VgMA2">
         <property id="2209292798354050154" name="individualStepPerGenerator" index="1s431M" />
         <child id="2944629966652439181" name="languages" index="1t_9vn" />
+      </concept>
+      <concept id="6257322641293267918" name="jetbrains.mps.lang.generator.plan.structure.CheckpointDeclaration" flags="ng" index="19BiC4" />
+      <concept id="3750601816081740541" name="jetbrains.mps.lang.generator.plan.structure.DeclaredCheckpointSpec" flags="ng" index="3ps6a7">
+        <reference id="3750601816081740544" name="cpDecl" index="3ps6dU" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -35,6 +45,9 @@
   </registry>
   <node concept="2VgMpV" id="C1f6iDJrPS">
     <property role="TrG5h" value="TypesAspect" />
+    <node concept="19BiC4" id="4APe_wL1VPG" role="2VgMA7">
+      <property role="TrG5h" value="TypecheckingSymbols" />
+    </node>
     <node concept="2VgMA2" id="C1f6iDORpM" role="2VgMA7">
       <property role="1s431M" value="true" />
       <node concept="2V$Bhx" id="C1f6iDORpL" role="1t_9vn">
@@ -54,6 +67,16 @@
       <node concept="2V$Bhx" id="sL9MTQwOzH" role="1t_9vn">
         <property role="2V$B1T" value="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" />
         <property role="2V$B1Q" value="jetbrains.mps.lang.typechecking" />
+      </node>
+    </node>
+    <node concept="2VgMA1" id="4APe_wL6Vf4" role="2VgMA7">
+      <node concept="3ps6a7" id="4APe_wL6Vfs" role="3ps6aC">
+        <ref role="3ps6dU" node="4APe_wL1VPG" resolve="FOO" />
+      </node>
+    </node>
+    <node concept="26qawf" id="4APe_wL9AqS" role="2VgMA7">
+      <node concept="3ps6a7" id="4APe_wL9Ari" role="3pRG92">
+        <ref role="3ps6dU" node="4APe_wL1VPG" resolve="FOO" />
       </node>
     </node>
     <node concept="2VgMA2" id="sL9MTQwV_n" role="2VgMA7">
