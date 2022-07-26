@@ -11481,10 +11481,8 @@
         <node concept="3Tqbb2" id="At0yqM7N1q" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="At0yqM7N1r" role="3clF46">
-        <property role="TrG5h" value="prototypeTemplateRef" />
-        <node concept="3uibUv" id="At0yqM7N1s" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-        </node>
+        <property role="TrG5h" value="prototypeTemplateFqn" />
+        <node concept="17QB3L" id="7mIqwW51MQl" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="At0yqM7N1t" role="3clF46">
         <property role="TrG5h" value="proc" />
@@ -11633,7 +11631,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="At0yqM7Pos" role="2OqNvi">
-                <ref role="37wK5l" to="hano:5itBwM7W0ZG" resolve="expandMacroTemplate" />
+                <ref role="37wK5l" to="hano:7mIqwW51Ay4" resolve="expandMacroTemplate" />
                 <node concept="2OqwBi" id="At0yqM7Pot" role="37wK5m">
                   <node concept="37vLTw" id="At0yqM811a" role="2Oq$k0">
                     <ref role="3cqZAo" node="At0yqM7N1p" resolve="macroInput" />
@@ -11713,123 +11711,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="At0yqM7O$9" role="jymVt" />
-    <node concept="3clFb_" id="5itBwM7VEuy" role="jymVt">
-      <property role="TrG5h" value="expandMacro" />
-      <node concept="37vLTG" id="5itBwM7VEuz" role="3clF46">
-        <property role="TrG5h" value="macroInput" />
-        <node concept="3Tqbb2" id="5itBwM7VEu$" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="5itBwM7VEu_" role="3clF46">
-        <property role="TrG5h" value="prototypeTemplateRef" />
-        <node concept="3uibUv" id="5itBwM7VEuA" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="5itBwM7VEuB" role="3clF46">
-        <property role="TrG5h" value="proc" />
-        <node concept="3uibUv" id="5itBwM7VEuC" role="1tU5fm">
-          <ref role="3uigEE" to="82uw:~Function" resolve="Function" />
-          <node concept="3qUtgH" id="5itBwM7XcWF" role="11_B2D">
-            <node concept="16syzq" id="5itBwM7XebV" role="3qUvdb">
-              <ref role="16sUi3" node="5itBwM7VEuJ" resolve="T" />
-            </node>
-          </node>
-          <node concept="3uibUv" id="5itBwM7VEuF" role="11_B2D">
-            <ref role="3uigEE" to="i348:7eGEHDlc$ap" resolve="RuleBuilder" />
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="5itBwM7VEuG" role="3clF45">
-        <ref role="3uigEE" to="i348:7eGEHDlc$ap" resolve="RuleBuilder" />
-      </node>
-      <node concept="3Tm1VV" id="5itBwM7VEuH" role="1B3o_S" />
-      <node concept="16euLQ" id="5itBwM7VEuJ" role="16eVyc">
-        <property role="TrG5h" value="T" />
-        <node concept="3uibUv" id="5itBwM86BsU" role="3ztrMU">
-          <ref role="3uigEE" to="i348:5itBwM86qUH" resolve="ExpandMacroTemplate.Token" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="5itBwM7VEuL" role="3clF47">
-        <node concept="3clFbF" id="At0yqM9SWz" role="3cqZAp">
-          <node concept="1rXfSq" id="At0yqM9SWx" role="3clFbG">
-            <ref role="37wK5l" node="At0yqM7N1m" resolve="expandMacro" />
-            <node concept="10Nm6u" id="At0yqM9URz" role="37wK5m" />
-            <node concept="37vLTw" id="At0yqM9Vz6" role="37wK5m">
-              <ref role="3cqZAo" node="5itBwM7VEuz" resolve="macroInput" />
-            </node>
-            <node concept="37vLTw" id="At0yqM9WRK" role="37wK5m">
-              <ref role="3cqZAo" node="5itBwM7VEu_" resolve="prototypeTemplateRef" />
-            </node>
-            <node concept="37vLTw" id="At0yqM9XA5" role="37wK5m">
-              <ref role="3cqZAo" node="5itBwM7VEuB" resolve="proc" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5itBwM7VEuM" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5itBwM7VGqB" role="jymVt" />
-    <node concept="3clFb_" id="5itBwMbbLT3" role="jymVt">
-      <property role="TrG5h" value="expandMacro" />
-      <node concept="37vLTG" id="5itBwMbbLT4" role="3clF46">
-        <property role="TrG5h" value="macroConceptInput" />
-        <node concept="3bZ5Sz" id="5itBwMbbLT5" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="5itBwMbbLT6" role="3clF46">
-        <property role="TrG5h" value="prototypeTemplateRef" />
-        <node concept="3uibUv" id="5itBwMbbLT7" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="5itBwMbbLT8" role="3clF46">
-        <property role="TrG5h" value="proc" />
-        <node concept="3uibUv" id="5itBwMbbLT9" role="1tU5fm">
-          <ref role="3uigEE" to="82uw:~Function" resolve="Function" />
-          <node concept="3qUtgH" id="5itBwMbbLTa" role="11_B2D">
-            <node concept="16syzq" id="5itBwMbbLTb" role="3qUvdb">
-              <ref role="16sUi3" node="5itBwMbbLTg" resolve="T" />
-            </node>
-          </node>
-          <node concept="3uibUv" id="5itBwMbbLTc" role="11_B2D">
-            <ref role="3uigEE" to="i348:7eGEHDlc$ap" resolve="RuleBuilder" />
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="5itBwMbbLTd" role="3clF45">
-        <ref role="3uigEE" to="i348:7eGEHDlc$ap" resolve="RuleBuilder" />
-      </node>
-      <node concept="3Tm1VV" id="5itBwMbbLTe" role="1B3o_S" />
-      <node concept="16euLQ" id="5itBwMbbLTg" role="16eVyc">
-        <property role="TrG5h" value="T" />
-        <node concept="3uibUv" id="5itBwMbbLTh" role="3ztrMU">
-          <ref role="3uigEE" to="i348:5itBwM86qUH" resolve="ExpandMacroTemplate.Token" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="5itBwMbbLTi" role="3clF47">
-        <node concept="3clFbH" id="5itBwMbbRFu" role="3cqZAp" />
-        <node concept="3clFbF" id="C1f6iEyDE_" role="3cqZAp">
-          <node concept="1rXfSq" id="C1f6iEyDEz" role="3clFbG">
-            <ref role="37wK5l" node="C1f6iEy$1j" resolve="expandMacro" />
-            <node concept="10Nm6u" id="C1f6iEyFVn" role="37wK5m" />
-            <node concept="37vLTw" id="C1f6iEyGJJ" role="37wK5m">
-              <ref role="3cqZAo" node="5itBwMbbLT4" resolve="macroConceptInput" />
-            </node>
-            <node concept="37vLTw" id="C1f6iEyIxp" role="37wK5m">
-              <ref role="3cqZAo" node="5itBwMbbLT6" resolve="prototypeTemplateRef" />
-            </node>
-            <node concept="37vLTw" id="C1f6iEyJPL" role="37wK5m">
-              <ref role="3cqZAo" node="5itBwMbbLT8" resolve="proc" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5itBwMbbLTj" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="C1f6iEyyPX" role="jymVt" />
     <node concept="3clFb_" id="C1f6iEy$1j" role="jymVt">
       <property role="TrG5h" value="expandMacro" />
       <node concept="37vLTG" id="C1f6iEy$1k" role="3clF46">
@@ -11841,10 +11722,8 @@
         <node concept="3bZ5Sz" id="C1f6iEy$1n" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="C1f6iEy$1o" role="3clF46">
-        <property role="TrG5h" value="prototypeTemplateRef" />
-        <node concept="3uibUv" id="C1f6iEy$1p" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-        </node>
+        <property role="TrG5h" value="prototypeTemplateFqn" />
+        <node concept="17QB3L" id="7mIqwW51RD8" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="C1f6iEy$1q" role="3clF46">
         <property role="TrG5h" value="proc" />
@@ -11891,7 +11770,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="C1f6iEyAqD" role="2OqNvi">
-                <ref role="37wK5l" to="hano:5itBwM7W0ZG" resolve="expandMacroTemplate" />
+                <ref role="37wK5l" to="hano:7mIqwW51Ay4" resolve="expandMacroTemplate" />
                 <node concept="37vLTw" id="C1f6iEyAqE" role="37wK5m">
                   <ref role="3cqZAo" node="C1f6iEy$1m" resolve="macroConceptInput" />
                 </node>
@@ -11966,57 +11845,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5itBwMbbNrF" role="jymVt" />
-    <node concept="3clFb_" id="5itBwM7VEuP" role="jymVt">
-      <property role="TrG5h" value="callMacro" />
-      <node concept="37vLTG" id="5itBwM7VEuQ" role="3clF46">
-        <property role="TrG5h" value="callMacroTemplateRef" />
-        <node concept="3uibUv" id="5itBwM7VEuR" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="5itBwM7VEuS" role="3clF46">
-        <property role="TrG5h" value="proc" />
-        <node concept="3uibUv" id="5itBwM7VEuT" role="1tU5fm">
-          <ref role="3uigEE" to="82uw:~Function" resolve="Function" />
-          <node concept="3qUtgH" id="5itBwM7Xg1G" role="11_B2D">
-            <node concept="16syzq" id="5itBwM7Xhek" role="3qUvdb">
-              <ref role="16sUi3" node="5itBwM7VEv0" resolve="T" />
-            </node>
-          </node>
-          <node concept="3uibUv" id="5itBwM7VEuW" role="11_B2D">
-            <ref role="3uigEE" to="i348:7eGEHDlc$ap" resolve="RuleBuilder" />
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="5itBwM7VEuX" role="3clF45">
-        <ref role="3uigEE" to="i348:7eGEHDlc$ap" resolve="RuleBuilder" />
-      </node>
-      <node concept="3Tm1VV" id="5itBwM7VEuY" role="1B3o_S" />
-      <node concept="16euLQ" id="5itBwM7VEv0" role="16eVyc">
-        <property role="TrG5h" value="T" />
-        <node concept="3uibUv" id="5itBwM86CB5" role="3ztrMU">
-          <ref role="3uigEE" to="i348:5itBwM86qnn" resolve="CallMacroTemplate.Token" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="5itBwM7VEv2" role="3clF47">
-        <node concept="3clFbF" id="1VeWL_e58dz" role="3cqZAp">
-          <node concept="1rXfSq" id="1VeWL_e58dy" role="3clFbG">
-            <ref role="37wK5l" node="1VeWL_e4YPc" resolve="callMacro" />
-            <node concept="10Nm6u" id="1VeWL_e59MB" role="37wK5m" />
-            <node concept="37vLTw" id="1VeWL_e5b_h" role="37wK5m">
-              <ref role="3cqZAo" node="5itBwM7VEuQ" resolve="callMacroTemplateRef" />
-            </node>
-            <node concept="37vLTw" id="1VeWL_e5dnO" role="37wK5m">
-              <ref role="3cqZAo" node="5itBwM7VEuS" resolve="proc" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5itBwM7VEv3" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5itBwM7VFqM" role="jymVt" />
     <node concept="3Tm1VV" id="7DvO2M9IiOz" role="1B3o_S" />
     <node concept="3clFb_" id="1VeWL_e4YPc" role="jymVt">
       <property role="TrG5h" value="callMacro" />
@@ -12025,10 +11853,8 @@
         <node concept="3Tqbb2" id="1VeWL_e4YPe" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1VeWL_e4YPf" role="3clF46">
-        <property role="TrG5h" value="callMacroTemplateRef" />
-        <node concept="3uibUv" id="1VeWL_e4YPg" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-        </node>
+        <property role="TrG5h" value="callMacroTemplateFqn" />
+        <node concept="17QB3L" id="7mIqwW52IkR" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1VeWL_e4YPh" role="3clF46">
         <property role="TrG5h" value="proc" />
