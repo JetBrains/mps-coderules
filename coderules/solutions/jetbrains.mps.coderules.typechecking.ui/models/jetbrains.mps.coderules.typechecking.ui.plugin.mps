@@ -4595,48 +4595,85 @@
     </node>
     <node concept="2uRRBN" id="6TxWhg_A$vZ" role="2uRRB_">
       <node concept="3clFbS" id="6TxWhg_A$w0" role="2VODD2">
-        <node concept="3clFbF" id="6TxWhg_BTQ7" role="3cqZAp">
-          <node concept="2OqwBi" id="6TxWhg_BUaV" role="3clFbG">
-            <node concept="2OqwBi" id="CYd5Z6WVmS" role="2Oq$k0">
-              <node concept="2WthIp" id="CYd5Z6WVmV" role="2Oq$k0" />
-              <node concept="2BZ7hE" id="CYd5Z6WVmX" role="2OqNvi">
+        <node concept="3clFbJ" id="6GMlsrjFvr2" role="3cqZAp">
+          <node concept="3clFbS" id="6GMlsrjFvr4" role="3clFbx">
+            <node concept="3clFbF" id="6TxWhg_BTQ7" role="3cqZAp">
+              <node concept="2OqwBi" id="6TxWhg_BUaV" role="3clFbG">
+                <node concept="2OqwBi" id="CYd5Z6WVmS" role="2Oq$k0">
+                  <node concept="2WthIp" id="CYd5Z6WVmV" role="2Oq$k0" />
+                  <node concept="2BZ7hE" id="CYd5Z6WVmX" role="2OqNvi">
+                    <ref role="2WH_rO" node="CYd5Z6WKvP" resolve="statusBar" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="6TxWhg_BUue" role="2OqNvi">
+                  <ref role="37wK5l" to="jkny:~StatusBar.removeWidget(java.lang.String)" resolve="removeWidget" />
+                  <node concept="2OqwBi" id="6TxWhg_C02c" role="37wK5m">
+                    <node concept="2OqwBi" id="6TxWhg_BWMZ" role="2Oq$k0">
+                      <node concept="2WthIp" id="6TxWhg_BWN2" role="2Oq$k0" />
+                      <node concept="2BZ7hE" id="6TxWhg_BWN4" role="2OqNvi">
+                        <ref role="2WH_rO" node="6TxWhg_BX7s" resolve="widget" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="6TxWhg_C0GF" role="2OqNvi">
+                      <ref role="37wK5l" node="6TxWhg_AqGf" resolve="ID" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6GMlsrjFwJP" role="3cqZAp">
+              <node concept="37vLTI" id="6GMlsrjFxkz" role="3clFbG">
+                <node concept="10Nm6u" id="6GMlsrjFxlp" role="37vLTx" />
+                <node concept="2OqwBi" id="6GMlsrjFwTz" role="37vLTJ">
+                  <node concept="2WthIp" id="6GMlsrjFwJN" role="2Oq$k0" />
+                  <node concept="2BZ7hE" id="6GMlsrjFx4e" role="2OqNvi">
+                    <ref role="2WH_rO" node="CYd5Z6WKvP" resolve="statusBar" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="6GMlsrjFwhr" role="3clFbw">
+            <node concept="10Nm6u" id="6GMlsrjFwi1" role="3uHU7w" />
+            <node concept="2OqwBi" id="6GMlsrjFvIj" role="3uHU7B">
+              <node concept="2WthIp" id="6GMlsrjFvuA" role="2Oq$k0" />
+              <node concept="2BZ7hE" id="6GMlsrjFw07" role="2OqNvi">
                 <ref role="2WH_rO" node="CYd5Z6WKvP" resolve="statusBar" />
               </node>
             </node>
-            <node concept="liA8E" id="6TxWhg_BUue" role="2OqNvi">
-              <ref role="37wK5l" to="jkny:~StatusBar.removeWidget(java.lang.String)" resolve="removeWidget" />
-              <node concept="2OqwBi" id="6TxWhg_C02c" role="37wK5m">
-                <node concept="2OqwBi" id="6TxWhg_BWMZ" role="2Oq$k0">
-                  <node concept="2WthIp" id="6TxWhg_BWN2" role="2Oq$k0" />
-                  <node concept="2BZ7hE" id="6TxWhg_BWN4" role="2OqNvi">
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6GMlsrjFxGT" role="3cqZAp">
+          <node concept="3clFbS" id="6GMlsrjFxGV" role="3clFbx">
+            <node concept="3clFbF" id="6TxWhg_C2HU" role="3cqZAp">
+              <node concept="2YIFZM" id="6TxWhg_C2U8" role="3clFbG">
+                <ref role="37wK5l" to="zn9m:~Disposer.dispose(com.intellij.openapi.Disposable)" resolve="dispose" />
+                <ref role="1Pybhc" to="zn9m:~Disposer" resolve="Disposer" />
+                <node concept="2OqwBi" id="6TxWhg_C2Wj" role="37wK5m">
+                  <node concept="2WthIp" id="6TxWhg_C2Wm" role="2Oq$k0" />
+                  <node concept="2BZ7hE" id="6TxWhg_C2Wo" role="2OqNvi">
                     <ref role="2WH_rO" node="6TxWhg_BX7s" resolve="widget" />
                   </node>
                 </node>
-                <node concept="liA8E" id="6TxWhg_C0GF" role="2OqNvi">
-                  <ref role="37wK5l" node="6TxWhg_AqGf" resolve="ID" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="6TxWhg_C1bd" role="3cqZAp">
+              <node concept="37vLTI" id="6TxWhg_C1KF" role="3clFbG">
+                <node concept="10Nm6u" id="6TxWhg_C1Mv" role="37vLTx" />
+                <node concept="2OqwBi" id="6TxWhg_C1rK" role="37vLTJ">
+                  <node concept="2WthIp" id="6TxWhg_C1bb" role="2Oq$k0" />
+                  <node concept="2BZ7hE" id="6TxWhg_C1AZ" role="2OqNvi">
+                    <ref role="2WH_rO" node="6TxWhg_BX7s" resolve="widget" />
+                  </node>
                 </node>
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3clFbF" id="6TxWhg_C2HU" role="3cqZAp">
-          <node concept="2YIFZM" id="6TxWhg_C2U8" role="3clFbG">
-            <ref role="37wK5l" to="zn9m:~Disposer.dispose(com.intellij.openapi.Disposable)" resolve="dispose" />
-            <ref role="1Pybhc" to="zn9m:~Disposer" resolve="Disposer" />
-            <node concept="2OqwBi" id="6TxWhg_C2Wj" role="37wK5m">
-              <node concept="2WthIp" id="6TxWhg_C2Wm" role="2Oq$k0" />
-              <node concept="2BZ7hE" id="6TxWhg_C2Wo" role="2OqNvi">
-                <ref role="2WH_rO" node="6TxWhg_BX7s" resolve="widget" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6TxWhg_C1bd" role="3cqZAp">
-          <node concept="37vLTI" id="6TxWhg_C1KF" role="3clFbG">
-            <node concept="10Nm6u" id="6TxWhg_C1Mv" role="37vLTx" />
-            <node concept="2OqwBi" id="6TxWhg_C1rK" role="37vLTJ">
-              <node concept="2WthIp" id="6TxWhg_C1bb" role="2Oq$k0" />
-              <node concept="2BZ7hE" id="6TxWhg_C1AZ" role="2OqNvi">
+          <node concept="3y3z36" id="6GMlsrjFz2G" role="3clFbw">
+            <node concept="10Nm6u" id="6GMlsrjFzjp" role="3uHU7w" />
+            <node concept="2OqwBi" id="6GMlsrjFy13" role="3uHU7B">
+              <node concept="2WthIp" id="6GMlsrjFxMq" role="2Oq$k0" />
+              <node concept="2BZ7hE" id="6GMlsrjFyc5" role="2OqNvi">
                 <ref role="2WH_rO" node="6TxWhg_BX7s" resolve="widget" />
               </node>
             </node>
@@ -4692,7 +4729,6 @@
     </node>
     <node concept="312cEg" id="6TxWhgA5PHx" role="jymVt">
       <property role="TrG5h" value="statusBar" />
-      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="6TxWhgA5PHy" role="1B3o_S" />
       <node concept="3uibUv" id="6TxWhgA5PH$" role="1tU5fm">
         <ref role="3uigEE" to="jkny:~StatusBar" resolve="StatusBar" />
@@ -4798,16 +4834,26 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6TxWhgA5ZEV" role="3cqZAp">
-          <node concept="2OqwBi" id="6TxWhgA61O1" role="3clFbG">
-            <node concept="37vLTw" id="6TxWhgA5ZET" role="2Oq$k0">
-              <ref role="3cqZAo" node="6TxWhgA5PHx" resolve="statusBar" />
-            </node>
-            <node concept="liA8E" id="6TxWhgA63kV" role="2OqNvi">
-              <ref role="37wK5l" to="jkny:~StatusBar.updateWidget(java.lang.String)" resolve="updateWidget" />
-              <node concept="1rXfSq" id="6TxWhgA68r3" role="37wK5m">
-                <ref role="37wK5l" node="6TxWhg_AqGf" resolve="ID" />
+        <node concept="3clFbJ" id="6GMlsrjEXyT" role="3cqZAp">
+          <node concept="3clFbS" id="6GMlsrjEXyV" role="3clFbx">
+            <node concept="3clFbF" id="6TxWhgA5ZEV" role="3cqZAp">
+              <node concept="2OqwBi" id="6TxWhgA61O1" role="3clFbG">
+                <node concept="37vLTw" id="6TxWhgA5ZET" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6TxWhgA5PHx" resolve="statusBar" />
+                </node>
+                <node concept="liA8E" id="6TxWhgA63kV" role="2OqNvi">
+                  <ref role="37wK5l" to="jkny:~StatusBar.updateWidget(java.lang.String)" resolve="updateWidget" />
+                  <node concept="1rXfSq" id="6TxWhgA68r3" role="37wK5m">
+                    <ref role="37wK5l" node="6TxWhg_AqGf" resolve="ID" />
+                  </node>
+                </node>
               </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="6GMlsrjF3X9" role="3clFbw">
+            <node concept="10Nm6u" id="6GMlsrjF5Ag" role="3uHU7w" />
+            <node concept="37vLTw" id="6GMlsrjF2tF" role="3uHU7B">
+              <ref role="3cqZAo" node="6TxWhgA5PHx" resolve="statusBar" />
             </node>
           </node>
         </node>
@@ -4921,6 +4967,28 @@
                     <ref role="2Oxat5" node="6TxWhgA5cBN" resolve="focusManager" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6GMlsrjECrh" role="3cqZAp">
+          <node concept="37vLTI" id="6GMlsrjEOH2" role="3clFbG">
+            <node concept="10Nm6u" id="6GMlsrjER8F" role="37vLTx" />
+            <node concept="2OqwBi" id="6GMlsrjEIlj" role="37vLTJ">
+              <node concept="Xjq3P" id="6GMlsrjECrf" role="2Oq$k0" />
+              <node concept="2OwXpG" id="6GMlsrjEMqD" role="2OqNvi">
+                <ref role="2Oxat5" node="6TxWhg_Bq25" resolve="panel" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6GMlsrjFdz7" role="3cqZAp">
+          <node concept="37vLTI" id="6GMlsrjFnjb" role="3clFbG">
+            <node concept="10Nm6u" id="6GMlsrjFpJw" role="37vLTx" />
+            <node concept="2OqwBi" id="6GMlsrjFivx" role="37vLTJ">
+              <node concept="Xjq3P" id="6GMlsrjFdz5" role="2Oq$k0" />
+              <node concept="2OwXpG" id="6GMlsrjFk5U" role="2OqNvi">
+                <ref role="2Oxat5" node="6TxWhgA5PHx" resolve="statusBar" />
               </node>
             </node>
           </node>
