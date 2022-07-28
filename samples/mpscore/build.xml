@@ -7,7 +7,7 @@
   <property name="build.layout" location="${build.dir}/artifacts/mpscore" />
   <property name="ci.build.num" value="9999" />
   <property name="ci.build.tag" value="SNAPSHOT" />
-  <property name="ci.mps.release" value="213" />
+  <property name="ci.mps.release" value="222" />
   <property name="test.jvmargs" value="-Xss2048k -Xmx2048m" />
   <property name="coderules_art" location="${basedir}/../../build/artifacts/coderules" />
   <property name="mps.macro.mpscore_home" location="${basedir}" />
@@ -3490,7 +3490,7 @@
         <id>jetbrains.mps.core.types</id>
         <name>MPS Coderules Core Types</name>
         <description>Types for core MPS languages with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.2-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.3-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
@@ -3512,7 +3512,7 @@
         <id>jetbrains.mps.core.types</id>
         <name>MPS Coderules Core Types</name>
         <description>Types for core MPS languages with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.2-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.3-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
