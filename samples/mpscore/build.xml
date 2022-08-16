@@ -3490,14 +3490,14 @@
         <id>jetbrains.mps.core.types</id>
         <name>MPS Coderules Core Types</name>
         <description>Types for core MPS languages with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.3-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.4-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
         <depends>jetbrains.mps.build</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="222.1" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="222.3345" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Built with Java 17</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
@@ -3512,14 +3512,14 @@
         <id>jetbrains.mps.core.types</id>
         <name>MPS Coderules Core Types</name>
         <description>Types for core MPS languages with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.3-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.4-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
         <depends>jetbrains.mps.build</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="222.1" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="222.3345" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Built with Java 17</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
@@ -10412,6 +10412,39 @@
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
       <jvmarg value="-Didea.config.path=${build.mps.config.path}" />
       <jvmarg value="-Didea.system.path=${build.mps.system.path}" />
+      <jvmarg value="--add-opens=java.base/java.io=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/java.net=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/java.nio=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/java.nio.charset=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/java.text=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/java.time=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/java.util=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/jdk.internal.vm=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/sun.security.ssl=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.base/sun.security.util=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/java.awt=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/java.awt.dnd.peer=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/java.awt.event=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/java.awt.image=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/java.awt.peer=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/javax.swing=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/javax.swing.text.html=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/sun.awt.datatransfer=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/sun.awt.image=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/sun.awt=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/sun.font=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/sun.java2d=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/sun.swing=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=jdk.attach/sun.tools.attach=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=jdk.jdi/com.sun.tools.jdi=ALL-UNNAMED" />
       
       <classpath>
         <fileset dir="${build.tmp}">
