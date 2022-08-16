@@ -56325,7 +56325,15 @@
       <node concept="3i_YlU" id="4APe_wKcceL" role="3i_WSZ">
         <node concept="2pJPEk" id="4APe_wKcceM" role="3i_UKR">
           <node concept="2pJPED" id="4APe_wKcceN" role="2pJPEn">
-            <ref role="2pJxaS" to="tpee:h3qTviz" resolve="WildCardType" />
+            <ref role="2pJxaS" to="tpee:2a3y$OijuPV" resolve="IntersectionType" />
+            <node concept="2pIpSj" id="wiNY5_iW_X" role="2pJxcM">
+              <ref role="2pIpSl" to="tpee:2a3y$Oijxpa" resolve="bounds" />
+              <node concept="36biLy" id="wiNY5_iWAY" role="28nt2d">
+                <node concept="1NbZt7" id="wiNY5_iYs$" role="36biLW">
+                  <ref role="1NbY7m" node="6N2bvv_fHBX" resolve="parameter" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
