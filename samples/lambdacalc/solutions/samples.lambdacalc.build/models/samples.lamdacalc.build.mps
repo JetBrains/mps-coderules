@@ -184,11 +184,6 @@
             <ref role="3bR37D" to="ffeo:7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
           </node>
         </node>
-        <node concept="1SiIV0" id="7E7FS_VaVAQ" role="3bR37C">
-          <node concept="3bR9La" id="7E7FS_VaVAR" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
-          </node>
-        </node>
         <node concept="3rtmxn" id="7L5omges50_" role="3bR31x">
           <node concept="3LXTmp" id="7L5omges50A" role="3rtmxm">
             <node concept="3qWCbU" id="7L5omges50B" role="3LXTna">
@@ -231,6 +226,11 @@
             <ref role="3bR37D" to="zqd8:5wYq9r5EBDN" resolve="jetbrains.mps.coderules.runtime" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2CPBoDB7ht9" role="3bR37C">
+          <node concept="3bR9La" id="2CPBoDB7hta" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:2CPBoDB0Mtg" resolve="jetbrains.mps.coderules.typechecking" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="7E7FS_VaVB_" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -246,11 +246,6 @@
                 <property role="2Ry0Am" value="samples.lambdacalc.demo.msd" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="6EwjVjWv06c" role="3bR37C">
-          <node concept="3bR9La" id="6EwjVjWv06d" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>
         <node concept="1SiIV0" id="6EwjVjWvFnZ" role="3bR37C">
@@ -303,6 +298,11 @@
         <node concept="1SiIV0" id="4XsNDZX9sdp" role="3bR37C">
           <node concept="3bR9La" id="4XsNDZX9sdq" role="1SiIV1">
             <ref role="3bR37D" to="zqd8:4XsNDZX1tUA" resolve="jetbrains.mps.coderules.testhelper" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2CPBoDB7htj" role="3bR37C">
+          <node concept="3bR9La" id="2CPBoDB7htk" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:2CPBoDB0Mtg" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>
       </node>

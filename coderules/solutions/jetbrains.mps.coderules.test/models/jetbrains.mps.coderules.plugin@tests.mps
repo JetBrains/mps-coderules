@@ -10,6 +10,7 @@
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
+    <import index="m7o5" ref="r:835f8ea3-a800-4588-a80b-1de6d47c2098(jetbrains.mps.coderules.ideaplugin)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -128,11 +129,11 @@
       <property role="TrG5h" value="config" />
       <node concept="3Tm6S6" id="6hpwxwiHN83" role="1B3o_S" />
       <node concept="3uibUv" id="6hpwxwiHNaT" role="1tU5fm">
-        <ref role="3uigEE" to="31yc:7iCybvToiT5" resolve="Config" />
+        <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
       </node>
-      <node concept="2YIFZM" id="6hpwxwiK0dQ" role="33vP2m">
-        <ref role="37wK5l" to="31yc:6hpwxwiHYr2" resolve="create" />
-        <ref role="1Pybhc" to="31yc:7iCybvToiT5" resolve="Config" />
+      <node concept="2YIFZM" id="2CPBoDBWNuY" role="33vP2m">
+        <ref role="37wK5l" to="m7o5:6hpwxwiHYr2" resolve="create" />
+        <ref role="1Pybhc" to="m7o5:7iCybvToiT5" resolve="Config" />
       </node>
     </node>
     <node concept="3Tm1VV" id="7iCybvTtZhS" role="1B3o_S" />
@@ -148,10 +149,10 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTuNei" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvTszk9" resolve="registerProvider" />
+                <ref role="37wK5l" to="m7o5:7iCybvTszk9" resolve="registerProvider" />
                 <node concept="Rm8GO" id="7iCybvTuNiA" role="37wK5m">
-                  <ref role="Rm8GQ" to="31yc:7iCybvToDv4" resolve="DEFAULT" />
-                  <ref role="1Px2BO" to="31yc:7iCybvToD3Z" resolve="Config.Level" />
+                  <ref role="Rm8GQ" to="m7o5:7iCybvToDv4" resolve="DEFAULT" />
+                  <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Config.Level" />
                 </node>
                 <node concept="Xl_RD" id="7iCybvTuNA8" role="37wK5m">
                   <property role="Xl_RC" value="a.b." />
@@ -197,7 +198,7 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTwvqY" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvToiWV" resolve="getOption" />
+                <ref role="37wK5l" to="m7o5:7iCybvToiWV" resolve="getOption" />
                 <node concept="Xl_RD" id="7iCybvTwvqZ" role="37wK5m">
                   <property role="Xl_RC" value="a.b.c" />
                 </node>
@@ -210,7 +211,7 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTu0uZ" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvToiWV" resolve="getOption" />
+                <ref role="37wK5l" to="m7o5:7iCybvToiWV" resolve="getOption" />
                 <node concept="Xl_RD" id="7iCybvTuQrv" role="37wK5m">
                   <property role="Xl_RC" value="a.b.d" />
                 </node>
@@ -223,7 +224,7 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTwyqH" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvToiWV" resolve="getOption" />
+                <ref role="37wK5l" to="m7o5:7iCybvToiWV" resolve="getOption" />
                 <node concept="Xl_RD" id="7iCybvTwyqI" role="37wK5m">
                   <property role="Xl_RC" value="a.e" />
                 </node>
@@ -243,10 +244,10 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTw$7L" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvTszk9" resolve="registerProvider" />
+                <ref role="37wK5l" to="m7o5:7iCybvTszk9" resolve="registerProvider" />
                 <node concept="Rm8GO" id="7iCybvTw$7M" role="37wK5m">
-                  <ref role="Rm8GQ" to="31yc:7iCybvToDv4" resolve="DEFAULT" />
-                  <ref role="1Px2BO" to="31yc:7iCybvToD3Z" resolve="Config.Level" />
+                  <ref role="Rm8GQ" to="m7o5:7iCybvToDv4" resolve="DEFAULT" />
+                  <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Config.Level" />
                 </node>
                 <node concept="Xl_RD" id="7iCybvTw$7N" role="37wK5m">
                   <property role="Xl_RC" value="a.b." />
@@ -289,7 +290,7 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTwCSD" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvToiWV" resolve="getOption" />
+                <ref role="37wK5l" to="m7o5:7iCybvToiWV" resolve="getOption" />
                 <node concept="Xl_RD" id="7iCybvTwCSE" role="37wK5m">
                   <property role="Xl_RC" value="a.b.d.e" />
                 </node>
@@ -303,10 +304,10 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTw$yT" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvTszk9" resolve="registerProvider" />
+                <ref role="37wK5l" to="m7o5:7iCybvTszk9" resolve="registerProvider" />
                 <node concept="Rm8GO" id="7iCybvTw$Ko" role="37wK5m">
-                  <ref role="Rm8GQ" to="31yc:7iCybvToFr9" resolve="SYSTEM" />
-                  <ref role="1Px2BO" to="31yc:7iCybvToD3Z" resolve="Config.Level" />
+                  <ref role="Rm8GQ" to="m7o5:7iCybvToFr9" resolve="SYSTEM" />
+                  <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Config.Level" />
                 </node>
                 <node concept="Xl_RD" id="7iCybvTw$yV" role="37wK5m">
                   <property role="Xl_RC" value="a.b.d." />
@@ -352,7 +353,7 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTw$86" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvToiWV" resolve="getOption" />
+                <ref role="37wK5l" to="m7o5:7iCybvToiWV" resolve="getOption" />
                 <node concept="Xl_RD" id="7iCybvTw$87" role="37wK5m">
                   <property role="Xl_RC" value="a.b.c" />
                 </node>
@@ -365,7 +366,7 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTw$8b" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvToiWV" resolve="getOption" />
+                <ref role="37wK5l" to="m7o5:7iCybvToiWV" resolve="getOption" />
                 <node concept="Xl_RD" id="7iCybvTw$8c" role="37wK5m">
                   <property role="Xl_RC" value="a.b.d" />
                 </node>
@@ -381,7 +382,7 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTw_jy" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvToiWV" resolve="getOption" />
+                <ref role="37wK5l" to="m7o5:7iCybvToiWV" resolve="getOption" />
                 <node concept="Xl_RD" id="7iCybvTw_jz" role="37wK5m">
                   <property role="Xl_RC" value="a.b.d.e" />
                 </node>
@@ -401,10 +402,10 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTwFnt" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvTszk9" resolve="registerProvider" />
+                <ref role="37wK5l" to="m7o5:7iCybvTszk9" resolve="registerProvider" />
                 <node concept="Rm8GO" id="7iCybvTwFnu" role="37wK5m">
-                  <ref role="1Px2BO" to="31yc:7iCybvToD3Z" resolve="Config.Level" />
-                  <ref role="Rm8GQ" to="31yc:7iCybvToDv4" resolve="DEFAULT" />
+                  <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Config.Level" />
+                  <ref role="Rm8GQ" to="m7o5:7iCybvToDv4" resolve="DEFAULT" />
                 </node>
                 <node concept="Xl_RD" id="7iCybvTwFnv" role="37wK5m">
                   <property role="Xl_RC" value="a.b." />
@@ -450,7 +451,7 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTwFnM" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvToiWV" resolve="getOption" />
+                <ref role="37wK5l" to="m7o5:7iCybvToiWV" resolve="getOption" />
                 <node concept="Xl_RD" id="7iCybvTwFnN" role="37wK5m">
                   <property role="Xl_RC" value="a.b.c" />
                 </node>
@@ -464,10 +465,10 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTwFyy" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvTszk9" resolve="registerProvider" />
+                <ref role="37wK5l" to="m7o5:7iCybvTszk9" resolve="registerProvider" />
                 <node concept="Rm8GO" id="7iCybvTwFFT" role="37wK5m">
-                  <ref role="Rm8GQ" to="31yc:7iCybvToHsq" resolve="USER" />
-                  <ref role="1Px2BO" to="31yc:7iCybvToD3Z" resolve="Config.Level" />
+                  <ref role="Rm8GQ" to="m7o5:7iCybvToHsq" resolve="USER" />
+                  <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Config.Level" />
                 </node>
                 <node concept="Xl_RD" id="7iCybvTwFy$" role="37wK5m">
                   <property role="Xl_RC" value="a.b." />
@@ -513,7 +514,7 @@
                 <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
               </node>
               <node concept="liA8E" id="7iCybvTwFys" role="2OqNvi">
-                <ref role="37wK5l" to="31yc:7iCybvToiWV" resolve="getOption" />
+                <ref role="37wK5l" to="m7o5:7iCybvToiWV" resolve="getOption" />
                 <node concept="Xl_RD" id="7iCybvTwFyt" role="37wK5m">
                   <property role="Xl_RC" value="a.b.c" />
                 </node>
@@ -532,10 +533,10 @@
               <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
             </node>
             <node concept="liA8E" id="xqbf82kUJC" role="2OqNvi">
-              <ref role="37wK5l" to="31yc:xqbf82kuzw" resolve="reset" />
+              <ref role="37wK5l" to="m7o5:xqbf82kuzw" resolve="reset" />
               <node concept="Rm8GO" id="2vm2iDVlIfV" role="37wK5m">
-                <ref role="Rm8GQ" to="31yc:7iCybvToDv4" resolve="DEFAULT" />
-                <ref role="1Px2BO" to="31yc:7iCybvToD3Z" resolve="Config.Level" />
+                <ref role="Rm8GQ" to="m7o5:7iCybvToDv4" resolve="DEFAULT" />
+                <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Config.Level" />
               </node>
             </node>
           </node>
@@ -550,10 +551,10 @@
               <ref role="3cqZAo" node="6hpwxwiHN82" resolve="config" />
             </node>
             <node concept="liA8E" id="xqbf82kUXu" role="2OqNvi">
-              <ref role="37wK5l" to="31yc:xqbf82kuzw" resolve="reset" />
+              <ref role="37wK5l" to="m7o5:xqbf82kuzw" resolve="reset" />
               <node concept="Rm8GO" id="xqbf82kUXv" role="37wK5m">
-                <ref role="Rm8GQ" to="31yc:7iCybvToDv4" resolve="DEFAULT" />
-                <ref role="1Px2BO" to="31yc:7iCybvToD3Z" resolve="Config.Level" />
+                <ref role="Rm8GQ" to="m7o5:7iCybvToDv4" resolve="DEFAULT" />
+                <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Config.Level" />
               </node>
             </node>
           </node>

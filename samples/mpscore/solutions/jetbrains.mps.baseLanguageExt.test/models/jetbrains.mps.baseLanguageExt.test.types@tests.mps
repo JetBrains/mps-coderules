@@ -36,6 +36,7 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
     <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.coderules.typechecking.plugin)" />
+    <import index="m7o5" ref="r:835f8ea3-a800-4588-a80b-1de6d47c2098(jetbrains.mps.coderules.ideaplugin)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -465,9 +466,9 @@
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="7e$2hwaBtXS" role="37wK5m">
+                    <node concept="2YIFZM" id="adIlSu82Xo" role="37wK5m">
                       <ref role="37wK5l" to="qox2:7e$2hwaAjW0" resolve="getProjectConfig" />
-                      <ref role="1Pybhc" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <ref role="1Pybhc" to="qox2:2CPBoDBWRHZ" resolve="TypecheckingUiOptions" />
                       <node concept="1jxXqW" id="7e$2hwaBuHD" role="37wK5m" />
                     </node>
                   </node>

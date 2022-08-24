@@ -44,6 +44,7 @@
     <import index="ksgm" ref="r:6285678b-007f-4527-bcf5-6fd38ba8c969(jetbrains.mps.lang.coderules.program)" />
     <import index="psoy" ref="r:78313117-90ee-47a5-a91e-b5213df7f611(jetbrains.mps.coderules.runtime.result)" />
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
+    <import index="m7o5" ref="r:835f8ea3-a800-4588-a80b-1de6d47c2098(jetbrains.mps.coderules.ideaplugin)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -3851,9 +3852,9 @@
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="7e$2hwaBwcB" role="37wK5m">
+                    <node concept="2YIFZM" id="adIlSu82Xp" role="37wK5m">
                       <ref role="37wK5l" to="qox2:7e$2hwaAjW0" resolve="getProjectConfig" />
-                      <ref role="1Pybhc" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <ref role="1Pybhc" to="qox2:2CPBoDBWRHZ" resolve="TypecheckingUiOptions" />
                       <node concept="1jxXqW" id="7e$2hwaBwrz" role="37wK5m" />
                     </node>
                   </node>
@@ -4083,9 +4084,9 @@
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="7e$2hwaBwCq" role="37wK5m">
+                    <node concept="2YIFZM" id="adIlSu82Xq" role="37wK5m">
                       <ref role="37wK5l" to="qox2:7e$2hwaAjW0" resolve="getProjectConfig" />
-                      <ref role="1Pybhc" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <ref role="1Pybhc" to="qox2:2CPBoDBWRHZ" resolve="TypecheckingUiOptions" />
                       <node concept="1jxXqW" id="7e$2hwaBwCr" role="37wK5m" />
                     </node>
                   </node>
@@ -4327,9 +4328,9 @@
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="7e$2hwaBwRA" role="37wK5m">
+                    <node concept="2YIFZM" id="adIlSu82Xr" role="37wK5m">
                       <ref role="37wK5l" to="qox2:7e$2hwaAjW0" resolve="getProjectConfig" />
-                      <ref role="1Pybhc" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <ref role="1Pybhc" to="qox2:2CPBoDBWRHZ" resolve="TypecheckingUiOptions" />
                       <node concept="1jxXqW" id="7e$2hwaBwRB" role="37wK5m" />
                     </node>
                     <node concept="37vLTw" id="9UUIHNe9hG" role="37wK5m">
@@ -4659,11 +4660,11 @@
           <node concept="3cpWsn" id="7e$2hwayN77" role="3cpWs9">
             <property role="TrG5h" value="config" />
             <node concept="3uibUv" id="7e$2hwaxbQr" role="1tU5fm">
-              <ref role="3uigEE" to="31yc:7iCybvToiT5" resolve="Config" />
+              <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
             </node>
-            <node concept="2YIFZM" id="7e$2hwaAXZP" role="33vP2m">
-              <ref role="37wK5l" to="31yc:6hpwxwiHYr2" resolve="create" />
-              <ref role="1Pybhc" to="31yc:7iCybvToiT5" resolve="Config" />
+            <node concept="2YIFZM" id="2CPBoDBWNuX" role="33vP2m">
+              <ref role="37wK5l" to="m7o5:6hpwxwiHYr2" resolve="create" />
+              <ref role="1Pybhc" to="m7o5:7iCybvToiT5" resolve="Config" />
             </node>
           </node>
         </node>
@@ -4673,14 +4674,14 @@
               <ref role="3cqZAo" node="7e$2hwayN77" resolve="config" />
             </node>
             <node concept="liA8E" id="7e$2hwayR6r" role="2OqNvi">
-              <ref role="37wK5l" to="31yc:7iCybvTszk9" resolve="registerProvider" />
+              <ref role="37wK5l" to="m7o5:7iCybvTszk9" resolve="registerProvider" />
               <node concept="Rm8GO" id="7e$2hwayR6s" role="37wK5m">
-                <ref role="1Px2BO" to="31yc:7iCybvToD3Z" resolve="Level" />
-                <ref role="Rm8GQ" to="31yc:5Ul706LbJYK" resolve="TEST" />
+                <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Level" />
+                <ref role="Rm8GQ" to="m7o5:5Ul706LbJYK" resolve="TEST" />
               </node>
-              <node concept="10M0yZ" id="7e$2hwayR6t" role="37wK5m">
-                <ref role="3cqZAo" to="qox2:7iCybvTzJGv" resolve="PREFIX" />
-                <ref role="1PxDUh" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+              <node concept="10M0yZ" id="2CPBoDAVq9X" role="37wK5m">
+                <ref role="3cqZAo" to="m7o5:7iCybvTzJGv" resolve="PREFIX" />
+                <ref role="1PxDUh" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
               </node>
               <node concept="1bVj0M" id="7e$2hwayR6u" role="37wK5m">
                 <node concept="3clFbS" id="7e$2hwayR6v" role="1bW5cS">
@@ -4693,9 +4694,9 @@
                       </node>
                     </node>
                     <node concept="2OqwBi" id="7e$2hwayR6$" role="3clFbw">
-                      <node concept="10M0yZ" id="7e$2hwayR6_" role="2Oq$k0">
-                        <ref role="3cqZAo" to="qox2:7iCybvTyUUs" resolve="OPTION_TYPECHECKING_ENABLED" />
-                        <ref role="1PxDUh" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <node concept="10M0yZ" id="2CPBoDAVq9Z" role="2Oq$k0">
+                        <ref role="3cqZAo" to="m7o5:7iCybvTyUUs" resolve="OPTION_TYPECHECKING_ENABLED" />
+                        <ref role="1PxDUh" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
                       </node>
                       <node concept="liA8E" id="7e$2hwayR6A" role="2OqNvi">
                         <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
@@ -4714,9 +4715,9 @@
                       </node>
                     </node>
                     <node concept="2OqwBi" id="7e$2hwayR6G" role="3clFbw">
-                      <node concept="10M0yZ" id="7e$2hwayR6H" role="2Oq$k0">
-                        <ref role="3cqZAo" to="qox2:5Qx6_65jytE" resolve="OPTION_TYPECHECKING_WATCHING" />
-                        <ref role="1PxDUh" to="qox2:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <node concept="10M0yZ" id="2CPBoDAVqa2" role="2Oq$k0">
+                        <ref role="3cqZAo" to="m7o5:5Qx6_65jytE" resolve="OPTION_TYPECHECKING_WATCHING" />
+                        <ref role="1PxDUh" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
                       </node>
                       <node concept="liA8E" id="7e$2hwayR6I" role="2OqNvi">
                         <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />

@@ -41,6 +41,7 @@
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.predicate)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
+    <import index="m7o5" ref="r:835f8ea3-a800-4588-a80b-1de6d47c2098(jetbrains.mps.coderules.ideaplugin)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1207,7 +1208,7 @@
       <node concept="3uibUv" id="2j1FRbwXqde" role="1tU5fm">
         <ref role="3uigEE" node="2daneBOX7Tv" resolve="Effect.ValueKey" />
         <node concept="3uibUv" id="4Wn$Hm2h_mT" role="11_B2D">
-          <ref role="3uigEE" to="31yc:7iCybvToiT5" resolve="Config" />
+          <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
         </node>
       </node>
       <node concept="2YIFZM" id="2j1FRbwXrqI" role="33vP2m">
@@ -1217,7 +1218,7 @@
           <property role="Xl_RC" value="config" />
         </node>
         <node concept="3uibUv" id="4Wn$Hm2h_Sg" role="3PaCim">
-          <ref role="3uigEE" to="31yc:7iCybvToiT5" resolve="Config" />
+          <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
         </node>
       </node>
     </node>
@@ -4235,7 +4236,7 @@
       <node concept="37vLTG" id="MFuM6R00U7" role="3clF46">
         <property role="TrG5h" value="config" />
         <node concept="3uibUv" id="4Wn$Hm2hUiS" role="1tU5fm">
-          <ref role="3uigEE" to="31yc:7iCybvToiT5" resolve="Config" />
+          <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
         </node>
       </node>
       <node concept="3uibUv" id="MFuM6R00U9" role="3clF45">
@@ -5252,7 +5253,7 @@
       <property role="TrG5h" value="config" />
       <node concept="3Tm6S6" id="MFuM6R0ncH" role="1B3o_S" />
       <node concept="3uibUv" id="4Wn$Hm2hROv" role="1tU5fm">
-        <ref role="3uigEE" to="31yc:7iCybvToiT5" resolve="Config" />
+        <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
       </node>
     </node>
     <node concept="3Tm1VV" id="1pPth$l_TFW" role="1B3o_S" />
