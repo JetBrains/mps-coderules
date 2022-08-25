@@ -3301,7 +3301,7 @@
         </node>
         <node concept="NbPM2" id="3mytCjZmOcC" role="1psgkv">
           <node concept="3Mxwew" id="3mytCjZo1OL" role="3MwsjC">
-            <property role="3MwjfP" value="-Xss2048k -Xmx2048m" />
+            <property role="3MwjfP" value="-Xss2048k -Xmx2048m --add-opens=java.desktop/com.apple.laf=ALL-UNNAMED --add-opens=java.desktop/com.apple.eawt=ALL-UNNAMED --add-opens=java.desktop/com.apple.eawt.event=ALL-UNNAMED" />
           </node>
         </node>
       </node>
