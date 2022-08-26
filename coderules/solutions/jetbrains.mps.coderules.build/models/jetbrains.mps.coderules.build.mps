@@ -481,6 +481,7 @@
       <property role="TrG5h" value="jetbrains.mps.coderules.ideaplugin" />
       <property role="3LESm3" value="66887915-4d9e-4e24-bd35-19eb55fb75c2" />
       <property role="aoJFB" value="eYcmk9QOli/sources" />
+      <property role="2GAjPV" value="true" />
       <node concept="55IIr" id="2CPBoDB0MbH" role="3LF7KH">
         <node concept="2Ry0Ak" id="2CPBoDB0Mm9" role="iGT6I">
           <property role="2Ry0Am" value="coderules" />
