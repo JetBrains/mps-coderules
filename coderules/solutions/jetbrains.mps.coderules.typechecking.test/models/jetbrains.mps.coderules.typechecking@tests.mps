@@ -3852,10 +3852,9 @@
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="adIlSu82Xp" role="37wK5m">
-                      <ref role="37wK5l" to="qox2:7e$2hwaAjW0" resolve="getProjectConfig" />
-                      <ref role="1Pybhc" to="qox2:2CPBoDBWRHZ" resolve="TypecheckingUiOptions" />
-                      <node concept="1jxXqW" id="7e$2hwaBwrz" role="37wK5m" />
+                    <node concept="2YIFZM" id="2MNGcFT5IT5" role="37wK5m">
+                      <ref role="1Pybhc" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <ref role="37wK5l" to="m7o5:2MNGcFT4ZOn" resolve="getUiConfig" />
                     </node>
                   </node>
                 </node>
@@ -4084,10 +4083,9 @@
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="adIlSu82Xq" role="37wK5m">
-                      <ref role="37wK5l" to="qox2:7e$2hwaAjW0" resolve="getProjectConfig" />
-                      <ref role="1Pybhc" to="qox2:2CPBoDBWRHZ" resolve="TypecheckingUiOptions" />
-                      <node concept="1jxXqW" id="7e$2hwaBwCr" role="37wK5m" />
+                    <node concept="2YIFZM" id="2MNGcFT5Q9x" role="37wK5m">
+                      <ref role="1Pybhc" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <ref role="37wK5l" to="m7o5:2MNGcFT4ZOn" resolve="getUiConfig" />
                     </node>
                   </node>
                 </node>
@@ -4328,10 +4326,9 @@
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="adIlSu82Xr" role="37wK5m">
-                      <ref role="37wK5l" to="qox2:7e$2hwaAjW0" resolve="getProjectConfig" />
-                      <ref role="1Pybhc" to="qox2:2CPBoDBWRHZ" resolve="TypecheckingUiOptions" />
-                      <node concept="1jxXqW" id="7e$2hwaBwRB" role="37wK5m" />
+                    <node concept="2YIFZM" id="2MNGcFT5QlU" role="37wK5m">
+                      <ref role="1Pybhc" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <ref role="37wK5l" to="m7o5:2MNGcFT4ZOn" resolve="getUiConfig" />
                     </node>
                     <node concept="37vLTw" id="9UUIHNe9hG" role="37wK5m">
                       <ref role="3cqZAo" node="9UUIHNe9hD" resolve="collector" />

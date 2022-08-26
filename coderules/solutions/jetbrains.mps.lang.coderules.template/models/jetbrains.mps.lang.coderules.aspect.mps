@@ -192,6 +192,11 @@
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
         <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
       </concept>
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
+      </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="8356039341262087992" name="line" index="1aUNEU" />
@@ -721,38 +726,53 @@
       </node>
       <node concept="2tJIrI" id="IFW4V2uO1v" role="jymVt" />
       <node concept="3clFbW" id="IFW4V2xp8z" role="jymVt">
-        <node concept="37vLTG" id="IFW4V2xx4M" role="3clF46">
-          <property role="TrG5h" value="repository" />
-          <node concept="3uibUv" id="IFW4V2xx_R" role="1tU5fm">
-            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-          </node>
-        </node>
         <node concept="3cqZAl" id="IFW4V2xp8_" role="3clF45" />
         <node concept="3Tm6S6" id="IFW4V2xpYm" role="1B3o_S" />
         <node concept="3clFbS" id="IFW4V2xp8B" role="3clF47">
           <node concept="3clFbF" id="IFW4V2xUSu" role="3cqZAp">
             <node concept="37vLTI" id="IFW4V2xW3l" role="3clFbG">
-              <node concept="37vLTw" id="IFW4V2xWuq" role="37vLTx">
-                <ref role="3cqZAo" node="IFW4V2xx4M" resolve="repository" />
-              </node>
               <node concept="2OqwBi" id="IFW4V2xV4l" role="37vLTJ">
                 <node concept="Xjq3P" id="IFW4V2xUSs" role="2Oq$k0" />
                 <node concept="2OwXpG" id="IFW4V2xV_u" role="2OqNvi">
                   <ref role="2Oxat5" node="IFW4V2xTxd" resolve="repository" />
                 </node>
               </node>
+              <node concept="3K4zz7" id="1bwQX1EP1rC" role="37vLTx">
+                <node concept="37vLTw" id="1bwQX1EP2x7" role="3K4E3e">
+                  <ref role="3cqZAo" node="1bwQX1EOWJ7" resolve="repository" />
+                </node>
+                <node concept="3y3z36" id="1bwQX1EOZT2" role="3K4Cdx">
+                  <node concept="10Nm6u" id="1bwQX1EP13k" role="3uHU7w" />
+                  <node concept="37vLTw" id="1bwQX1EOYQS" role="3uHU7B">
+                    <ref role="3cqZAo" node="1bwQX1EOWJ7" resolve="repository" />
+                  </node>
+                </node>
+                <node concept="2YIFZM" id="67v_dotJ$k7" role="3K4GZi">
+                  <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance()" resolve="getInstance" />
+                  <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                </node>
+              </node>
             </node>
           </node>
           <node concept="3clFbF" id="IFW4V2xz__" role="3cqZAp">
             <node concept="2OqwBi" id="IFW4V2x$6o" role="3clFbG">
-              <node concept="37vLTw" id="IFW4V2xz_$" role="2Oq$k0">
-                <ref role="3cqZAo" node="IFW4V2xx4M" resolve="repository" />
+              <node concept="2OqwBi" id="67v_dotJ_J3" role="2Oq$k0">
+                <node concept="Xjq3P" id="67v_dotJ_qP" role="2Oq$k0" />
+                <node concept="2OwXpG" id="67v_dotJAP4" role="2OqNvi">
+                  <ref role="2Oxat5" node="IFW4V2xTxd" resolve="repository" />
+                </node>
               </node>
               <node concept="liA8E" id="IFW4V2x$JO" role="2OqNvi">
                 <ref role="37wK5l" to="lui2:~SRepository.addRepositoryListener(org.jetbrains.mps.openapi.module.SRepositoryListener)" resolve="addRepositoryListener" />
                 <node concept="Xjq3P" id="IFW4V2x_CO" role="37wK5m" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="1bwQX1EOWJ7" role="3clF46">
+          <property role="TrG5h" value="repository" />
+          <node concept="3uibUv" id="1bwQX1EOWJ6" role="1tU5fm">
+            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
           </node>
         </node>
       </node>

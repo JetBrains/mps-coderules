@@ -627,138 +627,135 @@
   </root>
   <root nodeRef="r:835f8ea3-a800-4588-a80b-1de6d47c2098(jetbrains.mps.coderules.ideaplugin)/8406119028234017931">
     <file name="TypecheckingOptions.java">
-      <node id="8406119028234320671" at="9,0,10,0" concept="13" trace="PREFIX" />
-      <node id="8406119028234104476" at="11,0,12,0" concept="13" trace="OPTION_TYPECHECKING_ENABLED" />
-      <node id="6746702654208878442" at="12,0,13,0" concept="13" trace="OPTION_TYPECHECKING_WATCHING" />
-      <node id="1784710035579896189" at="13,0,14,0" concept="13" trace="OPTION_TYPECHECKING_REPORTING" />
-      <node id="8406119028234110493" at="14,0,15,0" concept="13" trace="OPTION_TYPECHECKING_TRACE" />
-      <node id="6003204171433302878" at="18,39,19,69" concept="10" />
-      <node id="6746702654208893308" at="24,39,25,70" concept="10" />
-      <node id="1784710035579971678" at="30,39,31,71" concept="10" />
-      <node id="6003204171433314039" at="36,39,37,67" concept="10" />
-      <node id="2181372126273438040" at="43,76,44,29" concept="10" />
-      <node id="2181372126273401909" at="45,7,46,67" concept="10" />
-      <node id="8332795209404278475" at="50,0,51,0" concept="13" trace="USER_CONFIG" />
-      <node id="8332795209404307471" at="56,30,57,36" concept="3" />
-      <node id="8332795209404322620" at="57,36,58,44" concept="3" />
-      <node id="8332795209404328774" at="59,5,60,23" concept="10" />
-      <node id="8332795209407954877" at="63,69,64,43" concept="9" />
-      <node id="8332795209407954886" at="64,43,65,47" concept="3" />
-      <node id="8332795209407954890" at="65,47,66,18" concept="10" />
-      <node id="1830252428089553468" at="69,63,70,54" concept="3" />
-      <node id="1830252428089557385" at="70,54,71,0" concept="12" />
-      <node id="8815279552157196282" at="72,72,73,0" concept="12" />
-      <node id="8815279552157196285" at="74,52,75,89" concept="10" />
-      <node id="6746702654209256862" at="75,89,76,0" concept="12" />
-      <node id="6746702654208928431" at="77,7,78,0" concept="12" />
-      <node id="6746702654208928421" at="79,53,80,90" concept="10" />
-      <node id="6746702654208928426" at="80,90,81,0" concept="12" />
-      <node id="8815279552157196304" at="82,7,83,0" concept="12" />
-      <node id="1784710035580018973" at="84,54,85,91" concept="10" />
-      <node id="1784710035580018978" at="85,91,86,0" concept="12" />
-      <node id="1784710035580018970" at="87,7,88,0" concept="12" />
-      <node id="8815279552157196307" at="89,50,90,87" concept="10" />
-      <node id="8815279552157196311" at="90,87,91,0" concept="12" />
-      <node id="8815279552157196315" at="92,7,93,0" concept="12" />
-      <node id="8815279552157196316" at="93,0,94,18" concept="10" />
-      <node id="8332795209405909022" at="99,70,100,0" concept="12" />
-      <node id="8332795209408130789" at="101,52,102,0" concept="12" />
-      <node id="8332795209408117174" at="102,0,103,161" concept="10" />
-      <node id="8332795209405909033" at="104,7,105,0" concept="12" />
-      <node id="8332795209408135582" at="106,53,107,163" concept="10" />
-      <node id="8332795209405909040" at="107,163,108,0" concept="12" />
-      <node id="8332795209405909044" at="109,7,110,0" concept="12" />
-      <node id="8332795209408165263" at="111,54,112,165" concept="10" />
-      <node id="8332795209405909051" at="112,165,113,0" concept="12" />
-      <node id="8332795209405909055" at="114,7,115,0" concept="12" />
-      <node id="8332795209408193430" at="116,50,117,157" concept="10" />
-      <node id="8332795209405909062" at="117,157,118,0" concept="12" />
-      <node id="8332795209405909066" at="119,7,120,0" concept="12" />
-      <node id="8332795209405909067" at="120,0,121,18" concept="10" />
-      <node id="8332795209404643304" at="52,0,54,0" concept="2" trace="TypecheckingOptions#()V" />
-      <node id="2181372126273426449" at="42,39,45,7" concept="7" />
-      <node id="8406119028234584334" at="17,0,21,0" concept="8" trace="get#(Ljetbrains/mps/coderules/ideaplugin/Config;)Ljava/lang/Boolean;" />
-      <node id="6746702654208893302" at="23,0,27,0" concept="8" trace="get#(Ljetbrains/mps/coderules/ideaplugin/Config;)Ljava/lang/Boolean;" />
-      <node id="1784710035579971672" at="29,0,33,0" concept="8" trace="get#(Ljetbrains/mps/coderules/ideaplugin/Config;)Ljava/lang/Boolean;" />
-      <node id="8406119028234719986" at="35,0,39,0" concept="8" trace="get#(Ljetbrains/mps/coderules/ideaplugin/Config;)Ljava/lang/Boolean;" />
-      <node id="8332795209404297941" at="55,40,59,5" concept="7" />
-      <node id="8815279552157196283" at="73,0,77,7" concept="7" />
-      <node id="6746702654208928419" at="78,0,82,7" concept="7" />
-      <node id="1784710035580018971" at="83,0,87,7" concept="7" />
-      <node id="8815279552157196305" at="88,0,92,7" concept="7" />
-      <node id="8332795209405909023" at="100,0,104,7" concept="7" />
-      <node id="8332795209405909034" at="105,0,109,7" concept="7" />
-      <node id="8332795209405909045" at="110,0,114,7" concept="7" />
-      <node id="8332795209405909056" at="115,0,119,7" concept="7" />
-      <node id="8332795209407876478" at="63,0,68,0" concept="14" trace="getParamConfig#(Ljava/util/Map;)Ljetbrains/mps/coderules/ideaplugin/Config;" />
-      <node id="8406119028234567449" at="16,0,22,0" concept="13" trace="TYPECHECKING_ENABLED" />
-      <node id="6746702654208893294" at="22,0,28,0" concept="13" trace="TYPECHECKING_WATCHING" />
-      <node id="1784710035579971664" at="28,0,34,0" concept="13" trace="TYPECHECKING_REPORTING" />
-      <node id="8406119028234719978" at="34,0,40,0" concept="13" trace="TYPECHECKING_TRACE" />
-      <node id="2181372126273401903" at="41,0,48,0" concept="8" trace="get#(Ljetbrains/mps/coderules/ideaplugin/Config;)Ljava/lang/Boolean;" />
-      <node id="8332795209403923211" at="55,0,62,0" concept="14" trace="getUserConfig#()Ljetbrains/mps/coderules/ideaplugin/Config;" />
-      <node id="2181372126273401895" at="40,0,49,0" concept="13" trace="COLLECT_TRACES" />
-      <node id="8815279552157196273" at="71,0,95,7" concept="3" />
-      <node id="8332795209405909013" at="98,98,122,7" concept="3" />
-      <node id="8332795209405836760" at="98,0,124,0" concept="14" trace="registerParamMapProvider#(Ljetbrains/mps/coderules/ideaplugin/Config;Ljava/util/Map;)V" />
-      <node id="8815279552157190252" at="69,0,97,0" concept="14" trace="registerDefaultProviders#(Ljetbrains/mps/coderules/ideaplugin/Config;)V" />
-      <scope id="8332795209404643308" at="52,33,52,33" />
-      <scope id="8406119028234584340" at="18,39,19,69" />
-      <scope id="6746702654208893307" at="24,39,25,70" />
-      <scope id="1784710035579971677" at="30,39,31,71" />
-      <scope id="8406119028234719991" at="36,39,37,67" />
-      <scope id="2181372126273426451" at="43,76,44,29" />
-      <scope id="8332795209404643304" at="52,0,54,0" />
-      <scope id="8332795209404297943" at="56,30,58,44" />
-      <scope id="8815279552157196284" at="74,52,76,0" />
-      <scope id="6746702654208928420" at="79,53,81,0" />
-      <scope id="1784710035580018972" at="84,54,86,0" />
-      <scope id="8815279552157196306" at="89,50,91,0" />
-      <scope id="8332795209405909024" at="101,52,103,161" />
-      <scope id="8332795209405909035" at="106,53,108,0" />
-      <scope id="8332795209405909046" at="111,54,113,0" />
-      <scope id="8332795209405909057" at="116,50,118,0" />
-      <scope id="8332795209407876482" at="63,69,66,18">
-        <var name="config" id="8332795209407954878" />
+      <node id="8406119028234320671" at="7,0,8,0" concept="13" trace="PREFIX" />
+      <node id="8406119028234104476" at="9,0,10,0" concept="13" trace="OPTION_TYPECHECKING_ENABLED" />
+      <node id="6746702654208878442" at="10,0,11,0" concept="13" trace="OPTION_TYPECHECKING_WATCHING" />
+      <node id="1784710035579896189" at="11,0,12,0" concept="13" trace="OPTION_TYPECHECKING_REPORTING" />
+      <node id="8406119028234110493" at="12,0,13,0" concept="13" trace="OPTION_TYPECHECKING_TRACE" />
+      <node id="6003204171433302878" at="16,39,17,69" concept="10" />
+      <node id="6746702654208893308" at="22,39,23,70" concept="10" />
+      <node id="1784710035579971678" at="28,39,29,71" concept="10" />
+      <node id="6003204171433314039" at="34,39,35,67" concept="10" />
+      <node id="2181372126273438040" at="41,76,42,29" concept="10" />
+      <node id="2181372126273401909" at="43,7,44,67" concept="10" />
+      <node id="8332795209404278475" at="48,0,49,0" concept="13" trace="USER_CONFIG" />
+      <node id="8332795209404307471" at="54,30,55,36" concept="3" />
+      <node id="8332795209404322620" at="55,36,56,44" concept="3" />
+      <node id="8332795209404328774" at="57,5,58,23" concept="10" />
+      <node id="8332795209404560504" at="61,38,62,63" concept="9" />
+      <node id="3221112544308912047" at="62,63,63,31" concept="3" />
+      <node id="8332795209404558107" at="63,31,64,18" concept="10" />
+      <node id="8332795209405894821" at="67,57,68,0" concept="12" />
+      <node id="8406119028234025888" at="69,70,70,0" concept="12" />
+      <node id="3041510341144265954" at="70,0,71,72" concept="9" />
+      <node id="3041510341144282454" at="72,52,73,48" concept="10" />
+      <node id="8406119028234043530" at="74,7,75,0" concept="12" />
+      <node id="3041510341144294753" at="76,53,77,44" concept="10" />
+      <node id="2005451104887652999" at="78,7,79,0" concept="12" />
+      <node id="3041510341144311803" at="80,54,81,45" concept="10" />
+      <node id="1784710035580030736" at="82,7,83,0" concept="12" />
+      <node id="3041510341144327963" at="84,50,85,43" concept="10" />
+      <node id="8406119028234026095" at="86,7,87,0" concept="12" />
+      <node id="8406119028234219139" at="87,0,88,18" concept="10" />
+      <node id="1830252428089553468" at="92,63,93,54" concept="3" />
+      <node id="1830252428089557385" at="93,54,94,0" concept="12" />
+      <node id="8815279552157196282" at="95,72,96,0" concept="12" />
+      <node id="8815279552157196285" at="97,52,98,89" concept="10" />
+      <node id="6746702654209256862" at="98,89,99,0" concept="12" />
+      <node id="6746702654208928431" at="100,7,101,0" concept="12" />
+      <node id="6746702654208928421" at="102,53,103,90" concept="10" />
+      <node id="6746702654208928426" at="103,90,104,0" concept="12" />
+      <node id="8815279552157196304" at="105,7,106,0" concept="12" />
+      <node id="1784710035580018973" at="107,54,108,91" concept="10" />
+      <node id="1784710035580018978" at="108,91,109,0" concept="12" />
+      <node id="1784710035580018970" at="110,7,111,0" concept="12" />
+      <node id="8815279552157196307" at="112,50,113,87" concept="10" />
+      <node id="8815279552157196311" at="113,87,114,0" concept="12" />
+      <node id="8815279552157196315" at="115,7,116,0" concept="12" />
+      <node id="8815279552157196316" at="116,0,117,18" concept="10" />
+      <node id="8332795209404643304" at="50,0,52,0" concept="2" trace="TypecheckingOptions#()V" />
+      <node id="2181372126273426449" at="40,39,43,7" concept="7" />
+      <node id="8406119028234026680" at="71,72,74,7" concept="7" />
+      <node id="6746702654208934031" at="75,0,78,7" concept="7" />
+      <node id="1784710035580025335" at="79,0,82,7" concept="7" />
+      <node id="8406119028234045832" at="83,0,86,7" concept="7" />
+      <node id="8406119028234584334" at="15,0,19,0" concept="8" trace="get#(Ljetbrains/mps/coderules/ideaplugin/Config;)Ljava/lang/Boolean;" />
+      <node id="6746702654208893302" at="21,0,25,0" concept="8" trace="get#(Ljetbrains/mps/coderules/ideaplugin/Config;)Ljava/lang/Boolean;" />
+      <node id="1784710035579971672" at="27,0,31,0" concept="8" trace="get#(Ljetbrains/mps/coderules/ideaplugin/Config;)Ljava/lang/Boolean;" />
+      <node id="8406119028234719986" at="33,0,37,0" concept="8" trace="get#(Ljetbrains/mps/coderules/ideaplugin/Config;)Ljava/lang/Boolean;" />
+      <node id="8332795209404297941" at="53,40,57,5" concept="7" />
+      <node id="8815279552157196283" at="96,0,100,7" concept="7" />
+      <node id="6746702654208928419" at="101,0,105,7" concept="7" />
+      <node id="1784710035580018971" at="106,0,110,7" concept="7" />
+      <node id="8815279552157196305" at="111,0,115,7" concept="7" />
+      <node id="3221112544308755735" at="61,0,66,0" concept="14" trace="getUiConfig#()Ljetbrains/mps/coderules/ideaplugin/Config;" />
+      <node id="8406119028234567449" at="14,0,20,0" concept="13" trace="TYPECHECKING_ENABLED" />
+      <node id="6746702654208893294" at="20,0,26,0" concept="13" trace="TYPECHECKING_WATCHING" />
+      <node id="1784710035579971664" at="26,0,32,0" concept="13" trace="TYPECHECKING_REPORTING" />
+      <node id="8406119028234719978" at="32,0,38,0" concept="13" trace="TYPECHECKING_TRACE" />
+      <node id="2181372126273401903" at="39,0,46,0" concept="8" trace="get#(Ljetbrains/mps/coderules/ideaplugin/Config;)Ljava/lang/Boolean;" />
+      <node id="8332795209403923211" at="53,0,60,0" concept="14" trace="getUserConfig#()Ljetbrains/mps/coderules/ideaplugin/Config;" />
+      <node id="2181372126273401895" at="38,0,47,0" concept="13" trace="COLLECT_TRACES" />
+      <node id="8406119028234019940" at="68,0,89,7" concept="3" />
+      <node id="8332795209404348642" at="67,0,91,0" concept="14" trace="registerUiProvider#(Ljetbrains/mps/coderules/ideaplugin/Config;)V" />
+      <node id="8815279552157196273" at="94,0,118,7" concept="3" />
+      <node id="8815279552157190252" at="92,0,120,0" concept="14" trace="registerDefaultProviders#(Ljetbrains/mps/coderules/ideaplugin/Config;)V" />
+      <scope id="8332795209404643308" at="50,33,50,33" />
+      <scope id="8406119028234584340" at="16,39,17,69" />
+      <scope id="6746702654208893307" at="22,39,23,70" />
+      <scope id="1784710035579971677" at="28,39,29,71" />
+      <scope id="8406119028234719991" at="34,39,35,67" />
+      <scope id="2181372126273426451" at="41,76,42,29" />
+      <scope id="8406119028234026682" at="72,52,73,48" />
+      <scope id="6746702654208934032" at="76,53,77,44" />
+      <scope id="1784710035580025336" at="80,54,81,45" />
+      <scope id="8406119028234045833" at="84,50,85,43" />
+      <scope id="8332795209404643304" at="50,0,52,0" />
+      <scope id="8332795209404297943" at="54,30,56,44" />
+      <scope id="8815279552157196284" at="97,52,99,0" />
+      <scope id="6746702654208928420" at="102,53,104,0" />
+      <scope id="1784710035580018972" at="107,54,109,0" />
+      <scope id="8815279552157196306" at="112,50,114,0" />
+      <scope id="3221112544308755738" at="61,38,64,18">
+        <var name="config" id="8332795209404560505" />
       </scope>
-      <scope id="8406119028234584334" at="17,0,21,0">
+      <scope id="8406119028234584334" at="15,0,19,0">
         <var name="config" id="8406119028234584335" />
       </scope>
-      <scope id="6746702654208893302" at="23,0,27,0">
+      <scope id="6746702654208893302" at="21,0,25,0">
         <var name="config" id="6746702654208893303" />
       </scope>
-      <scope id="1784710035579971672" at="29,0,33,0">
+      <scope id="1784710035579971672" at="27,0,31,0">
         <var name="config" id="1784710035579971673" />
       </scope>
-      <scope id="8406119028234719986" at="35,0,39,0">
+      <scope id="8406119028234719986" at="33,0,37,0">
         <var name="config" id="8406119028234719987" />
       </scope>
-      <scope id="2181372126273401908" at="42,39,46,67" />
-      <scope id="8332795209403923215" at="55,40,60,23" />
-      <scope id="8332795209407876478" at="63,0,68,0">
-        <var name="paramMap" id="8332795209407931485" />
-      </scope>
-      <scope id="2181372126273401903" at="41,0,48,0">
+      <scope id="2181372126273401908" at="40,39,44,67" />
+      <scope id="8332795209403923215" at="53,40,58,23" />
+      <scope id="3221112544308755735" at="61,0,66,0" />
+      <scope id="2181372126273401903" at="39,0,46,0">
         <var name="config" id="2181372126273401904" />
       </scope>
-      <scope id="8332795209403923211" at="55,0,62,0" />
-      <scope id="8815279552157196281" at="72,72,94,18" />
-      <scope id="8332795209405909021" at="99,70,121,18" />
-      <scope id="8332795209405836764" at="98,98,122,7" />
-      <scope id="8815279552157190256" at="69,63,95,7" />
-      <scope id="8332795209405836760" at="98,0,124,0">
-        <var name="config" id="8332795209405902435" />
-        <var name="paramMap" id="8332795209405875866" />
+      <scope id="8332795209403923211" at="53,0,60,0" />
+      <scope id="8406119028234024760" at="69,70,88,18">
+        <var name="settings" id="3041510341144265955" />
       </scope>
-      <scope id="8815279552157190252" at="69,0,97,0">
+      <scope id="8406119028234037159" at="67,57,89,7" />
+      <scope id="8815279552157196281" at="95,72,117,18" />
+      <scope id="8332795209404348642" at="67,0,91,0">
+        <var name="config" id="7230953716619828900" />
+      </scope>
+      <scope id="8815279552157190256" at="92,63,118,7" />
+      <scope id="8815279552157190252" at="92,0,120,0">
         <var name="config" id="2840545816391182683" />
       </scope>
-      <unit id="8406119028234584328" at="16,72,21,3" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions$1" />
-      <unit id="6746702654208893300" at="22,73,27,3" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions$2" />
-      <unit id="1784710035579971670" at="28,74,33,3" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions$3" />
-      <unit id="8406119028234719984" at="34,70,39,3" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions$4" />
-      <unit id="2181372126273401901" at="40,66,48,3" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions$5" />
-      <unit id="8406119028234017931" at="8,0,126,0" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions" />
+      <unit id="8406119028234584328" at="14,72,19,3" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions$1" />
+      <unit id="6746702654208893300" at="20,73,25,3" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions$2" />
+      <unit id="1784710035579971670" at="26,74,31,3" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions$3" />
+      <unit id="8406119028234719984" at="32,70,37,3" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions$4" />
+      <unit id="2181372126273401901" at="38,66,46,3" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions$5" />
+      <unit id="8406119028234017931" at="6,0,122,0" name="jetbrains.mps.coderules.ideaplugin.TypecheckingOptions" />
     </file>
   </root>
 </debug-info>

@@ -466,10 +466,9 @@
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="adIlSu82Xo" role="37wK5m">
-                      <ref role="37wK5l" to="qox2:7e$2hwaAjW0" resolve="getProjectConfig" />
-                      <ref role="1Pybhc" to="qox2:2CPBoDBWRHZ" resolve="TypecheckingUiOptions" />
-                      <node concept="1jxXqW" id="7e$2hwaBuHD" role="37wK5m" />
+                    <node concept="2YIFZM" id="2MNGcFT5Fdw" role="37wK5m">
+                      <ref role="37wK5l" to="m7o5:2MNGcFT4ZOn" resolve="getUiConfig" />
+                      <ref role="1Pybhc" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
                     </node>
                   </node>
                 </node>
