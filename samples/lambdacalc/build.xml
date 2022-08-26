@@ -550,7 +550,7 @@
   
   <target name="test.demo" depends="assemble">
     <path id="mps.libraries.path">
-      <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.ideaplugin.jar" />
+      <pathelement location="${artifacts.coderules}/coderules-ideaplugin/jetbrains.mps.coderules.ideaplugin.jar" />
       <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
       <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
       <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.testhelper.jar" />

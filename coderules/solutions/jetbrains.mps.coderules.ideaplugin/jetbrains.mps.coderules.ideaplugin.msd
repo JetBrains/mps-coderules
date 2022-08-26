@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.coderules.ideaplugin" uuid="66887915-4d9e-4e24-bd35-19eb55fb75c2" moduleVersion="0" compileInMPS="true">
+<solution name="jetbrains.mps.coderules.ideaplugin" uuid="66887915-4d9e-4e24-bd35-19eb55fb75c2" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
+    <modelRoot contentPath="${module}" type="java_classes">
+      <sourceRoot location="classes" />
+    </modelRoot>
   </models>
   <facets>
-    <facet type="java">
+    <facet type="java" languageLevel="JAVA_8">
       <classes generated="true" path="${module}/classes_gen" />
     </facet>
   </facets>
+  <stubModelEntries>
+    <stubModelEntry path="${module}/classes" />
+  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>

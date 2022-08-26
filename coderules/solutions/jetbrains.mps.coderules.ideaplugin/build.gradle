@@ -1,0 +1,12 @@
+configurations {
+    codeRules
+}
+
+dependencies {
+}
+
+task makeDependencies (type: JavaCompile) {
+  source = fileTree(dir: 'source', include: '**/*.java')
+  destinationDirectory = file('classes')
+  classpath = fileTree(dir: '../../../MPS_HOME/lib', include: '**/*.jar')
+}
