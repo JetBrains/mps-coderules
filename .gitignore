@@ -2,6 +2,7 @@
 **/source_gen.caches/*
 **/test_gen/*
 **/test_gen.caches/*
+**/classes/*
 **/classes_gen/*
 **/classes_jchr/*
 **/.mps/dictionaries/*
@@ -14,8 +15,7 @@
 **/.mps-caches/*
 .gradle
 out
-build/*
-samples/mpscore/build/*
+**/build/*
 config/*
 system/*
 MPS_HOME*
