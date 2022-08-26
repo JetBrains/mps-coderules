@@ -183,6 +183,7 @@
         <reference id="1265949165890536425" name="module" index="L2wRA" />
         <child id="4356762679305730677" name="jarLocations" index="3yL2VB" />
         <child id="3335207478148056905" name="deployedJar" index="3PtcVe" />
+        <child id="3335207478148060176" name="sourceJar" index="3PtdQn" />
       </concept>
       <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
       <concept id="5253498789149381388" name="jetbrains.mps.build.mps.structure.BuildMps_Module" flags="ng" index="3bQrTs">
@@ -4041,6 +4042,25 @@
                             <node concept="2Ry0Ak" id="5KF1HXA7FIM" role="2Ry0An">
                               <property role="2Ry0Am" value="icons" />
                             </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3PtdJl" id="6YTH7uEw1Md" role="3PtdQn">
+                <node concept="2HvfSZ" id="6YTH7uEw1Q7" role="39821P">
+                  <node concept="398BVA" id="6YTH7uEw1Rt" role="2HvfZ0">
+                    <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+                    <node concept="2Ry0Ak" id="6YTH7uEw1SN" role="iGT6I">
+                      <property role="2Ry0Am" value="coderules" />
+                      <node concept="2Ry0Ak" id="6YTH7uEw1YE" role="2Ry0An">
+                        <property role="2Ry0Am" value="solutions" />
+                        <node concept="2Ry0Ak" id="6YTH7uEw1YJ" role="2Ry0An">
+                          <property role="2Ry0Am" value="jetbrains.mps.coderules.ideaplugin" />
+                          <node concept="2Ry0Ak" id="6YTH7uEw1YO" role="2Ry0An">
+                            <property role="2Ry0Am" value="source" />
                           </node>
                         </node>
                       </node>
