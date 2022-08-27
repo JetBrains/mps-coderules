@@ -1466,6 +1466,7 @@
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
+      <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.ideaplugin/source" />
       <zipfileset file="${basedir}/coderules/solutions/jetbrains.mps.coderules.ideaplugin/jetbrains.mps.coderules.ideaplugin.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.coderules.ideaplugin-models1" prefix="module/models" />
     </jar>
@@ -2608,6 +2609,7 @@
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
+      <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.ideaplugin/source" />
       <zipfileset file="${basedir}/coderules/solutions/jetbrains.mps.coderules.ideaplugin/jetbrains.mps.coderules.ideaplugin.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.coderules.ideaplugin-models2" prefix="module/models" />
     </jar>
@@ -3120,7 +3122,6 @@
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
-      <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.ideaplugin/source" />
       <zipfileset file="${basedir}/coderules/languages/jetbrains.mps.lang.coderules/jetbrains.mps.lang.coderules.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.lang.coderules-languageModels1" prefix="module/languageModels" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.lang.coderules-generator-template1" prefix="module/generator/template" />

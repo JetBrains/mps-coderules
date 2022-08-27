@@ -10519,10 +10519,8 @@
       </classpath>
       
       <env key="NO_FS_ROOTS_ACCESS_CHECK" value="true" />
+      <env key="JAVA_TOOL_OPTIONS" value="-Dplugin.path=&quot;${mps.plugins.path.string}&quot; -Dmps.libraries=&quot;${mps.libraries.path.string}&quot; -Dmps.test.modules=&quot;${mps.tests.path.string}&quot;" />
       
-      <sysproperty key="plugin.path" value="${mps.plugins.path.string}" />
-      <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
-      <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
       
       <sysproperty key="mps.macro.mpscore_home" value="${basedir}" />
       

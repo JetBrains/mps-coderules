@@ -3844,17 +3844,13 @@
                     <ref role="3uigEE" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
                   </node>
                   <node concept="2YIFZM" id="61G6TdBScAm" role="33vP2m">
-                    <ref role="37wK5l" to="tj24:1FOQehxzbI0" resolve="create" />
+                    <ref role="37wK5l" to="tj24:6YTH7uESh8y" resolve="create" />
                     <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
                     <node concept="2OqwBi" id="61G6TdBScAn" role="37wK5m">
                       <node concept="1jxXqW" id="61G6TdBScAo" role="2Oq$k0" />
                       <node concept="liA8E" id="61G6TdBScAp" role="2OqNvi">
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
-                    </node>
-                    <node concept="2YIFZM" id="2MNGcFT5IT5" role="37wK5m">
-                      <ref role="1Pybhc" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
-                      <ref role="37wK5l" to="m7o5:2MNGcFT4ZOn" resolve="getUiConfig" />
                     </node>
                   </node>
                 </node>
@@ -4076,16 +4072,12 @@
                   </node>
                   <node concept="2YIFZM" id="61G6TdBSLy$" role="33vP2m">
                     <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
-                    <ref role="37wK5l" to="tj24:1FOQehxzbI0" resolve="create" />
+                    <ref role="37wK5l" to="tj24:6YTH7uESh8y" resolve="create" />
                     <node concept="2OqwBi" id="61G6TdBSLy_" role="37wK5m">
                       <node concept="1jxXqW" id="61G6TdBSLyA" role="2Oq$k0" />
                       <node concept="liA8E" id="61G6TdBSLyB" role="2OqNvi">
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
-                    </node>
-                    <node concept="2YIFZM" id="2MNGcFT5Q9x" role="37wK5m">
-                      <ref role="1Pybhc" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
-                      <ref role="37wK5l" to="m7o5:2MNGcFT4ZOn" resolve="getUiConfig" />
                     </node>
                   </node>
                 </node>

@@ -3874,6 +3874,13 @@
         <ref role="3uigEE" node="6gnqipLxPUE" resolve="ProviderInitToken" />
       </node>
     </node>
+    <node concept="2BZ0e9" id="6YTH7uERSL2" role="2uRRBG">
+      <property role="TrG5h" value="typecheckingOptions" />
+      <node concept="3Tm1VV" id="6YTH7uERTqc" role="1B3o_S" />
+      <node concept="3uibUv" id="6YTH7uERTFl" role="1tU5fm">
+        <ref role="3uigEE" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+      </node>
+    </node>
     <node concept="2uRRBj" id="vVsDu9byG8" role="2uRRBE">
       <node concept="3clFbS" id="vVsDu9byG9" role="2VODD2">
         <node concept="3clFbF" id="6gnqipLy0oP" role="3cqZAp">
@@ -3902,6 +3909,10 @@
             </node>
             <node concept="liA8E" id="6gnqipLypT7" role="2OqNvi">
               <ref role="37wK5l" node="6gnqipLxUdr" resolve="init" />
+              <node concept="2YIFZM" id="6YTH7uESnl$" role="37wK5m">
+                <ref role="37wK5l" to="m7o5:2MNGcFT4ZOn" resolve="getUiConfig" />
+                <ref role="1Pybhc" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+              </node>
             </node>
           </node>
         </node>
@@ -4229,6 +4240,12 @@
     <node concept="2tJIrI" id="6gnqipLxPWG" role="jymVt" />
     <node concept="3clFb_" id="6gnqipLxUdr" role="jymVt">
       <property role="TrG5h" value="init" />
+      <node concept="37vLTG" id="6YTH7uES0AH" role="3clF46">
+        <property role="TrG5h" value="config" />
+        <node concept="3uibUv" id="6YTH7uES25c" role="1tU5fm">
+          <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
+        </node>
+      </node>
       <node concept="3cqZAl" id="6gnqipLxUdt" role="3clF45" />
       <node concept="3Tmbuc" id="6gnqipLyxJH" role="1B3o_S" />
       <node concept="3clFbS" id="6gnqipLxUdv" role="3clF47">
@@ -4320,6 +4337,9 @@
         <node concept="3clFbF" id="6gnqipLyvbs" role="3cqZAp">
           <node concept="1rXfSq" id="6gnqipLyvbq" role="3clFbG">
             <ref role="37wK5l" node="6gnqipLysuY" resolve="activate" />
+            <node concept="37vLTw" id="6YTH7uES3ic" role="37wK5m">
+              <ref role="3cqZAo" node="6YTH7uES0AH" resolve="config" />
+            </node>
           </node>
         </node>
       </node>
@@ -4340,6 +4360,12 @@
     <node concept="2tJIrI" id="6gnqipLz4WZ" role="jymVt" />
     <node concept="3clFb_" id="6gnqipLysuY" role="jymVt">
       <property role="TrG5h" value="activate" />
+      <node concept="37vLTG" id="6YTH7uES3yX" role="3clF46">
+        <property role="TrG5h" value="config" />
+        <node concept="3uibUv" id="6YTH7uES4xt" role="1tU5fm">
+          <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
+        </node>
+      </node>
       <node concept="3cqZAl" id="6gnqipLysv0" role="3clF45" />
       <node concept="3Tm6S6" id="6gnqipLysOv" role="1B3o_S" />
       <node concept="3clFbS" id="6gnqipLysv2" role="3clF47">
@@ -4347,6 +4373,9 @@
           <node concept="2YIFZM" id="6gnqipLxUvU" role="3clFbG">
             <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
             <ref role="37wK5l" to="tj24:6hpwxwitVpF" resolve="initFactory" />
+            <node concept="37vLTw" id="6YTH7uES73L" role="37wK5m">
+              <ref role="3cqZAo" node="6YTH7uES3yX" resolve="config" />
+            </node>
           </node>
         </node>
         <node concept="3cpWs8" id="6gnqipLxUws" role="3cqZAp">
