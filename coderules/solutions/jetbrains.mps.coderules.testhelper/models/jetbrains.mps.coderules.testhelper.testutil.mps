@@ -1611,9 +1611,7 @@
             <node concept="2ShNRf" id="tyIfzC4hII" role="37vLTx">
               <node concept="1pGfFk" id="7eQMSyzaw9s" role="2ShVmc">
                 <ref role="37wK5l" to="hano:4F3SXIF5Xa$" resolve="ProgramEvaluator" />
-                <node concept="3clFbT" id="ayxBvRbL_G" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
+                <node concept="10Nm6u" id="23Habm60Hbm" role="37wK5m" />
               </node>
             </node>
             <node concept="2OqwBi" id="tyIfzC4hIN" role="37vLTJ">
