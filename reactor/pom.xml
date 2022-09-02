@@ -8,13 +8,13 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.5.10</kotlin.version>
+        <kotlin.version>1.7.0</kotlin.version>
         <collection.version>0.7</collection.version>
     </properties>
 
     <groupId>jetbrains.mps.logic.conreactor</groupId>
     <artifactId>conreactor-main</artifactId>
-    <version>0.9.16</version>
+    <version>0.9.17</version>
     <packaging>pom</packaging>
 
     <dependencies>
