@@ -3490,7 +3490,7 @@
         <id>jetbrains.mps.core.types</id>
         <name>MPS Coderules Core Types</name>
         <description>Types for core MPS languages with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.4-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.5-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
@@ -3512,7 +3512,7 @@
         <id>jetbrains.mps.core.types</id>
         <name>MPS Coderules Core Types</name>
         <description>Types for core MPS languages with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.4-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.5-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
@@ -6847,7 +6847,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -6910,7 +6910,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -6983,7 +6983,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7114,7 +7114,7 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava2-swing-0.3.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7182,7 +7182,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7240,7 +7240,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7313,7 +7313,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7377,7 +7377,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7449,7 +7449,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7507,7 +7507,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7575,7 +7575,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7633,7 +7633,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7702,7 +7702,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7760,7 +7760,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7829,7 +7829,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7888,7 +7888,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -7960,7 +7960,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8082,7 +8082,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8140,7 +8140,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8202,7 +8202,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8261,7 +8261,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8342,7 +8342,7 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava2-swing-0.3.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8404,7 +8404,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8462,7 +8462,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8524,7 +8524,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8582,7 +8582,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8639,7 +8639,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8759,7 +8759,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -8842,7 +8842,7 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava2-swing-0.3.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.jar" />
@@ -8929,7 +8929,7 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava2-swing-0.3.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -9013,7 +9013,7 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava2-swing-0.3.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
@@ -9083,7 +9083,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9141,7 +9141,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9215,7 +9215,7 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava2-swing-0.3.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9288,7 +9288,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9345,7 +9345,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9407,7 +9407,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9464,7 +9464,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9529,7 +9529,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9590,7 +9590,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9669,7 +9669,7 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava2-swing-0.3.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9734,7 +9734,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9794,7 +9794,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9872,7 +9872,7 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava2-swing-0.3.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -9934,7 +9934,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -10058,7 +10058,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>
@@ -10192,7 +10192,7 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.16.jar" />
+        <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
   </target>

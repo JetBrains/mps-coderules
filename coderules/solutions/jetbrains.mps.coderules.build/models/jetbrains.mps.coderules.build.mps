@@ -302,7 +302,7 @@
           <ref role="3Mxwex" node="5Hdh9$IhmQ$" resolve="ci.mps.release" />
         </node>
         <node concept="3Mxwew" id="2BiN_P7R7Wi" role="3MwsjC">
-          <property role="3MwjfP" value="-0.9.4-b" />
+          <property role="3MwjfP" value="-0.9.5-b" />
         </node>
         <node concept="3Mxwey" id="2BiN_P7R81m" role="3MwsjC">
           <ref role="3Mxwex" node="2BiN_P7R7jO" resolve="ci.build.num" />
@@ -335,7 +335,7 @@
       <node concept="2pNNFK" id="2fVm_54SZ$e" role="20twgj">
         <property role="2pNNFO" value="change-notes" />
         <node concept="2pNm8S" id="2p5jUSWfCr8" role="3o6s8t">
-          <property role="3o6aOc" value="&lt;ul&gt;&lt;li&gt;Compatible with upcoming 2022 release of MPS&lt;/li&gt;&lt;li&gt;Built with Java 17&lt;/li&gt;&lt;li&gt;Bugfixes and optimizations&lt;/li&gt;&lt;/ul&gt;" />
+          <property role="3o6aOc" value="&lt;ul&gt;&lt;li&gt;Compatible with upcoming 2022 release of MPS&lt;/li&gt;&lt;li&gt;Built with Java 17&lt;/li&gt;&lt;li&gt;New Coderules trace view&lt;/li&gt;&lt;li&gt;Bugfixes and optimizations&lt;/li&gt;&lt;/ul&gt;" />
         </node>
       </node>
       <node concept="2pNNFK" id="2CPBoDATrZn" role="20twgj">
@@ -744,7 +744,7 @@
                     <node concept="2Ry0Ak" id="5GCTx2jKkrf" role="2Ry0An">
                       <property role="2Ry0Am" value="lib" />
                       <node concept="2Ry0Ak" id="5GCTx2jKkrg" role="2Ry0An">
-                        <property role="2Ry0Am" value="conreactor-core-0.9.16.jar" />
+                        <property role="2Ry0Am" value="conreactor-core-0.9.17.jar" />
                       </node>
                     </node>
                   </node>
@@ -3706,7 +3706,7 @@
               </node>
             </node>
             <node concept="3yLZsm" id="6YTH7uEOJpx" role="3yL2VB">
-              <property role="3yLZsk" value="../lib/conreactor-core-0.9.16.jar" />
+              <property role="3yLZsk" value="../lib/conreactor-core-0.9.17.jar" />
               <node concept="398BVA" id="6YTH7uEOJpy" role="3yLZsn">
                 <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                 <node concept="2Ry0Ak" id="6YTH7uEOJpz" role="iGT6I">
@@ -3718,7 +3718,7 @@
                       <node concept="2Ry0Ak" id="6YTH7uEOJpA" role="2Ry0An">
                         <property role="2Ry0Am" value="lib" />
                         <node concept="2Ry0Ak" id="6YTH7uEOJpB" role="2Ry0An">
-                          <property role="2Ry0Am" value="conreactor-core-0.9.16.jar" />
+                          <property role="2Ry0Am" value="conreactor-core-0.9.17.jar" />
                         </node>
                       </node>
                     </node>
@@ -3948,7 +3948,7 @@
                 </node>
               </node>
               <node concept="3yLZsm" id="4EvsDTBGxZq" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/conreactor-core-0.9.16.jar" />
+                <property role="3yLZsk" value="../lib/conreactor-core-0.9.17.jar" />
                 <node concept="398BVA" id="4EvsDTBGxZr" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                   <node concept="2Ry0Ak" id="4EvsDTBGxZs" role="iGT6I">
@@ -3960,7 +3960,7 @@
                         <node concept="2Ry0Ak" id="4EvsDTBGxZv" role="2Ry0An">
                           <property role="2Ry0Am" value="lib" />
                           <node concept="2Ry0Ak" id="4psz3HH29HS" role="2Ry0An">
-                            <property role="2Ry0Am" value="conreactor-core-0.9.16.jar" />
+                            <property role="2Ry0Am" value="conreactor-core-0.9.17.jar" />
                           </node>
                         </node>
                       </node>
