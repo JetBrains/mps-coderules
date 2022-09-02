@@ -19,6 +19,8 @@ package jetbrains.mps.logic.reactor.evaluation;
 
 import jetbrains.mps.logic.reactor.program.IncrementalSpec;
 import jetbrains.mps.logic.reactor.program.Program;
+import jetbrains.mps.logic.reactor.util.Profiler;
+
 import java.util.Collection;
 
 /**
@@ -79,6 +81,8 @@ public abstract class EvaluationSession {
         public abstract Config withTrace(EvaluationTrace computingTracer);
 
         public Config withSessionToken(SessionToken token) { return this; }
+
+        public Config withProfiler(Profiler profiler) { return this; }
 
         @Deprecated(forRemoval = true)
         public Config withIncrSpec(IncrementalSpec ispec) { return this; }

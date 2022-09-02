@@ -72,16 +72,16 @@ class Profiler {
 
                 //sort in-place descending
                 Collections.sort(parentName2Dur) { e1, e2 -> if (e2.value < e1.value) -1 else 1 }
-                val sb = StringBuilder("time %1\$Ts.%1\$TLs (%2\$d times)".format(millis(data.dur), data.freq))
+                val sb = StringBuilder("[time: %1\$Ts.%1\$TLs count: %2\$d]".format(millis(data.dur), data.freq))
                 parentName2Dur
                     .asSequence()
                     .takeWhile { (_, dur) -> parentsToReport > 0 && millis(dur) > 0 }
                     .forEach { (parentName, dur) ->
                         parentsToReport -= millis(dur)
 
-                        sb.append("\n    -- ${parentName}")
-                            .append(" time %1\$Ts.%1\$TLs".format(millis(dur)))
-                            .append(" (%1\$d times)".format(data.parentFreqs[parentName] ?: 0)) }
+                        sb.append("\n    \\-- ${parentName}")
+                            .append(" [time: %1\$Ts.%1\$TLs".format(millis(dur)))
+                            .append(" count: %1\$d]".format(data.parentFreqs[parentName] ?: 0)) }
 
                 name to sb.toString()
             }.toMap()

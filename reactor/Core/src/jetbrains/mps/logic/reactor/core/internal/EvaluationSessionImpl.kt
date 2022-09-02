@@ -137,6 +137,8 @@ internal class EvaluationSessionImpl private constructor (
 
         var token: SessionToken? = null
 
+        var profiler: Profiler? = null
+
         override fun withTrace(computingTracer: EvaluationTrace): EvaluationSession.Config {
             this.evaluationTrace = computingTracer
             return this
@@ -144,6 +146,11 @@ internal class EvaluationSessionImpl private constructor (
 
         override fun withSessionToken(token: SessionToken?): EvaluationSession.Config {
             this.token = token
+            return this
+        }
+
+        override fun withProfiler(profiler: Profiler?): EvaluationSession.Config {
+            this.profiler = profiler
             return this
         }
 
@@ -160,11 +167,6 @@ internal class EvaluationSessionImpl private constructor (
             var session = Backend.ourBackend.ourSession.get()
             if (session != null) throw IllegalStateException("session already active")
 
-            @Suppress("UNCHECKED_CAST")
-            val durations = parameters[ParameterKey.of("profiling.data", MutableMap::class.java)]
-                as MutableMap<String, String>?
-            val profiler = durations?.let { Profiler() }
-
             session = EvaluationSessionImpl(program, supervisor, evaluationTrace, profiler, parameters)
             Backend.ourBackend.ourSession.set(session)
             try {
@@ -172,15 +174,6 @@ internal class EvaluationSessionImpl private constructor (
                 return session.launch(token, main)
             }
             finally {
-                try {
-                    profiler?.run {
-                        formattedData().entries.forEach { e -> durations.put(e.key, e.value) }
-                        clear()
-                    }
-                }
-                catch (t: Throwable) {
-                    // avoid nested failure
-                }
                 Backend.ourBackend.ourSession.set(null)
             }
 
