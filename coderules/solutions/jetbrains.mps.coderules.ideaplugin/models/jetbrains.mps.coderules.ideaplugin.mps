@@ -24,7 +24,6 @@
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="hq8m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.options(MPS.IDEA/)" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
-    <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -320,8 +319,13 @@
       <property role="TrG5h" value="OPTION_TYPECHECKING_ENABLED" />
       <node concept="3Tm1VV" id="7iCybvTyUUp" role="1B3o_S" />
       <node concept="17QB3L" id="7iCybvTyUUq" role="1tU5fm" />
-      <node concept="Xl_RD" id="7iCybvTyUUr" role="33vP2m">
-        <property role="Xl_RC" value="mps.coderules.typechecking.enabled" />
+      <node concept="3cpWs3" id="23Habm5Bd39" role="33vP2m">
+        <node concept="37vLTw" id="23Habm5BdOb" role="3uHU7B">
+          <ref role="3cqZAo" node="7iCybvTzJGv" resolve="PREFIX" />
+        </node>
+        <node concept="Xl_RD" id="7iCybvTyUUr" role="3uHU7w">
+          <property role="Xl_RC" value="enabled" />
+        </node>
       </node>
     </node>
     <node concept="Wx3nA" id="5Qx6_65jytE" role="jymVt">
@@ -329,8 +333,13 @@
       <property role="TrG5h" value="OPTION_TYPECHECKING_WATCHING" />
       <node concept="3Tm1VV" id="5Qx6_65jytF" role="1B3o_S" />
       <node concept="17QB3L" id="5Qx6_65jytG" role="1tU5fm" />
-      <node concept="Xl_RD" id="5Qx6_65jytH" role="33vP2m">
-        <property role="Xl_RC" value="mps.coderules.typechecking.watching" />
+      <node concept="3cpWs3" id="23Habm5BeJy" role="33vP2m">
+        <node concept="37vLTw" id="23Habm5BfA_" role="3uHU7B">
+          <ref role="3cqZAo" node="7iCybvTzJGv" resolve="PREFIX" />
+        </node>
+        <node concept="Xl_RD" id="5Qx6_65jytH" role="3uHU7w">
+          <property role="Xl_RC" value="watching" />
+        </node>
       </node>
     </node>
     <node concept="Wx3nA" id="1z4$59hO85X" role="jymVt">
@@ -338,8 +347,13 @@
       <property role="TrG5h" value="OPTION_TYPECHECKING_REPORTING" />
       <node concept="3Tm1VV" id="1z4$59hO85Y" role="1B3o_S" />
       <node concept="17QB3L" id="1z4$59hO85Z" role="1tU5fm" />
-      <node concept="Xl_RD" id="1z4$59hO860" role="33vP2m">
-        <property role="Xl_RC" value="mps.coderules.typechecking.report" />
+      <node concept="3cpWs3" id="23Habm5BgIe" role="33vP2m">
+        <node concept="37vLTw" id="23Habm5BhKQ" role="3uHU7B">
+          <ref role="3cqZAo" node="7iCybvTzJGv" resolve="PREFIX" />
+        </node>
+        <node concept="Xl_RD" id="1z4$59hO860" role="3uHU7w">
+          <property role="Xl_RC" value="report" />
+        </node>
       </node>
     </node>
     <node concept="Wx3nA" id="7iCybvTyWot" role="jymVt">
@@ -347,8 +361,13 @@
       <property role="TrG5h" value="OPTION_TYPECHECKING_TRACE" />
       <node concept="3Tm1VV" id="7iCybvT$4$v" role="1B3o_S" />
       <node concept="17QB3L" id="7iCybvTyWor" role="1tU5fm" />
-      <node concept="Xl_RD" id="7iCybvTyWos" role="33vP2m">
-        <property role="Xl_RC" value="mps.coderules.typechecking.trace" />
+      <node concept="3cpWs3" id="23Habm5BjgE" role="33vP2m">
+        <node concept="37vLTw" id="23Habm5BkvO" role="3uHU7B">
+          <ref role="3cqZAo" node="7iCybvTzJGv" resolve="PREFIX" />
+        </node>
+        <node concept="Xl_RD" id="7iCybvTyWos" role="3uHU7w">
+          <property role="Xl_RC" value="trace" />
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="7iCybvT$Dp5" role="jymVt" />
@@ -927,6 +946,76 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="23Habm5BNgw" role="3cqZAp" />
+        <node concept="3clFbF" id="23Habm5BLXE" role="3cqZAp">
+          <node concept="2OqwBi" id="23Habm5BLXF" role="3clFbG">
+            <node concept="37vLTw" id="23Habm5BLXG" role="2Oq$k0">
+              <ref role="3cqZAo" node="6hpwxwiq_U$" resolve="config" />
+            </node>
+            <node concept="liA8E" id="23Habm5BLXH" role="2OqNvi">
+              <ref role="37wK5l" node="7iCybvTszk9" resolve="registerProvider" />
+              <node concept="Rm8GO" id="23Habm5BLXI" role="37wK5m">
+                <ref role="Rm8GQ" node="7iCybvToHsq" resolve="USER" />
+                <ref role="1Px2BO" node="7iCybvToD3Z" resolve="Level" />
+              </node>
+              <node concept="10M0yZ" id="23Habm5BLD9" role="37wK5m">
+                <ref role="1PxDUh" node="39eNUjm3TK$" resolve="CoderulesOptions" />
+                <ref role="3cqZAo" node="1_Anebx$$SU" resolve="PREFIX" />
+              </node>
+              <node concept="1bVj0M" id="23Habm5BLXJ" role="37wK5m">
+                <node concept="37vLTG" id="23Habm5BLXK" role="1bW2Oz">
+                  <property role="TrG5h" value="key" />
+                  <node concept="17QB3L" id="23Habm5BLXL" role="1tU5fm" />
+                </node>
+                <node concept="3clFbS" id="23Habm5BLXM" role="1bW5cS">
+                  <node concept="3cpWs8" id="23Habm5BPRk" role="3cqZAp">
+                    <node concept="3cpWsn" id="23Habm5BPRl" role="3cpWs9">
+                      <property role="TrG5h" value="settings" />
+                      <node concept="3uibUv" id="23Habm5BPRm" role="1tU5fm">
+                        <ref role="3uigEE" node="2CPBoDC$4yq" resolve="TypecheckingSettings" />
+                      </node>
+                      <node concept="2YIFZM" id="23Habm5BPRn" role="33vP2m">
+                        <ref role="37wK5l" node="2CPBoDC$fEe" resolve="getInstace" />
+                        <ref role="1Pybhc" node="2CPBoDC$4yq" resolve="TypecheckingSettings" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="23Habm5BLXO" role="3cqZAp">
+                    <node concept="3clFbS" id="23Habm5BLXP" role="3clFbx">
+                      <node concept="3cpWs6" id="23Habm5BXSD" role="3cqZAp">
+                        <node concept="2OqwBi" id="23Habm5BXSE" role="3cqZAk">
+                          <node concept="37vLTw" id="23Habm5BXSF" role="2Oq$k0">
+                            <ref role="3cqZAo" node="23Habm5BPRl" resolve="settings" />
+                          </node>
+                          <node concept="liA8E" id="23Habm5BXSG" role="2OqNvi">
+                            <ref role="37wK5l" node="23Habm5BTlO" resolve="isProfilingEnabled" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="23Habm5BLXV" role="3clFbw">
+                      <node concept="10M0yZ" id="23Habm5BLDb" role="2Oq$k0">
+                        <ref role="3cqZAo" node="23Habm5Bmhe" resolve="OPTION_PROFILING_ENABLED" />
+                        <ref role="1PxDUh" node="39eNUjm3TK$" resolve="CoderulesOptions" />
+                      </node>
+                      <node concept="liA8E" id="23Habm5BLXW" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                        <node concept="37vLTw" id="23Habm5BLXX" role="37wK5m">
+                          <ref role="3cqZAo" node="23Habm5BLXK" resolve="key" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="23Habm5BLXY" role="3cqZAp" />
+                  <node concept="3clFbF" id="23Habm5BLXZ" role="3cqZAp">
+                    <node concept="10Nm6u" id="23Habm5BLY0" role="3clFbG" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="23Habm5BLDc" role="3cqZAp" />
       </node>
       <node concept="37vLTG" id="6hpwxwiq_U$" role="3clF46">
         <property role="TrG5h" value="config" />
@@ -1136,6 +1225,82 @@
         <property role="Xl_RC" value="mps.coderules." />
       </node>
     </node>
+    <node concept="2tJIrI" id="23Habm5BmUM" role="jymVt" />
+    <node concept="Wx3nA" id="23Habm5Bmhe" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="OPTION_PROFILING_ENABLED" />
+      <node concept="3Tm1VV" id="23Habm5Bmhf" role="1B3o_S" />
+      <node concept="17QB3L" id="23Habm5Bmhg" role="1tU5fm" />
+      <node concept="3cpWs3" id="23Habm5Bmhh" role="33vP2m">
+        <node concept="37vLTw" id="23Habm5BnPQ" role="3uHU7B">
+          <ref role="3cqZAo" node="1_Anebx$$SU" resolve="PREFIX" />
+        </node>
+        <node concept="Xl_RD" id="23Habm5Bmhi" role="3uHU7w">
+          <property role="Xl_RC" value="profiling" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="23Habm5BsaQ" role="jymVt" />
+    <node concept="Wx3nA" id="23Habm5BnXh" role="jymVt">
+      <property role="TrG5h" value="PROFILING_ENABLED" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="23Habm5BnXi" role="1tU5fm">
+        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Option" />
+        <node concept="3uibUv" id="23Habm5BnXj" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="23Habm5BnXk" role="1B3o_S" />
+      <node concept="2ShNRf" id="23Habm5BnXl" role="33vP2m">
+        <node concept="YeOm9" id="23Habm5BnXm" role="2ShVmc">
+          <node concept="1Y3b0j" id="23Habm5BnXn" role="YeSDq">
+            <property role="2bfB8j" value="true" />
+            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Option" />
+            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+            <node concept="3Tm1VV" id="23Habm5BnXo" role="1B3o_S" />
+            <node concept="3clFb_" id="23Habm5BnXp" role="jymVt">
+              <property role="TrG5h" value="get" />
+              <node concept="37vLTG" id="23Habm5BnXq" role="3clF46">
+                <property role="TrG5h" value="config" />
+                <node concept="3uibUv" id="23Habm5BnXr" role="1tU5fm">
+                  <ref role="3uigEE" node="7iCybvToiT5" resolve="Config" />
+                </node>
+              </node>
+              <node concept="3uibUv" id="23Habm5BnXs" role="3clF45">
+                <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+              </node>
+              <node concept="3Tm1VV" id="23Habm5BnXt" role="1B3o_S" />
+              <node concept="3clFbS" id="23Habm5BnXu" role="3clF47">
+                <node concept="3clFbF" id="23Habm5BnXv" role="3cqZAp">
+                  <node concept="10QFUN" id="23Habm5BnXw" role="3clFbG">
+                    <node concept="2OqwBi" id="23Habm5BnXx" role="10QFUP">
+                      <node concept="37vLTw" id="23Habm5BnXy" role="2Oq$k0">
+                        <ref role="3cqZAo" node="23Habm5BnXq" resolve="config" />
+                      </node>
+                      <node concept="liA8E" id="23Habm5BnXz" role="2OqNvi">
+                        <ref role="37wK5l" node="7iCybvToiWV" resolve="getOption" />
+                        <node concept="37vLTw" id="23Habm5BtCY" role="37wK5m">
+                          <ref role="3cqZAo" node="23Habm5Bmhe" resolve="OPTION_PROFILING" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3uibUv" id="23Habm5BnX_" role="10QFUM">
+                      <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2AHcQZ" id="23Habm5BnXA" role="2AJF6D">
+                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+              </node>
+            </node>
+            <node concept="3uibUv" id="23Habm5BnXB" role="2Ghqu4">
+              <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="1_Anebx$AJ3" role="jymVt" />
     <node concept="2YIFZL" id="1_Anebx$sLm" role="jymVt">
       <property role="TrG5h" value="registerDefaultProviders" />
@@ -1166,11 +1331,43 @@
                   <node concept="17QB3L" id="1_Anebx$uZj" role="1tU5fm" />
                 </node>
                 <node concept="3clFbS" id="1_Anebx$uN_" role="1bW5cS">
-                  <node concept="3clFbH" id="1T5MAgPwqb0" role="3cqZAp" />
-                  <node concept="3cpWs6" id="1_Anebx$wZP" role="3cqZAp">
-                    <node concept="10Nm6u" id="1_Anebx$wZQ" role="3cqZAk" />
+                  <node concept="3clFbH" id="23Habm5Bu4P" role="3cqZAp" />
+                  <node concept="3clFbJ" id="23Habm5Bu4Q" role="3cqZAp">
+                    <node concept="3clFbS" id="23Habm5Bu4R" role="3clFbx">
+                      <node concept="3cpWs6" id="23Habm5Bu4S" role="3cqZAp">
+                        <node concept="2YIFZM" id="23Habm5Bu4T" role="3cqZAk">
+                          <ref role="37wK5l" to="wyt6:~Boolean.valueOf(java.lang.String)" resolve="valueOf" />
+                          <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+                          <node concept="2YIFZM" id="23Habm5Bu4U" role="37wK5m">
+                            <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String,java.lang.String)" resolve="getProperty" />
+                            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                            <node concept="37vLTw" id="23Habm5BDfK" role="37wK5m">
+                              <ref role="3cqZAo" node="23Habm5Bmhe" resolve="OPTION_PROFILING_ENABLED" />
+                            </node>
+                            <node concept="Xl_RD" id="23Habm5Bu4V" role="37wK5m">
+                              <property role="Xl_RC" value="false" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbH" id="23Habm5BGVc" role="3cqZAp" />
+                    </node>
+                    <node concept="2OqwBi" id="23Habm5Bu4X" role="3clFbw">
+                      <node concept="37vLTw" id="23Habm5ByQT" role="2Oq$k0">
+                        <ref role="3cqZAo" node="23Habm5Bmhe" resolve="OPTION_PROFILING_ENABLED" />
+                      </node>
+                      <node concept="liA8E" id="23Habm5Bu4Y" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                        <node concept="37vLTw" id="23Habm5Bu4Z" role="37wK5m">
+                          <ref role="3cqZAo" node="1_Anebx$uSy" resolve="key" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
-                  <node concept="3clFbH" id="1T5MAgPwqdi" role="3cqZAp" />
+                  <node concept="3clFbH" id="23Habm5BL6k" role="3cqZAp" />
+                  <node concept="3clFbF" id="23Habm5Bu5y" role="3cqZAp">
+                    <node concept="10Nm6u" id="23Habm5Bu5z" role="3clFbG" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -2691,6 +2888,11 @@
         <node concept="3Tm1VV" id="2CPBoDC_vLk" role="1B3o_S" />
         <node concept="10P_77" id="2CPBoDC_vLl" role="1tU5fm" />
       </node>
+      <node concept="312cEg" id="23Habm5BSj1" role="jymVt">
+        <property role="TrG5h" value="myIsProfiling" />
+        <node concept="3Tm1VV" id="23Habm5BSj2" role="1B3o_S" />
+        <node concept="10P_77" id="23Habm5BSj3" role="1tU5fm" />
+      </node>
       <node concept="3Tm1VV" id="2CPBoDC$4I6" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="2CPBoDC$4$y" role="jymVt" />
@@ -3044,6 +3246,51 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="23Habm5BUNY" role="jymVt" />
+    <node concept="3clFb_" id="23Habm5BTlO" role="jymVt">
+      <property role="TrG5h" value="isProfilingEnabled" />
+      <node concept="10P_77" id="23Habm5BTlP" role="3clF45" />
+      <node concept="3Tm1VV" id="23Habm5BTlQ" role="1B3o_S" />
+      <node concept="3clFbS" id="23Habm5BTlR" role="3clF47">
+        <node concept="3clFbF" id="23Habm5BTlS" role="3cqZAp">
+          <node concept="2OqwBi" id="23Habm5BTlT" role="3clFbG">
+            <node concept="37vLTw" id="23Habm5BTlU" role="2Oq$k0">
+              <ref role="3cqZAo" node="2CPBoDC$efo" resolve="myState" />
+            </node>
+            <node concept="2OwXpG" id="23Habm5BTlV" role="2OqNvi">
+              <ref role="2Oxat5" node="23Habm5BSj1" resolve="myIsProfiling" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="23Habm5BTlN" role="jymVt" />
+    <node concept="3clFb_" id="23Habm5BTlB" role="jymVt">
+      <property role="TrG5h" value="setProfilingEnabled" />
+      <node concept="37vLTG" id="23Habm5BTlC" role="3clF46">
+        <property role="TrG5h" value="yes" />
+        <node concept="10P_77" id="23Habm5BTlD" role="1tU5fm" />
+      </node>
+      <node concept="10P_77" id="23Habm5BTlE" role="3clF45" />
+      <node concept="3Tm1VV" id="23Habm5BTlF" role="1B3o_S" />
+      <node concept="3clFbS" id="23Habm5BTlG" role="3clF47">
+        <node concept="3clFbF" id="23Habm5BTlH" role="3cqZAp">
+          <node concept="37vLTI" id="23Habm5BTlI" role="3clFbG">
+            <node concept="37vLTw" id="23Habm5BTlJ" role="37vLTx">
+              <ref role="3cqZAo" node="23Habm5BTlC" resolve="yes" />
+            </node>
+            <node concept="2OqwBi" id="23Habm5BTlK" role="37vLTJ">
+              <node concept="37vLTw" id="23Habm5BTlL" role="2Oq$k0">
+                <ref role="3cqZAo" node="2CPBoDC$efo" resolve="myState" />
+              </node>
+              <node concept="2OwXpG" id="23Habm5BTlM" role="2OqNvi">
+                <ref role="2Oxat5" node="23Habm5BSj1" resolve="myIsProfiling" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2AHcQZ" id="2CPBoDC$9cT" role="2AJF6D">
       <ref role="2AI5Lk" to="1m72:~State" resolve="State" />
       <node concept="2B6LJw" id="2CPBoDC$9jB" role="2B76xF">
@@ -3279,6 +3526,29 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="23Habm5EQl1" role="3cqZAp">
+          <node concept="3vZ8r8" id="23Habm5EQl2" role="3clFbG">
+            <node concept="3y3z36" id="23Habm5EQl3" role="37vLTx">
+              <node concept="2OqwBi" id="23Habm5EQl4" role="3uHU7B">
+                <node concept="37vLTw" id="23Habm5EQl5" role="2Oq$k0">
+                  <ref role="3cqZAo" node="adIlSuErp_" resolve="settings" />
+                </node>
+                <node concept="liA8E" id="23Habm5EQl6" role="2OqNvi">
+                  <ref role="37wK5l" node="23Habm5BTlO" resolve="isProfilingEnabled" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="23Habm5EQl7" role="3uHU7w">
+                <node concept="Xjq3P" id="23Habm5EQl8" role="2Oq$k0" />
+                <node concept="liA8E" id="23Habm5EQl9" role="2OqNvi">
+                  <ref role="37wK5l" node="23Habm5CTIA" resolve="isProfilingEnabled" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="23Habm5EQla" role="37vLTJ">
+              <ref role="3cqZAo" node="adIlSuEEDS" resolve="modified" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="2CPBoDCAnsH" role="3cqZAp">
           <node concept="37vLTw" id="adIlSuGHdP" role="3cqZAk">
             <ref role="3cqZAo" node="adIlSuEEDS" resolve="modified" />
@@ -3373,6 +3643,22 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="23Habm5DSyp" role="3cqZAp">
+          <node concept="2OqwBi" id="23Habm5DY5$" role="3clFbG">
+            <node concept="37vLTw" id="23Habm5DSyn" role="2Oq$k0">
+              <ref role="3cqZAo" node="adIlSuGLof" resolve="settings" />
+            </node>
+            <node concept="liA8E" id="23Habm5E5oF" role="2OqNvi">
+              <ref role="37wK5l" node="23Habm5BTlB" resolve="setProfilingEnabled" />
+              <node concept="2OqwBi" id="23Habm5Efr_" role="37wK5m">
+                <node concept="Xjq3P" id="23Habm5EcW_" role="2Oq$k0" />
+                <node concept="liA8E" id="23Habm5Emu_" role="2OqNvi">
+                  <ref role="37wK5l" node="23Habm5CTIA" resolve="isProfilingEnabled" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="2AHcQZ" id="2CPBoDCAnt1" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" />
@@ -3454,6 +3740,22 @@
                 </node>
                 <node concept="liA8E" id="adIlSuKylw" role="2OqNvi">
                   <ref role="37wK5l" node="2CPBoDC_sJb" resolve="isTracingEnabled" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="23Habm5Eszd" role="3cqZAp">
+          <node concept="2OqwBi" id="23Habm5Esze" role="3clFbG">
+            <node concept="Xjq3P" id="23Habm5Eszf" role="2Oq$k0" />
+            <node concept="liA8E" id="23Habm5Eszg" role="2OqNvi">
+              <ref role="37wK5l" node="23Habm5Cy$A" resolve="setProfilingEnabled" />
+              <node concept="2OqwBi" id="23Habm5Eszh" role="37wK5m">
+                <node concept="37vLTw" id="23Habm5Eszi" role="2Oq$k0">
+                  <ref role="3cqZAo" node="adIlSuKyk0" resolve="settings" />
+                </node>
+                <node concept="liA8E" id="23Habm5Eszj" role="2OqNvi">
+                  <ref role="37wK5l" node="23Habm5BTlO" resolve="isProfilingEnabled" />
                 </node>
               </node>
             </node>
@@ -3552,6 +3854,24 @@
                 <ref role="37wK5l" to="qqrq:~JBCheckBox.&lt;init&gt;(java.lang.String)" resolve="JBCheckBox" />
                 <node concept="Xl_RD" id="7iCybvTmRjN" role="37wK5m">
                   <property role="Xl_RC" value="Collect trace events" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="23Habm5DfNK" role="3cqZAp">
+          <node concept="37vLTI" id="23Habm5DfNL" role="3clFbG">
+            <node concept="2OqwBi" id="23Habm5DfNM" role="37vLTJ">
+              <node concept="Xjq3P" id="23Habm5DfNN" role="2Oq$k0" />
+              <node concept="2OwXpG" id="23Habm5DfNO" role="2OqNvi">
+                <ref role="2Oxat5" node="23Habm5CcYT" resolve="enableProfilingCheckbox" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="23Habm5DfNP" role="37vLTx">
+              <node concept="1pGfFk" id="23Habm5DfNQ" role="2ShVmc">
+                <ref role="37wK5l" to="qqrq:~JBCheckBox.&lt;init&gt;(java.lang.String)" resolve="JBCheckBox" />
+                <node concept="Xl_RD" id="23Habm5DfNR" role="37wK5m">
+                  <property role="Xl_RC" value="Collect profiling data" />
                 </node>
               </node>
             </node>
@@ -4460,6 +4780,23 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="3clFbH" id="23Habm5DBT7" role="3cqZAp" />
+                    <node concept="3clFbF" id="23Habm5Dy58" role="3cqZAp">
+                      <node concept="2OqwBi" id="23Habm5Dy59" role="3clFbG">
+                        <node concept="37vLTw" id="23Habm5Dy5a" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1z4$59hITIO" resolve="subsubpanel" />
+                        </node>
+                        <node concept="liA8E" id="23Habm5Dy5b" role="2OqNvi">
+                          <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component)" resolve="add" />
+                          <node concept="2OqwBi" id="23Habm5Dy5c" role="37wK5m">
+                            <node concept="Xjq3P" id="23Habm5Dy5d" role="2Oq$k0" />
+                            <node concept="2OwXpG" id="23Habm5Dy5e" role="2OqNvi">
+                              <ref role="2Oxat5" node="23Habm5CcYT" resolve="enableProfilingCheckbox" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3clFbH" id="6v6oK22uYND" role="3cqZAp" />
                     <node concept="3clFbF" id="1z4$59hITJl" role="3cqZAp">
                       <node concept="2OqwBi" id="1z4$59hITJm" role="3clFbG">
@@ -4560,6 +4897,24 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7iCybvTmvNX" role="jymVt" />
+    <node concept="3clFb_" id="23Habm5CTIA" role="jymVt">
+      <property role="TrG5h" value="isProfilingEnabled" />
+      <node concept="10P_77" id="23Habm5CTIB" role="3clF45" />
+      <node concept="3Tm1VV" id="23Habm5CTIC" role="1B3o_S" />
+      <node concept="3clFbS" id="23Habm5CTID" role="3clF47">
+        <node concept="3clFbF" id="23Habm5CTIE" role="3cqZAp">
+          <node concept="2OqwBi" id="23Habm5CTIF" role="3clFbG">
+            <node concept="37vLTw" id="23Habm5CTIG" role="2Oq$k0">
+              <ref role="3cqZAo" node="23Habm5CcYT" resolve="enableProfilingCheckbox" />
+            </node>
+            <node concept="liA8E" id="23Habm5CTIH" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~AbstractButton.isSelected()" resolve="isSelected" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="23Habm5CTI_" role="jymVt" />
     <node concept="3clFb_" id="1z4$59hGu4P" role="jymVt">
       <property role="TrG5h" value="isReportingEnabled" />
       <node concept="10P_77" id="1z4$59hGu4Q" role="3clF45" />
@@ -4699,6 +5054,34 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="23Habm5C_NU" role="jymVt" />
+    <node concept="3clFb_" id="23Habm5Cy$A" role="jymVt">
+      <property role="TrG5h" value="setProfilingEnabled" />
+      <node concept="37vLTG" id="23Habm5Cy$B" role="3clF46">
+        <property role="TrG5h" value="yes" />
+        <node concept="10P_77" id="23Habm5Cy$C" role="1tU5fm" />
+      </node>
+      <node concept="3cqZAl" id="23Habm5Cy$D" role="3clF45" />
+      <node concept="3Tm1VV" id="23Habm5Cy$E" role="1B3o_S" />
+      <node concept="3clFbS" id="23Habm5Cy$F" role="3clF47">
+        <node concept="3clFbF" id="23Habm5Cy$G" role="3cqZAp">
+          <node concept="2OqwBi" id="23Habm5Cy$H" role="3clFbG">
+            <node concept="2OqwBi" id="23Habm5Cy$I" role="2Oq$k0">
+              <node concept="Xjq3P" id="23Habm5Cy$J" role="2Oq$k0" />
+              <node concept="2OwXpG" id="23Habm5Cy$K" role="2OqNvi">
+                <ref role="2Oxat5" node="23Habm5CcYT" resolve="enableProfilingCheckbox" />
+              </node>
+            </node>
+            <node concept="liA8E" id="23Habm5Cy$L" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~AbstractButton.setSelected(boolean)" resolve="setSelected" />
+              <node concept="37vLTw" id="23Habm5Cy$M" role="37wK5m">
+                <ref role="3cqZAo" node="23Habm5Cy$B" resolve="yes" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="7iCybvTneMw" role="jymVt" />
     <node concept="3clFb_" id="7iCybvTmrHH" role="jymVt">
       <property role="TrG5h" value="updateEnabledState" />
@@ -4790,6 +5173,43 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="23Habm5Cq5r" role="3cqZAp">
+          <node concept="2OqwBi" id="23Habm5Cq5s" role="3clFbG">
+            <node concept="2OqwBi" id="23Habm5Cq5t" role="2Oq$k0">
+              <node concept="Xjq3P" id="23Habm5Cq5u" role="2Oq$k0" />
+              <node concept="2OwXpG" id="23Habm5Cq5v" role="2OqNvi">
+                <ref role="2Oxat5" node="23Habm5CcYT" resolve="enableProfilingCheckbox" />
+              </node>
+            </node>
+            <node concept="liA8E" id="23Habm5Cq5w" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~AbstractButton.setEnabled(boolean)" resolve="setEnabled" />
+              <node concept="1Wc70l" id="23Habm5Cq5x" role="37wK5m">
+                <node concept="2OqwBi" id="23Habm5Cq5y" role="3uHU7B">
+                  <node concept="2OqwBi" id="23Habm5Cq5z" role="2Oq$k0">
+                    <node concept="Xjq3P" id="23Habm5Cq5$" role="2Oq$k0" />
+                    <node concept="2OwXpG" id="23Habm5Cq5_" role="2OqNvi">
+                      <ref role="2Oxat5" node="14pL6xi8ySB" resolve="enableTypecheckingCheckbox" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="23Habm5Cq5A" role="2OqNvi">
+                    <ref role="37wK5l" to="dxuu:~AbstractButton.isSelected()" resolve="isSelected" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="23Habm5Cq5B" role="3uHU7w">
+                  <node concept="2OqwBi" id="23Habm5Cq5C" role="2Oq$k0">
+                    <node concept="Xjq3P" id="23Habm5Cq5D" role="2Oq$k0" />
+                    <node concept="2OwXpG" id="23Habm5Cq5E" role="2OqNvi">
+                      <ref role="2Oxat5" node="1z4$59hFD5A" resolve="enableReportingCheckbox" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="23Habm5Cq5F" role="2OqNvi">
+                    <ref role="37wK5l" to="dxuu:~AbstractButton.isSelected()" resolve="isSelected" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="14pL6xi8zvf" role="jymVt" />
@@ -4818,6 +5238,13 @@
       <property role="TrG5h" value="enableTraceCheckbox" />
       <node concept="3Tm6S6" id="7iCybvTmPrJ" role="1B3o_S" />
       <node concept="3uibUv" id="7iCybvTmPrK" role="1tU5fm">
+        <ref role="3uigEE" to="dxuu:~JCheckBox" resolve="JCheckBox" />
+      </node>
+    </node>
+    <node concept="312cEg" id="23Habm5CcYT" role="jymVt">
+      <property role="TrG5h" value="enableProfilingCheckbox" />
+      <node concept="3Tm6S6" id="23Habm5CcYU" role="1B3o_S" />
+      <node concept="3uibUv" id="23Habm5CcYV" role="1tU5fm">
         <ref role="3uigEE" to="dxuu:~JCheckBox" resolve="JCheckBox" />
       </node>
     </node>
