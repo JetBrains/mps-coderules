@@ -36,6 +36,7 @@
     <import index="lehm" ref="r:464fcc95-fddb-47d1-b620-592cbf6b8bf2(jetbrains.mps.coderules.runtime.memoizer)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
+    <import index="bid0" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.util(jetbrains.mps.logic.reactor/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -6155,6 +6156,19 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="23Habm3ss6v" role="3cqZAp">
+          <node concept="37vLTI" id="23Habm3ss6x" role="3clFbG">
+            <node concept="2OqwBi" id="23Habm3sDnR" role="37vLTJ">
+              <node concept="Xjq3P" id="23Habm3sDCt" role="2Oq$k0" />
+              <node concept="2OwXpG" id="23Habm3sDnU" role="2OqNvi">
+                <ref role="2Oxat5" node="23Habm3ss6r" resolve="myProfiler" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="23Habm3ss6_" role="37vLTx">
+              <ref role="3cqZAo" node="23Habm3snHP" resolve="profiler" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="cmlg9OLhb5" role="3clF46">
         <property role="TrG5h" value="planHandler" />
@@ -6184,6 +6198,12 @@
         <property role="TrG5h" value="updatesRecorder" />
         <node concept="3uibUv" id="6nFpYlujNlq" role="1tU5fm">
           <ref role="3uigEE" node="6nFpYlu02jD" resolve="UpdatesRecorder" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="23Habm3snHP" role="3clF46">
+        <property role="TrG5h" value="profiler" />
+        <node concept="3uibUv" id="23Habm3snHQ" role="1tU5fm">
+          <ref role="3uigEE" to="bid0:~Profiler" resolve="Profiler" />
         </node>
       </node>
     </node>
@@ -6421,6 +6441,7 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbH" id="23Habm3tYwn" role="3cqZAp" />
             <node concept="3SKdUt" id="6OXbTDxA$Dn" role="3cqZAp">
               <node concept="1PaTwC" id="589APehYxQo" role="1aUNEU">
                 <node concept="3oM_SD" id="589APehYxQp" role="1PaTwD">
@@ -6443,6 +6464,26 @@
                 </node>
               </node>
             </node>
+            <node concept="3cpWs8" id="23Habm3w7T_" role="3cqZAp">
+              <node concept="3cpWsn" id="23Habm3w7TA" role="3cpWs9">
+                <property role="TrG5h" value="token1" />
+                <node concept="3uibUv" id="23Habm3w5t7" role="1tU5fm">
+                  <ref role="3uigEE" to="bid0:~Token" resolve="Token" />
+                </node>
+                <node concept="2EnYce" id="23Habm3w7TB" role="33vP2m">
+                  <node concept="37vLTw" id="23Habm3w7TC" role="2Oq$k0">
+                    <ref role="3cqZAo" node="23Habm3ss6r" resolve="profiler" />
+                  </node>
+                  <node concept="liA8E" id="23Habm3w7TD" role="2OqNvi">
+                    <ref role="37wK5l" to="bid0:~Profiler.start(java.lang.String)" resolve="start" />
+                    <node concept="Xl_RD" id="23Habm3w7TE" role="37wK5m">
+                      <property role="Xl_RC" value="process rule templates (no input)" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="23Habm3wxY1" role="3cqZAp" />
             <node concept="3cpWs8" id="2hQbw6Hwurj" role="3cqZAp">
               <node concept="3cpWsn" id="2hQbw6Hwurk" role="3cpWs9">
                 <property role="TrG5h" value="allRuleTemplatesWithNoInput" />
@@ -6553,7 +6594,21 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="6nFpYltL7jq" role="3cqZAp" />
+            <node concept="3clFbH" id="23Habm3xyA9" role="3cqZAp" />
+            <node concept="3clFbF" id="23Habm3$Kbr" role="3cqZAp">
+              <node concept="2EnYce" id="23Habm3$Kbs" role="3clFbG">
+                <node concept="37vLTw" id="23Habm3$Kbt" role="2Oq$k0">
+                  <ref role="3cqZAo" node="23Habm3ss6r" resolve="profiler" />
+                </node>
+                <node concept="liA8E" id="23Habm3$Kbu" role="2OqNvi">
+                  <ref role="37wK5l" to="bid0:~Profiler.end(jetbrains.mps.logic.reactor.util.Token)" resolve="end" />
+                  <node concept="37vLTw" id="23Habm3$Kbv" role="37wK5m">
+                    <ref role="3cqZAo" node="23Habm3w7TA" resolve="token1" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="23Habm3_dz7" role="3cqZAp" />
             <node concept="3SKdUt" id="6OXbTDxAA$7" role="3cqZAp">
               <node concept="1PaTwC" id="589APehYxQv" role="1aUNEU">
                 <node concept="3oM_SD" id="589APehYxQw" role="1PaTwD">
@@ -6573,6 +6628,26 @@
                 </node>
               </node>
             </node>
+            <node concept="3cpWs8" id="23Habm3$kb1" role="3cqZAp">
+              <node concept="3cpWsn" id="23Habm3$kb2" role="3cpWs9">
+                <property role="TrG5h" value="token2" />
+                <node concept="3uibUv" id="23Habm3$kb3" role="1tU5fm">
+                  <ref role="3uigEE" to="bid0:~Token" resolve="Token" />
+                </node>
+                <node concept="2EnYce" id="23Habm3$kb4" role="33vP2m">
+                  <node concept="37vLTw" id="23Habm3$kb5" role="2Oq$k0">
+                    <ref role="3cqZAo" node="23Habm3ss6r" resolve="profiler" />
+                  </node>
+                  <node concept="liA8E" id="23Habm3$kb6" role="2OqNvi">
+                    <ref role="37wK5l" to="bid0:~Profiler.start(java.lang.String)" resolve="start" />
+                    <node concept="Xl_RD" id="23Habm3$kb7" role="37wK5m">
+                      <property role="Xl_RC" value="process required (no input)" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="23Habm3xacg" role="3cqZAp" />
             <node concept="3cpWs8" id="5HxDM7D5Ykm" role="3cqZAp">
               <node concept="3cpWsn" id="5HxDM7D5Ykn" role="3cpWs9">
                 <property role="TrG5h" value="visited" />
@@ -6609,6 +6684,20 @@
                         <ref role="3cqZAo" node="5HxDM7D9SW0" resolve="isPreamble" />
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="23Habm3xqoY" role="3cqZAp" />
+            <node concept="3clFbF" id="23Habm3uETv" role="3cqZAp">
+              <node concept="2EnYce" id="23Habm3uXBJ" role="3clFbG">
+                <node concept="37vLTw" id="23Habm3uETt" role="2Oq$k0">
+                  <ref role="3cqZAo" node="23Habm3ss6r" resolve="profiler" />
+                </node>
+                <node concept="liA8E" id="23Habm3v6pd" role="2OqNvi">
+                  <ref role="37wK5l" to="bid0:~Profiler.end(jetbrains.mps.logic.reactor.util.Token)" resolve="end" />
+                  <node concept="37vLTw" id="23Habm3wEI$" role="37wK5m">
+                    <ref role="3cqZAo" node="23Habm3$kb2" resolve="token2" />
                   </node>
                 </node>
               </node>
@@ -6655,6 +6744,26 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="23Habm3wOOl" role="3cqZAp">
+          <node concept="3cpWsn" id="23Habm3wOOm" role="3cpWs9">
+            <property role="TrG5h" value="token3" />
+            <node concept="3uibUv" id="23Habm3wLej" role="1tU5fm">
+              <ref role="3uigEE" to="bid0:~Token" resolve="Token" />
+            </node>
+            <node concept="2EnYce" id="23Habm3wOOn" role="33vP2m">
+              <node concept="37vLTw" id="23Habm3wOOo" role="2Oq$k0">
+                <ref role="3cqZAo" node="23Habm3ss6r" resolve="profiler" />
+              </node>
+              <node concept="liA8E" id="23Habm3wOOp" role="2OqNvi">
+                <ref role="37wK5l" to="bid0:~Profiler.start(java.lang.String)" resolve="start" />
+                <node concept="Xl_RD" id="23Habm3wOOq" role="37wK5m">
+                  <property role="Xl_RC" value="process rules (specified input)" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="23Habm3zs$T" role="3cqZAp" />
         <node concept="3cpWs8" id="17DrR$SPIhm" role="3cqZAp">
           <node concept="3cpWsn" id="17DrR$SPIhn" role="3cpWs9">
             <property role="TrG5h" value="skip" />
@@ -6728,6 +6837,20 @@
           <node concept="3fqX7Q" id="3VwM5b64e8w" role="3clFbw">
             <node concept="37vLTw" id="17DrR$SPIhv" role="3fr31v">
               <ref role="3cqZAo" node="17DrR$SPIhn" resolve="skip" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="23Habm3zjUM" role="3cqZAp" />
+        <node concept="3clFbF" id="23Habm3vvRu" role="3cqZAp">
+          <node concept="2EnYce" id="23Habm3vJP4" role="3clFbG">
+            <node concept="37vLTw" id="23Habm3vvRs" role="2Oq$k0">
+              <ref role="3cqZAo" node="23Habm3ss6r" resolve="profiler" />
+            </node>
+            <node concept="liA8E" id="23Habm3vRsX" role="2OqNvi">
+              <ref role="37wK5l" to="bid0:~Profiler.end(jetbrains.mps.logic.reactor.util.Token)" resolve="end" />
+              <node concept="37vLTw" id="23Habm3ximU" role="37wK5m">
+                <ref role="3cqZAo" node="23Habm3wOOm" resolve="token2" />
+              </node>
             </node>
           </node>
         </node>
@@ -6964,7 +7087,7 @@
         </node>
         <node concept="3cpWs8" id="4QPCta1aZLE" role="3cqZAp">
           <node concept="3cpWsn" id="4QPCta1aZLF" role="3cpWs9">
-            <property role="TrG5h" value="result" />
+            <property role="TrG5h" value="applyResult" />
             <node concept="3uibUv" id="4QPCta1aZLG" role="1tU5fm">
               <ref role="3uigEE" to="psoy:7Oc59RSEjdb" resolve="Result" />
             </node>
@@ -7012,29 +7135,75 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="2fobfNk6_p1" role="3cqZAp">
-          <node concept="2OqwBi" id="2fobfNk6_p2" role="3cqZAk">
-            <node concept="37vLTw" id="2fobfNk6_p3" role="2Oq$k0">
-              <ref role="3cqZAo" node="4QPCta1aZLF" resolve="result" />
+        <node concept="3cpWs8" id="23Habm5QwsP" role="3cqZAp">
+          <node concept="3cpWsn" id="23Habm5QwsQ" role="3cpWs9">
+            <property role="TrG5h" value="token" />
+            <node concept="3uibUv" id="23Habm5QwsR" role="1tU5fm">
+              <ref role="3uigEE" to="bid0:~Token" resolve="Token" />
             </node>
-            <node concept="liA8E" id="2fobfNk6_p4" role="2OqNvi">
-              <ref role="37wK5l" to="psoy:7nkyKX7v7xb" resolve="and" />
-              <node concept="1rXfSq" id="2fobfNk6_p5" role="37wK5m">
-                <ref role="37wK5l" node="tIwzd1MM22" resolve="processRequired" />
-                <node concept="2OqwBi" id="5NUR$Or$9b" role="37wK5m">
-                  <node concept="37vLTw" id="5NUR$Or$9c" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4QPCta1aZL_" resolve="applyingResult" />
-                  </node>
-                  <node concept="2OwXpG" id="5NUR$Or$9d" role="2OqNvi">
-                    <ref role="2Oxat5" node="4MqhgXU_1ti" resolve="required" />
-                  </node>
+            <node concept="2EnYce" id="23Habm5QwsS" role="33vP2m">
+              <node concept="37vLTw" id="23Habm5QwsT" role="2Oq$k0">
+                <ref role="3cqZAo" node="23Habm3ss6r" resolve="profiler" />
+              </node>
+              <node concept="liA8E" id="23Habm5QwsU" role="2OqNvi">
+                <ref role="37wK5l" to="bid0:~Profiler.start(java.lang.String)" resolve="start" />
+                <node concept="Xl_RD" id="23Habm5QwsV" role="37wK5m">
+                  <property role="Xl_RC" value="process required (specified input)" />
                 </node>
-                <node concept="37vLTw" id="5HxDM7D9sDa" role="37wK5m">
-                  <ref role="3cqZAo" node="5HxDM7D6$xL" resolve="collectedVisited" />
-                </node>
-                <node concept="3clFbT" id="5HxDM7Da4fa" role="37wK5m" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="23Habm5Qr5A" role="3cqZAp" />
+        <node concept="3cpWs8" id="23Habm5RYmf" role="3cqZAp">
+          <node concept="3cpWsn" id="23Habm5RYmg" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="3uibUv" id="23Habm5RVOA" role="1tU5fm">
+              <ref role="3uigEE" to="psoy:7Oc59RSEjdb" resolve="Result" />
+            </node>
+            <node concept="2OqwBi" id="23Habm5RYmh" role="33vP2m">
+              <node concept="37vLTw" id="23Habm5RYmi" role="2Oq$k0">
+                <ref role="3cqZAo" node="4QPCta1aZLF" resolve="result" />
+              </node>
+              <node concept="liA8E" id="23Habm5RYmj" role="2OqNvi">
+                <ref role="37wK5l" to="psoy:7nkyKX7v7xb" resolve="and" />
+                <node concept="1rXfSq" id="23Habm5RYmk" role="37wK5m">
+                  <ref role="37wK5l" node="tIwzd1MM22" resolve="processRequired" />
+                  <node concept="2OqwBi" id="23Habm5RYml" role="37wK5m">
+                    <node concept="37vLTw" id="23Habm5RYmm" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4QPCta1aZL_" resolve="applyingResult" />
+                    </node>
+                    <node concept="2OwXpG" id="23Habm5RYmn" role="2OqNvi">
+                      <ref role="2Oxat5" node="4MqhgXU_1ti" resolve="required" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="23Habm5RYmo" role="37wK5m">
+                    <ref role="3cqZAo" node="5HxDM7D6$xL" resolve="collectedVisited" />
+                  </node>
+                  <node concept="3clFbT" id="23Habm5RYmp" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="23Habm5QZxM" role="3cqZAp" />
+        <node concept="3clFbF" id="23Habm5RdQ2" role="3cqZAp">
+          <node concept="2EnYce" id="23Habm5RrGu" role="3clFbG">
+            <node concept="37vLTw" id="23Habm5RdQ0" role="2Oq$k0">
+              <ref role="3cqZAo" node="23Habm3ss6r" resolve="profiler" />
+            </node>
+            <node concept="liA8E" id="23Habm5R$7x" role="2OqNvi">
+              <ref role="37wK5l" to="bid0:~Profiler.end(jetbrains.mps.logic.reactor.util.Token)" resolve="end" />
+              <node concept="37vLTw" id="23Habm5ROEK" role="37wK5m">
+                <ref role="3cqZAo" node="23Habm5QwsQ" resolve="token" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="23Habm5SqJJ" role="3cqZAp" />
+        <node concept="3cpWs6" id="2fobfNk6_p1" role="3cqZAp">
+          <node concept="37vLTw" id="23Habm5RYmq" role="3cqZAk">
+            <ref role="3cqZAo" node="23Habm5RYmg" resolve="result" />
           </node>
         </node>
       </node>
@@ -11361,6 +11530,13 @@
       <node concept="10M0yZ" id="4tC1JBnm7rM" role="33vP2m">
         <ref role="3cqZAo" to="hano:39eNUjlX_RD" resolve="NULL" />
         <ref role="1PxDUh" to="hano:39eNUjlSJ9Q" resolve="TemplateTrace" />
+      </node>
+    </node>
+    <node concept="312cEg" id="23Habm3ss6r" role="jymVt">
+      <property role="TrG5h" value="profiler" />
+      <node concept="3Tm6S6" id="23Habm3ss6s" role="1B3o_S" />
+      <node concept="3uibUv" id="23Habm3ss6u" role="1tU5fm">
+        <ref role="3uigEE" to="bid0:~Profiler" resolve="Profiler" />
       </node>
     </node>
   </node>
