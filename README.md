@@ -39,7 +39,7 @@ For latest stable MPS release (2021.3):
 ## Status
 | TeamCity Stable | TeamCity EAP |
 |:--|:--|
-| [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20213_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20213_Distribution_MpsCodeRules) | [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20221_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20221_Distribution_MpsCodeRules) |
+| [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20213_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20213_Distribution_MpsCodeRules) | [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20222_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20222_Distribution_MpsCodeRules) |
 
 The status of this project is **pre-release**. Don’t rely on any of the language features or the API to be stable. The purpose of this project is to show the new technology and collect early feedback.
 
