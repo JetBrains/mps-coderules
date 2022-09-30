@@ -43,7 +43,6 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
@@ -492,7 +491,9 @@
                     <ref role="3Tt5mk" to="tp2q:gKA3Ige" resolve="elementType" />
                   </node>
                 </node>
-                <node concept="10Nm6u" id="1oUE7CXmmkj" role="3jicU7" />
+                <node concept="3i2tpf" id="6ZRhjsG4Vlm" role="3jicU7">
+                  <ref role="3i285M" to="kqnc:5itBwMaLICh" resolve="substitution" />
+                </node>
                 <node concept="a7P8L" id="1oUE7CXmlWh" role="3jm6SO">
                   <ref role="a7OzE" node="4NtT$ZxGIri" resolve="Type" />
                 </node>
