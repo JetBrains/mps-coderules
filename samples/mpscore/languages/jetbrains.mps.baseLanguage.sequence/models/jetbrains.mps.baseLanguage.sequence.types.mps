@@ -105,9 +105,11 @@
         <child id="861509610434243076" name="override" index="ns1xD" />
       </concept>
       <concept id="861509610434243104" name="jetbrains.mps.lang.coderules.structure.TermTable" flags="ng" index="ns1xd">
+        <reference id="8966267790978924106" name="extended" index="2efqH6" />
         <child id="861509610434243105" name="contents" index="ns1xc" />
       </concept>
       <concept id="861509610434243081" name="jetbrains.mps.lang.coderules.structure.TermDeclaration" flags="ng" index="ns1x$">
+        <reference id="861509610434243089" name="prototype" index="ns1xW" />
         <child id="861509610434243084" name="template" index="ns1xx" />
       </concept>
       <concept id="861509610434276450" name="jetbrains.mps.lang.coderules.structure.TermTemplate" flags="ng" index="nspSf">
@@ -973,8 +975,10 @@
   </node>
   <node concept="3iyXCk" id="3MFPGC50_T2">
     <property role="TrG5h" value="SequenceTerm" />
+    <ref role="2efqH6" to="kqnc:JOGAOsVt29" resolve="Terms" />
     <node concept="3iyMRA" id="3MFPGC50Ab3" role="ns1xc">
       <property role="TrG5h" value="sequence" />
+      <ref role="ns1xW" to="kqnc:4lCLOtwq2MF" resolve="type" />
       <node concept="nspSf" id="3MFPGC50Ab4" role="ns1xx">
         <node concept="nstbe" id="3MFPGC50Aiu" role="nspSe">
           <property role="TrG5h" value="elem" />
