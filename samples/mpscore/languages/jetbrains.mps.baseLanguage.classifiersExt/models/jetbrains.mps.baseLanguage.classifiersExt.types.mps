@@ -1336,13 +1336,6 @@
       <property role="TrG5h" value="baseClassifier" />
       <property role="3uGXoX" value="true" />
       <node concept="nspSf" id="2q9s7foPy7H" role="ns1xx" />
-      <node concept="3i_YlU" id="4APe_wKEoI9" role="3i_WSZ">
-        <node concept="2pJPEk" id="4APe_wKEoJr" role="3i_UKR">
-          <node concept="2pJPED" id="4APe_wKEoJt" role="2pJPEn">
-            <ref role="2pJxaS" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="3iyMRA" id="2q9s7foUKiD" role="ns1xc">
       <property role="TrG5h" value="defaultClassifier" />
