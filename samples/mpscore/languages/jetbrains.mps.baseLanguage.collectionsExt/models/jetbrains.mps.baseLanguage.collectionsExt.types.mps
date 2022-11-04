@@ -23112,6 +23112,7 @@
     <ref role="2efqH6" to="kqnc:JOGAOsVt29" resolve="Terms" />
     <node concept="3iyMRA" id="1oUE7CX3txF" role="ns1xc">
       <property role="TrG5h" value="iterator" />
+      <ref role="ns1xW" to="kqnc:4lCLOtwq2MF" resolve="type" />
       <node concept="nspSf" id="1oUE7CX3txG" role="ns1xx">
         <node concept="nstbe" id="1oUE7CX3txT" role="nspSe">
           <property role="TrG5h" value="elem" />
@@ -23135,6 +23136,7 @@
     </node>
     <node concept="3iyMRA" id="3Z1xyIwuLO9" role="ns1xc">
       <property role="TrG5h" value="modIterator" />
+      <ref role="ns1xW" to="kqnc:4lCLOtwq2MF" resolve="type" />
       <node concept="nspSf" id="3Z1xyIwuLOa" role="ns1xx">
         <node concept="nstbe" id="3Z1xyIwuLOX" role="nspSe">
           <property role="TrG5h" value="elem" />
@@ -23218,6 +23220,7 @@
     <node concept="3iyMRA" id="1oUE7CX4M7z" role="ns1xc">
       <property role="TrG5h" value="abstractContainer" />
       <property role="3uGXoX" value="true" />
+      <ref role="ns1xW" to="kqnc:4lCLOtwq2MF" resolve="type" />
       <node concept="nspSf" id="1oUE7CX4M7$" role="ns1xx" />
     </node>
     <node concept="3iyMRA" id="1oUE7CX42n0" role="ns1xc">
