@@ -51,6 +51,7 @@
         <module reference="2405a196-e75d-462c-938b-ae8e3fac20aa(jetbrains.mps.baseLanguage.kotlinRefs)" version="0" />
         <module reference="f4bb9d3b-4825-4eb2-93d9-73c355a855dc(jetbrains.mps.baseLanguage.kotlinRefsExt)" version="0" />
         <module reference="f9a2dffe-b22d-4f2e-affd-70e87c08114b(jetbrains.mps.baseLanguage.kotlinRefsExt.generator)" version="0" />
+        <module reference="52b81ac7-93fd-4e9e-b972-4995882da6d4(jetbrains.mps.baseLanguage.references.runtime)" version="0" />
         <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
         <module reference="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" version="0" />
         <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />

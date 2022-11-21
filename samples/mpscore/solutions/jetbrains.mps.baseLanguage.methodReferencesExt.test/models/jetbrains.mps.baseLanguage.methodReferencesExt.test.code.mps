@@ -351,7 +351,7 @@
                   <ref role="37Ijqf" node="6ZRhjsGycrp" resolve="identity" />
                   <node concept="2FaPjH" id="6ZRhjsGydYU" role="wWaWy">
                     <node concept="3uibUv" id="6ZRhjsGydYV" role="2FaQuo">
-                      <ref role="3uigEE" node="6ZRhjsGycro" resolve="LowerBounded" />
+                      <ref role="3uigEE" node="6ZRhjsGycro" resolve="BoundsTypes.LowerBounded" />
                     </node>
                   </node>
                 </node>
@@ -380,7 +380,7 @@
                   <ref role="37Ijqf" node="6ZRhjsGycrp" resolve="identity" />
                   <node concept="2FaPjH" id="6ZRhjsGydZ6" role="wWaWy">
                     <node concept="3uibUv" id="6ZRhjsGydZ7" role="2FaQuo">
-                      <ref role="3uigEE" node="6ZRhjsGycro" resolve="LowerBounded" />
+                      <ref role="3uigEE" node="6ZRhjsGycro" resolve="BoundsTypes.LowerBounded" />
                     </node>
                   </node>
                 </node>
@@ -409,7 +409,7 @@
                   <ref role="37Ijqf" node="6ZRhjsGycrp" resolve="identity" />
                   <node concept="2FaPjH" id="6ZRhjsGydZi" role="wWaWy">
                     <node concept="3uibUv" id="6ZRhjsGydZj" role="2FaQuo">
-                      <ref role="3uigEE" node="6ZRhjsGycro" resolve="LowerBounded" />
+                      <ref role="3uigEE" node="6ZRhjsGycro" resolve="BoundsTypes.LowerBounded" />
                     </node>
                   </node>
                 </node>
@@ -481,7 +481,7 @@
                   <ref role="37Ijqf" node="6ZRhjsGycrA" resolve="process" />
                   <node concept="2FaPjH" id="6ZRhjsGyf2w" role="wWaWy">
                     <node concept="3uibUv" id="6ZRhjsGyf2x" role="2FaQuo">
-                      <ref role="3uigEE" node="6ZRhjsGycr_" resolve="UpperBounded" />
+                      <ref role="3uigEE" node="6ZRhjsGycr_" resolve="BoundsTypes.UpperBounded" />
                     </node>
                   </node>
                 </node>
@@ -559,7 +559,7 @@
         <node concept="37vLTG" id="6ZRhjsGymwR" role="3clF46">
           <property role="TrG5h" value="b" />
           <node concept="3uibUv" id="6ZRhjsGymwS" role="1tU5fm">
-            <ref role="3uigEE" node="6ZRhjsGymxk" />
+            <ref role="3uigEE" node="6ZRhjsGymxk" resolve="MethodReferences.AbstractBuilder" />
             <node concept="16syzq" id="6ZRhjsGymwT" role="11_B2D">
               <ref role="16sUi3" node="6ZRhjsGymx1" resolve="U" />
             </node>
@@ -690,7 +690,7 @@
       <node concept="37vLTG" id="6ZRhjsGymxD" role="3clF46">
         <property role="TrG5h" value="action" />
         <node concept="3uibUv" id="6ZRhjsGymxE" role="1tU5fm">
-          <ref role="3uigEE" node="6ZRhjsGymwy" resolve="AbstractVisited" />
+          <ref role="3uigEE" node="6ZRhjsGymwy" resolve="MethodReferences.AbstractVisited" />
           <node concept="16syzq" id="6ZRhjsGymxF" role="11_B2D">
             <ref role="16sUi3" node="6ZRhjsGymxG" resolve="T" />
           </node>
@@ -739,7 +739,7 @@
           <node concept="3cpWs6" id="6ZRhjsGymxY" role="3cqZAp">
             <node concept="2ShNRf" id="6ZRhjsGymxZ" role="3cqZAk">
               <node concept="1pGfFk" id="6ZRhjsGymy0" role="2ShVmc">
-                <ref role="37wK5l" node="6ZRhjsGymxL" resolve="ItemContainer" />
+                <ref role="37wK5l" node="6ZRhjsGymxL" resolve="MethodReferences.ItemContainer" />
                 <node concept="37vLTw" id="6ZRhjsGymy1" role="37wK5m">
                   <ref role="3cqZAo" node="6ZRhjsGymy5" resolve="content" />
                 </node>
@@ -751,7 +751,7 @@
           <property role="TrG5h" value="W" />
         </node>
         <node concept="3uibUv" id="6ZRhjsGymy3" role="3clF45">
-          <ref role="3uigEE" node="6ZRhjsGymxH" resolve="ItemContainer" />
+          <ref role="3uigEE" node="6ZRhjsGymxH" resolve="MethodReferences.ItemContainer" />
           <node concept="16syzq" id="6ZRhjsGymy4" role="11_B2D">
             <ref role="16sUi3" node="6ZRhjsGymy2" resolve="W" />
           </node>
@@ -784,7 +784,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="6ZRhjsGymyg" role="3clF45">
-          <ref role="3uigEE" node="6ZRhjsGymxH" resolve="ItemContainer" />
+          <ref role="3uigEE" node="6ZRhjsGymxH" resolve="MethodReferences.ItemContainer" />
           <node concept="16syzq" id="6ZRhjsGymyh" role="11_B2D">
             <ref role="16sUi3" node="6ZRhjsGymyi" resolve="E" />
           </node>
@@ -869,7 +869,7 @@
           <node concept="3cpWsn" id="6ZRhjsGysqK" role="3cpWs9">
             <property role="TrG5h" value="provider" />
             <node concept="3uibUv" id="6ZRhjsGysqL" role="1tU5fm">
-              <ref role="3uigEE" node="6ZRhjsGymyI" resolve="SelectorProvider" />
+              <ref role="3uigEE" node="6ZRhjsGymyI" resolve="MethodReferences.SelectorProvider" />
             </node>
             <node concept="1bVj0M" id="6ZRhjsGysqM" role="33vP2m">
               <node concept="3clFbS" id="6ZRhjsGysqN" role="1bW5cS">
@@ -1120,7 +1120,7 @@
               </node>
             </node>
             <node concept="3uibUv" id="6ZRhjsGzyRK" role="1tU5fm">
-              <ref role="3uigEE" node="6ZRhjsGymx2" resolve="Builder" />
+              <ref role="3uigEE" node="6ZRhjsGymx2" resolve="MethodReferences.Builder" />
               <node concept="3uibUv" id="6ZRhjsGzyRL" role="11_B2D">
                 <ref role="3uigEE" to="i5cy:~AtomicInteger" resolve="AtomicInteger" />
               </node>
@@ -1189,7 +1189,7 @@
                   <ref role="37Ijqf" node="6ZRhjsGymx9" resolve="copy" />
                   <node concept="2FaPjH" id="6ZRhjsG_4cy" role="wWaWy">
                     <node concept="3uibUv" id="6ZRhjsG_4cz" role="2FaQuo">
-                      <ref role="3uigEE" node="6ZRhjsGymx2" resolve="Builder" />
+                      <ref role="3uigEE" node="6ZRhjsGymx2" resolve="MethodReferences.Builder" />
                     </node>
                   </node>
                 </node>
@@ -1218,7 +1218,7 @@
                   <ref role="37Ijqf" node="6ZRhjsGymx9" resolve="copy" />
                   <node concept="2FaPjH" id="6ZRhjsG_4Fe" role="wWaWy">
                     <node concept="3uibUv" id="6ZRhjsG_4Ff" role="2FaQuo">
-                      <ref role="3uigEE" node="6ZRhjsGymx2" resolve="Builder" />
+                      <ref role="3uigEE" node="6ZRhjsGymx2" resolve="MethodReferences.Builder" />
                     </node>
                   </node>
                   <node concept="3uibUv" id="6ZRhjsG_5oO" role="3_kYmE">
@@ -1252,7 +1252,7 @@
                       <ref role="37Ijqf" node="6ZRhjsGymxW" resolve="init" />
                       <node concept="2FaPjH" id="6ZRhjsG_aAd" role="wWaWy">
                         <node concept="3uibUv" id="6ZRhjsG_aAe" role="2FaQuo">
-                          <ref role="3uigEE" node="6ZRhjsGymxH" resolve="ItemContainer" />
+                          <ref role="3uigEE" node="6ZRhjsGymxH" resolve="MethodReferences.ItemContainer" />
                         </node>
                       </node>
                     </node>
@@ -1263,7 +1263,7 @@
                     <ref role="37Ijqf" node="6ZRhjsGymy7" resolve="get" />
                     <node concept="2FaPjH" id="6ZRhjsG_aAh" role="wWaWy">
                       <node concept="3uibUv" id="6ZRhjsG_aAi" role="2FaQuo">
-                        <ref role="3uigEE" node="6ZRhjsGymxH" resolve="ItemContainer" />
+                        <ref role="3uigEE" node="6ZRhjsGymxH" resolve="MethodReferences.ItemContainer" />
                       </node>
                     </node>
                   </node>
@@ -1315,7 +1315,7 @@
                         <ref role="37Ijqf" node="6ZRhjsGymxW" resolve="init" />
                         <node concept="2FaPjH" id="6ZRhjsG_vu0" role="wWaWy">
                           <node concept="3uibUv" id="6ZRhjsG_vu1" role="2FaQuo">
-                            <ref role="3uigEE" node="6ZRhjsGymxH" resolve="ItemContainer" />
+                            <ref role="3uigEE" node="6ZRhjsGymxH" resolve="MethodReferences.ItemContainer" />
                           </node>
                         </node>
                       </node>
@@ -1327,7 +1327,7 @@
                       <ref role="37Ijqf" node="6ZRhjsGymyc" resolve="self" />
                       <node concept="2FaPjH" id="6ZRhjsG_vu4" role="wWaWy">
                         <node concept="3uibUv" id="6ZRhjsG_vu5" role="2FaQuo">
-                          <ref role="3uigEE" node="6ZRhjsGymxH" resolve="ItemContainer" />
+                          <ref role="3uigEE" node="6ZRhjsGymxH" resolve="MethodReferences.ItemContainer" />
                         </node>
                       </node>
                     </node>
@@ -1339,7 +1339,7 @@
                     <ref role="37Ijqf" node="6ZRhjsGymy7" resolve="get" />
                     <node concept="2FaPjH" id="6ZRhjsG_vu8" role="wWaWy">
                       <node concept="3uibUv" id="6ZRhjsG_vu9" role="2FaQuo">
-                        <ref role="3uigEE" node="6ZRhjsGymxH" resolve="ItemContainer" />
+                        <ref role="3uigEE" node="6ZRhjsGymxH" resolve="MethodReferences.ItemContainer" />
                       </node>
                     </node>
                   </node>
@@ -1389,7 +1389,7 @@
                         <ref role="37Ijqf" node="6ZRhjsGymxW" resolve="init" />
                         <node concept="2FaPjH" id="6ZRhjsG_YuX" role="wWaWy">
                           <node concept="3uibUv" id="6ZRhjsG_YuY" role="2FaQuo">
-                            <ref role="3uigEE" node="6ZRhjsGymxH" resolve="ItemContainer" />
+                            <ref role="3uigEE" node="6ZRhjsGymxH" resolve="MethodReferences.ItemContainer" />
                           </node>
                         </node>
                       </node>
@@ -1401,7 +1401,7 @@
                       <ref role="37Ijqf" node="6ZRhjsGymyc" resolve="self" />
                       <node concept="2FaPjH" id="6ZRhjsG_Yv1" role="wWaWy">
                         <node concept="3uibUv" id="6ZRhjsG_Yv2" role="2FaQuo">
-                          <ref role="3uigEE" node="6ZRhjsGymxH" resolve="ItemContainer" />
+                          <ref role="3uigEE" node="6ZRhjsGymxH" resolve="MethodReferences.ItemContainer" />
                         </node>
                       </node>
                     </node>
@@ -1413,7 +1413,7 @@
                     <ref role="37Ijqf" node="6ZRhjsGymy7" resolve="get" />
                     <node concept="2FaPjH" id="6ZRhjsG_Yv5" role="wWaWy">
                       <node concept="3uibUv" id="6ZRhjsG_Yv6" role="2FaQuo">
-                        <ref role="3uigEE" node="6ZRhjsGymxH" resolve="ItemContainer" />
+                        <ref role="3uigEE" node="6ZRhjsGymxH" resolve="MethodReferences.ItemContainer" />
                       </node>
                     </node>
                   </node>
@@ -1604,7 +1604,7 @@
           <node concept="3cpWsn" id="6ZRhjsG$S0Z" role="3cpWs9">
             <property role="TrG5h" value="builder" />
             <node concept="3uibUv" id="6ZRhjsG$S0X" role="1tU5fm">
-              <ref role="3uigEE" node="6ZRhjsGymx2" resolve="Builder" />
+              <ref role="3uigEE" node="6ZRhjsGymx2" resolve="MethodReferences.Builder" />
               <node concept="3uibUv" id="6ZRhjsG$S0V" role="11_B2D">
                 <ref role="3uigEE" to="wyt6:~String" resolve="String" />
               </node>
@@ -1622,7 +1622,7 @@
                 </node>
               </node>
               <node concept="3uibUv" id="6ZRhjsG$S14" role="10QFUM">
-                <ref role="3uigEE" node="6ZRhjsGymx2" resolve="Builder" />
+                <ref role="3uigEE" node="6ZRhjsGymx2" resolve="MethodReferences.Builder" />
                 <node concept="17QB3L" id="6ZRhjsG$S15" role="11_B2D" />
                 <node concept="17QB3L" id="6ZRhjsG$S16" role="11_B2D" />
               </node>
@@ -1633,7 +1633,7 @@
           <node concept="3cpWsn" id="6ZRhjsG$T9s" role="3cpWs9">
             <property role="TrG5h" value="abuilder" />
             <node concept="3uibUv" id="6ZRhjsG$T9q" role="1tU5fm">
-              <ref role="3uigEE" node="6ZRhjsGymxk" resolve="AbstractBuilder" />
+              <ref role="3uigEE" node="6ZRhjsGymxk" resolve="MethodReferences.AbstractBuilder" />
               <node concept="3uibUv" id="6ZRhjsG$T9o" role="11_B2D">
                 <ref role="3uigEE" to="wyt6:~String" resolve="String" />
               </node>
@@ -1651,7 +1651,7 @@
                 </node>
               </node>
               <node concept="3uibUv" id="6ZRhjsG$T9x" role="10QFUM">
-                <ref role="3uigEE" node="6ZRhjsGymxk" resolve="AbstractBuilder" />
+                <ref role="3uigEE" node="6ZRhjsGymxk" resolve="MethodReferences.AbstractBuilder" />
                 <node concept="17QB3L" id="6ZRhjsG$T9y" role="11_B2D" />
                 <node concept="17QB3L" id="6ZRhjsG$T9z" role="11_B2D" />
               </node>
@@ -1664,8 +1664,8 @@
               <node concept="1Y3b0j" id="6ZRhjsG$WgB" role="YeSDq">
                 <property role="2bfB8j" value="true" />
                 <property role="373rjd" value="true" />
-                <ref role="37wK5l" node="6ZRhjsGymwO" resolve="AbstractVisited" />
-                <ref role="1Y3XeK" node="6ZRhjsGymwy" resolve="AbstractVisited" />
+                <ref role="37wK5l" node="6ZRhjsGymwO" resolve="MethodReferences.AbstractVisited" />
+                <ref role="1Y3XeK" node="6ZRhjsGymwy" resolve="MethodReferences.AbstractVisited" />
                 <node concept="3Tm1VV" id="6ZRhjsG$WgC" role="1B3o_S" />
                 <node concept="37Ijox" id="6ZRhjsG$VPs" role="37wK5m">
                   <ref role="37Ijqf" to="wyt6:~String.intern()" resolve="intern" />
@@ -1802,7 +1802,7 @@
       <node concept="2tJIrI" id="6ZRhjsGAfcP" role="jymVt" />
       <node concept="3Tm1VV" id="6ZRhjsGAfcQ" role="1B3o_S" />
       <node concept="3uibUv" id="6ZRhjsGAfcR" role="1zkMxy">
-        <ref role="3uigEE" node="6ZRhjsGAfcd" resolve="Computer" />
+        <ref role="3uigEE" node="6ZRhjsGAfcd" resolve="SuperReference.Computer" />
       </node>
       <node concept="3clFb_" id="6ZRhjsGAfcS" role="jymVt">
         <property role="TrG5h" value="process" />
@@ -1951,7 +1951,7 @@
         <node concept="37vLTG" id="6ZRhjsGAh0i" role="3clF46">
           <property role="TrG5h" value="processor" />
           <node concept="3uibUv" id="6ZRhjsGAh0j" role="1tU5fm">
-            <ref role="3uigEE" node="6ZRhjsGAgZy" resolve="MultiProcessor" />
+            <ref role="3uigEE" node="6ZRhjsGAgZy" resolve="VariableArity.MultiProcessor" />
             <node concept="16syzq" id="6ZRhjsGAh0k" role="11_B2D">
               <ref role="16sUi3" node="6ZRhjsGAh0n" resolve="J" />
             </node>
@@ -2064,7 +2064,7 @@
             <node concept="2ShNRf" id="6ZRhjsGAicu" role="2Oq$k0">
               <node concept="1pGfFk" id="6ZRhjsGAjfu" role="2ShVmc">
                 <property role="373rjd" value="true" />
-                <ref role="37wK5l" node="6ZRhjsGAgZX" resolve="ArrayHolder" />
+                <ref role="37wK5l" node="6ZRhjsGAgZX" resolve="VariableArity.ArrayHolder" />
                 <node concept="3uibUv" id="6ZRhjsGAjgI" role="1pMfVU">
                   <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                 </node>
@@ -2076,7 +2076,7 @@
                 <ref role="37Ijqf" node="6ZRhjsGAh0x" resolve="sumOf" />
                 <node concept="2FaPjH" id="6ZRhjsGAkXR" role="wWaWy">
                   <node concept="3uibUv" id="6ZRhjsGAkXS" role="2FaQuo">
-                    <ref role="3uigEE" node="6ZRhjsGAh0w" resolve="IntegerUtil" />
+                    <ref role="3uigEE" node="6ZRhjsGAh0w" resolve="VariableArity.IntegerUtil" />
                   </node>
                 </node>
               </node>
@@ -2088,7 +2088,7 @@
             <node concept="2ShNRf" id="6ZRhjsGAnfo" role="2Oq$k0">
               <node concept="1pGfFk" id="6ZRhjsGAnfp" role="2ShVmc">
                 <property role="373rjd" value="true" />
-                <ref role="37wK5l" node="6ZRhjsGAgZX" resolve="ArrayHolder" />
+                <ref role="37wK5l" node="6ZRhjsGAgZX" resolve="VariableArity.ArrayHolder" />
                 <node concept="3uibUv" id="6ZRhjsGAnfq" role="1pMfVU">
                   <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                 </node>
@@ -2100,7 +2100,7 @@
                 <ref role="37Ijqf" node="6ZRhjsGAh0U" resolve="sumOfArray" />
                 <node concept="2FaPjH" id="6ZRhjsGAnft" role="wWaWy">
                   <node concept="3uibUv" id="6ZRhjsGAnfu" role="2FaQuo">
-                    <ref role="3uigEE" node="6ZRhjsGAh0w" resolve="IntegerUtil" />
+                    <ref role="3uigEE" node="6ZRhjsGAh0w" resolve="VariableArity.IntegerUtil" />
                   </node>
                 </node>
               </node>
@@ -2124,7 +2124,7 @@
                 <ref role="37Ijqf" node="6ZRhjsGAgZE" resolve="processStrings" />
                 <node concept="2FaPjH" id="6ZRhjsGArWa" role="wWaWy">
                   <node concept="3uibUv" id="6ZRhjsGArWb" role="2FaQuo">
-                    <ref role="3uigEE" node="6ZRhjsGAgZy" resolve="MultiProcessor" />
+                    <ref role="3uigEE" node="6ZRhjsGAgZy" resolve="VariableArity.MultiProcessor" />
                   </node>
                 </node>
               </node>
@@ -2143,7 +2143,7 @@
                 <ref role="37Ijqf" node="6ZRhjsGAgZE" resolve="processStrings" />
                 <node concept="2FaPjH" id="6ZRhjsGAwo1" role="wWaWy">
                   <node concept="3uibUv" id="6ZRhjsGAwo2" role="2FaQuo">
-                    <ref role="3uigEE" node="6ZRhjsGAgZy" resolve="MultiProcessor" />
+                    <ref role="3uigEE" node="6ZRhjsGAgZy" resolve="VariableArity.MultiProcessor" />
                   </node>
                 </node>
               </node>
@@ -2163,7 +2163,7 @@
               <ref role="37Ijqf" node="6ZRhjsGAgZE" resolve="processStrings" />
               <node concept="2FaPjH" id="6ZRhjsGAz2m" role="wWaWy">
                 <node concept="3uibUv" id="6ZRhjsGAz2n" role="2FaQuo">
-                  <ref role="3uigEE" node="6ZRhjsGAgZy" resolve="MultiProcessor" />
+                  <ref role="3uigEE" node="6ZRhjsGAgZy" resolve="VariableArity.MultiProcessor" />
                 </node>
               </node>
             </node>

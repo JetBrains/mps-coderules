@@ -774,7 +774,7 @@
                       <node concept="3clFbS" id="6ZRhjsGcJ2u" role="3IrJb0">
                         <node concept="3clFbJ" id="6ZRhjsGcJ5u" role="3cqZAp">
                           <node concept="37vLTw" id="6ZRhjsGcNgI" role="3clFbw">
-                            <ref role="3cqZAo" node="6ZRhjsGcNgu" resolve="b" />
+                            <ref role="3cqZAo" node="6ZRhjsGcNgu" resolve="instanceMethod" />
                           </node>
                           <node concept="3clFbS" id="6ZRhjsGcJ5w" role="3clFbx">
                             <node concept="3Aqczg" id="6ZRhjsGcMfO" role="3cqZAp">
@@ -1028,13 +1028,13 @@
                                 <node concept="nsMwS" id="6ZRhjsGaOcp" role="ns1xD">
                                   <ref role="nsMwP" to="kqnc:ZJPHcupkk3" resolve="params" />
                                   <node concept="a7P8L" id="6ZRhjsGb2t5" role="iSaTp">
-                                    <ref role="a7OzE" node="6ZRhjsGaOcx" resolve="ParamType" />
+                                    <ref role="a7OzE" node="6ZRhjsGaOcx" resolve="MethParamType" />
                                   </node>
                                 </node>
                                 <node concept="nsMwS" id="6ZRhjsGaOcs" role="ns1xD">
                                   <ref role="nsMwP" to="kqnc:ZJPHcupkk9" resolve="result" />
                                   <node concept="a7P8L" id="6ZRhjsGb2tb" role="iSaTp">
-                                    <ref role="a7OzE" node="6ZRhjsGb1hn" resolve="ResType" />
+                                    <ref role="a7OzE" node="6ZRhjsGb1hn" resolve="MethResType" />
                                   </node>
                                 </node>
                                 <node concept="nsMwS" id="6ZRhjsGdEHN" role="ns1xD">
@@ -1114,7 +1114,7 @@
                               <node concept="3Aqczg" id="6ZRhjsGz2MJ" role="3cqZAp">
                                 <node concept="3A8Hvi" id="6ZRhjsGz2MK" role="3Aqpz8">
                                   <node concept="a7P8L" id="6ZRhjsGz2ML" role="3A8wtg">
-                                    <ref role="a7OzE" node="6ZRhjsG9V36" resolve="TargetType" />
+                                    <ref role="a7OzE" node="6ZRhjsG9V36" resolve="NaturalType" />
                                   </node>
                                   <node concept="ns1u0" id="6ZRhjsGz2MM" role="3A8w4Q">
                                     <ref role="ns1xF" to="fa4b:6$MmqWflYd6" resolve="function" />
@@ -1159,7 +1159,7 @@
                                 <node concept="3Aqczg" id="6ZRhjsGb4nM" role="3cqZAp">
                                   <node concept="3A8Hvi" id="6ZRhjsGb4nG" role="3Aqpz8">
                                     <node concept="a7P8L" id="6ZRhjsGb4MF" role="3A8wtg">
-                                      <ref role="a7OzE" node="6ZRhjsG9V36" resolve="TargetType" />
+                                      <ref role="a7OzE" node="6ZRhjsG9V36" resolve="NaturalType" />
                                     </node>
                                     <node concept="ns1u0" id="6ZRhjsGb6ap" role="3A8w4Q">
                                       <ref role="ns1xF" to="fa4b:6$MmqWflYd6" resolve="function" />
@@ -1193,9 +1193,9 @@
                               <node concept="ns1u0" id="6ZRhjsGb6l1" role="3AunhB">
                                 <ref role="ns1xF" node="6ZRhjsG9lpn" resolve="methodRef" />
                                 <node concept="nsMwS" id="6ZRhjsGb6l5" role="ns1xD">
-                                  <ref role="nsMwP" node="6ZRhjsGHQ5B" resolve="function" />
+                                  <ref role="nsMwP" node="6ZRhjsGHQ5B" resolve="natural" />
                                   <node concept="a7P8L" id="6ZRhjsGb6l8" role="iSaTp">
-                                    <ref role="a7OzE" node="6ZRhjsG9V36" resolve="TargetType" />
+                                    <ref role="a7OzE" node="6ZRhjsG9V36" resolve="NaturalType" />
                                   </node>
                                 </node>
                                 <node concept="nsMwS" id="6ZRhjsGHQ6l" role="ns1xD">
@@ -1301,7 +1301,7 @@
             </node>
             <node concept="3NuqgR" id="4s_lMmH6CtZ" role="0Rg$4">
               <node concept="3uibUv" id="4s_lMmH6Cu0" role="3vLBG7">
-                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="Options" />
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
               </node>
               <node concept="aZer4" id="4s_lMmH6Cu1" role="3XD1gS">
                 <property role="TrG5h" value="Options" />
@@ -1373,7 +1373,7 @@
                     </node>
                     <node concept="1HFMs5" id="6ZRhjsGc8Y$" role="3AunhB">
                       <node concept="a7P8L" id="6ZRhjsGc8Y_" role="1uarlU">
-                        <ref role="a7OzE" node="6ZRhjsGc8YF" resolve="FunType" />
+                        <ref role="a7OzE" node="6ZRhjsGc8YF" resolve="ClsType" />
                       </node>
                       <node concept="ns1u0" id="6ZRhjsGc9c$" role="1uarlW">
                         <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
@@ -1412,7 +1412,7 @@
             </node>
             <node concept="3NuqgR" id="6ZRhjsGc8YH" role="0Rg$4">
               <node concept="3uibUv" id="6ZRhjsGc8YI" role="3vLBG7">
-                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="Options" />
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
               </node>
               <node concept="aZer4" id="6ZRhjsGc8YJ" role="3XD1gS">
                 <property role="TrG5h" value="Options" />
@@ -1428,7 +1428,7 @@
                         <ref role="a7OzE" node="6ZRhjsGc8YE" resolve="TargetType" />
                       </node>
                       <node concept="a7P8L" id="6ZRhjsGc8YQ" role="3AunhB">
-                        <ref role="a7OzE" node="6ZRhjsGc8YF" resolve="FunType" />
+                        <ref role="a7OzE" node="6ZRhjsGc8YF" resolve="ClsType" />
                       </node>
                       <node concept="a7P8L" id="6ZRhjsGc8YR" role="3AunhB">
                         <ref role="a7OzE" node="6ZRhjsGc8YJ" resolve="Options" />
@@ -1512,7 +1512,7 @@
             </node>
             <node concept="3NuqgR" id="vrUbzhEaSa" role="0Rg$4">
               <node concept="3uibUv" id="vrUbzhEaSb" role="3vLBG7">
-                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="Options" />
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
               </node>
               <node concept="aZer4" id="vrUbzhEaSc" role="3XD1gS">
                 <property role="TrG5h" value="Options" />

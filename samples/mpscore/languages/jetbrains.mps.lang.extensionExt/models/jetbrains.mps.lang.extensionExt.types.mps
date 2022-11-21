@@ -703,7 +703,7 @@
                     <ref role="3AqCNq" to="kqnc:3vTJNooZDgN" resolve="convertsTo" />
                     <node concept="1HFMs5" id="6ZRhjsG7Zqf" role="3AunhB">
                       <node concept="a7P8L" id="6ZRhjsG7Y4w" role="1uarlU">
-                        <ref role="a7OzE" node="6ZRhjsG7Y0i" resolve="EType" />
+                        <ref role="a7OzE" node="6ZRhjsG7Y0i" resolve="ExtType" />
                       </node>
                       <node concept="ns1u0" id="6ZRhjsG7ZrF" role="1uarlW">
                         <ref role="ns1xF" node="6ZRhjsG7IgK" resolve="extensionPoint" />
@@ -747,7 +747,7 @@
                 <property role="TrG5h" value="Opt" />
               </node>
               <node concept="3uibUv" id="6ZRhjsG7XL0" role="3vLBG7">
-                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="Options" />
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
               </node>
             </node>
             <node concept="3xSepi" id="6ZRhjsG7Y9O" role="3xSepv">
