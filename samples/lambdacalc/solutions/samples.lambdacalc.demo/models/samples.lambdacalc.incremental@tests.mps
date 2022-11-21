@@ -3,9 +3,9 @@
   <persistence version="9" />
   <attribute name="doNotGenerate" value="false" />
   <languages>
-    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="5" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="6" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text" version="0" />
     <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="samples.lambdacalc" version="0" />
@@ -27,6 +27,7 @@
       </concept>
       <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
+        <property id="2616911529524314943" name="accessMode" index="3DII0k" />
         <child id="1216993439383" name="methods" index="1qtyYc" />
         <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
         <child id="1217501895093" name="testMethods" index="1SL9yI" />
@@ -210,6 +211,7 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="8329979535468945057" name="jetbrains.mps.lang.smodel.structure.Node_PresentationOperation" flags="ng" index="2Iv5rx" />
       <concept id="3648723375513868532" name="jetbrains.mps.lang.smodel.structure.NodePointer_ResolveOperation" flags="ng" index="Vyspw" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -318,6 +320,7 @@
   </node>
   <node concept="1lH9Xt" id="5SC$dmoqInM">
     <property role="TrG5h" value="IncrementalLC" />
+    <property role="3DII0k" value="2hh8MJdVwqX/command" />
     <node concept="1LZb2c" id="5SC$dmoGu_H" role="1SL9yI">
       <property role="TrG5h" value="app_changeArg_ok1" />
       <node concept="3cqZAl" id="5SC$dmoGu_I" role="3clF45" />
@@ -1720,8 +1723,11 @@
                                             <node concept="Xl_RD" id="5SC$dmoqItT" role="3uHU7B">
                                               <property role="Xl_RC" value="mismatched VarType: " />
                                             </node>
-                                            <node concept="37vLTw" id="5SC$dmoqItU" role="3uHU7w">
-                                              <ref role="3cqZAo" node="5SC$dmoqIqW" resolve="a" />
+                                            <node concept="2OqwBi" id="1riUXHOMOJ5" role="3uHU7w">
+                                              <node concept="37vLTw" id="5SC$dmoqItU" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="5SC$dmoqIqW" resolve="a" />
+                                              </node>
+                                              <node concept="2Iv5rx" id="1riUXHOMOJ6" role="2OqNvi" />
                                             </node>
                                           </node>
                                           <node concept="Xl_RD" id="5SC$dmoqItQ" role="3uHU7w">

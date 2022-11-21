@@ -375,7 +375,7 @@
       <property role="TrG5h" value="TYPECHECKING_ENABLED" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="7iCybvT$PdJ" role="1tU5fm">
-        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Option" />
+        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Config.Option" />
         <node concept="3uibUv" id="7iCybvT$PCp" role="11_B2D">
           <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
         </node>
@@ -385,7 +385,7 @@
         <node concept="YeOm9" id="7iCybvT$K45" role="2ShVmc">
           <node concept="1Y3b0j" id="7iCybvT$K48" role="YeSDq">
             <property role="2bfB8j" value="true" />
-            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Option" />
+            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Config.Option" />
             <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
             <node concept="3Tm1VV" id="7iCybvT$K49" role="1B3o_S" />
             <node concept="3clFb_" id="7iCybvT$K4e" role="jymVt">
@@ -435,7 +435,7 @@
       <property role="TrG5h" value="TYPECHECKING_WATCHING" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="5Qx6_65jA5J" role="1tU5fm">
-        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Option" />
+        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Config.Option" />
         <node concept="3uibUv" id="5Qx6_65jA5K" role="11_B2D">
           <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
         </node>
@@ -445,7 +445,7 @@
         <node concept="YeOm9" id="5Qx6_65jA5N" role="2ShVmc">
           <node concept="1Y3b0j" id="5Qx6_65jA5O" role="YeSDq">
             <property role="2bfB8j" value="true" />
-            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Option" />
+            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Config.Option" />
             <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
             <node concept="3Tm1VV" id="5Qx6_65jA5P" role="1B3o_S" />
             <node concept="3clFb_" id="5Qx6_65jA5Q" role="jymVt">
@@ -495,7 +495,7 @@
       <property role="TrG5h" value="TYPECHECKING_REPORTING" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1z4$59hOqxh" role="1tU5fm">
-        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Option" />
+        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Config.Option" />
         <node concept="3uibUv" id="1z4$59hOqxi" role="11_B2D">
           <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
         </node>
@@ -505,7 +505,7 @@
         <node concept="YeOm9" id="1z4$59hOqxl" role="2ShVmc">
           <node concept="1Y3b0j" id="1z4$59hOqxm" role="YeSDq">
             <property role="2bfB8j" value="true" />
-            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Option" />
+            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Config.Option" />
             <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
             <node concept="3Tm1VV" id="1z4$59hOqxn" role="1B3o_S" />
             <node concept="3clFb_" id="1z4$59hOqxo" role="jymVt">
@@ -555,7 +555,7 @@
       <property role="TrG5h" value="TYPECHECKING_TRACE" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="7iCybvT_hbF" role="1tU5fm">
-        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Option" />
+        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Config.Option" />
         <node concept="3uibUv" id="7iCybvT_hbG" role="11_B2D">
           <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
         </node>
@@ -565,7 +565,7 @@
         <node concept="YeOm9" id="7iCybvT_hbJ" role="2ShVmc">
           <node concept="1Y3b0j" id="7iCybvT_hbK" role="YeSDq">
             <property role="2bfB8j" value="true" />
-            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Option" />
+            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Config.Option" />
             <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
             <node concept="3Tm1VV" id="7iCybvT_hbL" role="1B3o_S" />
             <node concept="3clFb_" id="7iCybvT_hbM" role="jymVt">
@@ -615,7 +615,7 @@
       <property role="TrG5h" value="COLLECT_TRACES" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1T5MAgPtJgC" role="1tU5fm">
-        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Option" />
+        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Config.Option" />
         <node concept="3uibUv" id="1T5MAgPtJgD" role="11_B2D">
           <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
         </node>
@@ -625,7 +625,7 @@
         <node concept="YeOm9" id="1T5MAgPtJgG" role="2ShVmc">
           <node concept="1Y3b0j" id="1T5MAgPtJgH" role="YeSDq">
             <property role="2bfB8j" value="true" />
-            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Option" />
+            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Config.Option" />
             <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
             <node concept="3Tm1VV" id="1T5MAgPtJgI" role="1B3o_S" />
             <node concept="3clFb_" id="1T5MAgPtJgJ" role="jymVt">
@@ -810,7 +810,7 @@
               <ref role="37wK5l" node="7iCybvTszk9" resolve="registerProvider" />
               <node concept="Rm8GO" id="7iCybvTyARZ" role="37wK5m">
                 <ref role="Rm8GQ" node="7iCybvToIZc" resolve="UI" />
-                <ref role="1Px2BO" node="7iCybvToD3Z" resolve="Level" />
+                <ref role="1Px2BO" node="7iCybvToD3Z" resolve="Config.Level" />
               </node>
               <node concept="37vLTw" id="2MNGcFT5iZQ" role="37wK5m">
                 <ref role="3cqZAo" node="7iCybvTzJGv" resolve="PREFIX" />
@@ -956,7 +956,7 @@
               <ref role="37wK5l" node="7iCybvTszk9" resolve="registerProvider" />
               <node concept="Rm8GO" id="23Habm5BLXI" role="37wK5m">
                 <ref role="Rm8GQ" node="7iCybvToHsq" resolve="USER" />
-                <ref role="1Px2BO" node="7iCybvToD3Z" resolve="Level" />
+                <ref role="1Px2BO" node="7iCybvToD3Z" resolve="Config.Level" />
               </node>
               <node concept="10M0yZ" id="23Habm5BLD9" role="37wK5m">
                 <ref role="1PxDUh" node="39eNUjm3TK$" resolve="CoderulesOptions" />
@@ -1056,7 +1056,7 @@
             <node concept="liA8E" id="7DmawKu61ZO" role="2OqNvi">
               <ref role="37wK5l" node="7iCybvTszk9" resolve="registerProvider" />
               <node concept="Rm8GO" id="7DmawKu61ZP" role="37wK5m">
-                <ref role="1Px2BO" node="7iCybvToD3Z" resolve="Level" />
+                <ref role="1Px2BO" node="7iCybvToD3Z" resolve="Config.Level" />
                 <ref role="Rm8GQ" node="7iCybvToHsq" resolve="USER" />
               </node>
               <node concept="37vLTw" id="7DmawKu620w" role="37wK5m">
@@ -1245,7 +1245,7 @@
       <property role="TrG5h" value="PROFILING_ENABLED" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="23Habm5BnXi" role="1tU5fm">
-        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Option" />
+        <ref role="3uigEE" node="7iCybvT$$S3" resolve="Config.Option" />
         <node concept="3uibUv" id="23Habm5BnXj" role="11_B2D">
           <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
         </node>
@@ -1255,7 +1255,7 @@
         <node concept="YeOm9" id="23Habm5BnXm" role="2ShVmc">
           <node concept="1Y3b0j" id="23Habm5BnXn" role="YeSDq">
             <property role="2bfB8j" value="true" />
-            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Option" />
+            <ref role="1Y3XeK" node="7iCybvT$$S3" resolve="Config.Option" />
             <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
             <node concept="3Tm1VV" id="23Habm5BnXo" role="1B3o_S" />
             <node concept="3clFb_" id="23Habm5BnXp" role="jymVt">
@@ -1280,7 +1280,7 @@
                       <node concept="liA8E" id="23Habm5BnXz" role="2OqNvi">
                         <ref role="37wK5l" node="7iCybvToiWV" resolve="getOption" />
                         <node concept="37vLTw" id="23Habm5BtCY" role="37wK5m">
-                          <ref role="3cqZAo" node="23Habm5Bmhe" resolve="OPTION_PROFILING" />
+                          <ref role="3cqZAo" node="23Habm5Bmhe" resolve="OPTION_PROFILING_ENABLED" />
                         </node>
                       </node>
                     </node>
@@ -1307,7 +1307,7 @@
       <node concept="37vLTG" id="1_Anebx$u9p" role="3clF46">
         <property role="TrG5h" value="config" />
         <node concept="3uibUv" id="1_Anebx$ugg" role="1tU5fm">
-          <ref role="3uigEE" node="7iCybvToiT5" />
+          <ref role="3uigEE" node="7iCybvToiT5" resolve="Config" />
         </node>
       </node>
       <node concept="3clFbS" id="1_Anebx$sLp" role="3clF47">
@@ -1317,10 +1317,10 @@
               <ref role="3cqZAo" node="1_Anebx$u9p" resolve="config" />
             </node>
             <node concept="liA8E" id="1_Anebx$lVc" role="2OqNvi">
-              <ref role="37wK5l" node="7iCybvTszk9" />
+              <ref role="37wK5l" node="7iCybvTszk9" resolve="registerProvider" />
               <node concept="Rm8GO" id="1_Anebx$nmY" role="37wK5m">
-                <ref role="1Px2BO" node="7iCybvToD3Z" />
-                <ref role="Rm8GQ" node="7iCybvToHsq" />
+                <ref role="1Px2BO" node="7iCybvToD3Z" resolve="Config.Level" />
+                <ref role="Rm8GQ" node="7iCybvToHsq" resolve="USER" />
               </node>
               <node concept="37vLTw" id="1_Anebx_52p" role="37wK5m">
                 <ref role="3cqZAo" node="1_Anebx$$SU" resolve="PREFIX" />
@@ -1495,7 +1495,7 @@
                     <ref role="37wK5l" node="7iCybvTs5N5" resolve="Config" />
                     <node concept="2ShNRf" id="5gVsyvFqjgY" role="37wK5m">
                       <node concept="1pGfFk" id="5gVsyvFqjgZ" role="2ShVmc">
-                        <ref role="37wK5l" node="7iCybvTsdu8" resolve="EffectiveOptions" />
+                        <ref role="37wK5l" node="7iCybvTsdu8" resolve="Config.EffectiveOptions" />
                       </node>
                     </node>
                   </node>
@@ -1614,7 +1614,7 @@
               <ref role="37wK5l" node="7iCybvTs5N5" resolve="Config" />
               <node concept="2ShNRf" id="6hpwxwiI9ha" role="37wK5m">
                 <node concept="1pGfFk" id="6hpwxwiI9hb" role="2ShVmc">
-                  <ref role="37wK5l" node="7iCybvTsdu8" resolve="EffectiveOptions" />
+                  <ref role="37wK5l" node="7iCybvTsdu8" resolve="Config.EffectiveOptions" />
                 </node>
               </node>
             </node>
@@ -1667,7 +1667,7 @@
       <node concept="37vLTG" id="2vm2iDVlurW" role="3clF46">
         <property role="TrG5h" value="lvl" />
         <node concept="3uibUv" id="2vm2iDVluE7" role="1tU5fm">
-          <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+          <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
         </node>
       </node>
       <node concept="3cqZAl" id="2vm2iDVltSe" role="3clF45" />
@@ -1715,7 +1715,7 @@
       <node concept="37vLTG" id="7iCybvToLCK" role="3clF46">
         <property role="TrG5h" value="level" />
         <node concept="3uibUv" id="7iCybvToLLw" role="1tU5fm">
-          <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+          <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
         </node>
       </node>
       <node concept="37vLTG" id="7iCybvToOoN" role="3clF46">
@@ -1725,7 +1725,7 @@
       <node concept="37vLTG" id="7iCybvToLVE" role="3clF46">
         <property role="TrG5h" value="provider" />
         <node concept="3uibUv" id="7iCybvToNTj" role="1tU5fm">
-          <ref role="3uigEE" node="7iCybvToMqc" resolve="OptionsProvider" />
+          <ref role="3uigEE" node="7iCybvToMqc" resolve="Config.OptionsProvider" />
         </node>
       </node>
       <node concept="3cqZAl" id="7iCybvToL4I" role="3clF45" />
@@ -1772,7 +1772,7 @@
       <node concept="37vLTG" id="7prluhlHv8$" role="3clF46">
         <property role="TrG5h" value="lvl" />
         <node concept="3uibUv" id="7prluhlHv8z" role="1tU5fm">
-          <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+          <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
         </node>
       </node>
       <node concept="37vLTG" id="7prluhlHvte" role="3clF46">
@@ -1857,7 +1857,7 @@
       <node concept="37vLTG" id="7iCybvTsV_p" role="3clF46">
         <property role="TrG5h" value="options" />
         <node concept="3uibUv" id="7iCybvTv1GP" role="1tU5fm">
-          <ref role="3uigEE" node="7iCybvTsdu6" resolve="EffectiveOptions" />
+          <ref role="3uigEE" node="7iCybvTsdu6" resolve="Config.EffectiveOptions" />
         </node>
       </node>
       <node concept="3Tm6S6" id="7e$2hwaurTs" role="1B3o_S" />
@@ -1901,7 +1901,7 @@
                   <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;(java.util.Map)" resolve="HashMap" />
                   <node concept="17QB3L" id="4ot3PHRLps_" role="1pMfVU" />
                   <node concept="3uibUv" id="4ot3PHRLqMf" role="1pMfVU">
-                    <ref role="3uigEE" node="7iCybvToMqc" resolve="OptionsProvider" />
+                    <ref role="3uigEE" node="7iCybvToMqc" resolve="Config.OptionsProvider" />
                   </node>
                   <node concept="2OqwBi" id="4ot3PHRLjXj" role="37wK5m">
                     <node concept="37vLTw" id="4ot3PHRLikj" role="2Oq$k0">
@@ -1925,7 +1925,7 @@
         <node concept="37vLTG" id="4ot3PHRKx$J" role="3clF46">
           <property role="TrG5h" value="copyFrom" />
           <node concept="3uibUv" id="4ot3PHRKx$I" role="1tU5fm">
-            <ref role="3uigEE" node="7iCybvTsAb9" resolve="Options" />
+            <ref role="3uigEE" node="7iCybvTsAb9" resolve="Config.Options" />
           </node>
         </node>
       </node>
@@ -1952,7 +1952,7 @@
             <node concept="3cpWsn" id="7iCybvTqKRx" role="3cpWs9">
               <property role="TrG5h" value="lookupProvider" />
               <node concept="3uibUv" id="7iCybvTqKRy" role="1tU5fm">
-                <ref role="3uigEE" node="7iCybvToMqc" resolve="OptionsProvider" />
+                <ref role="3uigEE" node="7iCybvToMqc" resolve="Config.OptionsProvider" />
               </node>
               <node concept="1rXfSq" id="7iCybvTqKRz" role="33vP2m">
                 <ref role="37wK5l" node="7iCybvToXnO" resolve="lookupProvider" />
@@ -2021,7 +2021,7 @@
         <node concept="37vLTG" id="7iCybvTp1uX" role="3clF46">
           <property role="TrG5h" value="provider" />
           <node concept="3uibUv" id="7iCybvTp1L$" role="1tU5fm">
-            <ref role="3uigEE" node="7iCybvToMqc" resolve="OptionsProvider" />
+            <ref role="3uigEE" node="7iCybvToMqc" resolve="Config.OptionsProvider" />
           </node>
         </node>
         <node concept="3Tmbuc" id="7iCybvTp0sg" role="1B3o_S" />
@@ -2030,12 +2030,12 @@
             <node concept="3cpWsn" id="4ot3PHRLS7z" role="3cpWs9">
               <property role="TrG5h" value="newOptions" />
               <node concept="3uibUv" id="4ot3PHRLRA1" role="1tU5fm">
-                <ref role="3uigEE" node="7iCybvTsAb9" resolve="Options" />
+                <ref role="3uigEE" node="7iCybvTsAb9" resolve="Config.Options" />
               </node>
               <node concept="2ShNRf" id="4ot3PHRLS7$" role="33vP2m">
                 <node concept="1pGfFk" id="4ot3PHRLS7_" role="2ShVmc">
                   <property role="373rjd" value="true" />
-                  <ref role="37wK5l" node="4ot3PHRK9Yf" resolve="Options" />
+                  <ref role="37wK5l" node="4ot3PHRK9Yf" resolve="Config.Options" />
                   <node concept="Xjq3P" id="4ot3PHRLS7A" role="37wK5m" />
                 </node>
               </node>
@@ -2069,7 +2069,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="4ot3PHRJXca" role="3clF45">
-          <ref role="3uigEE" node="7iCybvTsAb9" resolve="Options" />
+          <ref role="3uigEE" node="7iCybvTsAb9" resolve="Config.Options" />
         </node>
       </node>
       <node concept="2tJIrI" id="7iCybvToZLW" role="jymVt" />
@@ -2085,12 +2085,12 @@
             <node concept="3cpWsn" id="4ot3PHRMaws" role="3cpWs9">
               <property role="TrG5h" value="newOptions" />
               <node concept="3uibUv" id="4ot3PHRMawt" role="1tU5fm">
-                <ref role="3uigEE" node="7iCybvTsAb9" resolve="Options" />
+                <ref role="3uigEE" node="7iCybvTsAb9" resolve="Config.Options" />
               </node>
               <node concept="2ShNRf" id="4ot3PHRMawu" role="33vP2m">
                 <node concept="1pGfFk" id="4ot3PHRMawv" role="2ShVmc">
                   <property role="373rjd" value="true" />
-                  <ref role="37wK5l" node="4ot3PHRK9Yf" resolve="Options" />
+                  <ref role="37wK5l" node="4ot3PHRK9Yf" resolve="Config.Options" />
                   <node concept="Xjq3P" id="4ot3PHRMaww" role="37wK5m" />
                 </node>
               </node>
@@ -2121,7 +2121,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="4ot3PHRJYUX" role="3clF45">
-          <ref role="3uigEE" node="7iCybvTsAb9" resolve="Options" />
+          <ref role="3uigEE" node="7iCybvTsAb9" resolve="Config.Options" />
         </node>
       </node>
       <node concept="2tJIrI" id="7prluhlHRVg" role="jymVt" />
@@ -2134,7 +2134,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="7iCybvToXUm" role="3clF45">
-          <ref role="3uigEE" node="7iCybvToMqc" resolve="OptionsProvider" />
+          <ref role="3uigEE" node="7iCybvToMqc" resolve="Config.OptionsProvider" />
         </node>
         <node concept="3Tmbuc" id="7iCybvToXEJ" role="1B3o_S" />
         <node concept="3clFbS" id="7iCybvToXnS" role="3clF47">
@@ -2190,7 +2190,7 @@
           <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
           <node concept="17QB3L" id="7iCybvTp2NK" role="11_B2D" />
           <node concept="3uibUv" id="7iCybvTp2WI" role="11_B2D">
-            <ref role="3uigEE" node="7iCybvToMqc" resolve="OptionsProvider" />
+            <ref role="3uigEE" node="7iCybvToMqc" resolve="Config.OptionsProvider" />
           </node>
         </node>
       </node>
@@ -2209,10 +2209,10 @@
               <node concept="2ShNRf" id="4ot3PHRO9VT" role="37vLTx">
                 <node concept="3rGOSV" id="4ot3PHRO9UY" role="2ShVmc">
                   <node concept="3uibUv" id="4ot3PHRO9UZ" role="3rHrn6">
-                    <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+                    <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
                   </node>
                   <node concept="3uibUv" id="4ot3PHRO9V0" role="3rHtpV">
-                    <ref role="3uigEE" node="7iCybvTsAb9" resolve="Options" />
+                    <ref role="3uigEE" node="7iCybvTsAb9" resolve="Config.Options" />
                   </node>
                 </node>
               </node>
@@ -2239,7 +2239,7 @@
                   <node concept="2ShNRf" id="7e$2hwatCqQ" role="37vLTx">
                     <node concept="1pGfFk" id="7e$2hwatECW" role="2ShVmc">
                       <property role="373rjd" value="true" />
-                      <ref role="37wK5l" node="4ot3PHRLyTV" resolve="Options" />
+                      <ref role="37wK5l" node="4ot3PHRLyTV" resolve="Config.Options" />
                     </node>
                   </node>
                 </node>
@@ -2248,11 +2248,11 @@
             <node concept="3cpWsn" id="7e$2hwatzEV" role="1Duv9x">
               <property role="TrG5h" value="lvl" />
               <node concept="3uibUv" id="7e$2hwatzEW" role="1tU5fm">
-                <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+                <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
               </node>
             </node>
             <node concept="uiWXb" id="7e$2hwatzEX" role="1DdaDG">
-              <ref role="uiZuM" node="7iCybvToD3Z" resolve="Level" />
+              <ref role="uiZuM" node="7iCybvToD3Z" resolve="Config.Level" />
             </node>
           </node>
         </node>
@@ -2263,7 +2263,7 @@
         <node concept="37vLTG" id="4ot3PHRNYyo" role="3clF46">
           <property role="TrG5h" value="copyFrom" />
           <node concept="3uibUv" id="4ot3PHRNYS$" role="1tU5fm">
-            <ref role="3uigEE" node="7iCybvTsdu6" resolve="EffectiveOptions" />
+            <ref role="3uigEE" node="7iCybvTsdu6" resolve="Config.EffectiveOptions" />
           </node>
         </node>
         <node concept="3cqZAl" id="4ot3PHRNXfF" role="3clF45" />
@@ -2276,10 +2276,10 @@
                   <property role="373rjd" value="true" />
                   <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;(java.util.Map)" resolve="HashMap" />
                   <node concept="3uibUv" id="4ot3PHRO7g0" role="1pMfVU">
-                    <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+                    <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
                   </node>
                   <node concept="3uibUv" id="4ot3PHRO6yA" role="1pMfVU">
-                    <ref role="3uigEE" node="7iCybvTsAb9" resolve="Options" />
+                    <ref role="3uigEE" node="7iCybvTsAb9" resolve="Config.Options" />
                   </node>
                   <node concept="2OqwBi" id="4ot3PHRO3Z3" role="37wK5m">
                     <node concept="37vLTw" id="4ot3PHRO3AS" role="2Oq$k0">
@@ -2329,14 +2329,14 @@
                 <node concept="3cpWsn" id="4ot3PHRHJJQ" role="3cpWs9">
                   <property role="TrG5h" value="level" />
                   <node concept="3uibUv" id="4ot3PHRHIZw" role="1tU5fm">
-                    <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+                    <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
                   </node>
                   <node concept="AH0OO" id="4ot3PHRHJJR" role="33vP2m">
                     <node concept="37vLTw" id="4ot3PHRHJJS" role="AHEQo">
                       <ref role="3cqZAo" node="4ot3PHRHoF8" resolve="i" />
                     </node>
                     <node concept="uiWXb" id="4ot3PHRHJJT" role="AHHXb">
-                      <ref role="uiZuM" node="7iCybvToD3Z" resolve="Level" />
+                      <ref role="uiZuM" node="7iCybvToD3Z" resolve="Config.Level" />
                     </node>
                   </node>
                 </node>
@@ -2393,7 +2393,7 @@
                 </node>
                 <node concept="2OqwBi" id="4ot3PHRHtAa" role="3uHU7B">
                   <node concept="uiWXb" id="4ot3PHRHsjz" role="2Oq$k0">
-                    <ref role="uiZuM" node="7iCybvToD3Z" resolve="Level" />
+                    <ref role="uiZuM" node="7iCybvToD3Z" resolve="Config.Level" />
                   </node>
                   <node concept="1Rwk04" id="4ot3PHRHvSA" role="2OqNvi" />
                 </node>
@@ -2432,12 +2432,12 @@
             <node concept="3cpWsn" id="4ot3PHROkFM" role="3cpWs9">
               <property role="TrG5h" value="newEffOptions" />
               <node concept="3uibUv" id="4ot3PHROk1X" role="1tU5fm">
-                <ref role="3uigEE" node="7iCybvTsdu6" resolve="EffectiveOptions" />
+                <ref role="3uigEE" node="7iCybvTsdu6" resolve="Config.EffectiveOptions" />
               </node>
               <node concept="2ShNRf" id="4ot3PHROkFN" role="33vP2m">
                 <node concept="1pGfFk" id="4ot3PHROkFO" role="2ShVmc">
                   <property role="373rjd" value="true" />
-                  <ref role="37wK5l" node="4ot3PHRNXfD" resolve="EffectiveOptions" />
+                  <ref role="37wK5l" node="4ot3PHRNXfD" resolve="Config.EffectiveOptions" />
                   <node concept="Xjq3P" id="4ot3PHROkFP" role="37wK5m" />
                 </node>
               </node>
@@ -2465,7 +2465,7 @@
                       <node concept="2ShNRf" id="7e$2hwatF55" role="37vLTx">
                         <node concept="1pGfFk" id="7e$2hwatF56" role="2ShVmc">
                           <property role="373rjd" value="true" />
-                          <ref role="37wK5l" node="4ot3PHRLyTV" resolve="Options" />
+                          <ref role="37wK5l" node="4ot3PHRLyTV" resolve="Config.Options" />
                         </node>
                       </node>
                     </node>
@@ -2494,11 +2494,11 @@
             <node concept="3cpWsn" id="2vm2iDVkA1s" role="1Duv9x">
               <property role="TrG5h" value="lvl" />
               <node concept="3uibUv" id="2vm2iDVkA7_" role="1tU5fm">
-                <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+                <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
               </node>
             </node>
             <node concept="uiWXb" id="2vm2iDVkByK" role="1DdaDG">
-              <ref role="uiZuM" node="7iCybvToD3Z" resolve="Level" />
+              <ref role="uiZuM" node="7iCybvToD3Z" resolve="Config.Level" />
             </node>
           </node>
           <node concept="3clFbF" id="4ot3PHROeWl" role="3cqZAp">
@@ -2510,11 +2510,11 @@
         <node concept="37vLTG" id="2vm2iDVkznM" role="3clF46">
           <property role="TrG5h" value="startFrom" />
           <node concept="3uibUv" id="2vm2iDVkznL" role="1tU5fm">
-            <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+            <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
           </node>
         </node>
         <node concept="3uibUv" id="4ot3PHROd5T" role="3clF45">
-          <ref role="3uigEE" node="7iCybvTsdu6" resolve="EffectiveOptions" />
+          <ref role="3uigEE" node="7iCybvTsdu6" resolve="Config.EffectiveOptions" />
         </node>
       </node>
       <node concept="2tJIrI" id="2vm2iDVkoTm" role="jymVt" />
@@ -2523,7 +2523,7 @@
         <node concept="37vLTG" id="7iCybvTtCQ4" role="3clF46">
           <property role="TrG5h" value="level" />
           <node concept="3uibUv" id="7iCybvTtD_S" role="1tU5fm">
-            <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+            <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
           </node>
         </node>
         <node concept="37vLTG" id="7iCybvTtHI9" role="3clF46">
@@ -2533,7 +2533,7 @@
         <node concept="37vLTG" id="7iCybvTtDO6" role="3clF46">
           <property role="TrG5h" value="provider" />
           <node concept="3uibUv" id="7iCybvTtElK" role="1tU5fm">
-            <ref role="3uigEE" node="7iCybvToMqc" resolve="OptionsProvider" />
+            <ref role="3uigEE" node="7iCybvToMqc" resolve="Config.OptionsProvider" />
           </node>
         </node>
         <node concept="3Tmbuc" id="2vm2iDVl5XU" role="1B3o_S" />
@@ -2542,12 +2542,12 @@
             <node concept="3cpWsn" id="4ot3PHRODbx" role="3cpWs9">
               <property role="TrG5h" value="newEffOptions" />
               <node concept="3uibUv" id="4ot3PHROCyh" role="1tU5fm">
-                <ref role="3uigEE" node="7iCybvTsdu6" resolve="EffectiveOptions" />
+                <ref role="3uigEE" node="7iCybvTsdu6" resolve="Config.EffectiveOptions" />
               </node>
               <node concept="2ShNRf" id="4ot3PHRODby" role="33vP2m">
                 <node concept="1pGfFk" id="4ot3PHRODbz" role="2ShVmc">
                   <property role="373rjd" value="true" />
-                  <ref role="37wK5l" node="4ot3PHRNXfD" resolve="EffectiveOptions" />
+                  <ref role="37wK5l" node="4ot3PHRNXfD" resolve="Config.EffectiveOptions" />
                   <node concept="Xjq3P" id="4ot3PHRODb$" role="37wK5m" />
                 </node>
               </node>
@@ -2601,7 +2601,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="4ot3PHROwrA" role="3clF45">
-          <ref role="3uigEE" node="7iCybvTsdu6" resolve="EffectiveOptions" />
+          <ref role="3uigEE" node="7iCybvTsdu6" resolve="Config.EffectiveOptions" />
         </node>
       </node>
       <node concept="2tJIrI" id="7prluhlHM$r" role="jymVt" />
@@ -2610,7 +2610,7 @@
         <node concept="37vLTG" id="7prluhlHKlF" role="3clF46">
           <property role="TrG5h" value="level" />
           <node concept="3uibUv" id="7prluhlHKlG" role="1tU5fm">
-            <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+            <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
           </node>
         </node>
         <node concept="37vLTG" id="7prluhlHKlH" role="3clF46">
@@ -2623,12 +2623,12 @@
             <node concept="3cpWsn" id="4ot3PHROYlU" role="3cpWs9">
               <property role="TrG5h" value="newEffOptions" />
               <node concept="3uibUv" id="4ot3PHROXKk" role="1tU5fm">
-                <ref role="3uigEE" node="7iCybvTsdu6" resolve="EffectiveOptions" />
+                <ref role="3uigEE" node="7iCybvTsdu6" resolve="Config.EffectiveOptions" />
               </node>
               <node concept="2ShNRf" id="4ot3PHROYlV" role="33vP2m">
                 <node concept="1pGfFk" id="4ot3PHROYlW" role="2ShVmc">
                   <property role="373rjd" value="true" />
-                  <ref role="37wK5l" node="4ot3PHRNXfD" resolve="EffectiveOptions" />
+                  <ref role="37wK5l" node="4ot3PHRNXfD" resolve="Config.EffectiveOptions" />
                   <node concept="Xjq3P" id="4ot3PHROYlX" role="37wK5m" />
                 </node>
               </node>
@@ -2679,7 +2679,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="4ot3PHROPip" role="3clF45">
-          <ref role="3uigEE" node="7iCybvTsdu6" resolve="EffectiveOptions" />
+          <ref role="3uigEE" node="7iCybvTsdu6" resolve="Config.EffectiveOptions" />
         </node>
       </node>
       <node concept="2tJIrI" id="2tFDlV2c$0f" role="jymVt" />
@@ -2832,10 +2832,10 @@
         <node concept="3Tm6S6" id="7iCybvTsduD" role="1B3o_S" />
         <node concept="3rvAFt" id="7iCybvTvZDs" role="1tU5fm">
           <node concept="3uibUv" id="7iCybvTw1Xh" role="3rvQeY">
-            <ref role="3uigEE" node="7iCybvToD3Z" resolve="Level" />
+            <ref role="3uigEE" node="7iCybvToD3Z" resolve="Config.Level" />
           </node>
           <node concept="3uibUv" id="7iCybvTw2Y3" role="3rvSg0">
-            <ref role="3uigEE" node="7iCybvTsAb9" resolve="Options" />
+            <ref role="3uigEE" node="7iCybvTsAb9" resolve="Config.Options" />
           </node>
         </node>
       </node>
@@ -2859,7 +2859,7 @@
       <property role="TrG5h" value="effectiveOptions" />
       <node concept="3Tm6S6" id="7iCybvTsVZO" role="1B3o_S" />
       <node concept="3uibUv" id="7iCybvTv178" role="1tU5fm">
-        <ref role="3uigEE" node="7iCybvTsdu6" resolve="EffectiveOptions" />
+        <ref role="3uigEE" node="7iCybvTsdu6" resolve="Config.EffectiveOptions" />
       </node>
     </node>
   </node>
@@ -2921,12 +2921,12 @@
       <property role="TrG5h" value="myState" />
       <node concept="3Tm6S6" id="2CPBoDC$efp" role="1B3o_S" />
       <node concept="3uibUv" id="2CPBoDC$eit" role="1tU5fm">
-        <ref role="3uigEE" node="2CPBoDC$4Gs" resolve="State" />
+        <ref role="3uigEE" node="2CPBoDC$4Gs" resolve="TypecheckingSettings.State" />
       </node>
       <node concept="2ShNRf" id="2CPBoDC$JSv" role="33vP2m">
         <node concept="HV5vD" id="2CPBoDC$LSz" role="2ShVmc">
           <property role="373rjd" value="true" />
-          <ref role="HV5vE" node="2CPBoDC$4Gs" resolve="State" />
+          <ref role="HV5vE" node="2CPBoDC$4Gs" resolve="TypecheckingSettings.State" />
         </node>
       </node>
     </node>
@@ -2987,7 +2987,7 @@
             </node>
             <node concept="3cpWs6" id="adIlSuNskB" role="3cqZAp">
               <node concept="37vLTw" id="adIlSuN7oh" role="3cqZAk">
-                <ref role="3cqZAo" node="adIlSuMV4x" resolve="INSTANCE" />
+                <ref role="3cqZAo" node="adIlSuMV4x" resolve="SINGLETON_INSTANCE" />
               </node>
             </node>
           </node>
@@ -3010,7 +3010,7 @@
     <node concept="3uibUv" id="2CPBoDC$4DJ" role="EKbjA">
       <ref role="3uigEE" to="1m72:~PersistentStateComponent" resolve="PersistentStateComponent" />
       <node concept="3uibUv" id="2CPBoDC$4Kw" role="11_B2D">
-        <ref role="3uigEE" node="2CPBoDC$4Gs" resolve="State" />
+        <ref role="3uigEE" node="2CPBoDC$4Gs" resolve="TypecheckingSettings.State" />
       </node>
     </node>
     <node concept="3clFb_" id="2CPBoDC$4L2" role="jymVt">
@@ -3020,7 +3020,7 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
       <node concept="3uibUv" id="2CPBoDC$4L7" role="3clF45">
-        <ref role="3uigEE" node="2CPBoDC$4Gs" resolve="State" />
+        <ref role="3uigEE" node="2CPBoDC$4Gs" resolve="TypecheckingSettings.State" />
       </node>
       <node concept="3clFbS" id="2CPBoDC$4L8" role="3clF47">
         <node concept="3clFbF" id="2CPBoDC$euP" role="3cqZAp">
@@ -3030,7 +3030,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2CPBoDC$4L9" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="2CPBoDC$9u2" role="jymVt" />
@@ -3041,7 +3041,7 @@
       <node concept="37vLTG" id="2CPBoDC$4Le" role="3clF46">
         <property role="TrG5h" value="state" />
         <node concept="3uibUv" id="2CPBoDC$4Lh" role="1tU5fm">
-          <ref role="3uigEE" node="2CPBoDC$4Gs" resolve="State" />
+          <ref role="3uigEE" node="2CPBoDC$4Gs" resolve="TypecheckingSettings.State" />
         </node>
         <node concept="2AHcQZ" id="2CPBoDC$4Lg" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
@@ -3063,7 +3063,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2CPBoDC$4Lj" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="2CPBoDC$GtP" role="jymVt" />
@@ -3097,7 +3097,7 @@
         <node concept="3clFbF" id="2CPBoDC$IL$" role="3cqZAp">
           <node concept="37vLTI" id="2CPBoDC$MKR" role="3clFbG">
             <node concept="37vLTw" id="2CPBoDC$MTk" role="37vLTx">
-              <ref role="3cqZAo" node="2CPBoDC$MdZ" resolve="enabled" />
+              <ref role="3cqZAo" node="2CPBoDC$MdZ" resolve="yes" />
             </node>
             <node concept="2OqwBi" id="2CPBoDC$IL_" role="37vLTJ">
               <node concept="37vLTw" id="2CPBoDC$ILA" role="2Oq$k0">
@@ -3142,7 +3142,7 @@
         <node concept="3clFbF" id="2CPBoDC_kCr" role="3cqZAp">
           <node concept="37vLTI" id="2CPBoDC_kCs" role="3clFbG">
             <node concept="37vLTw" id="2CPBoDC_kCt" role="37vLTx">
-              <ref role="3cqZAo" node="2CPBoDC_kCm" resolve="enabled" />
+              <ref role="3cqZAo" node="2CPBoDC_kCm" resolve="yes" />
             </node>
             <node concept="2OqwBi" id="2CPBoDC_kCu" role="37vLTJ">
               <node concept="37vLTw" id="2CPBoDC_kCv" role="2Oq$k0">
@@ -3187,7 +3187,7 @@
         <node concept="3clFbF" id="2CPBoDC_o9t" role="3cqZAp">
           <node concept="37vLTI" id="2CPBoDC_o9u" role="3clFbG">
             <node concept="37vLTw" id="2CPBoDC_o9v" role="37vLTx">
-              <ref role="3cqZAo" node="2CPBoDC_o9o" resolve="watching" />
+              <ref role="3cqZAo" node="2CPBoDC_o9o" resolve="yes" />
             </node>
             <node concept="2OqwBi" id="2CPBoDC_o9w" role="37vLTJ">
               <node concept="37vLTw" id="2CPBoDC_o9x" role="2Oq$k0">
@@ -3232,7 +3232,7 @@
         <node concept="3clFbF" id="2CPBoDC_sJ4" role="3cqZAp">
           <node concept="37vLTI" id="2CPBoDC_sJ5" role="3clFbG">
             <node concept="37vLTw" id="2CPBoDC_sJ6" role="37vLTx">
-              <ref role="3cqZAo" node="2CPBoDC_sIZ" resolve="reporting" />
+              <ref role="3cqZAo" node="2CPBoDC_sIZ" resolve="yes" />
             </node>
             <node concept="2OqwBi" id="2CPBoDC_sJ7" role="37vLTJ">
               <node concept="37vLTw" id="2CPBoDC_sJ8" role="2Oq$k0">
@@ -3360,14 +3360,14 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2CPBoDCAnrG" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2CPBoDCAnrJ" role="jymVt">
       <property role="TrG5h" value="getDisplayName" />
       <node concept="3Tm1VV" id="2CPBoDCAnrK" role="1B3o_S" />
       <node concept="2AHcQZ" id="2CPBoDCAnrM" role="2AJF6D">
-        <ref role="2AI5Lk" to="zn9m:~NlsContexts$ConfigurableName" resolve="ConfigurableName" />
+        <ref role="2AI5Lk" to="zn9m:~NlsContexts$ConfigurableName" resolve="NlsContexts.ConfigurableName" />
       </node>
       <node concept="2AHcQZ" id="2CPBoDCAnrN" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Contract" resolve="Contract" />
@@ -3389,7 +3389,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2CPBoDCAns0" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2CPBoDCAns3" role="jymVt">
@@ -3407,7 +3407,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2CPBoDCAnsm" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2CPBoDCAnsp" role="jymVt">
@@ -3556,7 +3556,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2CPBoDCAnsF" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2CPBoDCAnsI" role="jymVt">
@@ -3661,7 +3661,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2CPBoDCAnt1" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="adIlSuKm_W" role="jymVt">
@@ -3763,7 +3763,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="adIlSuKmAf" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="14pL6xi8cOf" role="jymVt">
@@ -4090,7 +4090,7 @@
                       <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border)" resolve="setBorder" />
                       <node concept="2YIFZM" id="7iCybvTlzox" role="37wK5m">
                         <ref role="37wK5l" to="g1qu:~JBUI$Borders.emptyLeft(int)" resolve="emptyLeft" />
-                        <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="Borders" />
+                        <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="JBUI.Borders" />
                         <node concept="3cmrfG" id="7iCybvTlzoy" role="37wK5m">
                           <property role="3cmrfH" value="20" />
                         </node>
@@ -4280,7 +4280,7 @@
                       <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border)" resolve="setBorder" />
                       <node concept="2YIFZM" id="1z4$59hKKHh" role="37wK5m">
                         <ref role="37wK5l" to="g1qu:~JBUI$Borders.emptyLeft(int)" resolve="emptyLeft" />
-                        <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="Borders" />
+                        <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="JBUI.Borders" />
                         <node concept="3cmrfG" id="1z4$59hKKHi" role="37wK5m">
                           <property role="3cmrfH" value="20" />
                         </node>
@@ -4470,7 +4470,7 @@
                       <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border)" resolve="setBorder" />
                       <node concept="2YIFZM" id="1z4$59hEUWU" role="37wK5m">
                         <ref role="37wK5l" to="g1qu:~JBUI$Borders.emptyLeft(int)" resolve="emptyLeft" />
-                        <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="Borders" />
+                        <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="JBUI.Borders" />
                         <node concept="3cmrfG" id="1z4$59hEUWV" role="37wK5m">
                           <property role="3cmrfH" value="20" />
                         </node>
@@ -4560,7 +4560,7 @@
                         <node concept="liA8E" id="1z4$59hITJ9" role="2OqNvi">
                           <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border)" resolve="setBorder" />
                           <node concept="2YIFZM" id="1z4$59hITJa" role="37wK5m">
-                            <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="Borders" />
+                            <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="JBUI.Borders" />
                             <ref role="37wK5l" to="g1qu:~JBUI$Borders.emptyLeft(int)" resolve="emptyLeft" />
                             <node concept="3cmrfG" id="1z4$59hITJb" role="37wK5m">
                               <property role="3cmrfH" value="20" />
@@ -4665,7 +4665,7 @@
                           <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border)" resolve="setBorder" />
                           <node concept="2YIFZM" id="6v6oK22wa5f" role="37wK5m">
                             <ref role="37wK5l" to="g1qu:~JBUI$Borders.emptyLeft(int)" resolve="emptyLeft" />
-                            <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="Borders" />
+                            <ref role="1Pybhc" to="g1qu:~JBUI$Borders" resolve="JBUI.Borders" />
                             <node concept="3cmrfG" id="6v6oK22wa5g" role="37wK5m">
                               <property role="3cmrfH" value="25" />
                             </node>

@@ -2,8 +2,8 @@
 <model ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
@@ -1355,7 +1355,7 @@
                   </node>
                 </node>
                 <node concept="1rXfSq" id="9UUIHM2_QV" role="33vP2m">
-                  <ref role="37wK5l" node="IFW4V2Svjj" resolve="getAspectClique" />
+                  <ref role="37wK5l" node="IFW4V2Svjj" resolve="getAspectCliques" />
                   <node concept="1rXfSq" id="9UUIHM2_QW" role="37wK5m">
                     <ref role="37wK5l" node="4pwDyRBwQ_v" resolve="langRTs" />
                     <node concept="37vLTw" id="9UUIHM2_QX" role="37wK5m">
@@ -1365,7 +1365,7 @@
                   <node concept="1rXfSq" id="9UUIHMQDlh" role="37wK5m">
                     <ref role="37wK5l" node="9UUIHMLp7b" resolve="langRT" />
                     <node concept="37vLTw" id="7eJ_cLEdBBm" role="37wK5m">
-                      <ref role="3cqZAo" node="7eJ_cLEdBBf" resolve="language" />
+                      <ref role="3cqZAo" node="7eJ_cLEdBBf" resolve="clanguage" />
                     </node>
                   </node>
                 </node>
@@ -1388,7 +1388,7 @@
               </node>
               <node concept="2OqwBi" id="9UUIHM30Jg" role="3clFbw">
                 <node concept="37vLTw" id="9UUIHM2VxM" role="2Oq$k0">
-                  <ref role="3cqZAo" node="9UUIHM2_QU" resolve="aspectClique" />
+                  <ref role="3cqZAo" node="9UUIHM2_QU" resolve="aspectCliques" />
                 </node>
                 <node concept="1v1jN8" id="9UUIHM38MO" role="2OqNvi" />
               </node>
@@ -1416,7 +1416,7 @@
                 <node concept="3clFbF" id="9UUIHMnqSJ" role="3cqZAp">
                   <node concept="37vLTI" id="9UUIHMny3d" role="3clFbG">
                     <node concept="37vLTw" id="9UUIHMnC24" role="37vLTx">
-                      <ref role="3cqZAo" node="9UUIHMlYWY" resolve="clique2" />
+                      <ref role="3cqZAo" node="9UUIHMlYWY" resolve="first" />
                     </node>
                     <node concept="37vLTw" id="9UUIHMnqSH" role="37vLTJ">
                       <ref role="3cqZAo" node="9UUIHMlhsa" resolve="clique" />
@@ -1428,7 +1428,7 @@
               <node concept="22lmx$" id="9UUIHMmIDz" role="3clFbw">
                 <node concept="2OqwBi" id="9UUIHMn3nL" role="3uHU7w">
                   <node concept="37vLTw" id="9UUIHMmPAL" role="2Oq$k0">
-                    <ref role="3cqZAo" node="9UUIHMlYWY" resolve="clique2" />
+                    <ref role="3cqZAo" node="9UUIHMlYWY" resolve="first" />
                   </node>
                   <node concept="liA8E" id="9UUIHMnaZF" role="2OqNvi">
                     <ref role="37wK5l" node="9UUIHM5dtz" resolve="subsumes" />
@@ -1482,7 +1482,7 @@
             <node concept="3clFbF" id="9UUIHLZxi9" role="3cqZAp">
               <node concept="2OqwBi" id="9UUIHLZDt5" role="3clFbG">
                 <node concept="37vLTw" id="9UUIHLZxi7" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7mB3viLmGMp" resolve="usedLangs" />
+                  <ref role="3cqZAo" node="7mB3viLmGMp" resolve="allUsedLanguages" />
                 </node>
                 <node concept="X8dFx" id="9UUIHLZMuw" role="2OqNvi">
                   <node concept="37vLTw" id="9UUIHM26vb" role="25WWJ7">
@@ -1599,7 +1599,7 @@
                 </node>
                 <node concept="2OqwBi" id="7eJ_cLEeKCE" role="3clFbw">
                   <node concept="37vLTw" id="7eJ_cLEeKCF" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7eJ_cLEd5Fa" resolve="aspectCliques" />
+                    <ref role="3cqZAo" node="7eJ_cLEd5Fa" resolve="cliques" />
                   </node>
                   <node concept="1v1jN8" id="7eJ_cLEeKCG" role="2OqNvi" />
                 </node>
@@ -1714,7 +1714,7 @@
       <node concept="3clFbS" id="9UUIHLLQo0" role="3clF47">
         <node concept="3clFbF" id="9UUIHM1vFv" role="3cqZAp">
           <node concept="1rXfSq" id="9UUIHM1vFw" role="3clFbG">
-            <ref role="37wK5l" node="IFW4V2Svjj" resolve="getAspectClique" />
+            <ref role="37wK5l" node="IFW4V2Svjj" resolve="getAspectCliques" />
             <node concept="1rXfSq" id="9UUIHM1vFx" role="37wK5m">
               <ref role="37wK5l" node="4pwDyRBwQ_v" resolve="langRTs" />
               <node concept="1rXfSq" id="9UUIHM1vFy" role="37wK5m">
@@ -3013,7 +3013,7 @@
           <node concept="2OqwBi" id="9UUIHMuPpg" role="3clFbG">
             <node concept="2ShNRf" id="9UUIHMuPph" role="2Oq$k0">
               <node concept="1pGfFk" id="9UUIHMuPpi" role="2ShVmc">
-                <ref role="37wK5l" node="6nx4rRkNNr0" resolve="CliqueBuilder" />
+                <ref role="37wK5l" node="6nx4rRkNNr0" resolve="AspectClique.CliqueBuilder" />
                 <node concept="37vLTw" id="9UUIHMuPpj" role="37wK5m">
                   <ref role="3cqZAo" node="9UUIHMuPpa" resolve="discoverable" />
                 </node>
@@ -3028,7 +3028,7 @@
             <node concept="liA8E" id="9UUIHMuPpm" role="2OqNvi">
               <ref role="37wK5l" node="6nx4rRkNOva" resolve="buildClique" />
               <node concept="37vLTw" id="9UUIHMuPpn" role="37wK5m">
-                <ref role="3cqZAo" node="9UUIHMuPp7" resolve="langs" />
+                <ref role="3cqZAo" node="9UUIHMuPp7" resolve="allLangs" />
               </node>
               <node concept="37vLTw" id="9UUIHMw4xk" role="37wK5m">
                 <ref role="3cqZAo" node="9UUIHMvC5W" resolve="anchorLang" />
@@ -3146,7 +3146,7 @@
         <node concept="3clFbJ" id="9UUIHM6Q5P" role="3cqZAp">
           <node concept="2OqwBi" id="9UUIHM9Hsb" role="3clFbw">
             <node concept="37vLTw" id="9UUIHM9z6$" role="2Oq$k0">
-              <ref role="3cqZAo" node="9UUIHM81F5" resolve="thatnNsBits" />
+              <ref role="3cqZAo" node="9UUIHM81F5" resolve="thatNsBits" />
             </node>
             <node concept="liA8E" id="9UUIHM9UGz" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~BitSet.intersects(java.util.BitSet)" resolve="intersects" />
@@ -3162,7 +3162,7 @@
             <node concept="3clFbF" id="9UUIHMiCAO" role="3cqZAp">
               <node concept="2OqwBi" id="9UUIHMd2Xx" role="3clFbG">
                 <node concept="37vLTw" id="9UUIHMcS0n" role="2Oq$k0">
-                  <ref role="3cqZAo" node="9UUIHM81F5" resolve="thatnNsBits" />
+                  <ref role="3cqZAo" node="9UUIHM81F5" resolve="thatNsBits" />
                 </node>
                 <node concept="liA8E" id="9UUIHMdfGq" role="2OqNvi">
                   <ref role="37wK5l" to="33ny:~BitSet.andNot(java.util.BitSet)" resolve="andNot" />
@@ -3178,7 +3178,7 @@
             <node concept="3cpWs6" id="9UUIHMj1CT" role="3cqZAp">
               <node concept="2OqwBi" id="9UUIHMj$xx" role="3cqZAk">
                 <node concept="37vLTw" id="9UUIHMjpAy" role="2Oq$k0">
-                  <ref role="3cqZAo" node="9UUIHM81F5" resolve="thatnNsBits" />
+                  <ref role="3cqZAo" node="9UUIHM81F5" resolve="thatNsBits" />
                 </node>
                 <node concept="liA8E" id="9UUIHMjMUL" role="2OqNvi">
                   <ref role="37wK5l" to="33ny:~BitSet.isEmpty()" resolve="isEmpty" />
@@ -3777,7 +3777,7 @@
             <node concept="3cpWsn" id="9UUIHME4kE" role="3cpWs9">
               <property role="TrG5h" value="anchorVtx" />
               <node concept="3uibUv" id="9UUIHME4kF" role="1tU5fm">
-                <ref role="3uigEE" node="3KN3A4uUwll" resolve="Vtx" />
+                <ref role="3uigEE" node="3KN3A4uUwll" resolve="AspectClique.CliqueBuilder.Vtx" />
               </node>
               <node concept="10Nm6u" id="9UUIHMESV0" role="33vP2m" />
             </node>
@@ -3877,7 +3877,7 @@
                 <node concept="3cpWsn" id="9UUIHMyW7p" role="3cpWs9">
                   <property role="TrG5h" value="vtx" />
                   <node concept="3uibUv" id="9UUIHMyUfH" role="1tU5fm">
-                    <ref role="3uigEE" node="3KN3A4uUwll" resolve="Vtx" />
+                    <ref role="3uigEE" node="3KN3A4uUwll" resolve="AspectClique.CliqueBuilder.Vtx" />
                   </node>
                   <node concept="1rXfSq" id="9UUIHMyW7q" role="33vP2m">
                     <ref role="37wK5l" node="6nx4rRkQTd3" resolve="addToGraph" />
@@ -3949,9 +3949,9 @@
           </node>
           <node concept="3clFbF" id="9UUIHLCd_g" role="3cqZAp">
             <node concept="1rXfSq" id="9UUIHLCd_i" role="3clFbG">
-              <ref role="37wK5l" node="3Vcd0Fo4Gbu" resolve="findAspectClique" />
+              <ref role="37wK5l" node="3Vcd0Fo4Gbu" resolve="findAspectCliques" />
               <node concept="37vLTw" id="9UUIHLCd_j" role="37wK5m">
-                <ref role="3cqZAo" node="3KN3A4uUxOe" resolve="sorted" />
+                <ref role="3cqZAo" node="3KN3A4uUxOe" resolve="sortedGraph" />
               </node>
             </node>
           </node>
@@ -4234,11 +4234,11 @@
             <node concept="3cpWsn" id="3KN3A4uWvqt" role="1Duv9x">
               <property role="TrG5h" value="v" />
               <node concept="3uibUv" id="3KN3A4uWvtm" role="1tU5fm">
-                <ref role="3uigEE" node="3KN3A4uUwll" resolve="Vtx" />
+                <ref role="3uigEE" node="3KN3A4uUwll" resolve="AspectClique.CliqueBuilder.Vtx" />
               </node>
             </node>
             <node concept="37vLTw" id="3KN3A4uWwq8" role="1DdaDG">
-              <ref role="3cqZAo" node="3KN3A4uUxOe" resolve="sorted" />
+              <ref role="3cqZAo" node="3KN3A4uUxOe" resolve="sortedGraph" />
             </node>
           </node>
           <node concept="3clFbH" id="_tf6vziZJx" role="3cqZAp" />
@@ -5031,7 +5031,7 @@
                             <node concept="2d3UOw" id="3Vcd0Fo4yMM" role="3clFbw">
                               <node concept="2OqwBi" id="3Vcd0Fo4yMN" role="3uHU7B">
                                 <node concept="37vLTw" id="3Vcd0Fo4yMO" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="3Vcd0Fo4yNh" resolve="vsub" />
+                                  <ref role="3cqZAo" node="3Vcd0Fo4yNh" resolve="vsupr" />
                                 </node>
                                 <node concept="2OwXpG" id="3Vcd0Fo5ibZ" role="2OqNvi">
                                   <ref role="2Oxat5" node="3KN3A4uVa13" resolve="clique" />
@@ -5046,7 +5046,7 @@
                                 <node concept="37vLTI" id="3Vcd0Fo4yMT" role="3clFbG">
                                   <node concept="2OqwBi" id="3Vcd0Fo4yMU" role="37vLTx">
                                     <node concept="37vLTw" id="3Vcd0Fo4yMV" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="3Vcd0Fo4yNh" resolve="vsub" />
+                                      <ref role="3cqZAo" node="3Vcd0Fo4yNh" resolve="vsupr" />
                                     </node>
                                     <node concept="2OwXpG" id="3Vcd0Fo5i$0" role="2OqNvi">
                                       <ref role="2Oxat5" node="3KN3A4uVa13" resolve="clique" />
@@ -5072,7 +5072,7 @@
                                 </node>
                                 <node concept="3JPx81" id="3Vcd0Fo4yN4" role="2OqNvi">
                                   <node concept="37vLTw" id="3Vcd0Fo4yN5" role="25WWJ7">
-                                    <ref role="3cqZAo" node="3Vcd0Fo4yNh" resolve="vsub" />
+                                    <ref role="3cqZAo" node="3Vcd0Fo4yNh" resolve="vsupr" />
                                   </node>
                                 </node>
                               </node>
@@ -5085,7 +5085,7 @@
                                   </node>
                                   <node concept="2ArzE6" id="3Vcd0Fo4yNa" role="2OqNvi">
                                     <node concept="37vLTw" id="3Vcd0Fo4yNb" role="25WWJ7">
-                                      <ref role="3cqZAo" node="3Vcd0Fo4yNh" resolve="vsub" />
+                                      <ref role="3cqZAo" node="3Vcd0Fo4yNh" resolve="vsupr" />
                                     </node>
                                   </node>
                                 </node>
@@ -5097,7 +5097,7 @@
                                   </node>
                                   <node concept="TSZUe" id="3Vcd0Fo4yNf" role="2OqNvi">
                                     <node concept="37vLTw" id="3Vcd0Fo4yNg" role="25WWJ7">
-                                      <ref role="3cqZAo" node="3Vcd0Fo4yNh" resolve="vsub" />
+                                      <ref role="3cqZAo" node="3Vcd0Fo4yNh" resolve="vsupr" />
                                     </node>
                                   </node>
                                 </node>
@@ -5692,7 +5692,7 @@
             <node concept="3cpWsn" id="3KN3A4uUxNr" role="3cpWs9">
               <property role="TrG5h" value="vtx" />
               <node concept="3uibUv" id="3KN3A4uUBAj" role="1tU5fm">
-                <ref role="3uigEE" node="3KN3A4uUwll" resolve="Vtx" />
+                <ref role="3uigEE" node="3KN3A4uUwll" resolve="AspectClique.CliqueBuilder.Vtx" />
               </node>
               <node concept="3EllGN" id="9UUIHMxJ1u" role="33vP2m">
                 <node concept="37vLTw" id="9UUIHMxVWs" role="3ElVtu">
@@ -5716,7 +5716,7 @@
                 <node concept="37vLTI" id="9UUIHMwOir" role="3clFbG">
                   <node concept="2ShNRf" id="3KN3A4uUxNt" role="37vLTx">
                     <node concept="1pGfFk" id="3KN3A4uUxNu" role="2ShVmc">
-                      <ref role="37wK5l" node="3KN3A4uUwlm" resolve="Vtx" />
+                      <ref role="37wK5l" node="3KN3A4uUwlm" resolve="AspectClique.CliqueBuilder.Vtx" />
                       <node concept="37vLTw" id="3KN3A4uUxNv" role="37wK5m">
                         <ref role="3cqZAo" node="3KN3A4uUxNh" resolve="lang" />
                       </node>
@@ -5824,7 +5824,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="9UUIHMwDly" role="3clF45">
-          <ref role="3uigEE" node="3KN3A4uUwll" resolve="Vtx" />
+          <ref role="3uigEE" node="3KN3A4uUwll" resolve="AspectClique.CliqueBuilder.Vtx" />
         </node>
         <node concept="3Tm6S6" id="3KN3A4uUxNo" role="1B3o_S" />
       </node>

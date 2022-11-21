@@ -3,10 +3,10 @@
   <persistence version="9" />
   <languages>
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="5" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
@@ -1721,7 +1721,7 @@
                   <node concept="37vLTG" id="5GCTx2jPGiX" role="1bW2Oz">
                     <property role="TrG5h" value="record" />
                     <node concept="3uibUv" id="5GCTx2jPGiY" role="1tU5fm">
-                      <ref role="3uigEE" node="3wxtToDPbdf" resolve="Record" />
+                      <ref role="3uigEE" node="3wxtToDPbdf" resolve="Snapshot.History.Record" />
                       <node concept="3uibUv" id="5GCTx2jPGiZ" role="11_B2D">
                         <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
                       </node>
@@ -1756,7 +1756,7 @@
           <node concept="1rXfSq" id="5GCTx2jPGj9" role="3clFbG">
             <ref role="37wK5l" node="YGS68MDG_7" resolve="recordActivationEvent" />
             <node concept="Rm8GO" id="5GCTx2jPPRs" role="37wK5m">
-              <ref role="Rm8GQ" node="5GCTx2jPbRW" resolve="UNDO_REACTIVATE" />
+              <ref role="Rm8GQ" node="5GCTx2jPbRW" resolve="UNDO_ACTIVATE" />
               <ref role="1Px2BO" node="5X6ji59xezw" resolve="ActivationEvent" />
             </node>
             <node concept="1bVj0M" id="5GCTx2jPGjb" role="37wK5m">
@@ -1790,7 +1790,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="5GCTx2jP$y8" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="5GCTx2jPCNk" role="jymVt" />
@@ -2240,7 +2240,7 @@
                   <node concept="37vLTG" id="5GCTx2jPph_" role="1bW2Oz">
                     <property role="TrG5h" value="record" />
                     <node concept="3uibUv" id="5GCTx2jPphA" role="1tU5fm">
-                      <ref role="3uigEE" node="3wxtToDPbdf" resolve="Record" />
+                      <ref role="3uigEE" node="3wxtToDPbdf" resolve="Snapshot.History.Record" />
                       <node concept="3uibUv" id="5GCTx2jPphB" role="11_B2D">
                         <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
                       </node>
@@ -2309,7 +2309,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="5GCTx2jPhUU" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="YGS68ME0uL" role="jymVt" />
@@ -3293,7 +3293,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="5GCTx2jQz4u" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="5GCTx2jQBBl" role="jymVt" />
@@ -3685,7 +3685,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="5GCTx2jQ4UZ" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="YGS68ME9em" role="jymVt" />

@@ -2,7 +2,7 @@
 <model ref="r:32ed3462-7683-4dc2-8b0b-8bb7ef0f8860(jetbrains.mps.lang.descriptor.aspects.types@genplan)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
     <use id="7ab1a6fa-0a11-4b95-9e48-75f363d6cb00" name="jetbrains.mps.lang.generator.plan" version="1" />
   </languages>
   <imports>
@@ -71,12 +71,12 @@
     </node>
     <node concept="2VgMA1" id="4APe_wL6Vf4" role="2VgMA7">
       <node concept="3ps6a7" id="4APe_wL6Vfs" role="3ps6aC">
-        <ref role="3ps6dU" node="4APe_wL1VPG" resolve="FOO" />
+        <ref role="3ps6dU" node="4APe_wL1VPG" resolve="TypecheckingSymbols" />
       </node>
     </node>
     <node concept="26qawf" id="4APe_wL9AqS" role="2VgMA7">
       <node concept="3ps6a7" id="4APe_wL9Ari" role="3pRG92">
-        <ref role="3ps6dU" node="4APe_wL1VPG" resolve="FOO" />
+        <ref role="3ps6dU" node="4APe_wL1VPG" resolve="TypecheckingSymbols" />
       </node>
     </node>
     <node concept="2VgMA2" id="sL9MTQwV_n" role="2VgMA7">

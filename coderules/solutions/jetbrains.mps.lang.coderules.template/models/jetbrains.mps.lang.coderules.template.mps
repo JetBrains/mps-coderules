@@ -5,8 +5,8 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text" version="0" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="13" />
@@ -738,7 +738,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2GOEA2lIu3" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="2GOEA2lJGE" role="jymVt" />
@@ -1049,7 +1049,7 @@
       <node concept="2tJIrI" id="7P_FdVQ_p0D" role="jymVt" />
       <node concept="3Tm1VV" id="7P_FdVPsDC1" role="1B3o_S" />
       <node concept="2AHcQZ" id="9UUIHJHVd9" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2B6LJw" id="9UUIHJHY8O" role="2B76xF">
           <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
           <node concept="3clFbT" id="9UUIHJHYcP" role="2B70Vg">
@@ -1106,7 +1106,7 @@
     <node concept="3clFb_" id="7P_FdVPsDM6" role="jymVt">
       <property role="TrG5h" value="newQuery" />
       <node concept="3uibUv" id="7P_FdVPsDNI" role="3clF45">
-        <ref role="3uigEE" node="7P_FdVPsDC0" resolve="QueryConfigurable" />
+        <ref role="3uigEE" node="7P_FdVPsDC0" resolve="QueryTemplate.QueryConfigurable" />
       </node>
       <node concept="3Tm1VV" id="7P_FdVPsDM9" role="1B3o_S" />
       <node concept="3clFbS" id="7P_FdVPsDMa" role="3clF47">
@@ -2540,7 +2540,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="7mIqwW50_9g" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2B6LJw" id="7mIqwW50C50" role="2B76xF">
           <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
           <node concept="3clFbT" id="7mIqwW50Chv" role="2B70Vg">
@@ -2587,7 +2587,7 @@
       <node concept="16euLQ" id="7mIqwW50wJQ" role="16eVyc">
         <property role="TrG5h" value="T" />
         <node concept="3uibUv" id="7mIqwW50wJR" role="3ztrMU">
-          <ref role="3uigEE" node="5itBwM86qUH" resolve="Token" />
+          <ref role="3uigEE" node="5itBwM86qUH" resolve="ExpandMacroTemplate.Token" />
         </node>
       </node>
     </node>
@@ -2770,7 +2770,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="7mIqwW50KIh" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2B6LJw" id="7mIqwW50Pjh" role="2B76xF">
           <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
           <node concept="3clFbT" id="7mIqwW50Pvu" role="2B70Vg">
@@ -2817,7 +2817,7 @@
       <node concept="16euLQ" id="7mIqwW50G9q" role="16eVyc">
         <property role="TrG5h" value="T" />
         <node concept="3uibUv" id="7mIqwW50G9r" role="3ztrMU">
-          <ref role="3uigEE" node="5itBwM86qUH" resolve="Token" />
+          <ref role="3uigEE" node="5itBwM86qUH" resolve="ExpandMacroTemplate.Token" />
         </node>
       </node>
       <node concept="P$JXv" id="7mIqwW50G9s" role="lGtFl">
@@ -2873,7 +2873,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="1VeWL_e41aj" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2B6LJw" id="1VeWL_e44V9" role="2B76xF">
           <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
           <node concept="3clFbT" id="1VeWL_e44Yn" role="2B70Vg">
@@ -2927,11 +2927,11 @@
       <node concept="16euLQ" id="1VeWL_e3RvH" role="16eVyc">
         <property role="TrG5h" value="T" />
         <node concept="3uibUv" id="1VeWL_e3RvI" role="3ztrMU">
-          <ref role="3uigEE" node="5itBwM86qnn" resolve="Token" />
+          <ref role="3uigEE" node="5itBwM86qnn" resolve="CallMacroTemplate.Token" />
         </node>
       </node>
       <node concept="2AHcQZ" id="7mIqwW50U$w" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2B6LJw" id="7mIqwW50XOZ" role="2B76xF">
           <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
           <node concept="3clFbT" id="7mIqwW50Y1Y" role="2B70Vg">
@@ -2974,7 +2974,7 @@
       <node concept="16euLQ" id="7mIqwW50QjD" role="16eVyc">
         <property role="TrG5h" value="T" />
         <node concept="3uibUv" id="7mIqwW50QjE" role="3ztrMU">
-          <ref role="3uigEE" node="5itBwM86qnn" resolve="Token" />
+          <ref role="3uigEE" node="5itBwM86qnn" resolve="CallMacroTemplate.Token" />
         </node>
       </node>
     </node>
@@ -7977,7 +7977,7 @@
       <node concept="3Tm1VV" id="7mIqwW4ZOY2" role="1B3o_S" />
       <node concept="3clFbS" id="7mIqwW4ZOY4" role="3clF47" />
       <node concept="2AHcQZ" id="7mIqwW4ZOY5" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="7mIqwW4ZOY8" role="jymVt">
@@ -7987,7 +7987,7 @@
       <node concept="3Tm1VV" id="7mIqwW4ZOYa" role="1B3o_S" />
       <node concept="3clFbS" id="7mIqwW4ZOYc" role="3clF47" />
       <node concept="2AHcQZ" id="7mIqwW4ZOYd" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="4U$Q3dLryje" role="jymVt" />
@@ -8034,12 +8034,12 @@
       <node concept="16euLQ" id="7mIqwW53n8v" role="16eVyc">
         <property role="TrG5h" value="T" />
         <node concept="3uibUv" id="7mIqwW53n8w" role="3ztrMU">
-          <ref role="3uigEE" node="5itBwM86qnn" resolve="Token" />
+          <ref role="3uigEE" node="5itBwM86qnn" resolve="CallMacroTemplate.Token" />
         </node>
       </node>
       <node concept="3clFbS" id="7mIqwW53n8x" role="3clF47" />
       <node concept="2AHcQZ" id="7mIqwW53n8y" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="7mIqwW53nCi" role="jymVt" />
@@ -8261,7 +8261,7 @@
       </node>
       <node concept="2JFqV2" id="1VeWL_ePsGF" role="2frcjj" />
       <node concept="2AHcQZ" id="1VeWL_f9we9" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2B6LJw" id="1VeWL_f9wpn" role="2B76xF">
           <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
           <node concept="3clFbT" id="1VeWL_f9wr6" role="2B70Vg">
@@ -8379,7 +8379,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="7mIqwW51pLq" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2B6LJw" id="7mIqwW51pOW" role="2B76xF">
           <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
           <node concept="3clFbT" id="7mIqwW51pTc" role="2B70Vg">
@@ -8651,7 +8651,7 @@
     </node>
     <node concept="3Tm1VV" id="1H_6AUSXnyl" role="1B3o_S" />
     <node concept="2AHcQZ" id="6AZXE2vtEF3" role="2AJF6D">
-      <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       <node concept="2B6LJw" id="6AZXE2vtEM4" role="2B76xF">
         <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
         <node concept="3clFbT" id="6AZXE2vtFmQ" role="2B70Vg">
@@ -8785,7 +8785,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="7mIqwW4ZFfs" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2B6LJw" id="7mIqwW52TNE" role="2B76xF">
           <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
           <node concept="3clFbT" id="7mIqwW52TQz" role="2B70Vg">
@@ -8813,7 +8813,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="7mIqwW4ZFmB" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2B6LJw" id="7mIqwW52TQU" role="2B76xF">
           <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
           <node concept="3clFbT" id="7mIqwW52TQV" role="2B70Vg">
@@ -8894,7 +8894,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="7mIqwW52TSB" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2B6LJw" id="7mIqwW52XSR" role="2B76xF">
           <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
           <node concept="3clFbT" id="7mIqwW52XSS" role="2B70Vg">
@@ -8922,7 +8922,7 @@
       <node concept="16euLQ" id="7mIqwW53jp1" role="16eVyc">
         <property role="TrG5h" value="T" />
         <node concept="3uibUv" id="7mIqwW53jtG" role="3ztrMU">
-          <ref role="3uigEE" node="5itBwM86qnn" resolve="Token" />
+          <ref role="3uigEE" node="5itBwM86qnn" resolve="CallMacroTemplate.Token" />
         </node>
       </node>
     </node>
@@ -8959,7 +8959,7 @@
     </node>
     <node concept="3Tm1VV" id="2WtKs4u1ogL" role="1B3o_S" />
     <node concept="2AHcQZ" id="6AZXE2vtFIj" role="2AJF6D">
-      <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       <node concept="2B6LJw" id="6AZXE2vtFJj" role="2B76xF">
         <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
         <node concept="3clFbT" id="6AZXE2vtFL3" role="2B70Vg">
@@ -9129,7 +9129,7 @@
     </node>
     <node concept="3Tm1VV" id="5tAk4yVWROV" role="1B3o_S" />
     <node concept="2AHcQZ" id="6AZXE2vtFzh" role="2AJF6D">
-      <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       <node concept="2B6LJw" id="6AZXE2vtFCi" role="2B76xF">
         <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
         <node concept="3clFbT" id="6AZXE2vtFE6" role="2B70Vg">
@@ -9522,7 +9522,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2GOEA2kLFO" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5F2qBBEue0$" role="jymVt">

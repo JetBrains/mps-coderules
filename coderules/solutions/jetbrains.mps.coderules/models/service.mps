@@ -2,8 +2,8 @@
 <model ref="r:bd76f794-cfad-45dd-9c1c-e3203d1c5c7a(jetbrains.mps.coderules.service)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
@@ -853,7 +853,7 @@
                                 <ref role="37wK5l" node="6nFpYluVUvm" resolve="queryTemplates" />
                               </node>
                               <node concept="37vLTw" id="23Habm5A_G7" role="37wK5m">
-                                <ref role="3cqZAo" node="23Habm5A_G2" resolve="value" />
+                                <ref role="3cqZAo" node="23Habm5A_G2" resolve="profiler" />
                               </node>
                             </node>
                           </node>
@@ -1270,7 +1270,7 @@
       <property role="TrG5h" value="PROFILER" />
       <node concept="3Tm1VV" id="23Habm2dyBT" role="1B3o_S" />
       <node concept="3uibUv" id="23Habm2dyBU" role="1tU5fm">
-        <ref role="3uigEE" node="2daneBOX7Tv" resolve="ValueKey" />
+        <ref role="3uigEE" node="2daneBOX7Tv" resolve="Effect.ValueKey" />
         <node concept="3uibUv" id="23Habm2dyBV" role="11_B2D">
           <ref role="3uigEE" to="bid0:~Profiler" resolve="Profiler" />
         </node>
@@ -1859,7 +1859,7 @@
                           <ref role="1Y3XeK" to="hano:41ox5Vnk76a" resolve="ProgramEvaluator" />
                           <node concept="3Tm1VV" id="7WKNeR9ynVB" role="1B3o_S" />
                           <node concept="37vLTw" id="23Habm3ATE7" role="37wK5m">
-                            <ref role="3cqZAo" node="23Habm3ATE2" resolve="value" />
+                            <ref role="3cqZAo" node="23Habm3ATE2" resolve="profiler" />
                           </node>
                           <node concept="3clFb_" id="7WKNeR9yo$l" role="jymVt">
                             <property role="TrG5h" value="configure" />
@@ -2824,7 +2824,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="5GCTx2jTFn_" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="7nPD14NbLuP" role="jymVt">
@@ -3133,7 +3133,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="5GCTx2jTJ0i" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2UGjFq4bW0g" role="jymVt">
@@ -8182,7 +8182,7 @@
             <node concept="2OqwBi" id="23Habm5bzBd" role="37vLTJ">
               <node concept="Xjq3P" id="23Habm5bzYg" role="2Oq$k0" />
               <node concept="2OwXpG" id="23Habm5bzBg" role="2OqNvi">
-                <ref role="2Oxat5" node="23Habm5btmE" resolve="myProfilingData" />
+                <ref role="2Oxat5" node="23Habm5btmE" resolve="profilingData" />
               </node>
             </node>
             <node concept="37vLTw" id="23Habm5btmQ" role="37vLTx">

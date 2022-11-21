@@ -8,9 +8,9 @@
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="5" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="13" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="5" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -5822,7 +5822,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="7mIqwW4ZQ9T" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="7mIqwW4ZS88" role="jymVt" />
@@ -5881,7 +5881,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="7mIqwW4ZQa2" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="7mIqwW4ZSZX" role="jymVt" />
@@ -6028,7 +6028,7 @@
           <node concept="3clFbC" id="4MEOIDEgqbD" role="3clFbw">
             <node concept="10Nm6u" id="4MEOIDEgqbE" role="3uHU7w" />
             <node concept="37vLTw" id="4MEOIDEhJpZ" role="3uHU7B">
-              <ref role="3cqZAo" node="4MEOIDEhHGm" resolve="templateRef" />
+              <ref role="3cqZAo" node="4MEOIDEhHGm" resolve="templateFqn" />
             </node>
           </node>
         </node>
@@ -14111,7 +14111,7 @@
               <ref role="2rW$FS" node="C1f6iElasQ" resolve="macro_token_method" />
             </node>
             <node concept="3uibUv" id="1VeWL_e4OC5" role="3clF45">
-              <ref role="3uigEE" node="5itBwM5JjhA" resolve="Token" />
+              <ref role="3uigEE" node="5itBwM5JjhA" resolve="__MacroTable._Call.Token" />
             </node>
           </node>
           <node concept="2tJIrI" id="5itBwM5TiN4" role="jymVt" />
@@ -15114,7 +15114,7 @@
             </node>
           </node>
           <node concept="2AHcQZ" id="7mIqwW51tlm" role="2AJF6D">
-            <ref role="2AI5Lk" to="wyt6:~Override" />
+            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
           </node>
         </node>
         <node concept="2tJIrI" id="7mIqwW51uF0" role="jymVt" />

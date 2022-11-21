@@ -252,7 +252,7 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
       <node concept="j$656" id="7km57Pkgww4" role="1lVwrX">
-        <ref role="v9R2y" to="ba7m:4WrOGsLZ$AX" resolve="GeneratedClassInstantiation" />
+        <ref role="v9R2y" to="ba7m:4WrOGsLZ$AX" resolve="STOP_USING_GeneratedClassInstantiation" />
         <node concept="3cpWs3" id="2aiW7BvqBQ" role="v9R3O">
           <node concept="2OqwBi" id="7km57Pkgw_v" role="3uHU7B">
             <node concept="v3LJS" id="7km57Pkgwwc" role="2Oq$k0">

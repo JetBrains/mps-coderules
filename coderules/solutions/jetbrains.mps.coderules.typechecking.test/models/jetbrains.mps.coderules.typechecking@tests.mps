@@ -2,10 +2,10 @@
 <model ref="r:cbfbe9a2-941f-4667-8e48-3bf39c5dad6d(jetbrains.mps.coderules.typechecking@tests)">
   <persistence version="9" />
   <languages>
-    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="5" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="6" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="5" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
@@ -60,6 +60,7 @@
       </concept>
       <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
+        <property id="2616911529524314943" name="accessMode" index="3DII0k" />
         <property id="6339244025081158986" name="needsNoWriteAction" index="3OwPAg" />
         <child id="2325284917965993569" name="beforeTests" index="0EEgL" />
         <child id="2325284917965993580" name="afterTests" index="0EEgW" />
@@ -458,6 +459,7 @@
   <node concept="1lH9Xt" id="4nxCIBqxR0M">
     <property role="TrG5h" value="SampleTypeAspect" />
     <property role="3OwPAg" value="true" />
+    <property role="3DII0k" value="2hh8MJdVwqT/none" />
     <node concept="1LZb2c" id="7y50OW6TxjM" role="1SL9yI">
       <property role="TrG5h" value="typechecking" />
       <node concept="3uibUv" id="4BHjwwGTD0T" role="Sfmx6">
@@ -2681,6 +2683,7 @@
     <property role="TrG5h" value="TypeCache" />
     <property role="3OwPAg" value="true" />
     <property role="26Nn1l" value="true" />
+    <property role="3DII0k" value="2hh8MJdVwqT/none" />
     <node concept="1LZb2c" id="6QH_LDtdSlj" role="1SL9yI">
       <property role="TrG5h" value="typeInitCache" />
       <node concept="3cqZAl" id="6QH_LDtdSlk" role="3clF45" />
@@ -3063,6 +3066,7 @@
     <property role="TrG5h" value="TypecheckingFacade" />
     <property role="3OwPAg" value="true" />
     <property role="26Nn1l" value="true" />
+    <property role="3DII0k" value="2hh8MJdVwqT/none" />
     <node concept="2XrIbr" id="6dGwhn$qQgL" role="1qtyYc">
       <property role="TrG5h" value="reportMessages" />
       <node concept="37vLTG" id="6dGwhn$qRTm" role="3clF46">
@@ -3562,7 +3566,7 @@
                         <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="session" />
                       </node>
                       <node concept="37vLTw" id="6OXbTD_ouEx" role="37wK5m">
-                        <ref role="3cqZAo" node="6OXbTD_oqui" resolve="queryTemplate" />
+                        <ref role="3cqZAo" node="6OXbTD_oqui" resolve="queryTemplates" />
                       </node>
                       <node concept="10Nm6u" id="23Habm3pLMS" role="37wK5m" />
                     </node>
@@ -4325,7 +4329,7 @@
                       <ref role="37wK5l" to="m7o5:2MNGcFT4ZOn" resolve="getUiConfig" />
                     </node>
                     <node concept="37vLTw" id="9UUIHNe9hG" role="37wK5m">
-                      <ref role="3cqZAo" node="9UUIHNe9hD" resolve="collector" />
+                      <ref role="3cqZAo" node="9UUIHNe9hD" resolve="messageCollector" />
                     </node>
                   </node>
                 </node>
@@ -4563,6 +4567,7 @@
   <node concept="1lH9Xt" id="3KwBCAABlTI">
     <property role="TrG5h" value="UpdateTypeCache" />
     <property role="26Nn1l" value="true" />
+    <property role="3DII0k" value="2hh8MJdVwqX/command" />
     <node concept="1qefOq" id="7mB3viLoF4d" role="1SKRRt">
       <node concept="0U$pH" id="7lt0LtPHRY$" role="1qenE9">
         <property role="TrG5h" value="Demo" />
@@ -4667,7 +4672,7 @@
             <node concept="liA8E" id="7e$2hwayR6r" role="2OqNvi">
               <ref role="37wK5l" to="m7o5:7iCybvTszk9" resolve="registerProvider" />
               <node concept="Rm8GO" id="7e$2hwayR6s" role="37wK5m">
-                <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Level" />
+                <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Config.Level" />
                 <ref role="Rm8GQ" to="m7o5:5Ul706LbJYK" resolve="TEST" />
               </node>
               <node concept="10M0yZ" id="2CPBoDAVq9X" role="37wK5m">
@@ -4747,7 +4752,7 @@
                 </node>
               </node>
               <node concept="37vLTw" id="7e$2hwayN79" role="37wK5m">
-                <ref role="3cqZAo" node="7e$2hwayN77" resolve="instance" />
+                <ref role="3cqZAo" node="7e$2hwayN77" resolve="config" />
               </node>
             </node>
           </node>

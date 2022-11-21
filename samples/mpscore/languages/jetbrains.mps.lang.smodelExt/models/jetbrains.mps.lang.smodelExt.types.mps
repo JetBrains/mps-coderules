@@ -299,6 +299,7 @@
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
+      <concept id="8329979535468945057" name="jetbrains.mps.lang.smodel.structure.Node_PresentationOperation" flags="ng" index="2Iv5rx" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -5373,10 +5374,13 @@
                             <node concept="Xl_RD" id="3CulEO2FaDR" role="3uHU7B">
                               <property role="Xl_RC" value="unknown hierarchy for " />
                             </node>
-                            <node concept="1Ft4W6" id="3CulEO2FaWm" role="3uHU7w">
-                              <node concept="a7P8L" id="3CulEO2FaWl" role="1FtiSR">
-                                <ref role="a7OzE" node="3CulEO2F96a" resolve="Src" />
+                            <node concept="2OqwBi" id="1riUXHOMOeq" role="3uHU7w">
+                              <node concept="1Ft4W6" id="3CulEO2FaWm" role="2Oq$k0">
+                                <node concept="a7P8L" id="3CulEO2FaWl" role="1FtiSR">
+                                  <ref role="a7OzE" node="3CulEO2F96a" resolve="Src" />
+                                </node>
                               </node>
+                              <node concept="2Iv5rx" id="1riUXHOMOer" role="2OqNvi" />
                             </node>
                           </node>
                           <node concept="Xl_RD" id="3CulEO2FbAF" role="3uHU7w">
@@ -5575,10 +5579,13 @@
                   <node concept="3I6s7M" id="t7AM9FzPqa" role="3I6sU7">
                     <node concept="1lpGmL" id="t7AM9FzPq8" role="3I6s78">
                       <node concept="3cpWs3" id="t7AM9FzQku" role="1lp$hM">
-                        <node concept="1Ft4W6" id="t7AM9FzQpq" role="3uHU7w">
-                          <node concept="a7P8L" id="t7AM9FzQpp" role="1FtiSR">
-                            <ref role="a7OzE" node="t7AM9FzORc" resolve="CD" />
+                        <node concept="2OqwBi" id="1riUXHOMOeD" role="3uHU7w">
+                          <node concept="1Ft4W6" id="t7AM9FzQpq" role="2Oq$k0">
+                            <node concept="a7P8L" id="t7AM9FzQpp" role="1FtiSR">
+                              <ref role="a7OzE" node="t7AM9FzORc" resolve="CD" />
+                            </node>
                           </node>
+                          <node concept="2Iv5rx" id="1riUXHOMOeE" role="2OqNvi" />
                         </node>
                         <node concept="Xl_RD" id="t7AM9FzPsB" role="3uHU7B">
                           <property role="Xl_RC" value="can't find hierarchy for " />
@@ -14986,8 +14993,11 @@
                                       <node concept="1lHd6T" id="6RzTUCSVk1m" role="3Aqpz8">
                                         <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
                                         <node concept="3cpWs3" id="6RzTUCSVk$q" role="1ljv2e">
-                                          <node concept="37vLTw" id="6RzTUCSVkEe" role="3uHU7w">
-                                            <ref role="3cqZAo" node="6RzTUCSVbGi" resolve="dt" />
+                                          <node concept="2OqwBi" id="1riUXHOMOeO" role="3uHU7w">
+                                            <node concept="37vLTw" id="6RzTUCSVkEe" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="6RzTUCSVbGi" resolve="dt" />
+                                            </node>
+                                            <node concept="2Iv5rx" id="1riUXHOMOeP" role="2OqNvi" />
                                           </node>
                                           <node concept="Xl_RD" id="6RzTUCSVk72" role="3uHU7B">
                                             <property role="Xl_RC" value="unknown property datatype: " />
@@ -18627,7 +18637,7 @@
             </node>
             <node concept="3NuqgR" id="3OUB6BCUA7_" role="0Rg$4">
               <node concept="3uibUv" id="3OUB6BCUA7A" role="3vLBG7">
-                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="Options" />
+                <ref role="3uigEE" to="kqnc:3vTJNooZBhQ" resolve="ConvertsContext.Options" />
               </node>
               <node concept="aZer4" id="3OUB6BCUA7B" role="3XD1gS">
                 <property role="TrG5h" value="Options" />

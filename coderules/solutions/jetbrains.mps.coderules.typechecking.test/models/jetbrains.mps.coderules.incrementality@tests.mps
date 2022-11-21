@@ -2,10 +2,10 @@
 <model ref="r:c9607a7c-25a7-4d1b-994d-f264b3e77eff(jetbrains.mps.coderules.incrementality@tests)">
   <persistence version="9" />
   <languages>
-    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="5" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="6" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
@@ -42,6 +42,7 @@
       </concept>
       <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
+        <property id="2616911529524314943" name="accessMode" index="3DII0k" />
         <property id="6339244025081158986" name="needsNoWriteAction" index="3OwPAg" />
         <child id="1216993439383" name="methods" index="1qtyYc" />
         <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
@@ -370,6 +371,7 @@
   </node>
   <node concept="1lH9Xt" id="7qe1GumASGN">
     <property role="TrG5h" value="VarModificationCheckerUtil" />
+    <property role="3DII0k" value="2hh8MJdVwqX/command" />
     <node concept="1LZb2c" id="7qe1GumUkfC" role="1SL9yI">
       <property role="TrG5h" value="util_macro" />
       <node concept="3cqZAl" id="7qe1GumUkfD" role="3clF45" />
@@ -2707,6 +2709,7 @@
   </node>
   <node concept="1lH9Xt" id="2NnDL4GbUn5">
     <property role="TrG5h" value="FreeVarEscapeChecker" />
+    <property role="3DII0k" value="2hh8MJdVwqX/command" />
     <node concept="1qefOq" id="6V4Y$98qOsT" role="1SKRRt">
       <node concept="AVZre" id="6V4Y$98qO$1" role="1qenE9">
         <property role="TrG5h" value="forall" />
@@ -3684,6 +3687,7 @@
   </node>
   <node concept="1lH9Xt" id="6V4Y$98qhvY">
     <property role="TrG5h" value="FreeVarEscapeCheckLangs" />
+    <property role="3DII0k" value="2hh8MJdVwqX/command" />
     <node concept="1X3_iC" id="typutDr4kr" role="lGtFl">
       <property role="3V$3am" value="testMethods" />
       <property role="3V$3ak" value="8585453e-6bfb-4d80-98de-b16074f1d86c/1216913645126/1217501895093" />
@@ -4009,6 +4013,7 @@
   <node concept="1lH9Xt" id="tyIfzBA5cK">
     <property role="TrG5h" value="Analyses" />
     <property role="3OwPAg" value="true" />
+    <property role="3DII0k" value="2hh8MJdVwqT/none" />
     <node concept="2XrIbr" id="2PLbMk5R0rZ" role="1qtyYc">
       <property role="TrG5h" value="ctr" />
       <node concept="37vLTG" id="2PLbMk5R0uz" role="3clF46">

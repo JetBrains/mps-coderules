@@ -2,8 +2,8 @@
 <model ref="r:5cb7c45c-18d8-4304-8c38-29c80242b908(jetbrains.mps.controlflow.service)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="18" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
@@ -200,7 +200,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="2j1FRbx609Y" role="1tU5fm">
-        <ref role="3uigEE" to="1yqb:2daneBOX7Tv" resolve="ValueKey" />
+        <ref role="3uigEE" to="1yqb:2daneBOX7Tv" resolve="Effect.ValueKey" />
         <node concept="3uibUv" id="2j1FRbx61sA" role="11_B2D">
           <ref role="3uigEE" to="31yc:2ceN1hCYUQN" resolve="TraceEvents" />
         </node>
@@ -234,7 +234,7 @@
       <property role="TrG5h" value="MESSAGES" />
       <node concept="3Tm1VV" id="1PN9XOHxyoL" role="1B3o_S" />
       <node concept="3uibUv" id="1PN9XOHxyoM" role="1tU5fm">
-        <ref role="3uigEE" to="1yqb:2daneBOX7Tv" resolve="ValueKey" />
+        <ref role="3uigEE" to="1yqb:2daneBOX7Tv" resolve="Effect.ValueKey" />
         <node concept="_YKpA" id="1PN9XOHxyoN" role="11_B2D">
           <node concept="3uibUv" id="1PN9XOHxyoO" role="_ZDj9">
             <ref role="3uigEE" to="et5u:~IMessage" resolve="IMessage" />

@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
@@ -10407,7 +10407,7 @@
                   <ref role="37wK5l" node="19fWAfxwhsU" resolve="insert" />
                   <node concept="Rm8GO" id="6v6oK22jvxZ" role="37wK5m">
                     <ref role="Rm8GQ" node="19fWAfxw_ZH" resolve="NEXT" />
-                    <ref role="1Px2BO" node="19fWAfxwuKg" resolve="Location" />
+                    <ref role="1Px2BO" node="19fWAfxwuKg" resolve="DataFormPrinter.Formatter.Location" />
                   </node>
                   <node concept="37vLTw" id="6v6oK22jmzk" role="37wK5m">
                     <ref role="3cqZAo" node="19fWAfxEAIK" resolve="formatter" />
@@ -11134,12 +11134,12 @@
                     <node concept="liA8E" id="6v6oK21JXOe" role="2OqNvi">
                       <ref role="37wK5l" node="19fWAfxBpBi" resolve="append" />
                       <node concept="Rm8GO" id="6v6oK21JXOf" role="37wK5m">
-                        <ref role="1Px2BO" node="19fWAfxwuKg" resolve="Location" />
+                        <ref role="1Px2BO" node="19fWAfxwuKg" resolve="DataFormPrinter.Formatter.Location" />
                         <ref role="Rm8GQ" node="19fWAfxw_ZH" resolve="NEXT" />
                       </node>
                       <node concept="2ShNRf" id="6v6oK21Kh2N" role="37wK5m">
                         <node concept="1pGfFk" id="6v6oK21Kh2O" role="2ShVmc">
-                          <ref role="37wK5l" node="19fWAfxxENq" resolve="TextPrinter" />
+                          <ref role="37wK5l" node="19fWAfxxENq" resolve="DataFormPrinter.TextPrinter" />
                           <node concept="2OqwBi" id="6v6oK21Kh2P" role="37wK5m">
                             <node concept="37vLTw" id="6v6oK21Kh2Q" role="2Oq$k0">
                               <ref role="3cqZAo" node="1G9MbtSGvZA" resolve="variableSymbol" />
@@ -11233,12 +11233,12 @@
                           <node concept="liA8E" id="6v6oK21JXOx" role="2OqNvi">
                             <ref role="37wK5l" node="19fWAfxBpBi" resolve="append" />
                             <node concept="Rm8GO" id="6v6oK21JXOy" role="37wK5m">
-                              <ref role="1Px2BO" node="19fWAfxwuKg" resolve="Location" />
+                              <ref role="1Px2BO" node="19fWAfxwuKg" resolve="DataFormPrinter.Formatter.Location" />
                               <ref role="Rm8GQ" node="19fWAfxw_ZH" resolve="NEXT" />
                             </node>
                             <node concept="2ShNRf" id="6v6oK21JXOz" role="37wK5m">
                               <node concept="1pGfFk" id="6v6oK21JXO$" role="2ShVmc">
-                                <ref role="37wK5l" node="19fWAfxxENq" resolve="TextPrinter" />
+                                <ref role="37wK5l" node="19fWAfxxENq" resolve="DataFormPrinter.TextPrinter" />
                                 <node concept="2OqwBi" id="6v6oK21JXO_" role="37wK5m">
                                   <node concept="37vLTw" id="6v6oK21JXOA" role="2Oq$k0">
                                     <ref role="3cqZAo" node="1G9MbtSGvZA" resolve="variableSymbol" />
@@ -11306,12 +11306,12 @@
                       <node concept="liA8E" id="6v6oK21V8Gd" role="2OqNvi">
                         <ref role="37wK5l" node="19fWAfxBpBi" resolve="append" />
                         <node concept="Rm8GO" id="6v6oK21V8Ge" role="37wK5m">
-                          <ref role="1Px2BO" node="19fWAfxwuKg" resolve="Location" />
+                          <ref role="1Px2BO" node="19fWAfxwuKg" resolve="DataFormPrinter.Formatter.Location" />
                           <ref role="Rm8GQ" node="19fWAfxw_ZH" resolve="NEXT" />
                         </node>
                         <node concept="2ShNRf" id="6v6oK21V8Gf" role="37wK5m">
                           <node concept="1pGfFk" id="6v6oK21V8Gg" role="2ShVmc">
-                            <ref role="37wK5l" node="19fWAfxH7ym" resolve="QuotePrinter" />
+                            <ref role="37wK5l" node="19fWAfxH7ym" resolve="DataFormPrinter.QuotePrinter" />
                             <node concept="1rXfSq" id="6v6oK21V8Gh" role="37wK5m">
                               <ref role="37wK5l" node="1EFtv_BCm1l" resolve="toString" />
                               <node concept="2OqwBi" id="6v6oK21V8Gi" role="37wK5m">
@@ -11351,12 +11351,12 @@
                         <node concept="liA8E" id="6v6oK21V8Gw" role="2OqNvi">
                           <ref role="37wK5l" node="19fWAfxBpBi" resolve="append" />
                           <node concept="Rm8GO" id="6v6oK21V8Gx" role="37wK5m">
-                            <ref role="1Px2BO" node="19fWAfxwuKg" resolve="Location" />
+                            <ref role="1Px2BO" node="19fWAfxwuKg" resolve="DataFormPrinter.Formatter.Location" />
                             <ref role="Rm8GQ" node="19fWAfxw_ZH" resolve="NEXT" />
                           </node>
                           <node concept="2ShNRf" id="6v6oK21V8Gy" role="37wK5m">
                             <node concept="1pGfFk" id="6v6oK21V8Gz" role="2ShVmc">
-                              <ref role="37wK5l" node="19fWAfxxENq" resolve="TextPrinter" />
+                              <ref role="37wK5l" node="19fWAfxxENq" resolve="DataFormPrinter.TextPrinter" />
                               <node concept="2OqwBi" id="6v6oK21V8G$" role="37wK5m">
                                 <node concept="37vLTw" id="6v6oK21V8G_" role="2Oq$k0">
                                   <ref role="3cqZAo" node="1G9MbtSGvZA" resolve="variableSymbol" />
@@ -12755,7 +12755,7 @@
                               </node>
                               <node concept="Rm8GO" id="6v6oK22qaO6" role="3uHU7w">
                                 <ref role="Rm8GQ" node="19fWAfxwFUc" resolve="SUFFIX" />
-                                <ref role="1Px2BO" node="19fWAfxwuKg" resolve="Location" />
+                                <ref role="1Px2BO" node="19fWAfxwuKg" resolve="DataFormPrinter.Formatter.Location" />
                               </node>
                             </node>
                             <node concept="3y3z36" id="6v6oK22qaO7" role="3uHU7B">
@@ -12764,7 +12764,7 @@
                               </node>
                               <node concept="Rm8GO" id="6v6oK22qaO9" role="3uHU7w">
                                 <ref role="Rm8GQ" node="19fWAfxwvVD" resolve="PREFIX" />
-                                <ref role="1Px2BO" node="19fWAfxwuKg" resolve="Location" />
+                                <ref role="1Px2BO" node="19fWAfxwuKg" resolve="DataFormPrinter.Formatter.Location" />
                               </node>
                             </node>
                           </node>
