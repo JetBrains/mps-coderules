@@ -5138,14 +5138,14 @@
         <id>jetbrains.mps.core.types</id>
         <name>MPS Coderules Core Types</name>
         <description>Types for core MPS languages with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.5-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.6-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
         <depends>jetbrains.mps.build</depends>
         <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="222.3345" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Built with Java 17</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Built with Java 17</li><li>Suppport for more MPS core languages</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
@@ -5160,14 +5160,14 @@
         <id>jetbrains.mps.core.types</id>
         <name>MPS Coderules Core Types</name>
         <description>Types for core MPS languages with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.5-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.6-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
         <depends>jetbrains.mps.build</depends>
         <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="222.3345" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Built with Java 17</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Built with Java 17</li><li>Suppport for more MPS core languages</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
@@ -14598,7 +14598,7 @@
       <pathelement location="${build.layout}/deploy/jetbrains.mps.baseLanguageExt.jar" />
       <pathelement location="${build.layout}/deploy/jetbrains.mps.lang.smodelExt.jar" />
     </path>
-    <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
+    <pathconvert property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
       <pathelement location="${artifacts.coderules}/jetbrains.mps.coderules" />
       <pathelement location="${artifacts.mps}/lib/mps-workbench.jar" />
@@ -14608,7 +14608,7 @@
       <pathelement location="${artifacts.mps}/plugins/mps-testing" />
       <pathelement location="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types" />
     </path>
-    <pathconvert pathsep="${path.separator}" property="mps.plugins.path.string" refid="mps.plugins.path" />
+    <pathconvert property="mps.plugins.path.string" refid="mps.plugins.path" />
     <path id="mps.tests.path">
       <pathelement location="${build.layout}/deploy/typechecking.samples.baseLanguage.jar" />
       <pathelement location="${build.layout}/deploy/jetbrains.mps.baseLanguageExt.test.jar" />
@@ -14617,12 +14617,7 @@
       <pathelement location="${build.layout}/deploy/jetbrains.mps.baseLanguage.tuplesExt.test.jar" />
       <pathelement location="${build.layout}/deploy/jetbrains.mps.lang.smodelExt.test.jar" />
     </path>
-    <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
-    <patternset id="plugin.deployed.jars">
-      <include name="lib/**/*.jar" />
-      <include name="languages/**/*.jar" />
-      <exclude name="**/*-src.jar" />
-    </patternset>
+    <pathconvert property="mps.tests.path.string" refid="mps.tests.path" />
     <path id="long.class.path">
       <fileset dir="${artifacts.mps}/lib">
         <include name="**/*.jar" />
@@ -14668,6 +14663,9 @@
       <jvmarg value="--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" />
       <jvmarg value="--add-opens=java.base/sun.security.ssl=ALL-UNNAMED" />
       <jvmarg value="--add-opens=java.base/sun.security.util=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/com.apple.eawt=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/com.apple.eawt.event=ALL-UNNAMED" />
+      <jvmarg value="--add-opens=java.desktop/com.apple.laf=ALL-UNNAMED" />
       <jvmarg value="--add-opens=java.desktop/java.awt=ALL-UNNAMED" />
       <jvmarg value="--add-opens=java.desktop/java.awt.dnd.peer=ALL-UNNAMED" />
       <jvmarg value="--add-opens=java.desktop/java.awt.event=ALL-UNNAMED" />
@@ -14687,11 +14685,7 @@
       <jvmarg value="--add-opens=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED" />
       <jvmarg value="--add-opens=jdk.jdi/com.sun.tools.jdi=ALL-UNNAMED" />
       
-      <classpath>
-        <fileset dir="${build.tmp}">
-          <include name="mps.class.path.jar" />
-        </fileset>
-      </classpath>
+      <classpath location="${build.tmp}/mps.class.path.jar" />
       
       <env key="NO_FS_ROOTS_ACCESS_CHECK" value="true" />
       <env key="JAVA_TOOL_OPTIONS" value="-Dplugin.path=&quot;${mps.plugins.path.string}&quot; -Dmps.libraries=&quot;${mps.libraries.path.string}&quot; -Dmps.test.modules=&quot;${mps.tests.path.string}&quot;" />
