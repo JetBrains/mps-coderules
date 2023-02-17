@@ -559,6 +559,11 @@
         <child id="5721587534047265374" name="message" index="9lYJi" />
         <child id="5721587534047265375" name="throwable" index="9lYJj" />
       </concept>
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
+      </concept>
     </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
       <concept id="3731567766880819155" name="jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation" flags="nn" index="NWUre">
@@ -30344,7 +30349,7 @@
           <node concept="3cpWsn" id="4tC1JBnu3xM" role="3cpWs9">
             <property role="TrG5h" value="treeModel" />
             <node concept="3uibUv" id="4tC1JBnu3xO" role="1tU5fm">
-              <ref role="3uigEE" to="rgfa:~DefaultTreeModel" resolve="DefaultTreeModel" />
+              <ref role="3uigEE" to="rgfa:~TreeModel" resolve="TreeModel" />
             </node>
             <node concept="2OqwBi" id="4tC1JBnu3xP" role="33vP2m">
               <node concept="1rXfSq" id="4tC1JBnu3xQ" role="2Oq$k0">
@@ -30356,14 +30361,49 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4tC1JBnu3xS" role="3cqZAp">
-          <node concept="2OqwBi" id="4tC1JBnu6kc" role="3clFbG">
-            <node concept="37vLTw" id="4tC1JBnu6kb" role="2Oq$k0">
+        <node concept="3clFbJ" id="13mh4A2hC8$" role="3cqZAp">
+          <node concept="3clFbS" id="13mh4A2hC8A" role="3clFbx">
+            <node concept="3clFbF" id="13mh4A2hTSH" role="3cqZAp">
+              <node concept="2OqwBi" id="13mh4A2i1QY" role="3clFbG">
+                <node concept="1eOMI4" id="13mh4A2hTSE" role="2Oq$k0">
+                  <node concept="10QFUN" id="13mh4A2hTSB" role="1eOMHV">
+                    <node concept="3uibUv" id="13mh4A2hTSG" role="10QFUM">
+                      <ref role="3uigEE" to="rgfa:~DefaultTreeModel" resolve="DefaultTreeModel" />
+                    </node>
+                    <node concept="37vLTw" id="13mh4A2i0Gw" role="10QFUP">
+                      <ref role="3cqZAo" node="4tC1JBnu3xM" resolve="treeModel" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="13mh4A2i2OL" role="2OqNvi">
+                  <ref role="37wK5l" to="rgfa:~DefaultTreeModel.nodeStructureChanged(javax.swing.tree.TreeNode)" resolve="nodeStructureChanged" />
+                  <node concept="Xjq3P" id="13mh4A2i6cD" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2ZW3vV" id="13mh4A2hOiu" role="3clFbw">
+            <node concept="3uibUv" id="13mh4A2hR76" role="2ZW6by">
+              <ref role="3uigEE" to="rgfa:~DefaultTreeModel" resolve="DefaultTreeModel" />
+            </node>
+            <node concept="37vLTw" id="13mh4A2hMyV" role="2ZW6bz">
               <ref role="3cqZAo" node="4tC1JBnu3xM" resolve="treeModel" />
             </node>
-            <node concept="liA8E" id="4tC1JBnu6kd" role="2OqNvi">
-              <ref role="37wK5l" to="rgfa:~DefaultTreeModel.nodeStructureChanged(javax.swing.tree.TreeNode)" resolve="nodeStructureChanged" />
-              <node concept="Xjq3P" id="4tC1JBnu6ke" role="37wK5m" />
+          </node>
+          <node concept="9aQIb" id="13mh4A2i7K7" role="9aQIa">
+            <node concept="3clFbS" id="13mh4A2i7K8" role="9aQI4">
+              <node concept="RRSsy" id="13mh4A2ic31" role="3cqZAp">
+                <property role="RRSoG" value="gZ5fksE/warn" />
+                <node concept="Xl_RD" id="13mh4A2ic33" role="RRSoy">
+                  <property role="Xl_RC" value="unable to refresh tree model" />
+                </node>
+                <node concept="2ShNRf" id="13mh4A2ijyq" role="RRSow">
+                  <node concept="1pGfFk" id="13mh4A2jjzT" role="2ShVmc">
+                    <property role="373rjd" value="true" />
+                    <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;()" resolve="RuntimeException" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
