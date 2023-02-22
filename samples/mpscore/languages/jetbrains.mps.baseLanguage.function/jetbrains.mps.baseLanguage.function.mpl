@@ -50,7 +50,6 @@
         <module reference="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" version="0" />
         <module reference="96eeb076-cd7e-4797-9c2a-348e3f826e65(jetbrains.mps.baseLanguage.function)" version="0" />
         <module reference="8c873268-fbf2-400d-a542-6d12ccebc30b(jetbrains.mps.baseLanguage.function#01)" version="0" />
-        <module reference="52b81ac7-93fd-4e9e-b972-4995882da6d4(jetbrains.mps.baseLanguage.references.runtime)" version="0" />
         <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
         <module reference="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" version="0" />
         <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />

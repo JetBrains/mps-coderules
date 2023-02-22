@@ -51,7 +51,6 @@
         <module reference="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" version="0" />
         <module reference="37ccac09-5b15-47b1-8c28-752b39fea984(jetbrains.mps.baseLanguage.classifiersExt)" version="0" />
         <module reference="1e54a2cb-2fd8-4263-9fe5-090f7fd057cc(jetbrains.mps.baseLanguage.classifiersExt.generator)" version="0" />
-        <module reference="52b81ac7-93fd-4e9e-b972-4995882da6d4(jetbrains.mps.baseLanguage.references.runtime)" version="0" />
         <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
         <module reference="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" version="0" />
         <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
