@@ -9,6 +9,12 @@ Prerequisites:
 for building the whole project, as samples expect the compiled languages to be
 available in a project library.
 
+## Necessary step to execute *before* everything else
+
+This downloads all the dependencies:
+
+  ./gradlew -b dependencies.gradle
+
 ## To fully build the project including all subprojects, execute: ##
 
     mvn -Dmaven.javadoc.skip=true -B -f reactor install && ./gradlew assemble
