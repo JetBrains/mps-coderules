@@ -1193,7 +1193,7 @@
                                       <node concept="liA8E" id="7WKNeR8SQyT" role="2OqNvi">
                                         <ref role="37wK5l" to="jkny:~ToolWindowManager.notifyByBalloon(java.lang.String,com.intellij.openapi.ui.MessageType,java.lang.String)" resolve="notifyByBalloon" />
                                         <node concept="Xl_RD" id="7WKNeR8SQyU" role="37wK5m">
-                                          <property role="Xl_RC" value="Event Log" />
+                                          <property role="Xl_RC" value="Messages" />
                                         </node>
                                         <node concept="37vLTw" id="3MwxBzG5WQR" role="37wK5m">
                                           <ref role="3cqZAo" node="3MwxBzG5WQP" resolve="type" />
