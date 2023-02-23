@@ -3736,6 +3736,27 @@
                 </node>
               </node>
             </node>
+            <node concept="3yLZsm" id="5u1SQ54La$U" role="3yL2VB">
+              <property role="3yLZsk" value="../lib/trove4j-3.0.3.jar" />
+              <node concept="398BVA" id="5u1SQ54La$V" role="3yLZsn">
+                <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+                <node concept="2Ry0Ak" id="5u1SQ54La$W" role="iGT6I">
+                  <property role="2Ry0Am" value="coderules" />
+                  <node concept="2Ry0Ak" id="5u1SQ54La$X" role="2Ry0An">
+                    <property role="2Ry0Am" value="solutions" />
+                    <node concept="2Ry0Ak" id="5u1SQ54La$Y" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
+                      <node concept="2Ry0Ak" id="5u1SQ54La$Z" role="2Ry0An">
+                        <property role="2Ry0Am" value="lib" />
+                        <node concept="2Ry0Ak" id="5u1SQ54LaAC" role="2Ry0An">
+                          <property role="2Ry0Am" value="trove4j-3.0.3.jar" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node concept="L2wRC" id="7Ant4WkHLmu" role="39821P">
             <ref role="L2wRA" node="7BVjoXzUx$V" resolve="jetbrains.mps.logic.runtime" />
@@ -3971,6 +3992,27 @@
                           <property role="2Ry0Am" value="lib" />
                           <node concept="2Ry0Ak" id="4psz3HH29HS" role="2Ry0An">
                             <property role="2Ry0Am" value="conreactor-core-0.9.17.jar" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3yLZsm" id="5u1SQ54LaDe" role="3yL2VB">
+                <property role="3yLZsk" value="../lib/trove4j-3.0.3.jar" />
+                <node concept="398BVA" id="5u1SQ54LaDf" role="3yLZsn">
+                  <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+                  <node concept="2Ry0Ak" id="5u1SQ54LaDg" role="iGT6I">
+                    <property role="2Ry0Am" value="coderules" />
+                    <node concept="2Ry0Ak" id="5u1SQ54LaDh" role="2Ry0An">
+                      <property role="2Ry0Am" value="solutions" />
+                      <node concept="2Ry0Ak" id="5u1SQ54LaDi" role="2Ry0An">
+                        <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
+                        <node concept="2Ry0Ak" id="5u1SQ54LaDj" role="2Ry0An">
+                          <property role="2Ry0Am" value="lib" />
+                          <node concept="2Ry0Ak" id="5u1SQ54LaEW" role="2Ry0An">
+                            <property role="2Ry0Am" value="trove4j-3.0.3.jar" />
                           </node>
                         </node>
                       </node>

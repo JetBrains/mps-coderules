@@ -2263,7 +2263,7 @@
         </dependencies>
         <uses />
         <library jar="../lib/collection-0.7.jar" />
-        <library jar="../../../jetbrains.mps.coderules/lib/trove4j-3.0.3.jar" />
+        <library jar="../lib/trove4j-3.0.3.jar" />
         <library jar="../lib/conreactor-core-0.9.17.jar" />
         <sources jar="." descriptor="jetbrains.mps.logic.reactor.msd" />
       </module>
