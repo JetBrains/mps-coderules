@@ -43,6 +43,7 @@
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="m7o5" ref="r:835f8ea3-a800-4588-a80b-1de6d47c2098(jetbrains.mps.coderules.ideaplugin)" />
     <import index="bid0" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.util(jetbrains.mps.logic.reactor/)" />
+    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1252,7 +1253,7 @@
       <node concept="3uibUv" id="2j1FRbwXqde" role="1tU5fm">
         <ref role="3uigEE" node="2daneBOX7Tv" resolve="Effect.ValueKey" />
         <node concept="3uibUv" id="4Wn$Hm2h_mT" role="11_B2D">
-          <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
+          <ref role="3uigEE" to="tj24:7iCybvToiT5" resolve="Config" />
         </node>
       </node>
       <node concept="2YIFZM" id="2j1FRbwXrqI" role="33vP2m">
@@ -1262,7 +1263,7 @@
           <property role="Xl_RC" value="config" />
         </node>
         <node concept="3uibUv" id="4Wn$Hm2h_Sg" role="3PaCim">
-          <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
+          <ref role="3uigEE" to="tj24:7iCybvToiT5" resolve="Config" />
         </node>
       </node>
     </node>
@@ -4318,7 +4319,7 @@
       <node concept="37vLTG" id="MFuM6R00U7" role="3clF46">
         <property role="TrG5h" value="config" />
         <node concept="3uibUv" id="4Wn$Hm2hUiS" role="1tU5fm">
-          <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
+          <ref role="3uigEE" to="tj24:7iCybvToiT5" resolve="Config" />
         </node>
       </node>
       <node concept="3uibUv" id="MFuM6R00U9" role="3clF45">
@@ -4714,12 +4715,12 @@
             </node>
             <node concept="3K4zz7" id="23Habm5FSDD" role="33vP2m">
               <node concept="2OqwBi" id="23Habm5FSDH" role="3K4Cdx">
-                <node concept="10M0yZ" id="23Habm5FSDI" role="2Oq$k0">
-                  <ref role="3cqZAo" to="m7o5:23Habm5BnXh" resolve="PROFILING_ENABLED" />
-                  <ref role="1PxDUh" to="m7o5:39eNUjm3TK$" resolve="CoderulesOptions" />
+                <node concept="10M0yZ" id="1QxYy7KdHPO" role="2Oq$k0">
+                  <ref role="3cqZAo" to="tj24:23Habm5BnXh" resolve="PROFILING_ENABLED" />
+                  <ref role="1PxDUh" to="tj24:39eNUjm3TK$" resolve="CoderulesOptions" />
                 </node>
                 <node concept="liA8E" id="23Habm5FSDJ" role="2OqNvi">
-                  <ref role="37wK5l" to="m7o5:7iCybvT$ANq" resolve="get" />
+                  <ref role="37wK5l" to="tj24:7iCybvT$ANq" resolve="get" />
                   <node concept="37vLTw" id="23Habm5FSDK" role="37wK5m">
                     <ref role="3cqZAo" node="MFuM6R0ncG" resolve="config" />
                   </node>
@@ -5378,7 +5379,7 @@
       <property role="TrG5h" value="config" />
       <node concept="3Tm6S6" id="MFuM6R0ncH" role="1B3o_S" />
       <node concept="3uibUv" id="4Wn$Hm2hROv" role="1tU5fm">
-        <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
+        <ref role="3uigEE" to="tj24:7iCybvToiT5" resolve="Config" />
       </node>
     </node>
     <node concept="3Tm1VV" id="1pPth$l_TFW" role="1B3o_S" />

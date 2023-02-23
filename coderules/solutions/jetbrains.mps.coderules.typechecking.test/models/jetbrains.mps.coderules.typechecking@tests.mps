@@ -4324,9 +4324,9 @@
                         <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="2MNGcFT5QlU" role="37wK5m">
-                      <ref role="1Pybhc" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
-                      <ref role="37wK5l" to="m7o5:2MNGcFT4ZOn" resolve="getUiConfig" />
+                    <node concept="2YIFZM" id="3zz62D5cwaT" role="37wK5m">
+                      <ref role="37wK5l" to="tj24:2MNGcFT4ZOn" resolve="getEffectiveConfig" />
+                      <ref role="1Pybhc" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
                     </node>
                     <node concept="37vLTw" id="9UUIHNe9hG" role="37wK5m">
                       <ref role="3cqZAo" node="9UUIHNe9hD" resolve="messageCollector" />
@@ -4656,11 +4656,11 @@
           <node concept="3cpWsn" id="7e$2hwayN77" role="3cpWs9">
             <property role="TrG5h" value="config" />
             <node concept="3uibUv" id="7e$2hwaxbQr" role="1tU5fm">
-              <ref role="3uigEE" to="m7o5:7iCybvToiT5" resolve="Config" />
+              <ref role="3uigEE" to="tj24:7iCybvToiT5" resolve="Config" />
             </node>
-            <node concept="2YIFZM" id="3kmGNCnqvlt" role="33vP2m">
-              <ref role="37wK5l" to="m7o5:7e$2hwaAfGb" resolve="getUserConfig" />
-              <ref role="1Pybhc" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+            <node concept="2YIFZM" id="3zz62D5cwaR" role="33vP2m">
+              <ref role="37wK5l" to="tj24:7e$2hwaAfGb" resolve="getUserConfig" />
+              <ref role="1Pybhc" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
             </node>
           </node>
         </node>
@@ -4670,14 +4670,14 @@
               <ref role="3cqZAo" node="7e$2hwayN77" resolve="config" />
             </node>
             <node concept="liA8E" id="7e$2hwayR6r" role="2OqNvi">
-              <ref role="37wK5l" to="m7o5:7iCybvTszk9" resolve="registerProvider" />
+              <ref role="37wK5l" to="tj24:7iCybvTszk9" resolve="registerProvider" />
               <node concept="Rm8GO" id="7e$2hwayR6s" role="37wK5m">
-                <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Config.Level" />
-                <ref role="Rm8GQ" to="m7o5:5Ul706LbJYK" resolve="TEST" />
+                <ref role="1Px2BO" to="tj24:7iCybvToD3Z" resolve="Config.Level" />
+                <ref role="Rm8GQ" to="tj24:5Ul706LbJYK" resolve="TEST" />
               </node>
-              <node concept="10M0yZ" id="2CPBoDAVq9X" role="37wK5m">
-                <ref role="3cqZAo" to="m7o5:7iCybvTzJGv" resolve="PREFIX" />
-                <ref role="1PxDUh" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+              <node concept="10M0yZ" id="3zz62D5cwaD" role="37wK5m">
+                <ref role="3cqZAo" to="tj24:7iCybvTzJGv" resolve="PREFIX" />
+                <ref role="1PxDUh" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
               </node>
               <node concept="1bVj0M" id="7e$2hwayR6u" role="37wK5m">
                 <node concept="3clFbS" id="7e$2hwayR6v" role="1bW5cS">
@@ -4690,9 +4690,9 @@
                       </node>
                     </node>
                     <node concept="2OqwBi" id="7e$2hwayR6$" role="3clFbw">
-                      <node concept="10M0yZ" id="2CPBoDAVq9Z" role="2Oq$k0">
-                        <ref role="3cqZAo" to="m7o5:7iCybvTyUUs" resolve="OPTION_TYPECHECKING_ENABLED" />
-                        <ref role="1PxDUh" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <node concept="10M0yZ" id="3zz62D5cwaG" role="2Oq$k0">
+                        <ref role="3cqZAo" to="tj24:7iCybvTyUUs" resolve="OPTION_TYPECHECKING_ENABLED" />
+                        <ref role="1PxDUh" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
                       </node>
                       <node concept="liA8E" id="7e$2hwayR6A" role="2OqNvi">
                         <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
@@ -4711,9 +4711,9 @@
                       </node>
                     </node>
                     <node concept="2OqwBi" id="7e$2hwayR6G" role="3clFbw">
-                      <node concept="10M0yZ" id="2CPBoDAVqa2" role="2Oq$k0">
-                        <ref role="3cqZAo" to="m7o5:5Qx6_65jytE" resolve="OPTION_TYPECHECKING_WATCHING" />
-                        <ref role="1PxDUh" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <node concept="10M0yZ" id="3zz62D5cwaI" role="2Oq$k0">
+                        <ref role="3cqZAo" to="tj24:5Qx6_65jytE" resolve="OPTION_TYPECHECKING_WATCHING" />
+                        <ref role="1PxDUh" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
                       </node>
                       <node concept="liA8E" id="7e$2hwayR6I" role="2OqNvi">
                         <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />

@@ -37,6 +37,7 @@
     <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="m7o5" ref="r:835f8ea3-a800-4588-a80b-1de6d47c2098(jetbrains.mps.coderules.ideaplugin)" />
+    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
     <import index="unkn" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex(jetbrains.mps.coderules/)" implicit="true" />
   </imports>
   <registry>
@@ -7257,9 +7258,9 @@
     <node concept="2uRRBj" id="2tFDlV2cifr" role="2uRRBE">
       <node concept="3clFbS" id="2tFDlV2cifs" role="2VODD2">
         <node concept="3clFbF" id="2tFDlV2dcFL" role="3cqZAp">
-          <node concept="2YIFZM" id="2CPBoDBWNuS" role="3clFbG">
-            <ref role="37wK5l" to="m7o5:2tFDlV2co4z" resolve="init" />
-            <ref role="1Pybhc" to="m7o5:7iCybvToiT5" resolve="Config" />
+          <node concept="2YIFZM" id="1QxYy7KdHPQ" role="3clFbG">
+            <ref role="37wK5l" to="tj24:2tFDlV2co4z" resolve="init" />
+            <ref role="1Pybhc" to="tj24:7iCybvToiT5" resolve="Config" />
           </node>
         </node>
       </node>
@@ -7267,9 +7268,9 @@
     <node concept="2uRRBI" id="2tFDlV2cifL" role="2uRRBF">
       <node concept="3clFbS" id="2tFDlV2cifM" role="2VODD2">
         <node concept="3clFbF" id="2tFDlV2deiY" role="3cqZAp">
-          <node concept="2YIFZM" id="2CPBoDBWNuT" role="3clFbG">
-            <ref role="37wK5l" to="m7o5:2tFDlV2ct0G" resolve="dispose" />
-            <ref role="1Pybhc" to="m7o5:7iCybvToiT5" resolve="Config" />
+          <node concept="2YIFZM" id="1QxYy7KdHPR" role="3clFbG">
+            <ref role="37wK5l" to="tj24:2tFDlV2ct0G" resolve="dispose" />
+            <ref role="1Pybhc" to="tj24:7iCybvToiT5" resolve="Config" />
           </node>
         </node>
       </node>

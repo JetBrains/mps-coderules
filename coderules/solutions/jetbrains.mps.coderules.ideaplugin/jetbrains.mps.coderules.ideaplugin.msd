@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.coderules.ideaplugin" uuid="66887915-4d9e-4e24-bd35-19eb55fb75c2" moduleVersion="0" compileInMPS="false" generatorOutputPath="${module}/source_off">
+<solution name="jetbrains.mps.coderules.ideaplugin" uuid="66887915-4d9e-4e24-bd35-19eb55fb75c2" moduleVersion="0" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -9,7 +9,7 @@
     </modelRoot>
   </models>
   <facets>
-    <facet type="java" languageLevel="JAVA_8" compile="off" classes="off" ext="no">
+    <facet type="java" languageLevel="JAVA_8" compile="mps" classes="provided" ext="no">
       <classes generated="true" path="${module}/classes_gen" />
     </facet>
   </facets>

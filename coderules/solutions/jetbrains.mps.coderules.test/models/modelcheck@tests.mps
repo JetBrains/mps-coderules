@@ -40,6 +40,7 @@
     <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
     <import index="fczk" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.hamcrest.core(JUnit/)" />
     <import index="m7o5" ref="r:835f8ea3-a800-4588-a80b-1de6d47c2098(jetbrains.mps.coderules.ideaplugin)" />
+    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -956,19 +957,19 @@
       <node concept="3clFbS" id="xqbf82oxMc" role="2VODD2">
         <node concept="3clFbF" id="1a$$29AvYGM" role="3cqZAp">
           <node concept="2OqwBi" id="1a$$29AvYN5" role="3clFbG">
-            <node concept="2YIFZM" id="2CPBoDBWNuU" role="2Oq$k0">
-              <ref role="37wK5l" to="m7o5:7iCybvTs3lI" resolve="getInstance" />
-              <ref role="1Pybhc" to="m7o5:7iCybvToiT5" resolve="Config" />
+            <node concept="2YIFZM" id="1QxYy7KdHPS" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:7iCybvTs3lI" resolve="getInstance" />
+              <ref role="1Pybhc" to="tj24:7iCybvToiT5" resolve="Config" />
             </node>
             <node concept="liA8E" id="1a$$29AvYUx" role="2OqNvi">
-              <ref role="37wK5l" to="m7o5:7iCybvTszk9" resolve="registerProvider" />
+              <ref role="37wK5l" to="tj24:7iCybvTszk9" resolve="registerProvider" />
               <node concept="Rm8GO" id="1a$$29AvYXx" role="37wK5m">
-                <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Config.Level" />
-                <ref role="Rm8GQ" to="m7o5:5Ul706LbJYK" resolve="TEST" />
+                <ref role="1Px2BO" to="tj24:7iCybvToD3Z" resolve="Config.Level" />
+                <ref role="Rm8GQ" to="tj24:5Ul706LbJYK" resolve="TEST" />
               </node>
-              <node concept="10M0yZ" id="2CPBoDAVq9Y" role="37wK5m">
-                <ref role="3cqZAo" to="m7o5:7iCybvTzJGv" resolve="PREFIX" />
-                <ref role="1PxDUh" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+              <node concept="10M0yZ" id="3zz62D5cwaF" role="37wK5m">
+                <ref role="3cqZAo" to="tj24:7iCybvTzJGv" resolve="PREFIX" />
+                <ref role="1PxDUh" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
               </node>
               <node concept="1bVj0M" id="1a$$29Aw4Um" role="37wK5m">
                 <node concept="3clFbS" id="1a$$29Aw4Uo" role="1bW5cS">
@@ -980,9 +981,9 @@
                       </node>
                     </node>
                     <node concept="2OqwBi" id="1a$$29Aw6Dj" role="3clFbw">
-                      <node concept="10M0yZ" id="2CPBoDAVqa0" role="2Oq$k0">
-                        <ref role="3cqZAo" to="m7o5:7iCybvTyUUs" resolve="OPTION_TYPECHECKING_ENABLED" />
-                        <ref role="1PxDUh" to="m7o5:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                      <node concept="10M0yZ" id="3zz62D5cwaH" role="2Oq$k0">
+                        <ref role="3cqZAo" to="tj24:7iCybvTyUUs" resolve="OPTION_TYPECHECKING_ENABLED" />
+                        <ref role="1PxDUh" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
                       </node>
                       <node concept="liA8E" id="1a$$29Aw72L" role="2OqNvi">
                         <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
@@ -1011,15 +1012,15 @@
       <node concept="3clFbS" id="xqbf82oyCQ" role="2VODD2">
         <node concept="3clFbF" id="xqbf82l6BV" role="3cqZAp">
           <node concept="2OqwBi" id="xqbf82l6Qn" role="3clFbG">
-            <node concept="2YIFZM" id="2CPBoDBWNuV" role="2Oq$k0">
-              <ref role="37wK5l" to="m7o5:7iCybvTs3lI" resolve="getInstance" />
-              <ref role="1Pybhc" to="m7o5:7iCybvToiT5" resolve="Config" />
+            <node concept="2YIFZM" id="1QxYy7KdHPT" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:7iCybvTs3lI" resolve="getInstance" />
+              <ref role="1Pybhc" to="tj24:7iCybvToiT5" resolve="Config" />
             </node>
             <node concept="liA8E" id="xqbf82l6Yd" role="2OqNvi">
-              <ref role="37wK5l" to="m7o5:xqbf82kuzw" resolve="reset" />
+              <ref role="37wK5l" to="tj24:xqbf82kuzw" resolve="reset" />
               <node concept="Rm8GO" id="1a$$29Aw7Pu" role="37wK5m">
-                <ref role="1Px2BO" to="m7o5:7iCybvToD3Z" resolve="Config.Level" />
-                <ref role="Rm8GQ" to="m7o5:5Ul706LbJYK" resolve="TEST" />
+                <ref role="1Px2BO" to="tj24:7iCybvToD3Z" resolve="Config.Level" />
+                <ref role="Rm8GQ" to="tj24:5Ul706LbJYK" resolve="TEST" />
               </node>
             </node>
           </node>

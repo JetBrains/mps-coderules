@@ -72,8 +72,7 @@ def allInitDependencies = [
   'coderules:solutions:jetbrains.mps.logic.reactor:copyDependencies',
   'coderules:solutions:jetbrains.mps.logic.test:copyDependencies',
   'coderules:solutions:jetbrains.mps.coderules.typechecking:copyDependencies',
-  'coderules:solutions:jetbrains.mps.coderules:copyDependencies',
-  'coderules:solutions:jetbrains.mps.coderules.ideaplugin:makeDependencies' ]
+  'coderules:solutions:jetbrains.mps.coderules:copyDependencies' ]
 
 task setup(dependsOn: allInitDependencies) {
   doLast {

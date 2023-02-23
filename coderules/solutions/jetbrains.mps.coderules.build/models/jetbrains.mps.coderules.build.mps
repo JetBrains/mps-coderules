@@ -456,7 +456,7 @@
       <node concept="398b2D" id="adIlSu_OUD" role="398b2p">
         <node concept="nFU4i" id="adIlSu_OXi" role="nFU4p">
           <property role="3LZaj6" value="4zlO3QTanjS/source" />
-          <property role="nFU4j" value="source" />
+          <property role="nFU4j" value="source_gen" />
         </node>
         <node concept="398BVA" id="adIlSu_OVP" role="398b2C">
           <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
@@ -1712,6 +1712,11 @@
           <node concept="3bR9La" id="adIlSub4yg" role="1SiIV1">
             <property role="3bR36h" value="true" />
             <ref role="3bR37D" to="ffeo:7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5u1SQ54mIWR" role="3bR37C">
+          <node concept="3bR9La" id="5u1SQ54mIWS" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>
       </node>
@@ -3379,6 +3384,11 @@
             <ref role="3bR37D" node="2CPBoDB0MbE" resolve="jetbrains.mps.coderules.ideaplugin" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5u1SQ54mIZF" role="3bR37C">
+          <node concept="3bR9La" id="5u1SQ54mIZG" role="1SiIV1">
+            <ref role="3bR37D" node="2CPBoDB0Mtg" resolve="jetbrains.mps.coderules.typechecking" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="6Yb9hAqy9L2" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -3801,8 +3811,8 @@
                       <property role="2Ry0Am" value="solutions" />
                       <node concept="2Ry0Ak" id="6YTH7uEKcL0" role="2Ry0An">
                         <property role="2Ry0Am" value="jetbrains.mps.coderules.ideaplugin" />
-                        <node concept="2Ry0Ak" id="6YTH7uEKcL1" role="2Ry0An">
-                          <property role="2Ry0Am" value="source" />
+                        <node concept="2Ry0Ak" id="5u1SQ54Kk9w" role="2Ry0An">
+                          <property role="2Ry0Am" value="source_gen" />
                         </node>
                       </node>
                     </node>
@@ -4083,8 +4093,8 @@
                         <property role="2Ry0Am" value="solutions" />
                         <node concept="2Ry0Ak" id="6YTH7uEw1YJ" role="2Ry0An">
                           <property role="2Ry0Am" value="jetbrains.mps.coderules.ideaplugin" />
-                          <node concept="2Ry0Ak" id="6YTH7uEw1YO" role="2Ry0An">
-                            <property role="2Ry0Am" value="source" />
+                          <node concept="2Ry0Ak" id="5u1SQ54Juu$" role="2Ry0An">
+                            <property role="2Ry0Am" value="source_gen" />
                           </node>
                         </node>
                       </node>
