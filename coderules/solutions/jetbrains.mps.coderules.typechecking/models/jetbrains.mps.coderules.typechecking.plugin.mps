@@ -103,8 +103,8 @@
     <import index="9w4s" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
     <import index="ctgy" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.plugins(MPS.IDEA/)" />
-    <import index="9ti4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.extensions(MPS.IDEA/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="9ti4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.extensions(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -6010,10 +6010,10 @@
                       <ref role="2WH_rO" node="6TxWhg_BX7s" resolve="widget" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="6TxWhg_BZ19" role="37wK5m">
-                    <node concept="2WthIp" id="6TxWhg_BYRj" role="2Oq$k0" />
-                    <node concept="2BZ7hE" id="6TxWhg_BZbl" role="2OqNvi">
-                      <ref role="2WH_rO" node="6TxWhg_BX7s" resolve="widget" />
+                  <node concept="2OqwBi" id="4ldrYjLWsN$" role="37wK5m">
+                    <node concept="2WthIp" id="4ldrYjLWsN_" role="2Oq$k0" />
+                    <node concept="2BZ7hE" id="4ldrYjLWsNA" role="2OqNvi">
+                      <ref role="2WH_rO" node="CYd5Z6WKvP" resolve="statusBar" />
                     </node>
                   </node>
                 </node>
