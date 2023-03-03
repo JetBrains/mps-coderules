@@ -3609,6 +3609,11 @@
             <ref role="3bR37D" node="2CPBoDB0Mtg" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2$QckrE8wys" role="3bR37C">
+          <node concept="3bR9La" id="2$QckrE8wyt" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:1ULLXZL0gZG" resolve="org.junit.junit5" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2sgV4H" id="7Ant4WkHLmd" role="1l3spa">
