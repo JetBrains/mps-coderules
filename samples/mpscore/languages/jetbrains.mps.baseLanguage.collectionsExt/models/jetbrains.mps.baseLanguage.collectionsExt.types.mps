@@ -16287,7 +16287,7 @@
   <node concept="AVZre" id="3Z1xyIwm$1Q">
     <property role="3GE5qa" value="rule.operation" />
     <property role="TrG5h" value="SequenceOperationInternal" />
-    <ref role="2YbDB9" to="e9ez:vrUbzkloxv" resolve="ClosureTypeScheme" />
+    <ref role="2YbDB9" to="kqnc:34$A1Mf51rY" resolve="TypeOf" />
     <node concept="1nLNMY" id="3Z1xyIwmU_L" role="1nK1Vg">
       <property role="TrG5h" value="allOp" />
       <node concept="3clFbS" id="3Z1xyIwmU_M" role="1nLNMH">
