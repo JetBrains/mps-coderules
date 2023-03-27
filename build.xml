@@ -4325,17 +4325,17 @@
         <fileset file="${artifacts.mps}/lib/util.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="apiguardian-api-1.1.2.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-api-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-engine-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-migrationsupport-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-params-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-commons-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-engine-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-launcher-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-vintage-engine-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="opentest4j-1.2.0.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-reporting-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="apiguardian-api-1.1.2.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-api-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-engine-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-migrationsupport-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-params-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-commons-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-engine-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-launcher-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-vintage-engine-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="opentest4j-1.2.0.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-reporting-1.9.1.jar" />
       </classpath>
     </javac>
   </target>
@@ -5105,17 +5105,17 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="apiguardian-api-1.1.2.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-api-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-engine-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-migrationsupport-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-params-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-commons-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-engine-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-launcher-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-vintage-engine-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="opentest4j-1.2.0.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-reporting-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="apiguardian-api-1.1.2.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-api-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-engine-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-migrationsupport-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-params-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-commons-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-engine-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-launcher-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-vintage-engine-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="opentest4j-1.2.0.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-reporting-1.9.1.jar" />
       </classpath>
     </javac>
   </target>
@@ -5354,17 +5354,17 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="apiguardian-api-1.1.2.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-api-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-engine-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-migrationsupport-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-params-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-commons-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-engine-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-launcher-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-vintage-engine-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="opentest4j-1.2.0.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-reporting-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="apiguardian-api-1.1.2.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-api-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-engine-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-migrationsupport-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-params-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-commons-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-engine-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-launcher-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-vintage-engine-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="opentest4j-1.2.0.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-reporting-1.9.1.jar" />
       </classpath>
     </javac>
   </target>
@@ -6129,17 +6129,17 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="apiguardian-api-1.1.2.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-api-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-engine-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-migrationsupport-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-jupiter-params-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-commons-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-engine-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-launcher-1.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-vintage-engine-5.9.1.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="opentest4j-1.2.0.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/lib" includes="junit-platform-reporting-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="apiguardian-api-1.1.2.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-api-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-engine-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-migrationsupport-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-params-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-commons-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-engine-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-launcher-1.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-vintage-engine-5.9.1.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="opentest4j-1.2.0.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-reporting-1.9.1.jar" />
       </classpath>
     </javac>
   </target>
@@ -6305,6 +6305,7 @@
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.mps.tests.jar" />
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
+      <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.platform.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/junit5/org.junit.junit5.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
