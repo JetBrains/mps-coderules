@@ -4714,16 +4714,11 @@
               <ref role="3uigEE" to="bid0:~Profiler" resolve="Profiler" />
             </node>
             <node concept="3K4zz7" id="23Habm5FSDD" role="33vP2m">
-              <node concept="2OqwBi" id="23Habm5FSDH" role="3K4Cdx">
-                <node concept="10M0yZ" id="1QxYy7KdHPO" role="2Oq$k0">
-                  <ref role="3cqZAo" to="tj24:23Habm5BnXh" resolve="PROFILING_ENABLED" />
-                  <ref role="1PxDUh" to="tj24:39eNUjm3TK$" resolve="CoderulesOptions" />
-                </node>
-                <node concept="liA8E" id="23Habm5FSDJ" role="2OqNvi">
-                  <ref role="37wK5l" to="tj24:7iCybvT$ANq" resolve="get" />
-                  <node concept="37vLTw" id="23Habm5FSDK" role="37wK5m">
-                    <ref role="3cqZAo" node="MFuM6R0ncG" resolve="config" />
-                  </node>
+              <node concept="2YIFZM" id="MSLbfMG0Hl" role="3K4Cdx">
+                <ref role="37wK5l" to="tj24:MSLbfMCSQR" resolve="isProfiling" />
+                <ref role="1Pybhc" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                <node concept="37vLTw" id="MSLbfMG4$e" role="37wK5m">
+                  <ref role="3cqZAo" node="MFuM6R0ncG" resolve="config" />
                 </node>
               </node>
               <node concept="2ShNRf" id="23Habm5M18O" role="3K4E3e">

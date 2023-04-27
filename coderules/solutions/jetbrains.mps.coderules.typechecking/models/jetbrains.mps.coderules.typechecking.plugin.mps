@@ -845,16 +845,11 @@
               </node>
             </node>
             <node concept="3fqX7Q" id="6AP7iI4IxSj" role="3uHU7w">
-              <node concept="2OqwBi" id="1z4$59ipyOG" role="3fr31v">
-                <node concept="10M0yZ" id="3zz62D5cwaK" role="2Oq$k0">
-                  <ref role="3cqZAo" to="tj24:7iCybvT$FWp" resolve="TYPECHECKING_ENABLED" />
-                  <ref role="1PxDUh" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
-                </node>
-                <node concept="liA8E" id="1z4$59ipyOI" role="2OqNvi">
-                  <ref role="37wK5l" to="tj24:7iCybvT$ANq" resolve="get" />
-                  <node concept="37vLTw" id="1z4$59ipyOJ" role="37wK5m">
-                    <ref role="3cqZAo" node="7e$2hwaRm5D" resolve="config" />
-                  </node>
+              <node concept="2YIFZM" id="MSLbfMDbnR" role="3fr31v">
+                <ref role="37wK5l" to="tj24:MSLbfMDEUw" resolve="isEnabled" />
+                <ref role="1Pybhc" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
+                <node concept="37vLTw" id="MSLbfMDjFc" role="37wK5m">
+                  <ref role="3cqZAo" node="7e$2hwaRm5D" resolve="config" />
                 </node>
               </node>
             </node>
@@ -5354,18 +5349,9 @@
       <node concept="3Tm1VV" id="6TxWhgAwRgS" role="1B3o_S" />
       <node concept="3clFbS" id="6TxWhgAwRgT" role="3clF47">
         <node concept="3clFbF" id="DJOr6Ej$L3" role="3cqZAp">
-          <node concept="2OqwBi" id="DJOr6Ej__j" role="3clFbG">
-            <node concept="10M0yZ" id="DJOr6Ej_dd" role="2Oq$k0">
-              <ref role="3cqZAo" to="tj24:7iCybvT$FWp" resolve="TYPECHECKING_ENABLED" />
-              <ref role="1PxDUh" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
-            </node>
-            <node concept="liA8E" id="DJOr6Ej_PO" role="2OqNvi">
-              <ref role="37wK5l" to="tj24:7iCybvT$ANq" resolve="get" />
-              <node concept="2YIFZM" id="DJOr6Ej_Um" role="37wK5m">
-                <ref role="37wK5l" to="tj24:2MNGcFT4ZOn" resolve="getEffectiveConfig" />
-                <ref role="1Pybhc" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
-              </node>
-            </node>
+          <node concept="2YIFZM" id="MSLbfMDDJB" role="3clFbG">
+            <ref role="37wK5l" to="tj24:MSLbfMCLUr" resolve="isEnabled" />
+            <ref role="1Pybhc" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
           </node>
         </node>
       </node>
