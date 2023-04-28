@@ -182,9 +182,6 @@
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
-      <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
-        <child id="1070534760952" name="componentType" index="10Q1$1" />
-      </concept>
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -1262,22 +1259,16 @@
                                             <property role="3cmrfH" value="1" />
                                           </node>
                                           <node concept="37vLTw" id="27bTNFfaZ2G" role="1LFl5Q">
-                                            <ref role="3cqZAo" node="27bTNFfaZ2I" resolve="it" />
+                                            <ref role="3cqZAo" node="628U2saGtbV" resolve="it" />
                                           </node>
                                         </node>
                                         <node concept="iZEcu" id="4ZGicUZ8BCD" role="2OqNvi" />
                                       </node>
                                     </node>
                                   </node>
-                                  <node concept="Rh6nW" id="27bTNFfaZ2I" role="1bW2Oz">
+                                  <node concept="Rh6nW" id="628U2saGtbV" role="1bW2Oz">
                                     <property role="TrG5h" value="it" />
-                                    <node concept="10Q1$e" id="4ZGicUZdgMx" role="1tU5fm">
-                                      <node concept="10Q1$e" id="4ZGicUZdeQo" role="10Q1$1">
-                                        <node concept="10Q1$e" id="4ZGicUZdb_z" role="10Q1$1">
-                                          <node concept="2jxLKc" id="27bTNFfaZ2J" role="10Q1$1" />
-                                        </node>
-                                      </node>
-                                    </node>
+                                    <node concept="2jxLKc" id="628U2saGtbW" role="1tU5fm" />
                                   </node>
                                 </node>
                               </node>
