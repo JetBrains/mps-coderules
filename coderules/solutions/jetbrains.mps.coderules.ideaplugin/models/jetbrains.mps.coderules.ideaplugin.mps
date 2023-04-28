@@ -210,11 +210,6 @@
         <node concept="3Tm1VV" id="2CPBoDC$IAl" role="1B3o_S" />
         <node concept="10P_77" id="2CPBoDC$IAz" role="1tU5fm" />
       </node>
-      <node concept="312cEg" id="2CPBoDC_lPi" role="jymVt">
-        <property role="TrG5h" value="myIsWatching" />
-        <node concept="3Tm1VV" id="2CPBoDC_lPj" role="1B3o_S" />
-        <node concept="10P_77" id="2CPBoDC_lPk" role="1tU5fm" />
-      </node>
       <node concept="312cEg" id="2CPBoDC_pBn" role="jymVt">
         <property role="TrG5h" value="myIsReporting" />
         <node concept="3Tm1VV" id="2CPBoDC_pBo" role="1B3o_S" />
@@ -449,51 +444,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2CPBoDC_l3N" role="jymVt" />
-    <node concept="3clFb_" id="2CPBoDC_kCy" role="jymVt">
-      <property role="TrG5h" value="isWatchingEnabled" />
-      <node concept="10P_77" id="2CPBoDC_kCz" role="3clF45" />
-      <node concept="3Tm1VV" id="2CPBoDC_kC$" role="1B3o_S" />
-      <node concept="3clFbS" id="2CPBoDC_kC_" role="3clF47">
-        <node concept="3clFbF" id="2CPBoDC_kCA" role="3cqZAp">
-          <node concept="2OqwBi" id="2CPBoDC_kCB" role="3clFbG">
-            <node concept="37vLTw" id="2CPBoDC_kCC" role="2Oq$k0">
-              <ref role="3cqZAo" node="2CPBoDC$efo" resolve="myState" />
-            </node>
-            <node concept="2OwXpG" id="2CPBoDC_kCD" role="2OqNvi">
-              <ref role="2Oxat5" node="2CPBoDC_lPi" resolve="myIsWatching" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="2CPBoDC_kCx" role="jymVt" />
-    <node concept="3clFb_" id="2CPBoDC_kCl" role="jymVt">
-      <property role="TrG5h" value="setWatchingEnabled" />
-      <node concept="37vLTG" id="2CPBoDC_kCm" role="3clF46">
-        <property role="TrG5h" value="yes" />
-        <node concept="10P_77" id="2CPBoDC_kCn" role="1tU5fm" />
-      </node>
-      <node concept="10P_77" id="2CPBoDC_kCo" role="3clF45" />
-      <node concept="3Tm1VV" id="2CPBoDC_kCp" role="1B3o_S" />
-      <node concept="3clFbS" id="2CPBoDC_kCq" role="3clF47">
-        <node concept="3clFbF" id="2CPBoDC_kCr" role="3cqZAp">
-          <node concept="37vLTI" id="2CPBoDC_kCs" role="3clFbG">
-            <node concept="37vLTw" id="2CPBoDC_kCt" role="37vLTx">
-              <ref role="3cqZAo" node="2CPBoDC_kCm" resolve="yes" />
-            </node>
-            <node concept="2OqwBi" id="2CPBoDC_kCu" role="37vLTJ">
-              <node concept="37vLTw" id="2CPBoDC_kCv" role="2Oq$k0">
-                <ref role="3cqZAo" node="2CPBoDC$efo" resolve="myState" />
-              </node>
-              <node concept="2OwXpG" id="2CPBoDC_kCw" role="2OqNvi">
-                <ref role="2Oxat5" node="2CPBoDC_lPi" resolve="myIsWatching" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="2CPBoDC_o$4" role="jymVt" />
     <node concept="3clFb_" id="2CPBoDC_o9$" role="jymVt">
       <property role="TrG5h" value="isReportingEnabled" />
       <node concept="10P_77" id="2CPBoDC_o9_" role="3clF45" />
@@ -794,29 +744,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="adIlSuFRMv" role="3cqZAp">
-          <node concept="3vZ8r8" id="adIlSuFRMw" role="3clFbG">
-            <node concept="3y3z36" id="adIlSuFRMx" role="37vLTx">
-              <node concept="2OqwBi" id="adIlSuFRMB" role="3uHU7B">
-                <node concept="37vLTw" id="adIlSuFRMC" role="2Oq$k0">
-                  <ref role="3cqZAo" node="adIlSuErp_" resolve="settings" />
-                </node>
-                <node concept="liA8E" id="adIlSuFRMD" role="2OqNvi">
-                  <ref role="37wK5l" node="2CPBoDC_kCy" resolve="isWatchingEnabled" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="adIlSuIeUP" role="3uHU7w">
-                <node concept="Xjq3P" id="adIlSuIeUQ" role="2Oq$k0" />
-                <node concept="liA8E" id="adIlSuIeUR" role="2OqNvi">
-                  <ref role="37wK5l" node="5Qx6_65jSEe" resolve="isWatchingEnabled" />
-                </node>
-              </node>
-            </node>
-            <node concept="37vLTw" id="adIlSuFRME" role="37vLTJ">
-              <ref role="3cqZAo" node="adIlSuEEDS" resolve="modified" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="adIlSuG6cT" role="3cqZAp">
           <node concept="3vZ8r8" id="adIlSuG6cU" role="3clFbG">
             <node concept="3y3z36" id="adIlSuG6cV" role="37vLTx">
@@ -932,22 +859,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="adIlSuJwa$" role="3cqZAp">
-          <node concept="2OqwBi" id="adIlSuJwa_" role="3clFbG">
-            <node concept="37vLTw" id="adIlSuJwaA" role="2Oq$k0">
-              <ref role="3cqZAo" node="adIlSuGLof" resolve="settings" />
-            </node>
-            <node concept="liA8E" id="adIlSuJwaB" role="2OqNvi">
-              <ref role="37wK5l" node="2CPBoDC_kCl" resolve="setWatchingEnabled" />
-              <node concept="2OqwBi" id="adIlSuJwaC" role="37wK5m">
-                <node concept="Xjq3P" id="adIlSuJwaD" role="2Oq$k0" />
-                <node concept="liA8E" id="adIlSuJwaE" role="2OqNvi">
-                  <ref role="37wK5l" node="5Qx6_65jSEe" resolve="isWatchingEnabled" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="adIlSuJJmE" role="3cqZAp">
           <node concept="2OqwBi" id="adIlSuJJmF" role="3clFbG">
             <node concept="37vLTw" id="adIlSuJJmG" role="2Oq$k0">
@@ -1029,22 +940,6 @@
                 </node>
                 <node concept="liA8E" id="adIlSuKyk9" role="2OqNvi">
                   <ref role="37wK5l" node="2CPBoDC$H71" resolve="isTypecheckingEnabled" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="adIlSuKykw" role="3cqZAp">
-          <node concept="2OqwBi" id="adIlSuKykx" role="3clFbG">
-            <node concept="Xjq3P" id="adIlSuL8zz" role="2Oq$k0" />
-            <node concept="liA8E" id="adIlSuKykz" role="2OqNvi">
-              <ref role="37wK5l" node="5Qx6_65k3w9" resolve="setWatchingEnabled" />
-              <node concept="2OqwBi" id="adIlSuKyk$" role="37wK5m">
-                <node concept="37vLTw" id="adIlSuLiGy" role="2Oq$k0">
-                  <ref role="3cqZAo" node="adIlSuKyk0" resolve="settings" />
-                </node>
-                <node concept="liA8E" id="adIlSuKykA" role="2OqNvi">
-                  <ref role="37wK5l" node="2CPBoDC_kCy" resolve="isWatchingEnabled" />
                 </node>
               </node>
             </node>
@@ -1137,24 +1032,6 @@
                 <ref role="37wK5l" to="qqrq:~JBCheckBox.&lt;init&gt;(java.lang.String)" resolve="JBCheckBox" />
                 <node concept="Xl_RD" id="14pL6xi8ySR" role="37wK5m">
                   <property role="Xl_RC" value="Enable experimental typechecking with Coderules" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5Qx6_65klcV" role="3cqZAp">
-          <node concept="37vLTI" id="5Qx6_65klcW" role="3clFbG">
-            <node concept="2OqwBi" id="5Qx6_65klcX" role="37vLTJ">
-              <node concept="Xjq3P" id="5Qx6_65klcY" role="2Oq$k0" />
-              <node concept="2OwXpG" id="5Qx6_65kpPv" role="2OqNvi">
-                <ref role="2Oxat5" node="5Qx6_65jMHg" resolve="enableWatchingCheckbox" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="5Qx6_65kld0" role="37vLTx">
-              <node concept="1pGfFk" id="5Qx6_65kld1" role="2ShVmc">
-                <ref role="37wK5l" to="qqrq:~JBCheckBox.&lt;init&gt;(java.lang.String)" resolve="JBCheckBox" />
-                <node concept="Xl_RD" id="5Qx6_65kld2" role="37wK5m">
-                  <property role="Xl_RC" value="Watch model changes and collect updates" />
                 </node>
               </node>
             </node>
@@ -1262,19 +1139,6 @@
             <node concept="liA8E" id="7iCybvTm0pF" role="2OqNvi">
               <ref role="37wK5l" to="dxuu:~AbstractButton.addItemListener(java.awt.event.ItemListener)" resolve="addItemListener" />
               <node concept="37vLTw" id="1z4$59hFUnc" role="37wK5m">
-                <ref role="3cqZAo" node="1z4$59hFUmY" resolve="updater" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5Qx6_65lIZ0" role="3cqZAp">
-          <node concept="2OqwBi" id="5Qx6_65lLWu" role="3clFbG">
-            <node concept="37vLTw" id="5Qx6_65lIYY" role="2Oq$k0">
-              <ref role="3cqZAo" node="5Qx6_65jMHg" resolve="enableWatchingCheckbox" />
-            </node>
-            <node concept="liA8E" id="5Qx6_65lOFO" role="2OqNvi">
-              <ref role="37wK5l" to="dxuu:~AbstractButton.addItemListener(java.awt.event.ItemListener)" resolve="addItemListener" />
-              <node concept="37vLTw" id="1z4$59hFUnd" role="37wK5m">
                 <ref role="3cqZAo" node="1z4$59hFUmY" resolve="updater" />
               </node>
             </node>
@@ -1625,24 +1489,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbH" id="1z4$59hKKHj" role="3cqZAp" />
-                <node concept="3clFbF" id="1z4$59hDIuv" role="3cqZAp">
-                  <node concept="2OqwBi" id="1z4$59hDIuw" role="3clFbG">
-                    <node concept="37vLTw" id="1z4$59hL01j" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1z4$59hKKGV" resolve="subpanel" />
-                    </node>
-                    <node concept="liA8E" id="1z4$59hDIuy" role="2OqNvi">
-                      <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component)" resolve="add" />
-                      <node concept="2OqwBi" id="1z4$59hDIuz" role="37wK5m">
-                        <node concept="Xjq3P" id="1z4$59hDIu$" role="2Oq$k0" />
-                        <node concept="2OwXpG" id="1z4$59hDIu_" role="2OqNvi">
-                          <ref role="2Oxat5" node="5Qx6_65jMHg" resolve="enableWatchingCheckbox" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbH" id="1z4$59hKKHr" role="3cqZAp" />
                 <node concept="3clFbF" id="1z4$59hKKHs" role="3cqZAp">
                   <node concept="2OqwBi" id="1z4$59hKKHt" role="3clFbG">
                     <node concept="37vLTw" id="1z4$59hLGgx" role="2Oq$k0">
@@ -2198,24 +2044,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="14IknWHqqnx" role="jymVt" />
-    <node concept="3clFb_" id="5Qx6_65jSEe" role="jymVt">
-      <property role="TrG5h" value="isWatchingEnabled" />
-      <node concept="10P_77" id="5Qx6_65jSEf" role="3clF45" />
-      <node concept="3Tm1VV" id="5Qx6_65jSEg" role="1B3o_S" />
-      <node concept="3clFbS" id="5Qx6_65jSEh" role="3clF47">
-        <node concept="3clFbF" id="5Qx6_65jSEi" role="3cqZAp">
-          <node concept="2OqwBi" id="5Qx6_65jSEj" role="3clFbG">
-            <node concept="37vLTw" id="5Qx6_65k34s" role="2Oq$k0">
-              <ref role="3cqZAo" node="5Qx6_65jMHg" resolve="enableWatchingCheckbox" />
-            </node>
-            <node concept="liA8E" id="5Qx6_65jSEl" role="2OqNvi">
-              <ref role="37wK5l" to="dxuu:~AbstractButton.isSelected()" resolve="isSelected" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5Qx6_65jSEd" role="jymVt" />
     <node concept="3clFb_" id="7iCybvTn3it" role="jymVt">
       <property role="TrG5h" value="isTracingEnabled" />
       <node concept="10P_77" id="7iCybvTn3iu" role="3clF45" />
@@ -2303,39 +2131,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5Qx6_65k3w8" role="jymVt" />
-    <node concept="3clFb_" id="5Qx6_65k3w9" role="jymVt">
-      <property role="TrG5h" value="setWatchingEnabled" />
-      <node concept="37vLTG" id="5Qx6_65k3wa" role="3clF46">
-        <property role="TrG5h" value="yes" />
-        <node concept="10P_77" id="5Qx6_65k3wb" role="1tU5fm" />
-      </node>
-      <node concept="3cqZAl" id="5Qx6_65k3wc" role="3clF45" />
-      <node concept="3Tm1VV" id="5Qx6_65k3wd" role="1B3o_S" />
-      <node concept="3clFbS" id="5Qx6_65k3we" role="3clF47">
-        <node concept="3clFbF" id="5Qx6_65k3wf" role="3cqZAp">
-          <node concept="2OqwBi" id="5Qx6_65k3wg" role="3clFbG">
-            <node concept="2OqwBi" id="5Qx6_65k3wh" role="2Oq$k0">
-              <node concept="Xjq3P" id="5Qx6_65k3wi" role="2Oq$k0" />
-              <node concept="2OwXpG" id="5Qx6_65kcoN" role="2OqNvi">
-                <ref role="2Oxat5" node="5Qx6_65jMHg" resolve="enableWatchingCheckbox" />
-              </node>
-            </node>
-            <node concept="liA8E" id="5Qx6_65k3wk" role="2OqNvi">
-              <ref role="37wK5l" to="dxuu:~AbstractButton.setSelected(boolean)" resolve="setSelected" />
-              <node concept="37vLTw" id="5Qx6_65k3wl" role="37wK5m">
-                <ref role="3cqZAo" node="5Qx6_65k3wa" resolve="yes" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5Qx6_65kuJs" role="3cqZAp">
-          <node concept="1rXfSq" id="5Qx6_65kuJt" role="3clFbG">
-            <ref role="37wK5l" node="7iCybvTmrHH" resolve="updateEnabledState" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1JkMMuheNqV" role="jymVt" />
     <node concept="3clFb_" id="1z4$59hG6VL" role="jymVt">
       <property role="TrG5h" value="setReportingEnabled" />
       <node concept="37vLTG" id="1z4$59hG6VM" role="3clF46">
@@ -2425,30 +2220,6 @@
       <node concept="3Tm6S6" id="7iCybvTmrHI" role="1B3o_S" />
       <node concept="3cqZAl" id="7iCybvTmrHJ" role="3clF45" />
       <node concept="3clFbS" id="7iCybvTmrHw" role="3clF47">
-        <node concept="3clFbF" id="5Qx6_65kcAq" role="3cqZAp">
-          <node concept="2OqwBi" id="5Qx6_65kcAr" role="3clFbG">
-            <node concept="2OqwBi" id="5Qx6_65kcAs" role="2Oq$k0">
-              <node concept="Xjq3P" id="5Qx6_65kcAt" role="2Oq$k0" />
-              <node concept="2OwXpG" id="5Qx6_65kgW3" role="2OqNvi">
-                <ref role="2Oxat5" node="5Qx6_65jMHg" resolve="enableWatchingCheckbox" />
-              </node>
-            </node>
-            <node concept="liA8E" id="5Qx6_65kcAv" role="2OqNvi">
-              <ref role="37wK5l" to="dxuu:~AbstractButton.setEnabled(boolean)" resolve="setEnabled" />
-              <node concept="2OqwBi" id="5Qx6_65kcAw" role="37wK5m">
-                <node concept="2OqwBi" id="5Qx6_65kcAx" role="2Oq$k0">
-                  <node concept="Xjq3P" id="5Qx6_65kcAy" role="2Oq$k0" />
-                  <node concept="2OwXpG" id="5Qx6_65kcAz" role="2OqNvi">
-                    <ref role="2Oxat5" node="14pL6xi8ySB" resolve="enableTypecheckingCheckbox" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="5Qx6_65kcA$" role="2OqNvi">
-                  <ref role="37wK5l" to="dxuu:~AbstractButton.isSelected()" resolve="isSelected" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="1z4$59hG2j3" role="3cqZAp">
           <node concept="2OqwBi" id="1z4$59hG2j4" role="3clFbG">
             <node concept="2OqwBi" id="1z4$59hG2j5" role="2Oq$k0">
@@ -2554,13 +2325,6 @@
       <property role="TrG5h" value="enableTypecheckingCheckbox" />
       <node concept="3Tm6S6" id="14pL6xi8yS_" role="1B3o_S" />
       <node concept="3uibUv" id="14pL6xi8ySA" role="1tU5fm">
-        <ref role="3uigEE" to="dxuu:~JCheckBox" resolve="JCheckBox" />
-      </node>
-    </node>
-    <node concept="312cEg" id="5Qx6_65jMHg" role="jymVt">
-      <property role="TrG5h" value="enableWatchingCheckbox" />
-      <node concept="3Tm6S6" id="5Qx6_65jMHh" role="1B3o_S" />
-      <node concept="3uibUv" id="5Qx6_65jMHi" role="1tU5fm">
         <ref role="3uigEE" to="dxuu:~JCheckBox" resolve="JCheckBox" />
       </node>
     </node>
