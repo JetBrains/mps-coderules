@@ -14,12 +14,12 @@
         <compilerSettings />
         <compilerArguments>
           <option name="jvmTarget" value="11" />
-          <option name="languageVersion" value="1.5" />
-          <option name="apiVersion" value="1.5" />
-          <option name="pluginOptions">
+          <option name="languageVersion" value="1.7" />
+          <option name="apiVersion" value="1.7" />
+          <option name="pluginClasspaths">
             <array />
           </option>
-          <option name="pluginClasspaths">
+          <option name="pluginOptions">
             <array />
           </option>
           <option name="errors">
