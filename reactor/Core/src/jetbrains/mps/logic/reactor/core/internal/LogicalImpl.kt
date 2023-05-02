@@ -131,11 +131,7 @@ internal class LogicalImpl<T> : MutableLogical<T> {
             otherRepr.setValue(thisVal);
         }
 
-        // then set parent
-        otherRepr.setParent(thisRepr)
-        thisRepr.mergeParentObservers(otherRepr)
-
-        // last, reconcile the values/merge observers
+        // reconcile the values/merge value observers
         if (thisVal == null && otherVal == null) {
             // var var
             thisRepr.mergeValueObservers(otherRepr);
@@ -147,10 +143,20 @@ internal class LogicalImpl<T> : MutableLogical<T> {
 
         // copy usages
         thisRepr.usagesCount += otherRepr.usagesCount
+
+        // save other observers
+        val otherObservers = ArrayList(otherRepr.parentObservers)
+        mergeParentObservers(thisRepr, otherRepr)
+
+        // finally set parent and notify observers
+        otherRepr._parent = thisRepr
+        for (p in otherObservers) {
+            p.second.parentUpdated(p.first)
+        }
     }
 
     override fun union(other: MutableLogical<T>) {
-        union(other, { a, b -> if (a != b) throw IllegalStateException("$a does not equal to $b")})
+        union(other, { a, b -> if (a != b) throw IllegalStateException("$a does not equal to $b") })
     }
 
     override fun addObserver(observer: LogicalObserver) {
@@ -183,25 +189,23 @@ internal class LogicalImpl<T> : MutableLogical<T> {
 
     private fun rank(): Int = rank
 
-    private fun incRank() { rank++ }
+    private fun incRank() {
+        rank++
+    }
 
-    private fun incUsages() { usagesCount++ }
+    private fun incUsages() {
+        usagesCount++
+    }
 
-    private fun setParent(parent: LogicalImpl<T>) {
-        this._parent = parent
-        notifyParentUpdated()
+    private fun mergeParentObservers(thisRepr: LogicalImpl<T>, otherRepr: LogicalImpl<T>) {
+        thisRepr.parentObservers.addAll(otherRepr.parentObservers)
+        otherRepr.parentObservers.clear()
     }
 
     private fun mergeValueObservers(mergeFrom: MutableLogical<T>) {
         val other = mergeFrom as LogicalImpl<T>
         this.find().valueObservers.addAll(other.valueObservers)
         other.valueObservers.clear()
-    }
-
-    private fun mergeParentObservers(mergeFrom: MutableLogical<T>) {
-        val other = mergeFrom as LogicalImpl<T>
-        this.find().parentObservers.addAll(other.parentObservers)
-        other.parentObservers.clear()
     }
 
     private fun notifyValueUpdated() {
@@ -212,16 +216,9 @@ internal class LogicalImpl<T> : MutableLogical<T> {
         }
     }
 
-    private fun notifyParentUpdated() {
-        val obs = ArrayList(parentObservers)
-        for (p in obs) {
-            p.second.parentUpdated(p.first)
-        }
-    }
-
     override fun toString(): String =
-        if (_parent != null) "${name}(^${_parent.toString()})"
-        else name
+            if (_parent != null) "${name}(^${_parent.toString()})"
+            else name
 
 }
 
