@@ -8483,6 +8483,7 @@
     </node>
     <node concept="1nLNMY" id="zb1Nk7a71S" role="1nK1Vg">
       <property role="TrG5h" value="checkReturnPoints" />
+      <property role="1nmhW7" value="true" />
       <node concept="2t___k" id="zb1Nk7a71T" role="1nLNMg">
         <ref role="2t_S0q" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
         <node concept="3A20r5" id="zb1Nk7a71U" role="2t_VXX">
@@ -56085,6 +56086,7 @@
     <ref role="2YbDB9" node="34$A1Mf51rY" resolve="TypeOf" />
     <node concept="1nLNMY" id="2hQbw6HdHMl" role="1nK1Vg">
       <property role="TrG5h" value="baseMethodDeclaration" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="2hQbw6HdHMm" role="1nLNMH">
         <node concept="Oftf1" id="2hQbw6HdHMw" role="3cqZAp">
           <node concept="2OqwBi" id="2hQbw6HdI9k" role="Oftjs">
