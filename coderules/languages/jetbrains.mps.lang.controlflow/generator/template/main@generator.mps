@@ -176,9 +176,6 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
-      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
-        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -252,7 +249,7 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
       <node concept="j$656" id="7km57Pkgww4" role="1lVwrX">
-        <ref role="v9R2y" to="ba7m:4WrOGsLZ$AX" resolve="STOP_USING_GeneratedClassInstantiation" />
+        <ref role="v9R2y" to="ba7m:5YRAmyfmUXk" resolve="GeneratedClassInstantiation" />
         <node concept="3cpWs3" id="2aiW7BvqBQ" role="v9R3O">
           <node concept="2OqwBi" id="7km57Pkgw_v" role="3uHU7B">
             <node concept="v3LJS" id="7km57Pkgwwc" role="2Oq$k0">
@@ -264,8 +261,10 @@
             <property role="Xl_RC" value=".ControlflowAspectDescriptor" />
           </node>
         </node>
-        <node concept="3B5_sB" id="2hteS6Cje6U" role="v9R3O">
-          <ref role="3B5MYn" to="vrzs:7km57Pkjxf4" resolve="ControlflowAspect" />
+        <node concept="2tJFMh" id="3FEFhOST2Pi" role="v9R3O">
+          <node concept="ZC_QK" id="3FEFhOST2Pj" role="2tJFKM">
+            <ref role="2aWVGs" to="vrzs:7km57Pkjxf4" resolve="ControlflowAspect" />
+          </node>
         </node>
       </node>
       <node concept="30G5F_" id="7km57PkgvmR" role="30HLyM">
