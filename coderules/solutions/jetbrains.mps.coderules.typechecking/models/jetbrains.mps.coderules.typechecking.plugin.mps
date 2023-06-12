@@ -5943,17 +5943,11 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="6TxWhg_B8w0" role="2OqNvi">
-                  <ref role="37wK5l" to="jkny:~StatusBar.addWidget(com.intellij.openapi.wm.StatusBarWidget,com.intellij.openapi.Disposable)" resolve="addWidget" />
+                  <ref role="37wK5l" to="jkny:~StatusBar.addWidget(com.intellij.openapi.wm.StatusBarWidget)" resolve="addWidget" />
                   <node concept="2OqwBi" id="6TxWhg_BZlY" role="37wK5m">
                     <node concept="2WthIp" id="6TxWhg_BZm1" role="2Oq$k0" />
                     <node concept="2BZ7hE" id="6TxWhg_BZm3" role="2OqNvi">
                       <ref role="2WH_rO" node="6TxWhg_BX7s" resolve="widget" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="4ldrYjLWsN$" role="37wK5m">
-                    <node concept="2WthIp" id="4ldrYjLWsN_" role="2Oq$k0" />
-                    <node concept="2BZ7hE" id="4ldrYjLWsNA" role="2OqNvi">
-                      <ref role="2WH_rO" node="CYd5Z6WKvP" resolve="statusBar" />
                     </node>
                   </node>
                 </node>
