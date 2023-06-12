@@ -4,13 +4,13 @@
   <languages>
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="6" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="2" />
     <use id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="5" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="6" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
     <use id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi" version="0" />
@@ -368,7 +368,7 @@
             <node concept="2OqwBi" id="1Lr58WFTNvP" role="3clFbG">
               <node concept="2ShNRf" id="1Lr58WFTNvQ" role="2Oq$k0">
                 <node concept="1pGfFk" id="1Lr58WFTNvR" role="2ShVmc">
-                  <ref role="37wK5l" node="1Lr58WFTIGK" resolve="TestBody" />
+                  <ref role="37wK5l" node="1Lr58WFTIGK" resolve="CheckProjectModules_Test.TestBody" />
                   <node concept="Xjq3P" id="1Lr58WFTNvS" role="37wK5m" />
                 </node>
               </node>
@@ -729,11 +729,11 @@
                     <node concept="3cpWsn" id="1Lr58WFTIHb" role="3cpWs9">
                       <property role="TrG5h" value="itemsToCheck" />
                       <node concept="3uibUv" id="1Lr58WFTIHc" role="1tU5fm">
-                        <ref role="3uigEE" to="wsw7:4QJbmJH1Aa8" resolve="ItemsToCheck" />
+                        <ref role="3uigEE" to="wsw7:4QJbmJH1Aa8" resolve="ModelCheckerBuilder.ItemsToCheck" />
                       </node>
                       <node concept="2ShNRf" id="1Lr58WFTIHd" role="33vP2m">
                         <node concept="HV5vD" id="1Lr58WFTIHe" role="2ShVmc">
-                          <ref role="HV5vE" to="wsw7:4QJbmJH1Aa8" resolve="ItemsToCheck" />
+                          <ref role="HV5vE" to="wsw7:4QJbmJH1Aa8" resolve="ModelCheckerBuilder.ItemsToCheck" />
                         </node>
                       </node>
                     </node>
@@ -1008,8 +1008,8 @@
               <node concept="3clFbF" id="4ldrYjMEt2k" role="3cqZAp">
                 <node concept="2OqwBi" id="4ldrYjMEt2h" role="3clFbG">
                   <node concept="10M0yZ" id="4ldrYjMEt2i" role="2Oq$k0">
-                    <ref role="1PxDUh" to="wyt6:~System" />
-                    <ref role="3cqZAo" to="wyt6:~System.err" />
+                    <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                    <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
                   </node>
                   <node concept="liA8E" id="4ldrYjMEt2j" role="2OqNvi">
                     <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
@@ -1086,7 +1086,7 @@
             <node concept="liA8E" id="1a$$29AvYUx" role="2OqNvi">
               <ref role="37wK5l" to="tj24:7iCybvTszk9" resolve="registerProvider" />
               <node concept="Rm8GO" id="1a$$29AvYXx" role="37wK5m">
-                <ref role="1Px2BO" to="tj24:7iCybvToD3Z" resolve="Level" />
+                <ref role="1Px2BO" to="tj24:7iCybvToD3Z" resolve="Config.Level" />
                 <ref role="Rm8GQ" to="tj24:5Ul706LbJYK" resolve="TEST" />
               </node>
               <node concept="1bVj0M" id="1a$$29Aw4Um" role="37wK5m">

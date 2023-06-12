@@ -154,6 +154,7 @@
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
+      <concept id="2524418899405758586" name="jetbrains.mps.baseLanguage.closures.structure.InferredClosureParameterDeclaration" flags="ig" index="gl6BB" />
       <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
         <child id="1235746996653" name="function" index="2SgG2M" />
         <child id="1235747002942" name="parameter" index="2SgHGx" />
@@ -280,7 +281,6 @@
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
-      <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
     </language>
   </registry>
@@ -693,7 +693,7 @@
                                             <node concept="3clFbF" id="5TXeSYSLiBz" role="3cqZAp">
                                               <node concept="2OqwBi" id="5TXeSYSLaRM" role="3clFbG">
                                                 <node concept="37vLTw" id="5TXeSYSLjnX" role="2Oq$k0">
-                                                  <ref role="3cqZAo" node="5TXeSYSLifL" resolve="it" />
+                                                  <ref role="3cqZAo" node="6E5fMGvfKNF" />
                                                 </node>
                                                 <node concept="2qgKlT" id="5TXeSYSLqFn" role="2OqNvi">
                                                   <ref role="37wK5l" to="ha02:6YKq674fNYS" resolve="availableLogicalVariable" />
@@ -701,9 +701,9 @@
                                               </node>
                                             </node>
                                           </node>
-                                          <node concept="Rh6nW" id="5TXeSYSLifL" role="1bW2Oz">
+                                          <node concept="gl6BB" id="6E5fMGvfKNF" role="1bW2Oz">
                                             <property role="TrG5h" value="it" />
-                                            <node concept="2jxLKc" id="5TXeSYSLifM" role="1tU5fm" />
+                                            <node concept="2jxLKc" id="6E5fMGvfKNG" role="1tU5fm" />
                                           </node>
                                         </node>
                                       </node>

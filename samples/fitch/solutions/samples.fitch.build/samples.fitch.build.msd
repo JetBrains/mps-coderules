@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="samples.fitch.build" uuid="31f024b3-c834-4c99-a06a-f90a46c76e7e" moduleVersion="0" compileInMPS="true">
+<solution name="samples.fitch.build" uuid="31f024b3-c834-4c99-a06a-f90a46c76e7e" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -10,7 +10,6 @@
       <classes generated="true" path="${module}/classes_gen" />
     </facet>
   </facets>
-  <sourcePath />
   <dependencies>
     <dependency reexport="false">422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)</dependency>
     <dependency reexport="false">bc9cd1e7-827b-4d61-b111-d2c896dcae6f(jetbrains.mps.coderules.build)</dependency>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.closuresExt.test" uuid="3c682bda-3c05-41c1-b4bb-e321b08cbff0" moduleVersion="0" compileInMPS="true">
+<solution name="jetbrains.mps.baseLanguage.closuresExt.test" uuid="3c682bda-3c05-41c1-b4bb-e321b08cbff0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -11,7 +11,6 @@
     </facet>
     <facet type="tests" />
   </facets>
-  <sourcePath />
   <dependencies>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
@@ -26,7 +25,7 @@
     <language slang="l:443f4c36-fcf5-4eb6-9500-8d06ed259e3e:jetbrains.mps.baseLanguage.classifiers" version="0" />
     <language slang="l:fd392034-7849-419d-9071-12563d152375:jetbrains.mps.baseLanguage.closures" version="0" />
     <language slang="l:9e36d2ee-c59c-4580-9e81-646748d0614b:jetbrains.mps.baseLanguage.closuresExt" version="0" />
-    <language slang="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" version="1" />
+    <language slang="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" version="2" />
     <language slang="l:c1f5ad88-21f4-4e0e-927c-48b1ca0c2334:jetbrains.mps.baseLanguage.collectionsExt" version="0" />
     <language slang="l:96eeb076-cd7e-4797-9c2a-348e3f826e65:jetbrains.mps.baseLanguage.function" version="0" />
     <language slang="l:88dcbb14-19c3-4776-8f81-33611ca4d87c:jetbrains.mps.baseLanguage.sequence" version="0" />
