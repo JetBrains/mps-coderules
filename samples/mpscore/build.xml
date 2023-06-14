@@ -15051,6 +15051,7 @@
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.closuresExt.test/source_gen" />
+        <pathelement path="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.closuresExt.test/test_gen/" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-core.jar" />
@@ -15146,6 +15147,7 @@
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.collectionsExt.test/source_gen" />
+        <pathelement path="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.collectionsExt.test/test_gen/" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-core.jar" />
@@ -15242,6 +15244,7 @@
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.tuplesExt.test/source_gen" />
+        <pathelement path="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.tuplesExt.test/test_gen/" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-core.jar" />
@@ -15333,6 +15336,7 @@
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps.macro.mpscore_home}/solutions/jetbrains.mps.lang.smodelExt/source_gen" />
+        <pathelement path="${mps.macro.mpscore_home}/solutions/jetbrains.mps.lang.smodelExt/test_gen/" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-core.jar" />
@@ -15657,7 +15661,11 @@
     <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.lang.smodelExt/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/source_gen" />
+    <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.closuresExt.test/test_gen" />
+    <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.collectionsExt.test/test_gen" />
+    <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.tuplesExt.test/test_gen" />
     <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/test_gen" />
+    <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.lang.smodelExt/test_gen" />
     <delete dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/test_gen" />
   </target>
 </project>
