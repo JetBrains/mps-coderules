@@ -478,6 +478,7 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
+        <fileset file="${artifacts.coderules}/coderules-ideaplugin/jetbrains.mps.coderules.ideaplugin.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.runtime.jar" />
@@ -487,6 +488,7 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.lang.smodel.query.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.typechecking.runtime.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.reactor.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="reactive-streams-1.0.0.final.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava-2.2.18.jar" />
@@ -556,6 +558,7 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
+        <fileset file="${artifacts.coderules}/coderules-ideaplugin/jetbrains.mps.coderules.ideaplugin.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.testhelper.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
@@ -568,6 +571,7 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.typechecking.runtime.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.reactor.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.runtime.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="reactive-streams-1.0.0.final.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="rxjava-2.2.18.jar" />
