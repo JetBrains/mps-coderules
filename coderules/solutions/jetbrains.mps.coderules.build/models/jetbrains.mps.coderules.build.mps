@@ -187,7 +187,6 @@
       </concept>
       <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
       <concept id="5253498789149381388" name="jetbrains.mps.build.mps.structure.BuildMps_Module" flags="ng" index="3bQrTs">
-        <property id="1500819558096356884" name="doNotCompile" index="2GAjPV" />
         <child id="5253498789149547825" name="sources" index="3bR31x" />
         <child id="5253498789149547704" name="dependencies" index="3bR37C" />
       </concept>
@@ -482,7 +481,6 @@
       <property role="TrG5h" value="jetbrains.mps.coderules.ideaplugin" />
       <property role="3LESm3" value="66887915-4d9e-4e24-bd35-19eb55fb75c2" />
       <property role="aoJFB" value="eYcmk9QOli/sources" />
-      <property role="2GAjPV" value="true" />
       <node concept="55IIr" id="2CPBoDB0MbH" role="3LF7KH">
         <node concept="2Ry0Ak" id="2CPBoDB0Mm9" role="iGT6I">
           <property role="2Ry0Am" value="coderules" />
@@ -638,7 +636,6 @@
       <node concept="1E1JtA" id="7BVjoXzUxoR" role="2G$12L">
         <property role="TrG5h" value="jetbrains.mps.logic.reactor" />
         <property role="3LESm3" value="bbf5c548-7111-4a53-a117-cdefc664cf34" />
-        <property role="2GAjPV" value="true" />
         <property role="BnDLt" value="true" />
         <node concept="55IIr" id="7BVjoXzUxoU" role="3LF7KH">
           <node concept="2Ry0Ak" id="7BVjoXzUxpK" role="iGT6I">
@@ -3499,6 +3496,11 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3IJoaDIZuQr" role="3bR37C">
+          <node concept="3bR9La" id="3IJoaDIZuQs" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
           </node>
         </node>
       </node>
