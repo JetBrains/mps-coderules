@@ -7532,7 +7532,7 @@
               <ref role="3cqZAo" node="39eNUjlTflP" resolve="templateTrace" />
             </node>
             <node concept="liA8E" id="4Q576RaYIJL" role="2OqNvi">
-              <ref role="37wK5l" to="hano:799SgOKz0oW" resolve="takeNode" />
+              <ref role="37wK5l" to="hano:799SgOKz0oW" resolve="enterNode" />
               <node concept="37vLTw" id="4Q576RaYIT7" role="37wK5m">
                 <ref role="3cqZAo" node="tIwzd1I3Xp" resolve="node" />
               </node>
@@ -7825,7 +7825,7 @@
                                   <ref role="3cqZAo" node="39eNUjlTflP" resolve="templateTrace" />
                                 </node>
                                 <node concept="liA8E" id="47oVduOAgbs" role="2OqNvi">
-                                  <ref role="37wK5l" to="hano:799SgOKyHdU" resolve="apply" />
+                                  <ref role="37wK5l" to="hano:799SgOKyHdU" resolve="templateApplied" />
                                   <node concept="37vLTw" id="47oVduOAgbt" role="37wK5m">
                                     <ref role="3cqZAo" node="tIwzd1I3Xp" resolve="node" />
                                   </node>
@@ -8183,7 +8183,7 @@
               <ref role="3cqZAo" node="39eNUjlTflP" resolve="templateTrace" />
             </node>
             <node concept="liA8E" id="4Q576Rb5KTl" role="2OqNvi">
-              <ref role="37wK5l" to="hano:799SgOKz3YM" resolve="leaveNode" />
+              <ref role="37wK5l" to="hano:799SgOKz3YM" resolve="exitNode" />
               <node concept="37vLTw" id="4Q576Rb5KTm" role="37wK5m">
                 <ref role="3cqZAo" node="tIwzd1I3Xp" resolve="node" />
               </node>
