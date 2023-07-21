@@ -1,5 +1,4 @@
-[![JetBrains team project](http://jb.gg/badges/team-flat-square.svg)]
-(https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+[![JetBrains team project](http://jb.gg/badges/team-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 # MPS CodeRules
 
 An experimental feature of [JetBrains MPS](https://jetbrains.com/mps), *Coderules* is collection of languages that allow to utilize logical programming approach for solving typechecking and related problems.
