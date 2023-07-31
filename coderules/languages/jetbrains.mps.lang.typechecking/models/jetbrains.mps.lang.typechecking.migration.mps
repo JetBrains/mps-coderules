@@ -297,7 +297,7 @@
                                       <node concept="2OqwBi" id="C1f6iDYzqH" role="3clFbG">
                                         <node concept="2OqwBi" id="C1f6iDYzqI" role="2Oq$k0">
                                           <node concept="37vLTw" id="C1f6iDYzqJ" role="2Oq$k0">
-                                            <ref role="3cqZAo" node="6E5fMGvfKN3" />
+                                            <ref role="3cqZAo" node="6E5fMGvfKN3" resolve="it" />
                                           </node>
                                           <node concept="liA8E" id="C1f6iDYzqK" role="2OqNvi">
                                             <ref role="37wK5l" to="c17a:~SLanguage.getSourceModuleReference()" resolve="getSourceModuleReference" />

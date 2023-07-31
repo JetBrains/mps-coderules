@@ -9873,7 +9873,7 @@
                         <node concept="2OqwBi" id="47xL5G3udo6" role="3uHU7B">
                           <node concept="2OqwBi" id="47tET_WADUo" role="2Oq$k0">
                             <node concept="37vLTw" id="47tET_WADHF" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6E5fMGvfKOP" />
+                              <ref role="3cqZAo" node="6E5fMGvfKOP" resolve="it" />
                             </node>
                             <node concept="3TrEf2" id="47tET_WAHHN" role="2OqNvi">
                               <ref role="3Tt5mk" to="8tt8:2O9ahh6mHo2" resolve="typeclass" />
