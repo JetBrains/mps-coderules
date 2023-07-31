@@ -11,6 +11,9 @@ available in a project library.
 
 ## Necessary step to execute *before* everything else
 
+Recommended way: use one of the "just" recipes in justfile. For more info on "just" utility
+visit https://github.com/casey/just.
+
 This downloads all the dependencies:
 
   ./gradlew -b dependencies.gradle
