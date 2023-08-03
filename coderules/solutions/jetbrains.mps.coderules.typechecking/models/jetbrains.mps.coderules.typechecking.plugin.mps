@@ -998,21 +998,9 @@
             <node concept="3uibUv" id="7e$2hwbn9qb" role="1tU5fm">
               <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
             </node>
-            <node concept="10QFUN" id="7e$2hwbn9qc" role="33vP2m">
-              <node concept="2OqwBi" id="7e$2hwbn9qd" role="10QFUP">
-                <node concept="37vLTw" id="7e$2hwbn9qe" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7e$2hwaN3C_" resolve="paramsMap" />
-                </node>
-                <node concept="liA8E" id="7e$2hwbn9qf" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object)" resolve="get" />
-                  <node concept="Xl_RD" id="7e$2hwbn9qg" role="37wK5m">
-                    <property role="Xl_RC" value="__REPOSITORY__" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3uibUv" id="7e$2hwbn9qh" role="10QFUM">
-                <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-              </node>
+            <node concept="2YIFZM" id="1AsznI2H$bQ" role="33vP2m">
+              <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance()" resolve="getInstance" />
+              <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
             </node>
           </node>
         </node>
