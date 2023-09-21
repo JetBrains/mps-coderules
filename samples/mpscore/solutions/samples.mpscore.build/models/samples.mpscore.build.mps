@@ -105,7 +105,7 @@
       <concept id="8654221991637384182" name="jetbrains.mps.build.structure.BuildFileIncludesSelector" flags="ng" index="3qWCbU">
         <property id="8654221991637384184" name="pattern" index="3qWCbO" />
       </concept>
-      <concept id="4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" flags="ng" index="1y1bJS">
+      <concept id="4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" flags="ngI" index="1y1bJS">
         <child id="7389400916848037006" name="children" index="39821P" />
       </concept>
       <concept id="841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" flags="ng" index="3_J27D" />
@@ -121,7 +121,7 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
@@ -225,7 +225,7 @@
       <node concept="aVJcg" id="5Hdh9$IhmQ_" role="aVJcv">
         <node concept="NbPM2" id="5Hdh9$IhmQA" role="aVJcq">
           <node concept="3Mxwew" id="5Hdh9$IhmQB" role="3MwsjC">
-            <property role="3MwjfP" value="222" />
+            <property role="3MwjfP" value="232" />
           </node>
         </node>
       </node>
@@ -260,7 +260,7 @@
           <ref role="3Mxwex" node="5Hdh9$IhmQ$" resolve="ci.mps.release" />
         </node>
         <node concept="3Mxwew" id="2BiN_P7R7Wi" role="3MwsjC">
-          <property role="3MwjfP" value="-0.9.6-b" />
+          <property role="3MwjfP" value="-0.9.7-b" />
         </node>
         <node concept="3Mxwey" id="2BiN_P7R81m" role="3MwsjC">
           <ref role="3Mxwex" node="2BiN_P7R7jO" resolve="ci.build.num" />
@@ -286,14 +286,14 @@
         <node concept="2pNUuL" id="5Hdh9$IhmW_" role="2pNNFR">
           <property role="2pNUuO" value="since-build" />
           <node concept="2pMdtt" id="5Hdh9$IhnkA" role="2pMdts">
-            <property role="2pMdty" value="222.3345" />
+            <property role="2pMdty" value="232.8660" />
           </node>
         </node>
       </node>
       <node concept="2pNNFK" id="2fVm_54SZ$e" role="20twgj">
         <property role="2pNNFO" value="change-notes" />
         <node concept="2pNm8S" id="2p5jUSWfCr8" role="3o6s8t">
-          <property role="3o6aOc" value="&lt;ul&gt;&lt;li&gt;Compatible with upcoming 2022 release of MPS&lt;/li&gt;&lt;li&gt;Built with Java 17&lt;/li&gt;&lt;li&gt;Suppport for more MPS core languages&lt;/li&gt;&lt;li&gt;Bugfixes and optimizations&lt;/li&gt;&lt;/ul&gt;" />
+          <property role="3o6aOc" value="&lt;ul&gt;&lt;li&gt;Compatible with upcoming 2023.2 release of MPS&lt;/li&gt;&lt;li&gt;Bugfixes and optimizations&lt;/li&gt;&lt;/ul&gt;" />
         </node>
       </node>
       <node concept="m$_yC" id="77GimjbRIwv" role="m$_yJ">

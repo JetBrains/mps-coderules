@@ -7,7 +7,7 @@
   <property name="build.layout" location="${build.dir}/artifacts/coderules" />
   <property name="ci.build.num" value="9999" />
   <property name="ci.build.tag" value="SNAPSHOT" />
-  <property name="ci.mps.release" value="222" />
+  <property name="ci.mps.release" value="232" />
   <property name="test.jvmargs" value="-Xss2048k -Xmx2048m" />
   <property name="mps.macro.coderules_home" location="${basedir}" />
   <property name="mps_home" location="${basedir}/MPS_HOME" />
@@ -102,15 +102,15 @@
         <id>jetbrains.mps.coderules</id>
         <name>MPS Coderules Typechecking</name>
         <description>Typechecking with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.6-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.7-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.testing</depends>
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="222.3345" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Built with Java 17</li><li>New Coderules trace view</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="232.8660" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" />
@@ -2115,15 +2115,15 @@
         <id>jetbrains.mps.coderules</id>
         <name>MPS Coderules Typechecking</name>
         <description>Typechecking with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.6-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.7-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.testing</depends>
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="222.3345" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Built with Java 17</li><li>New Coderules trace view</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="232.8660" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" />
@@ -2146,15 +2146,15 @@
         <id>jetbrains.mps.coderules</id>
         <name>MPS Coderules Typechecking</name>
         <description>Typechecking with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.6-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.7-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.testing</depends>
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="222.3345" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Built with Java 17</li><li>New Coderules trace view</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="232.8660" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" />
@@ -3753,15 +3753,15 @@
         <id>jetbrains.mps.coderules</id>
         <name>MPS Coderules Typechecking</name>
         <description>Typechecking with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.6-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.7-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.testing</depends>
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="222.3345" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2022 release of MPS</li><li>Built with Java 17</li><li>New Coderules trace view</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="232.8660" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" />
@@ -3865,6 +3865,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.rules.skeleton.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.context.defs.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.context.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.doc.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
@@ -6470,6 +6471,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.rules.skeleton.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.context.defs.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.context.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.doc.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
