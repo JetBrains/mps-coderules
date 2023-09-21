@@ -5530,6 +5530,7 @@
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
         <depends>jetbrains.mps.build</depends>
+        <depends>jetbrains.mps.kotlin</depends>
         <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="232.8660" />
         <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
@@ -5552,6 +5553,7 @@
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
         <depends>jetbrains.mps.build</depends>
+        <depends>jetbrains.mps.kotlin</depends>
         <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="232.8660" />
         <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
@@ -15710,6 +15712,8 @@
       <plugin id="jetbrains.mps.build" path="${artifacts.mps}/plugins/mps-build" />
       <plugin id="jetbrains.mps.core" path="${artifacts.mps}/plugins/mps-core" />
       <plugin id="jetbrains.mps.ide.java" path="${artifacts.mps}/plugins/mps-java" />
+      <plugin id="jetbrains.mps.kotlin" path="${artifacts.mps}/plugins/mps-kotlin" />
+      <plugin id="jetbrains.mps.ide.make" path="${artifacts.mps}/plugins/mps-make" />
       <plugin id="jetbrains.mps.testing" path="${artifacts.mps}/plugins/mps-testing" />
       <plugin id="jetbrains.mps.core.types" path="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types" />
       <macro name="mpscore_home" path="${basedir}" />

@@ -302,6 +302,9 @@
       <node concept="m$_yC" id="3cBtKDs8Bns" role="m$_yJ">
         <ref role="m$_y1" to="ffeo:5HVSRHdVm9a" resolve="jetbrains.mps.build" />
       </node>
+      <node concept="m$_yC" id="7ktCu2v_AKM" role="m$_yJ">
+        <ref role="m$_y1" to="ffeo:1diEraJ0skp" resolve="jetbrains.mps.kotlin" />
+      </node>
       <node concept="m$f5U" id="2fVm_54UfKS" role="m$_yh">
         <ref role="m$f5T" node="61G6TdEeKRG" resolve="lang" />
       </node>
