@@ -5517,10 +5517,10 @@
       <zipfileset file="${basedir}/solutions/typechecking.samples.baseLanguage/typechecking.samples.baseLanguage.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-typechecking.samples.baseLanguage-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/META-INF" />
-    <echoxml file="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/META-INF/plugin.xml">
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/META-INF/plugin.xml">
       <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>jetbrains.mps.core.types</id>
         <name>MPS Coderules Core Types</name>
@@ -5540,7 +5540,7 @@
         </extensions>
       </idea-plugin>
     </echoxml>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/lib" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/lib" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.core.types.jar/META-INF/plugin.xml">
@@ -5563,10 +5563,10 @@
         </extensions>
       </idea-plugin>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/lib/jetbrains.mps.core.types.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/lib/jetbrains.mps.core.types.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.types.jar" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar1" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar1/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar1/META-INF/module.xml">
@@ -5670,7 +5670,7 @@
         <sources jar="jetbrains.mps.lang.behaviorExt-src.jar" descriptor="jetbrains.mps.lang.behaviorExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.behaviorExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.behaviorExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.behaviorExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.behaviorExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar1" />
@@ -5715,7 +5715,7 @@
         <sources jar="jetbrains.mps.lang.behaviorExt-src.jar" descriptor="jetbrains.mps.lang.behaviorExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.behaviorExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.behaviorExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.behaviorExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.behaviorExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.behaviorExt-generator.jar1" />
@@ -5726,7 +5726,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.behaviorExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.behaviorExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.behaviorExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.behaviorExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.behaviorExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -5848,7 +5848,7 @@
         <sources jar="jetbrains.mps.lang.constraintsExt-src.jar" descriptor="jetbrains.mps.lang.constraintsExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.constraintsExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.constraintsExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.constraintsExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.constraintsExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.constraintsExt.jar1" />
@@ -5893,7 +5893,7 @@
         <sources jar="jetbrains.mps.lang.constraintsExt-src.jar" descriptor="jetbrains.mps.lang.constraintsExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.constraintsExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.constraintsExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.constraintsExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.constraintsExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.constraintsExt-generator.jar1" />
@@ -5904,7 +5904,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.constraintsExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.constraintsExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.constraintsExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.constraintsExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.constraintsExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -6022,7 +6022,7 @@
         <sources jar="jetbrains.mps.lang.extensionExt-src.jar" descriptor="jetbrains.mps.lang.extensionExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.extensionExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.extensionExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.extensionExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.extensionExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.extensionExt.jar1" />
@@ -6067,7 +6067,7 @@
         <sources jar="jetbrains.mps.lang.extensionExt-src.jar" descriptor="jetbrains.mps.lang.extensionExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.extensionExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.extensionExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.extensionExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.extensionExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.extensionExt-generator.jar1" />
@@ -6078,7 +6078,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.extensionExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.extensionExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.extensionExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.extensionExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.extensionExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -6202,7 +6202,7 @@
         <sources jar="jetbrains.mps.lang.generator.generationContextExt-src.jar" descriptor="jetbrains.mps.lang.generator.generationContextExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generator.generationContextExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generator.generationContextExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationContextExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generator.generationContextExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.generator.generationContextExt.jar1" />
@@ -6247,7 +6247,7 @@
         <sources jar="jetbrains.mps.lang.generator.generationContextExt-src.jar" descriptor="jetbrains.mps.lang.generator.generationContextExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generator.generationContextExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generator.generationContextExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationContextExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generator.generationContextExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.generator.generationContextExt-generator.jar1" />
@@ -6258,7 +6258,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.generator.generationContextExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generator.generationContextExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generator.generationContextExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generator.generationContextExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generator.generationContextExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -6382,7 +6382,7 @@
         <sources jar="jetbrains.mps.lang.generatorExt-src.jar" descriptor="jetbrains.mps.lang.generatorExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generatorExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generatorExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.generatorExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generatorExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.generatorExt.jar1" />
@@ -6427,7 +6427,7 @@
         <sources jar="jetbrains.mps.lang.generatorExt-src.jar" descriptor="jetbrains.mps.lang.generatorExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generatorExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generatorExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.generatorExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generatorExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.generatorExt-generator.jar1" />
@@ -6438,7 +6438,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.generatorExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generatorExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generatorExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.generatorExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generatorExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -6564,7 +6564,7 @@
         <sources jar="jetbrains.mps.lang.patternExt-src.jar" descriptor="jetbrains.mps.lang.patternExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.patternExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.patternExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.patternExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.patternExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.patternExt.jar1" />
@@ -6609,7 +6609,7 @@
         <sources jar="jetbrains.mps.lang.patternExt-src.jar" descriptor="jetbrains.mps.lang.patternExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.patternExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.patternExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.patternExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.patternExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.patternExt-generator.jar1" />
@@ -6620,7 +6620,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.patternExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.patternExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.patternExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.patternExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.patternExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -6746,7 +6746,7 @@
         <sources jar="jetbrains.mps.lang.quotationExt-src.jar" descriptor="jetbrains.mps.lang.quotationExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.quotationExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.quotationExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.quotationExt" />
       <fileset dir="${basedir}/languages/jetbrains.mps.lang.quotationExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.quotationExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -6792,7 +6792,7 @@
         <sources jar="jetbrains.mps.lang.quotationExt-src.jar" descriptor="jetbrains.mps.lang.quotationExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.quotationExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.quotationExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.quotationExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.quotationExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.quotationExt-generator.jar1" />
@@ -6803,7 +6803,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.quotationExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.quotationExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.quotationExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.quotationExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.quotationExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -6922,7 +6922,7 @@
         <sources jar="jetbrains.mps.lang.scopesExt-src.jar" descriptor="jetbrains.mps.lang.scopesExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scopesExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scopesExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.scopesExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scopesExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.scopesExt.jar1" />
@@ -6967,7 +6967,7 @@
         <sources jar="jetbrains.mps.lang.scopesExt-src.jar" descriptor="jetbrains.mps.lang.scopesExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scopesExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scopesExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.scopesExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scopesExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.scopesExt-generator.jar1" />
@@ -6978,7 +6978,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.scopesExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scopesExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scopesExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scopesExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scopesExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -7099,7 +7099,7 @@
         <sources jar="jetbrains.mps.lang.scriptExt-src.jar" descriptor="jetbrains.mps.lang.scriptExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scriptExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scriptExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.scriptExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scriptExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.scriptExt.jar1" />
@@ -7144,7 +7144,7 @@
         <sources jar="jetbrains.mps.lang.scriptExt-src.jar" descriptor="jetbrains.mps.lang.scriptExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scriptExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scriptExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.scriptExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scriptExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.scriptExt-generator.jar1" />
@@ -7155,7 +7155,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.scriptExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scriptExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scriptExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.scriptExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scriptExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -7272,7 +7272,7 @@
         <sources jar="jetbrains.mps.lang.sharedConceptsExt-src.jar" descriptor="jetbrains.mps.lang.sharedConceptsExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.sharedConceptsExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.sharedConceptsExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.sharedConceptsExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.sharedConceptsExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.sharedConceptsExt.jar1" />
@@ -7317,7 +7317,7 @@
         <sources jar="jetbrains.mps.lang.sharedConceptsExt-src.jar" descriptor="jetbrains.mps.lang.sharedConceptsExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.sharedConceptsExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.sharedConceptsExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.sharedConceptsExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.sharedConceptsExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.sharedConceptsExt-generator.jar1" />
@@ -7328,7 +7328,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.sharedConceptsExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.sharedConceptsExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.sharedConceptsExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.sharedConceptsExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.sharedConceptsExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -7458,7 +7458,7 @@
         <sources jar="jetbrains.mps.lang.smodelExt-src.jar" descriptor="jetbrains.mps.lang.smodelExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodelExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodelExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt" />
       <fileset dir="${basedir}/languages/jetbrains.mps.lang.smodelExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -7504,7 +7504,7 @@
         <sources jar="jetbrains.mps.lang.smodelExt-src.jar" descriptor="jetbrains.mps.lang.smodelExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodelExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodelExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodelExt-generator.jar1" />
@@ -7515,7 +7515,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.smodelExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodelExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodelExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -7641,7 +7641,7 @@
         <sources jar="jetbrains.mps.lang.smodel.queryExt-src.jar" descriptor="jetbrains.mps.lang.smodel.queryExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodel.queryExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodel.queryExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.queryExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodel.queryExt.jar1" />
@@ -7686,7 +7686,7 @@
         <sources jar="jetbrains.mps.lang.smodel.queryExt-src.jar" descriptor="jetbrains.mps.lang.smodel.queryExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodel.queryExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodel.queryExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.queryExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodel.queryExt-generator.jar1" />
@@ -7697,7 +7697,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.smodel.queryExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodel.queryExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.smodel.queryExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -7820,7 +7820,7 @@
         <sources jar="jetbrains.mps.lang.testExt-src.jar" descriptor="jetbrains.mps.lang.testExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.testExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.testExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.testExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.testExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.testExt.jar1" />
@@ -7865,7 +7865,7 @@
         <sources jar="jetbrains.mps.lang.testExt-src.jar" descriptor="jetbrains.mps.lang.testExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.testExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.testExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.testExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.testExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.testExt-generator.jar1" />
@@ -7876,7 +7876,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.testExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.testExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.testExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.testExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.testExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -8001,7 +8001,7 @@
         <sources jar="jetbrains.mps.lang.typesystemExt-src.jar" descriptor="jetbrains.mps.lang.typesystemExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typesystemExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typesystemExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystemExt" />
       <fileset dir="${basedir}/languages/jetbrains.mps.lang.typesystemExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typesystemExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -8047,7 +8047,7 @@
         <sources jar="jetbrains.mps.lang.typesystemExt-src.jar" descriptor="jetbrains.mps.lang.typesystemExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typesystemExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typesystemExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystemExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typesystemExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typesystemExt-generator.jar1" />
@@ -8058,7 +8058,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.typesystemExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typesystemExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typesystemExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typesystemExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typesystemExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -8176,7 +8176,7 @@
         <sources jar="jetbrains.mps.baseLanguage.blTypesExt-src.jar" descriptor="jetbrains.mps.baseLanguage.blTypesExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.blTypesExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.blTypesExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypesExt" />
       <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguage.blTypesExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.blTypesExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -8222,7 +8222,7 @@
         <sources jar="jetbrains.mps.baseLanguage.blTypesExt-src.jar" descriptor="jetbrains.mps.baseLanguage.blTypesExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.blTypesExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.blTypesExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypesExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.blTypesExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.blTypesExt-generator.jar1" />
@@ -8233,7 +8233,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.blTypesExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.blTypesExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.blTypesExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.blTypesExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.blTypesExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -8354,7 +8354,7 @@
         <sources jar="jetbrains.mps.baseLanguage.classifiersExt-src.jar" descriptor="jetbrains.mps.baseLanguage.classifiersExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.classifiersExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.classifiersExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.classifiersExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.classifiersExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiersExt.jar1" />
@@ -8399,7 +8399,7 @@
         <sources jar="jetbrains.mps.baseLanguage.classifiersExt-src.jar" descriptor="jetbrains.mps.baseLanguage.classifiersExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.classifiersExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.classifiersExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.classifiersExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.classifiersExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.classifiersExt-generator.jar1" />
@@ -8410,7 +8410,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.classifiersExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.classifiersExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.classifiersExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.classifiersExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.classifiersExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -8533,7 +8533,7 @@
         <sources jar="jetbrains.mps.baseLanguage.closuresExt-src.jar" descriptor="jetbrains.mps.baseLanguage.closuresExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.closuresExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.closuresExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closuresExt" />
       <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguage.closuresExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.closuresExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -8579,7 +8579,7 @@
         <sources jar="jetbrains.mps.baseLanguage.closuresExt-src.jar" descriptor="jetbrains.mps.baseLanguage.closuresExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.closuresExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.closuresExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closuresExt#1312156863939371938" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.closuresExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.closuresExt-generator.jar1" />
@@ -8590,7 +8590,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.closuresExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.closuresExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.closuresExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.closuresExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.closuresExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -8712,7 +8712,7 @@
         <sources jar="jetbrains.mps.baseLanguage.collectionsExt-src.jar" descriptor="jetbrains.mps.baseLanguage.collectionsExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.collectionsExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.collectionsExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt" />
       <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguage.collectionsExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.collectionsExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -8758,7 +8758,7 @@
         <sources jar="jetbrains.mps.baseLanguage.collectionsExt-src.jar" descriptor="jetbrains.mps.baseLanguage.collectionsExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.collectionsExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.collectionsExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.collectionsExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collectionsExt-generator.jar1" />
@@ -8769,7 +8769,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.collectionsExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.collectionsExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.collectionsExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.collectionsExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.collectionsExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -8889,7 +8889,7 @@
         <sources jar="jetbrains.mps.baseLanguage.function-src.jar" descriptor="jetbrains.mps.baseLanguage.function.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.function.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.function.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
       <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguage.function" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.function/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -8935,7 +8935,7 @@
         <sources jar="jetbrains.mps.baseLanguage.function-src.jar" descriptor="jetbrains.mps.baseLanguage.function.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.function-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.function-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.function/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.function-generator.jar1" />
@@ -8946,7 +8946,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.function-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.function/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.function-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.function-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.function/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -9056,7 +9056,7 @@
         <sources jar="jetbrains.mps.baseLanguage.javadocExt-src.jar" descriptor="jetbrains.mps.baseLanguage.javadocExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.javadocExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.javadocExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.javadocExt" />
       <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguage.javadocExt" includes="icons/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.javadocExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -9065,7 +9065,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.javadocExt-models1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.javadocExt/models" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.javadocExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.javadocExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.javadocExt/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -9178,7 +9178,7 @@
         <sources jar="jetbrains.mps.baseLanguage.kotlinRefsExt-src.jar" descriptor="jetbrains.mps.baseLanguage.kotlinRefsExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.kotlinRefsExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.kotlinRefsExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.kotlinRefsExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.kotlinRefsExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.kotlinRefsExt.jar1" />
@@ -9223,7 +9223,7 @@
         <sources jar="jetbrains.mps.baseLanguage.kotlinRefsExt-src.jar" descriptor="jetbrains.mps.baseLanguage.kotlinRefsExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.kotlinRefsExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.kotlinRefsExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.kotlinRefsExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.kotlinRefsExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.kotlinRefsExt-generator.jar1" />
@@ -9234,7 +9234,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.kotlinRefsExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.kotlinRefsExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.kotlinRefsExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.kotlinRefsExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.kotlinRefsExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -9353,7 +9353,7 @@
         <sources jar="jetbrains.mps.baseLanguage.methodReferencesExt-src.jar" descriptor="jetbrains.mps.baseLanguage.methodReferencesExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.methodReferencesExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.methodReferencesExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.methodReferencesExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.methodReferencesExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.methodReferencesExt.jar1" />
@@ -9398,7 +9398,7 @@
         <sources jar="jetbrains.mps.baseLanguage.methodReferencesExt-src.jar" descriptor="jetbrains.mps.baseLanguage.methodReferencesExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.methodReferencesExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.methodReferencesExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.methodReferencesExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.methodReferencesExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.methodReferencesExt-generator.jar1" />
@@ -9409,7 +9409,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.methodReferencesExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.methodReferencesExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.methodReferencesExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.methodReferencesExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.methodReferencesExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -9528,7 +9528,7 @@
         <sources jar="jetbrains.mps.baseLanguage.sequence-src.jar" descriptor="jetbrains.mps.baseLanguage.sequence.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.sequence.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.sequence.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
       <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguage.sequence" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.sequence/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -9574,7 +9574,7 @@
         <sources jar="jetbrains.mps.baseLanguage.sequence-src.jar" descriptor="jetbrains.mps.baseLanguage.sequence.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.sequence-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.sequence-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.sequence/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.sequence-generator.jar1" />
@@ -9585,7 +9585,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.sequence-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.sequence/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.sequence-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.sequence-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.sequence/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -9708,7 +9708,7 @@
         <sources jar="jetbrains.mps.baseLanguage.tuplesExt-src.jar" descriptor="jetbrains.mps.baseLanguage.tuplesExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.tuplesExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.tuplesExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuplesExt" />
       <fileset dir="${basedir}/languages" includes="icons/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.tuplesExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -9754,7 +9754,7 @@
         <sources jar="jetbrains.mps.baseLanguage.tuplesExt-src.jar" descriptor="jetbrains.mps.baseLanguage.tuplesExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.tuplesExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.tuplesExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuplesExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.tuplesExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuplesExt-generator.jar1" />
@@ -9765,7 +9765,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguage.tuplesExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.tuplesExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.tuplesExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguage.tuplesExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.tuplesExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -9896,7 +9896,7 @@
         <sources jar="jetbrains.mps.baseLanguageExt-src.jar" descriptor="jetbrains.mps.baseLanguageExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguageExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguageExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
       <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguageExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -9905,7 +9905,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguageExt-models1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageExt/models" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguageExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguageExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageExt/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -10017,7 +10017,7 @@
         <sources jar="jetbrains.mps.baseLanguageInternalExt-src.jar" descriptor="jetbrains.mps.baseLanguageInternalExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguageInternalExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguageInternalExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguageInternalExt" />
       <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguageExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageInternalExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -10063,7 +10063,7 @@
         <sources jar="jetbrains.mps.baseLanguageInternalExt-src.jar" descriptor="jetbrains.mps.baseLanguageInternalExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguageInternalExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguageInternalExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguageInternalExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageInternalExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguageInternalExt-generator.jar1" />
@@ -10074,7 +10074,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.baseLanguageInternalExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageInternalExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguageInternalExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.baseLanguageInternalExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageInternalExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -10196,7 +10196,7 @@
         <sources jar="jetbrains.mps.logicExt-src.jar" descriptor="jetbrains.mps.logicExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.logicExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.logicExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.logicExt" />
       <fileset dir="${basedir}/languages/jetbrains.mps.logicExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.logicExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -10242,7 +10242,7 @@
         <sources jar="jetbrains.mps.logicExt-src.jar" descriptor="jetbrains.mps.logicExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.logicExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.logicExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.logicExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.logicExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.logicExt-generator.jar1" />
@@ -10253,7 +10253,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.logicExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.logicExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.logicExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.logicExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.logicExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -10377,7 +10377,7 @@
         <sources jar="jetbrains.mps.lang.coderulesExt-src.jar" descriptor="jetbrains.mps.lang.coderulesExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.coderulesExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.coderulesExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.coderulesExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.coderulesExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.coderulesExt.jar1" />
@@ -10422,7 +10422,7 @@
         <sources jar="jetbrains.mps.lang.coderulesExt-src.jar" descriptor="jetbrains.mps.lang.coderulesExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.coderulesExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.coderulesExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.coderulesExt#01" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.coderulesExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.coderulesExt-generator.jar1" />
@@ -10433,7 +10433,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.coderulesExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.coderulesExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.coderulesExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.coderulesExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.coderulesExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -10554,7 +10554,7 @@
         <sources jar="jetbrains.mps.lang.typecheckingExt-src.jar" descriptor="jetbrains.mps.lang.typecheckingExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typecheckingExt.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typecheckingExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typecheckingExt" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typecheckingExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typecheckingExt.jar1" />
@@ -10599,7 +10599,7 @@
         <sources jar="jetbrains.mps.lang.typecheckingExt-src.jar" descriptor="jetbrains.mps.lang.typecheckingExt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typecheckingExt-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typecheckingExt-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typecheckingExt.generator" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typecheckingExt/generator/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typecheckingExt-generator.jar1" />
@@ -10610,7 +10610,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.typecheckingExt-generator-templates1">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typecheckingExt/generator/templates" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typecheckingExt-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/jetbrains.mps.lang.typecheckingExt-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typecheckingExt/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -10628,7 +10628,7 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.lang.typecheckingExt-generator-templates1" prefix="module/generator/templates" />
     </jar>
     <zip destfile="${build.layout}/jetbrains.mps.core.types-${ci.mps.release}-0.9-b${ci.build.tag}.zip">
-      <fileset dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip1" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip" />
     </zip>
     <echo file="${build.layout}/build.properties">mpscore.ci.build.num=${ci.build.num}${line.separator}mpscore.ci.build.tag=${ci.build.tag}${line.separator}mpscore.ci.mps.release=${ci.mps.release}${line.separator}mpscore.test.jvmargs=${test.jvmargs}${line.separator}mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version.major=${mpsBootstrapCore.version.major}${line.separator}mpsBootstrapCore.version.minor=${mpsBootstrapCore.version.minor}${line.separator}mpsBootstrapCore.version.bugfixNr=${mpsBootstrapCore.version.bugfixNr}${line.separator}mpsBootstrapCore.version.eap=${mpsBootstrapCore.version.eap}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}coderules.ci.build.num=${coderules.ci.build.num}${line.separator}coderules.ci.build.tag=${coderules.ci.build.tag}${line.separator}coderules.ci.mps.release=${coderules.ci.mps.release}${line.separator}coderules.test.jvmargs=${coderules.test.jvmargs}</echo>
   </target>
@@ -10719,7 +10719,6 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.rules.skeleton.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.context.defs.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.context.jar" />
-      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.doc.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
@@ -15630,7 +15629,6 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.rules.skeleton.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.context.defs.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.context.jar" />
-      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.doc.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
