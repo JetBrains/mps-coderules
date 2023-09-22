@@ -375,6 +375,12 @@
               <property role="2pMdty" value="preferences.typecheckingSettings" />
             </node>
           </node>
+          <node concept="2pNUuL" id="1z_iLrGQ5xq" role="2pNNFR">
+            <property role="2pNUuO" value="displayName" />
+            <node concept="2pMdtt" id="1z_iLrGQ5xr" role="2pMdts">
+              <property role="2pMdty" value="Typechecking" />
+            </node>
+          </node>
         </node>
         <node concept="2pNUuL" id="2CPBoDATsaE" role="2pNNFR">
           <property role="2pNUuO" value="defaultExtensionNs" />

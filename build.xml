@@ -113,7 +113,7 @@
         <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
-          <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" />
+          <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
         </extensions>
         
         <extensions defaultExtensionNs="com.intellij">
@@ -2126,7 +2126,7 @@
         <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
-          <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" />
+          <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
         </extensions>
         
         <extensions defaultExtensionNs="com.intellij">
@@ -2157,7 +2157,7 @@
         <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
-          <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" />
+          <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
         </extensions>
         
         <extensions defaultExtensionNs="com.intellij">
@@ -3764,7 +3764,7 @@
         <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
-          <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" />
+          <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
         </extensions>
         
         <extensions defaultExtensionNs="com.intellij">
