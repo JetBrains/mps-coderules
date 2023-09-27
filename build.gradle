@@ -74,7 +74,20 @@ def allInitDependencies = [
   'coderules:solutions:jetbrains.mps.coderules.typechecking:copyDependencies',
   'coderules:solutions:jetbrains.mps.coderules:copyDependencies' ]
 
-task setup(dependsOn: allInitDependencies) {
+
+task antProperties {
+  onlyIf{ 
+    buildNumber().find()
+  } 
+  doLast {
+    ant.properties.'ci.build.num' = "${buildNumber().find() ? buildNumber()[0][4] : '9999'}".toString()
+    ant.properties.'ci.build.tag' = "${buildNumber().find() ? buildNumber()[0][4] : 'SNAPSHOT'}".toString()
+    ant.properties.'ci.mps.release' = "${buildNumber().find() ? buildNumber()[0][1] : '232'}".toString()
+    ant.properties.'mps.ant.log' = "debug"
+  }
+}
+
+task setup (dependsOn: [allInitDependencies, antProperties]) {
   doLast {
     println 'Initialized all dependencies.'
   }
@@ -84,69 +97,9 @@ def buildNumber() {
   System.env.BUILD_NUMBER =~ /MPS-([0-9]+)\.([0-9]+).([0-9]+)-([0-9]+)/
 }
 
-task generateUpdatePluginsXml {
-  onlyIf {
-    buildNumber().find()
-  }
-  doLast {
-    def updatesDir = project.projectDir.absolutePath + "/build/artifacts/coderules/updates"
-    mkdir(updatesDir)
-
-    def version = "${buildNumber()[0][1]}-0.9-b${buildNumber()[0][4]}"
-    def baseUrl = "https://github.com/JetBrains/mps-coderules/releases/download/v${version}"
-    def zip1 = "/jetbrains.mps.coderules-${version}.zip"
-    def zip2 = "/jetbrains.mps.core.types-${version}.zip"
-
-    file(updatesDir + "/updatePlugins.xml").withWriter { w ->
-       new MarkupBuilder(new IndentPrinter(w, "    ", true)).
-         plugins {
-           plugin( id: "jetbrains.mps.coderules" ,
-                   url: baseUrl + "/" + zip1 ,
-                   version: "${version}" ) {
-             name { mkp.yield("MPS Coderules Typechecking") }
-             description { mkp.yield("Typechecking with Coderules (experimental)") }
-           }
-           plugin( id: "jetbrains.mps.core.types" ,
-                   url: baseUrl + "/" + zip2 ,
-                   version: "${version}" ) { 
-             name { mkp.yield("MPS Core Types") }
-             description { mkp.yield("Types for core MPS languages (experimental)") }
-           }
-       }
-    }
-  }
-}
-
-task createBlockmap {
-  onlyIf {
-    buildNumber().find()
-  }
-  doLast {
-    def version = "${buildNumber()[0][1]}-0.9-b${buildNumber()[0][4]}"
-    def path = "build/artifacts/coderules"
-    def distFile = file("${path}/jetbrains.mps.coderules-${version}.zip")
-    def blockMapFileZipFile = new File(distFile.absolutePath + ".blockmap.zip")
-    def blockMapFileZip = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(blockMapFileZipFile)))
-    blockMapFileZip.putNextEntry(new ZipEntry("blockmap.json"))
-    blockMapFileZip.write(new ObjectMapper().writeValueAsBytes(new BlockMap(new BufferedInputStream(new FileInputStream(distFile)), "SHA-256")))
-    blockMapFileZip.closeEntry()
-    blockMapFileZip.close()
-    def distFileHash = new File(distFile.absolutePath + ".hash.json")
-    distFileHash.append(new ObjectMapper().writeValueAsString(new FileHash(new BufferedInputStream(new FileInputStream(distFile)), "SHA-256")))
-  }
-}
-
-ant.taskdef(name: 'junit',
-            classname: 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTask',
-            classpath: configurations.junitAnt.asPath)
-
 ant.importBuild('build.xml') { antTarget ->
     'coderules-'+antTarget
 }
-ant.properties.'ci.build.num' = "${buildNumber().find() ? buildNumber()[0][4] : '9999'}".toString()
-ant.properties.'ci.build.tag' = "${buildNumber().find() ? buildNumber()[0][4] : 'SNAPSHOT'}".toString()
-ant.properties.'ci.mps.release' = "${buildNumber().find() ? buildNumber()[0][1] : '222'}".toString()
-ant.properties.'mps.ant.log' = "debug"
 
 // ensure 'setup' runs before 'fetchDependencies' and 'declare-mps-tasks'
 'coderules-fetchDependencies' {
@@ -172,11 +125,7 @@ ant.properties.'mps.ant.log' = "debug"
 }
 
 'coderules-assemble' {
-  finalizedBy {
-    [
-      'generateUpdatePluginsXml'
-    ]
-  }
+
 }
 
 assemble {

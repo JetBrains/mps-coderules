@@ -15,48 +15,24 @@ buildscript {
     }
 }
 
-configurations {
-    junitAnt
-}
-
-dependencies {
-  // initialize JUnit optional ant task
-  junitAnt 'junit:junit:4.8.2'
-  junitAnt('org.apache.ant:ant-junit:1.9.2') {
-      transitive = false
-  }
-}
-
-task createBlockmap {
+task antProperties {
   onlyIf {
     buildNumber().find()
-  }
+  } 
   doLast {
-    def version = "${buildNumber()[0][1]}-0.9-b${buildNumber()[0][4]}"
-    def path = "build/artifacts/mpscore"
-    def distFile = file("${path}/jetbrains.mps.core.types-${version}.zip")
-    def blockMapFileZipFile = new File(distFile.absolutePath + ".blockmap.zip")
-    def blockMapFileZip = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(blockMapFileZipFile)))
-    blockMapFileZip.putNextEntry(new ZipEntry("blockmap.json"))
-    blockMapFileZip.write(new ObjectMapper().writeValueAsBytes(new BlockMap(new BufferedInputStream(new FileInputStream(distFile)), "SHA-256")))
-    blockMapFileZip.closeEntry()
-    blockMapFileZip.close()
-    def distFileHash = new File(distFile.absolutePath + ".hash.json")
-    distFileHash.append(new ObjectMapper().writeValueAsString(new FileHash(new BufferedInputStream(new FileInputStream(distFile)), "SHA-256")))
+    ant.properties.'ci.build.num' = "${buildNumber().find() ? buildNumber()[0][4] : '9999'}".toString()
+    ant.properties.'ci.build.tag' = "${buildNumber().find() ? buildNumber()[0][4] : 'SNAPSHOT'}".toString()
+    ant.properties.'ci.mps.release' = "${buildNumber().find() ? buildNumber()[0][1] : '232'}".toString()
   }
 }
 
-ant.taskdef(name: 'junit',
-            classname: 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTask',
-            classpath: configurations.junitAnt.asPath)
+
+task setup(dependsOn: [':setup', antProperties]) {
+}
 
 ant.importBuild('build.xml') {antTarget ->
     'mpscore-'+antTarget
 }
-ant.properties.'ci.build.num' = "${buildNumber().find() ? buildNumber()[0][4] : '9999'}".toString()
-ant.properties.'ci.build.tag' = "${buildNumber().find() ? buildNumber()[0][4] : 'SNAPSHOT'}".toString()
-ant.properties.'ci.mps.release' = "${buildNumber().find() ? buildNumber()[0][1] : '213'}".toString()
-
 // ensure 'generate' runs before 'classes' ('generate' is NOT optional)
 'mpscore-compileJava' {
   dependsOn {
@@ -69,7 +45,7 @@ ant.properties.'ci.mps.release' = "${buildNumber().find() ? buildNumber()[0][1] 
 
 'mpscore-declare-mps-tasks' {
   dependsOn {
-    ':setup'
+    'setup'
   }
 }
 
