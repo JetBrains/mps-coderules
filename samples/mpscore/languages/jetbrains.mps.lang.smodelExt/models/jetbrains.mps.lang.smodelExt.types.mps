@@ -32,7 +32,6 @@
     <import index="lehm" ref="r:464fcc95-fddb-47d1-b620-592cbf6b8bf2(jetbrains.mps.coderules.runtime.memoizer)" />
     <import index="1i04" ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" />
     <import index="csvn" ref="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" />
-    <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -2700,32 +2699,6 @@
               </node>
               <node concept="3Aq9E8" id="6tm4iVtTNM4" role="3xSepj">
                 <node concept="3I6sU6" id="6tm4iVtTNM5" role="3Ip0Jz">
-                  <node concept="3I6s7M" id="7uKpZGlH7F1" role="3I6sU7">
-                    <node concept="3Aqt3T" id="7uKpZGlH7EZ" role="3I6s78">
-                      <ref role="3AqCNq" to="kqnc:4nb5svirFh" resolve="glb" />
-                      <node concept="a7P8L" id="7uKpZGlH7Fg" role="3AunhB">
-                        <ref role="a7OzE" node="7uKpZGlH7Dq" resolve="GLB" />
-                      </node>
-                      <node concept="ns1u0" id="7uKpZGlH7Fq" role="3AunhB">
-                        <ref role="ns1xF" node="7LI_gNMWw2A" resolve="node" />
-                        <node concept="nsMwS" id="7uKpZGlH7Fr" role="ns1xD">
-                          <ref role="nsMwP" node="7LI_gNMWxb4" resolve="concept" />
-                          <node concept="a7P8L" id="7uKpZGlH7Fs" role="iSaTp">
-                            <ref role="a7OzE" node="6tm4iVtTLwu" resolve="LConcept" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="ns1u0" id="7uKpZGlH7FH" role="3AunhB">
-                        <ref role="ns1xF" node="7LI_gNMWw2A" resolve="node" />
-                        <node concept="nsMwS" id="7uKpZGlH7FI" role="ns1xD">
-                          <ref role="nsMwP" node="7LI_gNMWxb4" resolve="concept" />
-                          <node concept="a7P8L" id="7uKpZGlH7FJ" role="iSaTp">
-                            <ref role="a7OzE" node="6tm4iVtTQQT" resolve="RConcept" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3I6s7M" id="6tm4iVtTPpV" role="3I6sU7">
                     <node concept="3Aqt3T" id="6tm4iVtTPpU" role="3I6s78">
                       <ref role="3AqCNq" to="kqnc:34$A1MfhdDv" resolve="typeOf" />
@@ -2734,12 +2707,18 @@
                           <ref role="3A2yKK" node="6tm4iVtTEO$" resolve="oco" />
                         </node>
                       </node>
-                      <node concept="ns1u0" id="6tm4iVtTPxS" role="3AunhB">
+                      <node concept="ns1u0" id="vp2bUJN8PU" role="3AunhB">
                         <ref role="ns1xF" to="yh6q:3MFPGC50Ab3" resolve="sequence" />
-                        <node concept="nsMwS" id="6tm4iVtTPB$" role="ns1xD">
+                        <node concept="nsMwS" id="vp2bUJN8Q0" role="ns1xD">
                           <ref role="nsMwP" to="yh6q:3MFPGC50Aiu" resolve="elem" />
-                          <node concept="a7P8L" id="7uKpZGlH7FZ" role="iSaTp">
-                            <ref role="a7OzE" node="7uKpZGlH7Dq" resolve="GLB" />
+                          <node concept="ns1u0" id="vp2bUJN8Q2" role="iSaTp">
+                            <ref role="ns1xF" node="7LI_gNMWw2A" resolve="node" />
+                            <node concept="nsMwS" id="vp2bUJN8Q3" role="ns1xD">
+                              <ref role="nsMwP" node="7LI_gNMWxb4" resolve="concept" />
+                              <node concept="a7P8L" id="vp2bUJN8Q4" role="iSaTp">
+                                <ref role="a7OzE" node="6tm4iVtTQQT" resolve="RConcept" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
