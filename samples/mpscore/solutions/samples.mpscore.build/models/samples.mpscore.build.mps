@@ -4160,6 +4160,16 @@
             <ref role="3bR37D" to="zqd8:2CPBoDB0Mtg" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>
+        <node concept="1SiIV0" id="3swcsd0xtrA" role="3bR37C">
+          <node concept="3bR9La" id="3swcsd0xtrB" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:Ye$g8PO8Uc" resolve="jetbrains.mps.kotlin" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3swcsd0xtrC" role="3bR37C">
+          <node concept="3bR9La" id="3swcsd0xtrD" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:Ye$g8PO8TM" resolve="jetbrains.mps.kotlin.javaRefs" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="1wNqPr" id="7lmP5gB1PvM" role="3989C9" />

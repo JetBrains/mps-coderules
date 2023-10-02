@@ -6557,7 +6557,7 @@
       <plugin id="jetbrains.mps.core" path="${artifacts.mps}/plugins/mps-core" />
       <plugin id="jetbrains.mps.ide.java" path="${artifacts.mps}/plugins/mps-java" />
       <plugin id="jetbrains.mps.testing" path="${artifacts.mps}/plugins/mps-testing" />
-      <plugin id="jetbrains.mps.coderules" path="${build.layout}/jetbrains.mps.coderules" />
+      <plugin id="jetbrains.mps.coderules" path="${build.layout}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
       <macro name="coderules_home" path="${basedir}" />
       
       <testmodules>        
