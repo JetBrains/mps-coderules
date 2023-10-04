@@ -3926,7 +3926,15 @@
         <node concept="pkWqt" id="vp2bUKtZz8" role="pqm2j">
           <node concept="3clFbS" id="vp2bUKtZz9" role="2VODD2">
             <node concept="3clFbF" id="vp2bUKu01z" role="3cqZAp">
-              <node concept="3clFbT" id="vp2bUKu01y" role="3clFbG" />
+              <node concept="3y3z36" id="3swcsd3jKXx" role="3clFbG">
+                <node concept="10Nm6u" id="3swcsd3jKYB" role="3uHU7w" />
+                <node concept="2OqwBi" id="3swcsd3jJx3" role="3uHU7B">
+                  <node concept="pncrf" id="3swcsd3jJ2J" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="3swcsd3jKdE" role="2OqNvi">
+                    <ref role="3Tt5mk" to="wq2x:5itBwM6dfdw" resolve="applicableConcept" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -6392,15 +6400,6 @@
     </node>
     <node concept="3XHNnq" id="5itBwM5nx5S" role="3ft7WO">
       <ref role="3XGfJA" to="wq2x:5itBwM5mdnH" resolve="declaration" />
-    </node>
-  </node>
-  <node concept="22mcaB" id="7L5omgeruEi">
-    <ref role="aqKnT" to="wq2x:5itBwM6cWQh" resolve="ExpandMacroPrototype" />
-    <node concept="22hDWg" id="2TBKtozZDV1" role="22hAXT">
-      <property role="TrG5h" value="ExpandMacroPrototype_SmartReference" />
-    </node>
-    <node concept="3XHNnq" id="7L5omgeruEh" role="3ft7WO">
-      <ref role="3XGfJA" to="wq2x:5itBwM6dfdw" resolve="applicableConcept" />
     </node>
   </node>
   <node concept="22mcaB" id="4hPXq9Jmem8">

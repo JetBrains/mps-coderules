@@ -1234,7 +1234,6 @@
     <node concept="1TJgyj" id="5itBwM6dfdw" role="1TKVEi">
       <property role="IQ2ns" value="6097203247157932896" />
       <property role="20kJfa" value="applicableConcept" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
       <node concept="asaX9" id="vp2bUKvt3$" role="lGtFl" />
     </node>
