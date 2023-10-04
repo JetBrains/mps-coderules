@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="1" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="23" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="24" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="13" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
@@ -91,7 +91,7 @@
       <concept id="8456919074574710634" name="jetbrains.mps.logic.structure.ExpressionItem" flags="ng" index="37jhX">
         <child id="8456919074574710741" name="code" index="37jj2" />
       </concept>
-      <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ng" index="29MRiA">
+      <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ngI" index="29MRiA">
         <child id="6399471711045617306" name="dataType" index="3vLBG7" />
         <child id="3063948360254832884" name="declaration" index="3XD1gS" />
       </concept>
@@ -144,7 +144,7 @@
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
@@ -227,9 +227,6 @@
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
       <concept id="2381360340662937504" name="jetbrains.mps.lang.coderules.structure.TermType" flags="ig" index="32pEOW" />
-      <concept id="6097203247164180547" name="jetbrains.mps.lang.coderules.structure.ExpandMacroParameterReference" flags="ng" index="3i2tpf">
-        <reference id="6097203247164235646" name="declaration" index="3i285M" />
-      </concept>
       <concept id="6097203247156088058" name="jetbrains.mps.lang.coderules.structure.ExpandMacroInputSpecification" flags="ng" index="3ixlbQ">
         <reference id="6097203247156276310" name="applicableConcept" index="3ixz9q" />
         <child id="6097203247156107501" name="input" index="3ix8rx" />
@@ -241,6 +238,7 @@
         <child id="6097203247156492735" name="code" index="3iwQuN" />
         <child id="6097203247156594418" name="variable" index="3iJhzY" />
         <child id="6097203247216428965" name="logical" index="3tb1AD" />
+        <child id="3972229586022038333" name="parameter" index="1Q0WFY" />
       </concept>
       <concept id="6097203247183580433" name="jetbrains.mps.lang.coderules.structure.ExpandMacroInputReference" flags="ng" index="3j8tct">
         <reference id="6097203247183580434" name="declaration" index="3j8tcu" />
@@ -321,6 +319,12 @@
         <child id="2316688792939428590" name="code" index="3IrJb0" />
       </concept>
       <concept id="965748826975413063" name="jetbrains.mps.lang.coderules.structure.RulePartParameterDeclaration" flags="ng" index="3NuqgR" />
+      <concept id="3972229586021710485" name="jetbrains.mps.lang.coderules.structure.ExpandMacroParameterUsage" flags="ng" index="1QfGHm">
+        <reference id="3972229586021710487" name="declaration" index="1QfGHk" />
+      </concept>
+      <concept id="3972229586024561291" name="jetbrains.mps.lang.coderules.structure.ExpandMacroParameterUsageReference" flags="ng" index="1Qq$H8">
+        <reference id="3972229586024561403" name="parameterUsage" index="1Qq$GS" />
+      </concept>
     </language>
   </registry>
   <node concept="AVZre" id="7LI_gNMjLUJ">
@@ -2383,8 +2387,8 @@
             <node concept="3jhG_Y" id="6cGbuqP1B3X" role="3jhGvd">
               <node concept="3jhG_Z" id="6cGbuqP1B3Z" role="3jhGob">
                 <ref role="3jhG_U" to="kqnc:5itBwMaLICh" resolve="substitution" />
-                <node concept="3i2tpf" id="6cGbuqP1B43" role="3jhG_S">
-                  <ref role="3i285M" to="kqnc:5itBwMaLICh" resolve="substitution" />
+                <node concept="1Qq$H8" id="3swcsd2R92I" role="3jhG_S">
+                  <ref role="1Qq$GS" node="3swcsd2R92G" resolve="substitution" />
                 </node>
               </node>
             </node>
@@ -2424,6 +2428,14 @@
           <property role="TrG5h" value="DType" />
         </node>
         <node concept="32pEOW" id="6Dg__VK8zgm" role="3vLBG7" />
+      </node>
+      <node concept="1QfGHm" id="3swcsd2R92G" role="1Q0WFY">
+        <property role="TrG5h" value="substitution" />
+        <ref role="1QfGHk" to="kqnc:5itBwMaLICh" resolve="substitution" />
+      </node>
+      <node concept="1QfGHm" id="3swcsd2R92H" role="1Q0WFY">
+        <property role="TrG5h" value="Bound" />
+        <ref role="1QfGHk" to="kqnc:6BYZfeEX8SG" resolve="Bound" />
       </node>
     </node>
   </node>

@@ -43,7 +43,7 @@
         <child id="4322786184247881125" name="content" index="2jWza4" />
       </concept>
       <concept id="4322786184247859218" name="samples.fitch.structure.Assumption" flags="ng" index="2jWGsN" />
-      <concept id="4322786184247854968" name="samples.fitch.structure.Reasoning" flags="ng" index="2jWHxp">
+      <concept id="4322786184247854968" name="samples.fitch.structure.Reasoning" flags="ngI" index="2jWHxp">
         <child id="2497161927181071993" name="conclusion" index="3MT$nN" />
       </concept>
       <concept id="4322786184247818022" name="samples.fitch.structure.Judgement" flags="ng" index="2jWMw7">
@@ -64,7 +64,7 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>

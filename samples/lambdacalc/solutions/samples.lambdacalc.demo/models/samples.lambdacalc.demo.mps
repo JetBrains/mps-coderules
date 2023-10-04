@@ -16,7 +16,7 @@
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
       <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
@@ -39,7 +39,7 @@
         <child id="854183478222197451" name="sndType" index="3EVAi" />
         <child id="854183478222197453" name="fstType" index="3EVAk" />
       </concept>
-      <concept id="854183478218847754" name="samples.lambdacalc.structure.Annotated" flags="ng" index="3TPPj">
+      <concept id="854183478218847754" name="samples.lambdacalc.structure.Annotated" flags="ngI" index="3TPPj">
         <child id="854183478218847949" name="ann" index="3TPQk" />
       </concept>
       <concept id="854183478218847958" name="samples.lambdacalc.structure.AnnVar" flags="ng" index="3TPQf">

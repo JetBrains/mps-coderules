@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="1" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="23" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="24" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
     <devkit ref="888618cf-7697-4adc-80cd-8c6ea3486ef7(jetbrains.mps.devkit.aspect.types)" />
@@ -77,7 +77,7 @@
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
-      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ngI" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
@@ -117,7 +117,7 @@
       <concept id="8456919074574710634" name="jetbrains.mps.logic.structure.ExpressionItem" flags="ng" index="37jhX">
         <child id="8456919074574710741" name="code" index="37jj2" />
       </concept>
-      <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ng" index="29MRiA">
+      <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ngI" index="29MRiA">
         <child id="6399471711045617306" name="dataType" index="3vLBG7" />
         <child id="3063948360254832884" name="declaration" index="3XD1gS" />
       </concept>
@@ -156,7 +156,7 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
@@ -233,6 +233,7 @@
         <child id="6097203247156392058" name="inputSpec" index="3iweTQ" />
         <child id="6097203247156492735" name="code" index="3iwQuN" />
         <child id="6097203247216428965" name="logical" index="3tb1AD" />
+        <child id="3972229586022038333" name="parameter" index="1Q0WFY" />
       </concept>
       <concept id="6097203247183580433" name="jetbrains.mps.lang.coderules.structure.ExpandMacroInputReference" flags="ng" index="3j8tct">
         <reference id="6097203247183580434" name="declaration" index="3j8tcu" />
@@ -299,6 +300,9 @@
         <child id="2316688792939428590" name="code" index="3IrJb0" />
       </concept>
       <concept id="965748826975413063" name="jetbrains.mps.lang.coderules.structure.RulePartParameterDeclaration" flags="ng" index="3NuqgR" />
+      <concept id="3972229586021710485" name="jetbrains.mps.lang.coderules.structure.ExpandMacroParameterUsage" flags="ng" index="1QfGHm">
+        <reference id="3972229586021710487" name="declaration" index="1QfGHk" />
+      </concept>
     </language>
   </registry>
   <node concept="AVZre" id="2q9s7foP9XW">
@@ -1301,6 +1305,14 @@
           <property role="TrG5h" value="dc" />
         </node>
       </node>
+      <node concept="1QfGHm" id="3swcsd2R90l" role="1Q0WFY">
+        <property role="TrG5h" value="substitution" />
+        <ref role="1QfGHk" to="kqnc:5itBwMaLICh" resolve="substitution" />
+      </node>
+      <node concept="1QfGHm" id="3swcsd2R90m" role="1Q0WFY">
+        <property role="TrG5h" value="Bound" />
+        <ref role="1QfGHk" to="kqnc:6BYZfeEX8SG" resolve="Bound" />
+      </node>
     </node>
     <node concept="3iyZe8" id="2q9s7fpPily" role="0oKgB">
       <ref role="3iRiWT" to="kqnc:5itBwMau8m1" resolve="lift" />
@@ -1327,6 +1339,14 @@
         <node concept="3ixQyH" id="2q9s7fpPilC" role="3ix8rx">
           <property role="TrG5h" value="bc" />
         </node>
+      </node>
+      <node concept="1QfGHm" id="3swcsd2R90n" role="1Q0WFY">
+        <property role="TrG5h" value="substitution" />
+        <ref role="1QfGHk" to="kqnc:5itBwMaLICh" resolve="substitution" />
+      </node>
+      <node concept="1QfGHm" id="3swcsd2R90o" role="1Q0WFY">
+        <property role="TrG5h" value="Bound" />
+        <ref role="1QfGHk" to="kqnc:6BYZfeEX8SG" resolve="Bound" />
       </node>
     </node>
   </node>

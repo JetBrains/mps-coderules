@@ -1784,7 +1784,7 @@
     <property role="EcuMT" value="3972229586021710485" />
     <property role="3GE5qa" value="macro.decl" />
     <property role="TrG5h" value="ExpandMacroParameterUsage" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3swcsd17JEn" role="1TKVEi">
       <property role="IQ2ns" value="3972229586021710487" />
       <property role="20kJfa" value="declaration" />
