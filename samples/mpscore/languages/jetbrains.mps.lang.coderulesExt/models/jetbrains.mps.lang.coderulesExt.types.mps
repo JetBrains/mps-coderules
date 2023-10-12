@@ -1823,7 +1823,7 @@
             <node concept="10Oyi0" id="3swcsd3mQv1" role="1tU5fm" />
             <node concept="2OqwBi" id="3swcsd3mSWH" role="33vP2m">
               <node concept="37vLTw" id="3swcsd3nc$6" role="2Oq$k0">
-                <ref role="3cqZAo" node="3swcsd3nczM" resolve="list" />
+                <ref role="3cqZAo" node="3swcsd3nczM" resolve="reqParams" />
               </node>
               <node concept="34oBXx" id="3swcsd3mSWZ" role="2OqNvi" />
             </node>

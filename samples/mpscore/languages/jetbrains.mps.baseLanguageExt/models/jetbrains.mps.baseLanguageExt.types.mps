@@ -765,6 +765,7 @@
         <child id="6097203247142468229" name="type" index="3hPmi9" />
       </concept>
       <concept id="6097203247162979076" name="jetbrains.mps.lang.coderules.structure.ExpandMacroParameterDeclaration" flags="ng" index="3i76O8">
+        <child id="6097203247163841813" name="init" index="3i4Ccp" />
         <child id="6097203247163011497" name="type" index="3i7YY_" />
       </concept>
       <concept id="6097203247156088058" name="jetbrains.mps.lang.coderules.structure.ExpandMacroInputSpecification" flags="ng" index="3ixlbQ">
@@ -16235,9 +16236,6 @@
             <node concept="3hN9Ij" id="5itBwMaub0o" role="3jbY8P">
               <ref role="3hLkJx" node="5itBwMauaTZ" resolve="componentType" />
             </node>
-            <node concept="a7P8L" id="5itBwMauaZp" role="3jbY8V">
-              <ref role="a7OzE" node="5itBwMauaYP" resolve="Param" />
-            </node>
             <node concept="3jhG_Y" id="1oUE7CXkYVn" role="3jhGvd">
               <node concept="3jhG_Z" id="1oUE7CXkYVo" role="3jhGob">
                 <ref role="3jhG_U" node="5itBwMaLICh" resolve="substitution" />
@@ -16245,6 +16243,9 @@
                   <ref role="3hLkJx" node="1oUE7CXkYNe" resolve="subs" />
                 </node>
               </node>
+            </node>
+            <node concept="a7P8L" id="1gkIvnhTsY7" role="3jbY8V">
+              <ref role="a7OzE" node="5itBwMauaYP" resolve="Param" />
             </node>
           </node>
         </node>
@@ -16655,12 +16656,14 @@
         <node concept="3uibUv" id="5itBwMaLJw4" role="3i7YY_">
           <ref role="3uigEE" node="6EY0p2w8VOq" resolve="TypeVarSubstitution" />
         </node>
+        <node concept="10Nm6u" id="5obCDEeUvGT" role="3i4Ccp" />
       </node>
       <node concept="3i76O8" id="6BYZfeEX8SG" role="3i7zYg">
         <property role="TrG5h" value="Bound" />
         <node concept="26uTi9" id="2fVm_54$1D0" role="3i7YY_">
           <node concept="32pEOW" id="2fVm_54$1Fh" role="3vMvoR" />
         </node>
+        <node concept="10Nm6u" id="5obCDEeUvHc" role="3i4Ccp" />
       </node>
     </node>
     <node concept="3iyZe8" id="5X1yxJHLgzH" role="0oKgB">
