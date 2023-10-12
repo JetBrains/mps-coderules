@@ -1860,6 +1860,13 @@
     </node>
     <node concept="3Tm1VV" id="6fdr4UgftiH" role="1B3o_S" />
     <node concept="2tJIrI" id="7P_FdVQpiDB" role="jymVt" />
+    <node concept="3UR2Jj" id="3swcsd3GZmE" role="lGtFl">
+      <node concept="TZ5HA" id="3swcsd3GZmF" role="TZ5H$">
+        <node concept="1dT_AC" id="3swcsd3GZmG" role="1dT_Ay">
+          <property role="1dT_AB" value="FIXME: move this class to template model" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="1hX44vNlSIA">
     <property role="TrG5h" value="MacroTemplateIndex" />
@@ -2610,6 +2617,13 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="1hX44vNlSIB" role="1B3o_S" />
+    <node concept="3UR2Jj" id="3swcsd3Grn0" role="lGtFl">
+      <node concept="TZ5HA" id="3swcsd3Grn1" role="TZ5H$">
+        <node concept="1dT_AC" id="3swcsd3Grn2" role="1dT_Ay">
+          <property role="1dT_AB" value="FIXME: move this class to &quot;template&quot; model" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="1HWyn8jvsHb">
     <property role="TrG5h" value="CopyUtil" />
@@ -3511,6 +3525,13 @@
       <property role="TrG5h" value="T" />
       <node concept="3uibUv" id="zL5ZaNV64v" role="3ztrMU">
         <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+      </node>
+    </node>
+    <node concept="3UR2Jj" id="1ufy3d8YZIN" role="lGtFl">
+      <node concept="TZ5HA" id="1ufy3d8YZIO" role="TZ5H$">
+        <node concept="1dT_AC" id="1ufy3d8YZIP" role="1dT_Ay">
+          <property role="1dT_AB" value="FIXME: this class can be reduced to a registry of *Index classes and moved to templates model." />
+        </node>
       </node>
     </node>
   </node>
@@ -4621,6 +4642,13 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6OXbTD$xs00" role="jymVt" />
+    <node concept="3UR2Jj" id="1ufy3d8YNdM" role="lGtFl">
+      <node concept="TZ5HA" id="1ufy3d8YNdN" role="TZ5H$">
+        <node concept="1dT_AC" id="1ufy3d8YNdO" role="1dT_Ay">
+          <property role="1dT_AB" value="FIXME: this is a MITM class, can be reduced to a bunch of methods on ProgramFactory." />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="3pMFS1zdqns">
     <property role="TrG5h" value="SubstituteUtil" />
@@ -5615,6 +5643,13 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="4$YN6QugcRf" role="1B3o_S" />
+    <node concept="3UR2Jj" id="3swcsd3HijR" role="lGtFl">
+      <node concept="TZ5HA" id="3swcsd3HijS" role="TZ5H$">
+        <node concept="1dT_AC" id="3swcsd3HijT" role="1dT_Ay">
+          <property role="1dT_AB" value="FIXME: move this class to templates model" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="3HP615" id="qubcdtxBiR">
     <property role="TrG5h" value="EvaluationTraceExt" />
