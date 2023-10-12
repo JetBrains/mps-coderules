@@ -1343,7 +1343,6 @@
     <property role="EcuMT" value="6097203247184206287" />
     <property role="3GE5qa" value="constraint" />
     <property role="TrG5h" value="CallMacroConstraint" />
-    <property role="34LRSv" value="call" />
     <ref role="1TJDcQ" node="18kNIl0mxXI" resolve="PseudoConstraint" />
     <node concept="1TJgyj" id="5itBwM7Lv0S" role="1TKVEi">
       <property role="IQ2ns" value="6097203247184212024" />
