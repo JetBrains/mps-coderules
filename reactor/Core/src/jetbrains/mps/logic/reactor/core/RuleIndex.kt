@@ -56,6 +56,7 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
 
     private val symbol2index = HashMap<ConstraintSymbol, ArgumentRuleIndex>()
 
+    // TODO: is linked hashmap really necessary? might be inefficient
     private val tag2rule = LinkedHashMap<Any, Rule>()
 
     private val tag2bit = TObjectIntHashMap<Any>()
