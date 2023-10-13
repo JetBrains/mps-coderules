@@ -1081,6 +1081,12 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
+    <node concept="1TJgyj" id="1ufy3d9wUy7" role="1TKVEi">
+      <property role="IQ2ns" value="1697725338400041095" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="init" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
     <node concept="PrWs8" id="5itBwM5ie4J" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
@@ -1357,6 +1363,14 @@
       <property role="20kJfa" value="argument" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="1OAJnGnFnB" role="lGtFl" />
+    </node>
+    <node concept="1TJgyj" id="1OAJnGnFnu" role="1TKVEi">
+      <property role="IQ2ns" value="32821478321731038" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="argumentBinding" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="1ufy3d9uzFb" resolve="CallMacroConstraintArgumentBinding" />
     </node>
     <node concept="1TJgyj" id="5itBwM7LtYS" role="1TKVEi">
       <property role="IQ2ns" value="6097203247184207800" />
@@ -1809,6 +1823,25 @@
       <property role="20kJfa" value="parameterUsage" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="3swcsd17JEl" resolve="ExpandMacroParameterUsage" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1ufy3d9uzFb">
+    <property role="EcuMT" value="1697725338399423179" />
+    <property role="3GE5qa" value="constraint" />
+    <property role="TrG5h" value="CallMacroConstraintArgumentBinding" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="1ufy3d9uzVX" role="1TKVEi">
+      <property role="IQ2ns" value="1697725338399424253" />
+      <property role="20kJfa" value="declaration" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5itBwM5i6X6" resolve="CallMacroParameterDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="1ufy3d9uzVV" role="1TKVEi">
+      <property role="IQ2ns" value="1697725338399424251" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
 </model>

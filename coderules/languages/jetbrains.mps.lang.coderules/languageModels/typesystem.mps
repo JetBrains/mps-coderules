@@ -1604,5 +1604,59 @@
       <ref role="1YaFvo" to="wq2x:3swcsd1iBEb" resolve="ExpandMacroParameterUsageReference" />
     </node>
   </node>
+  <node concept="1YbPZF" id="1ufy3d9uDEz">
+    <property role="TrG5h" value="typeof_CallMacroParameterDeclaration" />
+    <property role="3GE5qa" value="macro.decl" />
+    <node concept="3clFbS" id="1ufy3d9uDE$" role="18ibNy">
+      <node concept="1ZobV4" id="1ufy3d9uDEH" role="3cqZAp">
+        <property role="3wDh2S" value="true" />
+        <node concept="mw_s8" id="1ufy3d9uDEI" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1ufy3d9uDEJ" role="mwGJk">
+            <node concept="2OqwBi" id="1ufy3d9uDEK" role="1Z2MuG">
+              <node concept="1YBJjd" id="1ufy3d9uDEL" role="2Oq$k0">
+                <ref role="1YBMHb" node="1ufy3d9uDEA" resolve="empd" />
+              </node>
+              <node concept="3TrEf2" id="1ufy3d9uDEM" role="2OqNvi">
+                <ref role="3Tt5mk" to="wq2x:1ufy3d9wUy7" resolve="init" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1ufy3d9uDEN" role="1ZfhKB">
+          <node concept="2OqwBi" id="1ufy3d9uDEO" role="mwGJk">
+            <node concept="1YBJjd" id="1ufy3d9uDEP" role="2Oq$k0">
+              <ref role="1YBMHb" node="1ufy3d9uDEA" resolve="empd" />
+            </node>
+            <node concept="3TrEf2" id="1ufy3d9uDEQ" role="2OqNvi">
+              <ref role="3Tt5mk" to="wq2x:5itBwM5ifE5" resolve="type" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1Z5TYs" id="1ufy3d9uDER" role="3cqZAp">
+        <node concept="mw_s8" id="1ufy3d9uDES" role="1ZfhKB">
+          <node concept="2OqwBi" id="1ufy3d9uDET" role="mwGJk">
+            <node concept="1YBJjd" id="1ufy3d9uDEU" role="2Oq$k0">
+              <ref role="1YBMHb" node="1ufy3d9uDEA" resolve="empd" />
+            </node>
+            <node concept="3TrEf2" id="1ufy3d9uDEV" role="2OqNvi">
+              <ref role="3Tt5mk" to="wq2x:5itBwM5ifE5" resolve="type" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1ufy3d9uDEW" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1ufy3d9uDEX" role="mwGJk">
+            <node concept="1YBJjd" id="1ufy3d9uDEY" role="1Z2MuG">
+              <ref role="1YBMHb" node="1ufy3d9uDEA" resolve="empd" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1ufy3d9uDEA" role="1YuTPh">
+      <property role="TrG5h" value="cmpd" />
+      <ref role="1YaFvo" to="wq2x:5itBwM5i6X6" resolve="CallMacroParameterDeclaration" />
+    </node>
+  </node>
 </model>
 
