@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="1" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="24" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="25" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
     <devkit ref="888618cf-7697-4adc-80cd-8c6ea3486ef7(jetbrains.mps.devkit.aspect.types)" />
   </languages>
@@ -22,6 +22,7 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
@@ -136,6 +137,7 @@
       </concept>
       <concept id="6097203247142432582" name="jetbrains.mps.lang.coderules.structure.CallMacroParameterDeclaration" flags="ng" index="3hPv5a">
         <child id="6097203247142468229" name="type" index="3hPmi9" />
+        <child id="1697725338400041095" name="init" index="1u322O" />
       </concept>
       <concept id="6097203247182936001" name="jetbrains.mps.lang.coderules.structure.ExpandMacroConstraint" flags="ng" index="3jbYBd">
         <reference id="6097203247182937177" name="template" index="3jbY9l" />
@@ -152,8 +154,8 @@
       </concept>
       <concept id="6097203247184206287" name="jetbrains.mps.lang.coderules.structure.CallMacroConstraint" flags="ng" index="3jm4v3">
         <reference id="6097203247184207800" name="template" index="3jm46O" />
-        <child id="6097203247185219723" name="argument" index="3jicU7" />
         <child id="6097203247184212024" name="logical" index="3jm6SO" />
+        <child id="32821478321731038" name="argumentBinding" index="3GayWF" />
       </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="4814011019633607808" name="parameter" index="0Rg$4" />
@@ -167,6 +169,10 @@
         <child id="3575255234174969665" name="rule" index="1nLNNK" />
       </concept>
       <concept id="8908809128801951597" name="jetbrains.mps.lang.coderules.structure.MacroBodyLogicalDeclaration" flags="ng" index="3uniRu" />
+      <concept id="1697725338399423179" name="jetbrains.mps.lang.coderules.structure.CallMacroConstraintArgumentBinding" flags="ng" index="1uXrbS">
+        <reference id="1697725338399424253" name="declaration" index="1uXrre" />
+        <child id="1697725338399424251" name="argument" index="1uXrr8" />
+      </concept>
       <concept id="7674753015762572646" name="jetbrains.mps.lang.coderules.structure.BodyBlock" flags="ng" index="3xSepi">
         <child id="7674753015762572647" name="body" index="3xSepj" />
       </concept>
@@ -208,12 +214,14 @@
         <node concept="3Tqbb2" id="1oUE7CX4dOh" role="3hPmi9">
           <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
         </node>
+        <node concept="10Nm6u" id="1OAJnH6vKd" role="1u322O" />
       </node>
       <node concept="3hPv5a" id="1oUE7CXkYVc" role="3hP23H">
         <property role="TrG5h" value="subs" />
         <node concept="3uibUv" id="1oUE7CXkYVd" role="3hPmi9">
           <ref role="3uigEE" to="kqnc:6EY0p2w8VOq" resolve="TypeVarSubstitution" />
         </node>
+        <node concept="10Nm6u" id="1OAJnH6vKe" role="1u322O" />
       </node>
       <node concept="3clFbS" id="1oUE7CX4dOd" role="3hEL4E">
         <node concept="3clFbJ" id="1oUE7CX4dPF" role="3cqZAp">
@@ -317,25 +325,33 @@
         <node concept="3Tqbb2" id="1oUE7CXmlyh" role="3hPmi9">
           <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
         </node>
+        <node concept="10Nm6u" id="1OAJnH6vKf" role="1u322O" />
       </node>
       <node concept="3hPv5a" id="1oUE7CXmlyj" role="3hP23H">
         <property role="TrG5h" value="subs" />
         <node concept="3uibUv" id="1oUE7CXmlyl" role="3hPmi9">
           <ref role="3uigEE" to="kqnc:6EY0p2w8VOq" resolve="TypeVarSubstitution" />
         </node>
+        <node concept="10Nm6u" id="1OAJnH6vKg" role="1u322O" />
       </node>
       <node concept="3clFbS" id="1oUE7CXmlxM" role="3hEL4E">
         <node concept="3Aqczg" id="1oUE7CXmmkN" role="3cqZAp">
           <node concept="3jm4v3" id="1oUE7CXmmkL" role="3Aqpz8">
             <ref role="3jm46O" node="1oUE7CX4dOb" resolve="elementType" />
-            <node concept="3hN9Ij" id="1oUE7CXmmln" role="3jicU7">
-              <ref role="3hLkJx" node="1oUE7CXmlxO" resolve="elementType" />
-            </node>
-            <node concept="3hN9Ij" id="1oUE7CXmmlw" role="3jicU7">
-              <ref role="3hLkJx" node="1oUE7CXmlyj" resolve="subs" />
-            </node>
             <node concept="a7P8L" id="1oUE7CXmmlg" role="3jm6SO">
               <ref role="a7OzE" node="1oUE7CXmmkR" resolve="Elem" />
+            </node>
+            <node concept="1uXrbS" id="1OAJnH6vKb" role="3GayWF">
+              <ref role="1uXrre" node="1oUE7CX4dOf" resolve="elementType" />
+              <node concept="3hN9Ij" id="1oUE7CXmmln" role="1uXrr8">
+                <ref role="3hLkJx" node="1oUE7CXmlxO" resolve="elementType" />
+              </node>
+            </node>
+            <node concept="1uXrbS" id="1OAJnH6vKc" role="3GayWF">
+              <ref role="1uXrre" node="1oUE7CXkYVc" resolve="subs" />
+              <node concept="3hN9Ij" id="1oUE7CXmmlw" role="1uXrr8">
+                <ref role="3hLkJx" node="1oUE7CXmlyj" resolve="subs" />
+              </node>
             </node>
           </node>
         </node>

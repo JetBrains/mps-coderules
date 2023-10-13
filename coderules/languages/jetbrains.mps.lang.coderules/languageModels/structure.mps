@@ -1829,7 +1829,7 @@
     <property role="EcuMT" value="1697725338399423179" />
     <property role="3GE5qa" value="constraint" />
     <property role="TrG5h" value="CallMacroConstraintArgumentBinding" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1ufy3d9uzVX" role="1TKVEi">
       <property role="IQ2ns" value="1697725338399424253" />
       <property role="20kJfa" value="declaration" />

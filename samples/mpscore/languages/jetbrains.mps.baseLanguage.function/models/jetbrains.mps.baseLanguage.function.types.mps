@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="1" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="24" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="25" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
     <devkit ref="888618cf-7697-4adc-80cd-8c6ea3486ef7(jetbrains.mps.devkit.aspect.types)" />
   </languages>
@@ -28,6 +28,7 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -194,6 +195,7 @@
       </concept>
       <concept id="6097203247142432582" name="jetbrains.mps.lang.coderules.structure.CallMacroParameterDeclaration" flags="ng" index="3hPv5a">
         <child id="6097203247142468229" name="type" index="3hPmi9" />
+        <child id="1697725338400041095" name="init" index="1u322O" />
       </concept>
       <concept id="6097203247182936001" name="jetbrains.mps.lang.coderules.structure.ExpandMacroConstraint" flags="ng" index="3jbYBd">
         <reference id="6097203247182937177" name="template" index="3jbY9l" />
@@ -401,18 +403,21 @@
         <node concept="2I9FWS" id="6$MmqWfmoJg" role="3hPmi9">
           <ref role="2I9WkF" to="tpee:fz3vP1H" resolve="Type" />
         </node>
+        <node concept="10Nm6u" id="1OAJnH6vK8" role="1u322O" />
       </node>
       <node concept="3hPv5a" id="6$MmqWfmoJj" role="3hP23H">
         <property role="TrG5h" value="resultType" />
         <node concept="3Tqbb2" id="6$MmqWfmoJp" role="3hPmi9">
           <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
         </node>
+        <node concept="10Nm6u" id="1OAJnH6vK9" role="1u322O" />
       </node>
       <node concept="3hPv5a" id="554EtBHzVCE" role="3hP23H">
         <property role="TrG5h" value="subs" />
         <node concept="3uibUv" id="554EtBHzVCM" role="3hPmi9">
           <ref role="3uigEE" to="kqnc:6EY0p2w8VOq" resolve="TypeVarSubstitution" />
         </node>
+        <node concept="10Nm6u" id="1OAJnH6vKa" role="1u322O" />
       </node>
       <node concept="3clFbS" id="6$MmqWfmo8v" role="3hEL4E">
         <node concept="3clFbJ" id="2MpDLe9wosm" role="3cqZAp">

@@ -57,8 +57,8 @@
       <concept id="2381360340662937504" name="jetbrains.mps.lang.coderules.structure.TermType" flags="ig" index="32pEOW" />
       <concept id="6097203247184206287" name="jetbrains.mps.lang.coderules.structure.CallMacroConstraint" flags="ng" index="3jm4v3">
         <reference id="6097203247184207800" name="template" index="3jm46O" />
-        <child id="6097203247185219723" name="argument" index="3jicU7" />
         <child id="6097203247184212024" name="logical" index="3jm6SO" />
+        <child id="32821478321731038" name="argumentBinding" index="3GayWF" />
       </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="4814011019633607808" name="parameter" index="0Rg$4" />
@@ -71,6 +71,10 @@
       </concept>
       <concept id="3575255234174969664" name="jetbrains.mps.lang.coderules.structure.ConstraintRuleStatement" flags="ng" index="1nLNNL">
         <child id="3575255234174969665" name="rule" index="1nLNNK" />
+      </concept>
+      <concept id="1697725338399423179" name="jetbrains.mps.lang.coderules.structure.CallMacroConstraintArgumentBinding" flags="ng" index="1uXrbS">
+        <reference id="1697725338399424253" name="declaration" index="1uXrre" />
+        <child id="1697725338399424251" name="argument" index="1uXrr8" />
       </concept>
       <concept id="7674753015762572646" name="jetbrains.mps.lang.coderules.structure.BodyBlock" flags="ng" index="3xSepi">
         <child id="7674753015762572647" name="body" index="3xSepj" />
@@ -123,21 +127,24 @@
                   <node concept="3I6s7M" id="kHzC1TY7Ub" role="3I6sU7">
                     <node concept="3jm4v3" id="kHzC1TY7U9" role="3I6s78">
                       <ref role="3jm46O" to="kqnc:3qUnz9vk$1o" resolve="classifierTypeNonGeneric" />
-                      <node concept="2OqwBi" id="3vih5250XRK" role="3jicU7">
-                        <node concept="2OqwBi" id="7LI_gNMXl0Q" role="2Oq$k0">
-                          <node concept="3A2sRY" id="7LI_gNMXkT0" role="2Oq$k0">
-                            <ref role="3A2yKK" node="3vih5250MoZ" resolve="tqp" />
-                          </node>
-                          <node concept="2qgKlT" id="3vih5250XG3" role="2OqNvi">
-                            <ref role="37wK5l" to="h103:7lmP5gAYgVD" resolve="getTypecheckingQueryTemplate" />
-                          </node>
-                        </node>
-                        <node concept="2qgKlT" id="3vih5250Y3t" role="2OqNvi">
-                          <ref role="37wK5l" to="h103:3vih52511I4" resolve="getQueryClassfier" />
-                        </node>
-                      </node>
                       <node concept="a7P8L" id="kHzC1TY7UJ" role="3jm6SO">
                         <ref role="a7OzE" node="kHzC1TY7B9" resolve="Cls" />
+                      </node>
+                      <node concept="1uXrbS" id="1OAJnH6vMr" role="3GayWF">
+                        <ref role="1uXrre" to="kqnc:3qUnz9vk$cM" resolve="cls" />
+                        <node concept="2OqwBi" id="3vih5250XRK" role="1uXrr8">
+                          <node concept="2OqwBi" id="7LI_gNMXl0Q" role="2Oq$k0">
+                            <node concept="3A2sRY" id="7LI_gNMXkT0" role="2Oq$k0">
+                              <ref role="3A2yKK" node="3vih5250MoZ" resolve="tqp" />
+                            </node>
+                            <node concept="2qgKlT" id="3vih5250XG3" role="2OqNvi">
+                              <ref role="37wK5l" to="h103:7lmP5gAYgVD" resolve="getTypecheckingQueryTemplate" />
+                            </node>
+                          </node>
+                          <node concept="2qgKlT" id="3vih5250Y3t" role="2OqNvi">
+                            <ref role="37wK5l" to="h103:3vih52511I4" resolve="getQueryClassfier" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
