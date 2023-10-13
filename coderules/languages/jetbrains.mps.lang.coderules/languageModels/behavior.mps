@@ -1272,7 +1272,9 @@
     <node concept="13i0hz" id="7LI_gNMXm_R" role="13h7CS">
       <property role="TrG5h" value="getQueryClassifier" />
       <node concept="3Tm1VV" id="7LI_gNMXm_S" role="1B3o_S" />
-      <node concept="3Tqbb2" id="1wOsNdKDLNJ" role="3clF45" />
+      <node concept="3Tqbb2" id="1wOsNdKDLNJ" role="3clF45">
+        <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+      </node>
       <node concept="3clFbS" id="7LI_gNMXm_U" role="3clF47">
         <node concept="3clFbF" id="7LI_gNMXmIV" role="3cqZAp">
           <node concept="2OqwBi" id="7LI_gNMXmVQ" role="3clFbG">
