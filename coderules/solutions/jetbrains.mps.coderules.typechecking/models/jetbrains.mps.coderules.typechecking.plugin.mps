@@ -104,6 +104,7 @@
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
     <import index="ctgy" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.plugins(MPS.IDEA/)" />
     <import index="9ti4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.extensions(MPS.IDEA/)" />
+    <import index="28m1" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.time(JDK/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -4010,6 +4011,124 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="5$$jjURE3p2" role="jymVt" />
+      <node concept="3clFb_" id="5$$jjUREaJX" role="jymVt">
+        <property role="TrG5h" value="getCacheState" />
+        <node concept="3Tm1VV" id="5$$jjUREaJZ" role="1B3o_S" />
+        <node concept="3uibUv" id="5$$jjUREaK1" role="3clF45">
+          <ref role="3uigEE" to="1ka:~CacheState" resolve="CacheState" />
+        </node>
+        <node concept="37vLTG" id="5$$jjUREaK2" role="3clF46">
+          <property role="TrG5h" value="root" />
+          <property role="3TUv4t" value="true" />
+          <node concept="3uibUv" id="5$$jjUREaK3" role="1tU5fm">
+            <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="5$$jjUREaK7" role="3clF47">
+          <node concept="3clFbF" id="5$$jjURF_QH" role="3cqZAp">
+            <node concept="2ShNRf" id="5$$jjURF_QF" role="3clFbG">
+              <node concept="YeOm9" id="5$$jjURGNoR" role="2ShVmc">
+                <node concept="1Y3b0j" id="5$$jjURGNoU" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <property role="373rjd" value="true" />
+                  <ref role="1Y3XeK" to="1ka:~CacheState" resolve="CacheState" />
+                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" />
+                  <node concept="3Tm1VV" id="5$$jjURGNoV" role="1B3o_S" />
+                  <node concept="3clFb_" id="5$$jjURGNp9" role="jymVt">
+                    <property role="TrG5h" value="isUpToDate" />
+                    <node concept="3Tm1VV" id="5$$jjURGNpa" role="1B3o_S" />
+                    <node concept="10P_77" id="5$$jjURGNpc" role="3clF45" />
+                    <node concept="3clFbS" id="5$$jjURGNpg" role="3clF47">
+                      <node concept="3SKdUt" id="5$$jjURKAJw" role="3cqZAp">
+                        <node concept="1PaTwC" id="5$$jjURKAJx" role="1aUNEU">
+                          <node concept="3oM_SD" id="5$$jjURKEDI" role="1PaTwD">
+                            <property role="3oM_SC" value="FIXME" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURKEDK" role="1PaTwD">
+                            <property role="3oM_SC" value="report" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURKEDN" role="1PaTwD">
+                            <property role="3oM_SC" value="the" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURKEDR" role="1PaTwD">
+                            <property role="3oM_SC" value="real" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURKEDW" role="1PaTwD">
+                            <property role="3oM_SC" value="state" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURKEE2" role="1PaTwD">
+                            <property role="3oM_SC" value="of" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURKEE9" role="1PaTwD">
+                            <property role="3oM_SC" value="the" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURKEEh" role="1PaTwD">
+                            <property role="3oM_SC" value="cache" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="5$$jjURKmUX" role="3cqZAp">
+                        <node concept="3clFbT" id="5$$jjURKmUW" role="3clFbG" />
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="5$$jjURGNpi" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" />
+                    </node>
+                  </node>
+                  <node concept="2tJIrI" id="5$$jjURGNpj" role="jymVt" />
+                  <node concept="3clFb_" id="5$$jjURGNpk" role="jymVt">
+                    <property role="TrG5h" value="hasChangedSince" />
+                    <node concept="3Tm1VV" id="5$$jjURGNpl" role="1B3o_S" />
+                    <node concept="10P_77" id="5$$jjURGNpn" role="3clF45" />
+                    <node concept="37vLTG" id="5$$jjURGNpo" role="3clF46">
+                      <property role="TrG5h" value="since" />
+                      <node concept="3uibUv" id="5$$jjURGNpp" role="1tU5fm">
+                        <ref role="3uigEE" to="28m1:~Instant" resolve="Instant" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="5$$jjURGNpv" role="3clF47">
+                      <node concept="3SKdUt" id="5$$jjURI8or" role="3cqZAp">
+                        <node concept="1PaTwC" id="5$$jjURI8os" role="1aUNEU">
+                          <node concept="3oM_SD" id="5$$jjURIfVO" role="1PaTwD">
+                            <property role="3oM_SC" value="FIXME" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURIfVY" role="1PaTwD">
+                            <property role="3oM_SC" value="since" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURIfW1" role="1PaTwD">
+                            <property role="3oM_SC" value="should" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURIfW5" role="1PaTwD">
+                            <property role="3oM_SC" value="not" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURIfWa" role="1PaTwD">
+                            <property role="3oM_SC" value="be" />
+                          </node>
+                          <node concept="3oM_SD" id="5$$jjURIfWg" role="1PaTwD">
+                            <property role="3oM_SC" value="ignored" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="5$$jjURK6GN" role="3cqZAp">
+                        <node concept="3clFbT" id="5$$jjURK6GM" role="3clFbG">
+                          <property role="3clFbU" value="true" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="5$$jjURGNpx" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="5$$jjUREaK8" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" />
+        </node>
+      </node>
       <node concept="2tJIrI" id="2mhJggjDpQU" role="jymVt" />
       <node concept="3clFb_" id="3CzfQ_oh9nz" role="jymVt">
         <property role="TrG5h" value="addTypeAccessListener" />
@@ -4130,7 +4249,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="2tJIrI" id="3CzfQ_ohMKC" role="jymVt" />
+      <node concept="2tJIrI" id="5$$jjURErvi" role="jymVt" />
       <node concept="312cEg" id="3CzfQ_ohqQB" role="jymVt">
         <property role="TrG5h" value="accessListeners" />
         <node concept="3Tm6S6" id="3CzfQ_ohqQC" role="1B3o_S" />
