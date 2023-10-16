@@ -110,7 +110,7 @@
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="232.8660" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>New syntax for macro calls; support for required and optional parameters</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
@@ -2124,7 +2124,7 @@
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="232.8660" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>New syntax for macro calls; support for required and optional parameters</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
@@ -2155,7 +2155,7 @@
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="232.8660" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>New syntax for macro calls; support for required and optional parameters</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
@@ -3763,7 +3763,7 @@
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="232.8660" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>New syntax for macro calls; support for required and optional parameters</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
