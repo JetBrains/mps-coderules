@@ -45,6 +45,7 @@
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.collectionsExt/jetbrains.mps.baseLanguage.collectionsExt.mpl" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.function/jetbrains.mps.baseLanguage.function.mpl" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.javadocExt/jetbrains.mps.baseLanguage.javadocExt.mpl" folder="samples.mpscore.ext.baseLanguage" />
+      <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.methodReferencesExt/jetbrains.mps.baseLanguage.methodReferencesExt.mpl" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.sequence/jetbrains.mps.baseLanguage.sequence.mpl" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.tuplesExt/jetbrains.mps.baseLanguage.tuplesExt.mpl" folder="samples.mpscore.ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" folder="samples.mpscore.ext.baseLanguage" />
