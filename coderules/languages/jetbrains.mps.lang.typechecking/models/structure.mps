@@ -64,7 +64,7 @@
       <ref role="20lvS9" node="7lmP5gALJP$" resolve="TypecheckingQueryTemplate" />
     </node>
     <node concept="1QGGSu" id="5KF1HX_Xb9R" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/tcqueryTable.png" />
+      <property role="1iqoE4" value="${module}/icons/queryTableContribution.svg" />
     </node>
   </node>
   <node concept="1TIwiD" id="7lmP5gALJP$">
@@ -137,7 +137,7 @@
       <ref role="20lvS9" node="6wBZuQUF2vT" resolve="TypeTermTable" />
     </node>
     <node concept="1QGGSu" id="5KF1HX_Xb9P" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/tctermTable.png" />
+      <property role="1iqoE4" value="${module}/icons/termTableContribution.svg" />
     </node>
   </node>
   <node concept="1TIwiD" id="6wBZuQUFd0b">

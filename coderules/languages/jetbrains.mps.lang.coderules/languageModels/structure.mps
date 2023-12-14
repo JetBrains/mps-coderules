@@ -148,7 +148,7 @@
       <property role="t5JxN" value="!! FIXME rename to RuleTable !!" />
     </node>
     <node concept="1QGGSu" id="1PN9XOIUZXY" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/ruleTable.png" />
+      <property role="1iqoE4" value="${module}/icons/ruleTable.svg" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0a3d3">
@@ -468,7 +468,7 @@
       <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="Commentable" />
     </node>
     <node concept="1QGGSu" id="1PN9XOIV34D" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/macroTable.png" />
+      <property role="1iqoE4" value="${module}/icons/macroTable.svg" />
     </node>
   </node>
   <node concept="1TIwiD" id="PB1R3Y7Ed7">
@@ -1585,7 +1585,7 @@
       <property role="t5JxN" value="Contains term declarations." />
     </node>
     <node concept="1QGGSu" id="1PN9XOIUZYd" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/termTable.png" />
+      <property role="1iqoE4" value="${module}/icons/termTable.svg" />
     </node>
   </node>
   <node concept="1TIwiD" id="JOGAOsxiLy">
@@ -1655,7 +1655,7 @@
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="1QGGSu" id="1PN9XOIV34F" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/queryTable.png" />
+      <property role="1iqoE4" value="${module}/icons/queryTable.svg" />
     </node>
   </node>
   <node concept="1TIwiD" id="5EDW3XEaQl5">

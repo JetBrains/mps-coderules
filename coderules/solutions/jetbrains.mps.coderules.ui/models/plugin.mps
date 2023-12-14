@@ -31937,7 +31937,7 @@
                           <property role="373rjd" value="true" />
                           <ref role="37wK5l" to="ze1i:~IconResource.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="IconResource" />
                           <node concept="Xl_RD" id="3IJoaDIRDuv" role="37wK5m">
-                            <property role="Xl_RC" value="ruleTable.png" />
+                            <property role="Xl_RC" value="ruleTable.svg" />
                           </node>
                           <node concept="37vLTw" id="3IJoaDISbcN" role="37wK5m">
                             <ref role="3cqZAo" node="3IJoaDITiei" resolve="ic" />

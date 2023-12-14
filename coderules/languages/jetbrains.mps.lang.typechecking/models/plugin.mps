@@ -55,7 +55,7 @@
       <property role="T9mpE" value="jetbrains.mps.devkit.aspect.types" />
     </node>
     <node concept="1QGGSu" id="1PN9XOIV6mk" role="3vqPLo">
-      <property role="1iqoE4" value="${module}/icons/typesModel.png" />
+      <property role="1iqoE4" value="${module}/icons/typesModel.svg" />
     </node>
   </node>
 </model>
