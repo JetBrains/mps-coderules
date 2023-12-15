@@ -4256,8 +4256,8 @@
                             <property role="2Ry0Am" value="jetbrains.mps.lang.typechecking" />
                             <node concept="2Ry0Ak" id="5KF1HXAa25P" role="2Ry0An">
                               <property role="2Ry0Am" value="icons" />
-                              <node concept="2Ry0Ak" id="5KF1HXAa25U" role="2Ry0An">
-                                <property role="2Ry0Am" value="typesModel.png" />
+                              <node concept="2Ry0Ak" id="7xxJ3oHSkoh" role="2Ry0An">
+                                <property role="2Ry0Am" value="typesModel.svg" />
                               </node>
                             </node>
                           </node>
@@ -4276,8 +4276,8 @@
                             <property role="2Ry0Am" value="jetbrains.mps.lang.typechecking" />
                             <node concept="2Ry0Ak" id="5KF1HXAa261" role="2Ry0An">
                               <property role="2Ry0Am" value="icons" />
-                              <node concept="2Ry0Ak" id="5KF1HXAa27v" role="2Ry0An">
-                                <property role="2Ry0Am" value="typesModel@2x.png" />
+                              <node concept="2Ry0Ak" id="7xxJ3oHSkpr" role="2Ry0An">
+                                <property role="2Ry0Am" value="typesModel_dark.svg" />
                               </node>
                             </node>
                           </node>

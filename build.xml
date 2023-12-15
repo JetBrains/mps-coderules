@@ -3512,8 +3512,8 @@
       <fileset dir="${basedir}/coderules/languages/jetbrains.mps.lang.typechecking" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <zipfileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/icons" prefix="jetbrains/mps/lang/typechecking/structure" />
-      <zipfileset file="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/icons/typesModel.png" prefix="jetbrains/mps/lang/typechecking/plugin" />
-      <zipfileset file="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/icons/typesModel@2x.png" prefix="jetbrains/mps/lang/typechecking/plugin" />
+      <zipfileset file="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/icons/typesModel.svg" prefix="jetbrains/mps/lang/typechecking/plugin" />
+      <zipfileset file="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/icons/typesModel_dark.svg" prefix="jetbrains/mps/lang/typechecking/plugin" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typechecking.jar1" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.typechecking-generator.jar1" />
