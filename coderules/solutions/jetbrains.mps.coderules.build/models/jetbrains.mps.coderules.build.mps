@@ -3694,16 +3694,6 @@
     </node>
     <node concept="55IIr" id="1BDNG5xBZgh" role="auvoZ" />
     <node concept="1l3spV" id="1BDNG5xBZgi" role="1l3spN">
-      <node concept="398223" id="adIlSvwL6D" role="39821P">
-        <node concept="3_J27D" id="adIlSvwL6F" role="Nbhlr">
-          <node concept="3Mxwew" id="adIlSvwLbp" role="3MwsjC">
-            <property role="3MwjfP" value="coderules-ideaplugin" />
-          </node>
-        </node>
-        <node concept="L2wRC" id="adIlSvwLbr" role="39821P">
-          <ref role="L2wRA" node="2CPBoDB0MbE" resolve="jetbrains.mps.coderules.ideaplugin" />
-        </node>
-      </node>
       <node concept="m$_wl" id="2ABzB2CYTYG" role="39821P">
         <ref role="m_rDy" node="7BVjoXzUx67" resolve="jetbrains.mps.coderules" />
         <node concept="398223" id="adIlSvk78L" role="39821P">
@@ -3949,6 +3939,16 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="398223" id="adIlSvwL6D" role="39821P">
+        <node concept="3_J27D" id="adIlSvwL6F" role="Nbhlr">
+          <node concept="3Mxwew" id="adIlSvwLbp" role="3MwsjC">
+            <property role="3MwjfP" value="coderules-ideaplugin" />
+          </node>
+        </node>
+        <node concept="L2wRC" id="adIlSvwLbr" role="39821P">
+          <ref role="L2wRA" node="2CPBoDB0MbE" resolve="jetbrains.mps.coderules.ideaplugin" />
         </node>
       </node>
       <node concept="3981dG" id="65DJywFjdtY" role="39821P">
