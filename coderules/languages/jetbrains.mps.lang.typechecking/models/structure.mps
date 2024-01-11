@@ -16,6 +16,7 @@
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="1805901909778165289" name="newuiFile" index="uyjgh" />
         <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
@@ -64,7 +65,8 @@
       <ref role="20lvS9" node="7lmP5gALJP$" resolve="TypecheckingQueryTemplate" />
     </node>
     <node concept="1QGGSu" id="5KF1HX_Xb9R" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/queryTableContribution.svg" />
+      <property role="1iqoE4" value="${module}/icons/tcqueryTable.png" />
+      <property role="uyjgh" value="${module}/icons/queryTableContribution.svg" />
     </node>
   </node>
   <node concept="1TIwiD" id="7lmP5gALJP$">
@@ -137,7 +139,8 @@
       <ref role="20lvS9" node="6wBZuQUF2vT" resolve="TypeTermTable" />
     </node>
     <node concept="1QGGSu" id="5KF1HX_Xb9P" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/termTableContribution.svg" />
+      <property role="1iqoE4" value="${module}/icons/tctermTable.png" />
+      <property role="uyjgh" value="${module}/icons/termTableContribution.svg" />
     </node>
   </node>
   <node concept="1TIwiD" id="6wBZuQUFd0b">

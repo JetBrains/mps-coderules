@@ -31924,6 +31924,35 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3cpWs8" id="4s7UT5Ryhl2" role="3cqZAp">
+                  <node concept="3cpWsn" id="4s7UT5Ryhl3" role="3cpWs9">
+                    <property role="TrG5h" value="resource" />
+                    <node concept="3uibUv" id="4s7UT5RyhhJ" role="1tU5fm">
+                      <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
+                    </node>
+                    <node concept="2ShNRf" id="4s7UT5Ryhl4" role="33vP2m">
+                      <node concept="1pGfFk" id="4s7UT5Ryhl5" role="2ShVmc">
+                        <property role="373rjd" value="true" />
+                        <ref role="37wK5l" to="ze1i:~IconResource.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="IconResource" />
+                        <node concept="3K4zz7" id="4s7UT5Ryhl6" role="37wK5m">
+                          <node concept="2YIFZM" id="4s7UT5Ryhl7" role="3K4Cdx">
+                            <ref role="37wK5l" to="xnls:~IconLoadingUtil.isNewUIActive()" resolve="isNewUIActive" />
+                            <ref role="1Pybhc" to="xnls:~IconLoadingUtil" resolve="IconLoadingUtil" />
+                          </node>
+                          <node concept="Xl_RD" id="4s7UT5Ryhl8" role="3K4E3e">
+                            <property role="Xl_RC" value="ruleTable.png" />
+                          </node>
+                          <node concept="Xl_RD" id="4s7UT5Ryhl9" role="3K4GZi">
+                            <property role="Xl_RC" value="ruleTable.svg" />
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="4s7UT5Ryhla" role="37wK5m">
+                          <ref role="3cqZAo" node="3IJoaDITiei" resolve="ic" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3cpWs6" id="3IJoaDISNSm" role="3cqZAp">
                   <node concept="2OqwBi" id="3IJoaDIRpyw" role="3cqZAk">
                     <node concept="2YIFZM" id="3IJoaDIRpcA" role="2Oq$k0">
@@ -31932,17 +31961,8 @@
                     </node>
                     <node concept="liA8E" id="3IJoaDIRpG4" role="2OqNvi">
                       <ref role="37wK5l" to="xnls:~BaseIconManager.getIconForResource(jetbrains.mps.smodel.runtime.IconResource)" resolve="getIconForResource" />
-                      <node concept="2ShNRf" id="3IJoaDIRqdK" role="37wK5m">
-                        <node concept="1pGfFk" id="3IJoaDIRDkr" role="2ShVmc">
-                          <property role="373rjd" value="true" />
-                          <ref role="37wK5l" to="ze1i:~IconResource.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="IconResource" />
-                          <node concept="Xl_RD" id="3IJoaDIRDuv" role="37wK5m">
-                            <property role="Xl_RC" value="ruleTable.svg" />
-                          </node>
-                          <node concept="37vLTw" id="3IJoaDISbcN" role="37wK5m">
-                            <ref role="3cqZAo" node="3IJoaDITiei" resolve="ic" />
-                          </node>
-                        </node>
+                      <node concept="37vLTw" id="4s7UT5Ryhlb" role="37wK5m">
+                        <ref role="3cqZAo" node="4s7UT5Ryhl3" resolve="resource" />
                       </node>
                     </node>
                   </node>

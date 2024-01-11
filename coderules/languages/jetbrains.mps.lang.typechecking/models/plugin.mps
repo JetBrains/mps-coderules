@@ -13,6 +13,7 @@
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="1805901909778165289" name="newuiFile" index="uyjgh" />
         <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
@@ -55,7 +56,8 @@
       <property role="T9mpE" value="jetbrains.mps.devkit.aspect.types" />
     </node>
     <node concept="1QGGSu" id="1PN9XOIV6mk" role="3vqPLo">
-      <property role="1iqoE4" value="${module}/icons/typesModel.svg" />
+      <property role="1iqoE4" value="${module}/icons/typesModel.png" />
+      <property role="uyjgh" value="${module}/icons/typesModel.svg" />
     </node>
   </node>
 </model>

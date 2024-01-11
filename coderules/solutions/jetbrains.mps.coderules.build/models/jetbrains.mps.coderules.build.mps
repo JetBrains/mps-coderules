@@ -4245,6 +4245,46 @@
                   </node>
                 </node>
                 <node concept="398223" id="5KF1HXAa1U0" role="39821P">
+                  <node concept="28jJK3" id="4s7UT5Rxhpv" role="39821P">
+                    <node concept="398BVA" id="4s7UT5Rxhpw" role="28jJRO">
+                      <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+                      <node concept="2Ry0Ak" id="4s7UT5Rxhpx" role="iGT6I">
+                        <property role="2Ry0Am" value="coderules" />
+                        <node concept="2Ry0Ak" id="4s7UT5Rxhpy" role="2Ry0An">
+                          <property role="2Ry0Am" value="languages" />
+                          <node concept="2Ry0Ak" id="4s7UT5Rxhpz" role="2Ry0An">
+                            <property role="2Ry0Am" value="jetbrains.mps.lang.typechecking" />
+                            <node concept="2Ry0Ak" id="4s7UT5Rxhp$" role="2Ry0An">
+                              <property role="2Ry0Am" value="icons" />
+                              <node concept="2Ry0Ak" id="5KF1HXAa25U" role="2Ry0An">
+                                <property role="2Ry0Am" value="typesModel.png" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="28jJK3" id="4s7UT5Rxhp_" role="39821P">
+                    <node concept="398BVA" id="4s7UT5RxhpA" role="28jJRO">
+                      <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+                      <node concept="2Ry0Ak" id="4s7UT5RxhpB" role="iGT6I">
+                        <property role="2Ry0Am" value="coderules" />
+                        <node concept="2Ry0Ak" id="4s7UT5RxhpC" role="2Ry0An">
+                          <property role="2Ry0Am" value="languages" />
+                          <node concept="2Ry0Ak" id="4s7UT5RxhpD" role="2Ry0An">
+                            <property role="2Ry0Am" value="jetbrains.mps.lang.typechecking" />
+                            <node concept="2Ry0Ak" id="4s7UT5RxhpE" role="2Ry0An">
+                              <property role="2Ry0Am" value="icons" />
+                              <node concept="2Ry0Ak" id="5KF1HXAa27v" role="2Ry0An">
+                                <property role="2Ry0Am" value="typesModel@2x.png" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="28jJK3" id="5KF1HXAa236" role="39821P">
                     <node concept="398BVA" id="5KF1HXAa24q" role="28jJRO">
                       <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
