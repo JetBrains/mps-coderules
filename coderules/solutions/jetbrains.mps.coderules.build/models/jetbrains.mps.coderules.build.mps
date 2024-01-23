@@ -3856,7 +3856,34 @@
             </node>
           </node>
           <node concept="L2wRC" id="7Ant4WkHLmq" role="39821P">
+            <property role="3PtdQa" value="true" />
             <ref role="L2wRA" node="2CPBoDB0Mtg" resolve="jetbrains.mps.coderules.typechecking" />
+            <node concept="3PtdJl" id="4zmLkhBJoGz" role="3PtcVe">
+              <node concept="398223" id="4zmLkhBJoHH" role="39821P">
+                <node concept="3_J27D" id="4zmLkhBJoHI" role="Nbhlr">
+                  <node concept="3Mxwew" id="4zmLkhBJoHJ" role="3MwsjC">
+                    <property role="3MwjfP" value="jetbrains/mps/coderules/typechecking/plugin" />
+                  </node>
+                </node>
+                <node concept="2HvfSZ" id="4zmLkhBJoHK" role="39821P">
+                  <node concept="398BVA" id="4zmLkhBJoHL" role="2HvfZ0">
+                    <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+                    <node concept="2Ry0Ak" id="4zmLkhBJoHM" role="iGT6I">
+                      <property role="2Ry0Am" value="coderules" />
+                      <node concept="2Ry0Ak" id="4zmLkhBJoHN" role="2Ry0An">
+                        <property role="2Ry0Am" value="solutions" />
+                        <node concept="2Ry0Ak" id="4zmLkhBJoHO" role="2Ry0An">
+                          <property role="2Ry0Am" value="jetbrains.mps.coderules.typechecking" />
+                          <node concept="2Ry0Ak" id="4zmLkhBJoHP" role="2Ry0An">
+                            <property role="2Ry0Am" value="icons" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node concept="L2wRC" id="5pz4PwHqt4r" role="39821P">
             <ref role="L2wRA" node="7mB3viLuogo" resolve="jetbrains.mps.typechecking.testlang" />
@@ -4169,7 +4196,34 @@
               </node>
             </node>
             <node concept="L2wRC" id="65DJywFj_1R" role="39821P">
+              <property role="3PtdQa" value="true" />
               <ref role="L2wRA" node="2CPBoDB0Mtg" resolve="jetbrains.mps.coderules.typechecking" />
+              <node concept="3PtdJl" id="4zmLkhBJhBI" role="3PtcVe">
+                <node concept="398223" id="4zmLkhBJo$N" role="39821P">
+                  <node concept="3_J27D" id="4zmLkhBJo$O" role="Nbhlr">
+                    <node concept="3Mxwew" id="4zmLkhBJo$P" role="3MwsjC">
+                      <property role="3MwjfP" value="jetbrains/mps/coderules/typechecking/plugin" />
+                    </node>
+                  </node>
+                  <node concept="2HvfSZ" id="4zmLkhBJo$Q" role="39821P">
+                    <node concept="398BVA" id="4zmLkhBJo$R" role="2HvfZ0">
+                      <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+                      <node concept="2Ry0Ak" id="4zmLkhBJo$S" role="iGT6I">
+                        <property role="2Ry0Am" value="coderules" />
+                        <node concept="2Ry0Ak" id="4zmLkhBJo$T" role="2Ry0An">
+                          <property role="2Ry0Am" value="solutions" />
+                          <node concept="2Ry0Ak" id="4zmLkhBJo$U" role="2Ry0An">
+                            <property role="2Ry0Am" value="jetbrains.mps.coderules.typechecking" />
+                            <node concept="2Ry0Ak" id="4zmLkhBJo$V" role="2Ry0An">
+                              <property role="2Ry0Am" value="icons" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node concept="L2wRC" id="65DJywFk8Gh" role="39821P">
               <ref role="L2wRA" node="7BVjoXzUxkQ" resolve="jetbrains.mps.logic" />
