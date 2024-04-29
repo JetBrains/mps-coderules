@@ -106,6 +106,7 @@
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
+    <import index="2sud" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.treeStructure(MPS.IDEA/)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -16844,7 +16845,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="6QkkSol9Djm" role="2OqNvi">
-                  <ref role="37wK5l" to="dxuu:~JTree.getExpandedDescendants(javax.swing.tree.TreePath)" resolve="getExpandedDescendants" />
+                  <ref role="37wK5l" to="2sud:~Tree.getExpandedDescendants(javax.swing.tree.TreePath)" resolve="getExpandedDescendants" />
                   <node concept="2ShNRf" id="6QkkSol9Djn" role="37wK5m">
                     <node concept="1pGfFk" id="6QkkSol9Djo" role="2ShVmc">
                       <ref role="37wK5l" to="rgfa:~TreePath.&lt;init&gt;(java.lang.Object)" resolve="TreePath" />
