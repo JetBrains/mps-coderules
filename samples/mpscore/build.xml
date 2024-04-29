@@ -22,6 +22,7 @@
   <property name="mps.teamcity.buildConfName" value="${import.mps.mps.teamcity.buildConfName}" />
   <property name="mps.idea.platform.build.number" value="${import.mps.mps.idea.platform.build.number}" />
   <property name="mps.mps.build.counter" value="${import.mps.mps.mps.build.counter}" />
+  <property name="mps.runtimeBuild" value="${import.mps.mps.runtimeBuild}" />
   <property name="mpsBootstrapCore.version.major" value="${import.mps.mpsBootstrapCore.version.major}" />
   <property name="mpsBootstrapCore.version.minor" value="${import.mps.mpsBootstrapCore.version.minor}" />
   <property name="mpsBootstrapCore.version.bugfixNr" value="${import.mps.mpsBootstrapCore.version.bugfixNr}" />
@@ -89,9 +90,7 @@
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -266,11 +265,9 @@
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -444,9 +441,7 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="c0080a47-7e37-4558-bee9-9ae18e690549(jetbrains.mps.lang.extension)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -621,12 +616,10 @@
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" kind="cl" />
           <module ref="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -802,12 +795,10 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -985,12 +976,10 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" kind="cl" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -1168,11 +1157,9 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" kind="cl" />
         </dependencies>
         <uses>
@@ -1348,9 +1335,7 @@
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="d8f591ec-4d86-4af2-9f92-a9e93c803ffa(jetbrains.mps.lang.scopes)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -1524,11 +1509,9 @@
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -1701,9 +1684,7 @@
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -1883,12 +1864,10 @@
           <module ref="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" kind="cl" />
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="446c26eb-2b7b-4bf0-9b35-f83fa582753e(jetbrains.mps.lang.modelapi)" kind="cl" />
           <module ref="86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -2067,12 +2046,10 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.lang.smodel.query)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="669835db-a6e0-460e-ae6b-5422ce5e823b(jetbrains.mps.lang.typesystemExt)" kind="cl" />
         </dependencies>
         <uses>
@@ -2249,11 +2226,9 @@
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -2429,12 +2404,10 @@
           <module ref="c1f5ad88-21f4-4e0e-927c-48b1ca0c2334(jetbrains.mps.baseLanguage.collectionsExt)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" kind="cl" />
         </dependencies>
         <uses>
@@ -2610,8 +2583,6 @@
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -2789,8 +2760,6 @@
           <module ref="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -2968,8 +2937,6 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" kind="cl" />
         </dependencies>
         <uses>
@@ -3149,8 +3116,6 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -3327,8 +3292,6 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -3501,7 +3464,6 @@
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="cl" />
           <module ref="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" kind="cl" />
           <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" kind="cl" />
@@ -3617,8 +3579,6 @@
           <module ref="6b3888c1-9802-44d8-8baf-f8e6c33ed689(jetbrains.mps.kotlin)" kind="cl" />
           <module ref="ee552a53-f5a7-42c7-b209-42227f41a990(jetbrains.mps.kotlin.baseLanguage.runtime)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -3794,8 +3754,6 @@
           <module ref="acfc188d-d5d6-4598-b370-6f4a983f05b2(jetbrains.mps.baseLanguage.methodReferences)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -3968,9 +3926,7 @@
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -4148,8 +4104,6 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" kind="cl" />
           <module ref="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" kind="cl" />
         </dependencies>
@@ -4335,9 +4289,7 @@
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="cl" />
           <module ref="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" kind="cl" />
           <module ref="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" kind="cl" />
           <module ref="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" kind="cl" />
@@ -4461,8 +4413,6 @@
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -4639,8 +4589,6 @@
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" kind="cl" />
         </dependencies>
         <uses>
@@ -4820,10 +4768,8 @@
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="c4803b19-6d89-4a3b-bf82-390769514add(jetbrains.mps.lang.coderules)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="ad4d7d30-3da5-4d56-8273-c9d815b12234(jetbrains.mps.logicExt)" kind="cl" />
         </dependencies>
         <uses>
@@ -5000,9 +4946,7 @@
           <module ref="c4803b19-6d89-4a3b-bf82-390769514add(jetbrains.mps.lang.coderules)" kind="cl" />
           <module ref="6a5b4bb9-0a56-4618-aa9a-7068c528ce90(jetbrains.mps.lang.coderulesExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -5549,27 +5493,6 @@
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/META-INF" />
-    <echoxml file="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/META-INF/plugin.xml">
-      <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
-        <id>jetbrains.mps.core.types</id>
-        <name>MPS Coderules Core Types</name>
-        <description>Types for core MPS languages with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.7-b${ci.build.num}</version>
-        <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
-        <depends>jetbrains.mps.core</depends>
-        <depends>jetbrains.mps.coderules</depends>
-        <depends>jetbrains.mps.build</depends>
-        <depends>jetbrains.mps.kotlin</depends>
-        <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="232.8660" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
-        
-        <extensions defaultExtensionNs="com.intellij">
-          <mps.LanguageLibrary dir="/languages" />
-        </extensions>
-      </idea-plugin>
-    </echoxml>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/lib" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types.jar/META-INF" />
@@ -5580,6 +5503,7 @@
         <description>Types for core MPS languages with Coderules (experimental)</description>
         <version>${ci.mps.release}-0.9.7-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
+        <depends>com.intellij.modules.platform</depends>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.coderules</depends>
         <depends>jetbrains.mps.build</depends>
@@ -5636,9 +5560,7 @@
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -5813,11 +5735,9 @@
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -5991,9 +5911,7 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="c0080a47-7e37-4558-bee9-9ae18e690549(jetbrains.mps.lang.extension)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -6168,12 +6086,10 @@
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" kind="cl" />
           <module ref="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -6349,12 +6265,10 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -6532,12 +6446,10 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" kind="cl" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -6715,11 +6627,9 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" kind="cl" />
         </dependencies>
         <uses>
@@ -6895,9 +6805,7 @@
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="d8f591ec-4d86-4af2-9f92-a9e93c803ffa(jetbrains.mps.lang.scopes)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -7071,11 +6979,9 @@
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -7248,9 +7154,7 @@
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -7430,12 +7334,10 @@
           <module ref="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" kind="cl" />
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="446c26eb-2b7b-4bf0-9b35-f83fa582753e(jetbrains.mps.lang.modelapi)" kind="cl" />
           <module ref="86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -7614,12 +7516,10 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.lang.smodel.query)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="669835db-a6e0-460e-ae6b-5422ce5e823b(jetbrains.mps.lang.typesystemExt)" kind="cl" />
         </dependencies>
         <uses>
@@ -7796,11 +7696,9 @@
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -7976,12 +7874,10 @@
           <module ref="c1f5ad88-21f4-4e0e-927c-48b1ca0c2334(jetbrains.mps.baseLanguage.collectionsExt)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" kind="cl" />
           <module ref="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" kind="cl" />
         </dependencies>
         <uses>
@@ -8157,8 +8053,6 @@
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -8336,8 +8230,6 @@
           <module ref="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -8515,8 +8407,6 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" kind="cl" />
         </dependencies>
         <uses>
@@ -8696,8 +8586,6 @@
           <module ref="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -8874,8 +8762,6 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -9048,7 +8934,6 @@
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="cl" />
           <module ref="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" kind="cl" />
           <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" kind="cl" />
@@ -9164,8 +9049,6 @@
           <module ref="6b3888c1-9802-44d8-8baf-f8e6c33ed689(jetbrains.mps.kotlin)" kind="cl" />
           <module ref="ee552a53-f5a7-42c7-b209-42227f41a990(jetbrains.mps.kotlin.baseLanguage.runtime)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -9341,8 +9224,6 @@
           <module ref="acfc188d-d5d6-4598-b370-6f4a983f05b2(jetbrains.mps.baseLanguage.methodReferences)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -9515,9 +9396,7 @@
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -9695,8 +9574,6 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" kind="cl" />
           <module ref="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" kind="cl" />
         </dependencies>
@@ -9882,9 +9759,7 @@
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="cl" />
           <module ref="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" kind="cl" />
           <module ref="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" kind="cl" />
           <module ref="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" kind="cl" />
@@ -10008,8 +9883,6 @@
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -10186,8 +10059,6 @@
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" kind="cl" />
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" kind="cl" />
         </dependencies>
         <uses>
@@ -10367,10 +10238,8 @@
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="c4803b19-6d89-4a3b-bf82-390769514add(jetbrains.mps.lang.coderules)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="65e59b42-e7f3-45ec-8692-6c7829780afe(jetbrains.mps.lang.smodelExt)" kind="cl" />
           <module ref="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
           <module ref="ad4d7d30-3da5-4d56-8273-c9d815b12234(jetbrains.mps.logicExt)" kind="cl" />
         </dependencies>
         <uses>
@@ -10547,9 +10416,7 @@
           <module ref="c4803b19-6d89-4a3b-bf82-390769514add(jetbrains.mps.lang.coderules)" kind="cl" />
           <module ref="6a5b4bb9-0a56-4618-aa9a-7068c528ce90(jetbrains.mps.lang.coderulesExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
-          <module ref="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" kind="cl" />
           <module ref="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" kind="cl" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -10688,7 +10555,7 @@
     <zip destfile="${build.layout}/jetbrains.mps.core.types-${ci.mps.release}-0.9-b${ci.build.tag}.zip">
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip" />
     </zip>
-    <echo file="${build.layout}/build.properties">mpscore.ci.build.num=${ci.build.num}${line.separator}mpscore.ci.build.tag=${ci.build.tag}${line.separator}mpscore.ci.mps.release=${ci.mps.release}${line.separator}mpscore.test.jvmargs=${test.jvmargs}${line.separator}mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version.major=${mpsBootstrapCore.version.major}${line.separator}mpsBootstrapCore.version.minor=${mpsBootstrapCore.version.minor}${line.separator}mpsBootstrapCore.version.bugfixNr=${mpsBootstrapCore.version.bugfixNr}${line.separator}mpsBootstrapCore.version.eap=${mpsBootstrapCore.version.eap}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}coderules.ci.build.num=${coderules.ci.build.num}${line.separator}coderules.ci.build.tag=${coderules.ci.build.tag}${line.separator}coderules.ci.mps.release=${coderules.ci.mps.release}${line.separator}coderules.test.jvmargs=${coderules.test.jvmargs}</echo>
+    <echo file="${build.layout}/build.properties">mpscore.ci.build.num=${ci.build.num}${line.separator}mpscore.ci.build.tag=${ci.build.tag}${line.separator}mpscore.ci.mps.release=${ci.mps.release}${line.separator}mpscore.test.jvmargs=${test.jvmargs}${line.separator}mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mps.runtimeBuild=${mps.runtimeBuild}${line.separator}mpsBootstrapCore.version.major=${mpsBootstrapCore.version.major}${line.separator}mpsBootstrapCore.version.minor=${mpsBootstrapCore.version.minor}${line.separator}mpsBootstrapCore.version.bugfixNr=${mpsBootstrapCore.version.bugfixNr}${line.separator}mpsBootstrapCore.version.eap=${mpsBootstrapCore.version.eap}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}coderules.ci.build.num=${coderules.ci.build.num}${line.separator}coderules.ci.build.tag=${coderules.ci.build.tag}${line.separator}coderules.ci.mps.release=${coderules.ci.mps.release}${line.separator}coderules.test.jvmargs=${coderules.test.jvmargs}</echo>
   </target>
   
   <target name="buildDependents" />
@@ -10723,6 +10590,7 @@
       <plugin path="${artifacts.mps}/plugins/mps-build" id="jetbrains.mps.build" />
       <plugin path="${artifacts.mps}/plugins/mps-core" id="jetbrains.mps.core" />
       <plugin path="${artifacts.mps}/plugins/mps-java" id="jetbrains.mps.ide.java" />
+      <plugin path="${artifacts.mps}/plugins/mps-junit5" id="jetbrains.mps.junit5" />
       <plugin path="${artifacts.mps}/plugins/mps-kotlin" id="jetbrains.mps.kotlin" />
       <plugin path="${artifacts.mps}/plugins/mps-make" id="jetbrains.mps.ide.make" />
       <plugin path="${artifacts.mps}/plugins/mps-testing" id="jetbrains.mps.testing" />
@@ -10959,11 +10827,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -10990,6 +10860,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.behaviorExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.behaviorExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.behaviorExt.generator" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.behaviorExt, fetchDependencies">
@@ -11038,11 +10911,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -11056,6 +10931,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.behaviorExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.behaviorExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.constraintsExt" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, fetchDependencies">
@@ -11104,11 +10982,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -11136,6 +11016,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.constraintsExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.constraintsExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.constraintsExt#01" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.constraintsExt, fetchDependencies">
@@ -11184,11 +11067,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -11203,6 +11088,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.constraintsExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.constraintsExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.extensionExt" depends="java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -11251,11 +11139,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -11276,6 +11166,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.extensionExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.extensionExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.extensionExt.generator" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.extensionExt, fetchDependencies">
@@ -11324,11 +11217,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -11342,6 +11237,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.extensionExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.extensionExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.generator.generationContextExt" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, fetchDependencies">
@@ -11390,11 +11288,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -11422,6 +11322,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationContextExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generator.generationContextExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.generator.generationContextExt#01" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.generator.generationContextExt, fetchDependencies">
@@ -11470,11 +11373,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -11489,6 +11394,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationContextExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generator.generationContextExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.generatorExt" depends="java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, fetchDependencies">
@@ -11538,11 +11446,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -11569,6 +11479,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.generatorExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generatorExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.generatorExt#01" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.generatorExt, fetchDependencies">
@@ -11617,11 +11530,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -11635,6 +11550,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.generatorExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generatorExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.patternExt" depends="java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, fetchDependencies">
@@ -11684,11 +11602,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -11716,6 +11636,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.patternExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.patternExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.patternExt.generator" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.patternExt, fetchDependencies">
@@ -11764,11 +11687,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -11783,6 +11708,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.patternExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.patternExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.quotationExt" depends="java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, fetchDependencies">
@@ -11835,11 +11763,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -11868,6 +11798,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.quotationExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.quotationExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.quotationExt#01" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.quotationExt, fetchDependencies">
@@ -11916,11 +11849,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -11934,6 +11869,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.quotationExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.quotationExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.scopesExt" depends="java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -11981,11 +11919,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -12007,6 +11947,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.scopesExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scopesExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.scopesExt.generator" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.scopesExt, fetchDependencies">
@@ -12055,11 +11998,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -12074,6 +12019,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.scopesExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scopesExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.scriptExt" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, fetchDependencies">
@@ -12122,11 +12070,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -12153,6 +12103,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.scriptExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scriptExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.scriptExt.generator" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.scriptExt, fetchDependencies">
@@ -12201,11 +12154,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -12219,6 +12174,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.scriptExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scriptExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.sharedConceptsExt" depends="java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -12266,11 +12224,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -12291,6 +12251,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.sharedConceptsExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.sharedConceptsExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.sharedConceptsExt.generator" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.sharedConceptsExt, fetchDependencies">
@@ -12339,11 +12302,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -12357,6 +12322,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.sharedConceptsExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.sharedConceptsExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.smodelExt" depends="java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -12408,11 +12376,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -12441,6 +12411,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.smodelExt#01" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, fetchDependencies">
@@ -12489,11 +12462,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
@@ -12512,6 +12487,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.smodel.queryExt" depends="java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, java.compile.jetbrains.mps.lang.typesystemExt, fetchDependencies">
@@ -12565,11 +12543,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -12598,6 +12578,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.queryExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.smodel.queryExt.generator" depends="java.compile.jetbrains.mps.lang.smodel.queryExt, fetchDependencies">
@@ -12644,11 +12627,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -12657,6 +12642,9 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.queryExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodel.queryExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.testExt" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, fetchDependencies">
@@ -12705,11 +12693,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -12740,6 +12730,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.testExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.testExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.testExt.generator" depends="java.compile.jetbrains.mps.lang.testExt, fetchDependencies">
@@ -12786,11 +12779,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -12801,6 +12796,9 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.testExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.testExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.typesystemExt" depends="java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, fetchDependencies">
@@ -12853,11 +12851,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -12887,6 +12887,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.typesystemExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typesystemExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.typesystemExt#01" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.typesystemExt, fetchDependencies">
@@ -12935,11 +12938,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -12960,6 +12965,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.typesystemExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typesystemExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.blTypesExt" depends="fetchDependencies">
@@ -13005,11 +13013,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -13028,6 +13038,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypesExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.blTypesExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.blTypesExt#01" depends="java.compile.jetbrains.mps.baseLanguage.blTypesExt, fetchDependencies">
@@ -13074,16 +13087,21 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypesExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.blTypesExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.classifiersExt" depends="java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -13131,11 +13149,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -13157,6 +13177,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.classifiersExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.classifiersExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.classifiersExt.generator" depends="java.compile.jetbrains.mps.baseLanguage.classifiersExt, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -13205,11 +13228,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -13223,6 +13248,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.classifiersExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.classifiersExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.closuresExt" depends="java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -13272,11 +13300,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -13299,6 +13329,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closuresExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.closuresExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.closuresExt#1312156863939371938" depends="java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -13349,11 +13382,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -13367,6 +13402,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closuresExt#1312156863939371938">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.closuresExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.collectionsExt" depends="java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -13417,11 +13455,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -13444,6 +13484,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.collectionsExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.collectionsExt#01" depends="java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -13495,11 +13538,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
@@ -13514,6 +13559,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.collectionsExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.function" depends="java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -13561,11 +13609,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -13587,6 +13637,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.function/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.function#01" depends="java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -13635,11 +13688,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -13652,6 +13707,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.function/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.javadocExt" depends="fetchDependencies">
@@ -13695,11 +13753,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -13733,6 +13793,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.javadocExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.javadocExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.kotlinRefsExt" depends="java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -13780,11 +13843,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-kotlin/languages/kotlin/jetbrains.mps.baseLanguage.kotlinRefs.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -13809,6 +13874,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.kotlinRefsExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.kotlinRefsExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.kotlinRefsExt.generator" depends="java.compile.jetbrains.mps.baseLanguage.kotlinRefsExt, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -13857,11 +13925,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-kotlin/languages/kotlin/jetbrains.mps.baseLanguage.kotlinRefs.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -13875,6 +13945,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.kotlinRefsExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.kotlinRefsExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.methodReferencesExt" depends="java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -13925,11 +13998,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -13951,6 +14026,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.methodReferencesExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.methodReferencesExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.methodReferencesExt.generator" depends="java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.methodReferencesExt, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -14002,11 +14080,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -14021,6 +14101,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.methodReferencesExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.methodReferencesExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.sequence" depends="java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -14068,11 +14151,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -14105,6 +14190,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.sequence/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.sequence#01" depends="java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -14153,11 +14241,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -14170,6 +14260,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.sequence/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.tuplesExt" depends="java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -14217,11 +14310,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -14251,6 +14346,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuplesExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.tuplesExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.tuplesExt#01" depends="java.compile.jetbrains.mps.baseLanguage.tuplesExt, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -14299,11 +14397,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -14317,6 +14417,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuplesExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.tuplesExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguageExt" depends="fetchDependencies">
@@ -14363,11 +14466,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -14411,6 +14516,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguageInternalExt" depends="java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -14458,11 +14566,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -14484,6 +14594,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguageInternalExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageInternalExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguageInternalExt#01" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.baseLanguageInternalExt, fetchDependencies">
@@ -14532,11 +14645,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -14550,6 +14665,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguageInternalExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageInternalExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.logicExt" depends="java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -14597,11 +14715,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
@@ -14623,6 +14743,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.logicExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.logicExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.logicExt#01" depends="java.compile.jetbrains.mps.logicExt, fetchDependencies">
@@ -14669,11 +14792,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -14682,6 +14807,9 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.logicExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.logicExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.coderulesExt" depends="java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, java.compile.jetbrains.mps.logicExt, fetchDependencies">
@@ -14732,11 +14860,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -14765,6 +14895,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.coderulesExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.coderulesExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.coderulesExt#01" depends="java.compile.jetbrains.mps.lang.coderulesExt, fetchDependencies">
@@ -14811,11 +14944,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
@@ -14832,6 +14967,9 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.coderulesExt#01">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.coderulesExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.typecheckingExt" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.coderulesExt, fetchDependencies">
@@ -14880,11 +15018,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.analyzers.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -14917,6 +15057,9 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.typecheckingExt">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typecheckingExt/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.typecheckingExt.generator" depends="java.compile.jetbrains.mps.lang.coderulesExt, java.compile.jetbrains.mps.lang.typecheckingExt, fetchDependencies">
@@ -14964,11 +15107,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
@@ -14989,6 +15134,9 @@
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.logic.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.typecheckingExt.generator">
+      <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typecheckingExt/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.java.modules.cycle.1" depends="java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -15040,11 +15188,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -15080,17 +15230,17 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="apiguardian-api-1.1.2.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="opentest4j-1.2.0.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="apiguardian-api-1.1.2.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="opentest4j-1.2.0.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.testhelper.jar" />
@@ -15148,11 +15298,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -15188,20 +15340,24 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="apiguardian-api-1.1.2.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="opentest4j-1.2.0.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="apiguardian-api-1.1.2.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="opentest4j-1.2.0.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/typechecking.samples.baseLanguage">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/source_gen" excludes="**/*.java" />
+      <fileset dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/test_gen/" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguageExt.test" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.java.modules.cycle.1, fetchDependencies">
@@ -15253,11 +15409,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -15293,20 +15451,24 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="apiguardian-api-1.1.2.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="opentest4j-1.2.0.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="apiguardian-api-1.1.2.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="opentest4j-1.2.0.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt.test">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/source_gen" excludes="**/*.java" />
+      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/test_gen/" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.closuresExt.test" depends="java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -15362,11 +15524,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -15394,19 +15558,23 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="apiguardian-api-1.1.2.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="opentest4j-1.2.0.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="apiguardian-api-1.1.2.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="opentest4j-1.2.0.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closuresExt.test">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.closuresExt.test/source_gen" excludes="**/*.java" />
+      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.closuresExt.test/test_gen/" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.collectionsExt.test" depends="java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -15462,11 +15630,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -15495,19 +15665,23 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="apiguardian-api-1.1.2.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="opentest4j-1.2.0.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="apiguardian-api-1.1.2.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="opentest4j-1.2.0.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt.test">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.collectionsExt.test/source_gen" excludes="**/*.java" />
+      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.collectionsExt.test/test_gen/" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.tuplesExt.test" depends="java.compile.jetbrains.mps.baseLanguage.tuplesExt, java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
@@ -15560,11 +15734,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -15591,19 +15767,23 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="apiguardian-api-1.1.2.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="opentest4j-1.2.0.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="apiguardian-api-1.1.2.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="opentest4j-1.2.0.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuplesExt.test">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.tuplesExt.test/source_gen" excludes="**/*.java" />
+      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.tuplesExt.test/test_gen/" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.smodelExt.test" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, fetchDependencies">
@@ -15656,11 +15836,13 @@
         <fileset file="${artifacts.mps}/lib/util_rt.jar" />
         <fileset file="${artifacts.mps}/lib/util-8.jar" />
         <fileset file="${artifacts.mps}/lib/forms_rt.jar" />
+        <fileset file="${artifacts.mps}/lib/java-frontback.jar" />
         <fileset file="${artifacts.mps}/lib/java-impl.jar" />
         <fileset file="${artifacts.mps}/lib/jps-model.jar" />
         <fileset file="${artifacts.mps}/lib/testFramework.jar" />
         <fileset file="${artifacts.mps}/lib/stats.jar" />
         <fileset file="${artifacts.mps}/lib/platform-loader.jar" />
+        <fileset file="${artifacts.mps}/lib/trove.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -15696,19 +15878,23 @@
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/jetbrains.mps.coderules/lib" includes="conreactor-core-0.9.17.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="apiguardian-api-1.1.2.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="opentest4j-1.2.0.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
-        <fileset dir="${artifacts.mps}/plugins/mps-testing/languages/junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="apiguardian-api-1.1.2.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-api-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-migrationsupport-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-jupiter-params-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-commons-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-engine-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-launcher-1.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-vintage-engine-5.9.3.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="opentest4j-1.2.0.jar" />
+        <fileset dir="${artifacts.mps}/plugins/mps-junit5/lib" includes="junit-platform-reporting-1.9.3.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt.test">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.lang.smodelExt/source_gen" excludes="**/*.java" />
+      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.lang.smodelExt/test_gen/" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="test.testconfig" depends="assemble">
@@ -15721,6 +15907,7 @@
       <pathelement location="${build.layout}/deploy/jetbrains.mps.lang.smodelExt.test.jar" />
     </path>
     <pathconvert property="mps.tests.path.string" refid="mps.tests.path" />
+    <property name="build.jna.library.path" location="${artifacts.mps}/lib/jna" />
     <launchtests fork="true" haltonfailure="true" mpshome="${artifacts.mps}" reports="${build.tmp}">      
       <jvmargs>
         <arg value="-ea" />
@@ -15733,7 +15920,7 @@
         <arg value="-Didea.config.path=${build.mps.config.path}" />
         <arg value="-Didea.system.path=${build.mps.system.path}" />
         <arg value="-Dintellij.platform.load.app.info.from.resources=true" />
-        <arg value="-Djna.boot.library.path=${artifacts.mps}/lib/jna" />
+        <arg value="-Djna.boot.library.path=${build.jna.library.path}" />
       </jvmargs>
       
       
@@ -15868,6 +16055,7 @@
       <plugin id="jetbrains.mps.build" path="${artifacts.mps}/plugins/mps-build" />
       <plugin id="jetbrains.mps.core" path="${artifacts.mps}/plugins/mps-core" />
       <plugin id="jetbrains.mps.ide.java" path="${artifacts.mps}/plugins/mps-java" />
+      <plugin id="jetbrains.mps.junit5" path="${artifacts.mps}/plugins/mps-junit5" />
       <plugin id="jetbrains.mps.kotlin" path="${artifacts.mps}/plugins/mps-kotlin" />
       <plugin id="jetbrains.mps.ide.make" path="${artifacts.mps}/plugins/mps-make" />
       <plugin id="jetbrains.mps.testing" path="${artifacts.mps}/plugins/mps-testing" />
