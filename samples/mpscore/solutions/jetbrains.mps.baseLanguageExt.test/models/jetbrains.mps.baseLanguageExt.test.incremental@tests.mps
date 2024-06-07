@@ -39,9 +39,6 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
-      <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
-        <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
-      </concept>
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
         <property id="2616911529524314943" name="accessMode" index="3DII0k" />
         <child id="1216993439383" name="methods" index="1qtyYc" />
@@ -2211,9 +2208,6 @@
         </node>
       </node>
     </node>
-  </node>
-  <node concept="2XOHcx" id="6gZak$ALGJE">
-    <property role="2XOHcw" value="${mpscore_home}" />
   </node>
   <node concept="312cEu" id="tc9pc3z7a_">
     <property role="TrG5h" value="ArgumentsCollector" />

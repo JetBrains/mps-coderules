@@ -50,9 +50,6 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
-      <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
-        <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
-      </concept>
       <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -295,9 +292,6 @@
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
     </language>
   </registry>
-  <node concept="2XOHcx" id="7t5VLKGQVAO">
-    <property role="2XOHcw" value="${coderules_home}" />
-  </node>
   <node concept="3s_ewN" id="1Lr58WFTBt2">
     <property role="3s_ewP" value="CheckProjectModules" />
     <node concept="3Tm1VV" id="1Lr58WFTBt3" role="1B3o_S" />

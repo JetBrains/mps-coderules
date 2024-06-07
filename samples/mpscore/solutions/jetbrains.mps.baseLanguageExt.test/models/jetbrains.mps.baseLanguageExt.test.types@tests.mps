@@ -45,9 +45,6 @@
         <child id="1211979305365" name="before" index="JA92f" />
         <child id="1211979322383" name="after" index="JAdkl" />
       </concept>
-      <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
-        <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
-      </concept>
       <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1225469856668" name="jetbrains.mps.lang.test.structure.ModelExpression" flags="nn" index="1jGwE1" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
@@ -397,9 +394,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="2XOHcx" id="7t5VLKGQVAO">
-    <property role="2XOHcw" value="${mpscore_home}" />
-  </node>
   <node concept="1lH9Xt" id="4pwDyRC1qTi">
     <property role="TrG5h" value="Typechecking" />
     <property role="3DII0k" value="2hh8MJdVwqX/command" />

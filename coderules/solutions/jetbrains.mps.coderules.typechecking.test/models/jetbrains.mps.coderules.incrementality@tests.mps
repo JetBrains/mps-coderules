@@ -37,9 +37,6 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
-      <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
-        <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
-      </concept>
       <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
         <property id="2616911529524314943" name="accessMode" index="3DII0k" />
@@ -366,9 +363,6 @@
       <concept id="965748826975413063" name="jetbrains.mps.lang.coderules.structure.RulePartParameterDeclaration" flags="ng" index="3NuqgR" />
     </language>
   </registry>
-  <node concept="2XOHcx" id="tyIfzBA53c">
-    <property role="2XOHcw" value="${coderules_home}" />
-  </node>
   <node concept="1lH9Xt" id="7qe1GumASGN">
     <property role="TrG5h" value="VarModificationCheckerUtil" />
     <property role="3DII0k" value="2hh8MJdVwqX/command" />
