@@ -4258,7 +4258,9 @@
         <node concept="aZer4" id="3lXUvG02$HO" role="3XD1gS">
           <property role="TrG5h" value="Concept" />
         </node>
-        <node concept="32pEOW" id="3lXUvG02_Di" role="3vLBG7" />
+        <node concept="3Tqbb2" id="4WeLqVwLJOs" role="3vLBG7">
+          <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+        </node>
       </node>
       <node concept="1QfGHm" id="3swcsd2R92e" role="1Q0WFY">
         <property role="TrG5h" value="substitution" />
