@@ -49,10 +49,6 @@ public interface MutableLogical<T> extends Logical<T> {
      */
     void setValue(T newValue);
 
-    void incUsagesCount(LogicalOwner logicalOwner);
-
-    int usagesCount();
-
     interface ValueReconciler<T> {
 
         void reconcile(T valueA, T valueB);

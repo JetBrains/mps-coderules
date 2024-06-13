@@ -141,9 +141,6 @@ internal class LogicalImpl<T> : MutableLogical<T> {
             reconciler.reconcile(thisVal, otherVal)
         }
 
-        // copy usages
-        thisRepr.usagesCount += otherRepr.usagesCount
-
         // save other observers
         val otherObservers = ArrayList(otherRepr.parentObservers)
         mergeParentObservers(thisRepr, otherRepr)
@@ -169,14 +166,6 @@ internal class LogicalImpl<T> : MutableLogical<T> {
         find().parentObservers.remove(this to observer)
     }
 
-    override fun incUsagesCount(logicalOwner: LogicalOwner?) {
-        incUsages()
-    }
-
-    override fun usagesCount(): Int {
-        return usagesCount
-    }
-
     private fun find(): LogicalImpl<T> {
         val tmp = _parent
         if (tmp == null) return this
@@ -191,10 +180,6 @@ internal class LogicalImpl<T> : MutableLogical<T> {
 
     private fun incRank() {
         rank++
-    }
-
-    private fun incUsages() {
-        usagesCount++
     }
 
     private fun mergeParentObservers(thisRepr: LogicalImpl<T>, otherRepr: LogicalImpl<T>) {
