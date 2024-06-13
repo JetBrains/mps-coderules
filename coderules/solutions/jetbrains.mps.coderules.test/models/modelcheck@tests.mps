@@ -46,6 +46,7 @@
     <import index="rbkg" ref="63b449db-0918-4a4a-a891-2c430ab133e4/java:org.junit.jupiter.api.extension(org.junit.junit5/)" />
     <import index="yqm7" ref="63b449db-0918-4a4a-a891-2c430ab133e4/java:org.junit.jupiter.api(org.junit.junit5/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
+    <import index="u3gh" ref="r:38f1070b-d1ae-4036-84ce-ffb866741b84(jetbrains.mps.workbench.progress)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -177,7 +178,6 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
-      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ngI" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -301,31 +301,6 @@
         <node concept="3cqZAl" id="1Lr58WFTHgl" role="3clF45" />
         <node concept="3Tm1VV" id="1Lr58WFTHgm" role="1B3o_S" />
         <node concept="3clFbS" id="1Lr58WFTHgn" role="3clF47">
-          <node concept="3clFbF" id="RoBEH16bjs" role="3cqZAp">
-            <node concept="2YIFZM" id="RoBEH16e3Q" role="3clFbG">
-              <ref role="37wK5l" to="yqm7:~Assumptions.assumeTrue(java.util.function.BooleanSupplier,java.lang.String)" resolve="assumeTrue" />
-              <ref role="1Pybhc" to="yqm7:~Assumptions" resolve="Assumptions" />
-              <node concept="1bVj0M" id="RoBEH16e3R" role="37wK5m">
-                <node concept="3clFbS" id="RoBEH16e3S" role="1bW5cS">
-                  <node concept="3clFbF" id="RoBEH16e3T" role="3cqZAp">
-                    <node concept="3y3z36" id="4ldrYjLWab8" role="3clFbG">
-                      <node concept="2YIFZM" id="RoBEH16e3W" role="3uHU7B">
-                        <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                        <ref role="37wK5l" to="wyt6:~System.getenv(java.lang.String)" resolve="getenv" />
-                        <node concept="Xl_RD" id="RoBEH16e3X" role="37wK5m">
-                          <property role="Xl_RC" value="TEAMCITY_VERSION" />
-                        </node>
-                      </node>
-                      <node concept="10Nm6u" id="RoBEH16e3V" role="3uHU7w" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="Xl_RD" id="RoBEH16e3Y" role="37wK5m">
-                <property role="Xl_RC" value="Test is disabled in non-CI enviroment" />
-              </node>
-            </node>
-          </node>
           <node concept="3SKdUt" id="2$QckrE8z3$" role="3cqZAp">
             <node concept="1PaTwC" id="2$QckrE8z3_" role="1aUNEU">
               <node concept="3oM_SD" id="2$QckrE8zag" role="1PaTwD">
@@ -339,22 +314,6 @@
               </node>
               <node concept="3oM_SD" id="2$QckrE8zap" role="1PaTwD">
                 <property role="3oM_SC" value="test" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="2$QckrE8xot" role="3cqZAp">
-            <node concept="2YIFZM" id="2$QckrE8xou" role="3clFbG">
-              <ref role="37wK5l" to="yqm7:~Assumptions.assumeTrue(java.util.function.BooleanSupplier,java.lang.String)" resolve="assumeTrue" />
-              <ref role="1Pybhc" to="yqm7:~Assumptions" resolve="Assumptions" />
-              <node concept="1bVj0M" id="2$QckrE8xov" role="37wK5m">
-                <node concept="3clFbS" id="2$QckrE8xow" role="1bW5cS">
-                  <node concept="3clFbF" id="2$QckrE8y9P" role="3cqZAp">
-                    <node concept="3clFbT" id="2$QckrE8y9O" role="3clFbG" />
-                  </node>
-                </node>
-              </node>
-              <node concept="Xl_RD" id="2$QckrE8xoA" role="37wK5m">
-                <property role="Xl_RC" value="Test is disabled until problems are fixed" />
               </node>
             </node>
           </node>
@@ -391,28 +350,35 @@
       <node concept="2ShNRf" id="4dqLDEZ0gCn" role="33vP2m">
         <node concept="1pGfFk" id="4dqLDEZ0gzP" role="2ShVmc">
           <ref role="37wK5l" to="tp6m:4dqLDEYYHvm" resolve="TestParametersCacheExtension" />
-          <node concept="2ShNRf" id="4dqLDEZ0kEy" role="37wK5m">
-            <node concept="1pGfFk" id="4dqLDEZ0kEz" role="2ShVmc">
-              <ref role="37wK5l" to="tp6m:5LbRjS1nRFZ" resolve="TestParametersCache" />
-              <node concept="3VsKOn" id="RoBEH15OOs" role="37wK5m">
-                <ref role="3VsUkX" node="1Lr58WFTBt2" resolve="CheckProjectModules_Test" />
+          <node concept="2OqwBi" id="2r1jTXKMkek" role="37wK5m">
+            <node concept="2OqwBi" id="2r1jTXKMa11" role="2Oq$k0">
+              <node concept="2ShNRf" id="2r1jTXKM21x" role="2Oq$k0">
+                <node concept="1pGfFk" id="2r1jTXKM93d" role="2ShVmc">
+                  <property role="373rjd" value="true" />
+                  <ref role="37wK5l" to="tp6m:6US8dKoOF6n" resolve="TestParametersCacheBuilder" />
+                  <node concept="3VsKOn" id="2r1jTXKM98F" role="37wK5m">
+                    <ref role="3VsUkX" node="1Lr58WFTBt2" resolve="CheckProjectModules_Test" />
+                  </node>
+                </node>
               </node>
-              <node concept="Xl_RD" id="RoBEH15OYy" role="37wK5m">
-                <property role="Xl_RC" value="${coderules_home}" />
-              </node>
-              <node concept="2YIFZM" id="RoBEH15OYz" role="37wK5m">
-                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
-                <node concept="1Xw6AR" id="RoBEH15OY$" role="37wK5m">
-                  <node concept="1dCxOl" id="RoBEH15OY_" role="1XwpL7">
-                    <property role="1XweGQ" value="r:cc1a7719-27fc-407d-bcc3-f0a29456923e" />
-                    <node concept="1j_P7g" id="RoBEH15OYA" role="1j$8Uc">
-                      <property role="1j_P7h" value="jetbrains.mps.coderules.test.modelcheck@tests" />
+              <node concept="liA8E" id="2r1jTXKMcF_" role="2OqNvi">
+                <ref role="37wK5l" to="tp6m:6US8dKoOs$1" resolve="modelRef" />
+                <node concept="2YIFZM" id="2r1jTXKMcMi" role="37wK5m">
+                  <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                  <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
+                  <node concept="1Xw6AR" id="2r1jTXKMcMj" role="37wK5m">
+                    <node concept="1dCxOl" id="2r1jTXKMcMk" role="1XwpL7">
+                      <property role="1XweGQ" value="r:cc1a7719-27fc-407d-bcc3-f0a29456923e" />
+                      <node concept="1j_P7g" id="2r1jTXKMcMl" role="1j$8Uc">
+                        <property role="1j_P7h" value="jetbrains.mps.coderules.test.modelcheck@tests" />
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="3clFbT" id="RoBEH15OYB" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="2r1jTXKMldy" role="2OqNvi">
+              <ref role="37wK5l" to="tp6m:6US8dKoNyEp" resolve="build" />
             </node>
           </node>
         </node>
@@ -493,7 +459,10 @@
               </node>
               <node concept="2ShNRf" id="4ldrYjMDKeZ" role="HW$Y0">
                 <node concept="1pGfFk" id="4ldrYjMDKf0" role="2ShVmc">
-                  <ref role="37wK5l" to="wsw7:6qi2OtU3tVc" resolve="TargetConceptChecker" />
+                  <ref role="37wK5l" to="k2t0:~TargetConceptChecker2.&lt;init&gt;(jetbrains.mps.components.ComponentHost)" resolve="TargetConceptChecker2" />
+                  <node concept="37vLTw" id="2r1jTXLyvrT" role="37wK5m">
+                    <ref role="3cqZAo" node="4ldrYjMDM1P" resolve="host" />
+                  </node>
                 </node>
               </node>
               <node concept="2ShNRf" id="4ldrYjMDKf1" role="HW$Y0">
@@ -732,16 +701,27 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="2Gpval" id="1Lr58WFTIHf" role="3cqZAp">
-                    <node concept="15s5l7" id="59P$gGfuucy" role="lGtFl">
+                  <node concept="3cpWs8" id="2r1jTXL$IJx" role="3cqZAp">
+                    <node concept="15s5l7" id="2r1jTXL$KVU" role="lGtFl">
                       <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;constraints (cannot be child)&quot;;FLAVOUR_MESSAGE=&quot;There is no MPS 'project' in this kind of ITestable node&quot;;FLAVOUR_RULE_ID=&quot;[r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)/7896212496293420315]&quot;;" />
                       <property role="huDt6" value="There is no MPS 'project' in this kind of ITestable node" />
                     </node>
+                    <node concept="3cpWsn" id="2r1jTXL$IJy" role="3cpWs9">
+                      <property role="TrG5h" value="mpsProject" />
+                      <node concept="3uibUv" id="2r1jTXL$kUr" role="1tU5fm">
+                        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+                      </node>
+                      <node concept="1jxXqW" id="2r1jTXL$IJz" role="33vP2m" />
+                    </node>
+                  </node>
+                  <node concept="2Gpval" id="1Lr58WFTIHf" role="3cqZAp">
                     <node concept="2GrKxI" id="1Lr58WFTIHg" role="2Gsz3X">
                       <property role="TrG5h" value="m" />
                     </node>
                     <node concept="2OqwBi" id="1Lr58WFTIHh" role="2GsD0m">
-                      <node concept="1jxXqW" id="1Lr58WFTIHi" role="2Oq$k0" />
+                      <node concept="37vLTw" id="2r1jTXL$IJ$" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2r1jTXL$IJy" resolve="project" />
+                      </node>
                       <node concept="liA8E" id="1Lr58WFTIHj" role="2OqNvi">
                         <ref role="37wK5l" to="z1c3:~IProject.getProjectModules()" resolve="getProjectModules" />
                       </node>
@@ -828,16 +808,23 @@
                     </node>
                   </node>
                   <node concept="3clFbF" id="1Lr58WFTIH_" role="3cqZAp">
-                    <node concept="15s5l7" id="59P$gGfuuSP" role="lGtFl">
-                      <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;constraints (cannot be child)&quot;;FLAVOUR_MESSAGE=&quot;There is no MPS 'project' in this kind of ITestable node&quot;;FLAVOUR_RULE_ID=&quot;[r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)/7896212496293420315]&quot;;" />
-                      <property role="huDt6" value="There is no MPS 'project' in this kind of ITestable node" />
-                    </node>
                     <node concept="2OqwBi" id="1Lr58WFTIHA" role="3clFbG">
                       <node concept="2OqwBi" id="1Lr58WFTIHB" role="2Oq$k0">
                         <node concept="2ShNRf" id="1Lr58WFTIHC" role="2Oq$k0">
                           <node concept="1pGfFk" id="1Lr58WFTIHD" role="2ShVmc">
-                            <ref role="37wK5l" to="wsw7:6bXa3O$ak8k" resolve="ModelCheckerBuilder" />
-                            <node concept="3clFbT" id="1Lr58WFTIHE" role="37wK5m" />
+                            <ref role="37wK5l" to="wsw7:6nj_ILmBNrL" resolve="ModelCheckerBuilder" />
+                            <node concept="2OqwBi" id="2r1jTXLz8XI" role="37wK5m">
+                              <node concept="2ShNRf" id="2r1jTXLyWT9" role="2Oq$k0">
+                                <node concept="1pGfFk" id="2r1jTXLz4QP" role="2ShVmc">
+                                  <property role="373rjd" value="true" />
+                                  <ref role="37wK5l" to="wsw7:6pnunaLnyyn" resolve="ModelCheckerBuilder.ModelsExtractorImpl" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="2r1jTXLzd4h" role="2OqNvi">
+                                <ref role="37wK5l" to="wsw7:34euvBSCGJN" resolve="includeStubs" />
+                                <node concept="3clFbT" id="2r1jTXLzgGl" role="37wK5m" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="1Lr58WFTIHF" role="2OqNvi">
@@ -853,7 +840,9 @@
                           <ref role="3cqZAo" node="1Lr58WFTIHb" resolve="itemsToCheck" />
                         </node>
                         <node concept="2OqwBi" id="1Lr58WFTIHJ" role="37wK5m">
-                          <node concept="1jxXqW" id="1Lr58WFTIHK" role="2Oq$k0" />
+                          <node concept="37vLTw" id="2r1jTXL$IJ_" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2r1jTXL$IJy" resolve="project" />
+                          </node>
                           <node concept="liA8E" id="1Lr58WFTIHL" role="2OqNvi">
                             <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                           </node>
