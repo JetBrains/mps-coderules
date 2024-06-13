@@ -154,10 +154,6 @@ internal class EvaluationSessionImpl private constructor (
             return this
         }
 
-        override fun withIncrSpec(ispec: IncrementalSpec): EvaluationSession.Config {
-            return this
-        }
-
         override fun <T> withParameter(key: ParameterKey<T>, value: T): EvaluationSession.Config {
             this.parameters.put(key, value as Any)
             return this

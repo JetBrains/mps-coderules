@@ -17,7 +17,6 @@
 package jetbrains.mps.logic.reactor.evaluation;
 
 
-import jetbrains.mps.logic.reactor.program.IncrementalSpec;
 import jetbrains.mps.logic.reactor.program.Program;
 import jetbrains.mps.logic.reactor.util.Profiler;
 
@@ -83,9 +82,6 @@ public abstract class EvaluationSession {
         public Config withSessionToken(SessionToken token) { return this; }
 
         public Config withProfiler(Profiler profiler) { return this; }
-
-        @Deprecated(forRemoval = true)
-        public Config withIncrSpec(IncrementalSpec ispec) { return this; }
 
         public abstract EvaluationResult start(Supervisor supervisor);
 
