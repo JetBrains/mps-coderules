@@ -51,7 +51,6 @@
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
-    <import index="z9ve" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core.internal(jetbrains.mps.logic.reactor/)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
@@ -7697,15 +7696,13 @@
                   <node concept="37vLTw" id="1C_jAsqzYdJ" role="37wK5m">
                     <ref role="3cqZAo" node="1z4$59iqHlx" resolve="targetConcept" />
                   </node>
-                  <node concept="2ShNRf" id="1C_jAsqzYdK" role="37wK5m">
-                    <node concept="1pGfFk" id="1C_jAsqzYdL" role="2ShVmc">
-                      <property role="373rjd" value="true" />
-                      <ref role="37wK5l" to="z9ve:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
-                      <node concept="3Tqbb2" id="1C_jAsqzYdM" role="1pMfVU" />
-                      <node concept="Xl_RD" id="1C_jAsqzYdN" role="37wK5m">
-                        <property role="Xl_RC" value="CoerceResult" />
-                      </node>
+                  <node concept="2YIFZM" id="4WeLqVvgVbK" role="37wK5m">
+                    <ref role="37wK5l" to="bj13:~LogicalKt.newLogical(java.lang.String)" resolve="newLogical" />
+                    <ref role="1Pybhc" to="bj13:~LogicalKt" resolve="LogicalKt" />
+                    <node concept="Xl_RD" id="4pwDyRBsi7v" role="37wK5m">
+                      <property role="Xl_RC" value="CoerceResult" />
                     </node>
+                    <node concept="3Tqbb2" id="4WeLqVvh8ra" role="3PaCim" />
                   </node>
                 </node>
               </node>
@@ -7770,15 +7767,13 @@
                   <node concept="37vLTw" id="1C_jAsq$6uG" role="37wK5m">
                     <ref role="3cqZAo" node="1RYTbd7MH$F" resolve="target" />
                   </node>
-                  <node concept="2ShNRf" id="1C_jAsq$6uH" role="37wK5m">
-                    <node concept="1pGfFk" id="1C_jAsq$6uI" role="2ShVmc">
-                      <property role="373rjd" value="true" />
-                      <ref role="37wK5l" to="z9ve:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
-                      <node concept="3Tqbb2" id="1C_jAsq$6uJ" role="1pMfVU" />
-                      <node concept="Xl_RD" id="1C_jAsq$6uK" role="37wK5m">
-                        <property role="Xl_RC" value="CoerceResult" />
-                      </node>
+                  <node concept="2YIFZM" id="4WeLqVvhVrF" role="37wK5m">
+                    <ref role="37wK5l" to="bj13:~LogicalKt.newLogical(java.lang.String)" resolve="newLogical" />
+                    <ref role="1Pybhc" to="bj13:~LogicalKt" resolve="LogicalKt" />
+                    <node concept="Xl_RD" id="4WeLqVvhVrG" role="37wK5m">
+                      <property role="Xl_RC" value="CoerceResult" />
                     </node>
+                    <node concept="3Tqbb2" id="4WeLqVvhVrH" role="3PaCim" />
                   </node>
                 </node>
               </node>

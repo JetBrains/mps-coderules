@@ -36,7 +36,6 @@
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
-    <import index="z9ve" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core.internal(jetbrains.mps.logic.reactor/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
@@ -695,8 +694,8 @@
               <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
               <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2YIFZM" id="YbzkzLdcYi" role="37wK5m">
-                <ref role="37wK5l" to="z9ve:~LogicalImplKt.namedLogical(java.lang.String)" resolve="namedLogical" />
-                <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+                <ref role="37wK5l" to="bj13:~LogicalKt.namedLogical(java.lang.String)" resolve="namedLogical" />
+                <ref role="1Pybhc" to="bj13:~LogicalKt" resolve="LogicalKt" />
                 <node concept="37vLTw" id="YbzkzLdgPX" role="37wK5m">
                   <ref role="3cqZAo" node="6N2bvv_ux$t" resolve="name" />
                 </node>

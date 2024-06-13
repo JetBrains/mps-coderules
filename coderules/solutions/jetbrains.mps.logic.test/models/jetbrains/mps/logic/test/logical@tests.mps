@@ -16,7 +16,6 @@
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
-    <import index="z9ve" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core.internal(jetbrains.mps.logic.reactor/)" />
     <import index="jpi6" ref="r:4c913df4-f2d5-43f7-af56-6bccd35aeb11(jetbrains.mps.lang.coderules.terms)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
@@ -2032,8 +2031,8 @@
       <node concept="3clFbS" id="2DKqMqOqk7o" role="3clF47">
         <node concept="3clFbF" id="YbzkzLjwMU" role="3cqZAp">
           <node concept="2YIFZM" id="YbzkzLjwMV" role="3clFbG">
-            <ref role="37wK5l" to="z9ve:~LogicalImplKt.anonLogical(java.lang.Object)" resolve="anonLogical" />
-            <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+            <ref role="37wK5l" to="bj13:~LogicalKt.anonLogical(java.lang.Object)" resolve="anonLogical" />
+            <ref role="1Pybhc" to="bj13:~LogicalKt" resolve="LogicalKt" />
             <node concept="10QFUN" id="YbzkzLjzs_" role="37wK5m">
               <node concept="3uibUv" id="YbzkzLjzsA" role="10QFUM">
                 <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
@@ -2075,8 +2074,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="YbzkzLjZPT" role="33vP2m">
-              <ref role="37wK5l" to="z9ve:~LogicalImplKt.namedLogical(java.lang.String)" resolve="namedLogical" />
-              <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+              <ref role="37wK5l" to="bj13:~LogicalKt.namedLogical(java.lang.String)" resolve="namedLogical" />
+              <ref role="1Pybhc" to="bj13:~LogicalKt" resolve="LogicalKt" />
               <node concept="37vLTw" id="YbzkzLjZPU" role="37wK5m">
                 <ref role="3cqZAo" node="2DKqMqOq_P$" resolve="name" />
               </node>
@@ -2564,8 +2563,8 @@
       <node concept="3clFbS" id="6yEjedm6G_T" role="3clF47">
         <node concept="3clFbF" id="YbzkzLfoao" role="3cqZAp">
           <node concept="2YIFZM" id="YbzkzLjlXO" role="3clFbG">
-            <ref role="37wK5l" to="z9ve:~LogicalImplKt.anonLogical(java.lang.Object)" resolve="anonLogical" />
-            <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+            <ref role="37wK5l" to="bj13:~LogicalKt.anonLogical(java.lang.Object)" resolve="anonLogical" />
+            <ref role="1Pybhc" to="bj13:~LogicalKt" resolve="LogicalKt" />
             <node concept="37vLTw" id="YbzkzLjlXP" role="37wK5m">
               <ref role="3cqZAo" node="6yEjedm6GJE" resolve="tf" />
             </node>

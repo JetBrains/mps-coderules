@@ -40,7 +40,6 @@
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)" />
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
-    <import index="z9ve" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core.internal(jetbrains.mps.logic.reactor/)" />
     <import index="tp5g" ref="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <import index="ggp6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.pattern.util(MPS.Core/)" />
   </imports>
@@ -191,11 +190,10 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ngI" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
+        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
-        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
-      </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
@@ -6356,14 +6354,13 @@
                 <ref role="2Oxat5" node="3j46jeGWT2_" resolve="coerceResult" />
               </node>
             </node>
-            <node concept="2ShNRf" id="4pwDyRBsdya" role="37vLTx">
-              <node concept="1pGfFk" id="4pwDyRBsdyb" role="2ShVmc">
-                <ref role="37wK5l" to="z9ve:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
-                <node concept="3Tqbb2" id="4pwDyRBshWN" role="1pMfVU" />
-                <node concept="Xl_RD" id="4pwDyRBsi7v" role="37wK5m">
-                  <property role="Xl_RC" value="result" />
-                </node>
+            <node concept="2YIFZM" id="4WeLqVvgVbK" role="37vLTx">
+              <ref role="37wK5l" to="bj13:~LogicalKt.newLogical(java.lang.String)" resolve="newLogical" />
+              <ref role="1Pybhc" to="bj13:~LogicalKt" resolve="LogicalKt" />
+              <node concept="Xl_RD" id="4pwDyRBsi7v" role="37wK5m">
+                <property role="Xl_RC" value="result" />
               </node>
+              <node concept="3Tqbb2" id="4WeLqVvh8ra" role="3PaCim" />
             </node>
           </node>
         </node>
