@@ -599,24 +599,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="77mpfA3R1EX" role="3cqZAp">
-          <node concept="1rXfSq" id="77mpfA3R1EV" role="3clFbG">
-            <ref role="37wK5l" node="77mpfA3QMzj" resolve="incLogicalUsages" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="77mpfA3QFKG" role="jymVt" />
-    <node concept="3clFb_" id="77mpfA3QGWK" role="jymVt">
-      <property role="TrG5h" value="notifyLogicalOwner" />
-      <node concept="3cqZAl" id="77mpfA3QGWM" role="3clF45" />
-      <node concept="3Tm1VV" id="77mpfA3QGWN" role="1B3o_S" />
-      <node concept="3clFbS" id="77mpfA3QGWO" role="3clF47">
-        <node concept="3clFbF" id="77mpfA3QMzn" role="3cqZAp">
-          <node concept="1rXfSq" id="77mpfA3QMzm" role="3clFbG">
-            <ref role="37wK5l" node="77mpfA3QMzj" resolve="incLogicalUsages" />
-          </node>
-        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="77mpfA3QO2R" role="jymVt" />
@@ -1001,49 +983,7 @@
       <property role="TrG5h" value="incLogicalUsages" />
       <node concept="3Tm6S6" id="77mpfA3QMzk" role="1B3o_S" />
       <node concept="3cqZAl" id="77mpfA3QMzl" role="3clF45" />
-      <node concept="3clFbS" id="77mpfA3QMyY" role="3clF47">
-        <node concept="3clFbJ" id="77mpfA3QMyZ" role="3cqZAp">
-          <node concept="3clFbS" id="77mpfA3QMz0" role="3clFbx">
-            <node concept="3clFbF" id="77mpfA3QMz1" role="3cqZAp">
-              <node concept="2OqwBi" id="77mpfA3QMz2" role="3clFbG">
-                <node concept="1eOMI4" id="77mpfA3QMz3" role="2Oq$k0">
-                  <node concept="10QFUN" id="77mpfA3QMz4" role="1eOMHV">
-                    <node concept="3uibUv" id="77mpfA3QMz5" role="10QFUM">
-                      <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-                      <node concept="3qTvmN" id="77mpfA3QMz6" role="11_B2D" />
-                    </node>
-                    <node concept="2OqwBi" id="77mpfA3QMz7" role="10QFUP">
-                      <node concept="37vLTw" id="77mpfA3QMz8" role="2Oq$k0">
-                        <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
-                      </node>
-                      <node concept="liA8E" id="77mpfA3QMz9" role="2OqNvi">
-                        <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="77mpfA3QMza" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.incUsagesCount(jetbrains.mps.logic.reactor.logical.LogicalOwner)" resolve="incUsagesCount" />
-                  <node concept="Xjq3P" id="77mpfA3QMzb" role="37wK5m" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2ZW3vV" id="77mpfA3QMzc" role="3clFbw">
-            <node concept="3uibUv" id="77mpfA3QMzd" role="2ZW6by">
-              <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-            </node>
-            <node concept="2OqwBi" id="77mpfA3QMze" role="2ZW6bz">
-              <node concept="37vLTw" id="77mpfA3QMzf" role="2Oq$k0">
-                <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
-              </node>
-              <node concept="liA8E" id="77mpfA3QMzg" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+      <node concept="3clFbS" id="77mpfA3QMyY" role="3clF47" />
     </node>
     <node concept="3Tm1VV" id="4TCblo5MJ1n" role="1B3o_S" />
     <node concept="3uibUv" id="4TCblo5MK_c" role="1zkMxy">
