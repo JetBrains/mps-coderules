@@ -10,21 +10,19 @@ import jetbrains.mps.logic.reactor.program.*
 import program.MockConstraint
 import solver.TestEqPredicate
 import java.util.*
-import kotlin.collections.HashMap
 
 /**
  * @author Fedor Isakov
  */
 
-class Builder(var rulesLists: List<RulesList>) : RuleLookup {
+class Builder(var rulesList: List<Rule>) : RuleLookup {
 
     val tag2rule = LinkedHashMap<Any, Rule>()
 
     val programBuilder = ProgramBuilder(MockConstraintRegistry())
 
     init {
-        rulesLists
-            .flatMap { it.rules() }
+        rulesList
             .forEach { r -> tag2rule[r.uniqueTag()] = r }
     }
 
@@ -35,28 +33,19 @@ class Builder(var rulesLists: List<RulesList>) : RuleLookup {
 
     fun ruleMatcher(): RuleMatcher = createRuleMatcher(this, rules.first().uniqueTag())
 
-    fun program(name: String): Program = programBuilder.program(name, rulesLists)
+    fun program(name: String): Program = programBuilder.program(name, rulesList)
     
 }
 
-private fun createBuilder(rulesListBlocks: Array<out () -> RulesList>): Builder {
-    val handlers = ArrayList<RulesList>()
+private fun createBuilder(rulesListBlocks: Array<out () -> List<Rule>>): Builder {
+    val handlers = ArrayList<Rule>()
     for (block in rulesListBlocks) {
-        handlers.add(block())
+        handlers.addAll(block())
     }
     return Builder(handlers)
 }
 
-private fun updateBuilder(builder:Builder, rulesListBlocks: Array<out () -> RulesList>): Builder {
-    val name2handler = HashMap(builder.rulesLists.map { it.name() to it }.toMap())
-    for (block in rulesListBlocks) {
-        val h = block()
-        name2handler[h.name()] = h
-    }
-    return Builder(name2handler.values.toList())
-}
-
-private fun createHandler(name: String, vararg ruleBlocks: () -> Rule): () -> RulesList = {
+private fun createHandler(name: String, vararg ruleBlocks: () -> Rule): () -> List<Rule> = {
     val hb = HandlerBuilder(name)
     for (block in ruleBlocks) {
         hb.appendRule(block())
@@ -64,65 +53,11 @@ private fun createHandler(name: String, vararg ruleBlocks: () -> Rule): () -> Ru
     hb.toHandler()
 }
 
-private fun updateHandler(name: String, rulesList: RulesList, vararg ruleBlocks: () -> Rule): () -> RulesList = {
-    val hb = HandlerBuilder(name, rulesList)
-    for (block in ruleBlocks) {
-        hb.appendRule(block())
-    }
-    hb.toHandler()
-}
-
-private fun insertRulesInHandler(at: Int, name: String, rulesList: RulesList, vararg ruleBlocks: () -> Rule): () -> RulesList = {
-    val hb = HandlerBuilder(name)
-    rulesList.rules().forEachIndexed { index, rule ->
-        if (index == at) {
-            for (block in ruleBlocks) {
-                hb.appendRule(block())
-            }
-        }
-        hb.appendRule(rule)
-    }
-    hb.toHandler()
-}
-
-private fun removeRulesByIndices(at: Iterable<Int>, name: String, rulesList: RulesList): () -> RulesList = {
-    val hb = HandlerBuilder(name)
-    rulesList.rules().forEachIndexed { index, rule ->
-        if (!at.contains(index)) hb.appendRule(rule)
-    }
-    hb.toHandler()
-}
-
-private fun removeRulesByTags(tags: Iterable<Any>, name: String, rulesList: RulesList): () -> RulesList = {
-    val hb = HandlerBuilder(name)
-    rulesList.rules().forEach { rule ->
-        if (!tags.contains(rule.uniqueTag())) hb.appendRule(rule)
-    }
-    hb.toHandler()
-}
-
-private fun insertRulesInHandlerWhen(at: (Rule) -> Boolean, name: String, rulesList: RulesList, vararg ruleBlocks: () -> Rule): () -> RulesList =
-    insertRulesInHandler(rulesList.rules().indexOfFirst(at), name, rulesList, * ruleBlocks)
 
 // builder DSL for constructing program
 
 fun programWithRules(vararg ruleBuilders: () -> Rule): Builder =
     createBuilder(arrayOf(createHandler("test", * ruleBuilders)))
-
-fun Builder.programWithRules(vararg ruleBuilders: () -> Rule): Builder =
-    updateBuilder(this, arrayOf(updateHandler("test",  rulesLists.first(), * ruleBuilders)))
-
-fun Builder.removeRulesAt(at: Iterable<Int>): Builder =
-    updateBuilder(this, arrayOf(removeRulesByIndices(at, "test", rulesLists.first())))
-
-fun Builder.removeRules(tags: Iterable<Any>): Builder =
-    updateBuilder(this, arrayOf(removeRulesByTags(tags, "test", rulesLists.first())))
-
-fun Builder.insertRulesAt(at: Int, vararg ruleBuilders: () -> Rule): Builder =
-    updateBuilder(this, arrayOf(insertRulesInHandler(at, "test", rulesLists.first(), * ruleBuilders)))
-
-fun Builder.insertRulesWhen(at: (Rule) -> Boolean, vararg ruleBuilders: () -> Rule): Builder =
-    updateBuilder(this, arrayOf(insertRulesInHandlerWhen(at, "test", rulesLists.first(), * ruleBuilders)))
 
 fun rule(tag: String, vararg component: RuleBuilder.() -> Unit): () -> Rule = {
     val rb = RuleBuilder(tag)

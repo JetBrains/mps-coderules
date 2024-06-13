@@ -15,13 +15,11 @@ import kotlin.collections.LinkedHashMap
 
 class ProgramBuilder(val registry: MockConstraintRegistry)  {
 
-    fun program(name: String, rulesLists: List<RulesList>): Program {
-        for (h in rulesLists) {
-            for (r in h.rules()) {
-                registry.update(r)
-            }
+    fun program(name: String, rules: List<Rule>): Program {
+        for (r in rules) {
+            registry.update(r)
         }
-        return MockProgram(name, rulesLists, registry)
+        return MockProgram(name, rules, registry)
     }
     
 }
@@ -30,17 +28,11 @@ class HandlerBuilder(val name: String) {
 
     val rules = LinkedHashMap<Any, Rule>()
 
-    constructor(name: String, rulesList: RulesList) : this(name) {
-        for (r in rulesList.rules()) {
-            appendRule(r)
-        }
-    }
-
     fun appendRule(rule: Rule) {
         rules[rule.uniqueTag()] = rule
     }
 
-    fun toHandler(): RulesList = MockHandler(name, rules.values.toList())
+    fun toHandler(): List<Rule> = rules.values.toList()
 }
 
 class RuleBuilder(val tag: String) {
@@ -63,15 +55,6 @@ class RuleBuilder(val tag: String) {
         body.last().addAll(andItem)
     }
     fun toRule(): Rule = MockRule(Rule.Tag(tag), kept, replaced, guard, body)
-}
-
-class MockHandler(
-    val name: String,
-    val rules: List<Rule>) : RulesList() {
-
-    override fun name(): String = name
-
-    override fun rules(): Iterable<Rule> = rules
 }
 
 class MockRule(
@@ -98,10 +81,10 @@ class MockRule(
         else (kept + replaced).map { it as AndItem } + guard + body.flatten()
 }
 
-class MockProgram(val name: String, val rulesLists: List<RulesList>, val registry: MockConstraintRegistry) : Program() {
+class MockProgram(val name: String, val rules: List<Rule>, val registry: MockConstraintRegistry) : Program() {
     override fun name(): String = name
 
-    override fun rules(): MutableIterable<Rule> = unmodifiableCollection(rulesLists.flatMap { it.rules() })
+    override fun rules(): MutableIterable<Rule> = unmodifiableCollection(rules)
 }
 
 

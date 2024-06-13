@@ -23,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
  * 
  * @author Fedor Isakov
  */
-public interface Solver extends Queryable, Instructible {
+public interface Solver {
 
     class Result {
 
@@ -88,10 +88,8 @@ public interface Solver extends Queryable, Instructible {
         }
     }
 
-    @Override
     void tell(PredicateInvocation invocation);
 
-    @Override
     boolean ask(PredicateInvocation invocation);
 
     default Result tryTell(PredicateInvocation invocation) {

@@ -120,10 +120,6 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
         }
     }
 
-    fun updateIndex(ruleLists: Iterable<RulesList>) {
-        updateIndexFromRules(ruleLists.flatMap { it.rules() })
-    }
-
     fun updateIndexFromRules(rules: Iterable<Rule>) {
         val removedTags = allRules.map { it.rule.uniqueTag() }.toHashSet()
         rules.map { it.uniqueTag() }.forEach{ removedTags.remove(it) }
@@ -161,11 +157,6 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
             removeRuleFromIndex(irule)
             allRulesIt.remove()
         }
-    }
-
-    private fun buildIndex(ruleLists: Iterable<RulesList>) {
-        val rules = ruleLists.flatMap { it.rules() }
-        buildIndexFromRules(rules)
     }
 
     private fun removeRuleFromIndex(irule: IndexedRule) {
