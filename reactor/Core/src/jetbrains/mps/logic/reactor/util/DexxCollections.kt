@@ -46,8 +46,8 @@ fun <T> Set<T>.put(t: T) = add(t)
 
 fun <T> Set<T>.without(t: T) = remove(t)
 
-fun <K,V> Map<K, V>.assoc(k: K, v: V) = put(k, v)
+fun <K : Any,V> Map<K, V>.assoc(k: K, v: V) = put(k, v)
 
-fun <K,V> Map<K, V>.without(k: K) = remove(k)
+fun <K : Any,V> Map<K, V>.without(k: K) = remove(k)
 
 fun <K,V> Pair<K,V>.getValue(): V = component2()

@@ -17,12 +17,9 @@
 package jetbrains.mps.logic.reactor.evaluation;
 
 
-import gnu.trove.set.TIntSet;
-import gnu.trove.set.hash.TIntHashSet;
 import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.program.Constraint;
 import jetbrains.mps.logic.reactor.program.Rule;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 

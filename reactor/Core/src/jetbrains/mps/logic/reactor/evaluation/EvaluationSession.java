@@ -20,8 +20,6 @@ package jetbrains.mps.logic.reactor.evaluation;
 import jetbrains.mps.logic.reactor.program.Program;
 import jetbrains.mps.logic.reactor.util.Profiler;
 
-import java.util.Collection;
-
 /**
  * The starting point to evaluate a program.
  * <p>

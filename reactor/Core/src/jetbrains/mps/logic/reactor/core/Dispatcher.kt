@@ -23,14 +23,12 @@ typealias DispatchingFrontState = Map<Any, RuleMatcher>
 
 internal fun emptyFrontState(): DispatchingFrontState = emptyMap()
 
-internal fun DispatchingFrontState.resetLookup() = apply { values.forEach(RuleMatcher::resetRuleLookup) }
-
 /**
  * A front-end interface to [RuleMatcher].
  * 
  * @author Fedor Isakov
  */
-class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = emptyFrontState()) {
+class Dispatcher (val ruleIndex: RuleIndex) {
 
     private val ruletag2matcher = HashMap<Any, RuleMatcher>()
 
@@ -105,9 +103,7 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
          * be excluded from any further "match" set returned by [matches].
          */
         internal fun consume(consumedMatch: RuleMatchEx): DispatchingFront {
-            ruletag2probe[consumedMatch.rule().uniqueTag()]?.let {
-                val probe = it.consume(consumedMatch)
-            }
+            ruletag2probe[consumedMatch.rule().uniqueTag()]?.consume(consumedMatch)
             return DispatchingFront(this)
         }
 

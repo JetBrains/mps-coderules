@@ -16,12 +16,8 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.core.Controller
-import jetbrains.mps.logic.reactor.core.ForwardingLogicalObserver
 import jetbrains.mps.logic.reactor.core.LogicalStateObservable
 import jetbrains.mps.logic.reactor.core.Occurrence
-import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.unification.Term
 
 
 typealias ObserverTriggeredHandler = (Occurrence) -> Boolean

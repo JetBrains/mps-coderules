@@ -39,7 +39,7 @@ fun justsCopy(other: Justifications): Justifications = TIntHashSet(other)
 /**
  * A logical entity whose existence is supported by some
  * facts (or premises, or evidences, or justifications).
- * Hence it is said that its existence is justified by them.
+ * Hence, it is said that its existence is justified by them.
  * In its turn can serve as an evidence for other justified entities.
  */
 interface Justified {

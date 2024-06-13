@@ -29,7 +29,7 @@ import java.util.Collections;
  */
 public class Substitution {
 
-    private boolean mySuccessful;
+    private final boolean mySuccessful;
 
     private Failure myFailure;
 
@@ -64,7 +64,7 @@ public class Substitution {
     }
 
     public String toString() {
-        return myFailure != null ? "[" + String.valueOf(myFailure) + "]" : "[FAILED_SUBSTITUTION]";
+        return myFailure != null ? "[" + myFailure + "]" : "[FAILED_SUBSTITUTION]";
     }
 
     /**
@@ -73,9 +73,9 @@ public class Substitution {
      */
     public static class Binding {
 
-        private Term myVar;
+        private final Term myVar;
 
-        private Term myTerm;
+        private final Term myTerm;
 
         public Binding(Term myVar, Term myTerm) {
             this.myVar = myVar;
@@ -94,7 +94,7 @@ public class Substitution {
 
     public static class Failure {
 
-        private FailureCause myCause;
+        private final FailureCause myCause;
 
         private Object[] myDetails;
 
@@ -127,7 +127,7 @@ public class Substitution {
         SYMBOL_CLASH("symbol clash"),
         UKNOWN("uknown");
 
-        private String myMessage;
+        private final String myMessage;
 
         FailureCause(String message) {
             myMessage = message;

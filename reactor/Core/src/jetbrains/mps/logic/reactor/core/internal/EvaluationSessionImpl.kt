@@ -27,11 +27,6 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-
-internal typealias OccurrenceStore = Collection<Occurrence>
-
-internal fun emptyStore(): OccurrenceStore = emptyList()
-
 /**
  * Handles creation of the first and following sessions,
  * properly ending sessions and getting their results.
@@ -83,7 +78,7 @@ internal class EvaluationSessionImpl private constructor (
     val params: Map<ParameterKey<*>, *>?) : EvaluationSession()
 {
     @Suppress("UNCHECKED_CAST")
-    override fun <T : Any> parameter(key: ParameterKey<T>): T? = params ?.get(key) as T
+    override fun <T : Any> parameter(key: ParameterKey<T>): T = params ?.get(key) as T
 
     private fun launch(token: SessionToken?, main: Constraint): EvaluationResult {
         val sessionProcessing: DefaultProcessingSession = DefaultProcessingSession()
@@ -122,7 +117,7 @@ internal class EvaluationSessionImpl private constructor (
             val status = run(main)
             controller.shutDown()
             val newToken = endSession(session)
-            return EvaluationResultImpl(newToken, status, emptySet(), emptyList())
+            return EvaluationResultImpl(newToken, status)
         }
 
         protected fun SessionParts.run(main: Constraint): FeedbackStatus = controller.activate(main)
@@ -189,11 +184,11 @@ internal class EvaluationSessionImpl private constructor (
             val ourBackend = Backend()
 
             fun init() {
-                EvaluationSession.setBackend(ourBackend)
+                setBackend(ourBackend)
             }
 
             fun deinit() {
-                EvaluationSession.clearBackend(ourBackend)
+                clearBackend(ourBackend)
             }
         }
 
@@ -202,14 +197,10 @@ internal class EvaluationSessionImpl private constructor (
     private class EvaluationResultImpl(
         val token: SessionToken,
         val status: FeedbackStatus,
-        val invalidFeedbackKeys: FeedbackKeySet,
-        val invalidRules: Collection<Any>
     ): EvaluationResult {
         override fun token() = token
         override fun storeView(): StoreView = token.storeView
         override fun feedback(): EvaluationFeedback? = if (status is FAILED) status.failure else null
-        override fun invalidFeedbackKeys(): Collection<Any> = invalidFeedbackKeys
-        override fun invalidRules(): Collection<Any> = invalidRules
     }
 
 

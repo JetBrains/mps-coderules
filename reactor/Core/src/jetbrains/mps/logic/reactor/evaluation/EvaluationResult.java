@@ -16,23 +16,15 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
-import java.util.Collection;
-
 /**
  * @author Fedor Isakov
  */
 public interface EvaluationResult {
 
-    public SessionToken token();
+    SessionToken token();
 
-    public StoreView storeView();
+    StoreView storeView();
     
-    public EvaluationFeedback feedback();
-
-    @Deprecated(forRemoval = true)
-    public Collection<Object> invalidFeedbackKeys();
-
-    @Deprecated(forRemoval = true)
-    public Collection<Object> invalidRules();
+    EvaluationFeedback feedback();
 
 }

@@ -24,7 +24,7 @@ import jetbrains.mps.logic.reactor.util.PersMap
 
 /**
  *  Abstracts an algorithm for recursive matching of a [Constraint] and a [ConstraintOccurrence]
- *  or a pattern [Term] against a [Term] in a constraint occurrence's arguments.
+ *  or a pattern [jetbrains.mps.unification.Term] against a [jetbrains.mps.unification.Term] in a constraint occurrence's arguments.
  *
  * @author Fedor Isakov
  */

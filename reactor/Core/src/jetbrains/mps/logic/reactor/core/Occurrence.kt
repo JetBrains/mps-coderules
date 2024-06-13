@@ -46,10 +46,6 @@ class Occurrence (observable: LogicalStateObservable,
 
     val identity = System.identityHashCode(this)
 
-    init {
-//        revive(observable)
-    }
-
     override fun constraint(): Constraint = constraint
 
     override fun arguments(): List<*> = arguments

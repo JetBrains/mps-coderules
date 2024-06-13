@@ -24,8 +24,8 @@ package jetbrains.mps.logic.reactor.program;
  */
 public abstract class Symbol {
 
-    private String id;
-    private int arity;
+    private final String id;
+    private final int arity;
 
     protected Symbol(String id, int arity) {
         this.id = id;
@@ -43,7 +43,7 @@ public abstract class Symbol {
     @Override
     public int hashCode() {
         int result = 17;
-        result = 43 * result + ((id != null ? String.valueOf(id).hashCode() : 0));
+        result = 43 * result + ((id != null ? id.hashCode() : 0));
         result = 31 * result + 37 * arity;
         return result;
     }
@@ -61,10 +61,6 @@ public abstract class Symbol {
         if ((id != null ? !(id.equals(that.id())) : that.id != null)) {
             return false;
         }
-        if (arity != that.arity) {
-            return false;
-        }
-
-        return true;
+        return arity == that.arity;
     }
 }

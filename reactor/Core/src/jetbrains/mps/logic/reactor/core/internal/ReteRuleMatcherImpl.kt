@@ -30,7 +30,7 @@ import kotlin.collections.ArrayList
  *
  * Loosely based on "Rete network" algorithm.
  *
- * The implementation of [RuleMatchingProbe] returned from [probe] method is not a persistent object, it's rather
+ * The implementation of [RuleMatchingProbe] returned from [ReteRuleMatcherImpl.probe] method is not a persistent object, it's rather
  * a mutable object which updates its state through usual update methods that all return the same object.
  *
  * @author Fedor Isakov
@@ -41,8 +41,6 @@ typealias Trail = TIntHashSet
 fun trailOf(): Trail = TIntHashSet()
 
 fun Signature.toTrail() = TIntHashSet(this)
-
-typealias SignatureIndex = TIntObjectHashMap<List<Signature>>
 
 fun signatureIndexOf() = TIntObjectHashMap<MutableList<Signature>>()
 

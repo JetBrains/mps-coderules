@@ -38,9 +38,9 @@ interface RuleMatcher {
 
     fun probe(): RuleMatchingProbe
 
-    fun setRuleLookup(ruleLookup: RuleLookup): Unit
+    fun setRuleLookup(ruleLookup: RuleLookup)
 
-    fun resetRuleLookup(): Unit
+    fun resetRuleLookup()
 
 }
 
@@ -48,8 +48,6 @@ fun createRuleMatcher(lookup: RuleLookup, tag: Any): RuleMatcher = ReteRuleMatch
 
 // Trove stuff
 typealias Signature = TIntList
-
-fun noSignature(): Signature = TIntArrayList(0)
 
 fun Signature.copy() = TIntArrayList(this)
 

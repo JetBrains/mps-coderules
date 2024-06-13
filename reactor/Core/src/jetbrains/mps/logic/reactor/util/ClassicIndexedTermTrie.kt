@@ -208,7 +208,7 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
             WILDCARD
 
         } else {
-            term.symbol() ?: throw NullPointerException("term symbol can't be null")
+            term.symbol()
         }
     }
 
@@ -419,9 +419,7 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
             if (existing != null) {
                 return existing
             } else {
-                val default = default(symbol)
-                next[symbol] = default
-                return default
+                return default(symbol).also { next[symbol] = it }
             }
         }
 

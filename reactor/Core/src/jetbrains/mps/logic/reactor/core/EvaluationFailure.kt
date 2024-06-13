@@ -17,10 +17,7 @@
 package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException
-import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
 import jetbrains.mps.logic.reactor.evaluation.Solver
-
-import java.util.ArrayList
 
 /**
  *

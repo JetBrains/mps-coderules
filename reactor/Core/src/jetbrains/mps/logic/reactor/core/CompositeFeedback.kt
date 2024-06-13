@@ -16,22 +16,16 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.Supervisor
 
 import java.util.ArrayList
-import java.util.Arrays
 
 /**
  * @author Fedor Isakov
  */
 class CompositeFeedback private constructor(private val elements: List<Feedback>) : Feedback() {
-    private val severity: EvaluationFeedback.Severity
-
-    init {
-        this.severity = maxSeverity(elements)
-    }
+    private val severity: Severity = maxSeverity(elements)
 
     override fun handle(currentRuleMatch: RuleMatch, feedbackKey: Any, feedbackBasis: List<Any>, supervisor: Supervisor): Boolean {
         var unhandled = 0
@@ -55,7 +49,7 @@ class CompositeFeedback private constructor(private val elements: List<Feedback>
         }
     }
 
-    override fun getSeverity(): EvaluationFeedback.Severity {
+    override fun getSeverity(): Severity {
         return severity
     }
 
@@ -109,23 +103,23 @@ class CompositeFeedback private constructor(private val elements: List<Feedback>
                 left ?: right
 
             } else (left as? CompositeFeedback)?.composeRight(right)
-                ?: ((right as? CompositeFeedback)?.composeLeft(left) ?: CompositeFeedback(Arrays.asList(left, right)))
+                ?: ((right as? CompositeFeedback)?.composeLeft(left) ?: CompositeFeedback(listOf(left, right)))
         }
 
-        fun dropLast(mayberComposite: Feedback?): Feedback? =
-            if (mayberComposite == null || mayberComposite !is CompositeFeedback) {
+        fun dropLast(maybeComposite: Feedback?): Feedback? =
+            if (maybeComposite == null || maybeComposite !is CompositeFeedback) {
                 null
-            } else if (mayberComposite.elements.size > 2) {
-                CompositeFeedback(mayberComposite.elements.dropLast(1))
-            } else if (mayberComposite.elements.size == 2) {
-                mayberComposite.elements[0]
+            } else if (maybeComposite.elements.size > 2) {
+                CompositeFeedback(maybeComposite.elements.dropLast(1))
+            } else if (maybeComposite.elements.size == 2) {
+                maybeComposite.elements[0]
             } else throw NoSuchElementException()
 
 
-        private fun maxSeverity(efs: List<Feedback>): EvaluationFeedback.Severity {
-            var sev: EvaluationFeedback.Severity = EvaluationFeedback.Severity.DEBUG
+        private fun maxSeverity(efs: List<Feedback>): Severity {
+            var sev: Severity = Severity.DEBUG
             for (ef in efs) {
-                if (ef.severity.compareTo(sev) > 0) {
+                if (ef.severity > sev) {
                     sev = ef.severity
                 }
             }

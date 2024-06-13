@@ -17,7 +17,6 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.LogicalObserver
-import jetbrains.mps.logic.reactor.logical.LogicalOwner
 import jetbrains.mps.logic.reactor.logical.MutableLogical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import java.util.ArrayList
@@ -38,26 +37,24 @@ internal class LogicalImpl<T> : MutableLogical<T> {
 
     var rank = 0
 
-    var usagesCount = 0
-
     val valueObservers = ArrayList<Pair<LogicalImpl<*>, LogicalObserver>>()
 
     val parentObservers = ArrayList<Pair<LogicalImpl<*>, LogicalObserver>>()
 
     constructor(value: T) {
         this.name = "$${++lastIdx}"
-        this.metaLogical = DefaultMetaLogical<T>(name)
+        this.metaLogical = DefaultMetaLogical(name)
         this._value = value
     }
 
     constructor(name: String) {
         this.name = "${name}_${++lastIdx}"
-        this.metaLogical = DefaultMetaLogical<T>(name)
+        this.metaLogical = DefaultMetaLogical(name)
     }
 
     constructor(name: String, value: T) {
         this.name = "${name}_${++lastIdx}"
-        this.metaLogical = DefaultMetaLogical<T>(name)
+        this.metaLogical = DefaultMetaLogical(name)
         this._value = value
     }
 
@@ -122,19 +119,19 @@ internal class LogicalImpl<T> : MutableLogical<T> {
         // first copy the value
         if (thisVal == null && otherVal != null) {
             // var ground
-            thisRepr.setValue(otherVal);
+            thisRepr.setValue(otherVal)
             // TODO: clear the value in the "other" logical after union
 
         } else if (thisVal != null && otherVal == null) {
             // ground var
             // TODO: no need to copy the value
-            otherRepr.setValue(thisVal);
+            otherRepr.setValue(thisVal)
         }
 
         // reconcile the values/merge value observers
         if (thisVal == null && otherVal == null) {
             // var var
-            thisRepr.mergeValueObservers(otherRepr);
+            thisRepr.mergeValueObservers(otherRepr)
 
         } else if (thisVal != null && otherVal != null) {
             // ground ground

@@ -83,8 +83,6 @@ class TermWalker(vararg visitors: TermVisitor<out Term>) {
     }
 }
 
-internal fun Term.unboundLogicals(): Collection<Logical<*>> = logicalsWhere { !it.isBound }
-
 internal inline fun Term.logicalsWhere(crossinline where: (Logical<*>) -> Boolean): Collection<Logical<*>> {
     val collected = arrayListOf<Logical<*>>()
 

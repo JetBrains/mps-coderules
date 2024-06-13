@@ -63,8 +63,6 @@ public abstract class Rule {
         /**
          *
          * @param groupName template that created this rule
-         * @param tagName
-         * @param uniquePart
          */
         public Tag(String groupName, String tagName, Object uniquePart) {
             this.group = groupName;

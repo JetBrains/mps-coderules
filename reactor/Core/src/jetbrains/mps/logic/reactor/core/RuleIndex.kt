@@ -38,16 +38,7 @@ fun ruleBitsOf() = indexMaskOf()
  */
 class RuleIndex(): Iterable<Rule>, RuleLookup
 {
-    private class IndexedRule {
-
-        constructor(idx: Int, rule: Rule) {
-            this.idx = idx
-            this.rule = rule
-        }
-
-        var idx: Int
-        val rule: Rule
-    }
+    private class IndexedRule(var idx: Int, val rule: Rule)
 
     // Terminology:
     // ruleBit - rule's index in the rules list
@@ -193,7 +184,7 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
      * The mask tells whether or not a particular constraint occurrence can match
      * any of the rule's constraints.
      */
-    private class SlotMask() {
+    private class SlotMask {
 
         val symbol2mask = HashMap<Symbol, BitSet>()
 
@@ -259,7 +250,7 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
                     is Term             ->
                         termSelectors[argIdx].remove(arg, ruleBit, headPos)
                     is Any              ->
-                        value2indices.get(arg)?.remove(ruleBit to headPos)
+                        value2indices[arg]?.remove(ruleBit to headPos)
                     else                ->
                         throw NullPointerException()  // never happens
                 }
@@ -333,12 +324,12 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
                 }
             }
 
-            if (!refined) {
+            return if (!refined) {
                 // no arguments or all arguments are wildcards
-                return symbolSelector to slotMasks
-                
+                symbolSelector to slotMasks
+
             } else {
-                return selectedRuleBits to slotMasks
+                selectedRuleBits to slotMasks
             }
         }
     }

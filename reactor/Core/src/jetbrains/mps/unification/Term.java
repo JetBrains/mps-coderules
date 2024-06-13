@@ -24,7 +24,6 @@ import java.util.Collection;
  * Represents a node in a term graph. The graph may contain cycles. A node in a term
  * graph can be of three kinds: a variable, a function (possibly constant) and a reference.
  * A reference must point to either a function term or a variable.
- *
  * A term must implement {@link java.lang.Comparable}, but this is only really used for
  * comparing the variables.
  *

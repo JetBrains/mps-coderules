@@ -16,14 +16,13 @@
 
 package jetbrains.mps.logic.reactor.util
 
-import java.util.*
 import kotlin.collections.ArrayList
 
 /**
  * @author Fedor Isakov
  */
 
-fun <T> ArrayList<T>.push (element: T): Unit { add(element) }
+fun <T> ArrayList<T>.push (element: T) { add(element) }
 
 fun <T> ArrayList<T>.pop (): T = removeAt(size - 1)
 

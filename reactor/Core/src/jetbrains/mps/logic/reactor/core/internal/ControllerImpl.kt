@@ -337,7 +337,7 @@ internal class ControllerImpl (
                 try {
                     block().let {
                         if (!it.isOk()) {
-                            failure = EvaluationFailure(it);
+                            failure = EvaluationFailure(it)
                         }
                     }
 

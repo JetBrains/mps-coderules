@@ -63,7 +63,7 @@ class TermGraphUnifier(private val wrapper: TermWrapper = TermWrapper.ID,
     constructor(trivialBindings: Boolean) : this(TermWrapper.ID, trivialBindings) {}
 
     companion object {
-        val EMPTY_LIST = TIntArrayList.wrap(kotlin.IntArray(0))
+        val EMPTY_LIST = TIntArrayList.wrap(IntArray(0))
     }
 
     fun unify(a: Term, b: Term): Substitution {
@@ -114,7 +114,7 @@ class TermGraphUnifier(private val wrapper: TermWrapper = TermWrapper.ID,
                 setAcyclic(z)
 
                 // avoid unnecessary instatiation
-                val success = if (subs is SuccessfulSubstitution) subs as SuccessfulSubstitution
+                val success = if (subs is SuccessfulSubstitution) subs
                 else SuccessfulSubstitution(subs)
 
                 if (vars != null) {

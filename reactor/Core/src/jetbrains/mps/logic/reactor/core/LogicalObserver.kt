@@ -16,8 +16,6 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.core.internal.LogicalImpl
-import jetbrains.mps.logic.reactor.core.internal.LogicalState
 import jetbrains.mps.logic.reactor.logical.Logical
 
 

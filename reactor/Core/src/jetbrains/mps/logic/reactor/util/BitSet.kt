@@ -44,9 +44,9 @@ fun BitSet.clearBit(bit: Int): BitSet =
 
 fun BitSet.allSetBits(): TIntIterator = object : TIntIterator {
 
-    var next = nextSetBit(0);
+    var next = nextSetBit(0)
 
-    override fun hasNext(): Boolean = next != -1;
+    override fun hasNext(): Boolean = next != -1
 
     override fun next(): Int =
         if (next != -1) {

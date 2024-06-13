@@ -17,7 +17,6 @@
 package jetbrains.mps.logic.reactor.evaluation;
 
 
-import jetbrains.mps.logic.reactor.core.EvaluationFailure;
 import jetbrains.mps.logic.reactor.program.Rule;
 
 /**

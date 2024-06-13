@@ -20,8 +20,6 @@ import gnu.trove.TIntObjectHashMap
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.program.*
-import jetbrains.mps.logic.reactor.util.Id
-import java.util.*
 
 typealias ChunkIndex = TIntObjectHashMap<MatchJournal.Chunk>
 

@@ -74,13 +74,9 @@ object Unification {
 
     class SuccessfulSubstitution(substitution: Substitution) : Substitution(true) {
 
-        private val myBindings: LinkedList<Substitution.Binding>
+        private val myBindings: LinkedList<Binding> = LinkedList(substitution.bindings())
 
-        init {
-            this.myBindings = LinkedList(substitution.bindings())
-        }
-
-        override fun bindings(): Collection<Substitution.Binding> {
+        override fun bindings(): Collection<Binding> {
             return Collections.unmodifiableCollection(myBindings)
         }
 
@@ -96,7 +92,7 @@ object Unification {
         }
 
         fun addBinding(v: Term, n: Term) {
-            myBindings.addFirst(Substitution.Binding(v, n))
+            myBindings.addFirst(Binding(v, n))
         }
 
     }

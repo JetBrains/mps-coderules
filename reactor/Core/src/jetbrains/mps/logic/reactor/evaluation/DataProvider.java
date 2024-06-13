@@ -19,6 +19,8 @@ package jetbrains.mps.logic.reactor.evaluation;
 import java.util.function.Supplier;
 
 /**
+ * Used in implementation.
+ * 
  * @author Fedor Isakov
  */
 public interface DataProvider {

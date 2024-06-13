@@ -16,8 +16,6 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
-
 /**
  * Encapsulates a detailed report to be provided by the code being evaluated.
  * Does not affect the evaluation flow.

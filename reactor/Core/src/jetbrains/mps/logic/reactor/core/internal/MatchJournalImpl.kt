@@ -167,11 +167,11 @@ internal open class MatchJournalImpl(
 
     override fun initialChunk(): MatchChunk = initialChunk
 
-    override fun parentChunk(): MatchChunk = ancestorChunksStack.peek()!!
+    override fun parentChunk(): MatchChunk = ancestorChunksStack.peek()
 
-    override fun currentPos(): MatchJournal.Pos = __cursor.currentPos()
+    override fun currentPos(): Pos = __cursor.currentPos()
 
-    override fun reset(pastPos: MatchJournal.Pos) {
+    override fun reset(pastPos: Pos) {
         __cursor.moveToPastRemoving(pastPos) {
             popParentChunk()
             resetOccurrences(it.entries())
@@ -189,7 +189,7 @@ internal open class MatchJournalImpl(
     }
     
     // Note: returns View for the whole history regardless of current posPtr
-    override fun view() = MatchJournal.View(ArrayList(hist), evidenceSeed)
+    override fun view() = View(ArrayList(hist), evidenceSeed)
 
     override fun storeView(): StoreView = StoreViewImpl(allOccurrences())
 
@@ -260,7 +260,7 @@ internal open class MatchJournalImpl(
         }
     }
 
-    internal infix fun ChunkIterator.assertAt(pos: MatchJournal.Pos) {
+    internal infix fun ChunkIterator.assertAt(pos: Pos) {
         if (!(this at pos))
             throw IllegalStateException("Position wasn't found in journal: $pos")
     }
@@ -373,7 +373,7 @@ internal open class MatchJournalImpl(
 
         object EmptyRule : Rule() {
             override fun kind(): Kind = Kind.PROPAGATION
-            override fun uniqueTag(): Tag = Rule.Tag("__initial_rule__")
+            override fun uniqueTag(): Tag = Tag("__initial_rule__")
             override fun headKept(): Iterable<Constraint> = emptyList()
             override fun headReplaced(): Iterable<Constraint> = emptyList()
             override fun guard(): Iterable<Predicate> = emptyList()

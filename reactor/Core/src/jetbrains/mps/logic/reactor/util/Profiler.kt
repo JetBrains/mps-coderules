@@ -30,7 +30,7 @@ class Profiler {
 
     private val tokenStack = LinkedList<Token>()
 
-    constructor() {
+    init {
         tokenStack.push(Token("_", ++lastTokenId))
     }
 

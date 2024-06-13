@@ -39,7 +39,7 @@ public interface MutableLogical<T> extends Logical<T> {
     void union(MutableLogical<T> other, MutableLogical.ValueReconciler<T> reconciler);
 
     /**
-     * Calls {@link MutableLogical#union(MutableLogical <T>, MutableLogical.ValueReconciler<T>) } with the default value reconciler.
+     * Calls {@link #union(MutableLogical, MutableLogical.ValueReconciler) } with the default value reconciler.
      * The default reconciler throws {@link java.lang.IllegalArgumentException } if the two values are not equal.
      */
     void union(MutableLogical<T> other);
