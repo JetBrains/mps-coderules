@@ -2381,7 +2381,7 @@
             <node concept="3cpWsn" id="4ZGicUZ3AX0" role="3cpWs9">
               <property role="TrG5h" value="modifier" />
               <node concept="3uibUv" id="4ZGicUZ3AWY" role="1tU5fm">
-                <ref role="3uigEE" node="4ZGicUYVz9J" resolve="CustomMatcher" />
+                <ref role="3uigEE" node="4ZGicUYVz9J" resolve="TypecheckingTestHelper.CustomMatcher" />
               </node>
               <node concept="10M0yZ" id="5Hi6MebuFzr" role="33vP2m">
                 <ref role="3cqZAo" node="5Hi6MebutI9" resolve="DEFAULT" />
@@ -2461,7 +2461,7 @@
                       <node concept="2ShNRf" id="5Hi6Meb$2ab" role="2Oq$k0">
                         <node concept="1pGfFk" id="5Hi6Meb$2ac" role="2ShVmc">
                           <property role="373rjd" value="true" />
-                          <ref role="37wK5l" node="5Hi6MebyhlO" />
+                          <ref role="37wK5l" node="5Hi6MebyhlO" resolve="TypecheckingTestHelper.Matcher" />
                           <node concept="37vLTw" id="5Hi6Meb$2ad" role="37wK5m">
                             <ref role="3cqZAo" node="4ZGicUZ3AX0" resolve="modifier" />
                           </node>
@@ -2696,7 +2696,7 @@
         <property role="TrG5h" value="mAggStrat" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="5Hi6MebxFhZ" role="1tU5fm">
-          <ref role="3uigEE" to="w1kc:~SNodeMatcher$AggregationMatchStrategy" resolve="AggregationMatchStrategy" />
+          <ref role="3uigEE" to="w1kc:~SNodeMatcher$AggregationMatchStrategy" resolve="SNodeMatcher.AggregationMatchStrategy" />
         </node>
         <node concept="2ShNRf" id="5Hi6MebxW3c" role="33vP2m">
           <node concept="1pGfFk" id="5Hi6MebxW3e" role="2ShVmc">
@@ -2734,7 +2734,7 @@
           <node concept="3clFbF" id="5Hi6MebytRL" role="3cqZAp">
             <node concept="37vLTI" id="5Hi6MebytRN" role="3clFbG">
               <node concept="37vLTw" id="5Hi6MebytRQ" role="37vLTJ">
-                <ref role="3cqZAo" node="5Hi6MebytRH" resolve="myCmatcher" />
+                <ref role="3cqZAo" node="5Hi6MebytRH" resolve="myCustMatch" />
               </node>
               <node concept="37vLTw" id="5Hi6MebytRR" role="37vLTx">
                 <ref role="3cqZAo" node="5Hi6Mebyigx" resolve="cmatcher" />
@@ -2746,7 +2746,7 @@
               <node concept="2OqwBi" id="1ewL_EoFsFy" role="37vLTJ">
                 <node concept="Xjq3P" id="1ewL_EoFsFz" role="2Oq$k0" />
                 <node concept="2OwXpG" id="1ewL_EoFsF$" role="2OqNvi">
-                  <ref role="2Oxat5" node="1ewL_EoFsFk" resolve="myMatcher" />
+                  <ref role="2Oxat5" node="1ewL_EoFsFk" resolve="myMatch" />
                 </node>
               </node>
               <node concept="2ShNRf" id="1ewL_EoFsF_" role="37vLTx">
@@ -2908,18 +2908,18 @@
               <node concept="1rXfSq" id="5Hi6MebxFiy" role="3uHU7B">
                 <ref role="37wK5l" node="5Hi6MebxFj5" resolve="test" />
                 <node concept="37vLTw" id="5Hi6MebxFiz" role="37wK5m">
-                  <ref role="3cqZAo" node="5Hi6MebxFim" resolve="target1" />
+                  <ref role="3cqZAo" node="5Hi6MebxFim" resolve="trgA" />
                 </node>
                 <node concept="37vLTw" id="5Hi6MebxFi$" role="37wK5m">
-                  <ref role="3cqZAo" node="5Hi6MebxFir" resolve="target2" />
+                  <ref role="3cqZAo" node="5Hi6MebxFir" resolve="trgB" />
                 </node>
               </node>
               <node concept="3clFbC" id="5Hi6MebxFi_" role="3uHU7w">
                 <node concept="37vLTw" id="5Hi6MebxFiA" role="3uHU7B">
-                  <ref role="3cqZAo" node="5Hi6MebxFim" resolve="target1" />
+                  <ref role="3cqZAo" node="5Hi6MebxFim" resolve="trgA" />
                 </node>
                 <node concept="37vLTw" id="5Hi6MebxFiB" role="3uHU7w">
-                  <ref role="3cqZAo" node="5Hi6MebxFir" resolve="target2" />
+                  <ref role="3cqZAo" node="5Hi6MebxFir" resolve="trgB" />
                 </node>
               </node>
             </node>
@@ -2973,15 +2973,15 @@
           <node concept="3cpWs6" id="5Hi6MebxFiV" role="3cqZAp">
             <node concept="2OqwBi" id="5Hi6MebxUmn" role="3cqZAk">
               <node concept="37vLTw" id="5Hi6MebxMKH" role="2Oq$k0">
-                <ref role="3cqZAo" node="5Hi6MebxFhX" resolve="myDelegate2" />
+                <ref role="3cqZAo" node="5Hi6MebxFhX" resolve="mAggStrat" />
               </node>
               <node concept="liA8E" id="5Hi6MebxUmo" role="2OqNvi">
                 <ref role="37wK5l" to="w1kc:~SNodeMatcher$AggregationMatchStrategy.match(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,java.util.function.BiPredicate)" resolve="match" />
                 <node concept="37vLTw" id="5Hi6MebxUmp" role="37wK5m">
-                  <ref role="3cqZAo" node="5Hi6MebxFiG" resolve="node1" />
+                  <ref role="3cqZAo" node="5Hi6MebxFiG" resolve="a" />
                 </node>
                 <node concept="37vLTw" id="5Hi6MebxUmq" role="37wK5m">
-                  <ref role="3cqZAo" node="5Hi6MebxFiJ" resolve="node2" />
+                  <ref role="3cqZAo" node="5Hi6MebxFiJ" resolve="b" />
                 </node>
                 <node concept="37vLTw" id="5Hi6MebxUmr" role="37wK5m">
                   <ref role="3cqZAo" node="5Hi6MebxFiM" resolve="link" />
