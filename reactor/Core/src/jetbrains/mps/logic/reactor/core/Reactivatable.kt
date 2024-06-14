@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 JetBrains s.r.o.
+ * Copyright 2014-2024 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,8 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.logical.Logical
+interface Reactivatable {
 
-/**
- * @author Fedor Isakov
- */
-
-interface LogicalStateObservable {
-
-    fun addReactivatable(logical: Logical<*>, reactivatable: Reactivatable)
-
-    fun removeReactivatable(logical: Logical<*>, reactivatable: Reactivatable)
+    fun reactivate(controller: Controller)
 
 }

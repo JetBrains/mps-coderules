@@ -18,6 +18,7 @@ package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.logical.LogicalObserver
 import java.util.*
 import java.util.Collections.singleton
 
@@ -30,7 +31,7 @@ import java.util.Collections.singleton
 
 class LogicalState : LogicalStateObservable, LogicalObserver
 {
-    private val observers = IdentityHashMap<Logical<*>, ArrayList<ForwardingLogicalObserver>>()
+    private val observers = IdentityHashMap<Logical<*>, ArrayList<Reactivatable>>()
 
     private var controller: Controller? = null
 
@@ -45,26 +46,16 @@ class LogicalState : LogicalStateObservable, LogicalObserver
         return this
     }
 
-    override fun addForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
+    override fun addReactivatable(logical: Logical<*>, reactivatable: Reactivatable) {
         if (!observers.containsKey(logical)) {
             logical.addObserver(this)
         }
-        observers.getOrPut(logical) { arrayListOf() }.add(observer)
+        observers.getOrPut(logical) { arrayListOf() }.add(reactivatable)
     }
 
-    override fun removeForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
+    override fun removeReactivatable(logical: Logical<*>, reactivatable: Reactivatable) {
         observers[logical]?.apply {
-            removeAll(singleton(observer))
-            if (isEmpty()) observers.remove(logical)
-        }
-        if (!observers.containsKey(logical)) {
-            logical.removeObserver(this)
-        }
-    }
-
-    override fun removeForwardingObserversWhere(logical: Logical<*>, where: (ForwardingLogicalObserver) -> Boolean) {
-        observers[logical]?.apply {
-            removeIf(where)
+            removeAll(singleton(reactivatable))
             if (isEmpty()) observers.remove(logical)
         }
         if (!observers.containsKey(logical)) {
@@ -75,19 +66,17 @@ class LogicalState : LogicalStateObservable, LogicalObserver
     override fun valueUpdated(logical: Logical<*>) {
         observers[logical]?.let { list ->
             for (observer in ArrayList(list)) {
-                observer.valueUpdated(logical, controller!!)
+                observer.reactivate(controller!!)
             }
         }
-
     }
 
     override fun parentUpdated(logical: Logical<*>) {
         observers[logical]?.let { list ->
             for (observer in ArrayList(list)) {
-                observer.parentUpdated(logical, controller!!)
+                observer.reactivate(controller!!)
             }
         }
-
     }
 
 }

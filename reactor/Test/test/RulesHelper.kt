@@ -102,15 +102,15 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 
 fun occurrence(id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
-        .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(0), noLogicalContext)
+        .occurrence(listOf(* args), 0, justsOf(0), noLogicalContext)
 
 fun taggedOccurrence(ruleUniqueTag: String, id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
-        .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(0), noLogicalContext, Rule.Tag(ruleUniqueTag))
+        .occurrence(listOf(* args), 0, justsOf(0), noLogicalContext, Rule.Tag(ruleUniqueTag))
 
 fun justifiedOccurrence(id: String, evidence: Evidence, justifications: Justifications, principal: Boolean, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size), principal)
-        .occurrence(MockController().logicalStateObservable(), listOf(* args), evidence, justifications, noLogicalContext)
+        .occurrence(listOf(* args), evidence, justifications, noLogicalContext)
 
 fun principalOccurrence(id: String, hist: MatchJournal, vararg args: Any): Occurrence =
     justifiedOccurrence(id, hist.evidence(), hist.justifications(), true, * args)
@@ -132,56 +132,6 @@ fun sym2(id: String): ConstraintSymbol =
 
 private val noLogicalContext = object : LogicalContext {
     override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
-}
-
-class MockController : Controller {
-    
-    override fun ask(invocation: PredicateInvocation): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun tell(invocation: PredicateInvocation) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun tryTell(invocation: PredicateInvocation): Solver.Result {
-        TODO("Not yet implemented")
-    }
-
-    override fun activate(constraint: Constraint): FeedbackStatus {
-        TODO("Not yet implemented")
-    }
-
-    override fun reactivate(occ: Occurrence): FeedbackStatus {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun evaluate(occ: Occurrence): StoreView {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun logicalStateObservable(): LogicalStateObservable = object : LogicalStateObservable {
-        override fun addForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
-        }
-
-        override fun removeForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
-        }
-
-        override fun removeForwardingObserversWhere(logical: Logical<*>, where: (ForwardingLogicalObserver) -> Boolean) {
-        }
-    }
-
-    override fun storeView(): StoreView {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun offerMatch(match: RuleMatchEx, inStatus: FeedbackStatus): FeedbackStatus {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun processBody(match: RuleMatchEx, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus): FeedbackStatus {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 }
 
 class ConjBuilder(val type: Class<out AndItem>) {

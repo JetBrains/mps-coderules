@@ -16,9 +16,9 @@
 
 package jetbrains.mps.unification.test;
 
-import jetbrains.mps.logic.reactor.core.internal.LogicalImplKt;
 import jetbrains.mps.logic.reactor.logical.MutableLogical;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
+import jetbrains.mps.logic.reactor.logical.LogicalKt;
 import jetbrains.mps.unification.Substitution;
 import jetbrains.mps.unification.Term;
 import jetbrains.mps.unification.TermWrapper;
@@ -666,9 +666,9 @@ public class SolverTests {
         MetaLogical<Term> X = new MetaLogical<>("X", Term.class);
         MetaLogical<Term> Y = new MetaLogical<>("Y", Term.class);
         MetaLogical<Term> Z = new MetaLogical<>("Z", Term.class);
-        MutableLogical<Term> xLogical = LogicalImplKt.logical(X);
-        MutableLogical<Term> yLogical = LogicalImplKt.logical(Y);
-        MutableLogical<Term> zLogical = LogicalImplKt.logical(Z);
+        MutableLogical<Term> xLogical = LogicalKt.logical(X);
+        MutableLogical<Term> yLogical = LogicalKt.logical(Y);
+        MutableLogical<Term> zLogical = LogicalKt.logical(Z);
 
         Term left = term("foo", term("bar", logicalVar(yLogical)), logicalVar(zLogical));
         Term right = term("foo", term("bar", logicalVar(xLogical)), logicalVar(zLogical));
@@ -686,9 +686,9 @@ public class SolverTests {
         MetaLogical<Term> X = new MetaLogical<>("X", Term.class);
         MetaLogical<Term> Y = new MetaLogical<>("Y", Term.class);
         MetaLogical<Term> Z = new MetaLogical<>("Z", Term.class);
-        MutableLogical<Term> xLogical = LogicalImplKt.logical(X);
-        MutableLogical<Term> yLogical = LogicalImplKt.logical(Y);
-        MutableLogical<Term> zLogical = LogicalImplKt.logical(Z);
+        MutableLogical<Term> xLogical = LogicalKt.logical(X);
+        MutableLogical<Term> yLogical = LogicalKt.logical(Y);
+        MutableLogical<Term> zLogical = LogicalKt.logical(Z);
 
         Term left = logicalVar(yLogical);
         Term right = term("foo", term("bar", logicalVar(xLogical)), logicalVar(zLogical));

@@ -1,7 +1,7 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.UnionFindLinkedList
 import jetbrains.mps.logic.reactor.core.internal.createOccurrenceMatcher
-import jetbrains.mps.logic.reactor.core.internal.logical
+import jetbrains.mps.logic.reactor.logical.logical
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol.symbol

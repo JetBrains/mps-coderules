@@ -63,8 +63,7 @@ internal data class SessionParts(
     val journal: MatchJournal,
     val logicalState: LogicalState,
     val controller: ControllerImpl,
-    val processing: ConstraintsProcessing,
-    val principalObservers: PrincipalObserverDispatcher
+    val processing: ConstraintsProcessing
 ) {
     val frontState: DispatchingFrontState get() = processing.getFrontState()
 }
@@ -94,8 +93,7 @@ internal class EvaluationSessionImpl private constructor (
 
         fun getSession(token: SessionTokenImpl?): SessionParts {
             val ruleIndex = token
-                ?.ruleIndex
-                ?.also { it.updateIndexFromRules(program.rules()) }
+                ?.updateRuleIndex(program.rules())
                 ?: RuleIndex(program.rules())
 
             val journal = MatchJournalImpl(trace)
@@ -106,11 +104,11 @@ internal class EvaluationSessionImpl private constructor (
 
             val controller = ControllerImpl(supervisor, processing, trace, profiler)
 
-            return SessionParts(ruleIndex, journal, logicalState, controller, processing, PrincipalObserverDispatcher.EMPTY)
+            return SessionParts(ruleIndex, journal, logicalState, controller, processing)
         }
 
         override fun endSession(session: SessionParts): SessionToken = with(session) {
-            SessionTokenImpl(journal.storeView(), ruleIndex.toRules(), emptyFrontState(), ruleIndex, logicalState, principalObservers.apply { clearTriggerReceiver() })
+            SessionTokenImpl(journal.storeView(), ruleIndex.toRules(), emptyFrontState(), ruleIndex, logicalState)
         }
 
         override fun runSession(session: SessionParts, main: Constraint): EvaluationResult = with(session) {

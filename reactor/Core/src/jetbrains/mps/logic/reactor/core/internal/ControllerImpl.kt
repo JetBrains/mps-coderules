@@ -49,12 +49,12 @@ internal class ControllerImpl (
     /** For tests only */
     override fun evaluate(occ: Occurrence): StoreView {
         // create the internal occurrence
-        val active = occ.constraint().occurrence(logicalStateObservable(), occ.arguments(), occ.evidence, occ.justifications(), object: LogicalContext {
+        val active = occ.constraint().occurrence(occ.arguments(), occ.evidence, occ.justifications(), object: LogicalContext {
             override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
         })
 
         trace.activate(occ)
-        val status = processing.processActivated(this, active, processing.initialChunk(), NORMAL())
+        val status = processing.processActivated(this, active, NORMAL())
         if (status is FAILED) {
             throw status.failure.failureCause()
         }
@@ -69,10 +69,7 @@ internal class ControllerImpl (
 
         return context.currentStatus()
     }
-
-    override fun logicalStateObservable(): LogicalStateObservable  =
-        processing
-
+    
     override fun ask(invocation: PredicateInvocation): Boolean {
         val solver = invocation.predicate().symbol().solver(supervisor)
         val result = solver.ask(invocation)
@@ -96,7 +93,7 @@ internal class ControllerImpl (
         profiler.profile<FeedbackStatus>("reactivate_${occ.constraint.symbol()}") {
 
             trace.reactivate(occ)
-            processing.processActivated(this, occ, processing.parentChunk(), NORMAL())
+            processing.processActivated(this, occ, NORMAL())
 
         }
 
@@ -129,7 +126,7 @@ internal class ControllerImpl (
         return context.currentStatus()
     }
 
-    override fun processBody(match: RuleMatchEx, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus {
+    override fun processBody(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
         val context = Context(inStatus, match.logicalContext(), match.rule().uniqueTag(), trace)
 
         val altIt = match.rule().bodyAlternation().iterator()
@@ -233,9 +230,9 @@ internal class ControllerImpl (
             profiler.profile<FeedbackStatus>("activate_${constraint.symbol()}") {
 
                 with(creator) {
-                    constraint.occurrence(logicalStateObservable(), args, context.logicalContext, context.ruleUniqueTag).let { occ ->
+                    constraint.occurrence(args, context.logicalContext, context.ruleUniqueTag).let { occ ->
                         trace.activate(occ)
-                        processing.processActivated(this@ControllerImpl, occ, parent, status)
+                        processing.processActivated(this@ControllerImpl, occ, status)
                     }
                 }
 

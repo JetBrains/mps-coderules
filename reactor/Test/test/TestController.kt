@@ -1,6 +1,6 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.createController
-import jetbrains.mps.logic.reactor.core.internal.logical
+import jetbrains.mps.logic.reactor.logical.logical
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol

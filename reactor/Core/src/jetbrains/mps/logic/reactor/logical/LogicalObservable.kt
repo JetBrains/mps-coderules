@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 JetBrains s.r.o.
+ * Copyright 2014-2024 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.logical
 
-import jetbrains.mps.logic.reactor.logical.Logical
-
-
+/**
+ * An observable interface of a [Logical] instance.
+ *
+ * @author Fedor Isakov
+ */
 interface LogicalObservable {
 
     fun addObserver(observer: LogicalObserver)
@@ -26,18 +28,3 @@ interface LogicalObservable {
     fun removeObserver(observer: LogicalObserver)
 
 }
-
-/**
- * An observer interface of a [Logical] instance.
- *
- * @author Fedor Isakov
- */
-interface LogicalObserver {
-
-    fun valueUpdated(logical: Logical<*>)
-
-    fun parentUpdated(logical: Logical<*>)
-
-}
-
-

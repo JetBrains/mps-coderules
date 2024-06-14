@@ -30,14 +30,13 @@ import jetbrains.mps.logic.reactor.program.Rule
  *
  * @author Fedor Isakov
  */
-class Occurrence (observable: LogicalStateObservable,
-                  val constraint: Constraint,
-                  val logicalContext: LogicalContext,
-                  val arguments: List<*>,
-                  override val evidence: Evidence,
-                  private val justifications: Justifications,
-                  val sourceRule: Rule.Tag? = null):
-    ConstraintOccurrence, ForwardingLogicalObserver, Justified
+class Occurrence(val constraint: Constraint,
+                 val logicalContext: LogicalContext,
+                 val arguments: List<*>,
+                 override val evidence: Evidence,
+                 private val justifications: Justifications,
+                 val sourceRule: Rule.Tag? = null):
+    ConstraintOccurrence, Justified, Reactivatable
 {
 
     var alive = false
@@ -56,14 +55,12 @@ class Occurrence (observable: LogicalStateObservable,
 
     override fun justifications(): Justifications = justifications
 
-    override fun valueUpdated(logical: Logical<*>, controller: Controller) = doReactivate(controller)
-
-    override fun parentUpdated(logical: Logical<*>, controller: Controller) = doReactivate(controller)
+    override fun reactivate(controller: Controller) = doReactivate(controller)
 
     fun terminate(observable: LogicalStateObservable) {
         for (a in arguments) {
             if (a is Logical<*>) {
-                observable.removeForwardingObserver(a, this)
+                observable.removeReactivatable(a, this)
             }
         }
         alive = false
@@ -73,7 +70,7 @@ class Occurrence (observable: LogicalStateObservable,
         if (!alive) {
             for (a in HashSet(arguments)) { // avoid duplicate subscriptions
                 if (a is Logical<*>) {
-                    observable.addForwardingObserver(a, this)
+                    observable.addReactivatable(a, this)
                 }
             }
         }
@@ -99,10 +96,9 @@ class Occurrence (observable: LogicalStateObservable,
 
 fun Occurrence.arity() = constraint().symbol().arity()
 
-fun Constraint.occurrence(observable: LogicalStateObservable,
-                          arguments: List<*>,
+fun Constraint.occurrence(arguments: List<*>,
                           evidence: Evidence,
                           justifications: Justifications,
                           logicalContext: LogicalContext,
                           ruleUniqueTag: Rule.Tag? = null): Occurrence =
-    Occurrence(observable, this, logicalContext, arguments, evidence, justifications, ruleUniqueTag)
+    Occurrence(this, logicalContext, arguments, evidence, justifications, ruleUniqueTag)

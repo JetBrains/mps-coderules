@@ -1,6 +1,6 @@
-import jetbrains.mps.logic.reactor.core.LogicalObserver
-import jetbrains.mps.logic.reactor.core.internal.anonLogical
-import jetbrains.mps.logic.reactor.core.internal.namedLogical
+import jetbrains.mps.logic.reactor.logical.LogicalObserver
+import jetbrains.mps.logic.reactor.logical.anonLogical
+import jetbrains.mps.logic.reactor.logical.namedLogical
 import jetbrains.mps.logic.reactor.logical.MutableLogical
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical

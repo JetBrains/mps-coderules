@@ -40,8 +40,7 @@ internal class ConstraintsProcessing(
     journal: MatchJournalImpl,
     val logicalState: LogicalState,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
-    val profiler: Profiler? = null ) :  MatchJournal by journal,
-                                        LogicalStateObservable by LogicalState()
+    val profiler: Profiler? = null ) :  MatchJournal by journal
 {
     fun getFrontState(): DispatchingFrontState = dispatchingFront.state()
 
@@ -58,7 +57,7 @@ internal class ConstraintsProcessing(
      * Calls the controller to process matches (if any) that were triggered.
      * This method may be called at most once for a fresh state frame.
      */
-    fun processActivated(controller: Controller, active: Occurrence, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus {
+    fun processActivated(controller: Controller, active: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus {
         if (!active.stored) {
             active.stored = true
             logActivation(active)
@@ -75,7 +74,7 @@ internal class ConstraintsProcessing(
         val matches = dispatchingFront.matches().toList()
         val currentMatches = matches
 
-        val outStatus = processMatches(controller, active, currentMatches, parent, inStatus)
+        val outStatus = processMatches(controller, active, currentMatches, inStatus)
 
         // TODO: should be isAlive()
         if (active.stored) {
@@ -85,13 +84,13 @@ internal class ConstraintsProcessing(
         return outStatus
     }
 
-    fun processMatches(controller: Controller, active: Occurrence, matches: List<RuleMatchEx>, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus =
+    fun processMatches(controller: Controller, active: Occurrence, matches: List<RuleMatchEx>, inStatus: FeedbackStatus) : FeedbackStatus =
         matches.fold(inStatus) { status, match ->
             // TODO: paranoid check. should be isAlive() instead
             // FIXME: move this check elsewhere
             if (status.operational && active.stored && match.allStored()) {
                 assert(match.allHeads().contains(active))
-                processMatch(controller, match, parent, status)
+                processMatch(controller, match, status)
             } else status
         }
 
@@ -99,7 +98,7 @@ internal class ConstraintsProcessing(
     private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
         if (operational) action(this) else this
 
-    private fun processMatch(controller: Controller, match: RuleMatchEx, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus =
+    private fun processMatch(controller: Controller, match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
         inStatus
             .let {
                 controller.offerMatch(match, inStatus)
@@ -121,7 +120,7 @@ internal class ConstraintsProcessing(
             }
             .also { trace.trigger(match) }
             .also { accept(controller, match) }
-            .then { controller.processBody(match, parent, it) }
+            .then { controller.processBody(match, it) }
             .also { trace.finish(match) }
 
     private fun accept(controller: Controller, match: RuleMatchEx) {
@@ -160,7 +159,6 @@ internal class ConstraintsProcessing(
         private val savedJustifications: Justifications = justifications()
     ) {
         fun Constraint.occurrence(
-            observable: LogicalStateObservable,
             arguments: List<*>,
             logicalContext: LogicalContext,
             ruleUniqueTag: Rule.Tag? = null
@@ -171,8 +169,8 @@ internal class ConstraintsProcessing(
             val justifications = justsCopy(savedJustifications).apply { add(evidence) }
 
             return Occurrence(
-                observable, this, logicalContext, arguments,
-                evidence, justifications, ruleUniqueTag
+                this, logicalContext, arguments, evidence,
+                justifications, ruleUniqueTag
             )
         }
     }

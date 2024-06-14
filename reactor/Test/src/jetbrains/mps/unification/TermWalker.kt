@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2020 JetBrains s.r.o.
+ * Copyright 2014-2024 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.logic.reactor.core.internal
+package jetbrains.mps.unification
 
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalOwner
-import jetbrains.mps.unification.Term
 import java.util.*
 
 /**

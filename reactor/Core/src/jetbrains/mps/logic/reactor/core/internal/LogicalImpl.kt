@@ -16,7 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.core.LogicalObserver
+import jetbrains.mps.logic.reactor.logical.LogicalObserver
 import jetbrains.mps.logic.reactor.logical.MutableLogical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import java.util.ArrayList
@@ -205,18 +205,4 @@ internal class LogicalImpl<T> : MutableLogical<T> {
 }
 
 class DefaultMetaLogical<V> (val name: String) : MetaLogical<V>(name, Object::class.java as Class<V>) {}
-
-// Used from tests
-
-@Deprecated(message = "use jetbrains.mps.logic.reactor.logical.Logical")
-fun <V> anonLogical(value: V): MutableLogical<V> = LogicalImpl<V>(value)
-
-@Deprecated(message = "use jetbrains.mps.logic.reactor.logical.Logical")
-fun <V> namedLogical(name: String): MutableLogical<V> = LogicalImpl<V>(name)
-
-@Deprecated(message = "use jetbrains.mps.logic.reactor.logical.Logical")
-fun <V> MetaLogical<V>.logical(): MutableLogical<V> = LogicalImpl<V>(this)
-
-@Deprecated(message = "use jetbrains.mps.logic.reactor.logical.Logical")
-fun <V> MetaLogical<V>.logical(value: V): MutableLogical<V> = LogicalImpl<V>(name(), value)
 

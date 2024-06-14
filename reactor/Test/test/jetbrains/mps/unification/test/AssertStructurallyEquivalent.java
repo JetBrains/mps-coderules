@@ -16,8 +16,9 @@
 
 package jetbrains.mps.unification.test;
 
-import jetbrains.mps.logic.reactor.core.internal.TermWalker;
 import jetbrains.mps.unification.Term;
+import jetbrains.mps.unification.TermWalker;
+
 import static org.junit.Assert.*;
 
 import java.util.*;

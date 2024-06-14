@@ -26,11 +26,13 @@ data class SessionTokenImpl(
     private val storeView: StoreView,
     private val rules: Iterable<Rule>,
     private val frontState: DispatchingFrontState,
-    val ruleIndex: RuleIndex,
-    val logicalState: LogicalState,
-    val principalObservers: PrincipalObserverDispatcher = PrincipalObserverDispatcher.EMPTY
+    private val ruleIndex: RuleIndex,
+    private val logicalState: LogicalState
 ) : SessionToken
 {
     override fun getStoreView(): StoreView = storeView
     override fun getRules(): Iterable<Rule> = rules
+
+    fun updateRuleIndex(rules: Iterable<Rule>) : RuleIndex =
+        ruleIndex.also { it.updateIndexFromRules(rules) }
 }

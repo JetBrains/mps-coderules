@@ -17,8 +17,6 @@
 package jetbrains.mps.logic.reactor.logical;
 
 
-import jetbrains.mps.logic.reactor.core.LogicalObservable;
-
 /**
  * A run-time representation of a logical variable.
  *
