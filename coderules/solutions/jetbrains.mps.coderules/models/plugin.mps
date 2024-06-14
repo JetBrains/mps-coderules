@@ -314,14 +314,9 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="779128492853369165" name="jetbrains.mps.lang.core.structure.SideTransformInfo" flags="ng" index="1KehLL">
-        <property id="779128492853934523" name="cellId" index="1K8rM7" />
-        <property id="779128492853699361" name="side" index="1Kfyot" />
       </concept>
     </language>
     <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
@@ -6023,10 +6018,6 @@
         </node>
         <node concept="2AHcQZ" id="6Uh0cilk$dA" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-          <node concept="1KehLL" id="2daneBOR$ri" role="lGtFl">
-            <property role="1K8rM7" value="Constant_d5p1uc_a0" />
-            <property role="1Kfyot" value="Fg1jLUVyTf/left" />
-          </node>
         </node>
       </node>
       <node concept="2tJIrI" id="3mz2_dYbkp6" role="jymVt" />
@@ -6113,7 +6104,7 @@
         <node concept="37vLTG" id="2Cji6EQLUqG" role="3clF46">
           <property role="TrG5h" value="observer" />
           <node concept="3uibUv" id="2Cji6EQLUqH" role="1tU5fm">
-            <ref role="3uigEE" to="zx3l:~LogicalObserver" resolve="LogicalObserver" />
+            <ref role="3uigEE" to="bj13:~LogicalObserver" resolve="LogicalObserver" />
           </node>
         </node>
         <node concept="3clFbS" id="2Cji6EQLUqI" role="3clF47">
@@ -6137,7 +6128,7 @@
         <node concept="37vLTG" id="2Cji6EQLUqO" role="3clF46">
           <property role="TrG5h" value="observer" />
           <node concept="3uibUv" id="2Cji6EQLUqP" role="1tU5fm">
-            <ref role="3uigEE" to="zx3l:~LogicalObserver" resolve="LogicalObserver" />
+            <ref role="3uigEE" to="bj13:~LogicalObserver" resolve="LogicalObserver" />
           </node>
         </node>
         <node concept="3clFbS" id="2Cji6EQLUqQ" role="3clF47">
