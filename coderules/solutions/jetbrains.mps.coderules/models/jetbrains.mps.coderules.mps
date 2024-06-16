@@ -7,9 +7,9 @@
   <imports>
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
-    <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
+    <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -18,7 +18,6 @@
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
-      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="nn" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
@@ -26,15 +25,8 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ngI" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
-      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq$k0" />
-        <child id="1197027833540" name="operation" index="2OqNvi" />
-      </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
@@ -130,15 +122,10 @@
       <node concept="3Tm1VV" id="2r1jTXMuuei" role="1B3o_S" />
       <node concept="3cqZAl" id="2r1jTXMuuek" role="3clF45" />
       <node concept="3clFbS" id="2r1jTXMuuel" role="3clF47">
-        <node concept="3clFbF" id="3ywbauF4QxD" role="3cqZAp">
-          <node concept="2OqwBi" id="3ywbauF4QK1" role="3clFbG">
-            <node concept="10M0yZ" id="3ywbauF4QFw" role="2Oq$k0">
-              <ref role="3cqZAo" to="zx3l:~ReactorLifecycle.Companion" resolve="Companion" />
-              <ref role="1PxDUh" to="zx3l:~ReactorLifecycle" resolve="ReactorLifecycle" />
-            </node>
-            <node concept="liA8E" id="3ywbauF4QMM" role="2OqNvi">
-              <ref role="37wK5l" to="zx3l:~ReactorLifecycle$Companion.init()" resolve="init" />
-            </node>
+        <node concept="3clFbF" id="2AvMvaBkZjl" role="3cqZAp">
+          <node concept="2YIFZM" id="2AvMvaBkZtD" role="3clFbG">
+            <ref role="37wK5l" to="w7la:~EvaluationSessionKt.initBackend()" resolve="initBackend" />
+            <ref role="1Pybhc" to="w7la:~EvaluationSessionKt" resolve="EvaluationSessionKt" />
           </node>
         </node>
         <node concept="3clFbF" id="2tFDlV2dcFL" role="3cqZAp">
@@ -164,15 +151,10 @@
       <node concept="3Tm1VV" id="2r1jTXMuuph" role="1B3o_S" />
       <node concept="3cqZAl" id="2r1jTXMuupj" role="3clF45" />
       <node concept="3clFbS" id="2r1jTXMuupk" role="3clF47">
-        <node concept="3clFbF" id="3ywbauF4QOh" role="3cqZAp">
-          <node concept="2OqwBi" id="3ywbauF4QOi" role="3clFbG">
-            <node concept="10M0yZ" id="3ywbauF4QOj" role="2Oq$k0">
-              <ref role="3cqZAo" to="zx3l:~ReactorLifecycle.Companion" resolve="Companion" />
-              <ref role="1PxDUh" to="zx3l:~ReactorLifecycle" resolve="ReactorLifecycle" />
-            </node>
-            <node concept="liA8E" id="3ywbauF4QTQ" role="2OqNvi">
-              <ref role="37wK5l" to="zx3l:~ReactorLifecycle$Companion.deinit()" resolve="deinit" />
-            </node>
+        <node concept="3clFbF" id="2AvMvaBkZBG" role="3cqZAp">
+          <node concept="2YIFZM" id="2AvMvaBkZQ3" role="3clFbG">
+            <ref role="37wK5l" to="w7la:~EvaluationSessionKt.deinitBackend()" resolve="deinitBackend" />
+            <ref role="1Pybhc" to="w7la:~EvaluationSessionKt" resolve="EvaluationSessionKt" />
           </node>
         </node>
         <node concept="3clFbF" id="2tFDlV2deiY" role="3cqZAp">
