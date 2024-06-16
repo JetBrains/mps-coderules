@@ -301,7 +301,7 @@
           <ref role="3Mxwex" node="5Hdh9$IhmQ$" resolve="ci.mps.release" />
         </node>
         <node concept="3Mxwew" id="2BiN_P7R7Wi" role="3MwsjC">
-          <property role="3MwjfP" value="-0.9.7-b" />
+          <property role="3MwjfP" value="-0.9.8-b" />
         </node>
         <node concept="3Mxwey" id="2BiN_P7R81m" role="3MwsjC">
           <ref role="3Mxwex" node="2BiN_P7R7jO" resolve="ci.build.num" />
@@ -327,14 +327,14 @@
         <node concept="2pNUuL" id="5Hdh9$IhmW_" role="2pNNFR">
           <property role="2pNUuO" value="since-build" />
           <node concept="2pMdtt" id="5Hdh9$IhnkA" role="2pMdts">
-            <property role="2pMdty" value="232.8660" />
+            <property role="2pMdty" value="241.17011" />
           </node>
         </node>
       </node>
       <node concept="2pNNFK" id="2fVm_54SZ$e" role="20twgj">
         <property role="2pNNFO" value="change-notes" />
         <node concept="2pNm8S" id="2p5jUSWfCr8" role="3o6s8t">
-          <property role="3o6aOc" value="&lt;ul&gt;&lt;li&gt;Compatible with upcoming 2023.2 release of MPS&lt;/li&gt;&lt;li&gt;New syntax for macro calls; support for required and optional parameters&lt;/li&gt;&lt;li&gt;Bugfixes and optimizations&lt;/li&gt;&lt;/ul&gt;" />
+          <property role="3o6aOc" value="&lt;ul&gt;&lt;li&gt;Compatible with upcoming 2024.1 release of MPS&lt;/li&gt;&lt;li&gt;Bugfixes and optimizations&lt;/li&gt;&lt;/ul&gt;" />
         </node>
       </node>
       <node concept="2pNNFK" id="2CPBoDATrZn" role="20twgj">
@@ -3665,7 +3665,7 @@
       <node concept="aVJcg" id="5Hdh9$IhmQ_" role="aVJcv">
         <node concept="NbPM2" id="5Hdh9$IhmQA" role="aVJcq">
           <node concept="3Mxwew" id="5Hdh9$IhmQB" role="3MwsjC">
-            <property role="3MwjfP" value="232" />
+            <property role="3MwjfP" value="241" />
           </node>
         </node>
       </node>

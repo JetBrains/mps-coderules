@@ -7,7 +7,7 @@
   <property name="build.layout" location="${build.dir}/artifacts/coderules" />
   <property name="ci.build.num" value="9999" />
   <property name="ci.build.tag" value="SNAPSHOT" />
-  <property name="ci.mps.release" value="232" />
+  <property name="ci.mps.release" value="241" />
   <property name="test.jvmargs" value="-Xss2048k -Xmx2048m" />
   <property name="mps.macro.coderules_home" location="${basedir}" />
   <property name="mps_home" location="${basedir}/MPS_HOME" />
@@ -802,6 +802,7 @@
           <language id="l:63650c59-16c8-498a-99c8-005c7ee9515d:jetbrains.mps.lang.access" />
           <language id="l:28f9e497-3b42-4291-aeba-0a1039153ab1:jetbrains.mps.lang.plugin" />
           <language id="l:ef7bf5ac-d06c-4342-b11d-e42104eb9343:jetbrains.mps.lang.plugin.standalone" />
+          <language id="l:3a13115c-633c-4c5c-bbcc-75c4219e9555:jetbrains.mps.lang.quotation" />
           <language id="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" />
           <language id="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" />
         </uses>
@@ -2032,7 +2033,7 @@
         <id>jetbrains.mps.coderules</id>
         <name>MPS Coderules Typechecking</name>
         <description>Typechecking with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.7-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.8-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>com.intellij.modules.platform</depends>
         <depends>jetbrains.mps.core</depends>
@@ -2040,8 +2041,8 @@
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="232.8660" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>New syntax for macro calls; support for required and optional parameters</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="241.17011" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.1 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
@@ -2365,6 +2366,7 @@
           <language id="l:63650c59-16c8-498a-99c8-005c7ee9515d:jetbrains.mps.lang.access" />
           <language id="l:28f9e497-3b42-4291-aeba-0a1039153ab1:jetbrains.mps.lang.plugin" />
           <language id="l:ef7bf5ac-d06c-4342-b11d-e42104eb9343:jetbrains.mps.lang.plugin.standalone" />
+          <language id="l:3a13115c-633c-4c5c-bbcc-75c4219e9555:jetbrains.mps.lang.quotation" />
           <language id="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" />
           <language id="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" />
         </uses>
@@ -3700,7 +3702,7 @@
         <id>jetbrains.mps.coderules</id>
         <name>MPS Coderules Typechecking</name>
         <description>Typechecking with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.7-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.8-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>com.intellij.modules.platform</depends>
         <depends>jetbrains.mps.core</depends>
@@ -3708,8 +3710,8 @@
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="232.8660" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2023.2 release of MPS</li><li>New syntax for macro calls; support for required and optional parameters</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="241.17011" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.1 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationService serviceImplementation="jetbrains.mps.coderules.ideaplugin.TypecheckingSettings" />
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
