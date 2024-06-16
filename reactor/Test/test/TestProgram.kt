@@ -1,7 +1,4 @@
-import jetbrains.mps.logic.reactor.core.ReactorLifecycle
-import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
-import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
-import jetbrains.mps.logic.reactor.evaluation.StoreView
+import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
@@ -23,13 +20,13 @@ class TestProgram {
         @BeforeClass
         @JvmStatic
         fun setup() {
-            ReactorLifecycle.init();
+            initBackend()
         }
 
         @AfterClass
         @JvmStatic
         fun teardown() {
-            ReactorLifecycle.deinit();
+            deinitBackend()
         }
     }
 

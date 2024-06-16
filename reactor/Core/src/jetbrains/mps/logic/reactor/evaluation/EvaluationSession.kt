@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 JetBrains s.r.o.
+ * Copyright 2014-2024 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,24 +14,14 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.evaluation
 
 import jetbrains.mps.logic.reactor.core.internal.EvaluationSessionImpl
 
 /**
- * Must be invoked by the code responsible for application's initialization and teardown.
- *
  * @author Fedor Isakov
  */
-class ReactorLifecycle {
 
-    companion object {
-        fun init() {
-            EvaluationSessionImpl.Backend.init()
-        }
+fun initBackend() = EvaluationSessionImpl.Backend.init()
 
-        fun deinit() {
-            EvaluationSessionImpl.Backend.deinit()
-        }
-    }
-}
+fun deinitBackend() = EvaluationSessionImpl.Backend.deinit()
