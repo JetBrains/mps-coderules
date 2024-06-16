@@ -2441,6 +2441,11 @@
             <ref role="1Busuk" node="6$MmqWflyOZ" resolve="jetbrains.mps.baseLanguage.closuresExt" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2r1jTXMF04z" role="3bR37C">
+          <node concept="3bR9La" id="2r1jTXMF04$" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6L0C" resolve="collections.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="6BFOg89KVoY" role="2G$12L">
         <property role="BnDLt" value="true" />
