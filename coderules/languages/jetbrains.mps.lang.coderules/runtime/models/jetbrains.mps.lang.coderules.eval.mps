@@ -585,12 +585,6 @@
           <ref role="3uigEE" node="3GlpCDSxTG7" resolve="ProgramProducer" />
         </node>
       </node>
-      <node concept="37vLTG" id="4J__M6MPY0" role="3clF46">
-        <property role="TrG5h" value="sessionToken" />
-        <node concept="3uibUv" id="4J__M6MR1t" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~SessionToken" resolve="SessionToken" />
-        </node>
-      </node>
       <node concept="37vLTG" id="3o9wrC3sOnz" role="3clF46">
         <property role="TrG5h" value="supervisor" />
         <node concept="3uibUv" id="3o9wrC3sPQg" role="1tU5fm">
@@ -737,24 +731,6 @@
                   <ref role="3cqZAo" node="24Vro6cQKgF" resolve="tracer" />
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3R7n5gYSM0T" role="3cqZAp">
-          <node concept="37vLTI" id="3R7n5gYSM0U" role="3clFbG">
-            <node concept="2OqwBi" id="3R7n5gYSM0V" role="37vLTx">
-              <node concept="37vLTw" id="3R7n5gYSM0W" role="2Oq$k0">
-                <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
-              </node>
-              <node concept="liA8E" id="3R7n5gYSM0X" role="2OqNvi">
-                <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withSessionToken(jetbrains.mps.logic.reactor.evaluation.SessionToken)" resolve="withSessionToken" />
-                <node concept="37vLTw" id="4J__M6MRd2" role="37wK5m">
-                  <ref role="3cqZAo" node="4J__M6MPY0" resolve="sessionToken" />
-                </node>
-              </node>
-            </node>
-            <node concept="37vLTw" id="3R7n5gYSM0Z" role="37vLTJ">
-              <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
             </node>
           </node>
         </node>

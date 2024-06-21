@@ -1423,7 +1423,6 @@
                     <node concept="37vLTw" id="3o9wrC3u78G" role="37wK5m">
                       <ref role="3cqZAo" node="tyIfzC1aUL" resolve="tplApp" />
                     </node>
-                    <node concept="10Nm6u" id="6DQTzHxvFDr" role="37wK5m" />
                     <node concept="37vLTw" id="6fTgyZtNj3o" role="37wK5m">
                       <ref role="3cqZAo" node="3o9wrC3WGRL" resolve="supervisor" />
                     </node>
@@ -1508,24 +1507,6 @@
               </node>
               <node concept="liA8E" id="4J__M6YPmC" role="2OqNvi">
                 <ref role="37wK5l" to="hano:4J__M6Meme" resolve="getEvaluationResult" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4J__M6ZkD9" role="3cqZAp">
-          <node concept="37vLTI" id="4J__M6ZlCl" role="3clFbG">
-            <node concept="2OqwBi" id="4J__M6ZmNC" role="37vLTx">
-              <node concept="37vLTw" id="4J__M6ZmND" role="2Oq$k0">
-                <ref role="3cqZAo" node="4J__M6YPm_" resolve="evaluationResult" />
-              </node>
-              <node concept="liA8E" id="4J__M6ZmNE" role="2OqNvi">
-                <ref role="37wK5l" to="w7la:~EvaluationResult.token()" resolve="token" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="4J__M6Zlay" role="37vLTJ">
-              <node concept="Xjq3P" id="4J__M6ZkD7" role="2Oq$k0" />
-              <node concept="2OwXpG" id="4J__M6ZlqJ" role="2OqNvi">
-                <ref role="2Oxat5" node="4J__M6YZRN" resolve="sessionToken" />
               </node>
             </node>
           </node>
@@ -2357,14 +2338,6 @@
       <node concept="3uibUv" id="6jc_YgcDmeG" role="1tU5fm">
         <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
       </node>
-    </node>
-    <node concept="312cEg" id="4J__M6YZRN" role="jymVt">
-      <property role="TrG5h" value="sessionToken" />
-      <node concept="3Tm6S6" id="4J__M6YZRO" role="1B3o_S" />
-      <node concept="3uibUv" id="4J__M6Z4pW" role="1tU5fm">
-        <ref role="3uigEE" to="w7la:~SessionToken" resolve="SessionToken" />
-      </node>
-      <node concept="10Nm6u" id="4J__M6Z8uO" role="33vP2m" />
     </node>
     <node concept="312cEg" id="tyIfzC1aUL" role="jymVt">
       <property role="TrG5h" value="tplApp" />
