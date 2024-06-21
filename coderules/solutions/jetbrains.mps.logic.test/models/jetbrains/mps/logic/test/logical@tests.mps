@@ -4735,7 +4735,7 @@
               </node>
               <node concept="3vlDli" id="19fWAfxQC2O" role="3cqZAp">
                 <node concept="Xl_RD" id="19fWAfxQC2P" role="3tpDZB">
-                  <property role="Xl_RC" value="classifier('Object')" />
+                  <property role="Xl_RC" value="classifier('Object' [])" />
                 </node>
                 <node concept="2YIFZM" id="19fWAfxQC2Q" role="3tpDZA">
                   <ref role="37wK5l" to="6exd:1G9MbtSGvMe" resolve="print" />
