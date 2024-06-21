@@ -1553,6 +1553,79 @@
         </node>
       </node>
     </node>
+    <node concept="1nLNMY" id="4lgunKg$PYE" role="1nK1Vg">
+      <property role="TrG5h" value="hexLongLiteral" />
+      <node concept="3clFbS" id="4lgunKg$PYF" role="1nLNMH">
+        <node concept="1nLNNL" id="4lgunKg$PYG" role="3cqZAp">
+          <node concept="1nLNMm" id="4lgunKg$PYH" role="1nLNNK">
+            <node concept="3Aq93q" id="4lgunKg$PYI" role="1nLNMb">
+              <property role="3ArMco" value="true" />
+              <node concept="3I6sU6" id="4lgunKg$PYJ" role="3Ip0Jz">
+                <node concept="3I6s7M" id="4lgunKg$PYK" role="3I6sU7">
+                  <node concept="3Aqt3T" id="4lgunKg$PYL" role="3I6s78">
+                    <ref role="3AqCNq" node="34$A1MfabR$" resolve="checkAll" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3NuqgR" id="4lgunKg$PYM" role="0Rg$4">
+              <node concept="aZer4" id="4lgunKg$PYN" role="3XD1gS">
+                <property role="TrG5h" value="IntType" />
+              </node>
+              <node concept="32pEOW" id="4lgunKg$PYO" role="3vLBG7" />
+            </node>
+            <node concept="3xSepi" id="4lgunKg$PYP" role="3xSepv">
+              <node concept="3Aq9E8" id="4lgunKg$PYQ" role="3xSepj">
+                <node concept="3I6sU6" id="4lgunKg$PYR" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="4lgunKg$PYS" role="3I6sU7">
+                    <node concept="3jm4v3" id="4lgunKg$PYT" role="3I6s78">
+                      <ref role="3jm46O" node="5itBwMaDDET" resolve="intType" />
+                      <node concept="a7P8L" id="4lgunKg$PYU" role="3jm6SO">
+                        <ref role="a7OzE" node="4lgunKg$PYN" resolve="IntType" />
+                      </node>
+                      <node concept="1uXrbS" id="4lgunKg$PYV" role="3GayWF">
+                        <ref role="1uXrre" node="5itBwMaDFzP" resolve="value" />
+                        <node concept="10Nm6u" id="4lgunKg$PYW" role="1uXrr8" />
+                      </node>
+                      <node concept="1uXrbS" id="4lgunKg$PYX" role="3GayWF">
+                        <ref role="1uXrre" node="5itBwMaDXeB" resolve="valueHex" />
+                        <node concept="2OqwBi" id="4lgunKg$PYY" role="1uXrr8">
+                          <node concept="3A2sRY" id="4lgunKg$PYZ" role="2Oq$k0">
+                            <ref role="3A2yKK" node="4lgunKg$PZ7" resolve="hexConst" />
+                          </node>
+                          <node concept="3TrcHB" id="4lgunKg$PZ0" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpee:7fGiXOMF9Ws" resolve="hexValue" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3I6s7M" id="4lgunKg$PZ1" role="3I6sU7">
+                    <node concept="3Aqt3T" id="4lgunKg$PZ2" role="3I6s78">
+                      <ref role="3AqCNq" node="34$A1MfhdDv" resolve="typeOf" />
+                      <node concept="37jhX" id="4lgunKg$PZ3" role="3AunhB">
+                        <node concept="3A2sRY" id="4lgunKg$PZ4" role="37jj2">
+                          <ref role="3A2yKK" node="4lgunKg$PZ7" resolve="hexConst" />
+                        </node>
+                      </node>
+                      <node concept="a7P8L" id="4lgunKg$PZ5" role="3AunhB">
+                        <ref role="a7OzE" node="4lgunKg$PYN" resolve="IntType" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2t___k" id="4lgunKg$PZ6" role="1nLNMg">
+        <ref role="2t_S0q" to="tpee:7fGiXOMF9Vj" resolve="HexLongLiteral" />
+        <node concept="3A20r5" id="4lgunKg$PZ7" role="2t_VXX">
+          <property role="TrG5h" value="hexConst" />
+        </node>
+      </node>
+    </node>
     <node concept="1nLNMY" id="5XJPBczwmNc" role="1nK1Vg">
       <property role="TrG5h" value="longLiteral" />
       <node concept="3clFbS" id="5XJPBczwmNd" role="1nLNMH">
