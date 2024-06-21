@@ -21,8 +21,7 @@ package jetbrains.mps.logic.reactor.evaluation;
  */
 public interface EvaluationResult {
 
-    SessionToken token();
-
+    // used in tests
     StoreView storeView();
     
     EvaluationFeedback feedback();

@@ -55,6 +55,4 @@ abstract class Feedback : EvaluationFeedback() {
 
 }
 
-typealias FeedbackKeySet = Set<Any>
-
 internal val RuleMatch.feedbackKey: Any get() = System.identityHashCode(this)

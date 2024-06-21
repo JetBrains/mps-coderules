@@ -28,46 +28,12 @@ import java.util.*
  */
 
 /**
- * Handles creation of the first and following sessions,
- * properly ending sessions and getting their results.
- */
-internal interface SessionManager {
-
-    /**
-     * Creates first session when there's no [SessionToken] available.
-     */
-    fun firstSession(): SessionParts
-
-    /**
-     * Creates following session when previous [token] is available.
-     */
-    fun nextSession(token: SessionToken): SessionParts
-
-    /**
-     * Clears state unneeded between sessions and return
-     * next [SessionToken] required for following session.
-     */
-    fun endSession(session: SessionParts): SessionToken
-
-    /**
-     * Starts [session] and returns overall [EvaluationResult] of the program.
-     */
-    fun runSession(session: SessionParts, main: Constraint): EvaluationResult
-}
-
-/**
  * Bundle of all entities involved in a session.
  */
-internal data class SessionParts(
-    val ruleIndex: RuleIndex,
+internal data class SessionData(
     val journal: MatchJournal,
-    val logicalState: LogicalState,
     val controller: ControllerImpl,
-    val processing: ConstraintsProcessing
-) {
-    val frontState: DispatchingFrontState get() = processing.getFrontState()
-}
-
+)
 
 internal class EvaluationSessionImpl private constructor (
     val program: Program,
@@ -79,22 +45,16 @@ internal class EvaluationSessionImpl private constructor (
     @Suppress("UNCHECKED_CAST")
     override fun <T : Any> parameter(key: ParameterKey<T>): T = params ?.get(key) as T
 
-    private fun launch(token: SessionToken?, main: Constraint): EvaluationResult {
-        val sessionProcessing: DefaultProcessingSession = DefaultProcessingSession()
-        val session = sessionProcessing.getSession(token as SessionTokenImpl?)
+    private fun launch(main: Constraint): EvaluationResult {
+        val sessionProcessing = DefaultProcessingSession()
+        val session = sessionProcessing.getSession()
         return sessionProcessing.runSession(session, main)
     }
 
-    open inner class DefaultProcessingSession: SessionManager {
+    open inner class DefaultProcessingSession {
 
-        override fun firstSession(): SessionParts = getSession(null)
-
-        override fun nextSession(token: SessionToken): SessionParts = getSession(token as SessionTokenImpl)
-
-        fun getSession(token: SessionTokenImpl?): SessionParts {
-            val ruleIndex = token
-                ?.updateRuleIndex(program.rules())
-                ?: RuleIndex(program.rules())
+        fun getSession(): SessionData {
+            val ruleIndex = RuleIndex(program.rules())
 
             val journal = MatchJournalImpl(trace)
             val logicalState = LogicalState()
@@ -104,21 +64,18 @@ internal class EvaluationSessionImpl private constructor (
 
             val controller = ControllerImpl(supervisor, processing, trace, profiler)
 
-            return SessionParts(ruleIndex, journal, logicalState, controller, processing)
+            return SessionData(journal, controller)
         }
 
-        override fun endSession(session: SessionParts): SessionToken = with(session) {
-            SessionTokenImpl(journal.storeView(), ruleIndex.toRules(), emptyFrontState(), ruleIndex, logicalState)
-        }
+        fun endSession(session: SessionData): StoreView = session.journal.storeView()
 
-        override fun runSession(session: SessionParts, main: Constraint): EvaluationResult = with(session) {
+        fun runSession(session: SessionData, main: Constraint): EvaluationResult = with(session) {
             val status = run(main)
             controller.shutDown()
-            val newToken = endSession(session)
-            return EvaluationResultImpl(newToken, status)
+            return EvaluationResultImpl(endSession(session), status)
         }
 
-        protected fun SessionParts.run(main: Constraint): FeedbackStatus = controller.activate(main)
+        protected fun SessionData.run(main: Constraint): FeedbackStatus = controller.activate(main)
 
     }
     
@@ -128,17 +85,10 @@ internal class EvaluationSessionImpl private constructor (
 
         var evaluationTrace: EvaluationTrace = EvaluationTrace.NULL
 
-        var token: SessionToken? = null
-
         var profiler: Profiler? = null
 
         override fun withTrace(computingTracer: EvaluationTrace): EvaluationSession.Config {
             this.evaluationTrace = computingTracer
-            return this
-        }
-
-        override fun withSessionToken(token: SessionToken?): EvaluationSession.Config {
-            this.token = token
             return this
         }
 
@@ -160,7 +110,7 @@ internal class EvaluationSessionImpl private constructor (
             Backend.ourBackend.ourSession.set(session)
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-                return session.launch(token, main)
+                return session.launch(main)
             }
             finally {
                 Backend.ourBackend.ourSession.set(null)
@@ -193,15 +143,11 @@ internal class EvaluationSessionImpl private constructor (
     }
 
     private class EvaluationResultImpl(
-        val token: SessionToken,
+        val storeView: StoreView,
         val status: FeedbackStatus,
     ): EvaluationResult {
-        override fun token() = token
-        override fun storeView(): StoreView = token.storeView
+        override fun storeView(): StoreView = storeView
         override fun feedback(): EvaluationFeedback? = if (status is FAILED) status.failure else null
     }
-
-
-    private fun RuleIndex.toRules() = ArrayList<Rule>().also { l -> this.forEach { l.add(it) }}
 
 }

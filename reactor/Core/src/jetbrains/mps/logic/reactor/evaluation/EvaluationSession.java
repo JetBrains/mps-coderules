@@ -77,8 +77,6 @@ public abstract class EvaluationSession {
 
         public abstract Config withTrace(EvaluationTrace computingTracer);
 
-        public Config withSessionToken(SessionToken token) { return this; }
-
         public Config withProfiler(Profiler profiler) { return this; }
 
         public abstract EvaluationResult start(Supervisor supervisor);
