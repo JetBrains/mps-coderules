@@ -5,7 +5,6 @@
       <modulePath path="$PROJECT_DIR$/coderules/devkits/jetbrains.mps.devkit.aspect.types/jetbrains.mps.devkit.aspect.types.devkit" folder="typechecking.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/jetbrains.mps.lang.coderules.mpl" folder="coderules.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/runtime/jetbrains.mps.lang.coderules.runtime.msd" folder="coderules.lang" />
-      <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.controlflow/jetbrains.mps.lang.controlflow.mpl" folder="exp.controlflow" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.typechecking/jetbrains.mps.lang.typechecking.mpl" folder="typechecking.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.types/jetbrains.mps.lang.types.mpl" folder="typechecking.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="coderules.lang" />
@@ -22,14 +21,10 @@
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules.typechecking/jetbrains.mps.coderules.typechecking.msd" folder="typechecking" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules.ui/jetbrains.mps.coderules.ui.msd" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules/jetbrains.mps.coderules.msd" folder="coderules" />
-      <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.controlflow.ui/jetbrains.mps.controlflow.ui.msd" folder="exp.controlflow" />
-      <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.controlflow/jetbrains.mps.controlflow.msd" folder="exp.controlflow" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.lang.coderules.template/jetbrains.mps.lang.coderules.template.msd" folder="coderules.lang" />
-      <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.lang.controlflow.runtime/jetbrains.mps.lang.controlflow.runtime.msd" folder="exp.controlflow" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.lang.typechecking.runtime/jetbrains.mps.lang.typechecking.runtime.msd" folder="typechecking.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" folder="coderules.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.logic.test/jetbrains.mps.logic.test.msd" folder="coderules.lang" />
-      <modulePath path="$PROJECT_DIR$/samples/controlflow/jetbrains.mps.baseLanguageExt2/jetbrains.mps.baseLanguageExt2.mpl" folder="exp.controlflow" />
       <modulePath path="$PROJECT_DIR$/samples/fitch/languages/samples.fitch.firstOrderLogic/samples.fitch.firstOrderLogic.mpl" folder="samples.fitch" />
       <modulePath path="$PROJECT_DIR$/samples/fitch/languages/samples.fitch.herbrandLogic/samples.fitch.herbrandLogic.mpl" folder="samples.fitch" />
       <modulePath path="$PROJECT_DIR$/samples/fitch/languages/samples.fitch.propositionalLogic/samples.fitch.propositionalLogic.mpl" folder="samples.fitch" />
