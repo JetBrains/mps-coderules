@@ -46,6 +46,8 @@
     <import index="rbkg" ref="63b449db-0918-4a4a-a891-2c430ab133e4/java:org.junit.jupiter.api.extension(org.junit.junit5/)" />
     <import index="yqm7" ref="63b449db-0918-4a4a-a891-2c430ab133e4/java:org.junit.jupiter.api(org.junit.junit5/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -808,6 +810,28 @@
                   </node>
                   <node concept="3clFbF" id="1Lr58WFTIH_" role="3cqZAp">
                     <node concept="2OqwBi" id="1Lr58WFTIHA" role="3clFbG">
+                      <node concept="liA8E" id="1Lr58WFTIHH" role="2OqNvi">
+                        <ref role="37wK5l" to="wsw7:4SGXHKgYYAZ" resolve="check" />
+                        <node concept="37vLTw" id="1Lr58WFTIHI" role="37wK5m">
+                          <ref role="3cqZAo" node="1Lr58WFTIHb" resolve="itemsToCheck" />
+                        </node>
+                        <node concept="2OqwBi" id="1Lr58WFTIHJ" role="37wK5m">
+                          <node concept="37vLTw" id="2r1jTXL$IJ_" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2r1jTXL$IJy" resolve="project" />
+                          </node>
+                          <node concept="liA8E" id="1Lr58WFTIHL" role="2OqNvi">
+                            <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="1Lr58WFTIHM" role="37wK5m">
+                          <ref role="3cqZAo" node="1Lr58WFTIHu" resolve="collectConsumer" />
+                        </node>
+                        <node concept="2ShNRf" id="1Lr58WFTIHN" role="37wK5m">
+                          <node concept="1pGfFk" id="1Lr58WFTIHO" role="2ShVmc">
+                            <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
+                          </node>
+                        </node>
+                      </node>
                       <node concept="2OqwBi" id="1Lr58WFTIHB" role="2Oq$k0">
                         <node concept="2ShNRf" id="1Lr58WFTIHC" role="2Oq$k0">
                           <node concept="1pGfFk" id="1Lr58WFTIHD" role="2ShVmc">
@@ -830,28 +854,6 @@
                           <ref role="37wK5l" to="wsw7:6bXa3O$aFCh" resolve="createChecker" />
                           <node concept="37vLTw" id="1Lr58WFTIHG" role="37wK5m">
                             <ref role="3cqZAo" node="1Lr58WFTIGX" resolve="checkers" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="1Lr58WFTIHH" role="2OqNvi">
-                        <ref role="37wK5l" to="wsw7:4SGXHKgYYAZ" resolve="check" />
-                        <node concept="37vLTw" id="1Lr58WFTIHI" role="37wK5m">
-                          <ref role="3cqZAo" node="1Lr58WFTIHb" resolve="itemsToCheck" />
-                        </node>
-                        <node concept="2OqwBi" id="1Lr58WFTIHJ" role="37wK5m">
-                          <node concept="37vLTw" id="2r1jTXL$IJ_" role="2Oq$k0">
-                            <ref role="3cqZAo" node="2r1jTXL$IJy" resolve="project" />
-                          </node>
-                          <node concept="liA8E" id="1Lr58WFTIHL" role="2OqNvi">
-                            <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
-                          </node>
-                        </node>
-                        <node concept="37vLTw" id="1Lr58WFTIHM" role="37wK5m">
-                          <ref role="3cqZAo" node="1Lr58WFTIHu" resolve="collectConsumer" />
-                        </node>
-                        <node concept="2ShNRf" id="1Lr58WFTIHN" role="37wK5m">
-                          <node concept="1pGfFk" id="1Lr58WFTIHO" role="2ShVmc">
-                            <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
                           </node>
                         </node>
                       </node>
@@ -1061,9 +1063,9 @@
       <node concept="3clFbS" id="xqbf82oxMc" role="2VODD2">
         <node concept="3clFbF" id="1a$$29AvYGM" role="3cqZAp">
           <node concept="2OqwBi" id="1a$$29AvYN5" role="3clFbG">
-            <node concept="2YIFZM" id="1QxYy7KdHPS" role="2Oq$k0">
-              <ref role="37wK5l" to="tj24:7iCybvTs3lI" resolve="getInstance" />
-              <ref role="1Pybhc" to="tj24:7iCybvToiT5" resolve="Config" />
+            <node concept="2YIFZM" id="4cRooo742TX" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:7e$2hwaAfGb" resolve="getUserConfig" />
+              <ref role="1Pybhc" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
             </node>
             <node concept="liA8E" id="1a$$29AvYUx" role="2OqNvi">
               <ref role="37wK5l" to="tj24:7iCybvTszk9" resolve="registerProvider" />
@@ -1112,9 +1114,9 @@
       <node concept="3clFbS" id="xqbf82oyCQ" role="2VODD2">
         <node concept="3clFbF" id="xqbf82l6BV" role="3cqZAp">
           <node concept="2OqwBi" id="xqbf82l6Qn" role="3clFbG">
-            <node concept="2YIFZM" id="1QxYy7KdHPT" role="2Oq$k0">
-              <ref role="37wK5l" to="tj24:7iCybvTs3lI" resolve="getInstance" />
-              <ref role="1Pybhc" to="tj24:7iCybvToiT5" resolve="Config" />
+            <node concept="2YIFZM" id="4cRooo743lI" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:7e$2hwaAfGb" resolve="getUserConfig" />
+              <ref role="1Pybhc" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
             </node>
             <node concept="liA8E" id="xqbf82l6Yd" role="2OqNvi">
               <ref role="37wK5l" to="tj24:xqbf82kuzw" resolve="reset" />
