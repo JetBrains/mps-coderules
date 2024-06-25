@@ -41,7 +41,6 @@
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.predicate)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
-    <import index="m7o5" ref="r:835f8ea3-a800-4588-a80b-1de6d47c2098(jetbrains.mps.coderules.ideaplugin)" />
     <import index="bid0" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.util(jetbrains.mps.logic.reactor/)" />
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
   </imports>
@@ -4598,7 +4597,7 @@
               <ref role="3uigEE" to="bid0:~Profiler" resolve="Profiler" />
             </node>
             <node concept="3K4zz7" id="23Habm5FSDD" role="33vP2m">
-              <node concept="2YIFZM" id="12GJQPKv0Dc" role="3K4Cdx">
+              <node concept="2YIFZM" id="4qPSkk6vBty" role="3K4Cdx">
                 <ref role="37wK5l" to="tj24:1rU1wt_QrBg" resolve="isProfiling" />
                 <ref role="1Pybhc" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
               </node>

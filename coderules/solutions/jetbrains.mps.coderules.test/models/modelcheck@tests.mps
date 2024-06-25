@@ -19,10 +19,8 @@
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="wsw7" ref="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)" />
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
@@ -30,24 +28,11 @@
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="tp6m" ref="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <import index="fyhk" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps(Testbench/)" />
-    <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
-    <import index="cvlm" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runner(JUnit/)" />
-    <import index="bbnd" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runners(JUnit/)" />
-    <import index="u132" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:junit.framework(JUnit/)" />
-    <import index="a19p" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.rules(JUnit/)" />
     <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
     <import index="k2t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.checkers(MPS.Core/)" />
-    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
-    <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.coderules.typechecking.plugin)" />
-    <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
-    <import index="fczk" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.hamcrest.core(JUnit/)" />
-    <import index="m7o5" ref="r:835f8ea3-a800-4588-a80b-1de6d47c2098(jetbrains.mps.coderules.ideaplugin)" />
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
     <import index="rbkg" ref="63b449db-0918-4a4a-a891-2c430ab133e4/java:org.junit.jupiter.api.extension(org.junit.junit5/)" />
-    <import index="yqm7" ref="63b449db-0918-4a4a-a891-2c430ab133e4/java:org.junit.jupiter.api(org.junit.junit5/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
-    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
-    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -1063,7 +1048,7 @@
       <node concept="3clFbS" id="xqbf82oxMc" role="2VODD2">
         <node concept="3clFbF" id="1a$$29AvYGM" role="3cqZAp">
           <node concept="2OqwBi" id="1a$$29AvYN5" role="3clFbG">
-            <node concept="2YIFZM" id="4cRooo742TX" role="2Oq$k0">
+            <node concept="2YIFZM" id="4qPSkk6vBtC" role="2Oq$k0">
               <ref role="37wK5l" to="tj24:7e$2hwaAfGb" resolve="getUserConfig" />
               <ref role="1Pybhc" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
             </node>
@@ -1083,7 +1068,7 @@
                       </node>
                     </node>
                     <node concept="2OqwBi" id="1a$$29Aw6Dj" role="3clFbw">
-                      <node concept="10M0yZ" id="3zz62D5cwaH" role="2Oq$k0">
+                      <node concept="10M0yZ" id="4qPSkk6vBtv" role="2Oq$k0">
                         <ref role="3cqZAo" to="tj24:7iCybvTyUUs" resolve="OPTION_TYPECHECKING_ENABLED" />
                         <ref role="1PxDUh" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
                       </node>
@@ -1114,7 +1099,7 @@
       <node concept="3clFbS" id="xqbf82oyCQ" role="2VODD2">
         <node concept="3clFbF" id="xqbf82l6BV" role="3cqZAp">
           <node concept="2OqwBi" id="xqbf82l6Qn" role="3clFbG">
-            <node concept="2YIFZM" id="4cRooo743lI" role="2Oq$k0">
+            <node concept="2YIFZM" id="4qPSkk6vBtD" role="2Oq$k0">
               <ref role="37wK5l" to="tj24:7e$2hwaAfGb" resolve="getUserConfig" />
               <ref role="1Pybhc" to="tj24:7iCybvTy_Mb" resolve="TypecheckingOptions" />
             </node>

@@ -8,9 +8,6 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
   </languages>
   <imports>
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
-    <import index="m7o5" ref="r:835f8ea3-a800-4588-a80b-1de6d47c2098(jetbrains.mps.coderules.ideaplugin)" />
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
   </imports>
   <registry>
@@ -132,7 +129,7 @@
       <node concept="3uibUv" id="6hpwxwiHNaT" role="1tU5fm">
         <ref role="3uigEE" to="tj24:7iCybvToiT5" resolve="Config" />
       </node>
-      <node concept="2YIFZM" id="1QxYy7KdHPV" role="33vP2m">
+      <node concept="2YIFZM" id="4qPSkk6vAS5" role="33vP2m">
         <ref role="37wK5l" to="tj24:6hpwxwiHYr2" resolve="create" />
         <ref role="1Pybhc" to="tj24:7iCybvToiT5" resolve="Config" />
       </node>
