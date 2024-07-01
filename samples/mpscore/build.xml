@@ -10726,7 +10726,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.behaviorExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -10810,7 +10809,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.behaviorExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -10881,7 +10879,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.constraintsExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -10966,7 +10963,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.constraintsExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -11064,7 +11060,6 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -11116,7 +11111,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.extensionExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -11187,7 +11181,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generator.generationContextExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -11272,7 +11265,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generator.generationContextExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -11370,7 +11362,6 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
@@ -11429,7 +11420,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.generatorExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -11526,7 +11516,6 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
@@ -11586,7 +11575,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.patternExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -11687,7 +11675,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
@@ -11748,7 +11735,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.quotationExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -11819,7 +11805,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scopesExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -11897,7 +11882,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scopesExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -11969,7 +11953,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scriptExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -12053,7 +12036,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.scriptExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -12124,7 +12106,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.sharedConceptsExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -12201,7 +12182,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.sharedConceptsExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -12301,7 +12281,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -12361,7 +12340,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.smodelExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -12466,7 +12444,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystemExt" />
@@ -12592,7 +12569,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.testExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -12775,7 +12751,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
@@ -12837,7 +12812,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typesystemExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -13049,7 +13023,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.classifiersExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -13153,7 +13126,6 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.classifiersExt" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -13225,7 +13197,6 @@
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -13307,7 +13278,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closuresExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -13380,7 +13350,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closuresExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -13463,7 +13432,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -13509,7 +13477,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.function/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -13613,7 +13580,6 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -13743,7 +13709,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.kotlinRefsExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -13850,7 +13815,6 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.kotlinRefsExt" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -13923,7 +13887,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closuresExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -14005,7 +13968,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.methodReferencesExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -14051,7 +14013,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.sequence/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -14166,7 +14127,6 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -14210,7 +14170,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguage.tuplesExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -14322,7 +14281,6 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuplesExt" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
@@ -14367,7 +14325,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -14419,7 +14376,6 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.util.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.ideaplugin.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.mps}/languages/runtimes/jetbrains.mps.dataFlow.runtime.jar" />
@@ -14466,7 +14422,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageInternalExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -14544,7 +14499,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageInternalExt/generator/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -14615,7 +14569,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.logicExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -14783,7 +14736,6 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodelExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logicExt" />
@@ -14917,7 +14869,6 @@
         <path location="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typecheckingExt/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -15086,7 +15037,6 @@
         <pathelement path="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/test_gen/" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -15139,7 +15089,6 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.ideaplugin.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.jar" />
@@ -15195,7 +15144,6 @@
         <pathelement path="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/test_gen/" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -15249,7 +15197,6 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.ideaplugin.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.jar" />
@@ -15306,7 +15253,6 @@
         <pathelement path="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/test_gen/" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -15362,7 +15308,6 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.ideaplugin.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.testhelper.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
@@ -15446,7 +15391,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
         <fileset file="${artifacts.mps}/lib/ant/lib/ant.jar" />
@@ -15475,7 +15419,6 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.ideaplugin.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.runtime.jar" />
@@ -15552,7 +15495,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collectionsExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.function" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.sequence" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
         <fileset file="${artifacts.mps}/lib/ant/lib/ant.jar" />
@@ -15581,7 +15523,6 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.ideaplugin.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.testhelper.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
@@ -15656,7 +15597,6 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuplesExt" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
         <fileset file="${artifacts.mps}/lib/ant/lib/ant.jar" />
@@ -15684,7 +15624,6 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.ideaplugin.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.runtime.jar" />
@@ -15732,7 +15671,6 @@
         <pathelement path="${mps.macro.mpscore_home}/solutions/jetbrains.mps.lang.smodelExt/test_gen/" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-context.jar" />
@@ -15787,7 +15725,6 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.ideaplugin.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-core/languages/util/jetbrains.mps.execution.util.jar" />
@@ -15842,7 +15779,6 @@
         <path location="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguage.methodReferencesExt.test/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/lib/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.mps}/lib/mps-core.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
@@ -15887,7 +15823,6 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.jar" />
-        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.ideaplugin.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.lang.coderules.runtime.jar" />
