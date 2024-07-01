@@ -706,7 +706,7 @@
                     </node>
                     <node concept="2OqwBi" id="1Lr58WFTIHh" role="2GsD0m">
                       <node concept="37vLTw" id="2r1jTXL$IJ$" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2r1jTXL$IJy" resolve="project" />
+                        <ref role="3cqZAo" node="2r1jTXL$IJy" resolve="mpsProject" />
                       </node>
                       <node concept="liA8E" id="1Lr58WFTIHj" role="2OqNvi">
                         <ref role="37wK5l" to="z1c3:~IProject.getProjectModules()" resolve="getProjectModules" />
@@ -802,7 +802,7 @@
                         </node>
                         <node concept="2OqwBi" id="1Lr58WFTIHJ" role="37wK5m">
                           <node concept="37vLTw" id="2r1jTXL$IJ_" role="2Oq$k0">
-                            <ref role="3cqZAo" node="2r1jTXL$IJy" resolve="project" />
+                            <ref role="3cqZAo" node="2r1jTXL$IJy" resolve="mpsProject" />
                           </node>
                           <node concept="liA8E" id="1Lr58WFTIHL" role="2OqNvi">
                             <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />

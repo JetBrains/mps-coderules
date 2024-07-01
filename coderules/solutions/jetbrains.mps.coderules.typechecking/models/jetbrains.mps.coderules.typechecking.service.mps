@@ -5882,7 +5882,7 @@
                         <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
                       </node>
                       <node concept="2YIFZM" id="4qPSkk6vBtz" role="3uHU7w">
-                        <ref role="37wK5l" node="1rU1wt_QrBg" resolve="isTracing" />
+                        <ref role="37wK5l" node="1rU1wt_QrBg" resolve="isProfiling" />
                         <ref role="1Pybhc" node="7iCybvTy_Mb" resolve="TypecheckingOptions" />
                       </node>
                     </node>
@@ -15545,7 +15545,7 @@
               <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
             </node>
             <node concept="2YIFZM" id="4qPSkk6vBt$" role="33vP2m">
-              <ref role="37wK5l" node="1rU1wt_QrBg" resolve="isTracing" />
+              <ref role="37wK5l" node="1rU1wt_QrBg" resolve="isProfiling" />
               <ref role="1Pybhc" node="7iCybvTy_Mb" resolve="TypecheckingOptions" />
             </node>
           </node>
@@ -16425,7 +16425,7 @@
                           <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
                         </node>
                         <node concept="2YIFZM" id="4qPSkk6vBt_" role="3uHU7w">
-                          <ref role="37wK5l" node="1rU1wt_QrBg" resolve="isTracing" />
+                          <ref role="37wK5l" node="1rU1wt_QrBg" resolve="isProfiling" />
                           <ref role="1Pybhc" node="7iCybvTy_Mb" resolve="TypecheckingOptions" />
                         </node>
                       </node>

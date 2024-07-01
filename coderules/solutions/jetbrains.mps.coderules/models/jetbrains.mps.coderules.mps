@@ -130,13 +130,13 @@
         </node>
         <node concept="3clFbF" id="IFW4V2uR84" role="3cqZAp">
           <node concept="2YIFZM" id="IFW4V2uR85" role="3clFbG">
-            <ref role="1Pybhc" to="fqlx:IFW4V2uswu" resolve="AspectLookupCoordinator" />
+            <ref role="1Pybhc" to="fqlx:IFW4V2uswu" resolve="AspectLookup.AspectLookupCoordinator" />
             <ref role="37wK5l" to="fqlx:IFW4V2uAhM" resolve="init" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="2r1jTXMuuem" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="2r1jTXMuumm" role="jymVt" />
@@ -154,12 +154,12 @@
         <node concept="3clFbF" id="IFW4V2uRwY" role="3cqZAp">
           <node concept="2YIFZM" id="IFW4V2uRy4" role="3clFbG">
             <ref role="37wK5l" to="fqlx:IFW4V2uCEF" resolve="dispose" />
-            <ref role="1Pybhc" to="fqlx:IFW4V2uswu" resolve="AspectLookupCoordinator" />
+            <ref role="1Pybhc" to="fqlx:IFW4V2uswu" resolve="AspectLookup.AspectLookupCoordinator" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="2r1jTXMuupl" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

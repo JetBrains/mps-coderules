@@ -927,12 +927,12 @@
         <property role="TrG5h" value="OCCURS_CHECK_EX" />
         <node concept="3Tm6S6" id="4WeLqVxg6iW" role="1B3o_S" />
         <node concept="3uibUv" id="4WeLqVxg6iX" role="1tU5fm">
-          <ref role="3uigEE" node="4WeLqVxfpe8" resolve="UnificationPredicate.OccursCheckException" />
+          <ref role="3uigEE" node="4WeLqVxfpe8" resolve="UnificationPredicate.UnificationSolver.OccursCheckException" />
         </node>
         <node concept="2ShNRf" id="4WeLqVxg6iY" role="33vP2m">
           <node concept="HV5vD" id="4WeLqVxg6iZ" role="2ShVmc">
             <property role="373rjd" value="true" />
-            <ref role="HV5vE" node="4WeLqVxfpe8" resolve="UnificationPredicate.OccursCheckException" />
+            <ref role="HV5vE" node="4WeLqVxfpe8" resolve="UnificationPredicate.UnificationSolver.OccursCheckException" />
           </node>
         </node>
       </node>
@@ -2844,13 +2844,13 @@
                           <node concept="2ShNRf" id="4WeLqVwTqn2" role="2Oq$k0">
                             <node concept="1pGfFk" id="4WeLqVwT$f1" role="2ShVmc">
                               <property role="373rjd" value="true" />
-                              <ref role="37wK5l" to="6exd:4WeLqVxOSvl" />
+                              <ref role="37wK5l" to="6exd:4WeLqVxOSvl" resolve="DataFormWalk" />
                               <node concept="2ShNRf" id="4WeLqVwX5c$" role="37wK5m">
                                 <node concept="YeOm9" id="4WeLqVwXrvH" role="2ShVmc">
                                   <node concept="1Y3b0j" id="4WeLqVwXrvK" role="YeSDq">
                                     <property role="2bfB8j" value="true" />
                                     <property role="373rjd" value="true" />
-                                    <ref role="1Y3XeK" to="6exd:2ev$9JFHDMZ" resolve="IdleWalker" />
+                                    <ref role="1Y3XeK" to="6exd:2ev$9JFHDMZ" resolve="DataFormWalk.IdleWalker" />
                                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                                     <node concept="3Tm1VV" id="4WeLqVwXrvL" role="1B3o_S" />
                                     <node concept="3clFb_" id="4WeLqVwYscQ" role="jymVt">
@@ -2961,7 +2961,7 @@
                         <node concept="3cpWs6" id="4WeLqVxidnT" role="3cqZAp">
                           <node concept="2YIFZM" id="4WeLqVxidnU" role="3cqZAk">
                             <ref role="37wK5l" to="w7la:~Solver$Result.FAIL(java.lang.String)" resolve="FAIL" />
-                            <ref role="1Pybhc" to="w7la:~Solver$Result" resolve="Result" />
+                            <ref role="1Pybhc" to="w7la:~Solver$Result" resolve="Solver.Result" />
                             <node concept="Xl_RD" id="4WeLqVxincw" role="37wK5m">
                               <property role="Xl_RC" value="occurs check failed" />
                             </node>

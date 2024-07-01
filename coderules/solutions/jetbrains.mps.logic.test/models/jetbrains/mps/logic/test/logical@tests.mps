@@ -656,7 +656,7 @@
               <node concept="2ShNRf" id="4WeLqVx6Rhu" role="33vP2m">
                 <node concept="1pGfFk" id="4WeLqVx6Rhv" role="2ShVmc">
                   <property role="373rjd" value="true" />
-                  <ref role="37wK5l" to="oy3s:4TCblo5ML4I" />
+                  <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalDataForm" />
                   <node concept="2YIFZM" id="4WeLqVx6Rhw" role="37wK5m">
                     <ref role="37wK5l" to="bj13:~LogicalKt.newLogical(java.lang.Object)" resolve="newLogical" />
                     <ref role="1Pybhc" to="bj13:~LogicalKt" resolve="LogicalKt" />
@@ -870,7 +870,7 @@
             <node concept="2OqwBi" id="4WeLqVx4wMp" role="3clFbG">
               <node concept="2ShNRf" id="4WeLqVx4wMq" role="2Oq$k0">
                 <node concept="1pGfFk" id="4WeLqVx4wMr" role="2ShVmc">
-                  <ref role="37wK5l" to="6exd:4WeLqVxOSvl" />
+                  <ref role="37wK5l" to="6exd:4WeLqVxOSvl" resolve="DataFormWalk" />
                   <node concept="37vLTw" id="4WeLqVx4wMs" role="37wK5m">
                     <ref role="3cqZAo" node="4WeLqVx4wLZ" resolve="mock" />
                   </node>

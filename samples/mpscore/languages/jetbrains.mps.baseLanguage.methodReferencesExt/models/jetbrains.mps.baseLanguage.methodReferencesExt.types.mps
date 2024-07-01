@@ -1164,7 +1164,7 @@
                                 <node concept="nsMwS" id="6ZRhjsGHQ6l" role="ns1xD">
                                   <ref role="nsMwP" node="6ZRhjsG9m9W" resolve="target" />
                                   <node concept="a7P8L" id="6ZRhjsGHQ6q" role="iSaTp">
-                                    <ref role="a7OzE" node="6ZRhjsGHQ68" resolve="TargetTyoe" />
+                                    <ref role="a7OzE" node="6ZRhjsGHQ68" resolve="TargetType" />
                                   </node>
                                 </node>
                               </node>
