@@ -64,7 +64,6 @@
     <module reference="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" version="0" />
     <module reference="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" version="0" />
     <module reference="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c(jetbrains.mps.coderules)" version="0" />
-    <module reference="66887915-4d9e-4e24-bd35-19eb55fb75c2(jetbrains.mps.coderules.ideaplugin)" version="0" />
     <module reference="f113d56b-63e3-4120-a89c-2f5dcb8c6290(jetbrains.mps.coderules.runtime)" version="0" />
     <module reference="02473356-2f59-4de1-ba87-e88f9d606180(jetbrains.mps.coderules.testhelper)" version="0" />
     <module reference="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" version="0" />

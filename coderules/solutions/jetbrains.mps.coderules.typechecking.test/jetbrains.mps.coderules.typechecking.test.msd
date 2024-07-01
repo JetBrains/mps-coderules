@@ -31,7 +31,6 @@
     <dependency reexport="false">bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)</dependency>
     <dependency reexport="false">8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)</dependency>
     <dependency reexport="false">02473356-2f59-4de1-ba87-e88f9d606180(jetbrains.mps.coderules.testhelper)</dependency>
-    <dependency reexport="false">66887915-4d9e-4e24-bd35-19eb55fb75c2(jetbrains.mps.coderules.ideaplugin)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="12" />
@@ -70,7 +69,6 @@
     <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
     <module reference="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" version="0" />
     <module reference="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c(jetbrains.mps.coderules)" version="0" />
-    <module reference="66887915-4d9e-4e24-bd35-19eb55fb75c2(jetbrains.mps.coderules.ideaplugin)" version="0" />
     <module reference="f113d56b-63e3-4120-a89c-2f5dcb8c6290(jetbrains.mps.coderules.runtime)" version="0" />
     <module reference="02473356-2f59-4de1-ba87-e88f9d606180(jetbrains.mps.coderules.testhelper)" version="0" />
     <module reference="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" version="0" />
