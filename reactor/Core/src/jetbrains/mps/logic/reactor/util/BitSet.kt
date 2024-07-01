@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.util
 
 import gnu.trove.iterator.TIntIterator
+import gnu.trove.set.TIntSet
 import java.util.*
 import kotlin.NoSuchElementException
 
@@ -33,16 +34,37 @@ fun bitSetOfOnes(size: Int): BitSet =
 fun bitSet(setBit: Int): BitSet =
     BitSet().apply { set(setBit) }
 
-fun bitSet(setBits: Iterable<Int>): BitSet=
-    BitSet().apply { setBits.forEach { set(it) } }
+//fun bitSet(setBits: Iterable<Int>): BitSet=
+//    BitSet().apply { setBits.forEach { set(it) } }
+//
+//fun BitSet.setBit(bit: Int): BitSet =
+//    (clone() as BitSet).apply { set(bit) }
+//
+//fun BitSet.clearBit(bit: Int): BitSet =
+//    (clone() as BitSet).apply { clear(bit) }
 
-fun BitSet.setBit(bit: Int): BitSet =
-    (clone() as BitSet).apply { set(bit) }
+fun BitSet.contains(bit: Int) = get(bit)
+fun BitSet.add(bit: Int) = set(bit)
+fun BitSet.remove(bit: Int) = clear(bit)
+fun BitSet.addAll(that: BitSet) = or(that)
+fun BitSet.addAll(that: TIntSet) {
+    val iter = that.iterator()
+    while (iter.hasNext()) {
+        set(iter.next())
+    }
+}
+fun BitSet.retainAll(that: BitSet) = and(that)
+fun BitSet.retainAll(that: TIntSet) {
+    var bit = nextSetBit(0)
+    while (bit >= 0) {
+        if (!that.contains(bit)) {
+            clear(bit)
+        }
+        bit = nextSetBit(bit + 1)
+    }
+}
 
-fun BitSet.clearBit(bit: Int): BitSet =
-    (clone() as BitSet).apply { clear(bit) }
-
-fun BitSet.allSetBits(): TIntIterator = object : TIntIterator {
+fun BitSet.iterator(): TIntIterator = object : TIntIterator {
 
     var next = nextSetBit(0)
 

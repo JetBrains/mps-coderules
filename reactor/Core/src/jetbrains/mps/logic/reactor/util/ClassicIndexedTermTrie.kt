@@ -55,10 +55,6 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
         private val WILDCARD = object : Any() {
             override fun toString() = "WILDCARD"
         }
-        
-        private val KEYHOLDER = object : Any() {
-            override fun toString() = "KEYHOLDER"
-        }
 
     }
 
@@ -69,7 +65,7 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
     }
 
     override fun put(term: Term, value: T) {
-        putValue(term, -1, value)
+        putValue(term, 0, value)
     }
 
     override fun put(term: Term, index: Int, value: T) {
@@ -77,7 +73,7 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
     }
 
     override fun remove(term: Term, value: T) {
-        removeValue(term, -1, value)
+        removeValue(term, 0, value)
     }
 
     override fun remove(term: Term, index: Int, value: T) {
@@ -121,7 +117,9 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
             val node = nodeStack.peek()
             val term = termStack.pop()
 
-            node.addIndex(index)
+            if (index >= 0) {
+                node.addIndex(index)
+            }
 
             // dereferece the term only if it hasn't been dereferenced before
             val deref = deref(term).let { dt -> seen[dt]?.run { term } ?: dt.apply { seen[dt] = term } }
@@ -276,10 +274,13 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
             }
         }
 
-        indexMask?.forEach { index ->
-            allLeaves.forEach { it.forEachValueWithIndex(index, visitor) }
-            true
-        } ?: run {
+        if (indexMask != null) {
+            val iter = indexMask.iterator()
+            while (iter.hasNext()) {
+                val index = iter.next()
+                allLeaves.forEach { it.forEachValueWithIndex(index, visitor) }
+            }
+        } else {
             allLeaves.forEach { it.forEachValue(visitor) }
         }
     }
@@ -296,14 +297,16 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
 
         private val indexedValues = TIntObjectHashMap<HashSet<T>>()
 
-        fun allIndexMask(): IndexMask = indexCardinalities.keySet()
+        fun allIndexMask(): IndexMask = emptyIndexMask().also { it.addAll(indexCardinalities.keySet()) }
 
         fun addIndex(index: Int) {
+            assert(index >= 0)
             val card = if (indexCardinalities.contains(index)) indexCardinalities.get(index) else 0
             indexCardinalities.put(index, card + 1)            
         }
 
         fun removeIndex(index: Int) {
+            assert(index >= 0)
             val card = if (indexCardinalities.contains(index)) indexCardinalities.get(index) else 0
             assert(card > 0)
             if (card > 1) indexCardinalities.put(index, card - 1) else indexCardinalities.remove(index)
@@ -317,9 +320,10 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
         }
 
         fun forEachValueWithIndex(indexMask: IndexMask, callback: (T, Int) -> Unit ) {
-            indexMask.forEach { index ->
+            val iter = indexMask.iterator()
+            while (iter.hasNext()) {
+                val index = iter.next()
                 if (indexedValues.containsKey(index)) { indexedValues.get(index).forEach { callback(it, index) } }
-                true
             }
         }
 
@@ -397,11 +401,13 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
 
 
         fun addValue(value: T, index: Int) {
+            assert (index >= 0)
             addIndex(index)
             (indexedValues.get(index) ?: hashSetOf<T>().also { indexedValues.put(index, it) }).add(value)
         }
 
         fun removeValue(value: T, index: Int): Boolean {
+            assert (index >= 0)
             if (indexedValues.get(index)?.remove(value) ?: false) {
                 if (indexedValues.get(index)?.isEmpty() ?: false) {
                     indexedValues.remove(index)

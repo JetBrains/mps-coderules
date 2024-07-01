@@ -16,16 +16,15 @@
 
 package jetbrains.mps.logic.reactor.util
 
-import gnu.trove.set.TIntSet
-import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.unification.Term
+import java.util.BitSet
 
 /**
  * @author Fedor Isakov
  */
 
-typealias IndexMask = TIntSet
-fun indexMaskOf(vararg indices: Int): TIntSet = TIntHashSet(intArrayOf(*indices))
+typealias IndexMask = BitSet
+fun emptyIndexMask() = BitSet()
 
 interface IndexedTermTrie<T> : TermTrie<T> {
 

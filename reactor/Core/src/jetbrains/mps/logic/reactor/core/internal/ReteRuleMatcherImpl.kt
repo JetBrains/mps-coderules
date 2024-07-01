@@ -330,7 +330,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup?,
                         continue
                     }
 
-                    val it = headPosMask.allSetBits()
+                    val it = headPosMask.iterator()
                     while (it.hasNext()) {
                         val headPos = it.next()
                         if (n.occupiesHeadPosition(headPos)) continue

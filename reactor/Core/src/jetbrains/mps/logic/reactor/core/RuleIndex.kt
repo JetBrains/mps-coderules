@@ -28,8 +28,8 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
-typealias RuleBits = IndexMask
-fun ruleBitsOf() = indexMaskOf()
+typealias RuleBits = BitSet 
+fun emptyRuleBits() = BitSet()
 
 /**
  * A container for [Rule] instances with the ability to look up by [ConstraintOccurrence].
@@ -47,8 +47,7 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
 
     private val symbol2index = HashMap<ConstraintSymbol, ArgumentRuleIndex>()
 
-    // TODO: is linked hashmap really necessary? might be inefficient
-    private val tag2rule = LinkedHashMap<Any, Rule>()
+    private val tag2rule = HashMap<Any, Rule>()
 
     private val tag2bit = TObjectIntHashMap<Any>()
 
@@ -111,6 +110,7 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
         }
     }
 
+    @Deprecated(message = "update functionality to be dropped")
     fun updateIndexFromRules(rules: Iterable<Rule>) {
         val removedTags = allRules.map { it.rule.uniqueTag() }.toHashSet()
         rules.map { it.uniqueTag() }.forEach{ removedTags.remove(it) }
@@ -206,7 +206,7 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
      */
     inner class ArgumentRuleIndex(val symbol: ConstraintSymbol) {
 
-        val symbolSelector = ruleBitsOf()
+        val symbolSelector = emptyRuleBits()
 
         // value -> List of Pairs of rule bits and head positions
         val anySelectors = ArrayList<MutableMap<Any, MutableSet<Pair<Int, Int>>>>()
@@ -217,7 +217,7 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
             for (idx in 1..symbol.arity()) {
                 anySelectors.add(HashMap())
                 termSelectors.add(indexedTermTrie())
-                wildcardSelectors.add(ruleBitsOf())
+                wildcardSelectors.add(emptyRuleBits())
             }
         }
 
@@ -268,7 +268,7 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
 
             val slotVotes = HashMap<Pair<Int, Int>, BitSet>()
             val wildcardSlots = BitSet()
-            val selectedRuleBits = ruleBitsOf()
+            val selectedRuleBits = emptyRuleBits()
 
             for ((argIdx, arg) in occ.arguments().withIndex()) {
                 if (arg is Logical<*> && !arg.isBound) {
@@ -277,7 +277,7 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
                     continue
                 }
 
-                val candidateRuleBits = ruleBitsOf()
+                val candidateRuleBits = emptyRuleBits()
                 val value2indices = anySelectors[argIdx]
                 val termIndices = termSelectors[argIdx]
                 val wildcardIndices = wildcardSelectors[argIdx]

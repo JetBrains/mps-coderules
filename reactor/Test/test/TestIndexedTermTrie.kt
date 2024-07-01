@@ -1,4 +1,7 @@
-import jetbrains.mps.logic.reactor.util.indexMaskOf
+import gnu.trove.set.TIntSet
+import gnu.trove.set.hash.TIntHashSet
+import jetbrains.mps.logic.reactor.util.addAll
+import jetbrains.mps.logic.reactor.util.emptyIndexMask
 import jetbrains.mps.logic.reactor.util.indexedTermTrie
 import jetbrains.mps.logic.reactor.util.termTrie
 import jetbrains.mps.unification.test.MockTermsParser
@@ -6,6 +9,7 @@ import jetbrains.mps.unification.test.MockTermsParser.*
 import org.junit.Assert
 import org.junit.Assert.*
 import org.junit.Test
+import java.util.*
 
 /*
  * Copyright 2014-2021 JetBrains s.r.o.
@@ -26,6 +30,9 @@ import org.junit.Test
 /**
  * @author Fedor Isakov
  */
+
+fun indexMaskOf(vararg indices: Int) = emptyIndexMask().also { it.addAll(TIntHashSet(intArrayOf(*indices))) }
+
 class TestIndexedTermTrie {
 
     @Test
