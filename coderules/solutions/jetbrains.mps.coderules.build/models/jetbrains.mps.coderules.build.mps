@@ -3388,7 +3388,7 @@
               </node>
             </node>
             <node concept="3yLZsm" id="6YTH7uEOJpx" role="3yL2VB">
-              <property role="3yLZsk" value="../lib/conreactor-core-0.9.17.jar" />
+              <property role="3yLZsk" value="../lib/conreactor-core-0.9.18.jar" />
               <node concept="398BVA" id="6YTH7uEOJpy" role="3yLZsn">
                 <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                 <node concept="2Ry0Ak" id="6YTH7uEOJpz" role="iGT6I">
@@ -3400,7 +3400,7 @@
                       <node concept="2Ry0Ak" id="6YTH7uEOJpA" role="2Ry0An">
                         <property role="2Ry0Am" value="lib" />
                         <node concept="2Ry0Ak" id="6YTH7uEOJpB" role="2Ry0An">
-                          <property role="2Ry0Am" value="conreactor-core-0.9.17.jar" />
+                          <property role="2Ry0Am" value="conreactor-core-0.9.18.jar" />
                         </node>
                       </node>
                     </node>
@@ -3688,7 +3688,7 @@
                 </node>
               </node>
               <node concept="3yLZsm" id="4EvsDTBGxZq" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/conreactor-core-0.9.17.jar" />
+                <property role="3yLZsk" value="../lib/conreactor-core-0.9.18.jar" />
                 <node concept="398BVA" id="4EvsDTBGxZr" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                   <node concept="2Ry0Ak" id="4EvsDTBGxZs" role="iGT6I">
@@ -3700,7 +3700,7 @@
                         <node concept="2Ry0Ak" id="4EvsDTBGxZv" role="2Ry0An">
                           <property role="2Ry0Am" value="lib" />
                           <node concept="2Ry0Ak" id="4psz3HH29HS" role="2Ry0An">
-                            <property role="2Ry0Am" value="conreactor-core-0.9.17.jar" />
+                            <property role="2Ry0Am" value="conreactor-core-0.9.18.jar" />
                           </node>
                         </node>
                       </node>

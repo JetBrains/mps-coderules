@@ -3,9 +3,7 @@
   <models>
     <modelRoot contentPath="${module}" type="java_classes">
       <sourceRoot location="lib/collection-0.7.jar" />
-    </modelRoot>
-    <modelRoot contentPath="${module}/lib" type="java_classes">
-      <sourceRoot location="conreactor-core-0.9.18.jar" />
+      <sourceRoot location="lib/conreactor-core-0.9.18.jar" />
     </modelRoot>
   </models>
   <facets>
