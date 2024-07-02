@@ -885,20 +885,20 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="5GCTx2jKkrn" role="3bR37C">
-          <node concept="1BurEX" id="5GCTx2jKkro" role="1SiIV1">
-            <node concept="398BVA" id="5GCTx2jKkrb" role="1BurEY">
+        <node concept="1SiIV0" id="4IARdBuH$rb" role="3bR37C">
+          <node concept="1BurEX" id="4IARdBuH$rc" role="1SiIV1">
+            <node concept="398BVA" id="4IARdBuH$qZ" role="1BurEY">
               <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-              <node concept="2Ry0Ak" id="5GCTx2jKkrc" role="iGT6I">
+              <node concept="2Ry0Ak" id="4IARdBuH$r0" role="iGT6I">
                 <property role="2Ry0Am" value="coderules" />
-                <node concept="2Ry0Ak" id="5GCTx2jKkrd" role="2Ry0An">
+                <node concept="2Ry0Ak" id="4IARdBuH$r1" role="2Ry0An">
                   <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="5GCTx2jKkre" role="2Ry0An">
+                  <node concept="2Ry0Ak" id="4IARdBuH$r2" role="2Ry0An">
                     <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="5GCTx2jKkrf" role="2Ry0An">
+                    <node concept="2Ry0Ak" id="4IARdBuH$r3" role="2Ry0An">
                       <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="5GCTx2jKkrg" role="2Ry0An">
-                        <property role="2Ry0Am" value="conreactor-core-0.9.17.jar" />
+                      <node concept="2Ry0Ak" id="4IARdBuH$r4" role="2Ry0An">
+                        <property role="2Ry0Am" value="conreactor-core-0.9.18.jar" />
                       </node>
                     </node>
                   </node>
@@ -2393,11 +2393,6 @@
         <node concept="1SiIV0" id="4XsNDZX1um2" role="3bR37C">
           <node concept="3bR9La" id="4XsNDZX1um3" role="1SiIV1">
             <ref role="3bR37D" node="4XsNDZX1tUA" resolve="jetbrains.mps.coderules.testhelper" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2CPBoDB0Nb0" role="3bR37C">
-          <node concept="3bR9La" id="2CPBoDB0Nb1" role="1SiIV1">
-            <ref role="3bR37D" node="2CPBoDB0MbE" resolve="jetbrains.mps.coderules.ideaplugin" />
           </node>
         </node>
         <node concept="1SiIV0" id="2CPBoDB0P2o" role="3bR37C">

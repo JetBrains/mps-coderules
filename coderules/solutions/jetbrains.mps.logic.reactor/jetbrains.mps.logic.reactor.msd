@@ -3,7 +3,9 @@
   <models>
     <modelRoot contentPath="${module}" type="java_classes">
       <sourceRoot location="lib/collection-0.7.jar" />
-      <sourceRoot location="lib/conreactor-core-0.9.17.jar" />
+    </modelRoot>
+    <modelRoot contentPath="${module}/lib" type="java_classes">
+      <sourceRoot location="conreactor-core-0.9.18.jar" />
     </modelRoot>
   </models>
   <facets>
@@ -11,7 +13,7 @@
       <classes generated="true" path="${module}/classes_gen" />
       <library location="${module}/lib/collection-0.7.jar" />
       <library location="${module}/lib/trove4j-3.0.3.jar" />
-      <library location="${module}/lib/conreactor-core-0.9.17.jar" />
+      <library location="${module}/lib/conreactor-core-0.9.18.jar" />
     </facet>
   </facets>
   <dependencies>
