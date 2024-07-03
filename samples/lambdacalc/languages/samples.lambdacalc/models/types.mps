@@ -16,13 +16,10 @@
   </languages>
   <imports>
     <import index="8tt8" ref="r:e74c1bfc-387b-4b4b-abee-2eb77ee510ec(samples.lambdacalc.structure)" />
-    <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.coderules.eval)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.coderules.typechecking)" />
-    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
-    <import index="lehm" ref="r:464fcc95-fddb-47d1-b620-592cbf6b8bf2(jetbrains.mps.coderules.runtime.memoizer)" />
+    <import index="aedp" ref="r:969c74a0-af0a-4247-9dda-0da7708b8c0d(jetbrains.mps.lang.coderules.memoizer)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -2615,8 +2612,8 @@
         <node concept="3clFbS" id="6EwjVjWt1yH" role="3clF47">
           <node concept="3clFbF" id="6EwjVjWt1M_" role="3cqZAp">
             <node concept="2YIFZM" id="5wYq9r5EDbM" role="3clFbG">
-              <ref role="37wK5l" to="lehm:2tjs8VC2Blb" resolve="getOrPut" />
-              <ref role="1Pybhc" to="lehm:2tjs8VC0K0m" resolve="Memoizer" />
+              <ref role="37wK5l" to="aedp:2tjs8VC2Blb" resolve="getOrPut" />
+              <ref role="1Pybhc" to="aedp:2tjs8VC0K0m" resolve="Memoizer" />
               <node concept="3VsKOn" id="6EwjVjWt2cm" role="37wK5m">
                 <ref role="3VsUkX" node="6EwjVjWt1pM" resolve="VarNames.Keeper" />
               </node>

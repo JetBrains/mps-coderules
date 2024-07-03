@@ -8,8 +8,8 @@
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
-    <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
+    <import index="pxw9" ref="r:e3417884-ba0a-4330-9cea-64f01ace2e9d(jetbrains.mps.lang.coderules.aspect)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -130,8 +130,8 @@
         </node>
         <node concept="3clFbF" id="IFW4V2uR84" role="3cqZAp">
           <node concept="2YIFZM" id="IFW4V2uR85" role="3clFbG">
-            <ref role="1Pybhc" to="fqlx:IFW4V2uswu" resolve="AspectLookup.AspectLookupCoordinator" />
-            <ref role="37wK5l" to="fqlx:IFW4V2uAhM" resolve="init" />
+            <ref role="1Pybhc" to="pxw9:IFW4V2uswu" resolve="AspectLookup.AspectLookupCoordinator" />
+            <ref role="37wK5l" to="pxw9:IFW4V2uAhM" resolve="init" />
           </node>
         </node>
       </node>
@@ -153,8 +153,8 @@
         </node>
         <node concept="3clFbF" id="IFW4V2uRwY" role="3cqZAp">
           <node concept="2YIFZM" id="IFW4V2uRy4" role="3clFbG">
-            <ref role="37wK5l" to="fqlx:IFW4V2uCEF" resolve="dispose" />
-            <ref role="1Pybhc" to="fqlx:IFW4V2uswu" resolve="AspectLookup.AspectLookupCoordinator" />
+            <ref role="37wK5l" to="pxw9:IFW4V2uCEF" resolve="dispose" />
+            <ref role="1Pybhc" to="pxw9:IFW4V2uswu" resolve="AspectLookup.AspectLookupCoordinator" />
           </node>
         </node>
       </node>

@@ -8,8 +8,8 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="2" />
   </languages>
   <imports>
-    <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="pxw9" ref="r:e3417884-ba0a-4330-9cea-64f01ace2e9d(jetbrains.mps.lang.coderules.aspect)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -212,15 +212,15 @@
               <property role="TrG5h" value="acs" />
               <node concept="_YKpA" id="6nx4rRkY1ng" role="1tU5fm">
                 <node concept="3uibUv" id="6nx4rRkY1nn" role="_ZDj9">
-                  <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+                  <ref role="3uigEE" to="pxw9:3KN3A4uUhmW" resolve="AspectClique" />
                   <node concept="3uibUv" id="6nx4rRkY1no" role="11_B2D">
                     <ref role="3uigEE" node="6nx4rRkXZmQ" resolve="MockLanguageAspect" />
                   </node>
                 </node>
               </node>
               <node concept="2YIFZM" id="5Zr$fBZmYMt" role="33vP2m">
-                <ref role="37wK5l" to="fqlx:3KN3A4uV0IR" resolve="discoverAspects" />
-                <ref role="1Pybhc" to="fqlx:6nx4rRkNE1x" resolve="CliqueBuilder" />
+                <ref role="37wK5l" to="pxw9:3KN3A4uV0IR" resolve="discoverAspects" />
+                <ref role="1Pybhc" to="pxw9:6nx4rRkNE1x" resolve="CliqueBuilder" />
                 <node concept="2ShNRf" id="3Vcd0FocJVX" role="37wK5m">
                   <node concept="Tc6Ow" id="3Vcd0FocKc2" role="2ShVmc">
                     <node concept="3uibUv" id="3Vcd0FocKsy" role="HW$YZ">
@@ -259,7 +259,7 @@
                 <node concept="1uHKPH" id="_tf6vyUUF5" role="2OqNvi" />
               </node>
               <node concept="liA8E" id="_tf6vyUVv_" role="2OqNvi">
-                <ref role="37wK5l" to="fqlx:4ekZiHe4j$O" resolve="isEmpty" />
+                <ref role="37wK5l" to="pxw9:4ekZiHe4j$O" resolve="isEmpty" />
               </node>
             </node>
           </node>
@@ -357,15 +357,15 @@
               <property role="TrG5h" value="acs" />
               <node concept="3vKaQO" id="3Vcd0FocL9Y" role="1tU5fm">
                 <node concept="3uibUv" id="3Vcd0FocLa0" role="3O5elw">
-                  <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+                  <ref role="3uigEE" to="pxw9:3KN3A4uUhmW" resolve="AspectClique" />
                   <node concept="3uibUv" id="3Vcd0FocLa1" role="11_B2D">
                     <ref role="3uigEE" node="6nx4rRkXZmQ" resolve="MockLanguageAspect" />
                   </node>
                 </node>
               </node>
               <node concept="2YIFZM" id="5Zr$fBZmYMu" role="33vP2m">
-                <ref role="37wK5l" to="fqlx:3KN3A4uV0IR" resolve="discoverAspects" />
-                <ref role="1Pybhc" to="fqlx:6nx4rRkNE1x" resolve="CliqueBuilder" />
+                <ref role="37wK5l" to="pxw9:3KN3A4uV0IR" resolve="discoverAspects" />
+                <ref role="1Pybhc" to="pxw9:6nx4rRkNE1x" resolve="CliqueBuilder" />
                 <node concept="2ShNRf" id="3Vcd0FocIAX" role="37wK5m">
                   <node concept="Tc6Ow" id="3Vcd0FocIQ0" role="2ShVmc">
                     <node concept="37vLTw" id="3Vcd0FocJ5Y" role="HW$Y0">
@@ -403,7 +403,7 @@
             <node concept="3cpWsn" id="7u0sJ213RgB" role="3cpWs9">
               <property role="TrG5h" value="ac" />
               <node concept="3uibUv" id="7u0sJ213Rg$" role="1tU5fm">
-                <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+                <ref role="3uigEE" to="pxw9:3KN3A4uUhmW" resolve="AspectClique" />
                 <node concept="3uibUv" id="3Vcd0FocLGH" role="11_B2D">
                   <ref role="3uigEE" node="6nx4rRkXZmQ" resolve="MockLanguageAspect" />
                 </node>
@@ -427,7 +427,7 @@
                 <ref role="3cqZAo" node="7u0sJ213RgB" resolve="ac" />
               </node>
               <node concept="liA8E" id="7u0sJ213UeH" role="2OqNvi">
-                <ref role="37wK5l" to="fqlx:4ekZiHe4j$O" resolve="isEmpty" />
+                <ref role="37wK5l" to="pxw9:4ekZiHe4j$O" resolve="isEmpty" />
               </node>
             </node>
           </node>
@@ -438,7 +438,7 @@
                   <ref role="3cqZAo" node="7u0sJ213RgB" resolve="ac" />
                 </node>
                 <node concept="liA8E" id="7u0sJ21355X" role="2OqNvi">
-                  <ref role="37wK5l" to="fqlx:3KN3A4uUhpW" resolve="aspects" />
+                  <ref role="37wK5l" to="pxw9:3KN3A4uUhpW" resolve="aspects" />
                 </node>
               </node>
               <node concept="34oBXx" id="7u0sJ2136HX" role="2OqNvi" />
@@ -584,15 +584,15 @@
               <property role="TrG5h" value="acs" />
               <node concept="3vKaQO" id="_tf6vySnAY" role="1tU5fm">
                 <node concept="3uibUv" id="_tf6vySnAZ" role="3O5elw">
-                  <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+                  <ref role="3uigEE" to="pxw9:3KN3A4uUhmW" resolve="AspectClique" />
                   <node concept="3uibUv" id="_tf6vySnB0" role="11_B2D">
                     <ref role="3uigEE" node="6nx4rRkXZmQ" resolve="MockLanguageAspect" />
                   </node>
                 </node>
               </node>
               <node concept="2YIFZM" id="5Zr$fBZmYMv" role="33vP2m">
-                <ref role="37wK5l" to="fqlx:3KN3A4uV0IR" resolve="discoverAspects" />
-                <ref role="1Pybhc" to="fqlx:6nx4rRkNE1x" resolve="CliqueBuilder" />
+                <ref role="37wK5l" to="pxw9:3KN3A4uV0IR" resolve="discoverAspects" />
+                <ref role="1Pybhc" to="pxw9:6nx4rRkNE1x" resolve="CliqueBuilder" />
                 <node concept="2ShNRf" id="_tf6vySnB2" role="37wK5m">
                   <node concept="Tc6Ow" id="_tf6vySnB3" role="2ShVmc">
                     <node concept="37vLTw" id="_tf6vySo0M" role="HW$Y0">
@@ -671,7 +671,7 @@
                                   <ref role="3cqZAo" node="6E5fMGvfKQW" resolve="it" />
                                 </node>
                                 <node concept="liA8E" id="_tf6vyTK$o" role="2OqNvi">
-                                  <ref role="37wK5l" to="fqlx:_tf6vySXzF" resolve="allNamespaces" />
+                                  <ref role="37wK5l" to="pxw9:_tf6vySXzF" resolve="allNamespaces" />
                                 </node>
                               </node>
                             </node>
@@ -894,15 +894,15 @@
               <property role="TrG5h" value="acs" />
               <node concept="3vKaQO" id="_tf6vzI5QP" role="1tU5fm">
                 <node concept="3uibUv" id="_tf6vzI5QQ" role="3O5elw">
-                  <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+                  <ref role="3uigEE" to="pxw9:3KN3A4uUhmW" resolve="AspectClique" />
                   <node concept="3uibUv" id="_tf6vzI5QR" role="11_B2D">
                     <ref role="3uigEE" node="6nx4rRkXZmQ" resolve="MockLanguageAspect" />
                   </node>
                 </node>
               </node>
               <node concept="2YIFZM" id="5Zr$fBZmYMw" role="33vP2m">
-                <ref role="37wK5l" to="fqlx:3KN3A4uV0IR" resolve="discoverAspects" />
-                <ref role="1Pybhc" to="fqlx:6nx4rRkNE1x" resolve="CliqueBuilder" />
+                <ref role="37wK5l" to="pxw9:3KN3A4uV0IR" resolve="discoverAspects" />
+                <ref role="1Pybhc" to="pxw9:6nx4rRkNE1x" resolve="CliqueBuilder" />
                 <node concept="2ShNRf" id="_tf6vzI5QT" role="37wK5m">
                   <node concept="Tc6Ow" id="_tf6vzI5QU" role="2ShVmc">
                     <node concept="37vLTw" id="_tf6vzI5QV" role="HW$Y0">
@@ -987,7 +987,7 @@
                                   <ref role="3cqZAo" node="6E5fMGvfKQY" resolve="it" />
                                 </node>
                                 <node concept="liA8E" id="_tf6vzI5RE" role="2OqNvi">
-                                  <ref role="37wK5l" to="fqlx:_tf6vySXzF" resolve="allNamespaces" />
+                                  <ref role="37wK5l" to="pxw9:_tf6vySXzF" resolve="allNamespaces" />
                                 </node>
                               </node>
                             </node>
@@ -1266,15 +1266,15 @@
               <property role="TrG5h" value="acs" />
               <node concept="3vKaQO" id="2URzoKVns5h" role="1tU5fm">
                 <node concept="3uibUv" id="2URzoKVns5i" role="3O5elw">
-                  <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+                  <ref role="3uigEE" to="pxw9:3KN3A4uUhmW" resolve="AspectClique" />
                   <node concept="3uibUv" id="2URzoKVns5j" role="11_B2D">
                     <ref role="3uigEE" node="6nx4rRkXZmQ" resolve="MockLanguageAspect" />
                   </node>
                 </node>
               </node>
               <node concept="2YIFZM" id="5Zr$fBZmYMx" role="33vP2m">
-                <ref role="37wK5l" to="fqlx:3KN3A4uV0IR" resolve="discoverAspects" />
-                <ref role="1Pybhc" to="fqlx:6nx4rRkNE1x" resolve="CliqueBuilder" />
+                <ref role="37wK5l" to="pxw9:3KN3A4uV0IR" resolve="discoverAspects" />
+                <ref role="1Pybhc" to="pxw9:6nx4rRkNE1x" resolve="CliqueBuilder" />
                 <node concept="2ShNRf" id="2URzoKVns5l" role="37wK5m">
                   <node concept="Tc6Ow" id="2URzoKVns5m" role="2ShVmc">
                     <node concept="37vLTw" id="2URzoKVns5o" role="HW$Y0">
@@ -1359,7 +1359,7 @@
                                   <ref role="3cqZAo" node="6E5fMGvfKR0" resolve="it" />
                                 </node>
                                 <node concept="liA8E" id="2URzoKVns65" role="2OqNvi">
-                                  <ref role="37wK5l" to="fqlx:_tf6vySXzF" resolve="allNamespaces" />
+                                  <ref role="37wK5l" to="pxw9:_tf6vySXzF" resolve="allNamespaces" />
                                 </node>
                               </node>
                             </node>
@@ -1570,15 +1570,15 @@
               <property role="TrG5h" value="acs" />
               <node concept="3vKaQO" id="_tf6vyY$S9" role="1tU5fm">
                 <node concept="3uibUv" id="_tf6vyY$Sa" role="3O5elw">
-                  <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+                  <ref role="3uigEE" to="pxw9:3KN3A4uUhmW" resolve="AspectClique" />
                   <node concept="3uibUv" id="_tf6vyY$Sb" role="11_B2D">
                     <ref role="3uigEE" node="6nx4rRkXZmQ" resolve="MockLanguageAspect" />
                   </node>
                 </node>
               </node>
               <node concept="2YIFZM" id="5Zr$fBZmYMy" role="33vP2m">
-                <ref role="37wK5l" to="fqlx:3KN3A4uV0IR" resolve="discoverAspects" />
-                <ref role="1Pybhc" to="fqlx:6nx4rRkNE1x" resolve="CliqueBuilder" />
+                <ref role="37wK5l" to="pxw9:3KN3A4uV0IR" resolve="discoverAspects" />
+                <ref role="1Pybhc" to="pxw9:6nx4rRkNE1x" resolve="CliqueBuilder" />
                 <node concept="2ShNRf" id="_tf6vyY$Sd" role="37wK5m">
                   <node concept="Tc6Ow" id="_tf6vyY$Se" role="2ShVmc">
                     <node concept="37vLTw" id="_tf6vyY_yj" role="HW$Y0">
@@ -1666,7 +1666,7 @@
                                   <ref role="3cqZAo" node="6E5fMGvfKR2" resolve="it" />
                                 </node>
                                 <node concept="liA8E" id="_tf6vzr80w" role="2OqNvi">
-                                  <ref role="37wK5l" to="fqlx:_tf6vySXzF" resolve="allNamespaces" />
+                                  <ref role="37wK5l" to="pxw9:_tf6vySXzF" resolve="allNamespaces" />
                                 </node>
                               </node>
                             </node>
@@ -1859,15 +1859,15 @@
               <property role="TrG5h" value="acs" />
               <node concept="3vKaQO" id="_tf6v$43_Z" role="1tU5fm">
                 <node concept="3uibUv" id="_tf6v$43A0" role="3O5elw">
-                  <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+                  <ref role="3uigEE" to="pxw9:3KN3A4uUhmW" resolve="AspectClique" />
                   <node concept="3uibUv" id="_tf6v$43A1" role="11_B2D">
                     <ref role="3uigEE" node="6nx4rRkXZmQ" resolve="MockLanguageAspect" />
                   </node>
                 </node>
               </node>
               <node concept="2YIFZM" id="5Zr$fBZmYMz" role="33vP2m">
-                <ref role="37wK5l" to="fqlx:3KN3A4uV0IR" resolve="discoverAspects" />
-                <ref role="1Pybhc" to="fqlx:6nx4rRkNE1x" resolve="CliqueBuilder" />
+                <ref role="37wK5l" to="pxw9:3KN3A4uV0IR" resolve="discoverAspects" />
+                <ref role="1Pybhc" to="pxw9:6nx4rRkNE1x" resolve="CliqueBuilder" />
                 <node concept="2ShNRf" id="_tf6v$43A3" role="37wK5m">
                   <node concept="Tc6Ow" id="_tf6v$43A4" role="2ShVmc">
                     <node concept="37vLTw" id="_tf6v$43A5" role="HW$Y0">
@@ -1949,7 +1949,7 @@
                                   <ref role="3cqZAo" node="6E5fMGvfKR4" resolve="it" />
                                 </node>
                                 <node concept="liA8E" id="_tf6v$43AO" role="2OqNvi">
-                                  <ref role="37wK5l" to="fqlx:_tf6vySXzF" resolve="allNamespaces" />
+                                  <ref role="37wK5l" to="pxw9:_tf6vySXzF" resolve="allNamespaces" />
                                 </node>
                               </node>
                             </node>
@@ -2055,15 +2055,15 @@
               <property role="TrG5h" value="acs" />
               <node concept="3vKaQO" id="_tf6vzrfY3" role="1tU5fm">
                 <node concept="3uibUv" id="_tf6vzrfY4" role="3O5elw">
-                  <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+                  <ref role="3uigEE" to="pxw9:3KN3A4uUhmW" resolve="AspectClique" />
                   <node concept="3uibUv" id="_tf6vzrfY5" role="11_B2D">
                     <ref role="3uigEE" node="6nx4rRkXZmQ" resolve="MockLanguageAspect" />
                   </node>
                 </node>
               </node>
               <node concept="2YIFZM" id="5Zr$fBZmYM$" role="33vP2m">
-                <ref role="37wK5l" to="fqlx:3KN3A4uV0IR" resolve="discoverAspects" />
-                <ref role="1Pybhc" to="fqlx:6nx4rRkNE1x" resolve="CliqueBuilder" />
+                <ref role="37wK5l" to="pxw9:3KN3A4uV0IR" resolve="discoverAspects" />
+                <ref role="1Pybhc" to="pxw9:6nx4rRkNE1x" resolve="CliqueBuilder" />
                 <node concept="2ShNRf" id="_tf6vzrfY7" role="37wK5m">
                   <node concept="Tc6Ow" id="_tf6vzrfY8" role="2ShVmc">
                     <node concept="37vLTw" id="_tf6vzrgrI" role="HW$Y0">
@@ -2136,7 +2136,7 @@
                                   <ref role="3cqZAo" node="6E5fMGvfKR6" resolve="it" />
                                 </node>
                                 <node concept="liA8E" id="_tf6vzrgBo" role="2OqNvi">
-                                  <ref role="37wK5l" to="fqlx:_tf6vySXzF" resolve="allNamespaces" />
+                                  <ref role="37wK5l" to="pxw9:_tf6vySXzF" resolve="allNamespaces" />
                                 </node>
                               </node>
                             </node>
@@ -2169,7 +2169,7 @@
                 <node concept="1uHKPH" id="_tf6vzrsfw" role="2OqNvi" />
               </node>
               <node concept="liA8E" id="_tf6vzrsYU" role="2OqNvi">
-                <ref role="37wK5l" to="fqlx:3KN3A4uUhpW" resolve="aspects" />
+                <ref role="37wK5l" to="pxw9:3KN3A4uUhpW" resolve="aspects" />
               </node>
             </node>
           </node>
@@ -2364,7 +2364,7 @@
     </node>
     <node concept="2tJIrI" id="6nx4rRkXZmx" role="jymVt" />
     <node concept="3uibUv" id="6nx4rRkXZlB" role="EKbjA">
-      <ref role="3uigEE" to="fqlx:NKt6ynom3d" resolve="AspectDiscoverable" />
+      <ref role="3uigEE" to="pxw9:NKt6ynom3d" resolve="AspectDiscoverable" />
       <node concept="3uibUv" id="6nx4rRkXZwZ" role="11_B2D">
         <ref role="3uigEE" node="6nx4rRkXZtd" resolve="MockLanguageRuntime" />
       </node>

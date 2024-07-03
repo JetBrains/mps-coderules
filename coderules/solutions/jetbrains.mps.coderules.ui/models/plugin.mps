@@ -52,8 +52,6 @@
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
-    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
-    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="6rp1" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:com.github.andrewoma.dexx.collection(jetbrains.mps.logic.reactor/)" />
     <import index="bid0" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.util(jetbrains.mps.logic.reactor/)" />
     <import index="gsia" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.event(JDK/)" />
@@ -84,7 +82,6 @@
     <import index="iljd" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.plugins(jetbrains.mps.coderules/)" />
     <import index="5tvg" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.disposables(jetbrains.mps.coderules/)" />
     <import index="m4y7" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.schedulers(jetbrains.mps.coderules/)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
     <import index="v7ux" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.content(MPS.IDEA/)" />
     <import index="jkny" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm(MPS.IDEA/)" />
     <import index="v23q" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi(MPS.IDEA/)" />
@@ -106,6 +103,9 @@
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
+    <import index="ugy2" ref="r:57b2449f-b7c7-4941-bd75-9c594835f5cd(jetbrains.mps.lang.coderules.template)" />
+    <import index="cof4" ref="r:0a9d1d47-250c-4f98-8962-b65edf8b0721(jetbrains.mps.logic.dataform)" />
+    <import index="uwx2" ref="r:76101703-3fc5-4e76-aa48-9728dde91f7b(jetbrains.mps.logic.unification)" />
     <import index="2sud" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.treeStructure(MPS.IDEA/)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
@@ -20778,7 +20778,7 @@
         <node concept="37vLTG" id="6QkkSolKGTF" role="3clF46">
           <property role="TrG5h" value="ruleEx" />
           <node concept="3uibUv" id="6QkkSolKHsd" role="1tU5fm">
-            <ref role="3uigEE" to="i348:7nPD14OaO1O" resolve="RuleEx" />
+            <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
           </node>
         </node>
         <node concept="3uibUv" id="6QkkSolKEFf" role="3clF45">
@@ -20810,7 +20810,7 @@
                           <ref role="3cqZAo" node="6QkkSolKGTF" resolve="ruleEx" />
                         </node>
                         <node concept="liA8E" id="3Pxu0s8gDPG" role="2OqNvi">
-                          <ref role="37wK5l" to="i348:3Pxu0s8egWa" resolve="origin" />
+                          <ref role="37wK5l" to="ugy2:3Pxu0s8egWa" resolve="origin" />
                         </node>
                       </node>
                       <node concept="3uibUv" id="3Pxu0s8gQKZ" role="10QFUM">
@@ -20959,7 +20959,7 @@
         <node concept="37vLTG" id="6QkkSolM4Dr" role="3clF46">
           <property role="TrG5h" value="ruleEx" />
           <node concept="3uibUv" id="6QkkSolM4Ds" role="1tU5fm">
-            <ref role="3uigEE" to="i348:7nPD14OaO1O" resolve="RuleEx" />
+            <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
           </node>
         </node>
         <node concept="37vLTG" id="6QkkSolLWBQ" role="3clF46">
@@ -21002,7 +21002,7 @@
                   <ref role="3cqZAo" node="6QkkSolM4Dr" resolve="ruleEx" />
                 </node>
                 <node concept="liA8E" id="6QkkSolM31a" role="2OqNvi">
-                  <ref role="37wK5l" to="i348:7nPD14Ob4lt" resolve="templateRef" />
+                  <ref role="37wK5l" to="ugy2:7nPD14Ob4lt" resolve="templateRef" />
                 </node>
               </node>
             </node>
@@ -21630,12 +21630,12 @@
                       <node concept="3cpWsn" id="7pxta7vksdr" role="3cpWs9">
                         <property role="TrG5h" value="val" />
                         <node concept="3uibUv" id="7pxta7vksds" role="1tU5fm">
-                          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                          <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
                         </node>
                         <node concept="1eOMI4" id="7pxta7vkvzJ" role="33vP2m">
                           <node concept="10QFUN" id="7pxta7vkvzG" role="1eOMHV">
                             <node concept="3uibUv" id="7pxta7vkvzL" role="10QFUM">
-                              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                              <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
                             </node>
                             <node concept="37vLTw" id="7pxta7vkvEd" role="10QFUP">
                               <ref role="3cqZAo" node="7pxta7vkvE6" resolve="value" />
@@ -21695,7 +21695,7 @@
                   </node>
                   <node concept="2ZW3vV" id="7pxta7vkv3O" role="3eO9$A">
                     <node concept="3uibUv" id="7pxta7vkvk3" role="2ZW6by">
-                      <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                      <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
                     </node>
                     <node concept="37vLTw" id="7pxta7vkvEe" role="2ZW6bz">
                       <ref role="3cqZAo" node="7pxta7vkvE6" resolve="value" />
@@ -21757,7 +21757,7 @@
             <node concept="3eNFk2" id="3sb6Qlve16O" role="3eNLev">
               <node concept="2ZW3vV" id="3sb6Qlve16P" role="3eO9$A">
                 <node concept="3uibUv" id="3sb6Qlve16Q" role="2ZW6by">
-                  <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                  <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
                 </node>
                 <node concept="37vLTw" id="3sb6Qlve16R" role="2ZW6bz">
                   <ref role="3cqZAo" node="3sb6Qlve15D" resolve="arg" />
@@ -22115,7 +22115,7 @@
         <node concept="37vLTG" id="19fWAfxmoFA" role="3clF46">
           <property role="TrG5h" value="dataFormPrintable" />
           <node concept="3uibUv" id="19fWAfxnC_h" role="1tU5fm">
-            <ref role="3uigEE" to="6exd:19fWAfxiNy0" resolve="DataFormPrintable" />
+            <ref role="3uigEE" to="cof4:19fWAfxiNy0" resolve="DataFormPrintable" />
           </node>
         </node>
         <node concept="17QB3L" id="2tI9bOlavJq" role="3clF45" />
@@ -22140,7 +22140,7 @@
                 <ref role="3cqZAo" node="19fWAfxmoFA" resolve="dataFormPrintable" />
               </node>
               <node concept="liA8E" id="19fWAfxnI0y" role="2OqNvi">
-                <ref role="37wK5l" to="6exd:19fWAfxiOqh" resolve="printObject" />
+                <ref role="37wK5l" to="cof4:19fWAfxiOqh" resolve="printObject" />
                 <node concept="37vLTw" id="19fWAfxoDL0" role="37wK5m">
                   <ref role="3cqZAo" node="2tI9bOlayJK" resolve="value" />
                 </node>
@@ -23455,11 +23455,11 @@
             <node concept="3cpWsn" id="6RFuZEC715N" role="3cpWs9">
               <property role="TrG5h" value="ruleEx" />
               <node concept="3uibUv" id="6RFuZEC715O" role="1tU5fm">
-                <ref role="3uigEE" to="i348:7nPD14OaO1O" resolve="RuleEx" />
+                <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
               </node>
               <node concept="10QFUN" id="6RFuZEC71Wq" role="33vP2m">
                 <node concept="3uibUv" id="6RFuZEC71Wm" role="10QFUM">
-                  <ref role="3uigEE" to="i348:7nPD14OaO1O" resolve="RuleEx" />
+                  <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
                 </node>
                 <node concept="2OqwBi" id="6RFuZEC71Wn" role="10QFUP">
                   <node concept="1LFfDK" id="6bBjpI83UpJ" role="2Oq$k0">
@@ -23490,7 +23490,7 @@
                   <ref role="3cqZAo" node="6RFuZEC715N" resolve="ruleEx" />
                 </node>
                 <node concept="liA8E" id="3Pxu0s8g7uE" role="2OqNvi">
-                  <ref role="37wK5l" to="i348:3Pxu0s8egWa" resolve="origin" />
+                  <ref role="37wK5l" to="ugy2:3Pxu0s8egWa" resolve="origin" />
                 </node>
               </node>
             </node>
@@ -23900,11 +23900,11 @@
             <node concept="3cpWsn" id="2T1p0CFILaZ" role="3cpWs9">
               <property role="TrG5h" value="ruleEx" />
               <node concept="3uibUv" id="2T1p0CFILb0" role="1tU5fm">
-                <ref role="3uigEE" to="i348:7nPD14OaO1O" resolve="RuleEx" />
+                <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
               </node>
               <node concept="10QFUN" id="2T1p0CFILb1" role="33vP2m">
                 <node concept="3uibUv" id="2T1p0CFILb2" role="10QFUM">
-                  <ref role="3uigEE" to="i348:7nPD14OaO1O" resolve="RuleEx" />
+                  <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
                 </node>
                 <node concept="2EnYce" id="2T1p0CFILb3" role="10QFUP">
                   <node concept="1LFfDK" id="2T1p0CFILb4" role="2Oq$k0">

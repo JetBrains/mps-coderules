@@ -16,11 +16,11 @@
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="u46i" ref="r:c2760840-3210-4ad4-9e64-a2dfd53620e1(jetbrains.mps.lang.typechecking.aspect)" />
     <import index="ucur" ref="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)" />
-    <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="pxw9" ref="r:e3417884-ba0a-4330-9cea-64f01ace2e9d(jetbrains.mps.lang.coderules.aspect)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -296,7 +296,7 @@
     <node concept="3clFb_" id="5EDW3XF61YL" role="jymVt">
       <property role="TrG5h" value="createManifest" />
       <node concept="3uibUv" id="5EDW3XF61YM" role="3clF45">
-        <ref role="3uigEE" to="fqlx:5EDW3XF5Z95" resolve="AbstractCoderulesManifest" />
+        <ref role="3uigEE" to="pxw9:5EDW3XF5Z95" resolve="AbstractCoderulesManifest" />
       </node>
       <node concept="3Tm1VV" id="5EDW3XF61YN" role="1B3o_S" />
       <node concept="3clFbS" id="5EDW3XF61YQ" role="3clF47">
@@ -320,8 +320,8 @@
     <node concept="2tJIrI" id="7km57PkeXwk" role="jymVt" />
     <node concept="3Tm1VV" id="7km57PkeUQW" role="1B3o_S" />
     <node concept="n94m4" id="7km57PkeUQX" role="lGtFl" />
-    <node concept="3uibUv" id="NKt6yoCeXM" role="EKbjA">
-      <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+    <node concept="3uibUv" id="UFo5u0IQ43" role="EKbjA">
+      <ref role="3uigEE" to="pxw9:NKt6yomNZE" resolve="CoderulesAspect" />
     </node>
     <node concept="17Uvod" id="NKt6ynQUyX" role="lGtFl">
       <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
@@ -357,7 +357,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="NKt6yp1FJg" role="1zkMxy">
-      <ref role="3uigEE" to="fqlx:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
+      <ref role="3uigEE" to="pxw9:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
       <node concept="1ZhdrF" id="78H58odLtQH" role="lGtFl">
         <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
         <property role="2qtEX8" value="classifier" />

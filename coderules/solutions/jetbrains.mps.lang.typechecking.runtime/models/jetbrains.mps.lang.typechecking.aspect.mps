@@ -10,12 +10,11 @@
   <imports>
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
-    <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
     <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="pxw9" ref="r:e3417884-ba0a-4330-9cea-64f01ace2e9d(jetbrains.mps.lang.coderules.aspect)" />
+    <import index="ugy2" ref="r:57b2449f-b7c7-4941-bd75-9c594835f5cd(jetbrains.mps.lang.coderules.template)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -101,7 +100,7 @@
       </node>
       <node concept="3Tm1VV" id="78H58oeCBjF" role="1B3o_S" />
       <node concept="3uibUv" id="78H58oeCAQU" role="3clF45">
-        <ref role="3uigEE" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+        <ref role="3uigEE" to="pxw9:NKt6ynorWQ" resolve="AspectLookup" />
         <node concept="3uibUv" id="78H58oeCAQV" role="11_B2D">
           <ref role="3uigEE" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
         </node>
@@ -109,14 +108,14 @@
       <node concept="3clFbS" id="78H58oeCAOe" role="3clF47">
         <node concept="3cpWs6" id="3KN3A4v4kbC" role="3cqZAp">
           <node concept="2YIFZM" id="3KN3A4v4kbD" role="3cqZAk">
-            <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-            <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+            <ref role="37wK5l" to="pxw9:78H58oefSjC" resolve="lookup" />
+            <ref role="1Pybhc" to="pxw9:NKt6ynorWQ" resolve="AspectLookup" />
             <node concept="37vLTw" id="IFW4V2tCCQ" role="37wK5m">
               <ref role="3cqZAo" node="IFW4V2s0Zk" resolve="repository" />
             </node>
             <node concept="2YIFZM" id="3KN3A4v4kbE" role="37wK5m">
-              <ref role="37wK5l" to="fqlx:78H58oefoaA" resolve="discoverable" />
-              <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
+              <ref role="37wK5l" to="pxw9:78H58oefoaA" resolve="discoverable" />
+              <ref role="1Pybhc" to="pxw9:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
               <node concept="3VsKOn" id="3KN3A4v4kbF" role="37wK5m">
                 <ref role="3VsUkX" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
               </node>
@@ -128,7 +127,7 @@
     <node concept="2tJIrI" id="IFW4V2EC2j" role="jymVt" />
     <node concept="3Tm1VV" id="7km57Pkjxf5" role="1B3o_S" />
     <node concept="3uibUv" id="NKt6yomOJv" role="EKbjA">
-      <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+      <ref role="3uigEE" to="pxw9:NKt6yomNZE" resolve="CoderulesAspect" />
     </node>
     <node concept="3uibUv" id="7km57PkjxgV" role="EKbjA">
       <ref role="3uigEE" to="ze1i:~ILanguageAspect" resolve="ILanguageAspect" />
@@ -146,7 +145,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="NKt6yp1DsV" role="1zkMxy">
-      <ref role="3uigEE" to="fqlx:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
+      <ref role="3uigEE" to="pxw9:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
     </node>
   </node>
 </model>

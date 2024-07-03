@@ -12,12 +12,12 @@
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
+    <import index="ugy2" ref="r:57b2449f-b7c7-4941-bd75-9c594835f5cd(jetbrains.mps.lang.coderules.template)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -195,7 +195,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="746Sd4ujSPT" role="3clF45">
-        <ref role="3uigEE" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+        <ref role="3uigEE" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
       </node>
       <node concept="3Tm1VV" id="746Sd4ujSO$" role="1B3o_S" />
       <node concept="3clFbS" id="746Sd4ujSO_" role="3clF47">
@@ -381,7 +381,7 @@
               <node concept="3clFbS" id="746Sd4uks9l" role="3clFbx">
                 <node concept="3cpWs6" id="746Sd4ukrxL" role="3cqZAp">
                   <node concept="unr1b" id="746Sd4ukrGP" role="3cqZAk">
-                    <ref role="un$jP" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+                    <ref role="un$jP" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                     <node concept="2OqwBi" id="746Sd4ukrGQ" role="unwt0">
                       <node concept="2OqwBi" id="746Sd4ukrGR" role="2Oq$k0">
                         <node concept="37vLTw" id="746Sd4ukrGS" role="2Oq$k0">
@@ -675,7 +675,7 @@
               <node concept="2JrnkZ" id="3BqfYtgCQhB" role="2Oq$k0">
                 <node concept="2tJFMh" id="3BqfYtgCQhA" role="2JrQYb">
                   <node concept="ZC_QK" id="3BqfYtgCQh_" role="2tJFKM">
-                    <ref role="2aWVGs" to="i348:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
+                    <ref role="2aWVGs" to="ugy2:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
                   </node>
                 </node>
               </node>
@@ -714,7 +714,7 @@
                       <node concept="2JrnkZ" id="3BqfYtgCQhE" role="2Oq$k0">
                         <node concept="2tJFMh" id="3BqfYtgCQhD" role="2JrQYb">
                           <node concept="ZC_QK" id="3BqfYtgCQhC" role="2tJFKM">
-                            <ref role="2aWVGs" to="i348:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
+                            <ref role="2aWVGs" to="ugy2:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
                           </node>
                         </node>
                       </node>

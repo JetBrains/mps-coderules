@@ -13,8 +13,8 @@
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.predicate)" />
-    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
+    <import index="tpfl" ref="r:97d6f79f-4a27-4a9b-9122-9bccfb5317c9(jetbrains.mps.lang.coderules.predicate)" />
+    <import index="uwx2" ref="r:76101703-3fc5-4e76-aa48-9728dde91f7b(jetbrains.mps.logic.unification)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -601,7 +601,7 @@
       <node concept="3clFbS" id="6yEjedm5XWA" role="3clF47">
         <node concept="3clFbF" id="6yEjedm6hex" role="3cqZAp">
           <node concept="1rXfSq" id="6yEjedm6hew" role="3clFbG">
-            <ref role="37wK5l" to="cxk7:2UGjFq4lTDy" resolve="doAsk" />
+            <ref role="37wK5l" to="tpfl:2UGjFq4lTDy" resolve="doAsk" />
             <node concept="37vLTw" id="6yEjedm6hnq" role="37wK5m">
               <ref role="3cqZAo" node="6yEjedm5Zmw" resolve="a" />
             </node>
@@ -637,7 +637,7 @@
               <ref role="3uigEE" to="w7la:~Solver$Result" resolve="Solver.Result" />
             </node>
             <node concept="1rXfSq" id="2gPa6JHHhmk" role="33vP2m">
-              <ref role="37wK5l" to="cxk7:2UGjFq4mbmq" resolve="doTell" />
+              <ref role="37wK5l" to="tpfl:2UGjFq4mbmq" resolve="doTell" />
               <node concept="37vLTw" id="2gPa6JHHhml" role="37wK5m">
                 <ref role="3cqZAo" node="6yEjedm623g" resolve="a" />
               </node>
@@ -692,7 +692,7 @@
     </node>
     <node concept="3Tm1VV" id="6yEjedm5WkF" role="1B3o_S" />
     <node concept="3uibUv" id="7lt0LtQwpQM" role="1zkMxy">
-      <ref role="3uigEE" to="cxk7:6GYQG_Spvw5" resolve="UnificationPredicate.UnificationSolver" />
+      <ref role="3uigEE" to="tpfl:6GYQG_Spvw5" resolve="UnificationPredicate.UnificationSolver" />
     </node>
   </node>
   <node concept="312cEu" id="6yEjedm8s$A">
@@ -717,7 +717,7 @@
       <node concept="3clFbS" id="6N2bvv_uxfx" role="3clF47">
         <node concept="3clFbF" id="6N2bvv_uxi6" role="3cqZAp">
           <node concept="1rXfSq" id="6N2bvv_uxi5" role="3clFbG">
-            <ref role="37wK5l" to="cxk7:2UGjFq4lB$H" resolve="doAsk" />
+            <ref role="37wK5l" to="tpfl:2UGjFq4lB$H" resolve="doAsk" />
             <node concept="37vLTw" id="6N2bvv_uxmD" role="37wK5m">
               <ref role="3cqZAo" node="6N2bvv_uxfQ" resolve="a" />
             </node>
@@ -753,7 +753,7 @@
               <ref role="3uigEE" to="w7la:~Solver$Result" resolve="Solver.Result" />
             </node>
             <node concept="1rXfSq" id="2gPa6JHyWM2" role="33vP2m">
-              <ref role="37wK5l" to="cxk7:2UGjFq4lGBW" resolve="doTell" />
+              <ref role="37wK5l" to="tpfl:2UGjFq4lGBW" resolve="doTell" />
               <node concept="37vLTw" id="2gPa6JHyWM3" role="37wK5m">
                 <ref role="3cqZAo" node="6yEjedm8tDF" resolve="a" />
               </node>
@@ -797,7 +797,7 @@
     <node concept="2tJIrI" id="6yEjedm8sYi" role="jymVt" />
     <node concept="3Tm1VV" id="6yEjedm8s$B" role="1B3o_S" />
     <node concept="3uibUv" id="7lt0LtQw8s8" role="1zkMxy">
-      <ref role="3uigEE" to="cxk7:3HJTsBn4ogZ" resolve="EqualsPredicate.EqualsSolver" />
+      <ref role="3uigEE" to="tpfl:3HJTsBn4ogZ" resolve="EqualsPredicate.EqualsSolver" />
     </node>
   </node>
   <node concept="312cEu" id="60zk4o6U2na">

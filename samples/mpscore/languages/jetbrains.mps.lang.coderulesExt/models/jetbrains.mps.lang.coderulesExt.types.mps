@@ -11,7 +11,6 @@
     <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.baseLanguageExt.types)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="54p4" ref="r:4756f1c3-ee0d-4da9-817d-c7dad8ea74b8(jetbrains.mps.logicExt.types)" />
-    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="jxwi" ref="r:6ecd2c91-8e0b-4c6a-878e-d699a7336100(jetbrains.mps.lang.smodelExt.types)" />
     <import index="yh6q" ref="r:14dbdd37-ab02-4407-8e3c-3308d6f4fbba(jetbrains.mps.baseLanguage.sequence.types)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
@@ -19,6 +18,7 @@
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <import index="cof4" ref="r:0a9d1d47-250c-4f98-8962-b65edf8b0721(jetbrains.mps.logic.dataform)" />
     <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.coderules.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -3576,7 +3576,7 @@
                         <node concept="nsMwS" id="61G6TdCWQRD" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
                           <node concept="h$QuP" id="ZNYuguvgHH" role="iSaTp">
-                            <ref role="h$OrH" to="6exd:3OPtF03lco4" resolve="ListNode" />
+                            <ref role="h$OrH" to="cof4:3OPtF03lco4" resolve="ListNode" />
                           </node>
                         </node>
                       </node>
@@ -3659,7 +3659,7 @@
                         <node concept="nsMwS" id="7kXqzcTKrrY" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
                           <node concept="h$QuP" id="ZNYuguvgHI" role="iSaTp">
-                            <ref role="h$OrH" to="6exd:3OPtF03lco4" resolve="ListNode" />
+                            <ref role="h$OrH" to="cof4:3OPtF03lco4" resolve="ListNode" />
                           </node>
                         </node>
                       </node>
@@ -3736,7 +3736,7 @@
                         <node concept="nsMwS" id="61G6TdCWQQm" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
                           <node concept="h$QuP" id="ZNYuguvgHJ" role="iSaTp">
-                            <ref role="h$OrH" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                            <ref role="h$OrH" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
                           </node>
                         </node>
                       </node>
@@ -3819,7 +3819,7 @@
                         <node concept="nsMwS" id="7kXqzcTKrwl" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
                           <node concept="h$QuP" id="ZNYuguvgHK" role="iSaTp">
-                            <ref role="h$OrH" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                            <ref role="h$OrH" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
                           </node>
                         </node>
                       </node>

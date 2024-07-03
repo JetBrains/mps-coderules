@@ -10,10 +10,10 @@
   <imports>
     <import index="zfi7" ref="r:39840d4e-f61c-4452-88c5-75b1eb10e892(jetbrains.mps.lang.typechecking.structure)" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
+    <import index="ugy2" ref="r:57b2449f-b7c7-4941-bd75-9c594835f5cd(jetbrains.mps.lang.coderules.template)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -113,7 +113,7 @@
           <node concept="2OqwBi" id="3vih52514Km" role="3cqZAk">
             <node concept="2c44tf" id="3vih52515Xj" role="2Oq$k0">
               <node concept="3uibUv" id="3vih52515Xk" role="2c44tc">
-                <ref role="3uigEE" to="i348:5EDW3XDYeWv" resolve="Query" />
+                <ref role="3uigEE" to="ugy2:5EDW3XDYeWv" resolve="Query" />
               </node>
             </node>
             <node concept="3TrEf2" id="3vih52515pt" role="2OqNvi">

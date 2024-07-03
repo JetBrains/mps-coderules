@@ -191,16 +191,6 @@
             <ref role="3bR37D" to="ffeo:7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
           </node>
         </node>
-        <node concept="1SiIV0" id="2Bpms61P1HA" role="3bR37C">
-          <node concept="3bR9La" id="2Bpms61P1HB" role="1SiIV1">
-            <ref role="3bR37D" to="ffeo:1H905DlDUSw" resolve="MPS.OpenAPI" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2Bpms61Pcok" role="3bR37C">
-          <node concept="3bR9La" id="2Bpms61Pcol" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:NKt6ynvPIP" resolve="jetbrains.mps.lang.typechecking" />
-          </node>
-        </node>
         <node concept="3rtmxn" id="7L5omges4XA" role="3bR31x">
           <node concept="3LXTmp" id="7L5omges4XB" role="3rtmxm">
             <node concept="3qWCbU" id="7L5omges4XC" role="3LXTna">
@@ -238,8 +228,13 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="2CPBoDB7hk4" role="3bR37C">
-          <node concept="3bR9La" id="2CPBoDB7hk5" role="1SiIV1">
+        <node concept="1SiIV0" id="74$3PKnBSeu" role="3bR37C">
+          <node concept="3bR9La" id="74$3PKnBSev" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:74$3PKm_L$v" resolve="jetbrains.mps.logic.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="74$3PKnDhyp" role="3bR37C">
+          <node concept="3bR9La" id="74$3PKnDhyq" role="1SiIV1">
             <ref role="3bR37D" to="zqd8:2CPBoDB0Mtg" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>

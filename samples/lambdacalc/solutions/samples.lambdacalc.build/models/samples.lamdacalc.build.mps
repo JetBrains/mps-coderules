@@ -149,11 +149,6 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="7E7FS_VaVAC" role="3bR37C">
-          <node concept="3bR9La" id="7E7FS_VaVAD" role="1SiIV1">
-            <ref role="3bR37D" to="ffeo:1H905DlDUSw" resolve="MPS.OpenAPI" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="7E7FS_VaVAE" role="3bR37C">
           <node concept="3bR9La" id="7E7FS_VaVAF" role="1SiIV1">
             <ref role="3bR37D" to="zqd8:7BVjoXzUxee" resolve="jetbrains.mps.lang.coderules.runtime" />
@@ -167,16 +162,6 @@
         <node concept="1SiIV0" id="7E7FS_VaVAI" role="3bR37C">
           <node concept="3bR9La" id="7E7FS_VaVAJ" role="1SiIV1">
             <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7E7FS_VaVAK" role="3bR37C">
-          <node concept="3bR9La" id="7E7FS_VaVAL" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:7BVjoXzUx$V" resolve="jetbrains.mps.logic.runtime" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7E7FS_VaVAM" role="3bR37C">
-          <node concept="3bR9La" id="7E7FS_VaVAN" role="1SiIV1">
-            <ref role="3bR37D" to="ffeo:1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>
         <node concept="1SiIV0" id="7E7FS_VaVAO" role="3bR37C">
@@ -221,13 +206,13 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="5wYq9r5EEtL" role="3bR37C">
-          <node concept="3bR9La" id="5wYq9r5EEtM" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:5wYq9r5EBDN" resolve="jetbrains.mps.coderules.runtime" />
+        <node concept="1SiIV0" id="74$3PKnEfbB" role="3bR37C">
+          <node concept="3bR9La" id="74$3PKnEfbC" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:74$3PKm_L$v" resolve="jetbrains.mps.logic.runtime" />
           </node>
         </node>
-        <node concept="1SiIV0" id="2CPBoDB7ht9" role="3bR37C">
-          <node concept="3bR9La" id="2CPBoDB7hta" role="1SiIV1">
+        <node concept="1SiIV0" id="1A8VbiT3_VG" role="3bR37C">
+          <node concept="3bR9La" id="1A8VbiT3_VH" role="1SiIV1">
             <ref role="3bR37D" to="zqd8:2CPBoDB0Mtg" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>

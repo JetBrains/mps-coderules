@@ -12,10 +12,10 @@
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="cof4" ref="r:0a9d1d47-250c-4f98-8962-b65edf8b0721(jetbrains.mps.logic.dataform)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -231,7 +231,7 @@
                 <node concept="2OqwBi" id="4cvvxaYheve" role="3cqZAk">
                   <node concept="2c44tf" id="4cvvxaYhe6r" role="2Oq$k0">
                     <node concept="3uibUv" id="4cvvxaYhegq" role="2c44tc">
-                      <ref role="3uigEE" to="6exd:3OPtF03lco4" resolve="ListNode" />
+                      <ref role="3uigEE" to="cof4:3OPtF03lco4" resolve="ListNode" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="4cvvxaYheXY" role="2OqNvi">
@@ -250,7 +250,7 @@
                 <node concept="2OqwBi" id="4cvvxaYhfL9" role="3cqZAk">
                   <node concept="2c44tf" id="4cvvxaYhfdx" role="2Oq$k0">
                     <node concept="3uibUv" id="4cvvxaYhfwe" role="2c44tc">
-                      <ref role="3uigEE" to="6exd:2xQ7eRAD2dj" resolve="Value" />
+                      <ref role="3uigEE" to="cof4:2xQ7eRAD2dj" resolve="Value" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="4cvvxaYhgi0" role="2OqNvi">
@@ -265,7 +265,7 @@
           <node concept="2OqwBi" id="4cvvxaYhgKJ" role="3clFbG">
             <node concept="2c44tf" id="4cvvxaYhgp3" role="2Oq$k0">
               <node concept="3uibUv" id="4cvvxaYhgzP" role="2c44tc">
-                <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
               </node>
             </node>
             <node concept="3TrEf2" id="4cvvxaYhhd_" role="2OqNvi">
@@ -345,7 +345,7 @@
           <node concept="2OqwBi" id="4cvvxaYhcn$" role="3clFbG">
             <node concept="2c44tf" id="4cvvxaYhc6f" role="2Oq$k0">
               <node concept="3uibUv" id="4cvvxaYhcaI" role="2c44tc">
-                <ref role="3uigEE" to="6exd:2xQ7eRAD2dj" resolve="Value" />
+                <ref role="3uigEE" to="cof4:2xQ7eRAD2dj" resolve="Value" />
               </node>
             </node>
             <node concept="3TrEf2" id="4cvvxaYhcOo" role="2OqNvi">
@@ -376,7 +376,7 @@
           <node concept="2OqwBi" id="4cvvxaYhdbA" role="3clFbG">
             <node concept="2c44tf" id="4cvvxaYhcUi" role="2Oq$k0">
               <node concept="3uibUv" id="4cvvxaYhcYL" role="2c44tc">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
+                <ref role="3uigEE" to="cof4:5JQSuNswOXL" resolve="TermNode" />
               </node>
             </node>
             <node concept="3TrEf2" id="4cvvxaYhdYJ" role="2OqNvi">
@@ -406,7 +406,7 @@
         <node concept="3clFbF" id="4cvvxaYhhl2" role="3cqZAp">
           <node concept="2c44tf" id="4cvvxaYhhkY" role="3clFbG">
             <node concept="3uibUv" id="4cvvxaYhhpt" role="2c44tc">
-              <ref role="3uigEE" to="6exd:3OPtF03lco4" resolve="ListNode" />
+              <ref role="3uigEE" to="cof4:3OPtF03lco4" resolve="ListNode" />
             </node>
           </node>
         </node>
@@ -431,7 +431,7 @@
           <node concept="2OqwBi" id="4cvvxaYhhL5" role="3clFbG">
             <node concept="2c44tf" id="4cvvxaYhhvL" role="2Oq$k0">
               <node concept="3uibUv" id="4cvvxaYhh$g" role="2c44tc">
-                <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
               </node>
             </node>
             <node concept="3TrEf2" id="4cvvxaYhidS" role="2OqNvi">

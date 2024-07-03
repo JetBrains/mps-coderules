@@ -14,20 +14,17 @@
     <devkit ref="00000000-0000-4000-0000-5604ebd4f22c(jetbrains.mps.devkit.aspect.constraints)" />
   </languages>
   <imports>
-    <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="hy7p" ref="r:01ee26d6-df00-4ffb-931c-1ddec5984886(jetbrains.mps.lang.coderules.util)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.coderules.behavior)" />
     <import index="ni5j" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.regex(JDK/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="ugy2" ref="r:57b2449f-b7c7-4941-bd75-9c594835f5cd(jetbrains.mps.lang.coderules.template)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -508,7 +505,7 @@
           <node concept="3cpWsn" id="1mdVbTSoaPH" role="3cpWs9">
             <property role="TrG5h" value="methk" />
             <node concept="3uibUv" id="1mdVbTSoaPI" role="1tU5fm">
-              <ref role="3uigEE" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+              <ref role="3uigEE" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
             </node>
             <node concept="2YIFZM" id="1mdVbTSoaPJ" role="33vP2m">
               <ref role="37wK5l" to="hy7p:746Sd4ujSOx" resolve="templateMethodKind" />
@@ -531,8 +528,8 @@
             <node concept="22lmx$" id="1mdVbTSoaPR" role="37vLTx">
               <node concept="3clFbC" id="1mdVbTSoaPS" role="3uHU7w">
                 <node concept="Rm8GO" id="1mdVbTSoaPT" role="3uHU7w">
-                  <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
-                  <ref role="Rm8GQ" to="i348:4OKkcnfu_Aj" resolve="GUARD" />
+                  <ref role="1Px2BO" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+                  <ref role="Rm8GQ" to="ugy2:4OKkcnfu_Aj" resolve="GUARD" />
                 </node>
                 <node concept="37vLTw" id="1mdVbTSoaPU" role="3uHU7B">
                   <ref role="3cqZAo" node="1mdVbTSoaPH" resolve="methk" />
@@ -543,8 +540,8 @@
                   <ref role="3cqZAo" node="1mdVbTSoaPH" resolve="methk" />
                 </node>
                 <node concept="Rm8GO" id="1mdVbTSoaPX" role="3uHU7w">
-                  <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
-                  <ref role="Rm8GQ" to="i348:4OKkcnfu_Ak" resolve="BODY" />
+                  <ref role="1Px2BO" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+                  <ref role="Rm8GQ" to="ugy2:4OKkcnfu_Ak" resolve="BODY" />
                 </node>
               </node>
             </node>
@@ -598,7 +595,7 @@
           <node concept="3cpWsn" id="1mdVbTSocwU" role="3cpWs9">
             <property role="TrG5h" value="methk" />
             <node concept="3uibUv" id="1mdVbTSocwV" role="1tU5fm">
-              <ref role="3uigEE" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+              <ref role="3uigEE" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
             </node>
             <node concept="2YIFZM" id="1mdVbTSocwW" role="33vP2m">
               <ref role="37wK5l" to="hy7p:746Sd4ujSOx" resolve="templateMethodKind" />
@@ -621,8 +618,8 @@
             <node concept="22lmx$" id="1mdVbTSocx4" role="37vLTx">
               <node concept="3clFbC" id="1mdVbTSocx5" role="3uHU7w">
                 <node concept="Rm8GO" id="1mdVbTSocx6" role="3uHU7w">
-                  <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
-                  <ref role="Rm8GQ" to="i348:4OKkcnfu_Aj" resolve="GUARD" />
+                  <ref role="1Px2BO" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+                  <ref role="Rm8GQ" to="ugy2:4OKkcnfu_Aj" resolve="GUARD" />
                 </node>
                 <node concept="37vLTw" id="1mdVbTSocx7" role="3uHU7B">
                   <ref role="3cqZAo" node="1mdVbTSocwU" resolve="methk" />
@@ -633,8 +630,8 @@
                   <ref role="3cqZAo" node="1mdVbTSocwU" resolve="methk" />
                 </node>
                 <node concept="Rm8GO" id="1mdVbTSocxa" role="3uHU7w">
-                  <ref role="Rm8GQ" to="i348:4OKkcnfu_Ak" resolve="BODY" />
-                  <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+                  <ref role="Rm8GQ" to="ugy2:4OKkcnfu_Ak" resolve="BODY" />
+                  <ref role="1Px2BO" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                 </node>
               </node>
             </node>
@@ -688,7 +685,7 @@
           <node concept="3cpWsn" id="1mdVbTSo18d" role="3cpWs9">
             <property role="TrG5h" value="methk" />
             <node concept="3uibUv" id="1mdVbTSo187" role="1tU5fm">
-              <ref role="3uigEE" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+              <ref role="3uigEE" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
             </node>
             <node concept="2YIFZM" id="1mdVbTSo18e" role="33vP2m">
               <ref role="37wK5l" to="hy7p:746Sd4ujSOx" resolve="templateMethodKind" />
@@ -711,8 +708,8 @@
             <node concept="22lmx$" id="1mdVbTSo5zK" role="37vLTx">
               <node concept="3clFbC" id="1mdVbTSo6uw" role="3uHU7w">
                 <node concept="Rm8GO" id="1mdVbTSo7iY" role="3uHU7w">
-                  <ref role="Rm8GQ" to="i348:4OKkcnfu_Aj" resolve="GUARD" />
-                  <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+                  <ref role="Rm8GQ" to="ugy2:4OKkcnfu_Aj" resolve="GUARD" />
+                  <ref role="1Px2BO" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                 </node>
                 <node concept="37vLTw" id="1mdVbTSo5Oz" role="3uHU7B">
                   <ref role="3cqZAo" node="1mdVbTSo18d" resolve="methk" />
@@ -723,8 +720,8 @@
                   <ref role="3cqZAo" node="1mdVbTSo18d" resolve="methk" />
                 </node>
                 <node concept="Rm8GO" id="1mdVbTSo4Yh" role="3uHU7w">
-                  <ref role="Rm8GQ" to="i348:4OKkcnfu_Ak" resolve="BODY" />
-                  <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+                  <ref role="Rm8GQ" to="ugy2:4OKkcnfu_Ak" resolve="BODY" />
+                  <ref role="1Px2BO" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                 </node>
               </node>
             </node>
@@ -945,7 +942,7 @@
           <node concept="3cpWsn" id="4jcOV4hwMJ5" role="3cpWs9">
             <property role="TrG5h" value="methk" />
             <node concept="3uibUv" id="4jcOV4hwMJ6" role="1tU5fm">
-              <ref role="3uigEE" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+              <ref role="3uigEE" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
             </node>
             <node concept="2YIFZM" id="4jcOV4hwMJ7" role="33vP2m">
               <ref role="37wK5l" to="hy7p:746Sd4ujSOx" resolve="templateMethodKind" />
@@ -970,8 +967,8 @@
                 <ref role="3cqZAo" node="4jcOV4hwMJ5" resolve="methk" />
               </node>
               <node concept="Rm8GO" id="4jcOV4hwMJl" role="3uHU7w">
-                <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
-                <ref role="Rm8GQ" to="i348:4OKkcnfu_Ak" resolve="BODY" />
+                <ref role="1Px2BO" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+                <ref role="Rm8GQ" to="ugy2:4OKkcnfu_Ak" resolve="BODY" />
               </node>
             </node>
             <node concept="37vLTw" id="4jcOV4hwMJm" role="37vLTJ">
@@ -1021,7 +1018,7 @@
           <node concept="3cpWsn" id="4jcOV4hEF_v" role="3cpWs9">
             <property role="TrG5h" value="methk" />
             <node concept="3uibUv" id="4jcOV4hEF_w" role="1tU5fm">
-              <ref role="3uigEE" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+              <ref role="3uigEE" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
             </node>
             <node concept="2YIFZM" id="4jcOV4hEF_x" role="33vP2m">
               <ref role="37wK5l" to="hy7p:746Sd4ujSOx" resolve="templateMethodKind" />
@@ -1046,8 +1043,8 @@
                 <ref role="3cqZAo" node="4jcOV4hEF_v" resolve="methk" />
               </node>
               <node concept="Rm8GO" id="4jcOV4hEF_F" role="3uHU7w">
-                <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
-                <ref role="Rm8GQ" to="i348:4OKkcnfu_Ak" resolve="BODY" />
+                <ref role="1Px2BO" to="ugy2:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+                <ref role="Rm8GQ" to="ugy2:4OKkcnfu_Ak" resolve="BODY" />
               </node>
             </node>
             <node concept="37vLTw" id="4jcOV4hEF_G" role="37vLTJ">

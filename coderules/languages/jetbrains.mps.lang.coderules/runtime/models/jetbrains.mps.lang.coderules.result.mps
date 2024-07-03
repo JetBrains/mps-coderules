@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:78313117-90ee-47a5-a91e-b5213df7f611(jetbrains.mps.coderules.runtime.result)">
+<model ref="r:b198cb67-efdc-40c0-8817-11ab64523a5b(jetbrains.mps.lang.coderules.result)">
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
@@ -190,6 +190,7 @@
   <node concept="312cEu" id="7Oc59RSEjdb">
     <property role="TrG5h" value="Result" />
     <property role="1sVAO0" value="true" />
+    <node concept="2tJIrI" id="74$3PKmogFr" role="jymVt" />
     <node concept="2tJIrI" id="7Oc59RSEmi9" role="jymVt" />
     <node concept="2YIFZL" id="7Oc59RSEjeq" role="jymVt">
       <property role="TrG5h" value="OK" />

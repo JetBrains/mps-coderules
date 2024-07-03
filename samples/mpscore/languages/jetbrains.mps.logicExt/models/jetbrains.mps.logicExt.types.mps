@@ -15,11 +15,11 @@
   <imports>
     <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.baseLanguageExt.types)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
-    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
-    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="cof4" ref="r:0a9d1d47-250c-4f98-8962-b65edf8b0721(jetbrains.mps.logic.dataform)" />
+    <import index="uwx2" ref="r:76101703-3fc5-4e76-aa48-9728dde91f7b(jetbrains.mps.logic.unification)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -1430,7 +1430,7 @@
                                       <node concept="2OqwBi" id="3CulEO1ZTUi" role="1uXrr8">
                                         <node concept="2c44tf" id="3CulEO1ZTUj" role="2Oq$k0">
                                           <node concept="3uibUv" id="3CulEO1ZTUk" role="2c44tc">
-                                            <ref role="3uigEE" to="6exd:6YPNC4OECgm" resolve="ListRole" />
+                                            <ref role="3uigEE" to="cof4:6YPNC4OECgm" resolve="ListRole" />
                                           </node>
                                         </node>
                                         <node concept="3TrEf2" id="3CulEO1ZTUl" role="2OqNvi">
@@ -1455,7 +1455,7 @@
                                         <node concept="2OqwBi" id="3CulEO1ZTUm" role="1uXrr8">
                                           <node concept="2c44tf" id="3CulEO1ZTUn" role="2Oq$k0">
                                             <node concept="3uibUv" id="3CulEO1ZTUo" role="2c44tc">
-                                              <ref role="3uigEE" to="6exd:6YPNC4NYnau" resolve="ChildRole" />
+                                              <ref role="3uigEE" to="cof4:6YPNC4NYnau" resolve="ChildRole" />
                                             </node>
                                           </node>
                                           <node concept="3TrEf2" id="3CulEO1ZTUp" role="2OqNvi">
@@ -1499,7 +1499,7 @@
                                   <node concept="2OqwBi" id="3CulEO26nN8" role="1uXrr8">
                                     <node concept="2c44tf" id="3CulEO26nN9" role="2Oq$k0">
                                       <node concept="3uibUv" id="3CulEO26nNa" role="2c44tc">
-                                        <ref role="3uigEE" to="6exd:2xQ7eRAD2dj" resolve="Value" />
+                                        <ref role="3uigEE" to="cof4:2xQ7eRAD2dj" resolve="Value" />
                                       </node>
                                     </node>
                                     <node concept="3TrEf2" id="3CulEO26nNb" role="2OqNvi">
@@ -1540,7 +1540,7 @@
                                   <node concept="2OqwBi" id="3CulEO1ZTUu" role="1uXrr8">
                                     <node concept="2c44tf" id="3CulEO1ZTUv" role="2Oq$k0">
                                       <node concept="3uibUv" id="3CulEO1ZTUw" role="2c44tc">
-                                        <ref role="3uigEE" to="6exd:3OPtF03lco4" resolve="ListNode" />
+                                        <ref role="3uigEE" to="cof4:3OPtF03lco4" resolve="ListNode" />
                                       </node>
                                     </node>
                                     <node concept="3TrEf2" id="3CulEO1ZTUx" role="2OqNvi">
@@ -1581,7 +1581,7 @@
                                   <node concept="2OqwBi" id="3CulEO1ZTUy" role="1uXrr8">
                                     <node concept="2c44tf" id="3CulEO1ZTUz" role="2Oq$k0">
                                       <node concept="3uibUv" id="3CulEO1ZTU$" role="2c44tc">
-                                        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                                        <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
                                       </node>
                                     </node>
                                     <node concept="3TrEf2" id="3CulEO1ZTU_" role="2OqNvi">
@@ -1670,7 +1670,7 @@
                         <node concept="2OqwBi" id="3CulEO1ZTUA" role="1uXrr8">
                           <node concept="2c44tf" id="3CulEO1ZTUB" role="2Oq$k0">
                             <node concept="3uibUv" id="3CulEO1ZTUC" role="2c44tc">
-                              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                              <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3CulEO1ZTUD" role="2OqNvi">
@@ -2104,7 +2104,7 @@
                         <node concept="nsMwS" id="3CulEO39Jhh" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
                           <node concept="h$QuP" id="ZNYuguvgIp" role="iSaTp">
-                            <ref role="h$OrH" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                            <ref role="h$OrH" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
                           </node>
                         </node>
                       </node>
@@ -2182,7 +2182,7 @@
                       <node concept="nsMwS" id="7LI_gNMpYy2" role="ns1xD">
                         <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
                         <node concept="h$QuP" id="ZNYuguvgIr" role="iSaTp">
-                          <ref role="h$OrH" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
+                          <ref role="h$OrH" to="uwx2:1fvYCPC9rB6" resolve="MetaLogicalArray" />
                         </node>
                       </node>
                     </node>
@@ -2366,7 +2366,7 @@
                         <node concept="nsMwS" id="61G6TdCWQQm" role="ns1xD">
                           <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
                           <node concept="h$QuP" id="ZNYuguvgIs" role="iSaTp">
-                            <ref role="h$OrH" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                            <ref role="h$OrH" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
                           </node>
                         </node>
                       </node>

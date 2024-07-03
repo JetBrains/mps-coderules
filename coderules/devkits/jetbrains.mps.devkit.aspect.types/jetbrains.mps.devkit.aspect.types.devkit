@@ -9,6 +9,8 @@
   </extendedDevKits>
   <exported-solutions>
     <exported-solution>f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)</exported-solution>
+    <exported-solution>a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)</exported-solution>
+    <exported-solution>6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)</exported-solution>
   </exported-solutions>
   <generation-plan model="r:32ed3462-7683-4dc2-8b0b-8bb7ef0f8860(jetbrains.mps.lang.descriptor.aspects.types@genplan)" />
 </dev-kit>

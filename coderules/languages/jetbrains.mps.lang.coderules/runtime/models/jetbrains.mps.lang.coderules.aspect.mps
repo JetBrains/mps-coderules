@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)">
+<model ref="r:e3417884-ba0a-4330-9cea-64f01ace2e9d(jetbrains.mps.lang.coderules.aspect)">
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
@@ -14,7 +14,6 @@
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
@@ -22,9 +21,9 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="mpcv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.ref(JDK/)" />
     <import index="j9co" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.event(MPS.Core/)" />
+    <import index="ugy2" ref="r:57b2449f-b7c7-4941-bd75-9c594835f5cd(jetbrains.mps.lang.coderules.template)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -4371,7 +4370,7 @@
       <property role="1EzhhJ" value="true" />
       <node concept="3vKaQO" id="6UWSvq4Vu6$" role="3clF45">
         <node concept="3uibUv" id="tbauFxRB8v" role="3O5elw">
-          <ref role="3uigEE" to="i348:tbauFxRzkz" resolve="MacroTable" />
+          <ref role="3uigEE" to="ugy2:tbauFxRzkz" resolve="MacroTable" />
         </node>
       </node>
       <node concept="3Tm1VV" id="6UWSvq4Vu5Y" role="1B3o_S" />
@@ -4383,7 +4382,7 @@
       <property role="1EzhhJ" value="true" />
       <node concept="3vKaQO" id="5EDW3XF609H" role="3clF45">
         <node concept="3uibUv" id="tbauFxRRsb" role="3O5elw">
-          <ref role="3uigEE" to="i348:4MqhgXU9fm3" resolve="RuleTable" />
+          <ref role="3uigEE" to="ugy2:4MqhgXU9fm3" resolve="RuleTable" />
         </node>
       </node>
       <node concept="3Tm1VV" id="4MqhgXUaiLA" role="1B3o_S" />
@@ -4395,7 +4394,7 @@
       <property role="1EzhhJ" value="true" />
       <node concept="3vKaQO" id="5EDW3XF60af" role="3clF45">
         <node concept="3uibUv" id="tbauFxRQEm" role="3O5elw">
-          <ref role="3uigEE" to="i348:tbauFxRORi" resolve="QueryTable" />
+          <ref role="3uigEE" to="ugy2:tbauFxRORi" resolve="QueryTable" />
         </node>
       </node>
       <node concept="3Tm1VV" id="5EDW3XF60ah" role="1B3o_S" />
