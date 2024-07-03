@@ -145,6 +145,8 @@
     <module reference="afc17aaf-3a3d-4d69-a38d-db90d5e858c6(jetbrains.mps.lang.types)" version="0" />
     <module reference="c9d137c4-3259-44f8-80ff-33ab2b506ee4(jetbrains.mps.lang.util.order)" version="0" />
     <module reference="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" version="0" />
+    <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
+    <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
     <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" version="0" />
     <module reference="06b7c5c7-e359-4f4b-a581-5d0c9323af39(samples.fitch)" version="1" />
     <module reference="ec79e64d-4cbb-4f6c-b7b7-108dd125aba6(samples.fitch.propositionalLogic)" version="0" />

@@ -1574,7 +1574,7 @@
                     <node concept="3jm4v3" id="4lgunKg$PYT" role="3I6s78">
                       <ref role="3jm46O" node="5itBwMaELbq" resolve="longType" />
                       <node concept="a7P8L" id="4lgunKg$PYU" role="3jm6SO">
-                        <ref role="a7OzE" node="4lgunKg$PYN" resolve="IntType" />
+                        <ref role="a7OzE" node="4lgunKg$PYN" resolve="LongType" />
                       </node>
                       <node concept="1uXrbS" id="4lgunKg$PYV" role="3GayWF">
                         <ref role="1uXrre" node="5itBwMaEMcg" resolve="svalue" />
@@ -1602,7 +1602,7 @@
                         </node>
                       </node>
                       <node concept="a7P8L" id="4lgunKg$PZ5" role="3AunhB">
-                        <ref role="a7OzE" node="4lgunKg$PYN" resolve="IntType" />
+                        <ref role="a7OzE" node="4lgunKg$PYN" resolve="LongType" />
                       </node>
                     </node>
                   </node>
