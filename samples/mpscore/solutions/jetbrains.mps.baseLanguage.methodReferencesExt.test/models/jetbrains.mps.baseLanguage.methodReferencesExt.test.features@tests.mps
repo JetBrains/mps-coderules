@@ -15,9 +15,6 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
-      <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
-        <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
-      </concept>
       <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
         <child id="1216993439383" name="methods" index="1qtyYc" />
@@ -131,9 +128,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="2XOHcx" id="4E290qQ07Wm">
-    <property role="2XOHcw" value="${mpscore_home}" />
-  </node>
   <node concept="1lH9Xt" id="6ZRhjsGgn7E">
     <property role="TrG5h" value="TypecheckingMethodReferences" />
     <node concept="2XrIbr" id="35YJGAJTxCf" role="1qtyYc">
