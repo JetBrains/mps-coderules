@@ -59,7 +59,7 @@ class Profiler {
         val sum = name2data.asSequence().fold(0L) { acc, e -> acc + millis(e.value.dur) }
         var toReport = (sum * 0.98).toLong()
         // sort in-pace descending
-        Collections.sort(name2data) { e1, e2 -> if (e2.value.dur < e1.value.dur) -1 else 1 }
+        Collections.sort(name2data, Comparator.comparingLong({it.value.dur})) 
         return name2data
             .asSequence()
             .takeWhile { (_, data) -> toReport > 0 && millis(data.dur) > 0 }
@@ -71,7 +71,7 @@ class Profiler {
                 var parentsToReport = (parentsTotal * 0.98).toLong()
 
                 //sort in-place descending
-                Collections.sort(parentName2Dur) { e1, e2 -> if (e2.value < e1.value) -1 else 1 }
+                Collections.sort(parentName2Dur, Comparator.comparingLong({it.value}))
                 val sb = StringBuilder("[time: %1\$Ts.%1\$TLs count: %2\$d]".format(millis(data.dur), data.freq))
                 parentName2Dur
                     .asSequence()
