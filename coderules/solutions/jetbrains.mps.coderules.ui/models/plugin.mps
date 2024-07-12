@@ -14269,9 +14269,8 @@
             </node>
             <node concept="liA8E" id="Nob1E3_nQ3" role="2OqNvi">
               <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean)" resolve="createActionToolbar" />
-              <node concept="10M0yZ" id="Nob1E3_nQ4" role="37wK5m">
-                <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
-                <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
+              <node concept="Xl_RD" id="55vERwjouNl" role="37wK5m">
+                <property role="Xl_RC" value="actionToolbar" />
               </node>
               <node concept="37vLTw" id="4n$QnzZBoZF" role="37wK5m">
                 <ref role="3cqZAo" node="YGS68MPVLR" resolve="group" />
@@ -14394,9 +14393,8 @@
             </node>
             <node concept="liA8E" id="4n$QnzZDmXO" role="2OqNvi">
               <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean)" resolve="createActionToolbar" />
-              <node concept="10M0yZ" id="4n$QnzZDmXP" role="37wK5m">
-                <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
-                <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
+              <node concept="Xl_RD" id="55vERwjneD0" role="37wK5m">
+                <property role="Xl_RC" value="actionToolbar" />
               </node>
               <node concept="37vLTw" id="4n$QnzZDmXQ" role="37wK5m">
                 <ref role="3cqZAo" node="4n$QnzZDmWU" resolve="group" />
@@ -14641,9 +14639,8 @@
             </node>
             <node concept="liA8E" id="4XsNDZYBNSB" role="2OqNvi">
               <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean)" resolve="createActionToolbar" />
-              <node concept="10M0yZ" id="4XsNDZYBNSC" role="37wK5m">
-                <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
-                <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
+              <node concept="Xl_RD" id="55vERwjoNbI" role="37wK5m">
+                <property role="Xl_RC" value="actionToolbar" />
               </node>
               <node concept="37vLTw" id="4XsNDZYBNSD" role="37wK5m">
                 <ref role="3cqZAo" node="4XsNDZYBNRv" resolve="group" />
@@ -14725,9 +14722,8 @@
             </node>
             <node concept="liA8E" id="23Habm5qW$X" role="2OqNvi">
               <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean)" resolve="createActionToolbar" />
-              <node concept="10M0yZ" id="23Habm5qW$Y" role="37wK5m">
-                <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
-                <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
+              <node concept="Xl_RD" id="55vERwjp8f7" role="37wK5m">
+                <property role="Xl_RC" value="actionToolbar" />
               </node>
               <node concept="37vLTw" id="23Habm5qW$Z" role="37wK5m">
                 <ref role="3cqZAo" node="23Habm5qW$2" resolve="group" />
