@@ -12,9 +12,9 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.methodReferencesExt/jetbrains.mps.baseLanguage.methodReferencesExt.mpl" folder="ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.sequence/jetbrains.mps.baseLanguage.sequence.mpl" folder="ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.tuplesExt/jetbrains.mps.baseLanguage.tuplesExt.mpl" folder="ext.baseLanguage" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.varVariableExt/jetbrains.mps.baseLanguage.varVariableExt.mpl" folder="ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" folder="ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguageInternalExt/jetbrains.mps.baseLanguageInternalExt.mpl" folder="ext.baseLanguage" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguage.varVariableExt/jetbrains.mps.baseLanguage.varVariableExt.mpl" folder="ext.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.behaviorExt/jetbrains.mps.lang.behaviorExt.mpl" folder="ext.lang" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.coderulesExt/jetbrains.mps.lang.coderulesExt.mpl" folder="ext.coderules" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.constraintsExt/jetbrains.mps.lang.constraintsExt.mpl" folder="ext.lang" />
@@ -29,6 +29,7 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.smodel.queryExt/jetbrains.mps.lang.smodel.queryExt.mpl" folder="ext.lang" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.smodelExt/jetbrains.mps.lang.smodelExt.mpl" folder="ext.lang" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.testExt/jetbrains.mps.lang.testExt.mpl" folder="ext.lang" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typecheckingExt/jetbrains.mps.lang.typecheckingExt.mpl" folder="ext.coderules" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystemExt/jetbrains.mps.lang.typesystemExt.mpl" folder="ext.lang" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logicExt/jetbrains.mps.logicExt.mpl" folder="ext.coderules" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.closuresExt.test/jetbrains.mps.baseLanguage.closuresExt.test.msd" folder="test" />
