@@ -2088,8 +2088,8 @@
         <node concept="3clFbH" id="1aCOVadjI99" role="3cqZAp" />
         <node concept="3Aqczg" id="ZJPHcupGoZ" role="3cqZAp">
           <node concept="3A8Hvi" id="ZJPHcupGoT" role="3Aqpz8">
-            <node concept="a7P8L" id="ZJPHcupGpB" role="3A8wtg">
-              <ref role="a7OzE" node="ZJPHcupmCD" resolve="FunctionScheme" />
+            <node concept="a7P8L" id="7FsrMTVJAW0" role="3A8wtg">
+              <ref role="a7OzE" node="1aCOVadieId" resolve="SchemeDecl" />
             </node>
             <node concept="ns1u0" id="ZJPHcupGpI" role="3A8w4Q">
               <ref role="ns1xF" to="kqnc:ZJPHcupkiE" resolve="methodSign" />
@@ -2128,9 +2128,6 @@
         </node>
       </node>
       <node concept="3uniRu" id="ZJPHcupmCC" role="3iJhzY">
-        <node concept="aZer4" id="ZJPHcupmCD" role="3XD1gS">
-          <property role="TrG5h" value="FunctionScheme" />
-        </node>
         <node concept="aZer4" id="ZJPHcupJPk" role="3XD1gS">
           <property role="TrG5h" value="ReturnType" />
         </node>
