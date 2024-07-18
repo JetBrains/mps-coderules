@@ -830,7 +830,7 @@
             <property role="TrG5h" value="rulesWithDependency" />
             <node concept="A3Dl8" id="3FGJ5nvmRFI" role="1tU5fm">
               <node concept="3uibUv" id="3FGJ5nvmRK3" role="A3Ik2">
-                <ref role="3uigEE" to="av0y:~Rule" resolve="Rule" />
+                <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
               </node>
             </node>
             <node concept="2OqwBi" id="3FGJ5nvmoBY" role="33vP2m">
@@ -849,7 +849,7 @@
         </node>
         <node concept="3cpWs8" id="3FGJ5nvn00w" role="3cqZAp">
           <node concept="3cpWsn" id="3FGJ5nvn00z" role="3cpWs9">
-            <property role="TrG5h" value="namesOfRulesWithDependency" />
+            <property role="TrG5h" value="templatesOfRulesWithDependency" />
             <node concept="2hMVRd" id="3FGJ5nvn00s" role="1tU5fm">
               <node concept="3uibUv" id="3FGJ5nvn0cz" role="2hN53Y">
                 <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
@@ -868,17 +868,12 @@
                     <node concept="1bVj0M" id="3FGJ5nvn1Qa" role="23t8la">
                       <node concept="3clFbS" id="3FGJ5nvn1Qb" role="1bW5cS">
                         <node concept="3clFbF" id="3FGJ5nvn1Yt" role="3cqZAp">
-                          <node concept="2OqwBi" id="e$ws1zVjl2" role="3clFbG">
-                            <node concept="2OqwBi" id="e$ws1zVi1A" role="2Oq$k0">
-                              <node concept="37vLTw" id="e$ws1zVhHi" role="2Oq$k0">
-                                <ref role="3cqZAo" node="6E5fMGvfKVI" resolve="it" />
-                              </node>
-                              <node concept="liA8E" id="e$ws1zVj2t" role="2OqNvi">
-                                <ref role="37wK5l" to="av0y:~Rule.uniqueTag()" resolve="uniqueTag" />
-                              </node>
+                          <node concept="2OqwBi" id="3BoSoElDQlj" role="3clFbG">
+                            <node concept="37vLTw" id="3BoSoElDPDT" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6E5fMGvfKVI" resolve="it" />
                             </node>
-                            <node concept="liA8E" id="e$ws1zVjBS" role="2OqNvi">
-                              <ref role="37wK5l" to="av0y:~Rule$Tag.groupName()" resolve="groupName" />
+                            <node concept="liA8E" id="3BoSoElDSDE" role="2OqNvi">
+                              <ref role="37wK5l" to="ugy2:7nPD14Ob4lt" resolve="templateRef" />
                             </node>
                           </node>
                         </node>
@@ -995,7 +990,7 @@
         </node>
         <node concept="3cpWs8" id="3FGJ5nvmSHK" role="3cqZAp">
           <node concept="3cpWsn" id="3FGJ5nvmSHN" role="3cpWs9">
-            <property role="TrG5h" value="addedRulesTags" />
+            <property role="TrG5h" value="addedRulesTemplates" />
             <node concept="2hMVRd" id="3FGJ5nvmSHG" role="1tU5fm">
               <node concept="3uibUv" id="3FGJ5nvmSPU" role="2hN53Y">
                 <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
@@ -1020,17 +1015,19 @@
                       <ref role="3cqZAo" node="3FGJ5nvmSHN" resolve="addedRulesTags" />
                     </node>
                     <node concept="TSZUe" id="3FGJ5nvmVEe" role="2OqNvi">
-                      <node concept="2OqwBi" id="e$ws1zVkf2" role="25WWJ7">
-                        <node concept="2OqwBi" id="e$ws1zVkf3" role="2Oq$k0">
-                          <node concept="liA8E" id="e$ws1zVkf5" role="2OqNvi">
-                            <ref role="37wK5l" to="av0y:~Rule.uniqueTag()" resolve="uniqueTag" />
-                          </node>
-                          <node concept="37vLTw" id="e$ws1zVkL2" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3FGJ5nvmTOj" resolve="rule" />
+                      <node concept="2OqwBi" id="3BoSoElE13B" role="25WWJ7">
+                        <node concept="1eOMI4" id="3BoSoElE1vS" role="2Oq$k0">
+                          <node concept="10QFUN" id="3BoSoElE1vR" role="1eOMHV">
+                            <node concept="37vLTw" id="3BoSoElE1vQ" role="10QFUP">
+                              <ref role="3cqZAo" node="3FGJ5nvmTOj" resolve="rule" />
+                            </node>
+                            <node concept="3uibUv" id="3BoSoElE1Tu" role="10QFUM">
+                              <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
+                            </node>
                           </node>
                         </node>
-                        <node concept="liA8E" id="e$ws1zVkf6" role="2OqNvi">
-                          <ref role="37wK5l" to="av0y:~Rule$Tag.groupName()" resolve="groupName" />
+                        <node concept="liA8E" id="3BoSoElE2UC" role="2OqNvi">
+                          <ref role="37wK5l" to="ugy2:7nPD14Ob4lt" resolve="templateRef" />
                         </node>
                       </node>
                     </node>
@@ -1103,7 +1100,7 @@
       </node>
       <node concept="A3Dl8" id="7eQMSyzlipp" role="3clF45">
         <node concept="3uibUv" id="7eQMSyzlipV" role="A3Ik2">
-          <ref role="3uigEE" to="av0y:~Rule" resolve="Rule" />
+          <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
         </node>
       </node>
       <node concept="3clFbS" id="7eQMSyzli7E" role="3clF47">
@@ -1112,13 +1109,13 @@
             <property role="TrG5h" value="filtered" />
             <node concept="_YKpA" id="7eQMSyzl_D_" role="1tU5fm">
               <node concept="3uibUv" id="7eQMSyzl_E0" role="_ZDj9">
-                <ref role="3uigEE" to="av0y:~Rule" resolve="Rule" />
+                <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
               </node>
             </node>
             <node concept="2ShNRf" id="7eQMSyzl_R_" role="33vP2m">
               <node concept="Tc6Ow" id="7eQMSyzlBd0" role="2ShVmc">
                 <node concept="3uibUv" id="7eQMSyzlBw7" role="HW$YZ">
-                  <ref role="3uigEE" to="av0y:~Rule" resolve="Rule" />
+                  <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
                 </node>
               </node>
             </node>
@@ -1133,30 +1130,34 @@
             <ref role="3cqZAo" node="7eQMSyzlkY9" resolve="allRules" />
           </node>
           <node concept="3clFbS" id="7eQMSyzlE7p" role="2LFqv$">
-            <node concept="3cpWs8" id="6uUkLpHmXYF" role="3cqZAp">
-              <node concept="3cpWsn" id="6uUkLpHmXYI" role="3cpWs9">
-                <property role="TrG5h" value="body" />
-                <node concept="A3Dl8" id="6uUkLpHmXYC" role="1tU5fm">
-                  <node concept="3uibUv" id="6uUkLpHmY4G" role="A3Ik2">
-                    <ref role="3uigEE" to="av0y:~AndItem" resolve="AndItem" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="6uUkLpHn4vC" role="33vP2m">
-                  <node concept="2OqwBi" id="6uUkLpHn23f" role="2Oq$k0">
-                    <node concept="2OqwBi" id="6uUkLpHmT9m" role="2Oq$k0">
-                      <node concept="2GrUjf" id="7eQMSyzlQ1A" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="7eQMSyzlE7l" resolve="rule" />
-                      </node>
-                      <node concept="liA8E" id="6uUkLpHmTk1" role="2OqNvi">
-                        <ref role="37wK5l" to="av0y:~Rule.bodyAlternation()" resolve="bodyAlternation" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="6uUkLpHn4dS" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~Iterable.iterator()" resolve="iterator" />
+            <node concept="1X3_iC" id="3BoSoElDV5H" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3cpWs8" id="6uUkLpHmXYF" role="8Wnug">
+                <node concept="3cpWsn" id="6uUkLpHmXYI" role="3cpWs9">
+                  <property role="TrG5h" value="body" />
+                  <node concept="A3Dl8" id="6uUkLpHmXYC" role="1tU5fm">
+                    <node concept="3uibUv" id="6uUkLpHmY4G" role="A3Ik2">
+                      <ref role="3uigEE" to="av0y:~AndItem" resolve="AndItem" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="6uUkLpHn51z" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Iterator.next()" resolve="next" />
+                  <node concept="2OqwBi" id="6uUkLpHn4vC" role="33vP2m">
+                    <node concept="2OqwBi" id="6uUkLpHn23f" role="2Oq$k0">
+                      <node concept="2OqwBi" id="6uUkLpHmT9m" role="2Oq$k0">
+                        <node concept="2GrUjf" id="7eQMSyzlQ1A" role="2Oq$k0">
+                          <ref role="2Gs0qQ" node="7eQMSyzlE7l" resolve="rule" />
+                        </node>
+                        <node concept="liA8E" id="6uUkLpHmTk1" role="2OqNvi">
+                          <ref role="37wK5l" to="av0y:~Rule.bodyAlternation()" resolve="bodyAlternation" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="6uUkLpHn4dS" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Iterable.iterator()" resolve="iterator" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="6uUkLpHn51z" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Iterator.next()" resolve="next" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1252,8 +1253,15 @@
                       <ref role="3cqZAo" node="7eQMSyzl_DG" resolve="filtered" />
                     </node>
                     <node concept="TSZUe" id="7eQMSyzmh6V" role="2OqNvi">
-                      <node concept="2GrUjf" id="7eQMSyzmiwc" role="25WWJ7">
-                        <ref role="2Gs0qQ" node="7eQMSyzlE7l" resolve="rule" />
+                      <node concept="1eOMI4" id="3BoSoElDM4q" role="25WWJ7">
+                        <node concept="10QFUN" id="3BoSoElDM4n" role="1eOMHV">
+                          <node concept="3uibUv" id="3BoSoElDNlq" role="10QFUM">
+                            <ref role="3uigEE" to="ugy2:7nPD14OaO1O" resolve="RuleEx" />
+                          </node>
+                          <node concept="2GrUjf" id="7eQMSyzmiwc" role="10QFUP">
+                            <ref role="2Gs0qQ" node="7eQMSyzlE7l" resolve="rule" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
