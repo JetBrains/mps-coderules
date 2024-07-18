@@ -3185,8 +3185,8 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="6IQb_Rx3pZ9" role="1B3o_S" />
-    <node concept="3uibUv" id="6IQb_Rx3qQh" role="1zkMxy">
-      <ref role="3uigEE" to="hano:15BaR5AeJIv" resolve="EvaluationTraceExt.Stub" />
+    <node concept="3uibUv" id="3BoSoEkMqVA" role="EKbjA">
+      <ref role="3uigEE" to="hano:qubcdtxBiR" resolve="EvaluationTraceExt" />
     </node>
   </node>
   <node concept="312cEu" id="4vBwiiVrUlG">

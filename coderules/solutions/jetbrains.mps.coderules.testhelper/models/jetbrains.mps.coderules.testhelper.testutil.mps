@@ -943,13 +943,13 @@
         </node>
         <node concept="3cpWs8" id="61G6TdBqAxs" role="3cqZAp">
           <node concept="3cpWsn" id="61G6TdBqAxt" role="3cpWs9">
-            <property role="TrG5h" value="macroProcessing" />
+            <property role="TrG5h" value="applicationSession" />
             <node concept="3uibUv" id="61G6TdBqAxr" role="1tU5fm">
-              <ref role="3uigEE" to="ksgm:7DvO2M9IiKB" resolve="MacroProcessing" />
+              <ref role="3uigEE" to="ugy2:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
             </node>
             <node concept="2ShNRf" id="61G6TdBqAxu" role="33vP2m">
               <node concept="1pGfFk" id="3Pxu0s87$zF" role="2ShVmc">
-                <ref role="37wK5l" to="ksgm:7DvO2Ma0h_M" resolve="MacroProcessing" />
+                <ref role="37wK5l" to="ugy2:5yr01fEdYJE" />
                 <node concept="2OqwBi" id="61G6TdBqAxy" role="37wK5m">
                   <node concept="37vLTw" id="1Pi9pJ$hpAt" role="2Oq$k0">
                     <ref role="3cqZAo" node="1Pi9pJ$gX7O" resolve="ruleProcessingSession" />
@@ -1012,7 +1012,7 @@
               <ref role="3cqZAo" node="61G6TdBqAxt" resolve="macroProcessing" />
             </node>
             <node concept="liA8E" id="2LxIQemUJYl" role="2OqNvi">
-              <ref role="37wK5l" to="ksgm:4VNF0fT816Y" resolve="withDependencyUpdatable" />
+              <ref role="37wK5l" to="ugy2:4VNF0fT26a5" resolve="withDependencyUpdatable" />
               <node concept="37vLTw" id="2LxIQemUK79" role="37wK5m">
                 <ref role="3cqZAo" node="1XKnVQwJTH" resolve="updatesRecorder" />
               </node>
@@ -4058,9 +4058,6 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="3irtEZP$gpj" role="1B3o_S" />
-      <node concept="3uibUv" id="3irtEZP$j8K" role="1zkMxy">
-        <ref role="3uigEE" to="hano:15BaR5AeJIv" resolve="EvaluationTraceExt.Stub" />
-      </node>
       <node concept="2tJIrI" id="2u_o41fHXGd" role="jymVt" />
       <node concept="3clFb_" id="3irtEZP$uU1" role="jymVt">
         <property role="TrG5h" value="getTriggeredRules" />
@@ -4710,6 +4707,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="3uibUv" id="3BoSoEkLRkj" role="EKbjA">
+        <ref role="3uigEE" to="hano:qubcdtxBiR" resolve="EvaluationTraceExt" />
       </node>
     </node>
     <node concept="2tJIrI" id="WJTIIoI97e" role="jymVt" />

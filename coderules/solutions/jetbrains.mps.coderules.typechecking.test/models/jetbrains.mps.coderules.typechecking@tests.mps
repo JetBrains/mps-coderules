@@ -3496,13 +3496,13 @@
               <node concept="3clFbH" id="7gOEBI$hqVJ" role="3cqZAp" />
               <node concept="3cpWs8" id="61G6TdBqDRj" role="3cqZAp">
                 <node concept="3cpWsn" id="61G6TdBqDRk" role="3cpWs9">
-                  <property role="TrG5h" value="macroProcessing" />
+                  <property role="TrG5h" value="applicationSession" />
                   <node concept="3uibUv" id="61G6TdBqDRi" role="1tU5fm">
-                    <ref role="3uigEE" to="ksgm:7DvO2M9IiKB" resolve="MacroProcessing" />
+                    <ref role="3uigEE" to="ugy2:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
                   </node>
                   <node concept="2ShNRf" id="61G6TdBqDRl" role="33vP2m">
                     <node concept="1pGfFk" id="3Pxu0s87EMf" role="2ShVmc">
-                      <ref role="37wK5l" to="ksgm:7DvO2Ma0h_M" resolve="MacroProcessing" />
+                      <ref role="37wK5l" to="ugy2:5yr01fEdYJE" />
                       <node concept="2OqwBi" id="61G6TdBqDRp" role="37wK5m">
                         <node concept="37vLTw" id="61G6TdBqDRq" role="2Oq$k0">
                           <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="session" />

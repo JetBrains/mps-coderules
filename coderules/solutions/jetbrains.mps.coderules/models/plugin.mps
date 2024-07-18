@@ -4087,40 +4087,6 @@
     <property role="3GE5qa" value="trace" />
     <property role="TrG5h" value="Sink" />
     <property role="1sVAO0" value="true" />
-    <node concept="2tJIrI" id="5cnt3vhg4ty" role="jymVt" />
-    <node concept="3clFb_" id="YGS68MEg4J" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="result" />
-      <node concept="37vLTG" id="YGS68MEg4K" role="3clF46">
-        <property role="TrG5h" value="occurrence" />
-        <node concept="3uibUv" id="YGS68MEg4L" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
-        </node>
-      </node>
-      <node concept="3cqZAl" id="YGS68MEg4M" role="3clF45" />
-      <node concept="3Tm1VV" id="YGS68MEg4N" role="1B3o_S" />
-      <node concept="3clFbS" id="YGS68MEg4O" role="3clF47" />
-      <node concept="2AHcQZ" id="YGS68MEg4P" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="YGS68MEg4Q" role="jymVt" />
-    <node concept="3clFb_" id="YGS68MEg4R" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="garbage" />
-      <node concept="37vLTG" id="YGS68MEg4S" role="3clF46">
-        <property role="TrG5h" value="occurrence" />
-        <node concept="3uibUv" id="YGS68MEg4T" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
-        </node>
-      </node>
-      <node concept="3cqZAl" id="YGS68MEg4U" role="3clF45" />
-      <node concept="3Tm1VV" id="YGS68MEg4V" role="1B3o_S" />
-      <node concept="3clFbS" id="YGS68MEg4W" role="3clF47" />
-      <node concept="2AHcQZ" id="YGS68MEg4X" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="YGS68MEg4Y" role="jymVt" />
     <node concept="3clFb_" id="YGS68MEg4Z" role="jymVt">
       <property role="1EzhhJ" value="false" />
