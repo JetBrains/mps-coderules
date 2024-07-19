@@ -2755,6 +2755,11 @@
             <ref role="3bR37D" node="74$3PKm_L$v" resolve="jetbrains.mps.logic.runtime" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5Nh6YP1t04N" role="3bR37C">
+          <node concept="3bR9La" id="5Nh6YP1t04O" role="1SiIV1">
+            <ref role="3bR37D" node="7BVjoXzUx6U" resolve="jetbrains.mps.lang.coderules" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7BVjoXzUx6U" role="2G$12L">
         <property role="BnDLt" value="true" />
