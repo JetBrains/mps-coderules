@@ -5533,6 +5533,46 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.types.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages" />
+    <mkdir dir="${build.tmp}/default/samples.mpscore.build.jar" />
+    <mkdir dir="${build.tmp}/default/samples.mpscore.build.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/samples.mpscore.build.jar/META-INF/module.xml">
+      <module namespace="samples.mpscore.build" type="solution" uuid="d1dbf8e7-cee5-45f7-8159-4c825af0fe7d">
+        <dependencies>
+          <module ref="bc9cd1e7-827b-4d61-b111-d2c896dcae6f(jetbrains.mps.coderules.build)" kind="cl" />
+        </dependencies>
+        <uses>
+          <language id="l:798100da-4f0a-421a-b991-71f8c50ce5d2:jetbrains.mps.build" />
+          <language id="l:0cf935df-4699-4e9c-a132-fa109541cba3:jetbrains.mps.build.mps" />
+          <language id="l:427a473d-5177-432c-9905-bcbceb71b996:jetbrains.mps.build.mps.runner" />
+          <language id="l:9f846aef-4e4a-4a84-828e-7e83fe2697f2:jetbrains.mps.build.mps.testManifest" />
+          <language id="l:3600cb0a-44dd-4a5b-9968-22924406419e:jetbrains.mps.build.mps.tests" />
+          <language id="l:d5033cee-f632-44b6-b308-89d4fbde34ff:jetbrains.mps.build.startup" />
+          <language id="l:698a8d22-a104-47a0-ba8d-10e3ec237f13:jetbrains.mps.build.workflow" />
+        </uses>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="samples.mpscore.build-src.jar" descriptor="samples.mpscore.build.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/samples.mpscore.build.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/samples.mpscore.build" />
+      <fileset dir="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/samples.mpscore.build.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-samples.mpscore.build-models">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/models" includes="**/*.mps, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/samples.mpscore.build-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/solutions/samples.mpscore.build/samples.mpscore.build.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-samples.mpscore.build-models" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar1" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar1/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar1/META-INF/module.xml">
@@ -10712,7 +10752,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.behaviorExt, java.compile.jetbrains.mps.lang.behaviorExt.generator, java.compile.jetbrains.mps.lang.constraintsExt, java.compile.jetbrains.mps.lang.constraintsExt#01, java.compile.jetbrains.mps.lang.extensionExt, java.compile.jetbrains.mps.lang.extensionExt.generator, java.compile.jetbrains.mps.lang.generator.generationContextExt, java.compile.jetbrains.mps.lang.generator.generationContextExt#01, java.compile.jetbrains.mps.lang.generatorExt, java.compile.jetbrains.mps.lang.generatorExt#01, java.compile.jetbrains.mps.lang.patternExt, java.compile.jetbrains.mps.lang.patternExt.generator, java.compile.jetbrains.mps.lang.quotationExt, java.compile.jetbrains.mps.lang.quotationExt#01, java.compile.jetbrains.mps.lang.scopesExt, java.compile.jetbrains.mps.lang.scopesExt.generator, java.compile.jetbrains.mps.lang.scriptExt, java.compile.jetbrains.mps.lang.scriptExt.generator, java.compile.jetbrains.mps.lang.sharedConceptsExt, java.compile.jetbrains.mps.lang.sharedConceptsExt.generator, java.compile.jetbrains.mps.lang.smodelExt, java.compile.jetbrains.mps.lang.smodelExt#01, java.compile.jetbrains.mps.lang.smodel.queryExt, java.compile.jetbrains.mps.lang.smodel.queryExt.generator, java.compile.jetbrains.mps.lang.testExt, java.compile.jetbrains.mps.lang.testExt.generator, java.compile.jetbrains.mps.lang.typesystemExt, java.compile.jetbrains.mps.lang.typesystemExt#01, java.compile.jetbrains.mps.baseLanguage.blTypesExt, java.compile.jetbrains.mps.baseLanguage.blTypesExt#01, java.compile.jetbrains.mps.baseLanguage.classifiersExt, java.compile.jetbrains.mps.baseLanguage.classifiersExt.generator, java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.closuresExt#1312156863939371938, java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.collectionsExt#01, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.function#01, java.compile.jetbrains.mps.baseLanguage.javadocExt, java.compile.jetbrains.mps.baseLanguage.kotlinRefsExt, java.compile.jetbrains.mps.baseLanguage.kotlinRefsExt.generator, java.compile.jetbrains.mps.baseLanguage.methodReferencesExt, java.compile.jetbrains.mps.baseLanguage.methodReferencesExt.generator, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguage.sequence#01, java.compile.jetbrains.mps.baseLanguage.tuplesExt, java.compile.jetbrains.mps.baseLanguage.tuplesExt#01, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.baseLanguageInternalExt, java.compile.jetbrains.mps.baseLanguageInternalExt#01, java.compile.jetbrains.mps.baseLanguage.varVariableExt, java.compile.jetbrains.mps.baseLanguage.varVariableExt.generator, java.compile.jetbrains.mps.logicExt, java.compile.jetbrains.mps.logicExt#01, java.compile.jetbrains.mps.lang.coderulesExt, java.compile.jetbrains.mps.lang.coderulesExt#01, java.compile.jetbrains.mps.lang.typecheckingExt, java.compile.jetbrains.mps.lang.typecheckingExt.generator, java.compile.java.modules.cycle.1, java.compile.typechecking.samples.baseLanguage, java.compile.jetbrains.mps.baseLanguageExt.test, java.compile.jetbrains.mps.baseLanguage.closuresExt.test, java.compile.jetbrains.mps.baseLanguage.collectionsExt.test, java.compile.jetbrains.mps.baseLanguage.tuplesExt.test, java.compile.jetbrains.mps.lang.smodelExt.test, java.compile.jetbrains.mps.baseLanguage.methodReferencesExt.test" />
+  <target name="compileJava" depends="java.compile.samples.mpscore.build, java.compile.jetbrains.mps.lang.behaviorExt, java.compile.jetbrains.mps.lang.behaviorExt.generator, java.compile.jetbrains.mps.lang.constraintsExt, java.compile.jetbrains.mps.lang.constraintsExt#01, java.compile.jetbrains.mps.lang.extensionExt, java.compile.jetbrains.mps.lang.extensionExt.generator, java.compile.jetbrains.mps.lang.generator.generationContextExt, java.compile.jetbrains.mps.lang.generator.generationContextExt#01, java.compile.jetbrains.mps.lang.generatorExt, java.compile.jetbrains.mps.lang.generatorExt#01, java.compile.jetbrains.mps.lang.patternExt, java.compile.jetbrains.mps.lang.patternExt.generator, java.compile.jetbrains.mps.lang.quotationExt, java.compile.jetbrains.mps.lang.quotationExt#01, java.compile.jetbrains.mps.lang.scopesExt, java.compile.jetbrains.mps.lang.scopesExt.generator, java.compile.jetbrains.mps.lang.scriptExt, java.compile.jetbrains.mps.lang.scriptExt.generator, java.compile.jetbrains.mps.lang.sharedConceptsExt, java.compile.jetbrains.mps.lang.sharedConceptsExt.generator, java.compile.jetbrains.mps.lang.smodelExt, java.compile.jetbrains.mps.lang.smodelExt#01, java.compile.jetbrains.mps.lang.smodel.queryExt, java.compile.jetbrains.mps.lang.smodel.queryExt.generator, java.compile.jetbrains.mps.lang.testExt, java.compile.jetbrains.mps.lang.testExt.generator, java.compile.jetbrains.mps.lang.typesystemExt, java.compile.jetbrains.mps.lang.typesystemExt#01, java.compile.jetbrains.mps.baseLanguage.blTypesExt, java.compile.jetbrains.mps.baseLanguage.blTypesExt#01, java.compile.jetbrains.mps.baseLanguage.classifiersExt, java.compile.jetbrains.mps.baseLanguage.classifiersExt.generator, java.compile.jetbrains.mps.baseLanguage.closuresExt, java.compile.jetbrains.mps.baseLanguage.closuresExt#1312156863939371938, java.compile.jetbrains.mps.baseLanguage.collectionsExt, java.compile.jetbrains.mps.baseLanguage.collectionsExt#01, java.compile.jetbrains.mps.baseLanguage.function, java.compile.jetbrains.mps.baseLanguage.function#01, java.compile.jetbrains.mps.baseLanguage.javadocExt, java.compile.jetbrains.mps.baseLanguage.kotlinRefsExt, java.compile.jetbrains.mps.baseLanguage.kotlinRefsExt.generator, java.compile.jetbrains.mps.baseLanguage.methodReferencesExt, java.compile.jetbrains.mps.baseLanguage.methodReferencesExt.generator, java.compile.jetbrains.mps.baseLanguage.sequence, java.compile.jetbrains.mps.baseLanguage.sequence#01, java.compile.jetbrains.mps.baseLanguage.tuplesExt, java.compile.jetbrains.mps.baseLanguage.tuplesExt#01, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.baseLanguageInternalExt, java.compile.jetbrains.mps.baseLanguageInternalExt#01, java.compile.jetbrains.mps.baseLanguage.varVariableExt, java.compile.jetbrains.mps.baseLanguage.varVariableExt.generator, java.compile.jetbrains.mps.logicExt, java.compile.jetbrains.mps.logicExt#01, java.compile.jetbrains.mps.lang.coderulesExt, java.compile.jetbrains.mps.lang.coderulesExt#01, java.compile.jetbrains.mps.lang.typecheckingExt, java.compile.jetbrains.mps.lang.typecheckingExt.generator, java.compile.java.modules.cycle.1, java.compile.typechecking.samples.baseLanguage, java.compile.jetbrains.mps.baseLanguageExt.test, java.compile.jetbrains.mps.baseLanguage.closuresExt.test, java.compile.jetbrains.mps.baseLanguage.collectionsExt.test, java.compile.jetbrains.mps.baseLanguage.tuplesExt.test, java.compile.jetbrains.mps.lang.smodelExt.test, java.compile.jetbrains.mps.baseLanguage.methodReferencesExt.test" />
   
   <target name="processResources" />
   
@@ -10773,6 +10813,7 @@
         <module file="${basedir}/languages/jetbrains.mps.lang.typecheckingExt/jetbrains.mps.lang.typecheckingExt.mpl" />
         <module file="${basedir}/languages/jetbrains.mps.lang.typesystemExt/jetbrains.mps.lang.typesystemExt.mpl" />
         <module file="${basedir}/languages/jetbrains.mps.logicExt/jetbrains.mps.logicExt.mpl" />
+        <module file="${basedir}/solutions/samples.mpscore.build/samples.mpscore.build.msd" />
       </chunk>
       <chunk>
         <module file="${basedir}/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" />
@@ -10795,6 +10836,23 @@
   <target name="makeDependents" />
   
   <target name="module-tests" depends="assemble, test.testconfig" />
+  
+  <target name="java.compile.samples.mpscore.build">
+    <mkdir dir="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.mpscore.build" />
+    <javac destdir="${build.tmp}/java/out/samples.mpscore.build" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${build.tmp}/deps/coderules/jetbrains.mps.coderules-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.build.jar" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/samples.mpscore.build">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/source_gen" excludes="**/*.java" />
+    </copy>
+  </target>
   
   <target name="java.compile.jetbrains.mps.lang.behaviorExt" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.smodelExt, fetchDependencies">
     <mkdir dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.behaviorExt/source_gen" />
@@ -16146,6 +16204,7 @@
     <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typesystemExt/generator/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.logicExt/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.logicExt/generator/source_gen" />
+    <delete dir="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.lang.smodelExt/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/source_gen" />
