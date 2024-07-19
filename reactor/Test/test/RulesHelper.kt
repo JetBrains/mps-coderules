@@ -104,10 +104,6 @@ fun occurrence(id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
         .occurrence(listOf(* args), 0, justsOf(0), noLogicalContext)
 
-fun taggedOccurrence(ruleUniqueTag: String, id: String, vararg args: Any): Occurrence =
-    MockConstraint(ConstraintSymbol.symbol(id, args.size))
-        .occurrence(listOf(* args), 0, justsOf(0), noLogicalContext, Rule.Tag(ruleUniqueTag))
-
 fun justifiedOccurrence(id: String, evidence: Evidence, justifications: Justifications, principal: Boolean, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size), principal)
         .occurrence(listOf(* args), evidence, justifications, noLogicalContext)

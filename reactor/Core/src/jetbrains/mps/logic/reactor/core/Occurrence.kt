@@ -35,7 +35,7 @@ class Occurrence(val constraint: Constraint,
                  val arguments: List<*>,
                  override val evidence: Evidence,
                  private val justifications: Justifications,
-                 val sourceRule: Rule.Tag? = null):
+                 val source: Rule?):
     ConstraintOccurrence, Justified, Reactivatable
 {
 
@@ -50,8 +50,6 @@ class Occurrence(val constraint: Constraint,
     override fun arguments(): List<*> = arguments
 
     override fun logicalContext(): LogicalContext = logicalContext
-
-    override fun sourceRule(): Rule.Tag? = sourceRule
 
     override fun justifications(): Justifications = justifications
 
@@ -100,5 +98,5 @@ fun Constraint.occurrence(arguments: List<*>,
                           evidence: Evidence,
                           justifications: Justifications,
                           logicalContext: LogicalContext,
-                          ruleUniqueTag: Rule.Tag? = null): Occurrence =
-    Occurrence(this, logicalContext, arguments, evidence, justifications, ruleUniqueTag)
+                          rule: Rule? = null): Occurrence =
+    Occurrence(this, logicalContext, arguments, evidence, justifications, rule)

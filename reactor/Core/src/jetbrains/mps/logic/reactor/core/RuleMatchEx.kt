@@ -32,6 +32,7 @@ interface RuleMatchEx : RuleMatch {
     /**
      * Returns an array of matched constraint occurrences wrapped in [Id].
      */
+    @Deprecated(message = "unused")
     fun signature(): ArrayList<Id<Occurrence>?>
 
     fun signatureArray(): IntArray

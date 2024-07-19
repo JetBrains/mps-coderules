@@ -36,8 +36,4 @@ public interface ConstraintOccurrence {
 
     LogicalContext logicalContext();
 
-    default Rule.Tag sourceRule() {
-        return null;
-    }
-
 }

@@ -161,7 +161,7 @@ internal class ConstraintsProcessing(
         fun Constraint.occurrence(
             arguments: List<*>,
             logicalContext: LogicalContext,
-            ruleUniqueTag: Rule.Tag? = null
+            rule: Rule?
         ): Occurrence {
 
             // By default share justifications (as a small optimization)
@@ -170,7 +170,7 @@ internal class ConstraintsProcessing(
 
             return Occurrence(
                 this, logicalContext, arguments, evidence,
-                justifications, ruleUniqueTag
+                justifications, rule
             )
         }
     }

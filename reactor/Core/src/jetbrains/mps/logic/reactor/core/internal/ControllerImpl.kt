@@ -104,7 +104,7 @@ internal class ControllerImpl (
             .then { processGuard(match, it) }
 
     private fun checkMatchPreconditions(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
-        val context = Context(inStatus, true, match.logicalContext(), match.rule().uniqueTag(), trace)
+        val context = Context(inStatus, true, match.logicalContext(), match.rule(), trace)
 
         // invoke matched pattern predicates
         for (prd in match.patternPredicates()) {
@@ -116,7 +116,7 @@ internal class ControllerImpl (
     }
 
     private fun processGuard(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
-        val context = Context(inStatus, match.logicalContext(), match.rule().uniqueTag(), trace)
+        val context = Context(inStatus, match.logicalContext(), match.rule(), trace)
 
         // check guard
         for (gprd in match.rule().guard()) {
@@ -127,7 +127,7 @@ internal class ControllerImpl (
     }
 
     override fun processBody(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
-        val context = Context(inStatus, match.logicalContext(), match.rule().uniqueTag(), trace)
+        val context = Context(inStatus, match.logicalContext(), match.rule(), trace)
 
         val altIt = match.rule().bodyAlternation().iterator()
         while (altIt.hasNext()) {
@@ -230,7 +230,7 @@ internal class ControllerImpl (
             profiler.profile<FeedbackStatus>("activate_${constraint.symbol()}") {
 
                 with(creator) {
-                    constraint.occurrence(args, context.logicalContext, context.ruleUniqueTag).let { occ ->
+                    constraint.occurrence(args, context.logicalContext, context.rule).let { occ ->
                         trace.activate(occ)
                         processing.processActivated(this@ControllerImpl, occ, status)
                     }
@@ -277,7 +277,7 @@ internal class ControllerImpl (
     inner private class Context(inStatus: FeedbackStatus,
                                 val checking: Boolean,
                                 val logicalContext: LogicalContext,
-                                val ruleUniqueTag: Rule.Tag? = null,
+                                val rule: Rule?,
                                 val trace: EvaluationTrace = EvaluationTrace.NULL) : InvocationContext
     {
 
@@ -285,9 +285,9 @@ internal class ControllerImpl (
 
         constructor(inStatus: FeedbackStatus,
                     logicalContext: LogicalContext,
-                    ruleUniqueTag: Rule.Tag?  = null,
+                    rule: Rule?  = null,
                     trace: EvaluationTrace = EvaluationTrace.NULL) :
-        this(inStatus, false, logicalContext, ruleUniqueTag, trace) { }
+        this(inStatus, false, logicalContext, rule, trace) { }
 
         fun currentStatus(): FeedbackStatus = status
 
