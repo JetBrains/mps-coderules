@@ -35,6 +35,8 @@ interface Controller {
 
     fun tryTell(invocation: PredicateInvocation): Solver.Result
 
+    fun tryTellPattern(invocation: PredicateInvocation): Solver.Result
+
     fun activate(constraint: Constraint): FeedbackStatus
 
     fun reactivate(occ: Occurrence): FeedbackStatus

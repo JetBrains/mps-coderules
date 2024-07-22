@@ -89,6 +89,12 @@ internal class ControllerImpl (
         return solver.tryTell(invocation)
     }
 
+    override fun tryTellPattern(invocation: PredicateInvocation): Solver.Result {
+        val solver = invocation.predicate().symbol().solver(supervisor)
+        trace.tellPattern(invocation)
+        return solver.tryTell(invocation)
+    }
+
     override fun reactivate(occ: Occurrence): FeedbackStatus =
         profiler.profile<FeedbackStatus>("reactivate_${occ.constraint.symbol()}") {
 
@@ -99,8 +105,8 @@ internal class ControllerImpl (
 
     override fun offerMatch(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
         inStatus
-            .then { checkMatchPreconditions(match, it) }
             .also { trace.trying(match) }
+            .then { checkMatchPreconditions(match, it) }
             .then { processGuard(match, it) }
 
     private fun checkMatchPreconditions(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
@@ -109,7 +115,7 @@ internal class ControllerImpl (
         // invoke matched pattern predicates
         for (prd in match.patternPredicates()) {
             // normally these are safe, but unification can fail
-            if (!tellPredicate(prd, context)) break
+            if (!tellPatternPredicate(prd, context)) break
         }
 
         return context.currentStatus()
@@ -257,7 +263,17 @@ internal class ControllerImpl (
 
             context.runSafe {
                 val args = supervisor.instantiateArguments(predicate.arguments(), context.logicalContext, context)
-                tryTell(predicate.invocation(args, context.logicalContext, context))
+                tryTellPattern(predicate.invocation(args, context.logicalContext, context))
+            }
+
+        }
+
+    private fun tellPatternPredicate(predicate: Predicate, context: Context) : Boolean =
+        profiler.profile<Boolean>("tell_${predicate.symbol()}") {
+
+            context.runSafe {
+                val args = supervisor.instantiateArguments(predicate.arguments(), context.logicalContext, context)
+                tryTellPattern(predicate.invocation(args, context.logicalContext, context))
             }
 
         }

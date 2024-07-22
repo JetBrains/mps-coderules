@@ -52,9 +52,11 @@ public interface EvaluationTrace {
 
     default void finish(RuleMatch ruleMatch) {}
 
+    default void ask(boolean result, PredicateInvocation invocation) {}
+
     default void tell(PredicateInvocation invocation) {}
 
-    default void ask(boolean result, PredicateInvocation invocation) {}
+    default void tellPattern(PredicateInvocation invocation) {}
 
     default void feedback(EvaluationFeedback feedback) {}
 
