@@ -3501,6 +3501,67 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="3clFb_" id="1uAGzk0EKhv" role="jymVt">
+      <property role="TrG5h" value="tellPattern" />
+      <node concept="3Tm1VV" id="1uAGzk0EKhx" role="1B3o_S" />
+      <node concept="3cqZAl" id="1uAGzk0EKhz" role="3clF45" />
+      <node concept="37vLTG" id="1uAGzk0EKh$" role="3clF46">
+        <property role="TrG5h" value="invocation" />
+        <node concept="3uibUv" id="1uAGzk0EKh_" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~PredicateInvocation" resolve="PredicateInvocation" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1uAGzk0EKhB" role="3clF47">
+        <node concept="1Dw8fO" id="1uAGzk0EMKj" role="3cqZAp">
+          <node concept="3clFbS" id="1uAGzk0EMKk" role="2LFqv$">
+            <node concept="3clFbF" id="1uAGzk0EMKl" role="3cqZAp">
+              <node concept="2OqwBi" id="1uAGzk0EMKm" role="3clFbG">
+                <node concept="AH0OO" id="1uAGzk0EMKn" role="2Oq$k0">
+                  <node concept="37vLTw" id="1uAGzk0EMKo" role="AHEQo">
+                    <ref role="3cqZAo" node="1uAGzk0EMKt" resolve="i" />
+                  </node>
+                  <node concept="37vLTw" id="1uAGzk0EMKp" role="AHHXb">
+                    <ref role="3cqZAo" node="7nPD14NbJdt" resolve="traces" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="1uAGzk0EMKq" role="2OqNvi">
+                  <ref role="37wK5l" to="w7la:~EvaluationTrace.tellPattern(jetbrains.mps.logic.reactor.evaluation.PredicateInvocation)" resolve="tellPattern" />
+                  <node concept="37vLTw" id="1uAGzk0EMKs" role="37wK5m">
+                    <ref role="3cqZAo" node="1uAGzk0EKh$" resolve="invocation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="1uAGzk0EMKt" role="1Duv9x">
+            <property role="TrG5h" value="i" />
+            <node concept="10Oyi0" id="1uAGzk0EMKu" role="1tU5fm" />
+            <node concept="3cmrfG" id="1uAGzk0EMKv" role="33vP2m">
+              <property role="3cmrfH" value="0" />
+            </node>
+          </node>
+          <node concept="3eOVzh" id="1uAGzk0EMKw" role="1Dwp0S">
+            <node concept="2OqwBi" id="1uAGzk0EMKx" role="3uHU7w">
+              <node concept="37vLTw" id="1uAGzk0EMKy" role="2Oq$k0">
+                <ref role="3cqZAo" node="7nPD14NbJdt" resolve="traces" />
+              </node>
+              <node concept="1Rwk04" id="1uAGzk0EMKz" role="2OqNvi" />
+            </node>
+            <node concept="37vLTw" id="1uAGzk0EMK$" role="3uHU7B">
+              <ref role="3cqZAo" node="1uAGzk0EMKt" resolve="i" />
+            </node>
+          </node>
+          <node concept="3uNrnE" id="1uAGzk0EMK_" role="1Dwrff">
+            <node concept="37vLTw" id="1uAGzk0EMKA" role="2$L3a6">
+              <ref role="3cqZAo" node="1uAGzk0EMKt" resolve="i" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1uAGzk0EKhC" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" />
+      </node>
+    </node>
     <node concept="3clFb_" id="74PwTvF1tk_" role="jymVt">
       <property role="TrG5h" value="invalidate" />
       <node concept="3Tm1VV" id="74PwTvF1tkB" role="1B3o_S" />

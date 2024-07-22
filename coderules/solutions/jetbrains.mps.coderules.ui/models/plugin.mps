@@ -20257,6 +20257,10 @@
           <ref role="1Px2BO" to="31yc:5X6ji59xezw" resolve="ActivationEvent" />
           <ref role="Rm8GQ" to="31yc:JuOqj4YA2t" resolve="TRYING_MATCH_DETAILS" />
         </node>
+        <node concept="Rm8GO" id="1uAGzk0$jSA" role="2BsfMF">
+          <ref role="Rm8GQ" to="31yc:1uAGzk0zjzH" resolve="TELL_PATTERN" />
+          <ref role="1Px2BO" to="31yc:5X6ji59xezw" resolve="ActivationEvent" />
+        </node>
         <node concept="Rm8GO" id="2T1p0CFRyMn" role="2BsfMF">
           <ref role="1Px2BO" to="31yc:5X6ji59xezw" resolve="ActivationEvent" />
           <ref role="Rm8GQ" to="31yc:2T1p0CFKt_1" resolve="REJECT_RULE" />
@@ -25030,8 +25034,16 @@
             <node concept="3clFbS" id="2T1p0CFIN0o" role="3clFbx">
               <node concept="3clFbF" id="2T1p0CFIN0p" role="3cqZAp">
                 <node concept="2OqwBi" id="2T1p0CFIN0q" role="3clFbG">
-                  <node concept="37vLTw" id="2T1p0CFIN0r" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2T1p0CFIMZM" resolve="sb" />
+                  <node concept="2OqwBi" id="1uAGzk0_0qb" role="2Oq$k0">
+                    <node concept="37vLTw" id="2T1p0CFIN0r" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2T1p0CFIMZM" resolve="sb" />
+                    </node>
+                    <node concept="liA8E" id="1uAGzk0_6Gl" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String)" resolve="append" />
+                      <node concept="Xl_RD" id="1uAGzk0_aAq" role="37wK5m">
+                        <property role="Xl_RC" value="kept=" />
+                      </node>
+                    </node>
                   </node>
                   <node concept="liA8E" id="2T1p0CFIN0s" role="2OqNvi">
                     <ref role="37wK5l" to="wyt6:~StringBuilder.append(int)" resolve="append" />
@@ -25053,6 +25065,31 @@
           </node>
           <node concept="3clFbJ" id="2T1p0CFIN0x" role="3cqZAp">
             <node concept="3clFbS" id="2T1p0CFIN0y" role="3clFbx">
+              <node concept="3clFbJ" id="1uAGzk0_Ese" role="3cqZAp">
+                <node concept="3clFbS" id="1uAGzk0_Esg" role="3clFbx">
+                  <node concept="3clFbF" id="1uAGzk0_XDs" role="3cqZAp">
+                    <node concept="2OqwBi" id="1uAGzk0A1kD" role="3clFbG">
+                      <node concept="37vLTw" id="1uAGzk0_XDq" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2T1p0CFIMZM" resolve="sb" />
+                      </node>
+                      <node concept="liA8E" id="1uAGzk0A5bL" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String)" resolve="append" />
+                        <node concept="Xl_RD" id="1uAGzk0A975" role="37wK5m">
+                          <property role="Xl_RC" value=", " />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3eOSWO" id="1uAGzk0_Tap" role="3clFbw">
+                  <node concept="3cmrfG" id="1uAGzk0_TpE" role="3uHU7w">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                  <node concept="37vLTw" id="1uAGzk0_Jt4" role="3uHU7B">
+                    <ref role="3cqZAo" node="2T1p0CFIMZW" resolve="keptSize" />
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbF" id="2T1p0CFIN0z" role="3cqZAp">
                 <node concept="2OqwBi" id="2T1p0CFIN0$" role="3clFbG">
                   <node concept="2OqwBi" id="2T1p0CFIN0_" role="2Oq$k0">
@@ -25062,7 +25099,7 @@
                     <node concept="liA8E" id="2T1p0CFIN0B" role="2OqNvi">
                       <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String)" resolve="append" />
                       <node concept="Xl_RD" id="2T1p0CFIN0C" role="37wK5m">
-                        <property role="Xl_RC" value="\\" />
+                        <property role="Xl_RC" value="replaced=" />
                       </node>
                     </node>
                   </node>

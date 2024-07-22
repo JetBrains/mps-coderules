@@ -1165,6 +1165,7 @@
         <node concept="10Q1$e" id="4sSe4$oSP_q" role="1tU5fm">
           <node concept="3uibUv" id="4sSe4$oSPgO" role="10Q1$1">
             <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+            <node concept="3qTvmN" id="1uAGzk0uwFv" role="11_B2D" />
           </node>
         </node>
       </node>
@@ -1202,7 +1203,7 @@
             <node concept="2OqwBi" id="4sSe4$oSRPW" role="37vLTJ">
               <node concept="Xjq3P" id="4sSe4$oSRPZ" role="2Oq$k0" />
               <node concept="2OwXpG" id="4sSe4$oSRPV" role="2OqNvi">
-                <ref role="2Oxat5" node="4sSe4$oSRPL" resolve="logicals" />
+                <ref role="2Oxat5" node="4sSe4$oSRPL" resolve="patternLogicals" />
               </node>
             </node>
             <node concept="37vLTw" id="4sSe4$oSRQ0" role="37vLTx">
@@ -1222,6 +1223,9 @@
               <property role="3oM_SC" value="the" />
             </node>
             <node concept="3oM_SD" id="589APehYyAr" role="1PaTwD">
+              <property role="3oM_SC" value="pattern" />
+            </node>
+            <node concept="3oM_SD" id="1uAGzk0uNga" role="1PaTwD">
               <property role="3oM_SC" value="logicals" />
             </node>
             <node concept="3oM_SD" id="589APehYyAs" role="1PaTwD">
@@ -1811,14 +1815,14 @@
                   <ref role="3cqZAo" node="6gZak$AY23K" resolve="argIdx" />
                 </node>
                 <node concept="37vLTw" id="6gZak$AY9YN" role="AHHXb">
-                  <ref role="3cqZAo" node="4sSe4$oSRPL" resolve="logicals" />
+                  <ref role="3cqZAo" node="4sSe4$oSRPL" resolve="patternLogicals" />
                 </node>
               </node>
             </node>
             <node concept="3eOSWO" id="6gZak$AY6Ur" role="3uHU7B">
               <node concept="2OqwBi" id="6gZak$AY3Z$" role="3uHU7B">
                 <node concept="37vLTw" id="6gZak$AY2S$" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4sSe4$oSRPL" resolve="logicals" />
+                  <ref role="3cqZAo" node="4sSe4$oSRPL" resolve="patternLogicals" />
                 </node>
                 <node concept="1Rwk04" id="6gZak$AY56o" role="2OqNvi" />
               </node>
@@ -1853,7 +1857,7 @@
             </node>
             <node concept="2OqwBi" id="4sSe4$oTrOW" role="3uHU7B">
               <node concept="37vLTw" id="4sSe4$oTruO" role="2Oq$k0">
-                <ref role="3cqZAo" node="4sSe4$oSRPL" resolve="logicals" />
+                <ref role="3cqZAo" node="4sSe4$oSRPL" resolve="patternLogicals" />
               </node>
               <node concept="1Rwk04" id="4sSe4$oTsdD" role="2OqNvi" />
             </node>
@@ -1865,7 +1869,7 @@
                   <ref role="3cqZAo" node="4sSe4$oTo$Q" resolve="argIdx" />
                 </node>
                 <node concept="37vLTw" id="4sSe4$oTv_v" role="AHHXb">
-                  <ref role="3cqZAo" node="4sSe4$oSRPL" resolve="logicals" />
+                  <ref role="3cqZAo" node="4sSe4$oSRPL" resolve="patternLogicals" />
                 </node>
               </node>
             </node>
@@ -1905,11 +1909,12 @@
     </node>
     <node concept="2tJIrI" id="4sSe4$oTq3z" role="jymVt" />
     <node concept="312cEg" id="4sSe4$oSRPL" role="jymVt">
-      <property role="TrG5h" value="logicals" />
+      <property role="TrG5h" value="patternLogicals" />
       <node concept="3Tm6S6" id="4sSe4$oSRPM" role="1B3o_S" />
       <node concept="10Q1$e" id="4sSe4$oSRPO" role="1tU5fm">
         <node concept="3uibUv" id="4sSe4$oSRPP" role="10Q1$1">
           <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+          <node concept="3qTvmN" id="1uAGzk0uugW" role="11_B2D" />
         </node>
       </node>
     </node>
@@ -7375,7 +7380,7 @@
             <node concept="2OqwBi" id="4sSe4$oSgL2" role="37vLTJ">
               <node concept="Xjq3P" id="4sSe4$oSgL5" role="2Oq$k0" />
               <node concept="2OwXpG" id="4sSe4$oSgL1" role="2OqNvi">
-                <ref role="2Oxat5" node="4sSe4$oSgKQ" resolve="logicals" />
+                <ref role="2Oxat5" node="4sSe4$oSgKQ" resolve="patternLogicals" />
               </node>
             </node>
             <node concept="37vLTw" id="4sSe4$oSgL6" role="37vLTx">
@@ -7416,7 +7421,7 @@
                 <ref role="3cqZAo" node="4sSe4$oM5S_" resolve="args" />
               </node>
               <node concept="37vLTw" id="4sSe4$oUOIZ" role="37wK5m">
-                <ref role="3cqZAo" node="4sSe4$oSgKQ" resolve="logicals" />
+                <ref role="3cqZAo" node="4sSe4$oSgKQ" resolve="patternLogicals" />
               </node>
             </node>
           </node>
@@ -7451,7 +7456,7 @@
                   <ref role="3cqZAo" node="4sSe4$oM5S_" resolve="args" />
                 </node>
                 <node concept="37vLTw" id="5Nh6YP1TWrk" role="37wK5m">
-                  <ref role="3cqZAo" node="4sSe4$oSgKQ" resolve="logicals" />
+                  <ref role="3cqZAo" node="4sSe4$oSgKQ" resolve="patternLogicals" />
                 </node>
               </node>
             </node>
@@ -7505,7 +7510,7 @@
     </node>
     <node concept="2tJIrI" id="4sSe4$oN00V" role="jymVt" />
     <node concept="312cEg" id="4sSe4$oSgKQ" role="jymVt">
-      <property role="TrG5h" value="logicals" />
+      <property role="TrG5h" value="patternLogicals" />
       <node concept="3Tm6S6" id="4sSe4$oSgKR" role="1B3o_S" />
       <node concept="10Q1$e" id="4sSe4$oSgY0" role="1tU5fm">
         <node concept="3uibUv" id="4sSe4$oSgKU" role="10Q1$1">
