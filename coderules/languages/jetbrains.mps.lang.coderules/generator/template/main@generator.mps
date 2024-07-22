@@ -15010,7 +15010,6 @@
                 </node>
               </node>
             </node>
-            <node concept="10Nm6u" id="5itBwM61jiB" role="33vP2m" />
           </node>
           <node concept="312cEg" id="5itBwM5Uik9" role="jymVt">
             <property role="TrG5h" value="logical" />
