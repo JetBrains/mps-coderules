@@ -367,6 +367,9 @@
             <property role="3MwjfP" value="deploy" />
           </node>
         </node>
+        <node concept="L2wRC" id="5Nh6YP2S5WA" role="39821P">
+          <ref role="L2wRA" node="71htTbsEdbI" resolve="samples.mpscore.build" />
+        </node>
         <node concept="28u9K_" id="1aCOVadeVZq" role="39821P">
           <property role="28hIV_" value="lang" />
         </node>

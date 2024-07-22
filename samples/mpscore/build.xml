@@ -51,6 +51,46 @@
   
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}/deploy" />
+    <mkdir dir="${build.tmp}/default/samples.mpscore.build.jar" />
+    <mkdir dir="${build.tmp}/default/samples.mpscore.build.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/samples.mpscore.build.jar/META-INF/module.xml">
+      <module namespace="samples.mpscore.build" type="solution" uuid="d1dbf8e7-cee5-45f7-8159-4c825af0fe7d">
+        <dependencies>
+          <module ref="bc9cd1e7-827b-4d61-b111-d2c896dcae6f(jetbrains.mps.coderules.build)" kind="cl" />
+        </dependencies>
+        <uses>
+          <language id="l:798100da-4f0a-421a-b991-71f8c50ce5d2:jetbrains.mps.build" />
+          <language id="l:0cf935df-4699-4e9c-a132-fa109541cba3:jetbrains.mps.build.mps" />
+          <language id="l:427a473d-5177-432c-9905-bcbceb71b996:jetbrains.mps.build.mps.runner" />
+          <language id="l:9f846aef-4e4a-4a84-828e-7e83fe2697f2:jetbrains.mps.build.mps.testManifest" />
+          <language id="l:3600cb0a-44dd-4a5b-9968-22924406419e:jetbrains.mps.build.mps.tests" />
+          <language id="l:d5033cee-f632-44b6-b308-89d4fbde34ff:jetbrains.mps.build.startup" />
+          <language id="l:698a8d22-a104-47a0-ba8d-10e3ec237f13:jetbrains.mps.build.workflow" />
+        </uses>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="samples.mpscore.build-src.jar" descriptor="samples.mpscore.build.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/deploy/samples.mpscore.build.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/samples.mpscore.build" />
+      <fileset dir="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/samples.mpscore.build.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-samples.mpscore.build-models">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/models" includes="**/*.mps, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/deploy/samples.mpscore.build-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/solutions/samples.mpscore.build/samples.mpscore.build.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-samples.mpscore.build-models" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar/META-INF/module.xml">
@@ -5533,9 +5573,9 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.types.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages" />
-    <mkdir dir="${build.tmp}/default/samples.mpscore.build.jar" />
-    <mkdir dir="${build.tmp}/default/samples.mpscore.build.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/samples.mpscore.build.jar/META-INF/module.xml">
+    <mkdir dir="${build.tmp}/default/samples.mpscore.build.jar1" />
+    <mkdir dir="${build.tmp}/default/samples.mpscore.build.jar1/META-INF" />
+    <echoxml file="${build.tmp}/default/samples.mpscore.build.jar1/META-INF/module.xml">
       <module namespace="samples.mpscore.build" type="solution" uuid="d1dbf8e7-cee5-45f7-8159-4c825af0fe7d">
         <dependencies>
           <module ref="bc9cd1e7-827b-4d61-b111-d2c896dcae6f(jetbrains.mps.coderules.build)" kind="cl" />
@@ -5558,9 +5598,9 @@
     <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/samples.mpscore.build.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.mpscore.build" />
       <fileset dir="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
-      <fileset dir="${build.tmp}/default/samples.mpscore.build.jar" />
+      <fileset dir="${build.tmp}/default/samples.mpscore.build.jar1" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-samples.mpscore.build-models">
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-samples.mpscore.build-models1">
       <fileset dir="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/models" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/jetbrains.mps.core.types-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.core.types/languages/samples.mpscore.build-src.jar" duplicate="preserve">
@@ -5571,7 +5611,7 @@
         <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/solutions/samples.mpscore.build/samples.mpscore.build.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-samples.mpscore.build-models" prefix="module/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-samples.mpscore.build-models1" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar1" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behaviorExt.jar1/META-INF" />
@@ -10846,7 +10886,7 @@
         <path location="${mps.macro.mpscore_home}/solutions/samples.mpscore.build/source_gen" />
       </src>
       <classpath>
-        <fileset file="${build.tmp}/deps/coderules/jetbrains.mps.coderules-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.build.jar" />
+        <fileset file="${artifacts.coderules}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.build.jar" />
       </classpath>
     </javac>
     <copy todir="${build.tmp}/java/out/samples.mpscore.build">

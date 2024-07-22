@@ -1890,6 +1890,47 @@
       <zipfileset file="${basedir}/coderules/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.typechecking.annotation-languageModels" prefix="module/languageModels" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.coderules.build.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.coderules.build.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.coderules.build.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.coderules.build" type="solution" uuid="bc9cd1e7-827b-4d61-b111-d2c896dcae6f">
+        <dependencies>
+          <module ref="cca2431b-e74f-4066-9344-e40022d0908a(jetbrains.mps.build.workflow.preset)" kind="cl" />
+        </dependencies>
+        <uses>
+          <language id="l:798100da-4f0a-421a-b991-71f8c50ce5d2:jetbrains.mps.build" />
+          <language id="l:0cf935df-4699-4e9c-a132-fa109541cba3:jetbrains.mps.build.mps" />
+          <language id="l:427a473d-5177-432c-9905-bcbceb71b996:jetbrains.mps.build.mps.runner" />
+          <language id="l:9f846aef-4e4a-4a84-828e-7e83fe2697f2:jetbrains.mps.build.mps.testManifest" />
+          <language id="l:3600cb0a-44dd-4a5b-9968-22924406419e:jetbrains.mps.build.mps.tests" />
+          <language id="l:d5033cee-f632-44b6-b308-89d4fbde34ff:jetbrains.mps.build.startup" />
+          <language id="l:698a8d22-a104-47a0-ba8d-10e3ec237f13:jetbrains.mps.build.workflow" />
+        </uses>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.coderules.build-src.jar" descriptor="jetbrains.mps.coderules.build.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.build.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules.build" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules.build" includes="icons/**, resources/**" />
+      <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.build/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.build.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.coderules.build-models">
+      <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.build/models" includes="**/*.mps, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.build-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.build/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/coderules/solutions/jetbrains.mps.coderules.build/jetbrains.mps.coderules.build.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.coderules.build-models" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.layout}/jetbrains.mps.coderules/lib" />
     <copy todir="${build.layout}/jetbrains.mps.coderules/lib">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib" />
@@ -3416,9 +3457,9 @@
       <zipfileset file="${basedir}/coderules/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.typechecking.annotation-languageModels1" prefix="module/languageModels" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.coderules.build.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.coderules.build.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/jetbrains.mps.coderules.build.jar/META-INF/module.xml">
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.coderules.build.jar1" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.coderules.build.jar1/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.coderules.build.jar1/META-INF/module.xml">
       <module namespace="jetbrains.mps.coderules.build" type="solution" uuid="bc9cd1e7-827b-4d61-b111-d2c896dcae6f">
         <dependencies>
           <module ref="cca2431b-e74f-4066-9344-e40022d0908a(jetbrains.mps.build.workflow.preset)" kind="cl" />
@@ -3442,9 +3483,9 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules.build" />
       <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules.build" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.build/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.build.jar" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.build.jar1" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.coderules.build-models">
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.coderules.build-models1">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.build/models" includes="**/*.mps, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/jetbrains.mps.coderules-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.coderules/languages/jetbrains.mps.coderules.build-src.jar" duplicate="preserve">
@@ -3455,7 +3496,7 @@
         <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/coderules/solutions/jetbrains.mps.coderules.build/jetbrains.mps.coderules.build.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.coderules.build-models" prefix="module/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.coderules.build-models1" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.coderules-_dl__lbrace_ci.mps.release_rbrace_-0.9-b_dl__lbrace_ci.build.tag_rbrace_.zip/jetbrains.mps.coderules/lib" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.coderules.jar3" />

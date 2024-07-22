@@ -3335,6 +3335,9 @@
           <node concept="L2wRC" id="5s5QomKFkZS" role="39821P">
             <ref role="L2wRA" node="46o4wsH5PJF" resolve="jetbrains.mps.typechecking.annotation" />
           </node>
+          <node concept="L2wRC" id="5Nh6YP2Rl$a" role="39821P">
+            <ref role="L2wRA" node="3PhVAH_WgTu" resolve="jetbrains.mps.coderules.build" />
+          </node>
         </node>
         <node concept="398223" id="2ABzB2CYUqS" role="39821P">
           <node concept="3_J27D" id="2ABzB2CYUqT" role="Nbhlr">
