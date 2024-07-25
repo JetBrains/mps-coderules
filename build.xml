@@ -1955,7 +1955,7 @@
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="241.17011" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.1 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.1 release of MPS</li><li>Updated Activation Trace View</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
           <statusBarWidgetFactory implementation="jetbrains.mps.coderules.ideaplugin.TypecheckingWidget$Factory" id="TypecheckingWidget" order="before notificationsWidget"></statusBarWidgetFactory>
@@ -3515,7 +3515,7 @@
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
         <idea-version since-build="241.17011" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.1 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.1 release of MPS</li><li>Updated Activation Trace View</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
           <statusBarWidgetFactory implementation="jetbrains.mps.coderules.ideaplugin.TypecheckingWidget$Factory" id="TypecheckingWidget" order="before notificationsWidget"></statusBarWidgetFactory>
