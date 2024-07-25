@@ -263,7 +263,7 @@ internal class ControllerImpl (
 
             context.runSafe {
                 val args = supervisor.instantiateArguments(predicate.arguments(), context.logicalContext, context)
-                tryTellPattern(predicate.invocation(args, context.logicalContext, context))
+                tryTell(predicate.invocation(args, context.logicalContext, context))
             }
 
         }
