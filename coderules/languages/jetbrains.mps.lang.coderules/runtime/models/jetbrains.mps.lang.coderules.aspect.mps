@@ -89,6 +89,9 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
+      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -3667,7 +3670,28 @@
             <ref role="3cqZAo" node="5Zr$fBZ6Cp2" resolve="effectiveNamespaces" />
           </node>
         </node>
-        <node concept="3clFbH" id="5Zr$fBZ6Eum" role="3cqZAp" />
+        <node concept="3SKdUt" id="4nDRG5_NmDd" role="3cqZAp">
+          <node concept="1PaTwC" id="4nDRG5_NmDe" role="1aUNEU">
+            <node concept="3oM_SD" id="4nDRG5_NmDf" role="1PaTwD">
+              <property role="3oM_SC" value="must" />
+            </node>
+            <node concept="3oM_SD" id="4nDRG5_Nor5" role="1PaTwD">
+              <property role="3oM_SC" value="restore" />
+            </node>
+            <node concept="3oM_SD" id="4nDRG5_Nos7" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="4nDRG5_Nos8" role="1PaTwD">
+              <property role="3oM_SC" value="topological" />
+            </node>
+            <node concept="3oM_SD" id="4nDRG5_Not9" role="1PaTwD">
+              <property role="3oM_SC" value="sort" />
+            </node>
+            <node concept="3oM_SD" id="4nDRG5_Notq" role="1PaTwD">
+              <property role="3oM_SC" value="order" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="5Zr$fBZhhJu" role="3cqZAp">
           <node concept="3cpWsn" id="5Zr$fBZhhJx" role="3cpWs9">
             <property role="TrG5h" value="sortedAspects" />
@@ -3724,19 +3748,74 @@
             <ref role="3cqZAo" node="3KN3A4uXGOp" resolve="aspects" />
           </node>
         </node>
-        <node concept="3clFbH" id="5Zr$fBZhHAh" role="3cqZAp" />
-        <node concept="3clFbF" id="5Zr$fBZhJ0B" role="3cqZAp">
-          <node concept="2ShNRf" id="5Zr$fBZhJ0z" role="3clFbG">
-            <node concept="1pGfFk" id="5Zr$fBZhM6i" role="2ShVmc">
-              <property role="373rjd" value="true" />
-              <ref role="37wK5l" node="3KN3A4uXEXp" resolve="AspectClique" />
-              <node concept="37vLTw" id="5Zr$fBZhPr7" role="37wK5m">
-                <ref role="3cqZAo" node="5Zr$fBZhhJx" resolve="sortedAspects" />
-              </node>
-              <node concept="37vLTw" id="5Zr$fBZhSEY" role="37wK5m">
-                <ref role="3cqZAo" node="5Zr$fBZgZHh" resolve="selectedAspectByNamespace" />
+        <node concept="3cpWs8" id="4nDRG5_O3UA" role="3cqZAp">
+          <node concept="3cpWsn" id="4nDRG5_O3UB" role="3cpWs9">
+            <property role="TrG5h" value="clique" />
+            <node concept="3uibUv" id="4nDRG5_O3U$" role="1tU5fm">
+              <ref role="3uigEE" node="3KN3A4uUhmW" resolve="AspectClique" />
+              <node concept="16syzq" id="4nDRG5_O3U_" role="11_B2D">
+                <ref role="16sUi3" node="3KN3A4uUhop" resolve="T" />
               </node>
             </node>
+            <node concept="2ShNRf" id="4nDRG5_O3UC" role="33vP2m">
+              <node concept="1pGfFk" id="4nDRG5_O3UD" role="2ShVmc">
+                <property role="373rjd" value="true" />
+                <ref role="37wK5l" node="3KN3A4uXEXp" resolve="AspectClique" />
+                <node concept="37vLTw" id="4nDRG5_O3UE" role="37wK5m">
+                  <ref role="3cqZAo" node="5Zr$fBZhhJx" resolve="sortedAspects" />
+                </node>
+                <node concept="37vLTw" id="4nDRG5_O3UF" role="37wK5m">
+                  <ref role="3cqZAo" node="5Zr$fBZgZHh" resolve="selectedAspectByNamespace" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4nDRG5_Ny5T" role="3cqZAp">
+          <node concept="3clFbS" id="4nDRG5_Ny5V" role="3clFbx">
+            <node concept="3clFbF" id="4nDRG5_NE38" role="3cqZAp">
+              <node concept="2OqwBi" id="4nDRG5_NJ4Z" role="3clFbG">
+                <node concept="10M0yZ" id="4nDRG5_NHvs" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4nDRG5zOb02" resolve="LOG" />
+                  <ref role="1PxDUh" node="NKt6ynorWQ" resolve="AspectLookup" />
+                </node>
+                <node concept="liA8E" id="4nDRG5_NMXt" role="2OqNvi">
+                  <ref role="37wK5l" to="wwqx:~Logger.debug(java.lang.String)" resolve="debug" />
+                  <node concept="3cpWs3" id="4nDRG5_O2FX" role="37wK5m">
+                    <node concept="37vLTw" id="4nDRG5_O7or" role="3uHU7w">
+                      <ref role="3cqZAo" node="4nDRG5_O3UB" resolve="clique" />
+                    </node>
+                    <node concept="3cpWs3" id="4nDRG5_NUnv" role="3uHU7B">
+                      <node concept="3cpWs3" id="4nDRG5_NWlO" role="3uHU7B">
+                        <node concept="37vLTw" id="4nDRG5_NXCv" role="3uHU7w">
+                          <ref role="3cqZAo" node="5Zr$fBZ6Cp2" resolve="effectiveNamespaces" />
+                        </node>
+                        <node concept="Xl_RD" id="4nDRG5_NUn_" role="3uHU7B">
+                          <property role="Xl_RC" value="selected for '" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="4nDRG5_NUnB" role="3uHU7w">
+                        <property role="Xl_RC" value="': " />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4nDRG5_NBqY" role="3clFbw">
+            <node concept="10M0yZ" id="4nDRG5_NA34" role="2Oq$k0">
+              <ref role="3cqZAo" node="4nDRG5zOb02" resolve="LOG" />
+              <ref role="1PxDUh" node="NKt6ynorWQ" resolve="AspectLookup" />
+            </node>
+            <node concept="liA8E" id="4nDRG5_NCK$" role="2OqNvi">
+              <ref role="37wK5l" to="wwqx:~Logger.isDebugLevel()" resolve="isDebugLevel" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5Zr$fBZhJ0B" role="3cqZAp">
+          <node concept="37vLTw" id="4nDRG5_O3UG" role="3clFbG">
+            <ref role="3cqZAo" node="4nDRG5_O3UB" resolve="clique" />
           </node>
         </node>
       </node>
@@ -3855,8 +3934,8 @@
     <node concept="3clFbW" id="3KN3A4uXEXp" role="jymVt">
       <node concept="37vLTG" id="3KN3A4uXGrt" role="3clF46">
         <property role="TrG5h" value="aspects" />
-        <node concept="3vKaQO" id="6nx4rRkV8q0" role="1tU5fm">
-          <node concept="16syzq" id="_tf6vzfb6Z" role="3O5elw">
+        <node concept="_YKpA" id="4nDRG5_LBVT" role="1tU5fm">
+          <node concept="16syzq" id="4nDRG5_LBVV" role="_ZDj9">
             <ref role="16sUi3" node="3KN3A4uUhop" resolve="T" />
           </node>
         </node>
@@ -3874,24 +3953,29 @@
       <node concept="3Tmbuc" id="5Zr$fBYMOqq" role="1B3o_S" />
       <node concept="3clFbS" id="3KN3A4uXEXt" role="3clF47">
         <node concept="3clFbF" id="3KN3A4uXGOu" role="3cqZAp">
-          <node concept="2OqwBi" id="4ekZiHe4wHC" role="3clFbG">
-            <node concept="2OqwBi" id="3KN3A4uXKFr" role="2Oq$k0">
+          <node concept="37vLTI" id="4nDRG5_Msih" role="3clFbG">
+            <node concept="2OqwBi" id="4nDRG5_M$4O" role="37vLTx">
+              <node concept="37vLTw" id="4nDRG5_MtD0" role="2Oq$k0">
+                <ref role="3cqZAo" node="3KN3A4uXGrt" resolve="aspects" />
+              </node>
+              <node concept="26Dbio" id="4nDRG5_MAik" role="2OqNvi" />
+            </node>
+            <node concept="2OqwBi" id="3KN3A4uXKFr" role="37vLTJ">
               <node concept="Xjq3P" id="3KN3A4uXKGU" role="2Oq$k0" />
               <node concept="2OwXpG" id="3KN3A4uXKFu" role="2OqNvi">
                 <ref role="2Oxat5" node="3KN3A4uXGOp" resolve="aspects" />
-              </node>
-            </node>
-            <node concept="X8dFx" id="4ekZiHe4wVk" role="2OqNvi">
-              <node concept="37vLTw" id="4ekZiHe4yzH" role="25WWJ7">
-                <ref role="3cqZAo" node="3KN3A4uXGrt" resolve="aspects" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="5Zr$fBZgCAe" role="3cqZAp">
           <node concept="37vLTI" id="5Zr$fBZgEdR" role="3clFbG">
-            <node concept="37vLTw" id="5Zr$fBZgExw" role="37vLTx">
-              <ref role="3cqZAo" node="3KN3A4vyU9k" resolve="aspectByNamespace" />
+            <node concept="2YIFZM" id="4nDRG5_MHkG" role="37vLTx">
+              <ref role="37wK5l" to="33ny:~Collections.unmodifiableMap(java.util.Map)" resolve="unmodifiableMap" />
+              <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+              <node concept="37vLTw" id="4nDRG5_MIaV" role="37wK5m">
+                <ref role="3cqZAo" node="3KN3A4vyU9k" resolve="aspectByNamespace" />
+              </node>
             </node>
             <node concept="2OqwBi" id="5Zr$fBZgCZL" role="37vLTJ">
               <node concept="Xjq3P" id="5Zr$fBZgCAc" role="2Oq$k0" />
@@ -3944,6 +4028,18 @@
                 <node concept="3lbrtF" id="5Zr$fBZgp5G" role="2OqNvi" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="4nDRG5_LDES" role="lGtFl">
+        <node concept="TZ5HA" id="4nDRG5_LDET" role="TZ5H$">
+          <node concept="1dT_AC" id="4nDRG5_LDEU" role="1dT_Ay">
+            <property role="1dT_AB" value="The list of aspects is expected to be topologically sorted from more specific to more abstract" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="4nDRG5_LPDR" role="TZ5H$">
+          <node concept="1dT_AC" id="4nDRG5_LPDS" role="1dT_Ay">
+            <property role="1dT_AB" value="according to extends relationship." />
           </node>
         </node>
       </node>
