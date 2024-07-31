@@ -32,6 +32,7 @@
     <import index="aedp" ref="r:969c74a0-af0a-4247-9dda-0da7708b8c0d(jetbrains.mps.lang.coderules.memoizer)" />
     <import index="cof4" ref="r:0a9d1d47-250c-4f98-8962-b65edf8b0721(jetbrains.mps.logic.dataform)" />
     <import index="uwx2" ref="r:76101703-3fc5-4e76-aa48-9728dde91f7b(jetbrains.mps.logic.unification)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
@@ -5848,6 +5849,57 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3cpWs8" id="4nDRG5zLuCJ" role="3cqZAp">
+                    <node concept="3cpWsn" id="4nDRG5zLuCK" role="3cpWs9">
+                      <property role="TrG5h" value="eval" />
+                      <node concept="3uibUv" id="4nDRG5zLuCI" role="1tU5fm">
+                        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                      </node>
+                      <node concept="2OqwBi" id="4nDRG5zMbnH" role="33vP2m">
+                        <node concept="2OqwBi" id="4nDRG5zM4cY" role="2Oq$k0">
+                          <node concept="2YIFZM" id="4nDRG5zM3rJ" role="2Oq$k0">
+                            <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance()" resolve="getInstance" />
+                            <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                          </node>
+                          <node concept="liA8E" id="4nDRG5zManT" role="2OqNvi">
+                            <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getModelAccess()" resolve="getModelAccess" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="4nDRG5zMeAx" role="2OqNvi">
+                          <ref role="37wK5l" to="lui2:~ModelAccess.computeReadAction(java.util.function.Supplier)" resolve="computeReadAction" />
+                          <node concept="1bVj0M" id="4nDRG5zMfya" role="37wK5m">
+                            <node concept="3clFbS" id="4nDRG5zMfyf" role="1bW5cS">
+                              <node concept="3clFbF" id="4nDRG5zMiOh" role="3cqZAp">
+                                <node concept="2OqwBi" id="4nDRG5zMiOj" role="3clFbG">
+                                  <node concept="37vLTw" id="4nDRG5zMiOk" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="5WBVN_M1J08" resolve="exp" />
+                                  </node>
+                                  <node concept="liA8E" id="4nDRG5zMiOl" role="2OqNvi">
+                                    <ref role="37wK5l" to="ugy2:5WBVN_M1BLN" resolve="eval" />
+                                    <node concept="37vLTw" id="4nDRG5zMiOm" role="37wK5m">
+                                      <ref role="3cqZAo" node="60zk4o6Suop" resolve="logicalContext" />
+                                    </node>
+                                    <node concept="37vLTw" id="4nDRG5zMiOn" role="37wK5m">
+                                      <ref role="3cqZAo" node="4jcOV4hkQup" resolve="invocationContext" />
+                                    </node>
+                                    <node concept="2OqwBi" id="4nDRG5zMiOo" role="37wK5m">
+                                      <node concept="37vLTw" id="4nDRG5zMiOp" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="5WBVN_M1GEu" resolve="expArgs" />
+                                      </node>
+                                      <node concept="liA8E" id="4nDRG5zMiOq" role="2OqNvi">
+                                        <ref role="37wK5l" to="33ny:~List.toArray()" resolve="toArray" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3clFbH" id="4nDRG5zMiOg" role="3cqZAp" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="5WBVN_M1Hyh" role="3cqZAp">
                     <node concept="2OqwBi" id="5WBVN_M1HRh" role="3clFbG">
                       <node concept="37vLTw" id="5WBVN_M1Hyf" role="2Oq$k0">
@@ -5855,27 +5907,8 @@
                       </node>
                       <node concept="liA8E" id="5WBVN_M1IHI" role="2OqNvi">
                         <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object)" resolve="add" />
-                        <node concept="2OqwBi" id="5WBVN_M1JzG" role="37wK5m">
-                          <node concept="37vLTw" id="5WBVN_M1JhL" role="2Oq$k0">
-                            <ref role="3cqZAo" node="5WBVN_M1J08" resolve="exp" />
-                          </node>
-                          <node concept="liA8E" id="5WBVN_M1JVL" role="2OqNvi">
-                            <ref role="37wK5l" to="ugy2:5WBVN_M1BLN" resolve="eval" />
-                            <node concept="37vLTw" id="6yUEjXvTvSG" role="37wK5m">
-                              <ref role="3cqZAo" node="60zk4o6Suop" resolve="logicalContext" />
-                            </node>
-                            <node concept="37vLTw" id="4jcOV4hlseO" role="37wK5m">
-                              <ref role="3cqZAo" node="4jcOV4hkQup" resolve="invocationContext" />
-                            </node>
-                            <node concept="2OqwBi" id="5WBVN_M1KyJ" role="37wK5m">
-                              <node concept="37vLTw" id="5WBVN_M1K7z" role="2Oq$k0">
-                                <ref role="3cqZAo" node="5WBVN_M1GEu" resolve="expArgs" />
-                              </node>
-                              <node concept="liA8E" id="5WBVN_M1L1T" role="2OqNvi">
-                                <ref role="37wK5l" to="33ny:~List.toArray()" resolve="toArray" />
-                              </node>
-                            </node>
-                          </node>
+                        <node concept="37vLTw" id="4nDRG5zLuCT" role="37wK5m">
+                          <ref role="3cqZAo" node="4nDRG5zLuCK" resolve="eval" />
                         </node>
                       </node>
                     </node>
