@@ -164,7 +164,7 @@ internal class ConstraintsProcessing(
 
             // By default share justifications (as a small optimization)
             val evidence = nextEvidence()
-            val justifications = justsCopy(savedJustifications).apply { add(evidence) }
+            val justifications = Justifications.copy(savedJustifications).apply { add(evidence) }
 
             return Occurrence(
                 this, logicalContext, arguments, evidence,

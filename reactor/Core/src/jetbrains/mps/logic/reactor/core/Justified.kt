@@ -28,13 +28,20 @@ typealias Evidence = Int
 /**
  * [Justifications] is a set of [Evidence]s.
  */
-typealias Justifications = TIntSet
-
-fun emptyJustifications(): Justifications = TIntHashSet(1)
-fun justsOf(vararg elements: Evidence): Justifications = TIntHashSet(elements)
-fun justsFromCollection(collection: Collection<Evidence>): Justifications = TIntHashSet(collection)
-fun justsCopy(other: Justifications): Justifications = TIntHashSet(other)
-
+data class Justifications(private val evidenceSet: TIntSet) {
+    companion object {
+        fun empty() = Justifications (TIntHashSet(1))
+        fun of(vararg elements: Evidence) = Justifications(TIntHashSet(elements))
+        fun of(collection: Collection<Evidence>) = Justifications(TIntHashSet(collection))
+        fun copy(other: Justifications) = Justifications(TIntHashSet(other.evidenceSet))
+    }
+    fun addAll(that: Justifications) { evidenceSet.addAll(that.evidenceSet) }
+    fun add(evidence: Evidence) { evidenceSet.add(evidence) }
+    fun contains(evidence: Evidence) = evidenceSet.contains(evidence)
+    fun forEach(action: (Evidence) -> Boolean) {
+        evidenceSet.forEach(action)
+    }
+}
 
 /**
  * A logical entity whose existence is supported by some

@@ -1,7 +1,5 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.*
-import jetbrains.mps.logic.reactor.program.Constraint
-import jetbrains.mps.logic.reactor.program.Rule
 import org.junit.Test
 import org.junit.Assert.*
 
@@ -75,7 +73,7 @@ class TestStoreAwareJournal {
         {
             with(JournalDispatcherHelper(Dispatcher(RuleIndex(rules)))) {
 
-                hist.justifications() shouldBe justsOf(0) // initial chunk
+                hist.justifications() shouldBe Justifications.of(0) // initial chunk
 
                 logExpand(principalOccurrenceInit("foo"))
                 val fooMatches = d.matches()
@@ -84,7 +82,7 @@ class TestStoreAwareJournal {
                 // log first 'foo' match
 
                 hist.logMatch(fooMatches.first())
-                hist.justifications() shouldBe justsOf(0,1)
+                hist.justifications() shouldBe Justifications.of(0,1)
 
                 logExpandJustified("bar")
                 d.matches().count() shouldBe 0
@@ -92,13 +90,13 @@ class TestStoreAwareJournal {
                 // log second 'foo' match
 
                 hist.logMatch(fooMatches.elementAt(1))
-                hist.justifications() shouldBe justsOf(0,2)
+                hist.justifications() shouldBe Justifications.of(0,2)
 
                 logExpandJustified("qux")
                 d.matches().count() shouldBe 1
 
                 logFirstMatch()
-                hist.justifications() shouldBe justsOf(0,1,2,3)
+                hist.justifications() shouldBe Justifications.of(0,1,2,3)
             }
         }
     }

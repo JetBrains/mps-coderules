@@ -141,7 +141,7 @@ interface MatchJournal :  EvidenceSource {
         val occ: Occurrence
     }
 
-    open class Pos(val chunk: Chunk, val entriesCount: Int) {
+    class Pos(val chunk: Chunk, val entriesCount: Int) {
 
         override fun equals(other: Any?) =
             other is Pos

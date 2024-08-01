@@ -34,7 +34,7 @@ internal open class MatchJournalImpl(
     val trace: EvaluationTrace = EvaluationTrace.NULL
 ) : MatchJournal {
 
-    private abstract class ChunkImpl : Chunk {
+    private sealed class ChunkImpl : Chunk {
         var entries: MutableList<Chunk.Entry> = mutableListOf()
         override fun entries(): List<Chunk.Entry> = entries
         override fun addEntry(e: Chunk.Entry) = entries.add(e)
@@ -54,7 +54,7 @@ internal open class MatchJournalImpl(
 
     private object CornerChunk : ChunkImpl() {
         override val evidence: Evidence = -1
-        override fun justifications(): Justifications = emptyJustifications()
+        override fun justifications() = Justifications.empty()
     }
 
 
@@ -209,70 +209,12 @@ internal open class MatchJournalImpl(
         throw IllegalStateException()
     }
 
-
-    /**
-     * Provides [MatchJournal] look-ahead traverse.
-     */
-    abstract private class AbstractChunkIterator(private val iter: ListIterator<ChunkImpl>) :   ChunkIterator
-    {
-        protected var __next: ChunkImpl
-        protected var __current: ChunkImpl
-
-        init {
-            __current = iter.next()
-            __next = iter.next()
-            iter.previous()
-
-            assert(__current is CornerChunk)
-        }
-
-        final override val current: Chunk get() = __current
-
-        final override fun atStart(): Boolean = __current is CornerChunk
-        final override fun atEnd(): Boolean = __next is CornerChunk
-
-        protected fun updateNext() {
-            assert(iter.hasNext()) { "journal iterator must always have next chunk (maybe the final)" }
-            __next = iter.next()
-            iter.previous() // iterator always points between stored chunks
-        }
-
-        protected fun nextImpl(): Chunk {
-            __current = iter.next()
-            assert(__current === __next)
-            updateNext()
-            return __current
-        }
-    }
-
-    internal infix fun ChunkIterator.assertAt(pos: Pos) {
-        if (!(this at pos))
-            throw IllegalStateException("Position wasn't found in journal: $pos")
-    }
-
-
-    internal class StoreViewImpl(occurrences: Sequence<Occurrence>) : StoreView {
-
-        val allOccurrences = occurrences.toSet()
-
-        val allSymbols = allOccurrences.map { co -> co.constraint().symbol() }.toSet()
-
-        override fun constraintSymbols(): Iterable<ConstraintSymbol> = allSymbols
-
-        override fun allOccurrences(): Iterable<ConstraintOccurrence> = allOccurrences
-
-        override fun occurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
-            allOccurrences.filter { co -> co.constraint().symbol() == symbol }.toSet()
-
-    }
-
-
     /**
      * Provides [MatchJournal] modification and look-ahead traverse with [Chunk] replay.
      * Represents [MatchJournal] state: additions & removals happen at pointed-to position.
      * [Cursor] points at position between [current] & [initial].
      */
-    private inner class Cursor(private val iter: MutableListIterator<ChunkImpl>) :  AbstractChunkIterator(iter){
+    private inner class Cursor(private val iter: MutableListIterator<ChunkImpl>) :  ChunkIterator {
         /**
          * Replays [Chunk]s while iterating
          */
@@ -312,6 +254,40 @@ internal open class MatchJournalImpl(
             this assertAt pastPos
         }
 
+        private var __next: ChunkImpl
+        private var __current: ChunkImpl
+
+        init {
+            __current = iter.next()
+            __next = iter.next()
+            iter.previous()
+
+            assert(__current is CornerChunk)
+        }
+
+        override val current: Chunk get() = __current
+
+        override fun atStart(): Boolean = __current is CornerChunk
+        override fun atEnd(): Boolean = __next is CornerChunk
+
+        private fun updateNext() {
+            assert(iter.hasNext()) { "journal iterator must always have next chunk (maybe the final)" }
+            __next = iter.next()
+            iter.previous() // iterator always points between stored chunks
+        }
+
+        private fun nextImpl(): Chunk {
+            __current = iter.next()
+            assert(__current === __next)
+            updateNext()
+            return __current
+        }
+
+        infix fun assertAt(pos: Pos) {
+            if (!(this at pos))
+                throw IllegalStateException("Position wasn't found in journal: $pos")
+        }
+
     }
 
     /**
@@ -348,13 +324,13 @@ internal open class MatchJournalImpl(
     }
 }
 
-
 // returns new collection of justifications
 internal fun RuleMatch.collectJustifications(vararg withEvidence: Evidence): Justifications =
-    justsOf(*withEvidence).also { allJss ->
-        this.allHeads().forEach { allJss.addAll(it.justifications()) }
+    Justifications.of(*withEvidence).also { justifications ->
+        this.allHeads().forEach { justifications.addAll(it.justifications()) }
     }
 
 internal fun <E> MutableList<E>.push(element: E) = this.add(element)
 internal fun <E> MutableList<E>.pop() = this.removeAt(this.size - 1)
 internal fun <E> MutableList<E>.peek() = this.last()
+

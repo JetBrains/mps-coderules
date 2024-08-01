@@ -1,8 +1,5 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.*
-import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
-import jetbrains.mps.logic.reactor.evaluation.Solver
-import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -102,7 +99,7 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 
 fun occurrence(id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
-        .occurrence(listOf(* args), 0, justsOf(0), noLogicalContext)
+        .occurrence(listOf(* args), 0, Justifications.of(0), noLogicalContext)
 
 fun justifiedOccurrence(id: String, evidence: Evidence, justifications: Justifications, principal: Boolean, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size), principal)
@@ -115,7 +112,7 @@ fun justifiedOccurrence(id: String, hist: MatchJournal, vararg args: Any): Occur
     justifiedOccurrence(id, hist.evidence(), hist.justifications(), false, * args)
 
 fun principalOccurrenceInit(id: String, vararg args: Any): Occurrence =
-    justifiedOccurrence(id, 0, justsFromCollection(setOf(0)), true, * args)
+    justifiedOccurrence(id, 0, Justifications.of(setOf(0)), true, * args)
 
 fun sym0(id: String): ConstraintSymbol =
     ConstraintSymbol(id, 0)
