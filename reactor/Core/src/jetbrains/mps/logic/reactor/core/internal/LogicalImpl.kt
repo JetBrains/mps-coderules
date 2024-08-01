@@ -204,5 +204,5 @@ internal class LogicalImpl<T> : MutableLogical<T> {
 
 }
 
-class DefaultMetaLogical<V> (val name: String) : MetaLogical<V>(name, Object::class.java as Class<V>) {}
+class DefaultMetaLogical<V> (val name: String) : MetaLogical<V>(name, Object::class.java as Class<V>)
 

@@ -166,7 +166,7 @@ internal class ControllerImpl (
                 val itemOk = when (item) {
                     is Constraint -> activateConstraint(item, newParent, occCreator, context)
                     is Predicate -> tellPredicate(item, context)
-                    else -> throw IllegalArgumentException("unknown item ${item}")
+                    else -> throw IllegalArgumentException("unknown item $item")
                 }
 
                 if (itemOk) {
@@ -303,7 +303,7 @@ internal class ControllerImpl (
                     logicalContext: LogicalContext,
                     rule: Rule?  = null,
                     trace: EvaluationTrace = EvaluationTrace.NULL) :
-        this(inStatus, false, logicalContext, rule, trace) { }
+        this(inStatus, false, logicalContext, rule, trace)
 
         fun currentStatus(): FeedbackStatus = status
 

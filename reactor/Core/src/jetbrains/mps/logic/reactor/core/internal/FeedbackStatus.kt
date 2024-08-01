@@ -60,19 +60,10 @@ abstract class FeedbackStatus(val feedback : Feedback?) {
         override fun recover(): FeedbackStatus = NORMAL(feedback)
     }
 
-    class ABORTED(status: FeedbackStatus, val reason: Feedback) : FeedbackStatus(compose(status.feedback, reason)) {
+    class ABORTED(status: FeedbackStatus, reason: Feedback) : FeedbackStatus(compose(status.feedback, reason)) {
         override val operational = false
         override fun recover(): FeedbackStatus = NORMAL(CompositeFeedback.dropLast(feedback))
     }
 }
 
 internal fun compose(left: Feedback?, right: Feedback?) = CompositeFeedback.of(left, right)
-
-data class ReportMessage(val severity: Severity, val message: String)
-
-enum class Severity(val level: Int) {
-    INFO(0),
-    WARNING(1),
-    ERROR(2),
-    FATAL(3)
-}

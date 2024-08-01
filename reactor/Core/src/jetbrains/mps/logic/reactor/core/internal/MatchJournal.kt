@@ -63,13 +63,6 @@ interface MatchJournal :  EvidenceSource {
      * will return the count of all [Occurrence]s.
      */
     fun currentPos(): Pos
-
-    /**
-     * Returns internal [ChunkIterator] that allows to remove future [Chunk]s.
-     */
-    @Deprecated("Obsolete TBR")
-    val cursor: ChunkIterator
-        get() = TODO()
     
     /**
      * Erase journal between [currentPos] (erased) and [pastPos] (not erased).
@@ -102,8 +95,7 @@ interface MatchJournal :  EvidenceSource {
      * Immutable snapshot of [MatchJournal].
      * FOR TESTS ONLY
      */
-    data class View(val chunks: List<Chunk>, val evidenceSeed: Evidence) {
-    }
+    data class View(val chunks: List<Chunk>, val evidenceSeed: Evidence)
 
     /**
      * [MatchJournal] operates on [Chunk]s -- basic [Justified] entities.

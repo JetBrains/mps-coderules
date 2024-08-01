@@ -45,7 +45,7 @@ internal open class MatchJournalImpl(
 
         private val justifications = match.collectJustifications(evidence)
 
-        override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().uniqueTag().toString()}, $entries)"
+        override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().uniqueTag()}, $entries)"
     }
 
     private class OccChunkImpl(override val occ: Occurrence) : ChunkImpl(), Justified by occ, OccChunk {
@@ -121,21 +121,6 @@ internal open class MatchJournalImpl(
 
     private fun pushParentChunk(nextChunk: MatchChunk) {
         ancestorChunksStack.push(nextChunk)
-    }
-
-    private fun collectJustificationsFrom(match: RuleMatch) {
-        val parent: MatchChunk = parentChunk()
-
-        val moreJustified = match.allHeads().filter {
-            // Filter to avoid justifying parent by its child!
-            !it.justifiedBy(parent)
-        }.toList()
-
-        if (moreJustified.isNotEmpty()) {
-            __cursor.applyToPast(parent.toPos()) { child ->
-                child.addJustifications(moreJustified)
-            }
-        }
     }
 
     override fun logActivation(occ: Occurrence)  {
@@ -302,26 +287,6 @@ internal open class MatchJournalImpl(
             iter.add(chunk as ChunkImpl)
             __current = chunk
             indexChunk(chunk)
-        }
-
-        /**
-         * Walk in journal in direct order ([from] -> [current])
-         * while applying [action] to each visited [Chunk]
-         * (not including [from], but including [__current]).
-         * No journal state is changed, except by [action] effects
-         * (i.e. no reset or replay of occurrences is performed).
-         */
-        inline fun applyToPast(from: Pos, action: (Chunk) -> Unit) {
-            val returnTo = __current
-            // there's always at least initial chunk
-            do {
-                __current = iter.previous()
-            } while (!(this at from))
-
-            do {
-                __current = iter.next()
-                action(__current)
-            } while (!(this at returnTo))
         }
 
         /**

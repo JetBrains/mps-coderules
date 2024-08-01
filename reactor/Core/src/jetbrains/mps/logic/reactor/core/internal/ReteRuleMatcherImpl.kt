@@ -98,7 +98,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup?,
 
         }
 
-        inner class InitialNode() : ReteNode() {
+        inner class InitialNode : ReteNode() {
 
             override fun fillSignature(signature: Signature) {}
 
@@ -379,7 +379,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup?,
          */
         inner class Generation private constructor (prev: Generation?) {
 
-            val layers: MutableList<Layer> = prev?.layers ?: ArrayList<Layer>(4)
+            val layers: MutableList<Layer> = prev?.layers ?: ArrayList(4)
 
             lateinit var nodesIt: MutableIterator<ReteNode>
 
@@ -452,14 +452,6 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup?,
                 return nextGeneration().reset()
             }
             
-            private fun clearInvalidNodes(): Generation {
-                while (nodesIt.hasNext()) {
-                    val n = nodesIt.next()
-                    if (n.isInvalid()) nodesIt.remove()
-                }
-                return this.reset()
-            }
-
             fun nextGeneration(): Generation = Generation(this)
 
             fun calcMatches(): Collection<RuleMatchImpl> {
@@ -632,9 +624,7 @@ class UnionFindLinkedList<T> : Iterable<T> {
 
     }
 
-    inner class DataJoint(val value: T) : Joint() {
-        
-    }
+    inner class DataJoint(val value: T) : Joint()
 
     var head = Joint()
     var tail = head

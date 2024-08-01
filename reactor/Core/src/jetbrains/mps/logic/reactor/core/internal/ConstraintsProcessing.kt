@@ -42,7 +42,6 @@ internal class ConstraintsProcessing(
     val trace: EvaluationTrace = EvaluationTrace.NULL,
     val profiler: Profiler? = null ) :  MatchJournal by journal
 {
-    fun getFrontState(): DispatchingFrontState = dispatchingFront.state()
 
     fun engage(controller: Controller) {
         logicalState.setController(controller)
@@ -72,9 +71,8 @@ internal class ConstraintsProcessing(
         }
 
         val matches = dispatchingFront.matches().toList()
-        val currentMatches = matches
 
-        val outStatus = processMatches(controller, active, currentMatches, inStatus)
+        val outStatus = processMatches(controller, active, matches, inStatus)
 
         // TODO: should be isAlive()
         if (active.stored) {
