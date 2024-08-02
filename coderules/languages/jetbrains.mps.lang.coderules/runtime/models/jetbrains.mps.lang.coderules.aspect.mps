@@ -2823,6 +2823,27 @@
             <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
           </node>
         </node>
+        <node concept="3clFb_" id="4nDRG5A4B3k" role="jymVt">
+          <property role="TrG5h" value="modelChanged" />
+          <node concept="3Tm1VV" id="4nDRG5A4B3l" role="1B3o_S" />
+          <node concept="3cqZAl" id="4nDRG5A4B3n" role="3clF45" />
+          <node concept="37vLTG" id="4nDRG5A4B3o" role="3clF46">
+            <property role="TrG5h" value="model" />
+            <node concept="3uibUv" id="4nDRG5A4B3p" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="4nDRG5A4B3q" role="3clF47">
+            <node concept="3clFbF" id="4nDRG5A4RI$" role="3cqZAp">
+              <node concept="1rXfSq" id="4nDRG5A4RI_" role="3clFbG">
+                <ref role="37wK5l" node="3GJd70pbn2_" resolve="invalidate" />
+              </node>
+            </node>
+          </node>
+          <node concept="2AHcQZ" id="4nDRG5A4B3r" role="2AJF6D">
+            <ref role="2AI5Lk" to="wyt6:~Override" />
+          </node>
+        </node>
       </node>
       <node concept="2tJIrI" id="4nDRG5_U9Q3" role="jymVt" />
       <node concept="3clFb_" id="3GJd70pbn2_" role="jymVt">
