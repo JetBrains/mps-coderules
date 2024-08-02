@@ -25,17 +25,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Fedor Isakov
  */
 abstract public class EvaluationFeedback {
-
-    @Deprecated
-    public static EvaluationFeedback details(String message) {
-        return new DetailedFeedback(message, Severity.INFO, null);
-    }
-
-    @Deprecated
-    public static EvaluationFeedback details(String message, Severity severity) {
-        return new DetailedFeedback(message, severity, null);
-    }
-
+    
     public static EvaluationFeedback debug(String message, Object details) {
         return new DetailedFeedback(message, Severity.DEBUG, details);
     }
