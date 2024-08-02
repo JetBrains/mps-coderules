@@ -16,7 +16,9 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
+import jetbrains.mps.logic.reactor.core.FeedbackKt;
 import jetbrains.mps.logic.reactor.logical.LogicalContext;
+import jetbrains.mps.logic.reactor.program.Rule;
 
 import java.util.List;
 
@@ -33,6 +35,37 @@ public interface Supervisor {
     /**
      * Override this method in order to "handle" the feedback.
      * Returns true if the method has handled (consumed) the feedback.
+     * @deprecated use the method returning {@link HandleResult}
      */
-    boolean handleFeedback(RuleMatch ruleMatch, Object feedbackKey, List<Object> feedbackBasis, EvaluationFeedback feedback);
+    @Deprecated
+    default boolean handleFeedback(RuleMatch ruleMatch, Object feedbackKey, List<Object> feedbackBasis, EvaluationFeedback feedback) {
+        return false;
+    }
+
+    /**
+     * Override this method in order to "handle" the feedback.
+     * Returns true if the method has handled (consumed) the feedback.
+     */
+    default HandleResult handleFeedback(EvaluationFeedback feedback, RuleMatch ruleMatch, List<Rule> provenance) {
+        List<Object> provenance1 = ((List<Object>) ((List) provenance));
+        boolean handled = handleFeedback(ruleMatch, FeedbackKt.getFeedbackKey(ruleMatch), provenance1, feedback);
+        if (handled) {
+            return HandleResult.DROP;
+        }else {
+            return HandleResult.PROPAGATE;
+        }
+    }
+
+    /**
+     * Override this method to receive feedback that is being handled elsewhere.
+     */
+    default void receiveFeedback(EvaluationFeedback feedback, RuleMatch ruleMatch, List<Object> provenance) {
+    }
+
+    enum HandleResult {
+        DROP, // consumed and recovered, continue with next item
+        PROPAGATE, // unhandled, try propagating up the stack
+        ESCALATE, // treat exactly as failure
+    }
+
 }

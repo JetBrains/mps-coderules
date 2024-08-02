@@ -28,7 +28,10 @@ public abstract class Rule {
 
     public abstract Rule.Kind kind();
     
+    @Deprecated(forRemoval = true)
     public boolean isBasis() { return false; }
+
+    public boolean isProvenance() { return isBasis(); }
 
     /**
      * A tag uniquely identifies the rule.
