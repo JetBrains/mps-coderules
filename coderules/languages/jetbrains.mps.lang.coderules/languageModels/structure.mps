@@ -617,6 +617,10 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
+    <node concept="asaX9" id="4nDRG5AyyvP" role="lGtFl" />
+    <node concept="t5JxF" id="4nDRG5AyyvR" role="lGtFl">
+      <property role="t5JxN" value="Intended to be a vehicle for higher-order processing of terms; don't use" />
+    </node>
   </node>
   <node concept="PlHQZ" id="1HWyn8iLEBo">
     <property role="EcuMT" value="1980609059170462168" />

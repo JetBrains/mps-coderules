@@ -65,9 +65,14 @@
       </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ngI" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
@@ -3117,6 +3122,27 @@
     </node>
     <node concept="2tJIrI" id="1HWyn8jvsOE" role="jymVt" />
     <node concept="3Tm1VV" id="1HWyn8jvsHc" role="1B3o_S" />
+    <node concept="3UR2Jj" id="4nDRG5AyPFZ" role="lGtFl">
+      <node concept="TZ5HA" id="4nDRG5AyQqk" role="TZ5H$">
+        <node concept="1dT_AC" id="4nDRG5AyQql" role="1dT_Ay">
+          <property role="1dT_AB" value="Utility to provide higher-order semantics for operations on terms." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4nDRG5AySsY" role="TZ5H$">
+        <node concept="1dT_AC" id="4nDRG5AySsZ" role="1dT_Ay">
+          <property role="1dT_AB" value="&lt;p&gt;Avoid. " />
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="4nDRG5AyPG2" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+      <node concept="2B6LJw" id="4nDRG5Azg8V" role="2B76xF">
+        <ref role="2B6OnR" to="wyt6:~Deprecated.forRemoval()" resolve="forRemoval" />
+        <node concept="3clFbT" id="4nDRG5Azgbe" role="2B70Vg">
+          <property role="3clFbU" value="true" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="CGeqIk8WWU">
     <property role="TrG5h" value="RuleProcessingSession" />
