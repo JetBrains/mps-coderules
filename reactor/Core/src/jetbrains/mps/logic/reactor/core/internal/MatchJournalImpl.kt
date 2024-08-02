@@ -178,18 +178,18 @@ internal open class MatchJournalImpl(
 
     override fun storeView(): StoreView = StoreViewImpl(allOccurrences())
 
-    override fun basisRuleTags(chunk: Chunk): List<Any> {
-        val ptags = mutableListOf<Any>()
+    override fun provenanceRules(chunk: Chunk): List<Rule> {
+        val rules = mutableListOf<Rule>()
         chunk.justifications().forEach { jn ->
             // hist is sequential, random access can be expensive
             (lookupChunkByEvidence(jn) as? MatchChunk)?.let {
-                if (it.match.rule().isBasis) {
-                    ptags.add(it.ruleUniqueTag)
+                if (it.match.rule().isProvenance) {
+                    rules.add(it.match.rule())
                 }
             }
             true
         }
-        return ptags
+        return rules
     }
 
     private fun allOccurrences(): Sequence<Occurrence> {

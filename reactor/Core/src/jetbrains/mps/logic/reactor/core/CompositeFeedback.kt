@@ -18,6 +18,7 @@ package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.Supervisor
+import jetbrains.mps.logic.reactor.program.Rule
 
 import java.util.ArrayList
 
@@ -27,25 +28,27 @@ import java.util.ArrayList
 class CompositeFeedback private constructor(private val elements: List<Feedback>) : Feedback() {
     private val severity: Severity = maxSeverity(elements)
 
-    override fun handle(currentRuleMatch: RuleMatch, feedbackKey: Any, feedbackBasis: List<Any>, supervisor: Supervisor): Boolean {
-        var unhandled = 0
-        for (feedback in elements) {
-            if (!feedback.alreadyHandled()) {
-                unhandled += 1
-                if (supervisor.handleFeedback(currentRuleMatch, feedbackKey, feedbackBasis, feedback)) {
-                    feedback.setHandled()
-                    unhandled -= 1
+    override fun handle(supervisor: Supervisor, ruleMatch: RuleMatch, provenance: List<Rule>): Boolean {
+        var unhandled = false
+        if (!alreadyHandled()) {
+            for (feedback in elements) {
+                if (!feedback.handle(supervisor, ruleMatch, provenance)) {
+                    unhandled = true
                 }
             }
         }
-        return unhandled == 0
+        if (!unhandled) {
+            setHandled()
+        }
+        return alreadyHandled()
     }
 
-    override fun handle(ruleMatch: RuleMatch) {
-        for (feedback in elements) {
-            if (!feedback.alreadyHandled()) {
-                feedback.setHandled()
+    override fun report(supervisor: Supervisor, ruleMatch: RuleMatch, provenance: List<Any>) {
+        if (!alreadyHandled()) {
+            for (feedback in elements) {
+                feedback.report(supervisor, ruleMatch, provenance)
             }
+            setHandled()
         }
     }
 

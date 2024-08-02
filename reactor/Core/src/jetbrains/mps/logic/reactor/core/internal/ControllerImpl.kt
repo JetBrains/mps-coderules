@@ -171,12 +171,8 @@ internal class ControllerImpl (
 
                 if (itemOk) {
                     context.withStatus { status ->
-                        if (status.feedback?.alreadyHandled() == false) {
-                            status.feedback.handle(match,
-                                                    newParent.match.feedbackKey,
-                                                    processing.basisRuleTags(newParent),
-                                                    supervisor)
-                        }
+                        // FIXME support ESCALATE option
+                        status.feedback?.handle(supervisor, match, processing.provenanceRules(newParent))
                     }
 
                 } else {
@@ -187,27 +183,20 @@ internal class ControllerImpl (
 
             val altOk = context.eval { status ->
                 if (status is FAILED) {
-                    // if there's alternative body branch then try it
+                    // if there's alternative body branch then try it before failing
                     if (altIt.hasNext()) {
-                        // clear the failure handled status
-                        // the supervisor is NOT notified here
-                        status.failure.handle(match)
+                        // report the feedback and suppress the failure
+                        status.failure.report(supervisor, match, processing.provenanceRules(newParent))
                         status
 
-                    // if failure can be handled here then recover
-                    } else if (status.feedback?.alreadyHandled() == false
-                        && status.failure.handle(match,
-                                                    newParent.match.feedbackKey,
-                                                    processing.basisRuleTags(newParent),
-                                                    supervisor)) {
+                    // if failure can be not handled here, then propagate further up the stack
+                    // FIXME support ESCALATE option
+                    } else if (!status.failure.handle(supervisor, match, processing.provenanceRules(newParent))) {
+                        status
 
-                        status.recover()
-
-                    // else propagate further up the stack
                     } else {
-                        status
+                        status.recover()
                     }
-
                 } else {
                     status
                 }
@@ -303,7 +292,7 @@ internal class ControllerImpl (
                     logicalContext: LogicalContext,
                     rule: Rule?  = null,
                     trace: EvaluationTrace = EvaluationTrace.NULL) :
-        this(inStatus, false, logicalContext, rule, trace)
+            this(inStatus, false, logicalContext, rule, trace)
 
         fun currentStatus(): FeedbackStatus = status
 

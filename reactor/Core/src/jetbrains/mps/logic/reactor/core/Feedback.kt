@@ -19,6 +19,8 @@ package jetbrains.mps.logic.reactor.core
 import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.Supervisor
+import jetbrains.mps.logic.reactor.evaluation.Supervisor.HandleResult
+import jetbrains.mps.logic.reactor.program.Rule
 
 /**
  * @author Fedor Isakov
@@ -40,15 +42,24 @@ abstract class Feedback : EvaluationFeedback() {
     /**
      * Returns true if the feedback has been handled.
      */
-    open fun handle(currentRuleMatch: RuleMatch, feedbackKey: Any, feedbackBasis: List<Any>, supervisor: Supervisor): Boolean {
-        if (!alreadyHandled() && supervisor.handleFeedback(currentRuleMatch, feedbackKey, feedbackBasis, this)) {
-            setHandled()
+    open fun handle(supervisor: Supervisor, ruleMatch: RuleMatch, provenance: List<Rule>): Boolean {
+        if (!alreadyHandled()) {
+            when (supervisor.handleFeedback(this, ruleMatch, provenance)) {
+                HandleResult.DROP -> { setHandled() }
+                HandleResult.PROPAGATE -> { /*NOP*/ }
+                HandleResult.ESCALATE -> { /*NOP*/ }
+                null -> throw NullPointerException()
+            }
         }
         return alreadyHandled()
     }
 
-    open fun handle(ruleMatch: RuleMatch) {
+    /**
+     * Receive the feedback and mark as handled unconditionally.
+     */
+    open fun report(supervisor: Supervisor, ruleMatch: RuleMatch, provenance: List<Any>) {
         if (!alreadyHandled()) {
+            supervisor.receiveFeedback(this, ruleMatch, provenance)
             setHandled()
         }
     }

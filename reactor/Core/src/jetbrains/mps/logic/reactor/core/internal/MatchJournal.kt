@@ -84,7 +84,12 @@ interface MatchJournal :  EvidenceSource {
      */
     fun storeView(): StoreView
 
-    fun basisRuleTags(chunk: Chunk): List<Any>
+    /**
+     * Returns the list of rules that serve as the provenance for the given chunk.
+     * Provenance can be used to determine the location(s) in the source code
+     * to mark with the feedback message.
+     */
+    fun provenanceRules(chunk: Chunk): List<Rule>
 
     // NB: returns same collection of justifications, not copy
     fun justifications() = this.currentPos().chunk.justifications()
