@@ -4650,12 +4650,6 @@
           <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
-      <node concept="37vLTG" id="3pMFS1zdqnx" role="3clF46">
-        <property role="TrG5h" value="logicalContext" />
-        <node concept="3uibUv" id="3pMFS1zdqny" role="1tU5fm">
-          <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
-        </node>
-      </node>
       <node concept="3uibUv" id="3pMFS1zdqnz" role="3clF45">
         <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
@@ -4873,9 +4867,6 @@
                         <ref role="3cqZAo" node="3pMFS1zdJbw" resolve="replForm" />
                       </node>
                     </node>
-                    <node concept="37vLTw" id="3pMFS1znIGm" role="37wK5m">
-                      <ref role="3cqZAo" node="3pMFS1zdqnx" resolve="logicalContext" />
-                    </node>
                   </node>
                 </node>
               </node>
@@ -4963,27 +4954,7 @@
             <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
           </node>
         </node>
-        <node concept="37vLTG" id="3pMFS1zdqol" role="3clF46">
-          <property role="TrG5h" value="logicalContext" />
-          <property role="3TUv4t" value="false" />
-          <node concept="3uibUv" id="3pMFS1zdqom" role="1tU5fm">
-            <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
-          </node>
-        </node>
         <node concept="3clFbS" id="3pMFS1zdqon" role="3clF47">
-          <node concept="3clFbF" id="3pMFS1zdqoo" role="3cqZAp">
-            <node concept="37vLTI" id="3pMFS1zdqop" role="3clFbG">
-              <node concept="2OqwBi" id="3pMFS1zdqoq" role="37vLTJ">
-                <node concept="Xjq3P" id="3pMFS1zdqor" role="2Oq$k0" />
-                <node concept="2OwXpG" id="3pMFS1zdqos" role="2OqNvi">
-                  <ref role="2Oxat5" node="3pMFS1zdqqi" resolve="logicalContext" />
-                </node>
-              </node>
-              <node concept="37vLTw" id="3pMFS1zdqot" role="37vLTx">
-                <ref role="3cqZAo" node="3pMFS1zdqol" resolve="logicalContext" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="3pMFS1zdOFe" role="3cqZAp">
             <node concept="37vLTI" id="3pMFS1zdOFg" role="3clFbG">
               <node concept="2OqwBi" id="3pMFS1zdPMQ" role="37vLTJ">
@@ -5261,16 +5232,6 @@
         </node>
       </node>
       <node concept="2tJIrI" id="3pMFS1zezGx" role="jymVt" />
-      <node concept="312cEg" id="3pMFS1zdqqi" role="jymVt">
-        <property role="34CwA1" value="false" />
-        <property role="eg7rD" value="false" />
-        <property role="TrG5h" value="logicalContext" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="3pMFS1zdqqj" role="1tU5fm">
-          <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
-        </node>
-        <node concept="3Tm6S6" id="3pMFS1zdqqk" role="1B3o_S" />
-      </node>
       <node concept="312cEg" id="3pMFS1zdOFa" role="jymVt">
         <property role="TrG5h" value="patternForm" />
         <node concept="3Tm6S6" id="3pMFS1zdOFb" role="1B3o_S" />
