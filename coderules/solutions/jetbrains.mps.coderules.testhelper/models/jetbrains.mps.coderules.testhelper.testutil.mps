@@ -1389,7 +1389,7 @@
             </node>
             <node concept="2ShNRf" id="3o9wrC3WGRN" role="33vP2m">
               <node concept="1pGfFk" id="5rVYEA66sG1" role="2ShVmc">
-                <ref role="37wK5l" to="hano:3o9wrC3VMfB" resolve="PrincipalNodeReportingSupervisor" />
+                <ref role="37wK5l" to="hano:3o9wrC3sC_c" />
                 <node concept="37vLTw" id="WJTIIp8IAA" role="37wK5m">
                   <ref role="3cqZAo" node="WJTIIp8A0t" resolve="failuresSink" />
                 </node>

@@ -3545,8 +3545,14 @@
                     <node concept="1pGfFk" id="6RN9TdHofDR" role="2ShVmc">
                       <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="FeedbackReportingSupervisor" />
                       <node concept="2ShNRf" id="55xYlrmck$T" role="37wK5m">
-                        <node concept="HV5vD" id="55xYlrmcljP" role="2ShVmc">
-                          <ref role="HV5vE" to="hano:55xYlrmcfkC" resolve="FeedbackConsumer.Stub" />
+                        <node concept="YeOm9" id="4nDRG5AZ8h7" role="2ShVmc">
+                          <node concept="1Y3b0j" id="4nDRG5AZ8ha" role="YeSDq">
+                            <property role="2bfB8j" value="true" />
+                            <property role="373rjd" value="true" />
+                            <ref role="1Y3XeK" to="hano:6RN9TdHmQLy" resolve="FeedbackConsumer" />
+                            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" />
+                            <node concept="3Tm1VV" id="4nDRG5AZ8hb" role="1B3o_S" />
+                          </node>
                         </node>
                       </node>
                     </node>
