@@ -110,58 +110,6 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
         }
     }
 
-    @Deprecated(message = "update functionality to be dropped")
-    fun updateIndexFromRules(rules: Iterable<Rule>) {
-        val removedTags = allRules.map { it.rule.uniqueTag() }.toHashSet()
-        rules.map { it.uniqueTag() }.forEach{ removedTags.remove(it) }
-
-        val allRulesIt = allRules.listIterator()
-        var nextIdx = 0
-        rules.forEach { rule ->
-            var skip = false
-            while (allRulesIt.hasNext()) {
-                val irule = allRulesIt.next()
-                if (removedTags.contains(irule.rule.uniqueTag())) {
-                    removeRuleFromIndex(irule)
-                    allRulesIt.remove()
-
-                } else if (!irule.rule.uniqueTag().equals(rule.uniqueTag())) {
-                    allRulesIt.previous()
-                    break
-
-                } else {
-                    irule.idx = nextIdx
-                    skip = true
-                    break
-                }
-            }
-            if (!skip) {
-                IndexedRule(nextIdx, rule).also {
-                    addRuleToIndex(it)
-                    allRulesIt.add(it)
-                }
-            }
-            nextIdx++
-        }
-        while (allRulesIt.hasNext()) {
-            val irule = allRulesIt.next()
-            removeRuleFromIndex(irule)
-            allRulesIt.remove()
-        }
-    }
-
-    private fun removeRuleFromIndex(irule: IndexedRule) {
-        val uniqueTag = irule.rule.uniqueTag()
-        tag2rule.remove(uniqueTag)
-        val ruleBit = tag2bit.remove(uniqueTag)
-        bit2ruleAndMask.remove(ruleBit)
-        val head = irule.rule.headKept() + irule.rule.headReplaced()
-        for ((headPos, cst) in head.withIndex()) {
-            symbol2index[cst.symbol()]?.clear(cst, ruleBit, headPos)
-        }
-
-    }
-
     private fun addRuleToIndex(irule: IndexedRule) {
         val uniqueTag = irule.rule.uniqueTag()
         if (tag2rule.containsKey(uniqueTag)) throw IllegalStateException("duplicate rule tag $uniqueTag")

@@ -136,7 +136,6 @@ interface MatchJournal :  EvidenceSource {
          * [RuleMatch] which defines this [Chunk]
          */
         val match: RuleMatch
-        val ruleUniqueTag: Any get() = match.rule().uniqueTag()
     }
 
     /**
