@@ -3757,10 +3757,13 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="4nDRG5KFMkZ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+      </node>
     </node>
     <node concept="2tJIrI" id="6tnA4677Qqb" role="jymVt" />
     <node concept="3clFb_" id="7nPD14Ob4em" role="jymVt">
-      <property role="TrG5h" value="targetRef" />
+      <property role="TrG5h" value="originRef" />
       <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="6i42QSs9msQ" role="3clF45">
         <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
@@ -3770,17 +3773,17 @@
       <node concept="P$JXv" id="6tnA466TYOV" role="lGtFl">
         <node concept="TZ5HA" id="6tnA466TYOW" role="TZ5H$">
           <node concept="1dT_AC" id="6tnA466TYOX" role="1dT_Ay">
-            <property role="1dT_AB" value="A reference to the target node for possible errors to be reported. " />
+            <property role="1dT_AB" value="A reference to the origin node for possible errors to be reported. " />
           </node>
         </node>
         <node concept="TZ5HA" id="6tnA467FJQk" role="TZ5H$">
           <node concept="1dT_AC" id="6tnA467FJQl" role="1dT_Ay">
-            <property role="1dT_AB" value="If not specified explicitly by the rule template, the origin node is assumed to be the target. " />
+            <property role="1dT_AB" value="If not specified explicitly by the rule template, the node used to trigger this rule is assumed. " />
           </node>
         </node>
         <node concept="TZ5HA" id="6tnA467FJQy" role="TZ5H$">
           <node concept="1dT_AC" id="6tnA467FJQz" role="1dT_Ay">
-            <property role="1dT_AB" value="If specified to be null, the target is looked up from the evaluation context. " />
+            <property role="1dT_AB" value="If specified to be null, the origin is looked up from the evaluation context (provenance). " />
           </node>
         </node>
       </node>
@@ -7779,7 +7782,7 @@
     </node>
     <node concept="2tJIrI" id="6tnA4677Wgw" role="jymVt" />
     <node concept="3clFb_" id="7nPD14Ob6b5" role="jymVt">
-      <property role="TrG5h" value="targetRef" />
+      <property role="TrG5h" value="originRef" />
       <property role="1EzhhJ" value="false" />
       <node concept="3uibUv" id="6i42QSs9phk" role="3clF45">
         <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />

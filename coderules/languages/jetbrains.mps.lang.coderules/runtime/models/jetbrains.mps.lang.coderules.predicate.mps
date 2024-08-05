@@ -9924,11 +9924,11 @@
             <node concept="2OqwBi" id="4ekZiHddj3N" role="37vLTJ">
               <node concept="Xjq3P" id="4ekZiHddj4k" role="2Oq$k0" />
               <node concept="2OwXpG" id="4ekZiHddjy4" role="2OqNvi">
-                <ref role="2Oxat5" node="4ekZiHddj0h" resolve="target" />
+                <ref role="2Oxat5" node="4ekZiHddj0h" resolve="origin" />
               </node>
             </node>
             <node concept="37vLTw" id="4ekZiHddj0r" role="37vLTx">
-              <ref role="3cqZAo" node="4ekZiHddiZf" resolve="target" />
+              <ref role="3cqZAo" node="4ekZiHddiZf" resolve="origin" />
             </node>
           </node>
         </node>
@@ -9940,7 +9940,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="4ekZiHddiZf" role="3clF46">
-        <property role="TrG5h" value="target" />
+        <property role="TrG5h" value="origin" />
         <node concept="3uibUv" id="4ekZiHddiZe" role="1tU5fm">
           <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
         </node>
@@ -9963,7 +9963,7 @@
     </node>
     <node concept="2tJIrI" id="4ekZiHddjmZ" role="jymVt" />
     <node concept="3clFb_" id="4ekZiHddjeb" role="jymVt">
-      <property role="TrG5h" value="getTarget" />
+      <property role="TrG5h" value="getOrigin" />
       <node concept="3uibUv" id="4ekZiHddjh7" role="3clF45">
         <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
       </node>
@@ -9971,7 +9971,7 @@
       <node concept="3clFbS" id="4ekZiHddjef" role="3clF47">
         <node concept="3clFbF" id="4ekZiHddjoE" role="3cqZAp">
           <node concept="37vLTw" id="4ekZiHddjqT" role="3clFbG">
-            <ref role="3cqZAo" node="4ekZiHddj0h" resolve="target" />
+            <ref role="3cqZAo" node="4ekZiHddj0h" resolve="origin" />
           </node>
         </node>
       </node>
@@ -9986,7 +9986,7 @@
       </node>
     </node>
     <node concept="312cEg" id="4ekZiHddj0h" role="jymVt">
-      <property role="TrG5h" value="target" />
+      <property role="TrG5h" value="origin" />
       <node concept="3Tm6S6" id="4ekZiHddj0i" role="1B3o_S" />
       <node concept="3uibUv" id="4ekZiHddj0k" role="1tU5fm">
         <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
@@ -9996,7 +9996,7 @@
     <node concept="3UR2Jj" id="4ekZiHddkfE" role="lGtFl">
       <node concept="TZ5HA" id="4ekZiHddkfF" role="TZ5H$">
         <node concept="1dT_AC" id="4ekZiHddkfG" role="1dT_Ay">
-          <property role="1dT_AB" value="A pair of references to the feedback's origin template and the target node." />
+          <property role="1dT_AB" value="A pair of references to the feedback's origin template and the origin node." />
         </node>
       </node>
     </node>
@@ -10021,7 +10021,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="61G6TdBsHnY" role="3clF46">
-        <property role="TrG5h" value="targetRef" />
+        <property role="TrG5h" value="originRef" />
         <node concept="3uibUv" id="61G6TdBsHnZ" role="1tU5fm">
           <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
         </node>
@@ -10048,7 +10048,7 @@
                   <ref role="3cqZAo" node="61G6TdBsHnW" resolve="templateRef" />
                 </node>
                 <node concept="37vLTw" id="61G6TdBsHCw" role="37wK5m">
-                  <ref role="3cqZAo" node="61G6TdBsHnY" resolve="targetRef" />
+                  <ref role="3cqZAo" node="61G6TdBsHnY" resolve="originRef" />
                 </node>
               </node>
             </node>
