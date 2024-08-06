@@ -12980,6 +12980,33 @@
           </node>
         </node>
         <node concept="3clFbH" id="23Habm5t0MW" role="3cqZAp" />
+        <node concept="3cpWs8" id="5O6oUvqViv3" role="3cqZAp">
+          <node concept="3cpWsn" id="5O6oUvqViv4" role="3cpWs9">
+            <property role="TrG5h" value="actionToolbar" />
+            <node concept="3uibUv" id="5O6oUvqV6D8" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~ActionToolbar" resolve="ActionToolbar" />
+            </node>
+            <node concept="1rXfSq" id="5O6oUvqViv5" role="33vP2m">
+              <ref role="37wK5l" node="4n$QnzZDmTN" resolve="createControlToolbar" />
+              <node concept="37vLTw" id="5O6oUvqViv6" role="37wK5m">
+                <ref role="3cqZAo" node="Nob1E3C9mb" resolve="tool" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5O6oUvqW2HF" role="3cqZAp">
+          <node concept="2OqwBi" id="5O6oUvqWeqS" role="3clFbG">
+            <node concept="37vLTw" id="5O6oUvqW2HD" role="2Oq$k0">
+              <ref role="3cqZAo" node="5O6oUvqViv4" resolve="actionToolbar" />
+            </node>
+            <node concept="liA8E" id="5O6oUvqWB_9" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~ActionToolbar.setTargetComponent(javax.swing.JComponent)" resolve="setTargetComponent" />
+              <node concept="37vLTw" id="5O6oUvqX2Pb" role="37wK5m">
+                <ref role="3cqZAo" node="23Habm3FfhB" resolve="tabbedPane" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="Nob1E3zyym" role="3cqZAp">
           <node concept="2OqwBi" id="Nob1E3zyyn" role="3clFbG">
             <node concept="37vLTw" id="4XsNDZYLcxs" role="2Oq$k0">
@@ -12988,11 +13015,8 @@
             <node concept="liA8E" id="Nob1E3zyyp" role="2OqNvi">
               <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object)" resolve="add" />
               <node concept="2OqwBi" id="23Habm51MCa" role="37wK5m">
-                <node concept="1rXfSq" id="23Habm51MCb" role="2Oq$k0">
-                  <ref role="37wK5l" node="4n$QnzZDmTN" resolve="createControlToolbar" />
-                  <node concept="37vLTw" id="23Habm51MCc" role="37wK5m">
-                    <ref role="3cqZAo" node="Nob1E3C9mb" resolve="tool" />
-                  </node>
+                <node concept="37vLTw" id="5O6oUvqViv7" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5O6oUvqViv4" resolve="createControlToolbar" />
                 </node>
                 <node concept="liA8E" id="23Habm51MCd" role="2OqNvi">
                   <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent()" resolve="getComponent" />
@@ -13155,6 +13179,33 @@
           </node>
         </node>
         <node concept="3clFbH" id="23Habm4jcjZ" role="3cqZAp" />
+        <node concept="3cpWs8" id="5O6oUvqX$v1" role="3cqZAp">
+          <node concept="3cpWsn" id="5O6oUvqX$v2" role="3cpWs9">
+            <property role="TrG5h" value="actionToolbar" />
+            <node concept="3uibUv" id="5O6oUvqXtjW" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~ActionToolbar" resolve="ActionToolbar" />
+            </node>
+            <node concept="1rXfSq" id="5O6oUvqX$v3" role="33vP2m">
+              <ref role="37wK5l" node="4XsNDZYBNRf" resolve="createTemplateTraceToolbar" />
+              <node concept="37vLTw" id="5O6oUvqX$v4" role="37wK5m">
+                <ref role="3cqZAo" node="23Habm4jQ6P" resolve="tool" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5O6oUvqYfwh" role="3cqZAp">
+          <node concept="2OqwBi" id="5O6oUvqYrMx" role="3clFbG">
+            <node concept="37vLTw" id="5O6oUvqYfwf" role="2Oq$k0">
+              <ref role="3cqZAo" node="5O6oUvqX$v2" resolve="actionToolbar" />
+            </node>
+            <node concept="liA8E" id="5O6oUvqY_bF" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~ActionToolbar.setTargetComponent(javax.swing.JComponent)" resolve="setTargetComponent" />
+              <node concept="37vLTw" id="5O6oUvqZ3JK" role="37wK5m">
+                <ref role="3cqZAo" node="4XsNDZYyEYI" resolve="templateTracePane" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="4XsNDZYQXFt" role="3cqZAp">
           <node concept="2OqwBi" id="4XsNDZYQXFu" role="3clFbG">
             <node concept="37vLTw" id="4XsNDZYQXFv" role="2Oq$k0">
@@ -13163,11 +13214,8 @@
             <node concept="liA8E" id="4XsNDZYQXFw" role="2OqNvi">
               <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object)" resolve="add" />
               <node concept="2OqwBi" id="4XsNDZYQXFx" role="37wK5m">
-                <node concept="1rXfSq" id="4XsNDZYRad3" role="2Oq$k0">
-                  <ref role="37wK5l" node="4XsNDZYBNRf" resolve="createTemplateTraceToolbar" />
-                  <node concept="37vLTw" id="4XsNDZYRbND" role="37wK5m">
-                    <ref role="3cqZAo" node="23Habm4jQ6P" resolve="tool" />
-                  </node>
+                <node concept="37vLTw" id="5O6oUvqX$v5" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5O6oUvqX$v2" resolve="createTemplateTraceToolbar" />
                 </node>
                 <node concept="liA8E" id="4XsNDZYQXFz" role="2OqNvi">
                   <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent()" resolve="getComponent" />
@@ -13453,6 +13501,33 @@
           </node>
         </node>
         <node concept="3clFbH" id="23Habm5emjG" role="3cqZAp" />
+        <node concept="3cpWs8" id="5O6oUvqZcYh" role="3cqZAp">
+          <node concept="3cpWsn" id="5O6oUvqZcYi" role="3cpWs9">
+            <property role="TrG5h" value="actionToolbar" />
+            <node concept="3uibUv" id="5O6oUvqZaH_" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~ActionToolbar" resolve="ActionToolbar" />
+            </node>
+            <node concept="1rXfSq" id="5O6oUvqZcYj" role="33vP2m">
+              <ref role="37wK5l" node="23Habm5qWzM" resolve="createProfilingToolbar" />
+              <node concept="37vLTw" id="5O6oUvqZcYk" role="37wK5m">
+                <ref role="3cqZAo" node="23Habm5emiX" resolve="tool" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5O6oUvqZQ5J" role="3cqZAp">
+          <node concept="2OqwBi" id="5O6oUvr02nR" role="3clFbG">
+            <node concept="37vLTw" id="5O6oUvqZQ5H" role="2Oq$k0">
+              <ref role="3cqZAo" node="5O6oUvqZcYi" resolve="actionToolbar" />
+            </node>
+            <node concept="liA8E" id="5O6oUvr0nJ3" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~ActionToolbar.setTargetComponent(javax.swing.JComponent)" resolve="setTargetComponent" />
+              <node concept="37vLTw" id="5O6oUvr0CM8" role="37wK5m">
+                <ref role="3cqZAo" node="23Habm5prpu" resolve="profilingPane" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="23Habm5emjH" role="3cqZAp">
           <node concept="2OqwBi" id="23Habm5emjI" role="3clFbG">
             <node concept="37vLTw" id="23Habm5emjJ" role="2Oq$k0">
@@ -13461,11 +13536,8 @@
             <node concept="liA8E" id="23Habm5emjK" role="2OqNvi">
               <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object)" resolve="add" />
               <node concept="2OqwBi" id="23Habm5emjL" role="37wK5m">
-                <node concept="1rXfSq" id="23Habm5emjM" role="2Oq$k0">
-                  <ref role="37wK5l" node="23Habm5qWzM" resolve="createProfilingToolbar" />
-                  <node concept="37vLTw" id="23Habm5emjN" role="37wK5m">
-                    <ref role="3cqZAo" node="23Habm5emiX" resolve="tool" />
-                  </node>
+                <node concept="37vLTw" id="5O6oUvqZcYl" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5O6oUvqZcYi" resolve="createProfilingToolbar" />
                 </node>
                 <node concept="liA8E" id="23Habm5emjO" role="2OqNvi">
                   <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent()" resolve="getComponent" />
@@ -14505,24 +14577,35 @@
           </node>
         </node>
         <node concept="3clFbH" id="4n$QnzZDmXK" role="3cqZAp" />
+        <node concept="3cpWs8" id="5O6oUvqSKCo" role="3cqZAp">
+          <node concept="3cpWsn" id="5O6oUvqSKCp" role="3cpWs9">
+            <property role="TrG5h" value="actionToolbar" />
+            <node concept="3uibUv" id="5O6oUvqS97P" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~ActionToolbar" resolve="ActionToolbar" />
+            </node>
+            <node concept="2OqwBi" id="5O6oUvqSKCq" role="33vP2m">
+              <node concept="2YIFZM" id="5O6oUvqSKCr" role="2Oq$k0">
+                <ref role="37wK5l" to="qkt:~ActionManager.getInstance()" resolve="getInstance" />
+                <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+              </node>
+              <node concept="liA8E" id="5O6oUvqSKCs" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean)" resolve="createActionToolbar" />
+                <node concept="Xl_RD" id="5O6oUvqSKCt" role="37wK5m">
+                  <property role="Xl_RC" value="actionToolbar" />
+                </node>
+                <node concept="37vLTw" id="5O6oUvqSKCu" role="37wK5m">
+                  <ref role="3cqZAo" node="4n$QnzZDmWU" resolve="group" />
+                </node>
+                <node concept="3clFbT" id="5O6oUvqSKCv" role="37wK5m">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="4n$QnzZDmXL" role="3cqZAp">
-          <node concept="2OqwBi" id="4n$QnzZDmXM" role="3cqZAk">
-            <node concept="2YIFZM" id="4n$QnzZDmXN" role="2Oq$k0">
-              <ref role="37wK5l" to="qkt:~ActionManager.getInstance()" resolve="getInstance" />
-              <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
-            </node>
-            <node concept="liA8E" id="4n$QnzZDmXO" role="2OqNvi">
-              <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean)" resolve="createActionToolbar" />
-              <node concept="Xl_RD" id="55vERwjneD0" role="37wK5m">
-                <property role="Xl_RC" value="actionToolbar" />
-              </node>
-              <node concept="37vLTw" id="4n$QnzZDmXQ" role="37wK5m">
-                <ref role="3cqZAo" node="4n$QnzZDmWU" resolve="group" />
-              </node>
-              <node concept="3clFbT" id="4n$QnzZDmXR" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
+          <node concept="37vLTw" id="5O6oUvqSKCw" role="3cqZAk">
+            <ref role="3cqZAo" node="5O6oUvqSKCp" resolve="createActionToolbar" />
           </node>
         </node>
       </node>
