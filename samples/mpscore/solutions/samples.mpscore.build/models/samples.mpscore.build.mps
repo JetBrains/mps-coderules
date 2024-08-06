@@ -3699,6 +3699,11 @@
             <ref role="3bR37D" to="zqd8:7BVjoXzUx6U" resolve="jetbrains.mps.lang.coderules" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5O6oUvr3g1O" role="3bR37C">
+          <node concept="3bR9La" id="5O6oUvr3g1P" role="1SiIV1">
+            <ref role="3bR37D" node="7LI_gNMBoG$" resolve="jetbrains.mps.logicExt" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="vrUbzjCdwT" role="3989C9">

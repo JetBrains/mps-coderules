@@ -4942,6 +4942,7 @@
           <module ref="6a5b4bb9-0a56-4618-aa9a-7068c528ce90(jetbrains.mps.lang.coderulesExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
           <module ref="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" kind="cl" />
+          <module ref="ad4d7d30-3da5-4d56-8273-c9d815b12234(jetbrains.mps.logicExt)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -10638,6 +10639,7 @@
           <module ref="6a5b4bb9-0a56-4618-aa9a-7068c528ce90(jetbrains.mps.lang.coderulesExt)" kind="cl" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" kind="cl" />
           <module ref="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462(jetbrains.mps.lang.typechecking)" kind="cl" />
+          <module ref="ad4d7d30-3da5-4d56-8273-c9d815b12234(jetbrains.mps.logicExt)" kind="cl" />
         </dependencies>
         <uses>
           <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
@@ -15166,7 +15168,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.typecheckingExt" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.coderulesExt, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.typecheckingExt" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.lang.coderulesExt, java.compile.jetbrains.mps.logicExt, fetchDependencies">
     <mkdir dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.lang.typecheckingExt/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.typecheckingExt" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typecheckingExt" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -15202,6 +15204,7 @@
         <fileset file="${artifacts.mps}/lib/mps-scripts-rt.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.coderulesExt" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logicExt" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/app.jar" />
         <fileset file="${artifacts.mps}/lib/app-client.jar" />
