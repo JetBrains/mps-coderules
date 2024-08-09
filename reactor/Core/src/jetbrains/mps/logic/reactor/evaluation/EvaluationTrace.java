@@ -34,6 +34,7 @@ public interface EvaluationTrace {
 
     default void reactivate(ConstraintOccurrence occurrence) {}
 
+    @Deprecated(forRemoval = true)
     default void activateContinue(ConstraintOccurrence occurrence) {}
 
     default void suspend(ConstraintOccurrence occurrence) {}
@@ -62,5 +63,6 @@ public interface EvaluationTrace {
 
     default void invalidate(RuleMatch ruleMatch) {}
 
+    @Deprecated(forRemoval = true)
     default void potentialMatch(ConstraintOccurrence occurrence, Rule rule) {}
 }
