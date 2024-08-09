@@ -7316,7 +7316,7 @@
                                               <ref role="3cqZAo" node="1PN9XOHuFpc" resolve="openedTab" />
                                             </node>
                                             <node concept="liA8E" id="1PN9XOHuFpz" role="2OqNvi">
-                                              <ref role="37wK5l" to="o35r:4XsNDZYuNqF" resolve="refresh" />
+                                              <ref role="37wK5l" to="o35r:7DPseAEuw5T" resolve="refreshAll" />
                                             </node>
                                           </node>
                                         </node>

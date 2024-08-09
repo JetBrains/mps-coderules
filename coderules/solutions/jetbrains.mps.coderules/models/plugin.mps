@@ -863,28 +863,32 @@
       <node concept="3Tm1VV" id="2ceN1hD3sMU" role="1B3o_S" />
       <node concept="3clFbS" id="2ceN1hD3sMV" role="3clF47" />
     </node>
-    <node concept="2tJIrI" id="2ceN1hD3$pI" role="jymVt" />
-    <node concept="3clFb_" id="2ceN1hD3AbZ" role="jymVt">
+    <node concept="2tJIrI" id="2ceN1hD3IRW" role="jymVt" />
+    <node concept="3clFb_" id="7DPseABMIGI" role="jymVt">
       <property role="TrG5h" value="occurrenceLifecycleEvent" />
-      <node concept="37vLTG" id="2ceN1hD3Etk" role="3clF46">
+      <node concept="37vLTG" id="7DPseABMIGJ" role="3clF46">
         <property role="TrG5h" value="id" />
-        <node concept="10Oyi0" id="2ceN1hD3Etl" role="1tU5fm" />
+        <node concept="10Oyi0" id="7DPseABMIGK" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="2ceN1hD3Etm" role="3clF46">
+      <node concept="37vLTG" id="7DPseABMIGL" role="3clF46">
         <property role="TrG5h" value="occ" />
-        <node concept="3uibUv" id="2ceN1hD3Etn" role="1tU5fm">
+        <node concept="3uibUv" id="7DPseABMIGM" role="1tU5fm">
           <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
         </node>
       </node>
-      <node concept="37vLTG" id="2ceN1hD3Eto" role="3clF46">
+      <node concept="37vLTG" id="7DPseABMIGN" role="3clF46">
         <property role="TrG5h" value="event" />
-        <node concept="17QB3L" id="2ceN1hD3Etp" role="1tU5fm" />
+        <node concept="17QB3L" id="7DPseABMIGO" role="1tU5fm" />
       </node>
-      <node concept="3cqZAl" id="2ceN1hD3Ac1" role="3clF45" />
-      <node concept="3Tm1VV" id="2ceN1hD3Ac2" role="1B3o_S" />
-      <node concept="3clFbS" id="2ceN1hD3Ac3" role="3clF47" />
+      <node concept="37vLTG" id="7DPseABMIMN" role="3clF46">
+        <property role="TrG5h" value="pictogram" />
+        <node concept="17QB3L" id="7DPseABMJ97" role="1tU5fm" />
+      </node>
+      <node concept="3cqZAl" id="7DPseABMIGP" role="3clF45" />
+      <node concept="3Tm1VV" id="7DPseABMIGQ" role="1B3o_S" />
+      <node concept="3clFbS" id="7DPseABMIGR" role="3clF47" />
     </node>
-    <node concept="2tJIrI" id="2ceN1hD3IRW" role="jymVt" />
+    <node concept="2tJIrI" id="7DPseABMIGH" role="jymVt" />
     <node concept="3clFb_" id="2ceN1hD3LSY" role="jymVt">
       <property role="TrG5h" value="predicateEvent" />
       <node concept="37vLTG" id="2ceN1hD3OsE" role="3clF46">
@@ -900,6 +904,10 @@
       <node concept="37vLTG" id="2ceN1hD3OsI" role="3clF46">
         <property role="TrG5h" value="event" />
         <node concept="17QB3L" id="2ceN1hD3OsJ" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="7DPseACallT" role="3clF46">
+        <property role="TrG5h" value="pictogram" />
+        <node concept="17QB3L" id="7DPseACalHB" role="1tU5fm" />
       </node>
       <node concept="3cqZAl" id="2ceN1hD3LT0" role="3clF45" />
       <node concept="3Tm1VV" id="2ceN1hD3LT1" role="1B3o_S" />
@@ -1603,7 +1611,7 @@
                       <ref role="3cqZAo" node="YGS68MDFfZ" resolve="activationEventsConsumer" />
                     </node>
                     <node concept="liA8E" id="YGS68MDFx$" role="2OqNvi">
-                      <ref role="37wK5l" node="2ceN1hD3AbZ" resolve="occurrenceLifecycleEvent" />
+                      <ref role="37wK5l" node="7DPseABMIGI" resolve="occurrenceLifecycleEvent" />
                       <node concept="37vLTw" id="YGS68MDFx_" role="37wK5m">
                         <ref role="3cqZAo" node="YGS68MDFxC" resolve="id" />
                       </node>
@@ -1612,6 +1620,9 @@
                       </node>
                       <node concept="Xl_RD" id="YGS68MDFxB" role="37wK5m">
                         <property role="Xl_RC" value="activate" />
+                      </node>
+                      <node concept="Xl_RD" id="7DPseABODMD" role="37wK5m">
+                        <property role="Xl_RC" value="↱" />
                       </node>
                     </node>
                   </node>
@@ -1706,7 +1717,7 @@
                       <ref role="3cqZAo" node="YGS68MDFfZ" resolve="activationEventsConsumer" />
                     </node>
                     <node concept="liA8E" id="5GCTx2jPGjg" role="2OqNvi">
-                      <ref role="37wK5l" node="2ceN1hD3AbZ" resolve="occurrenceLifecycleEvent" />
+                      <ref role="37wK5l" node="7DPseABMIGI" resolve="occurrenceLifecycleEvent" />
                       <node concept="37vLTw" id="5GCTx2jPGjh" role="37wK5m">
                         <ref role="3cqZAo" node="5GCTx2jPGjk" resolve="id" />
                       </node>
@@ -1715,6 +1726,9 @@
                       </node>
                       <node concept="Xl_RD" id="5GCTx2jPGjj" role="37wK5m">
                         <property role="Xl_RC" value="undo activate" />
+                      </node>
+                      <node concept="Xl_RD" id="7DPseABUEz$" role="37wK5m">
+                        <property role="Xl_RC" value="↰" />
                       </node>
                     </node>
                   </node>
@@ -1814,7 +1828,7 @@
                       <ref role="3cqZAo" node="YGS68MDFfZ" resolve="activationEventsConsumer" />
                     </node>
                     <node concept="liA8E" id="YGS68MDFyu" role="2OqNvi">
-                      <ref role="37wK5l" node="2ceN1hD3AbZ" resolve="occurrenceLifecycleEvent" />
+                      <ref role="37wK5l" node="7DPseABMIGI" resolve="occurrenceLifecycleEvent" />
                       <node concept="37vLTw" id="YGS68MDFyv" role="37wK5m">
                         <ref role="3cqZAo" node="YGS68MDFyo" resolve="id" />
                       </node>
@@ -1823,6 +1837,9 @@
                       </node>
                       <node concept="Xl_RD" id="YGS68MDFyx" role="37wK5m">
                         <property role="Xl_RC" value="reactivate" />
+                      </node>
+                      <node concept="Xl_RD" id="7DPseAC0UFg" role="37wK5m">
+                        <property role="Xl_RC" value="↱" />
                       </node>
                     </node>
                   </node>
@@ -1914,7 +1931,7 @@
                       <ref role="3cqZAo" node="YGS68MDFfZ" resolve="activationEventsConsumer" />
                     </node>
                     <node concept="liA8E" id="74PwTvF243I" role="2OqNvi">
-                      <ref role="37wK5l" node="2ceN1hD3AbZ" resolve="occurrenceLifecycleEvent" />
+                      <ref role="37wK5l" node="7DPseABMIGI" resolve="occurrenceLifecycleEvent" />
                       <node concept="37vLTw" id="74PwTvF243J" role="37wK5m">
                         <ref role="3cqZAo" node="74PwTvF243M" resolve="id" />
                       </node>
@@ -1923,6 +1940,9 @@
                       </node>
                       <node concept="Xl_RD" id="74PwTvF243L" role="37wK5m">
                         <property role="Xl_RC" value="continue" />
+                      </node>
+                      <node concept="Xl_RD" id="7DPseACbxg4" role="37wK5m">
+                        <property role="Xl_RC" value="x" />
                       </node>
                     </node>
                   </node>
@@ -1938,6 +1958,9 @@
       </node>
       <node concept="2AHcQZ" id="74PwTvF243O" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="7DPseACbDQR" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
       </node>
     </node>
     <node concept="2tJIrI" id="YGS68MDYlg" role="jymVt" />
@@ -2018,7 +2041,7 @@
                       <ref role="3cqZAo" node="YGS68MDFfZ" resolve="activationEventsConsumer" />
                     </node>
                     <node concept="liA8E" id="YGS68MDFz3" role="2OqNvi">
-                      <ref role="37wK5l" node="2ceN1hD3AbZ" resolve="occurrenceLifecycleEvent" />
+                      <ref role="37wK5l" node="7DPseABMIGI" resolve="occurrenceLifecycleEvent" />
                       <node concept="37vLTw" id="YGS68MDFz4" role="37wK5m">
                         <ref role="3cqZAo" node="YGS68MDFz7" resolve="id" />
                       </node>
@@ -2027,6 +2050,9 @@
                       </node>
                       <node concept="Xl_RD" id="YGS68MDFz6" role="37wK5m">
                         <property role="Xl_RC" value="suspend" />
+                      </node>
+                      <node concept="Xl_RD" id="7DPseABS9$E" role="37wK5m">
+                        <property role="Xl_RC" value="↴" />
                       </node>
                     </node>
                   </node>
@@ -2126,7 +2152,7 @@
                       <ref role="3cqZAo" node="YGS68MDFfZ" resolve="activationEventsConsumer" />
                     </node>
                     <node concept="liA8E" id="YGS68MDFzG" role="2OqNvi">
-                      <ref role="37wK5l" node="2ceN1hD3AbZ" resolve="occurrenceLifecycleEvent" />
+                      <ref role="37wK5l" node="7DPseABMIGI" resolve="occurrenceLifecycleEvent" />
                       <node concept="37vLTw" id="YGS68MDFzH" role="37wK5m">
                         <ref role="3cqZAo" node="YGS68MDFzA" resolve="id" />
                       </node>
@@ -2135,6 +2161,9 @@
                       </node>
                       <node concept="Xl_RD" id="YGS68MDFzJ" role="37wK5m">
                         <property role="Xl_RC" value="discard" />
+                      </node>
+                      <node concept="Xl_RD" id="7DPseABOSMW" role="37wK5m">
+                        <property role="Xl_RC" value="↲" />
                       </node>
                     </node>
                   </node>
@@ -2229,7 +2258,7 @@
                       <ref role="3cqZAo" node="YGS68MDFfZ" resolve="activationEventsConsumer" />
                     </node>
                     <node concept="liA8E" id="5GCTx2jPphU" role="2OqNvi">
-                      <ref role="37wK5l" node="2ceN1hD3AbZ" resolve="occurrenceLifecycleEvent" />
+                      <ref role="37wK5l" node="7DPseABMIGI" resolve="occurrenceLifecycleEvent" />
                       <node concept="37vLTw" id="5GCTx2jPphV" role="37wK5m">
                         <ref role="3cqZAo" node="5GCTx2jPphO" resolve="id" />
                       </node>
@@ -2238,6 +2267,9 @@
                       </node>
                       <node concept="Xl_RD" id="5GCTx2jPphX" role="37wK5m">
                         <property role="Xl_RC" value="undo discard" />
+                      </node>
+                      <node concept="Xl_RD" id="7DPseABV5YJ" role="37wK5m">
+                        <property role="Xl_RC" value="↱" />
                       </node>
                     </node>
                   </node>
@@ -2347,6 +2379,9 @@
                       <node concept="Xl_RD" id="YGS68MDF$L" role="37wK5m">
                         <property role="Xl_RC" value="ask" />
                       </node>
+                      <node concept="Xl_RD" id="7DPseADotjM" role="37wK5m">
+                        <property role="Xl_RC" value="◦" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -2451,6 +2486,9 @@
                       <node concept="Xl_RD" id="YGS68MDF$m" role="37wK5m">
                         <property role="Xl_RC" value="tell" />
                       </node>
+                      <node concept="Xl_RD" id="7DPseACaSh2" role="37wK5m">
+                        <property role="Xl_RC" value="•" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -2553,6 +2591,9 @@
                       </node>
                       <node concept="Xl_RD" id="1uAGzk0z8zg" role="37wK5m">
                         <property role="Xl_RC" value="tellPattern" />
+                      </node>
+                      <node concept="Xl_RD" id="7DPseACb4s3" role="37wK5m">
+                        <property role="Xl_RC" value="•" />
                       </node>
                     </node>
                   </node>
@@ -7172,7 +7213,7 @@
     </node>
     <node concept="2tJIrI" id="2ceN1hD1RiY" role="jymVt" />
     <node concept="Wx3nA" id="6_UQWSXeH9C" role="jymVt">
-      <property role="TrG5h" value="DEFAULT_FILTERED_ACTIVATION_xEVENTS" />
+      <property role="TrG5h" value="DEFAULT_FILTERED_ACTIVATION_EVENTS" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="2ceN1hD25vK" role="1B3o_S" />
       <node concept="10Q1$e" id="6_UQWSXeJWr" role="1tU5fm">
