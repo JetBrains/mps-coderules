@@ -13874,6 +13874,33 @@
           </node>
         </node>
         <node concept="3clFbH" id="23Habm48inu" role="3cqZAp" />
+        <node concept="3cpWs8" id="FQ_DIpSQA4" role="3cqZAp">
+          <node concept="3cpWsn" id="FQ_DIpSQA5" role="3cpWs9">
+            <property role="TrG5h" value="actionToolbar" />
+            <node concept="3uibUv" id="FQ_DIpSdcJ" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~ActionToolbar" resolve="ActionToolbar" />
+            </node>
+            <node concept="1rXfSq" id="FQ_DIpSQA6" role="33vP2m">
+              <ref role="37wK5l" node="Nob1E3_nQb" resolve="createActivationViewToolbar" />
+              <node concept="37vLTw" id="FQ_DIpSQA7" role="37wK5m">
+                <ref role="3cqZAo" node="23Habm4huwh" resolve="tool" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="FQ_DIpTtkZ" role="3cqZAp">
+          <node concept="2OqwBi" id="FQ_DIpTtl0" role="3clFbG">
+            <node concept="37vLTw" id="FQ_DIpTtl1" role="2Oq$k0">
+              <ref role="3cqZAo" node="FQ_DIpSQA5" resolve="actionToolbar" />
+            </node>
+            <node concept="liA8E" id="FQ_DIpTtl2" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~ActionToolbar.setTargetComponent(javax.swing.JComponent)" resolve="setTargetComponent" />
+              <node concept="37vLTw" id="FQ_DIpTtl3" role="37wK5m">
+                <ref role="3cqZAo" node="JuOqj43g5j" resolve="activationScrPane" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="4n$QnzZF8wa" role="3cqZAp">
           <node concept="2OqwBi" id="4n$QnzZF8wb" role="3clFbG">
             <node concept="37vLTw" id="4n$QnzZF8wc" role="2Oq$k0">
@@ -13882,11 +13909,8 @@
             <node concept="liA8E" id="4n$QnzZF8wd" role="2OqNvi">
               <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object)" resolve="add" />
               <node concept="2OqwBi" id="4n$QnzZF8we" role="37wK5m">
-                <node concept="1rXfSq" id="4n$QnzZF8wf" role="2Oq$k0">
-                  <ref role="37wK5l" node="Nob1E3_nQb" resolve="createActivationViewToolbar" />
-                  <node concept="37vLTw" id="4n$QnzZF8wg" role="37wK5m">
-                    <ref role="3cqZAo" node="23Habm4huwh" resolve="tool" />
-                  </node>
+                <node concept="37vLTw" id="FQ_DIpSQA8" role="2Oq$k0">
+                  <ref role="3cqZAo" node="FQ_DIpSQA5" resolve="createActivationViewToolbar" />
                 </node>
                 <node concept="liA8E" id="4n$QnzZF8wh" role="2OqNvi">
                   <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent()" resolve="getComponent" />
