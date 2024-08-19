@@ -50,7 +50,9 @@ class LogicalState : LogicalStateObservable, LogicalObserver
         if (!observers.containsKey(logical)) {
             logical.addObserver(this)
         }
-        observers.getOrPut(logical) { arrayListOf() }.add(reactivatable)
+        val list = observers.getOrPut(logical) { arrayListOf() }
+        // TODO this check may be inefficient, but it's necessary
+        if (!list.contains(reactivatable)) list.add(reactivatable)
     }
 
     override fun removeReactivatable(logical: Logical<*>, reactivatable: Reactivatable) {

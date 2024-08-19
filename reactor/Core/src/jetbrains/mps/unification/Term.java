@@ -16,9 +16,12 @@
 
 package jetbrains.mps.unification;
 
+import jetbrains.mps.logic.reactor.logical.Logical;
+import jetbrains.mps.logic.reactor.logical.LogicalOwner;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
+import java.util.Collections;
 
 /**
  * Represents a node in a term graph. The graph may contain cycles. A node in a term
@@ -44,6 +47,14 @@ public interface Term extends Comparable<Term> {
      * Arguments of a function term.
      */
     Collection<? extends Term> arguments();
+
+    /**
+     * A collection of all instances of {@link jetbrains.mps.logic.reactor.logical.Logical}
+     * within this term that have not been assigned a value.
+     */
+    default Collection<Logical<?>> unboundLogicals() {
+        return Collections.emptyList();
+    }
 
     /**
      * For a reference term, returns the term this term is referring to.

@@ -17,12 +17,16 @@
 package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
+import jetbrains.mps.logic.reactor.core.internal.push
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.Id
+import jetbrains.mps.unification.Term
+import java.util.LinkedList
 
 
 /**
@@ -56,23 +60,28 @@ class Occurrence(val constraint: Constraint,
     override fun reactivate(controller: Controller) = doReactivate(controller)
 
     fun terminate(observable: LogicalStateObservable) {
-        for (a in arguments) {
-            if (a is Logical<*>) {
-                observable.removeReactivatable(a, this)
-            }
-        }
+        forEachUnboundLogical { observable.removeReactivatable(it, this) }
         alive = false
     }
 
     fun revive(observable: LogicalStateObservable) {
-        if (!alive) {
-            for (a in HashSet(arguments)) { // avoid duplicate subscriptions
-                if (a is Logical<*>) {
-                    observable.addReactivatable(a, this)
-                }
+        forEachUnboundLogical { observable.addReactivatable(it, this) }
+        alive = true
+    }
+
+    private fun forEachUnboundLogical(block: (Logical<*>) -> Unit) {
+        val logicals = hashSetOf<Id<Logical<*>>>()   // avoid duplicate subscriptions
+        // NB! Don't use "findRoot" for these are stored using an identity map
+        val queue = LinkedList(arguments)
+        while (queue.isNotEmpty()) {
+            val next = queue.removeFirst()
+            when (next) {
+                is Logical<*>   ->  if (next.isBound) queue.addLast(next.findRoot().value())
+                                    else logicals.add(Id(next))
+                is Term         ->  next.unboundLogicals().forEach { logicals.add(Id(it)) }
             }
         }
-        alive = true
+        logicals.forEach{ block(it.wrapped) }
     }
 
     private fun doReactivate(controller: Controller) {
