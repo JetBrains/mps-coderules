@@ -4,18 +4,10 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
-    <modelRoot contentPath="${module}/lib" type="java_classes">
-      <sourceRoot location="reactive-streams-1.0.0.final.jar" />
-      <sourceRoot location="rxjava-2.2.18.jar" />
-      <sourceRoot location="rxjava2-swing-0.3.7.jar" />
-    </modelRoot>
   </models>
   <facets>
     <facet type="java" compile="mps" classes="mps" ext="yes">
       <classes generated="true" path="${module}/classes_gen" />
-      <library location="${module}/lib/reactive-streams-1.0.0.final.jar" />
-      <library location="${module}/lib/rxjava-2.2.18.jar" />
-      <library location="${module}/lib/rxjava2-swing-0.3.7.jar" />
     </facet>
   </facets>
   <dependencies>

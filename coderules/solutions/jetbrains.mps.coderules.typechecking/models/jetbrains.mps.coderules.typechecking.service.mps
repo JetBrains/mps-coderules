@@ -26,7 +26,6 @@
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="1yqb" ref="r:bd76f794-cfad-45dd-9c1c-e3203d1c5c7a(jetbrains.mps.coderules.service)" />
-    <import index="unkn" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex(jetbrains.mps.coderules/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="wcmu" ref="r:1070fac4-bb22-4bb6-b0bf-ec58df816edc(jetbrains.mps.typechecking.annotation.structure)" />
@@ -5616,21 +5615,6 @@
     <node concept="2tJIrI" id="5tAk4yVSOYv" role="jymVt" />
     <node concept="3clFb_" id="RZQG98YN6h" role="jymVt">
       <property role="TrG5h" value="schedule" />
-      <node concept="37vLTG" id="RZQG98YN6i" role="3clF46">
-        <property role="TrG5h" value="input" />
-        <node concept="3uibUv" id="RZQG98YN6j" role="1tU5fm">
-          <ref role="3uigEE" to="unkn:~Single" resolve="Single" />
-          <node concept="3uibUv" id="RZQG98YN6k" role="11_B2D">
-            <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="RZQG98YN6n" role="3clF46">
-        <property role="TrG5h" value="subscribeScheduler" />
-        <node concept="3uibUv" id="RZQG98YN6o" role="1tU5fm">
-          <ref role="3uigEE" to="unkn:~Scheduler" resolve="Scheduler" />
-        </node>
-      </node>
       <node concept="3Tmbuc" id="RZQG98YN6s" role="1B3o_S" />
       <node concept="2AHcQZ" id="RZQG98YN79" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
@@ -5640,7 +5624,7 @@
           <node concept="3cpWsn" id="51ek2rQxWHt" role="3cpWs9">
             <property role="TrG5h" value="preconfigure" />
             <node concept="3uibUv" id="51ek2rQxN4p" role="1tU5fm">
-              <ref role="3uigEE" to="unkn:~Single" resolve="Single" />
+              <ref role="3uigEE" to="1yqb:FQ_DIt9rOo" resolve="Single" />
               <node concept="3uibUv" id="51ek2rQxN4s" role="11_B2D">
                 <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
               </node>
@@ -5929,9 +5913,6 @@
               <node concept="37vLTw" id="1PN9XOHG6wR" role="37wK5m">
                 <ref role="3cqZAo" node="51ek2rQxWHt" resolve="preconfigure" />
               </node>
-              <node concept="37vLTw" id="1PN9XOHG6wS" role="37wK5m">
-                <ref role="3cqZAo" node="RZQG98YN6n" resolve="subscribeScheduler" />
-              </node>
             </node>
             <node concept="1bVj0M" id="1PN9XOI2Azb" role="37wK5m">
               <node concept="37vLTG" id="1PN9XOI2BWu" role="1bW2Oz">
@@ -5985,9 +5966,18 @@
         </node>
       </node>
       <node concept="3uibUv" id="6BMBBPCYWdR" role="3clF45">
-        <ref role="3uigEE" to="unkn:~Single" resolve="Single" />
+        <ref role="3uigEE" to="1yqb:FQ_DIt9rOo" resolve="Single" />
         <node concept="3uibUv" id="6BMBBPCYWdS" role="11_B2D">
           <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="RZQG98YN6i" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3uibUv" id="FQ_DIt6mls" role="1tU5fm">
+          <ref role="3uigEE" to="1yqb:FQ_DIt9rOo" resolve="Single" />
+          <node concept="3uibUv" id="FQ_DIt6mlt" role="11_B2D">
+            <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
+          </node>
         </node>
       </node>
     </node>
@@ -10679,23 +10669,8 @@
     <node concept="2tJIrI" id="q1hCixWSlC" role="jymVt" />
     <node concept="3clFb_" id="7i3KM7gxGFZ" role="jymVt">
       <property role="TrG5h" value="schedule" />
-      <node concept="37vLTG" id="7i3KM7gxGG0" role="3clF46">
-        <property role="TrG5h" value="input" />
-        <node concept="3uibUv" id="7i3KM7gxGG1" role="1tU5fm">
-          <ref role="3uigEE" to="unkn:~Single" resolve="Single" />
-          <node concept="3uibUv" id="7i3KM7gxGG2" role="11_B2D">
-            <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="7i3KM7gxGG3" role="3clF46">
-        <property role="TrG5h" value="subscribeScheduler" />
-        <node concept="3uibUv" id="7i3KM7gxGG4" role="1tU5fm">
-          <ref role="3uigEE" to="unkn:~Scheduler" resolve="Scheduler" />
-        </node>
-      </node>
       <node concept="3uibUv" id="7i3KM7gxGG5" role="3clF45">
-        <ref role="3uigEE" to="unkn:~Single" resolve="Single" />
+        <ref role="3uigEE" to="1yqb:FQ_DIt9rOo" resolve="Single" />
         <node concept="3uibUv" id="7i3KM7gxGG6" role="11_B2D">
           <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
         </node>
@@ -10706,7 +10681,7 @@
           <node concept="3cpWsn" id="51ek2rQMvSO" role="3cpWs9">
             <property role="TrG5h" value="invalidate" />
             <node concept="3uibUv" id="51ek2rQMt5g" role="1tU5fm">
-              <ref role="3uigEE" to="unkn:~Single" resolve="Single" />
+              <ref role="3uigEE" to="1yqb:FQ_DIt9rOo" resolve="Single" />
               <node concept="3uibUv" id="51ek2rQMt5j" role="11_B2D">
                 <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
               </node>
@@ -10785,9 +10760,6 @@
               <node concept="37vLTw" id="51ek2rQN6$3" role="37wK5m">
                 <ref role="3cqZAo" node="51ek2rQMvSO" resolve="invalidate" />
               </node>
-              <node concept="37vLTw" id="51ek2rQN6$4" role="37wK5m">
-                <ref role="3cqZAo" node="7i3KM7gxGG3" resolve="subscribeScheduler" />
-              </node>
             </node>
             <node concept="1bVj0M" id="51ek2rQN754" role="37wK5m">
               <node concept="3clFbS" id="51ek2rQN756" role="1bW5cS">
@@ -10851,6 +10823,15 @@
       </node>
       <node concept="2AHcQZ" id="7i3KM7gxGGa" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="37vLTG" id="7i3KM7gxGG0" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3uibUv" id="FQ_DIt6mlp" role="1tU5fm">
+          <ref role="3uigEE" to="1yqb:FQ_DIt9rOo" resolve="Single" />
+          <node concept="3uibUv" id="FQ_DIt6mlq" role="11_B2D">
+            <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="6nFpYluWOiZ" role="jymVt" />
@@ -13338,23 +13319,8 @@
     <node concept="2tJIrI" id="1T5MAgPvi23" role="jymVt" />
     <node concept="3clFb_" id="1T5MAgPu1nu" role="jymVt">
       <property role="TrG5h" value="schedule" />
-      <node concept="37vLTG" id="1T5MAgPu1nv" role="3clF46">
-        <property role="TrG5h" value="input" />
-        <node concept="3uibUv" id="1T5MAgPu1nw" role="1tU5fm">
-          <ref role="3uigEE" to="unkn:~Single" resolve="Single" />
-          <node concept="3uibUv" id="1T5MAgPu1nx" role="11_B2D">
-            <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1T5MAgPu1ny" role="3clF46">
-        <property role="TrG5h" value="subscribeScheduler" />
-        <node concept="3uibUv" id="1T5MAgPu1nz" role="1tU5fm">
-          <ref role="3uigEE" to="unkn:~Scheduler" resolve="Scheduler" />
-        </node>
-      </node>
       <node concept="3uibUv" id="1T5MAgPu1n$" role="3clF45">
-        <ref role="3uigEE" to="unkn:~Single" resolve="Single" />
+        <ref role="3uigEE" to="1yqb:FQ_DIt9rOo" resolve="Single" />
         <node concept="3uibUv" id="1T5MAgPu1n_" role="11_B2D">
           <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
         </node>
@@ -13369,7 +13335,7 @@
           <node concept="3cpWsn" id="1T5MAgPu8cT" role="3cpWs9">
             <property role="TrG5h" value="preconfigure" />
             <node concept="3uibUv" id="1T5MAgPu7Vo" role="1tU5fm">
-              <ref role="3uigEE" to="unkn:~Single" resolve="Single" />
+              <ref role="3uigEE" to="1yqb:FQ_DIt9rOo" resolve="Single" />
               <node concept="3uibUv" id="1T5MAgPu7Vr" role="11_B2D">
                 <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
               </node>
@@ -13461,9 +13427,15 @@
             <node concept="37vLTw" id="1T5MAgPubiA" role="37wK5m">
               <ref role="3cqZAo" node="1T5MAgPu8cT" resolve="preconfigure" />
             </node>
-            <node concept="37vLTw" id="1T5MAgPub2k" role="37wK5m">
-              <ref role="3cqZAo" node="1T5MAgPu1ny" resolve="subscribeScheduler" />
-            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1T5MAgPu1nv" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3uibUv" id="FQ_DIt6mlv" role="1tU5fm">
+          <ref role="3uigEE" to="1yqb:FQ_DIt9rOo" resolve="Single" />
+          <node concept="3uibUv" id="FQ_DIt6mlw" role="11_B2D">
+            <ref role="3uigEE" to="1yqb:2daneBOWXQd" resolve="Effect" />
           </node>
         </node>
       </node>

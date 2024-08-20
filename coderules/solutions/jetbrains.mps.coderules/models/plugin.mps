@@ -30,7 +30,7 @@
     <import index="1yqb" ref="r:bd76f794-cfad-45dd-9c1c-e3203d1c5c7a(jetbrains.mps.coderules.service)" />
     <import index="cof4" ref="r:0a9d1d47-250c-4f98-8962-b65edf8b0721(jetbrains.mps.logic.dataform)" />
     <import index="uwx2" ref="r:76101703-3fc5-4e76-aa48-9728dde91f7b(jetbrains.mps.logic.unification)" />
-    <import index="unkn" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex(jetbrains.mps.coderules/)" implicit="true" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -698,6 +698,7 @@
       <node concept="3cqZAl" id="4MaHsBDgiaW" role="3clF45" />
       <node concept="37vLTG" id="4MaHsBDgiaX" role="3clF46">
         <property role="TrG5h" value="message" />
+        <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="4MaHsBDgiaY" role="1tU5fm">
           <ref role="3uigEE" to="et5u:~IMessage" resolve="IMessage" />
         </node>
@@ -706,16 +707,16 @@
         </node>
       </node>
       <node concept="3clFbS" id="4MaHsBDgib0" role="3clF47">
-        <node concept="3clFbF" id="2mhJggjq7gt" role="3cqZAp">
-          <node concept="2OqwBi" id="2mhJggjq7se" role="3clFbG">
-            <node concept="2YIFZM" id="2mhJggjq7jK" role="2Oq$k0">
-              <ref role="37wK5l" to="1yqb:3KwBCAA_eqP" resolve="requireEDT" />
-              <ref role="1Pybhc" to="1yqb:3KwBCAA_ela" resolve="MPSSchedulers" />
+        <node concept="3clFbF" id="FQ_DIt43d6" role="3cqZAp">
+          <node concept="2OqwBi" id="FQ_DIt44f7" role="3clFbG">
+            <node concept="2YIFZM" id="FQ_DIt43wk" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication()" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
             </node>
-            <node concept="liA8E" id="2mhJggjq7A3" role="2OqNvi">
-              <ref role="37wK5l" to="unkn:~Scheduler.scheduleDirect(java.lang.Runnable)" resolve="scheduleDirect" />
-              <node concept="1bVj0M" id="2mhJggjq7BT" role="37wK5m">
-                <node concept="3clFbS" id="2mhJggjq7BU" role="1bW5cS">
+            <node concept="liA8E" id="FQ_DIt45vY" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable)" resolve="invokeLater" />
+              <node concept="1bVj0M" id="FQ_DIt45D0" role="37wK5m">
+                <node concept="3clFbS" id="FQ_DIt45D3" role="1bW5cS">
                   <node concept="3cpWs8" id="2ceN1hCEOyW" role="3cqZAp">
                     <node concept="3cpWsn" id="2ceN1hCEOyX" role="3cpWs9">
                       <property role="TrG5h" value="sink" />
@@ -752,6 +753,7 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3clFbH" id="FQ_DIt45Xh" role="3cqZAp" />
                 </node>
               </node>
             </node>

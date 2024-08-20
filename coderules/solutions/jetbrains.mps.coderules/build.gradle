@@ -3,9 +3,6 @@ configurations {
 }
 
 dependencies {
-    codeRules "io.reactivex.rxjava2:rxjava:${rxjavaRevision}@jar"
-    codeRules "com.github.akarnokd:rxjava2-swing:${rxjavaswingRevision}@jar"
-    codeRules "org.reactivestreams:reactive-streams:${reactivestreamsRevision}@jar"
 }
 
 task copyDependencies (type: Copy) {
