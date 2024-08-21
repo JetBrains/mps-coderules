@@ -81,6 +81,10 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1068580123160" name="condition" index="3clFbw" />
+        <child id="1068580123161" name="ifTrue" index="3clFbx" />
+      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -89,6 +93,9 @@
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
+      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
+        <child id="1068581517676" name="expression" index="3cqZAk" />
+      </concept>
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
@@ -145,6 +152,7 @@
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -190,7 +198,6 @@
   <node concept="312cEu" id="7Oc59RSEjdb">
     <property role="TrG5h" value="Result" />
     <property role="1sVAO0" value="true" />
-    <node concept="2tJIrI" id="74$3PKmogFr" role="jymVt" />
     <node concept="2tJIrI" id="7Oc59RSEmi9" role="jymVt" />
     <node concept="2YIFZL" id="7Oc59RSEjeq" role="jymVt">
       <property role="TrG5h" value="OK" />
@@ -935,6 +942,21 @@
         </node>
         <node concept="3Tm1VV" id="2Z9ItkdbLKe" role="1B3o_S" />
         <node concept="3clFbS" id="2Z9ItkdbLKf" role="3clF47">
+          <node concept="3clFbJ" id="5lpFZvOkmXE" role="3cqZAp">
+            <node concept="3clFbS" id="5lpFZvOkmXG" role="3clFbx">
+              <node concept="3cpWs6" id="5lpFZvOkqcr" role="3cqZAp">
+                <node concept="Xjq3P" id="5lpFZvOkrDa" role="3cqZAk" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="5lpFZvOkov3" role="3clFbw">
+              <node concept="37vLTw" id="5lpFZvOknGN" role="2Oq$k0">
+                <ref role="3cqZAo" node="2Z9ItkdbLKb" resolve="that" />
+              </node>
+              <node concept="liA8E" id="5lpFZvOkpsk" role="2OqNvi">
+                <ref role="37wK5l" node="3VwM5b5XMK9" resolve="isTrivial" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="2Z9ItkdbLKg" role="3cqZAp">
             <node concept="3K4zz7" id="2Z9ItkdbLKh" role="3clFbG">
               <node concept="2OqwBi" id="2Z9ItkdbLKj" role="3K4Cdx">
@@ -1344,6 +1366,13 @@
     </node>
     <node concept="2tJIrI" id="7Oc59RSEji1" role="jymVt" />
     <node concept="3Tm1VV" id="7Oc59RSEjdc" role="1B3o_S" />
+    <node concept="3UR2Jj" id="3ITCJTXESg1" role="lGtFl">
+      <node concept="TZ5HA" id="3ITCJTXESg2" role="TZ5H$">
+        <node concept="1dT_AC" id="3ITCJTXESg3" role="1dT_Ay">
+          <property role="1dT_AB" value="An algebraic structure (similar to a semigroup) that is used to report results of an operation." />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
