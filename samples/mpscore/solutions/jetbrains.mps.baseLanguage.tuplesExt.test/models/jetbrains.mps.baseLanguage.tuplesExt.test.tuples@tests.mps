@@ -99,8 +99,8 @@
       </concept>
     </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
-      <concept id="7080278351417106679" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNotNull" flags="nn" index="2Hmddi">
-        <child id="7080278351417106681" name="expression" index="2Hmdds" />
+      <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
+        <child id="1171981057159" name="condition" index="3vwVQn" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -137,25 +137,25 @@
       <property role="TrG5h" value="tuples" />
       <node concept="3cqZAl" id="7AyqXCdNg70" role="3clF45" />
       <node concept="3clFbS" id="7AyqXCdNg71" role="3clF47">
-        <node concept="2Hmddi" id="27bTNFfbxgE" role="3cqZAp">
-          <node concept="2OqwBi" id="27bTNFfbxgF" role="2Hmdds">
-            <node concept="2YIFZM" id="27bTNFfbxgG" role="2Oq$k0">
+        <node concept="3vwNmj" id="7Aoa2yVGHv8" role="3cqZAp">
+          <node concept="2OqwBi" id="7Aoa2yVGHx1" role="3vwVQn">
+            <node concept="2YIFZM" id="7Aoa2yVGHx2" role="2Oq$k0">
               <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
               <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
-              <node concept="2OqwBi" id="27bTNFfc1bY" role="37wK5m">
-                <node concept="2WthIp" id="27bTNFfc1bZ" role="2Oq$k0" />
-                <node concept="2XshWL" id="27bTNFfc1c0" role="2OqNvi">
+              <node concept="2OqwBi" id="7Aoa2yVGHx3" role="37wK5m">
+                <node concept="2WthIp" id="7Aoa2yVGHx4" role="2Oq$k0" />
+                <node concept="2XshWL" id="7Aoa2yVGHx5" role="2OqNvi">
                   <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
-                  <node concept="2tJFMh" id="27bTNFfc1c1" role="2XxRq1">
-                    <node concept="ZC_QK" id="4E290qQ0kDi" role="2tJFKM">
+                  <node concept="2tJFMh" id="7Aoa2yVGHx6" role="2XxRq1">
+                    <node concept="ZC_QK" id="7Aoa2yVGHx7" role="2tJFKM">
                       <ref role="2aWVGs" to="qwqz:4E290qQ09_i" resolve="DemoIndexedTuples" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="1jxXqW" id="27bTNFfc1dX" role="37wK5m" />
+              <node concept="1jxXqW" id="7Aoa2yVGHx8" role="37wK5m" />
             </node>
-            <node concept="liA8E" id="27bTNFfbxgJ" role="2OqNvi">
+            <node concept="liA8E" id="7Aoa2yVGHx9" role="2OqNvi">
               <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
             </node>
           </node>

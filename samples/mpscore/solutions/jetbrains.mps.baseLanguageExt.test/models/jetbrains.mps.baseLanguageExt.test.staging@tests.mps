@@ -104,8 +104,8 @@
       </concept>
     </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
-      <concept id="7080278351417106679" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNotNull" flags="nn" index="2Hmddi">
-        <child id="7080278351417106681" name="expression" index="2Hmdds" />
+      <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
+        <child id="1171981057159" name="condition" index="3vwVQn" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -205,25 +205,25 @@
       <property role="TrG5h" value="StaticMethodInference" />
       <node concept="3cqZAl" id="1N_0WA5DT8H" role="3clF45" />
       <node concept="3clFbS" id="1N_0WA5DT8I" role="3clF47">
-        <node concept="2Hmddi" id="27bTNFfbxhc" role="3cqZAp">
-          <node concept="2OqwBi" id="27bTNFfbxhd" role="2Hmdds">
-            <node concept="2YIFZM" id="27bTNFfbxhe" role="2Oq$k0">
+        <node concept="3vwNmj" id="7Aoa2yVGXtf" role="3cqZAp">
+          <node concept="2OqwBi" id="7Aoa2yVGXtj" role="3vwVQn">
+            <node concept="2YIFZM" id="7Aoa2yVGXtk" role="2Oq$k0">
               <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
               <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-              <node concept="2OqwBi" id="27bTNFfbX4L" role="37wK5m">
-                <node concept="2WthIp" id="27bTNFfbX4M" role="2Oq$k0" />
-                <node concept="2XshWL" id="27bTNFfbX4N" role="2OqNvi">
+              <node concept="2OqwBi" id="7Aoa2yVGXtl" role="37wK5m">
+                <node concept="2WthIp" id="7Aoa2yVGXtm" role="2Oq$k0" />
+                <node concept="2XshWL" id="7Aoa2yVGXtn" role="2OqNvi">
                   <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
-                  <node concept="2tJFMh" id="27bTNFfbX4O" role="2XxRq1">
-                    <node concept="ZC_QK" id="68TJRU2gQT8" role="2tJFKM">
+                  <node concept="2tJFMh" id="7Aoa2yVGXto" role="2XxRq1">
+                    <node concept="ZC_QK" id="7Aoa2yVGXtp" role="2tJFKM">
                       <ref role="2aWVGs" to="uku4:5XJPBczunKj" resolve="StaticMethodInference" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="1jxXqW" id="27bTNFfbX6K" role="37wK5m" />
+              <node concept="1jxXqW" id="7Aoa2yVGXtq" role="37wK5m" />
             </node>
-            <node concept="liA8E" id="27bTNFfbxhh" role="2OqNvi">
+            <node concept="liA8E" id="7Aoa2yVGXtr" role="2OqNvi">
               <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
             </node>
           </node>
