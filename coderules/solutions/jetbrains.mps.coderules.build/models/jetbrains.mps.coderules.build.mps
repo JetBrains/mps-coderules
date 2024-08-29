@@ -1164,16 +1164,6 @@
             <ref role="3bR37D" to="ffeo:5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
           </node>
         </node>
-        <node concept="1SiIV0" id="1PN9XOIHMgA" role="3bR37C">
-          <node concept="3bR9La" id="1PN9XOIHMgB" role="1SiIV1">
-            <ref role="3bR37D" node="7BVjoXzUx6U" resolve="jetbrains.mps.lang.coderules" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="4HQe0WHvAyq" role="3bR37C">
-          <node concept="3bR9La" id="4HQe0WHvAyr" role="1SiIV1">
-            <ref role="3bR37D" node="7BVjoXzUxee" resolve="jetbrains.mps.lang.coderules.runtime" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="1klUHMh1ANr" role="3bR37C">
           <node concept="3bR9La" id="1klUHMh1ANs" role="1SiIV1">
             <ref role="3bR37D" node="7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
