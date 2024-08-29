@@ -27,6 +27,12 @@ import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
+import java.util.logging.Level
+import java.util.logging.Logger
+
+
+val LOG = Logger.getLogger(ControllerImpl::class.java.name)
+
 
 internal class ControllerImpl (
     val supervisor: Supervisor,
@@ -323,6 +329,9 @@ internal class ControllerImpl (
                     this.status = block.invoke(status)
 
                 } catch (ex: RuntimeException) {
+                    if (LOG.isLoggable(Level.FINE)) {
+                        LOG.log(Level.FINE, "exception during block evaluation", ex)
+                    }
                     val failure = if (ex is EvaluationFailureException)
                                         EvaluationFailure(ex)
                                     else
@@ -344,6 +353,9 @@ internal class ControllerImpl (
                     }
 
                 } catch (ex: RuntimeException) {
+                    if (LOG.isLoggable(Level.FINE)) {
+                        LOG.log(Level.FINE, "exception during block evaluation", ex)
+                    }
                     failure = EvaluationFailure(ex)
                 }
 
