@@ -1887,6 +1887,11 @@
             <ref role="3bR37D" node="7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
           </node>
         </node>
+        <node concept="1SiIV0" id="7Vnjo8M48MP" role="3bR37C">
+          <node concept="3bR9La" id="7Vnjo8M48MQ" role="1SiIV1">
+            <ref role="3bR37D" node="74$3PKm_L$v" resolve="jetbrains.mps.logic.runtime" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="5pz4PwHqqGu" role="3989C9">

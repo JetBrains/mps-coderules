@@ -325,7 +325,6 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
@@ -2004,7 +2003,7 @@
       <node concept="2tJIrI" id="36tQV5BD$Uq" role="jymVt" />
       <node concept="3Tm1VV" id="4vBwiiV6131" role="1B3o_S" />
     </node>
-    <node concept="2tJIrI" id="4vBwiiV5X32" role="jymVt" />
+    <node concept="2tJIrI" id="5vVBssDEoXH" role="jymVt" />
     <node concept="3clFbW" id="5yr01fEdYJE" role="jymVt">
       <node concept="37vLTG" id="5yr01fEdZQ4" role="3clF46">
         <property role="TrG5h" value="repository" />
@@ -2012,11 +2011,10 @@
           <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
         </node>
       </node>
-      <node concept="37vLTG" id="3BoSoEkTsii" role="3clF46">
-        <property role="TrG5h" value="ruleProcessingSession" />
-        <node concept="3uibUv" id="3BoSoEkTtAa" role="1tU5fm">
-          <ref role="3uigEE" to="hano:CGeqIk8WWU" resolve="RuleProcessingSession" />
-          <node concept="3qTvmN" id="3BoSoEkTtKP" role="11_B2D" />
+      <node concept="37vLTG" id="5vVBssDBndO" role="3clF46">
+        <property role="TrG5h" value="macroTemplateIndex" />
+        <node concept="3uibUv" id="5vVBssDBoao" role="1tU5fm">
+          <ref role="3uigEE" to="hano:1hX44vNlSIA" resolve="MacroTemplateIndex" />
         </node>
       </node>
       <node concept="3cqZAl" id="5yr01fEdYJG" role="3clF45" />
@@ -2035,16 +2033,16 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5Nh6YP0qxI_" role="3cqZAp">
-          <node concept="37vLTI" id="5Nh6YP0qA7y" role="3clFbG">
-            <node concept="37vLTw" id="5Nh6YP0qB5K" role="37vLTx">
-              <ref role="3cqZAo" node="3BoSoEkTsii" resolve="processingSession" />
-            </node>
-            <node concept="2OqwBi" id="5Nh6YP0qxR5" role="37vLTJ">
-              <node concept="Xjq3P" id="5Nh6YP0qxIz" role="2Oq$k0" />
-              <node concept="2OwXpG" id="5Nh6YP0q_3C" role="2OqNvi">
-                <ref role="2Oxat5" node="7DvO2Ma0klb" resolve="ruleProcessingSession" />
+        <node concept="3clFbF" id="5vVBssDBodg" role="3cqZAp">
+          <node concept="37vLTI" id="5vVBssDBodi" role="3clFbG">
+            <node concept="2OqwBi" id="5vVBssDBxpW" role="37vLTJ">
+              <node concept="Xjq3P" id="5vVBssDByqs" role="2Oq$k0" />
+              <node concept="2OwXpG" id="5vVBssDBxpZ" role="2OqNvi">
+                <ref role="2Oxat5" node="5vVBssDBodc" resolve="myMacroTemplateIndex" />
               </node>
+            </node>
+            <node concept="37vLTw" id="5vVBssDBodm" role="37vLTx">
+              <ref role="3cqZAo" node="5vVBssDBndO" resolve="macroTemplateIndex" />
             </node>
           </node>
         </node>
@@ -2758,13 +2756,8 @@
               </node>
             </node>
             <node concept="2OqwBi" id="At0yqM7Poo" role="33vP2m">
-              <node concept="2OqwBi" id="At0yqM7Pop" role="2Oq$k0">
-                <node concept="37vLTw" id="At0yqM7Poq" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7DvO2Ma0klb" />
-                </node>
-                <node concept="liA8E" id="At0yqM7Por" role="2OqNvi">
-                  <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
-                </node>
+              <node concept="37vLTw" id="5vVBssDClj$" role="2Oq$k0">
+                <ref role="3cqZAo" node="5vVBssDBodc" resolve="macroTemplateIndex" />
               </node>
               <node concept="liA8E" id="At0yqM7Pos" role="2OqNvi">
                 <ref role="37wK5l" to="hano:7mIqwW51Ay4" resolve="expandMacroTemplate" />
@@ -2893,13 +2886,8 @@
               </node>
             </node>
             <node concept="2OqwBi" id="C1f6iEyAq_" role="33vP2m">
-              <node concept="2OqwBi" id="C1f6iEyAqA" role="2Oq$k0">
-                <node concept="37vLTw" id="C1f6iEyAqB" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7DvO2Ma0klb" />
-                </node>
-                <node concept="liA8E" id="C1f6iEyAqC" role="2OqNvi">
-                  <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
-                </node>
+              <node concept="37vLTw" id="5vVBssDCdR6" role="2Oq$k0">
+                <ref role="3cqZAo" node="5vVBssDBodc" resolve="macroTemplateIndex" />
               </node>
               <node concept="liA8E" id="C1f6iEyAqD" role="2OqNvi">
                 <ref role="37wK5l" to="hano:7mIqwW51Ay4" resolve="expandMacroTemplate" />
@@ -3026,13 +3014,8 @@
               </node>
             </node>
             <node concept="2OqwBi" id="5itBwM7W$4B" role="33vP2m">
-              <node concept="2OqwBi" id="zL5ZaNKHb8" role="2Oq$k0">
-                <node concept="37vLTw" id="5itBwM7W$4C" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7DvO2Ma0klb" />
-                </node>
-                <node concept="liA8E" id="zL5ZaNKHO1" role="2OqNvi">
-                  <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
-                </node>
+              <node concept="37vLTw" id="5vVBssDChbZ" role="2Oq$k0">
+                <ref role="3cqZAo" node="5vVBssDBodc" resolve="macroTemplateIndex" />
               </node>
               <node concept="liA8E" id="5itBwM7W$4D" role="2OqNvi">
                 <ref role="37wK5l" to="hano:5itBwM7WF$n" resolve="callMacroTemplate" />
@@ -3724,18 +3707,12 @@
         <ref role="3uigEE" node="4VNF0fT1sxk" resolve="DependencyUpdatable" />
       </node>
     </node>
-    <node concept="312cEg" id="7DvO2Ma0klb" role="jymVt">
-      <property role="TrG5h" value="ruleProcessingSession" />
-      <node concept="3Tm6S6" id="7DvO2Ma0klc" role="1B3o_S" />
-      <node concept="3uibUv" id="zL5ZaNJgI6" role="1tU5fm">
-        <ref role="3uigEE" to="hano:CGeqIk8WWU" resolve="RuleProcessingSession" />
-      </node>
-      <node concept="z59LJ" id="3swcsd3Gqma" role="lGtFl">
-        <node concept="TZ5HA" id="3swcsd3Gqmb" role="TZ5H$">
-          <node concept="1dT_AC" id="3swcsd3Gqmc" role="1dT_Ay">
-            <property role="1dT_AB" value="FIXME: replace this dependency with one on MacroTemplateIndex" />
-          </node>
-        </node>
+    <node concept="312cEg" id="5vVBssDBodc" role="jymVt">
+      <property role="TrG5h" value="macroTemplateIndex" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="5vVBssDBodd" role="1B3o_S" />
+      <node concept="3uibUv" id="5vVBssDBodf" role="1tU5fm">
+        <ref role="3uigEE" to="hano:1hX44vNlSIA" resolve="MacroTemplateIndex" />
       </node>
     </node>
   </node>
