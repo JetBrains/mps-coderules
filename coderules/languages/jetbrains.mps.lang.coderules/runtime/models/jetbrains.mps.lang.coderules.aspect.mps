@@ -4281,6 +4281,44 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1LBj9w_9VFL" role="jymVt" />
+    <node concept="3clFb_" id="5vVBssDUTF1" role="jymVt">
+      <property role="TrG5h" value="setPriority" />
+      <node concept="37vLTG" id="5vVBssDUUaj" role="3clF46">
+        <property role="TrG5h" value="priority" />
+        <node concept="10Oyi0" id="5vVBssDUUd0" role="1tU5fm" />
+      </node>
+      <node concept="3cqZAl" id="5vVBssDUTF3" role="3clF45" />
+      <node concept="3Tm1VV" id="5vVBssDUTF4" role="1B3o_S" />
+      <node concept="3clFbS" id="5vVBssDUTF5" role="3clF47">
+        <node concept="3clFbF" id="5vVBssDUUhI" role="3cqZAp">
+          <node concept="37vLTI" id="5vVBssDUUhK" role="3clFbG">
+            <node concept="2OqwBi" id="5vVBssDUUIK" role="37vLTJ">
+              <node concept="Xjq3P" id="5vVBssDUUP$" role="2Oq$k0" />
+              <node concept="2OwXpG" id="5vVBssDUUIN" role="2OqNvi">
+                <ref role="2Oxat5" node="5vVBssDUUhE" resolve="myPriority" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="5vVBssDUUhO" role="37vLTx">
+              <ref role="3cqZAo" node="5vVBssDUUaj" resolve="priority" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5vVBssDUVWO" role="jymVt" />
+    <node concept="3clFb_" id="5vVBssDUV3W" role="jymVt">
+      <property role="TrG5h" value="getPriority" />
+      <node concept="10Oyi0" id="5vVBssDUVCU" role="3clF45" />
+      <node concept="3Tm1VV" id="5vVBssDUV3Z" role="1B3o_S" />
+      <node concept="3clFbS" id="5vVBssDUV40" role="3clF47">
+        <node concept="3clFbF" id="5vVBssDUVTF" role="3cqZAp">
+          <node concept="37vLTw" id="5vVBssDUVTE" role="3clFbG">
+            <ref role="3cqZAo" node="5vVBssDUUhE" resolve="priority" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5vVBssDUWj3" role="jymVt" />
     <node concept="3clFb_" id="6UWSvq4Vu5V" role="jymVt">
       <property role="TrG5h" value="macroTables" />
       <property role="1EzhhJ" value="true" />
@@ -4323,6 +4361,11 @@
       <node concept="3uibUv" id="1LBj9w_9Vjf" role="1tU5fm">
         <ref role="3uigEE" node="NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
       </node>
+    </node>
+    <node concept="312cEg" id="5vVBssDUUhE" role="jymVt">
+      <property role="TrG5h" value="priority" />
+      <node concept="3Tm6S6" id="5vVBssDUUhF" role="1B3o_S" />
+      <node concept="10Oyi0" id="5vVBssDUUhH" role="1tU5fm" />
     </node>
     <node concept="2tJIrI" id="1LBj9w_9VzP" role="jymVt" />
     <node concept="3Tm1VV" id="5EDW3XF5Z96" role="1B3o_S" />
