@@ -897,7 +897,7 @@
             </node>
             <node concept="2OqwBi" id="3FGJ5nvn4fS" role="3uHU7B">
               <node concept="37vLTw" id="3FGJ5nvn3xj" role="2Oq$k0">
-                <ref role="3cqZAo" node="3FGJ5nvn00z" resolve="namesOfRulesWithDependency" />
+                <ref role="3cqZAo" node="3FGJ5nvn00z" resolve="templatesOfRulesWithDependency" />
               </node>
               <node concept="34oBXx" id="3FGJ5nvn4Ud" role="2OqNvi" />
             </node>
@@ -1012,7 +1012,7 @@
                 <node concept="3clFbF" id="3FGJ5nvmUre" role="3cqZAp">
                   <node concept="2OqwBi" id="3FGJ5nvmUSg" role="3clFbG">
                     <node concept="37vLTw" id="3FGJ5nvmUrc" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3FGJ5nvmSHN" resolve="addedRulesTags" />
+                      <ref role="3cqZAo" node="3FGJ5nvmSHN" resolve="addedRulesTemplates" />
                     </node>
                     <node concept="TSZUe" id="3FGJ5nvmVEe" role="2OqNvi">
                       <node concept="2OqwBi" id="3BoSoElE13B" role="25WWJ7">
@@ -1072,11 +1072,11 @@
         <node concept="3vwNmj" id="3FGJ5nvmSa3" role="3cqZAp">
           <node concept="2OqwBi" id="3FGJ5nvmYLo" role="3vwVQn">
             <node concept="37vLTw" id="3FGJ5nvmYer" role="2Oq$k0">
-              <ref role="3cqZAo" node="3FGJ5nvmSHN" resolve="addedRulesTags" />
+              <ref role="3cqZAo" node="3FGJ5nvmSHN" resolve="addedRulesTemplates" />
             </node>
             <node concept="BjQpj" id="3FGJ5nvmZNu" role="2OqNvi">
               <node concept="37vLTw" id="3FGJ5nvn2Je" role="25WWJ7">
-                <ref role="3cqZAo" node="3FGJ5nvn00z" resolve="namesOfRulesWithDependency" />
+                <ref role="3cqZAo" node="3FGJ5nvn00z" resolve="templatesOfRulesWithDependency" />
               </node>
             </node>
           </node>
