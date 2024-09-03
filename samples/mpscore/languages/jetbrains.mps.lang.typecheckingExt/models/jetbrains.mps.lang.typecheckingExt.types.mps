@@ -11,6 +11,7 @@
     <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.baseLanguageExt.types)" />
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)" />
     <import index="54p4" ref="r:4756f1c3-ee0d-4da9-817d-c7dad8ea74b8(jetbrains.mps.logicExt.types)" />
+    <import index="jxwi" ref="r:6ecd2c91-8e0b-4c6a-878e-d699a7336100(jetbrains.mps.lang.smodelExt.types)" />
     <import index="h103" ref="r:9c80bc3e-1982-4e7d-8fe4-1b25a1c02635(jetbrains.mps.lang.typechecking.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -75,11 +76,6 @@
     <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules">
       <concept id="861509610434242029" name="jetbrains.mps.lang.coderules.structure.TermConstructor" flags="ng" index="ns1u0">
         <reference id="861509610434243078" name="decl" index="ns1xF" />
-        <child id="861509610434243076" name="override" index="ns1xD" />
-      </concept>
-      <concept id="861509610434435669" name="jetbrains.mps.lang.coderules.structure.TermFeatureOverride" flags="ng" index="nsMwS">
-        <reference id="861509610434435672" name="feature" index="nsMwP" />
-        <child id="1149537088045275069" name="item" index="iSaTp" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
@@ -269,8 +265,8 @@
                                     <ref role="3A2yKK" node="5O6oUvr2Hev" resolve="fre" />
                                   </node>
                                 </node>
-                                <node concept="ns1u0" id="5O6oUvr3bLv" role="3AunhB">
-                                  <ref role="ns1xF" to="y4ek:7LI_gNNfeK7" resolve="term" />
+                                <node concept="ns1u0" id="KkWtiMpTxg" role="3AunhB">
+                                  <ref role="ns1xF" to="jxwi:7LI_gNMWw2A" resolve="node" />
                                 </node>
                               </node>
                             </node>
@@ -289,8 +285,8 @@
                                     <ref role="3A2yKK" node="5O6oUvr2Hev" resolve="fre" />
                                   </node>
                                 </node>
-                                <node concept="ns1u0" id="5O6oUvr3bOE" role="3AunhB">
-                                  <ref role="ns1xF" to="y4ek:7LI_gNNfeOT" resolve="termList" />
+                                <node concept="ns1u0" id="KkWtiMpTxh" role="3AunhB">
+                                  <ref role="ns1xF" to="jxwi:3bgqfmmLhUu" resolve="nodeList" />
                                 </node>
                               </node>
                             </node>
@@ -336,14 +332,8 @@
                                     <ref role="3A2yKK" node="5O6oUvr2Hev" resolve="fre" />
                                   </node>
                                 </node>
-                                <node concept="ns1u0" id="5O6oUvr3drz" role="3AunhB">
-                                  <ref role="ns1xF" to="54p4:7LI_gNMkMFB" resolve="logical" />
-                                  <node concept="nsMwS" id="5O6oUvr3dr$" role="ns1xD">
-                                    <ref role="nsMwP" to="54p4:7LI_gNMpTBn" resolve="dataType" />
-                                    <node concept="a7P8L" id="5O6oUvr3dr_" role="iSaTp">
-                                      <ref role="a7OzE" node="5O6oUvr3bPb" resolve="V" />
-                                    </node>
-                                  </node>
+                                <node concept="a7P8L" id="KkWtiMpRwW" role="3AunhB">
+                                  <ref role="a7OzE" node="5O6oUvr3bPb" resolve="V" />
                                 </node>
                               </node>
                             </node>
