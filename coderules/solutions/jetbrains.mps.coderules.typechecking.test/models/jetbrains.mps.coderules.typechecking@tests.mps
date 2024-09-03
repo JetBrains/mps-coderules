@@ -2877,7 +2877,7 @@
                                           <node concept="2ShNRf" id="7Aoa2yV_XUs" role="3clFbG">
                                             <node concept="HV5vD" id="7Aoa2yV_Zrk" role="2ShVmc">
                                               <property role="373rjd" value="true" />
-                                              <ref role="HV5vE" to="tj24:7Aoa2yVdSP8" resolve="ReportedTypes" />
+                                              <ref role="HV5vE" to="tj24:7Aoa2yVdSP8" resolve="TypecheckingReport" />
                                             </node>
                                           </node>
                                         </node>
