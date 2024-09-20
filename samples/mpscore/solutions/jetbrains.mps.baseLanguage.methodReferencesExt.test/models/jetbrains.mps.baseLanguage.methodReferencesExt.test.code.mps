@@ -994,7 +994,7 @@
             </node>
             <node concept="2es0OD" id="6ZRhjsGyISy" role="2OqNvi">
               <node concept="37Ijox" id="6ZRhjsGyISz" role="23t8la">
-                <ref role="37Ijqf" to="wyt6:~StringBuilder.append(java.lang.Object)" resolve="append" />
+                <ref role="37Ijqf" to="wyt6:~StringBuilder.append(int)" resolve="append" />
                 <node concept="37vLTw" id="6ZRhjsGyIS$" role="wWaWy">
                   <ref role="3cqZAo" node="6ZRhjsGyISd" resolve="builder" />
                 </node>
