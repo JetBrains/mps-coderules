@@ -12,6 +12,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="acfc188d-d5d6-4598-b370-6f4a983f05b2" name="jetbrains.mps.baseLanguage.methodReferences" version="0" />
   </languages>
   <imports>
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
@@ -247,6 +248,13 @@
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="acfc188d-d5d6-4598-b370-6f4a983f05b2" name="jetbrains.mps.baseLanguage.methodReferences">
+      <concept id="237887375562511215" name="jetbrains.mps.baseLanguage.methodReferences.structure.MethodReference" flags="ng" index="37Ijox" />
+      <concept id="3507059745126391419" name="jetbrains.mps.baseLanguage.methodReferences.structure.IMethodReference" flags="ngI" index="3UZKCU">
+        <reference id="237887375562511297" name="method" index="37Ijqf" />
+        <child id="962278442658307079" name="target" index="wWaWy" />
       </concept>
     </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
@@ -942,12 +950,17 @@
                 <node concept="37vLTw" id="5vVBssDPM9U" role="37wK5m">
                   <ref role="3cqZAo" node="tyIfzC1aQx" resolve="repo" />
                 </node>
-                <node concept="2OqwBi" id="5vVBssDBGTr" role="37wK5m">
-                  <node concept="37vLTw" id="1Pi9pJ$hrGu" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1Pi9pJ$gX7O" resolve="ruleProcessingSession" />
+                <node concept="2OqwBi" id="1bodCZHOxTS" role="37wK5m">
+                  <node concept="2OqwBi" id="5vVBssDBGTr" role="2Oq$k0">
+                    <node concept="37vLTw" id="1Pi9pJ$hrGu" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1Pi9pJ$gX7O" resolve="rulesProcessing" />
+                    </node>
+                    <node concept="liA8E" id="5vVBssDBKdA" role="2OqNvi">
+                      <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
+                    </node>
                   </node>
-                  <node concept="liA8E" id="5vVBssDBKdA" role="2OqNvi">
-                    <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
+                  <node concept="liA8E" id="1bodCZHOH9Z" role="2OqNvi">
+                    <ref role="37wK5l" to="hano:4JJCDIn5F0n" resolve="macroTables" />
                   </node>
                 </node>
               </node>
@@ -1001,13 +1014,11 @@
               <ref role="3cqZAo" node="61G6TdBqAxt" resolve="macroProcessing" />
             </node>
             <node concept="liA8E" id="2LxIQemUJYl" role="2OqNvi">
-              <ref role="37wK5l" to="ugy2:4VNF0fT26a5" resolve="withDependencyUpdatable" />
-              <node concept="2OqwBi" id="KkWtiNKZCH" role="37wK5m">
-                <node concept="37vLTw" id="2LxIQemUK79" role="2Oq$k0">
+              <ref role="37wK5l" to="ugy2:4VNF0fT26a5" resolve="withDependenciesTracker" />
+              <node concept="37Ijox" id="1bodCZGH1b_" role="37wK5m">
+                <ref role="37Ijqf" to="hano:1bodCZGHDZI" resolve="addRequired" />
+                <node concept="37vLTw" id="2LxIQemUK79" role="wWaWy">
                   <ref role="3cqZAo" node="1XKnVQwJTH" resolve="updatesRecorder" />
-                </node>
-                <node concept="liA8E" id="KkWtiNLTR4" role="2OqNvi">
-                  <ref role="37wK5l" to="hano:KkWtiNLqRM" resolve="dependencies" />
                 </node>
               </node>
             </node>

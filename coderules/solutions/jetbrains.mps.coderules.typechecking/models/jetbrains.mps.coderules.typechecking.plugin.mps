@@ -6238,12 +6238,17 @@
                   <node concept="37vLTw" id="61G6TdBDyzQ" role="37wK5m">
                     <ref role="3cqZAo" node="7WKNeR8SQxI" resolve="repository" />
                   </node>
-                  <node concept="2OqwBi" id="5vVBssDBVVw" role="37wK5m">
-                    <node concept="37vLTw" id="61G6TdBDyzS" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6nFpYluoeMV" resolve="processingSession" />
+                  <node concept="2OqwBi" id="1bodCZIwT$y" role="37wK5m">
+                    <node concept="2OqwBi" id="5vVBssDBVVw" role="2Oq$k0">
+                      <node concept="37vLTw" id="61G6TdBDyzS" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6nFpYluoeMV" resolve="rulesProcessing" />
+                      </node>
+                      <node concept="liA8E" id="5vVBssDBYA_" role="2OqNvi">
+                        <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
+                      </node>
                     </node>
-                    <node concept="liA8E" id="5vVBssDBYA_" role="2OqNvi">
-                      <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
+                    <node concept="liA8E" id="1bodCZIwVMJ" role="2OqNvi">
+                      <ref role="37wK5l" to="hano:4JJCDIn5F0n" resolve="macroTables" />
                     </node>
                   </node>
                 </node>

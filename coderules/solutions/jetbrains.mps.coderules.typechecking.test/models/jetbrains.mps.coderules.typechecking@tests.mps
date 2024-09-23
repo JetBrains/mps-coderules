@@ -3436,12 +3436,17 @@
                       <node concept="37vLTw" id="5vVBssDPRQY" role="37wK5m">
                         <ref role="3cqZAo" node="6OXbTD_oHcp" resolve="repo" />
                       </node>
-                      <node concept="2OqwBi" id="5vVBssDC9Gt" role="37wK5m">
-                        <node concept="37vLTw" id="61G6TdBqDRt" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="session" />
+                      <node concept="2OqwBi" id="1bodCZHPqfB" role="37wK5m">
+                        <node concept="2OqwBi" id="5vVBssDC9Gt" role="2Oq$k0">
+                          <node concept="37vLTw" id="61G6TdBqDRt" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="rulesProcessing" />
+                          </node>
+                          <node concept="liA8E" id="5vVBssDCaog" role="2OqNvi">
+                            <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
+                          </node>
                         </node>
-                        <node concept="liA8E" id="5vVBssDCaog" role="2OqNvi">
-                          <ref role="37wK5l" to="hano:7DvO2M9Icas" resolve="macroTemplates" />
+                        <node concept="liA8E" id="1bodCZHPr6W" role="2OqNvi">
+                          <ref role="37wK5l" to="hano:4JJCDIn5F0n" resolve="macroTables" />
                         </node>
                       </node>
                     </node>
