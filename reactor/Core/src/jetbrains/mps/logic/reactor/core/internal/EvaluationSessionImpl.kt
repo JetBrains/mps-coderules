@@ -54,8 +54,8 @@ internal class EvaluationSessionImpl private constructor (
     open inner class DefaultProcessingSession {
 
         fun getSession(): SessionData {
-            val ruleIndex = RuleIndex(program.rules())
 
+            val ruleIndex = RuleIndex(program.rules(), profiler)
             val journal = MatchJournalImpl(trace)
             val logicalState = LogicalState()
             val dispatchingFront = Dispatcher(ruleIndex).front()

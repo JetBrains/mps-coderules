@@ -36,7 +36,7 @@ fun emptyRuleBits() = BitSet()
  *
  * @author Fedor Isakov
  */
-class RuleIndex(): Iterable<Rule>, RuleLookup
+class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : Iterable<Rule>, RuleLookup
 {
     private class IndexedRule(var idx: Int, val rule: Rule)
 
@@ -57,8 +57,10 @@ class RuleIndex(): Iterable<Rule>, RuleLookup
 
     private val allRules = LinkedList<IndexedRule>()
 
-    constructor(rules: Iterable<Rule>) : this() {
-        buildIndexFromRules(rules)
+    init {
+        profiler.profile("build rule index") {
+            buildIndexFromRules(rules)
+        }
     }
 
     override fun lookupRuleByTag(tag: Any): Rule? = tag2rule[tag]
