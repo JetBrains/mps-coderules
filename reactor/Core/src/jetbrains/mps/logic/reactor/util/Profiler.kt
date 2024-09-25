@@ -56,35 +56,35 @@ class Profiler {
 
     fun formattedData(): Map<String, String> {
         val name2data = rawProfilingData().entries.toMutableList()
-        val sum = name2data.asSequence().fold(0L) { acc, e -> acc + millis(e.value.dur) }
+        val sum = name2data.asSequence().fold(0L) { acc, e -> acc + e.value.dur }
         var toReport = (sum * 0.98).toLong()
         // sort in-pace descending
-        Collections.sort(name2data, Comparator.comparingLong({it.value.dur})) 
-        return name2data
-            .asSequence()
-            .takeWhile { (_, data) -> toReport > 0 && millis(data.dur) > 0 }
-            .map { (name, data) ->
-                toReport -= millis(data.dur)
+        Collections.sort(name2data, Comparator.comparingLong<Map.Entry<String, DurFreq>?>({it.value.dur}).reversed())
+        val result = LinkedHashMap<String, String>()
+        name2data.asSequence()
+            .takeWhile { (_, data) -> toReport > 0 && data.dur > 10000 }
+            .forEach { (name, data) ->
+                toReport -= data.dur
 
                 val parentName2Dur = data.parentDurs.entries.toMutableList()
-                val parentsTotal = parentName2Dur.fold(0L) { acc, e -> acc + millis(e.value) }
+                val parentsTotal = parentName2Dur.fold(0L) { acc, e -> acc + e.value }
                 var parentsToReport = (parentsTotal * 0.98).toLong()
 
                 //sort in-place descending
-                Collections.sort(parentName2Dur, Comparator.comparingLong({it.value}))
+                Collections.sort(parentName2Dur, Comparator.comparingLong<MutableMap.MutableEntry<String, Long>?>({it.value}).reversed())
                 val sb = StringBuilder("[time: %1\$Ts.%1\$TLs count: %2\$d]".format(millis(data.dur), data.freq))
                 parentName2Dur
                     .asSequence()
-                    .takeWhile { (_, dur) -> parentsToReport > 0 && millis(dur) > 0 }
+                    .takeWhile { (_, dur) -> parentsToReport > 0 && dur > 10000 }
                     .forEach { (parentName, dur) ->
-                        parentsToReport -= millis(dur)
-
+                        parentsToReport -= dur
                         sb.append("\n    \\-- ${parentName}")
                             .append(" [time: %1\$Ts.%1\$TLs".format(millis(dur)))
                             .append(" count: %1\$d]".format(data.parentFreqs[parentName] ?: 0)) }
 
-                name to sb.toString()
-            }.toMap()
+                result.put(name, sb.toString())
+            }
+        return result
     }
 
     fun millis(nanos: Long): Long = nanos / 1000000L
