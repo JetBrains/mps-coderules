@@ -110,9 +110,9 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
 
     private fun putValue(matchTerm: Term, index: Int, value: T) {
         val seen = IdentityHashMap<Term, Term>()
-        val nodeStack = arrayListOf(root)
-        val termStack = arrayListOf(matchTerm)
-        val argPool = arrayListOf<Term>()
+        val nodeStack = arrayDequeOf(root)
+        val termStack = arrayDequeOf(matchTerm)
+        val argPool = ArrayList<Term>(16)
         while (!termStack.isEmpty()) {
             val node = nodeStack.peek()
             val term = termStack.pop()
@@ -165,7 +165,7 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
         if (head.removeValue(value, index)) {
             while (nodeStack.isNotEmpty()) {
                 val base = nodeStack.pop()
-                base.removeIndex(index)
+//                base.removeIndex(index)
                 if (head.isLeaf()) {
                     base.dropNext(head)
                 }
@@ -291,29 +291,29 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
     private class PathNode<T>(val symbol: Any,
                               val arity: Int)
     {
-        private val indexCardinalities = TIntIntHashMap() // map of index cardinalities
+        private val indexBits = BitSet() // map of index cardinalities
 
         private val next = HashMap<Any, PathNode<T>>(8)
 
-        private val indexedValues = TIntObjectHashMap<HashSet<T>>()
+        private var indexedValues: TIntObjectHashMap<HashSet<T>>? = null
 
-        fun allIndexMask(): IndexMask = emptyIndexMask().also { it.addAll(indexCardinalities.keySet()) }
+        fun allIndexMask(): IndexMask = emptyIndexMask().also { it.addAll(indexBits) }
 
         fun addIndex(index: Int) {
             assert(index >= 0)
-            val card = if (indexCardinalities.contains(index)) indexCardinalities.get(index) else 0
-            indexCardinalities.put(index, card + 1)            
+//            val card = if (indexBits.contains(index)) indexBits.get(index) else 0
+            indexBits.set(index)
         }
-
-        fun removeIndex(index: Int) {
-            assert(index >= 0)
-            val card = if (indexCardinalities.contains(index)) indexCardinalities.get(index) else 0
-            assert(card > 0)
-            if (card > 1) indexCardinalities.put(index, card - 1) else indexCardinalities.remove(index)
-        }
+//
+//        fun removeIndex(index: Int) {
+//            assert(index >= 0)
+//            val card = if (indexBits.contains(index)) indexBits.get(index) else 0
+//            assert(card > 0)
+//            if (card > 1) indexBits.set(index) else indexBits.remove(index)
+//        }
 
         fun forEachValue(callback: (T, Int) -> Unit ) {
-            indexedValues.forEachEntry { index, values ->
+            indexedValues?.forEachEntry { index, values ->
                 values.forEach { callback(it, index) }
                 true
             }
@@ -323,12 +323,12 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
             val iter = indexMask.iterator()
             while (iter.hasNext()) {
                 val index = iter.next()
-                if (indexedValues.containsKey(index)) { indexedValues.get(index).forEach { callback(it, index) } }
+                if (indexedValues?.containsKey(index) ?: false) { indexedValues?.get(index)?.forEach { callback(it, index) } }
             }
         }
 
         fun forEachValueWithIndex(index: Int, callback: (T, Int) -> Unit ) {
-            if (indexedValues.containsKey(index)) { indexedValues.get(index).forEach { callback(it, index) } }
+            if (indexedValues?.containsKey(index) ?: false) { indexedValues?.get(index)?.forEach { callback(it, index) } }
         }
 
         fun isLeaf(): Boolean = next.isEmpty()
@@ -343,7 +343,7 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
             next.values.forEach { n ->
                 // containsAny ~~ NOT( all( NOT(contains))
                 if (indexMask != null) {
-                    if (!n.indexCardinalities.forEach { idx -> !indexMask.contains(idx) }) {
+                    if (!n.indexBits.stream().allMatch { idx -> !indexMask.contains(idx) }) {
                         res.add(n)
                     }
                 } else {
@@ -403,16 +403,17 @@ class ClassicIndexedTermTrie<T> : IndexedTermTrie<T> {
         fun addValue(value: T, index: Int) {
             assert (index >= 0)
             addIndex(index)
-            (indexedValues.get(index) ?: hashSetOf<T>().also { indexedValues.put(index, it) }).add(value)
+            if (indexedValues == null) indexedValues = TIntObjectHashMap<HashSet<T>>()
+            (indexedValues?.get(index) ?: hashSetOf<T>().also { indexedValues?.put(index, it) }).add(value)
         }
 
         fun removeValue(value: T, index: Int): Boolean {
             assert (index >= 0)
-            if (indexedValues.get(index)?.remove(value) ?: false) {
-                if (indexedValues.get(index)?.isEmpty() ?: false) {
-                    indexedValues.remove(index)
+            if (indexedValues?.get(index)?.remove(value) ?: false) {
+                if (indexedValues?.get(index)?.isEmpty() ?: false) {
+                    indexedValues?.remove(index)
                 }
-                removeIndex(index)
+//                removeIndex(index)
                 return true
             }
             return false

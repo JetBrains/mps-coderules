@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.util
 
+import java.util.*
 import com.github.andrewoma.dexx.collection.ConsList as DexxCollectionConsList
 import com.github.andrewoma.dexx.collection.Map as DexxCollectionMap
 import com.github.andrewoma.dexx.collection.Maps as DexxCollectionMaps
@@ -57,3 +58,6 @@ interface Sets {
 }
 
 fun <T> PersList<T>.without(t: T) = remove(t)
+
+fun <T> arrayDequeOf(vararg elements: T): ArrayDeque<T> =
+    if (elements.size == 0) ArrayDeque() else ArrayDeque(Arrays.asList(* elements))
