@@ -37236,6 +37236,7 @@
     </node>
     <node concept="1nLNMY" id="12QmIo_7seY" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_expression" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="12QmIo_7seZ" role="1nLNMH">
         <node concept="3clFbJ" id="1stFrrz_apB" role="3cqZAp">
           <node concept="3clFbS" id="1stFrrz_apD" role="3clFbx">
@@ -37299,6 +37300,7 @@
     </node>
     <node concept="1nLNMY" id="12QmIo_7sf2" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_operation" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="12QmIo_7sf3" role="1nLNMH">
         <node concept="1nLNNL" id="12QmIo_7sf4" role="3cqZAp">
           <node concept="1nLNMm" id="12QmIo_7sf5" role="1nLNNK">
@@ -37346,6 +37348,7 @@
     </node>
     <node concept="1nLNMY" id="12QmIo_7sf6" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_variableDeclaration" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="12QmIo_7sf7" role="1nLNMH">
         <node concept="1nLNNL" id="12QmIo_7sf8" role="3cqZAp">
           <node concept="1nLNMm" id="12QmIo_7sf9" role="1nLNNK">
@@ -37393,6 +37396,7 @@
     </node>
     <node concept="1nLNMY" id="12QmIo_7sfa" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_abstractCreator" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="12QmIo_7sfb" role="1nLNMH">
         <node concept="1nLNNL" id="12QmIo_7sfc" role="3cqZAp">
           <node concept="1nLNMm" id="12QmIo_7sfd" role="1nLNNK">
@@ -37440,6 +37444,7 @@
     </node>
     <node concept="1nLNMY" id="3rrtTcSpvWZ" role="1nK1Vg">
       <property role="TrG5h" value="expect_typeOf_conceptFunction" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="3rrtTcSpvX0" role="1nLNMH">
         <node concept="1nLNNL" id="3rrtTcSpxoS" role="3cqZAp">
           <node concept="1nLNMm" id="3rrtTcSpxoT" role="1nLNNK">
@@ -37505,6 +37510,7 @@
     </node>
     <node concept="1nLNMY" id="77mpfA3Ir$v" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_expression" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="77mpfA3Ir$w" role="1nLNMH">
         <node concept="1nLNNL" id="77mpfA3Ir$x" role="3cqZAp">
           <node concept="1nLNMm" id="77mpfA3Ir$y" role="1nLNNK">
@@ -37649,6 +37655,7 @@
     </node>
     <node concept="1nLNMY" id="77mpfA3Ir$4" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_operation" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="77mpfA3Ir$5" role="1nLNMH">
         <node concept="1nLNNL" id="77mpfA3IuPF" role="3cqZAp">
           <node concept="1nLNMm" id="77mpfA3IuPG" role="1nLNNK">
@@ -37793,6 +37800,7 @@
     </node>
     <node concept="1nLNMY" id="77mpfA3IrzD" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_variableDeclaration" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="77mpfA3IrzE" role="1nLNMH">
         <node concept="1nLNNL" id="77mpfA3IvRN" role="3cqZAp">
           <node concept="1nLNMm" id="77mpfA3IvRO" role="1nLNNK">
@@ -37937,6 +37945,7 @@
     </node>
     <node concept="1nLNMY" id="77mpfA3Irze" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_abstractCreator" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="77mpfA3Irzf" role="1nLNMH">
         <node concept="1nLNNL" id="77mpfA3IyqW" role="3cqZAp">
           <node concept="1nLNMm" id="77mpfA3IyqX" role="1nLNNK">
@@ -38081,6 +38090,7 @@
     </node>
     <node concept="1nLNMY" id="3rrtTcSpy_1" role="1nK1Vg">
       <property role="TrG5h" value="typeOf_conceptFunction" />
+      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="3rrtTcSpy_2" role="1nLNMH">
         <node concept="1nLNNL" id="3rrtTcSp$Y$" role="3cqZAp">
           <node concept="1nLNMm" id="3rrtTcSp$Y_" role="1nLNNK">
