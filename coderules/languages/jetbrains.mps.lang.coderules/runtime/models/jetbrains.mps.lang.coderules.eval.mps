@@ -15467,9 +15467,7 @@
                         <node concept="2ShNRf" id="1bodCZA7KAj" role="37wK5m">
                           <node concept="1pGfFk" id="1bodCZA7KAk" role="2ShVmc">
                             <ref role="37wK5l" node="5HxDM7DadcM" resolve="ProgramFactory.TemplateApplicator" />
-                            <node concept="3clFbT" id="1bodCZA7KAl" role="37wK5m">
-                              <property role="3clFbU" value="true" />
-                            </node>
+                            <node concept="3clFbT" id="1bodCZA7KAl" role="37wK5m" />
                             <node concept="37vLTw" id="1bodCZA7KAm" role="37wK5m">
                               <ref role="3cqZAo" node="5HxDM7D9VFX" resolve="isPreamble" />
                             </node>
