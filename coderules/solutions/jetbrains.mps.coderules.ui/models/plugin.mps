@@ -14241,10 +14241,10 @@
                     <ref role="3cqZAo" node="4XsNDZYBNRm" resolve="ttRef" />
                   </node>
                   <node concept="Xl_RD" id="4XsNDZYBNRP" role="37wK5m">
-                    <property role="Xl_RC" value="Show empty required nodes" />
+                    <property role="Xl_RC" value="Show empty source nodes" />
                   </node>
                   <node concept="Xl_RD" id="4XsNDZYBNRQ" role="37wK5m">
-                    <property role="Xl_RC" value="Show required nodes which didn't result in any templates applied" />
+                    <property role="Xl_RC" value="Show nodes which didn't result in any templates applied" />
                   </node>
                   <node concept="10M0yZ" id="4XsNDZYUC1Z" role="37wK5m">
                     <ref role="3cqZAo" node="4Q576Rc29zV" resolve="Node" />
@@ -18671,7 +18671,9 @@
         <property role="TrG5h" value="state" />
         <node concept="10P_77" id="4XsNDZYCrHo" role="1tU5fm" />
         <node concept="3Tm6S6" id="4XsNDZYCrHp" role="1B3o_S" />
-        <node concept="3clFbT" id="4XsNDZYCrHq" role="33vP2m" />
+        <node concept="3clFbT" id="4XsNDZYCrHq" role="33vP2m">
+          <property role="3clFbU" value="true" />
+        </node>
       </node>
       <node concept="312cEg" id="4XsNDZYCrHr" role="jymVt">
         <property role="TrG5h" value="groupedEntities" />
@@ -19042,9 +19044,7 @@
         <property role="TrG5h" value="state" />
         <node concept="10P_77" id="4XsNDZYDzjV" role="1tU5fm" />
         <node concept="3Tm6S6" id="4XsNDZYDzjW" role="1B3o_S" />
-        <node concept="3clFbT" id="4XsNDZYDzjX" role="33vP2m">
-          <property role="3clFbU" value="true" />
-        </node>
+        <node concept="3clFbT" id="4XsNDZYDzjX" role="33vP2m" />
       </node>
       <node concept="2tJIrI" id="4XsNDZYDzjZ" role="jymVt" />
       <node concept="3clFbW" id="4XsNDZYDzk0" role="jymVt">
@@ -20245,7 +20245,7 @@
       <property role="TrG5h" value="templateTraceView" />
       <node concept="3Tm6S6" id="4XsNDZYpjz9" role="1B3o_S" />
       <node concept="3uibUv" id="4XsNDZYpjza" role="1tU5fm">
-        <ref role="3uigEE" node="4tC1JBnkXDV" resolve="SimpleTemplateTraceViewer" />
+        <ref role="3uigEE" node="4tC1JBnkXDV" resolve="SimpleTemplateTraceModel" />
       </node>
     </node>
     <node concept="312cEg" id="YGS68MKD$W" role="jymVt">
@@ -30021,14 +30021,14 @@
     </node>
   </node>
   <node concept="312cEu" id="4tC1JBniL1U">
-    <property role="3GE5qa" value="trace.trace_tmpl" />
+    <property role="3GE5qa" value="trace.template" />
     <property role="TrG5h" value="TemplateTraceTree" />
     <node concept="2tJIrI" id="4tC1JBntczo" role="jymVt" />
     <node concept="312cEg" id="4tC1JBntS2D" role="jymVt">
       <property role="TrG5h" value="traceView" />
       <node concept="3Tm6S6" id="4tC1JBntQj8" role="1B3o_S" />
       <node concept="3uibUv" id="4tC1JBntRTC" role="1tU5fm">
-        <ref role="3uigEE" node="4tC1JBniRn6" resolve="TemplateTraceView" />
+        <ref role="3uigEE" node="4tC1JBniRn6" resolve="TemplateTraceModel" />
       </node>
     </node>
     <node concept="312cEg" id="4tC1JBnAEtZ" role="jymVt">
@@ -30060,6 +30060,10 @@
           <node concept="3uibUv" id="4Q576Rc0oNy" role="HW$YZ">
             <ref role="3uigEE" to="hano:4Q576Rbjy_X" resolve="TemplateTrace.PointKind" />
           </node>
+          <node concept="Rm8GO" id="6nOPMUvA8FA" role="HW$Y0">
+            <ref role="1Px2BO" to="hano:4Q576Rbjy_X" resolve="PointKind" />
+            <ref role="Rm8GQ" to="hano:4Q576RbjAsm" resolve="Template" />
+          </node>
         </node>
       </node>
     </node>
@@ -30067,9 +30071,7 @@
       <property role="TrG5h" value="showEmptyRequiredNodes" />
       <node concept="3Tm6S6" id="4Q576RbILaH" role="1B3o_S" />
       <node concept="10P_77" id="4Q576RbIMz8" role="1tU5fm" />
-      <node concept="3clFbT" id="4Q576RbIQvr" role="33vP2m">
-        <property role="3clFbU" value="true" />
-      </node>
+      <node concept="3clFbT" id="4Q576RbIQvr" role="33vP2m" />
     </node>
     <node concept="312cEg" id="3IJoaDJdzmi" role="jymVt">
       <property role="TrG5h" value="showEmptyTemplateNodes" />
@@ -30202,7 +30204,7 @@
       <node concept="37vLTG" id="4tC1JBntShX" role="3clF46">
         <property role="TrG5h" value="traceView" />
         <node concept="3uibUv" id="4tC1JBntShZ" role="1tU5fm">
-          <ref role="3uigEE" node="4tC1JBniRn6" resolve="TemplateTraceView" />
+          <ref role="3uigEE" node="4tC1JBniRn6" resolve="TemplateTraceModel" />
         </node>
       </node>
       <node concept="3cqZAl" id="4tC1JBntPdF" role="3clF45" />
@@ -30268,8 +30270,10 @@
           <node concept="3cpWsn" id="4tC1JBnyZKJ" role="3cpWs9">
             <property role="TrG5h" value="children" />
             <node concept="A3Dl8" id="4tC1JBnyZKD" role="1tU5fm">
-              <node concept="3uibUv" id="4tC1JBnz107" role="A3Ik2">
-                <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+              <node concept="3qUE_q" id="6nOPMUvcroQ" role="A3Ik2">
+                <node concept="3uibUv" id="6nOPMUvcuc2" role="3qUE_r">
+                  <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+                </node>
               </node>
             </node>
             <node concept="2OqwBi" id="4tC1JBnyLHy" role="33vP2m">
@@ -30975,31 +30979,34 @@
             </node>
             <node concept="3cpWs6" id="4Q576Rc5NkT" role="3cqZAp">
               <node concept="1Wc70l" id="4Q576Rc67pS" role="3cqZAk">
-                <node concept="3clFbC" id="4Q576Rc7mDb" role="3uHU7B">
-                  <node concept="Rm8GO" id="4Q576Rc7tQo" role="3uHU7w">
-                    <ref role="Rm8GQ" to="hano:4Q576RbjAsm" resolve="Template" />
-                    <ref role="1Px2BO" to="hano:4Q576Rbjy_X" resolve="TemplateTrace.PointKind" />
-                  </node>
-                  <node concept="2OqwBi" id="4Q576Rc7jXF" role="3uHU7B">
-                    <node concept="37vLTw" id="4Q576Rc7hpR" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4Q576Rc5otW" resolve="parent" />
+                <node concept="1X3_iC" id="6nOPMUvxU35" role="lGtFl">
+                  <property role="3V$3am" value="leftExpression" />
+                  <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367580" />
+                  <node concept="3clFbC" id="4Q576Rc7mDb" role="8Wnug">
+                    <node concept="Rm8GO" id="4Q576Rc7tQo" role="3uHU7w">
+                      <ref role="Rm8GQ" to="hano:4Q576RbjAsm" resolve="Template" />
+                      <ref role="1Px2BO" to="hano:4Q576Rbjy_X" resolve="TemplateTrace.PointKind" />
                     </node>
-                    <node concept="liA8E" id="4Q576Rc7kBE" role="2OqNvi">
-                      <ref role="37wK5l" to="hano:4Q576RbjCXh" resolve="kind" />
+                    <node concept="2OqwBi" id="4Q576Rc7jXF" role="3uHU7B">
+                      <node concept="37vLTw" id="4Q576Rc7hpR" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4Q576Rc5otW" resolve="parent" />
+                      </node>
+                      <node concept="liA8E" id="4Q576Rc7kBE" role="2OqNvi">
+                        <ref role="37wK5l" to="hano:4Q576RbjCXh" resolve="kind" />
+                      </node>
                     </node>
                   </node>
                 </node>
-                <node concept="3fqX7Q" id="6YRY30_Ofho" role="3uHU7w">
-                  <node concept="1eOMI4" id="6YRY30_PJd2" role="3fr31v">
-                    <node concept="3eOSWO" id="6YRY30_PMRf" role="1eOMHV">
-                      <node concept="3cmrfG" id="6YRY30_POwx" role="3uHU7w">
-                        <property role="3cmrfH" value="0" />
-                      </node>
-                      <node concept="37vLTw" id="6YRY30_PJd3" role="3uHU7B">
-                        <ref role="3cqZAo" node="6YRY30_L_hn" resolve="totalNodeTraceChildren" />
-                      </node>
-                    </node>
+                <node concept="3clFbC" id="6nOPMUvxBFS" role="3uHU7w">
+                  <node concept="3cmrfG" id="6nOPMUvxIzX" role="3uHU7w">
+                    <property role="3cmrfH" value="0" />
                   </node>
+                  <node concept="37vLTw" id="6YRY30_PJd3" role="3uHU7B">
+                    <ref role="3cqZAo" node="6YRY30_L_hn" resolve="totalNodeTraceChildren" />
+                  </node>
+                </node>
+                <node concept="3clFbT" id="6nOPMUvy5QL" role="3uHU7B">
+                  <property role="3clFbU" value="true" />
                 </node>
               </node>
             </node>
@@ -31062,16 +31069,12 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3fqX7Q" id="6YRY30_OeJG" role="3uHU7w">
-                    <node concept="1eOMI4" id="6YRY30_PRSs" role="3fr31v">
-                      <node concept="3eOSWO" id="6YRY30_PRTm" role="1eOMHV">
-                        <node concept="3cmrfG" id="6YRY30_PRTn" role="3uHU7w">
-                          <property role="3cmrfH" value="0" />
-                        </node>
-                        <node concept="37vLTw" id="6YRY30_PRTo" role="3uHU7B">
-                          <ref role="3cqZAo" node="6YRY30_LA08" resolve="totalTemplateTraceChildren" />
-                        </node>
-                      </node>
+                  <node concept="3clFbC" id="6nOPMUvxNsc" role="3uHU7w">
+                    <node concept="3cmrfG" id="6nOPMUvxRNq" role="3uHU7w">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="37vLTw" id="6YRY30_PRTo" role="3uHU7B">
+                      <ref role="3cqZAo" node="6YRY30_LA08" resolve="totalTemplateTraceChildren" />
                     </node>
                   </node>
                 </node>
@@ -31751,7 +31754,7 @@
   </node>
   <node concept="312cEu" id="4tC1JBntaxx">
     <property role="TrG5h" value="TemplateTraceTreeNode" />
-    <property role="3GE5qa" value="trace.trace_tmpl" />
+    <property role="3GE5qa" value="trace.template" />
     <node concept="312cEg" id="4tC1JBnt_ue" role="jymVt">
       <property role="TrG5h" value="point" />
       <node concept="3uibUv" id="4tC1JBnt_iR" role="1tU5fm">
@@ -32145,13 +32148,15 @@
     <node concept="2tJIrI" id="1_AnebxxKvY" role="jymVt" />
   </node>
   <node concept="312cEu" id="4tC1JBnkXDV">
-    <property role="3GE5qa" value="trace.trace_tmpl" />
-    <property role="TrG5h" value="SimpleTemplateTraceViewer" />
+    <property role="3GE5qa" value="trace.template" />
+    <property role="TrG5h" value="SimpleTemplateTraceModel" />
     <node concept="312cEg" id="4Q576RaZNVi" role="jymVt">
       <property role="TrG5h" value="origins" />
-      <node concept="3vKaQO" id="4Q576RaZNw0" role="1tU5fm">
-        <node concept="3uibUv" id="4Q576RaZNRS" role="3O5elw">
-          <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+      <node concept="A3Dl8" id="6nOPMUv94ck" role="1tU5fm">
+        <node concept="3qUE_q" id="6nOPMUv94CD" role="A3Ik2">
+          <node concept="3uibUv" id="6nOPMUv94Yk" role="3qUE_r">
+            <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+          </node>
         </node>
       </node>
       <node concept="3Tm6S6" id="4Q576RaZO47" role="1B3o_S" />
@@ -32196,14 +32201,16 @@
     <node concept="2tJIrI" id="4tC1JBnm8Jd" role="jymVt" />
     <node concept="3Tm1VV" id="4tC1JBnkXDW" role="1B3o_S" />
     <node concept="3uibUv" id="4tC1JBnm4Ud" role="EKbjA">
-      <ref role="3uigEE" node="4tC1JBniRn6" resolve="TemplateTraceView" />
+      <ref role="3uigEE" node="4tC1JBniRn6" resolve="TemplateTraceModel" />
     </node>
     <node concept="3clFb_" id="4tC1JBnsXh3" role="jymVt">
       <property role="TrG5h" value="getOrigins" />
       <node concept="3Tm1VV" id="4tC1JBnsXh5" role="1B3o_S" />
       <node concept="A3Dl8" id="4tC1JBnsXh6" role="3clF45">
-        <node concept="3uibUv" id="4tC1JBnsXh7" role="A3Ik2">
-          <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+        <node concept="3qUE_q" id="6nOPMUv93sn" role="A3Ik2">
+          <node concept="3uibUv" id="6nOPMUv940E" role="3qUE_r">
+            <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+          </node>
         </node>
       </node>
       <node concept="3clFbS" id="4tC1JBnsXh8" role="3clF47">
@@ -32252,8 +32259,10 @@
       <property role="TrG5h" value="expand" />
       <node concept="3Tm1VV" id="4tC1JBnsXhe" role="1B3o_S" />
       <node concept="A3Dl8" id="4tC1JBnsXhf" role="3clF45">
-        <node concept="3uibUv" id="4tC1JBnsXhg" role="A3Ik2">
-          <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+        <node concept="3qUE_q" id="6nOPMUvb1Ry" role="A3Ik2">
+          <node concept="3uibUv" id="6nOPMUvb2dd" role="3qUE_r">
+            <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+          </node>
         </node>
       </node>
       <node concept="3clFbS" id="4tC1JBnsXhh" role="3clF47">
@@ -32281,16 +32290,18 @@
     <node concept="2tJIrI" id="4tC1JBnt0eK" role="jymVt" />
   </node>
   <node concept="3HP615" id="4tC1JBniRn6">
-    <property role="3GE5qa" value="trace.trace_tmpl" />
-    <property role="TrG5h" value="TemplateTraceView" />
+    <property role="3GE5qa" value="trace.template" />
+    <property role="TrG5h" value="TemplateTraceModel" />
     <node concept="2tJIrI" id="4tC1JBnkQu9" role="jymVt" />
     <node concept="3clFb_" id="4tC1JBnm8oa" role="jymVt">
       <property role="TrG5h" value="getOrigins" />
       <node concept="3clFbS" id="4tC1JBnm8od" role="3clF47" />
       <node concept="3Tm1VV" id="4tC1JBnm8oe" role="1B3o_S" />
       <node concept="A3Dl8" id="4tC1JBnm88j" role="3clF45">
-        <node concept="3uibUv" id="4tC1JBnm8nX" role="A3Ik2">
-          <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+        <node concept="3qUE_q" id="6nOPMUv9Kcb" role="A3Ik2">
+          <node concept="3uibUv" id="6nOPMUv9KhX" role="3qUE_r">
+            <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+          </node>
         </node>
       </node>
     </node>
@@ -32313,8 +32324,10 @@
       <node concept="3clFbS" id="4tC1JBnm7$F" role="3clF47" />
       <node concept="3Tm1VV" id="4tC1JBnm7$G" role="1B3o_S" />
       <node concept="A3Dl8" id="4tC1JBnlJF8" role="3clF45">
-        <node concept="3uibUv" id="4tC1JBnm7$$" role="A3Ik2">
-          <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+        <node concept="3qUE_q" id="6nOPMUvamqi" role="A3Ik2">
+          <node concept="3uibUv" id="6nOPMUvamw4" role="3qUE_r">
+            <ref role="3uigEE" to="hano:4tC1JBnl0fF" resolve="TemplateTrace.TracePoint" />
+          </node>
         </node>
       </node>
       <node concept="37vLTG" id="4tC1JBnm7Ic" role="3clF46">
@@ -32935,7 +32948,7 @@
   </node>
   <node concept="312cEu" id="4Q576Rc26gY">
     <property role="TrG5h" value="Icons" />
-    <property role="3GE5qa" value="trace.trace_tmpl" />
+    <property role="3GE5qa" value="trace.template" />
     <node concept="Wx3nA" id="4Q576Rc29zV" role="jymVt">
       <property role="TrG5h" value="Node" />
       <property role="3TUv4t" value="true" />
