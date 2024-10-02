@@ -34,7 +34,7 @@ interface IndexedTermTrie<T> : TermTrie<T> {
 
     fun lookupValues(term: Term, indexMask: IndexMask): Iterable<T>
 
-    fun forValuesWithIndex(term: Term, indexMask: IndexMask?, callback: (T, Int) -> Unit)
+    fun forValuesWithIndex(term: Term, callback: (T, Int) -> Unit)
 
     fun allValues(indexMask: IndexMask): Iterable<T>
 

@@ -180,7 +180,7 @@ class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : Iterable<Ru
                         // all values should be accepted by a meta logical
                         wildcardSelectors[argIdx].add(ruleBit)
                     is Term             ->
-                        termSelectors[argIdx].put(arg, ruleBit,headPos)
+                        termSelectors[argIdx].put(arg, ruleBit, headPos)
                     is Any              ->
                         value2indices.getOrPut(arg) { hashSetOf() }.add(ruleBit to headPos)
                     else                ->
@@ -236,12 +236,10 @@ class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : Iterable<Ru
                 candidateRuleBits.clear()
                 candidateRuleBits.addAll(wildcardIndices)
 
-                val currentSelector = if (refined) selectedRuleBits else null
-
                 val argVal = if (arg is Logical<*>) arg.findRoot().value() else arg
                 when (argVal) {
                     is Term             ->
-                        termIndices.forValuesWithIndex(argVal, currentSelector) { headPos, ruleBit ->
+                        termIndices.forValuesWithIndex(argVal) { headPos, ruleBit ->
                             candidateRuleBits.add(ruleBit)
                             slotVotes.getOrPut(ruleBit to headPos) { BitSet() }.set(argIdx)
                         }
