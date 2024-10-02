@@ -544,7 +544,7 @@
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="104EUzFNW3p" role="1B3o_S" />
       <node concept="3uibUv" id="104EUzFNW3q" role="3clF45">
-        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="573vQv1kkbz" role="11_B2D">
           <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
         </node>
@@ -1873,7 +1873,7 @@
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="5JQSuNswjSh" role="1B3o_S" />
       <node concept="3uibUv" id="5JQSuNswjSi" role="3clF45">
-        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3qUE_q" id="3H0z$hTtspr" role="11_B2D">
           <node concept="3uibUv" id="3H0z$hTtswN" role="3qUE_r">
             <ref role="3uigEE" node="1bm7a6EXvsP" resolve="DataForm" />
@@ -1882,13 +1882,13 @@
       </node>
       <node concept="3clFbS" id="5JQSuNswjSk" role="3clF47">
         <node concept="3clFbF" id="5JQSuNswjSl" role="3cqZAp">
-          <node concept="2YIFZM" id="5JQSuNswjSm" role="3clFbG">
-            <ref role="37wK5l" to="33ny:~Collections.unmodifiableCollection(java.util.Collection)" resolve="unmodifiableCollection" />
+          <node concept="2YIFZM" id="5ZROos5y7zU" role="3clFbG">
+            <ref role="37wK5l" to="33ny:~Collections.unmodifiableList(java.util.List)" resolve="unmodifiableList" />
             <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-            <node concept="2YIFZM" id="5JQSuNswjSn" role="37wK5m">
+            <node concept="2YIFZM" id="5ZROos5y7zV" role="37wK5m">
               <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
               <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...)" resolve="asList" />
-              <node concept="37vLTw" id="5JQSuNswjSo" role="37wK5m">
+              <node concept="37vLTw" id="5ZROos5y7zW" role="37wK5m">
                 <ref role="3cqZAo" node="5JQSuNswjST" resolve="arguments" />
               </node>
             </node>
@@ -3652,7 +3652,7 @@
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="56MMu0Ark7l" role="1B3o_S" />
       <node concept="3uibUv" id="56MMu0Ark7n" role="3clF45">
-        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3qUE_q" id="56MMu0Ark7o" role="11_B2D">
           <node concept="3uibUv" id="573vQv1lmd9" role="3qUE_r">
             <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
@@ -4596,7 +4596,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="47nvOnTT3X$" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
+                          <ref role="37wK5l" to="33ny:~List.iterator()" resolve="iterator" />
                         </node>
                       </node>
                     </node>
@@ -4699,7 +4699,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="6YPNC4NZAWD" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
+                          <ref role="37wK5l" to="33ny:~List.iterator()" resolve="iterator" />
                         </node>
                       </node>
                     </node>
@@ -4802,7 +4802,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="6YPNC4OF4f6" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
+                          <ref role="37wK5l" to="33ny:~List.iterator()" resolve="iterator" />
                         </node>
                       </node>
                     </node>
@@ -5061,7 +5061,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="104EUzFXZ5s" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
+                          <ref role="37wK5l" to="33ny:~List.iterator()" resolve="iterator" />
                         </node>
                       </node>
                     </node>

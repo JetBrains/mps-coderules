@@ -6773,7 +6773,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="3K_0akS_wH2" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
+                  <ref role="37wK5l" to="33ny:~List.iterator()" resolve="iterator" />
                 </node>
               </node>
             </node>
@@ -6828,7 +6828,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3t7_2FgLmh_" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
+                    <ref role="37wK5l" to="33ny:~List.iterator()" resolve="iterator" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3t7_2FgLmhA" role="2OqNvi">
@@ -7129,7 +7129,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="3K_0akS_pDW" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
+                  <ref role="37wK5l" to="33ny:~List.iterator()" resolve="iterator" />
                 </node>
               </node>
             </node>
@@ -7184,7 +7184,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3t7_2FgLnZI" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
+                    <ref role="37wK5l" to="33ny:~List.iterator()" resolve="iterator" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3t7_2FgLnZJ" role="2OqNvi">
