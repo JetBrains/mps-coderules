@@ -17,11 +17,11 @@
 package jetbrains.mps.unification;
 
 import jetbrains.mps.logic.reactor.logical.Logical;
-import jetbrains.mps.logic.reactor.logical.LogicalOwner;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Represents a node in a term graph. The graph may contain cycles. A node in a term
@@ -46,7 +46,7 @@ public interface Term extends Comparable<Term> {
     /**
      * Arguments of a function term.
      */
-    Collection<? extends Term> arguments();
+    List<? extends Term> arguments();
 
     /**
      * A collection of all instances of {@link jetbrains.mps.logic.reactor.logical.Logical}

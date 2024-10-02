@@ -22,7 +22,6 @@ import jetbrains.mps.unification.Term;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -69,7 +68,7 @@ public abstract class MockTerm implements Term {
     }
 
     @Override
-    public Collection<? extends Term> arguments() {
+    public List<? extends Term> arguments() {
         return Collections.emptyList();
     }
 
@@ -99,7 +98,7 @@ public abstract class MockTerm implements Term {
         }
 
         @Override
-        public Collection<Term> arguments() {
+        public List<? extends Term> arguments() {
             return Collections.unmodifiableList(myArgs);
         }
 

@@ -26,8 +26,8 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import static jetbrains.mps.unification.Substitution.FailureCause.CYCLE_DETECTED;
 import static jetbrains.mps.unification.Substitution.FailureCause.SYMBOL_CLASH;
@@ -456,7 +456,7 @@ public class SolverTests {
             }
 
             @Override
-            public Collection<? extends Term> arguments() {
+            public List<? extends Term> arguments() {
                 return Collections.emptyList();
             }
 
