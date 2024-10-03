@@ -28,7 +28,7 @@ class Builder(var rulesList: List<Rule>) : RuleLookup {
 
     override fun lookupRuleByTag(tag: Any): Rule? = tag2rule[tag]
 
-    fun ruleMatcher(): RuleMatcher = createRuleMatcher(this, rules.first().uniqueTag())
+    fun ruleMatcher(): RuleMatcher = createRuleMatcher(rules.first())
 
     fun program(name: String): Program = programBuilder.program(name, rulesList)
     

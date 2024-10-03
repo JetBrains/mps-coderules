@@ -17,7 +17,6 @@
 package jetbrains.mps.logic.reactor.core
 
 import gnu.trove.TIntObjectHashMap
-import gnu.trove.TObjectIntHashMap
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -29,16 +28,22 @@ import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
 typealias RuleBits = BitSet 
+
+typealias HeadBits = BitSet
+    
 fun emptyRuleBits() = BitSet()
+
+fun emptyHeadBits() = BitSet()
+
 
 /**
  * A container for [Rule] instances with the ability to look up by [ConstraintOccurrence].
  *
  * @author Fedor Isakov
  */
-class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : Iterable<Rule>, RuleLookup
+class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : RuleLookup
 {
-    private class IndexedRule(var idx: Int, val rule: Rule)
+    private class OrderedRule(var order: Int, val rule: Rule)
 
     // Terminology:
     // ruleBit - rule's index in the rules list
@@ -49,13 +54,9 @@ class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : Iterable<Ru
 
     private val tag2rule = HashMap<Any, Rule>()
 
-    private val tag2bit = TObjectIntHashMap<Any>()
-
     var nextBit: Int = 0
 
-    private val bit2ruleAndMask = TIntObjectHashMap<Pair<IndexedRule, SlotMask>>()
-
-    private val allRules = LinkedList<IndexedRule>()
+    private val bit2ruleAndMask = TIntObjectHashMap<Pair<OrderedRule, SlotMask>>()
 
     init {
         profiler.profile("build rule index") {
@@ -70,23 +71,23 @@ class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : Iterable<Ru
      */
     fun forOccurrence(occ: ConstraintOccurrence): Iterable<Rule> {
         val (ruleBits, slotMasks) = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
-        val result = ArrayList<IndexedRule>()
+        val result = ArrayList<OrderedRule>()
         val itr = ruleBits.iterator()
         while (itr.hasNext()) {
             bit2ruleAndMask[itr.next()]?.let{
                 result.add(it.first)
             }
         }
-        result.sortBy { it.idx }
+        result.sortBy { it.order }
         return result.map { it.rule }
     }
 
     /**
-     * Returns a pair of rule and bit mask with 1's marking matching slots in constraint's head.
+     * Returns a pair of rule and bit mask with 1's marking matching slots in rule's head.
      */
     fun forOccurrenceWithMask(occ: ConstraintOccurrence): Iterable<Pair<Rule, BitSet>> {
         val (ruleBits, argSlotMasks) = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
-        val result = ArrayList<Pair<IndexedRule, BitSet>>()
+        val result = ArrayList<Pair<OrderedRule, BitSet>>()
         val itr = ruleBits.iterator()
         while (itr.hasNext()) {
             val ruleBit = itr.next()
@@ -98,21 +99,17 @@ class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : Iterable<Ru
             }
         }
 //        }
-        result.sortBy { it.first.idx }
+        result.sortBy { it.first.order }
         return result.map { it.first.rule to it.second }
     }
 
-    override fun iterator(): Iterator<Rule> = allRules.map { it.rule }.iterator()
-
     fun buildIndexFromRules(rules: Iterable<Rule>) {
         rules.forEachIndexed { idx, rule ->
-            val irule = IndexedRule(idx, rule)
-            addRuleToIndex(irule)
-            allRules.add(irule)
+            addRuleToIndex(OrderedRule(idx, rule))
         }
     }
 
-    private fun addRuleToIndex(irule: IndexedRule) {
+    private fun addRuleToIndex(irule: OrderedRule) {
         val uniqueTag = irule.rule.uniqueTag()
         if (tag2rule.containsKey(uniqueTag)) throw IllegalStateException("duplicate rule tag $uniqueTag")
         val head = irule.rule.headKept() + irule.rule.headReplaced()
@@ -123,7 +120,6 @@ class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : Iterable<Ru
         }
 
         tag2rule[uniqueTag] = irule.rule
-        tag2bit.put(uniqueTag, nextBit)
         bit2ruleAndMask.put(nextBit, irule to  slotMask)
 
         nextBit += 1
@@ -131,7 +127,7 @@ class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : Iterable<Ru
 
     /**
      * Represents a mask associated with a single rule.
-     * The mask tells whether or not a particular constraint occurrence can match
+     * The mask tells whether a particular constraint occurrence can match
      * any of the rule's constraints.
      */
     private class SlotMask {
@@ -208,9 +204,11 @@ class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : Iterable<Ru
         }
 
         /**
-         * Returns bit set where 1's indicate the indices of matching rules.
+         * Returns bit set where 1's indicate the indices of matching rules in the first component.
+         * The second component contains a map of rule bit to a mask with 1's corresponding
+         * to the occurrence position in the rule's head.
          */
-        fun select(occ: ConstraintOccurrence): Pair<RuleBits, Map<Int, BitSet>> {
+        fun select(occ: ConstraintOccurrence): Pair<RuleBits, Map<Int, HeadBits>> {
             if (occ.constraint().symbol() != symbol) throw IllegalArgumentException()
 
             // by default select all rules where this constraint is in the head
@@ -264,11 +262,11 @@ class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : Iterable<Ru
 
             selectedRuleBits.retainAll(symbolSelector)
 
-            val slotMasks = HashMap<Int, BitSet>()
+            val slotMasks = HashMap<Int, HeadBits>()
             for ((p, votes) in slotVotes.entries) {
                 val (ruleBit, headPos) = p
                 if (!votes.isEmpty || !wildcardSlots.isEmpty) {
-                    slotMasks.getOrPut(ruleBit) { BitSet() }.set(headPos)
+                    slotMasks.getOrPut(ruleBit) { emptyHeadBits() }.set(headPos)
                 }
             }
 

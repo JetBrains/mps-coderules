@@ -17,11 +17,8 @@
 package jetbrains.mps.logic.reactor.core
 
 import gnu.trove.map.hash.TIntObjectHashMap
-
-
-typealias DispatchingFrontState = Map<Any, RuleMatcher>
-
-internal fun emptyFrontState(): DispatchingFrontState = emptyMap()
+import jetbrains.mps.logic.reactor.program.Rule
+import java.util.IdentityHashMap
 
 /**
  * A front-end interface to [RuleMatcher].
@@ -30,38 +27,38 @@ internal fun emptyFrontState(): DispatchingFrontState = emptyMap()
  */
 class Dispatcher (val ruleIndex: RuleIndex) {
 
-    private val ruletag2matcher = HashMap<Any, RuleMatcher>()
+    private val matcherByRule = IdentityHashMap<Rule, RuleMatcher>()
 
     /**
      * Create new empty [DispatchingFront] ready to accept constraints.
      */
     fun front() = DispatchingFront()
 
-    fun getOrCreateMatcher(ruleTag: Any): RuleMatcher =
-        ruletag2matcher.getOrPut(ruleTag) { createRuleMatcher(ruleIndex, ruleTag) }
+    fun getOrCreateMatcher(rule: Rule): RuleMatcher =
+        matcherByRule.getOrPut(rule) { createRuleMatcher(rule) }
 
     inner class DispatchingFront {
 
-        private val ruletag2probe : HashMap<Any, RuleMatchingProbe>
+        private val probeByRule : IdentityHashMap<Rule, RuleMatchingProbe>
 
-        private val occId2tags : TIntObjectHashMap<MutableList<Any>>
+        private val occId2tags : IdentityHashMap<Occurrence, MutableList<Rule>>
 
         private val matching: Iterable<RuleMatchingProbe>?
 
         constructor() {
-            this.ruletag2probe = hashMapOf()
-            this.occId2tags = TIntObjectHashMap()
+            this.probeByRule = IdentityHashMap()
+            this.occId2tags = IdentityHashMap()
             this.matching = null
         }
 
         private constructor(pred: DispatchingFront, matching: Iterable<RuleMatchingProbe>? = null) {
-            this.ruletag2probe = pred.ruletag2probe
+            this.probeByRule = pred.probeByRule
             this.occId2tags = pred.occId2tags
             this.matching = matching
         }
 
-        fun getOrCreateProbe(ruleTag: Any): RuleMatchingProbe =
-            ruletag2probe.getOrPut(ruleTag) { getOrCreateMatcher(ruleTag).probe() }
+        fun getOrCreateProbe(rule: Rule): RuleMatchingProbe =
+            probeByRule.getOrPut(rule) { getOrCreateMatcher(rule).probe() }
         
         /**
          * Returns all matches satisfied by the constraint occurrences received so far.
@@ -72,9 +69,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
                 allMatches.addAll(probe.matches())
             }
             return allMatches
-        } 
-
-        fun state() : DispatchingFrontState = ruletag2matcher //.asMap()
+        }
 
         /**
          * Returns a [DispatchingFront] instance that is "expanded" with matches corresponding to the
@@ -83,19 +78,16 @@ class Dispatcher (val ruleIndex: RuleIndex) {
         fun expand(activated: Occurrence): DispatchingFront = DispatchingFront(this,
             ruleIndex.forOccurrenceWithMask(activated)
                 .map { (rule, mask) ->
-                    if (!occId2tags.contains(activated.identity)) {
-                        occId2tags.put(activated.identity, arrayListOf())
-                    }
-                    occId2tags[activated.identity].add(rule.uniqueTag())
-                    getOrCreateProbe(rule.uniqueTag()).expand(activated, mask) })
+                    occId2tags.computeIfAbsent(activated) { _ ->  arrayListOf() }.add(rule)
+                    getOrCreateProbe(rule).expand(activated, mask) })
 
         /**
          * Returns a [DispatchingFront] instance that is "contracted": all matches corresponding to the
          * specified discarded constraint occurrence are eliminated.
          */
         fun contract(discarded: Occurrence): DispatchingFront = DispatchingFront(this,
-            occId2tags.remove(discarded.identity)
-                ?.mapNotNull { ruleTag -> ruletag2probe[ruleTag] }
+            occId2tags.remove(discarded)
+                ?.mapNotNull { ruleTag -> probeByRule[ruleTag] }
                 ?.map { probe -> probe.contract(discarded) })
         
         /**
@@ -103,7 +95,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
          * be excluded from any further "match" set returned by [matches].
          */
         internal fun consume(consumedMatch: RuleMatchEx): DispatchingFront {
-            ruletag2probe[consumedMatch.rule().uniqueTag()]?.consume(consumedMatch)
+            probeByRule[consumedMatch.rule()]?.consume(consumedMatch)
             return DispatchingFront(this)
         }
 
