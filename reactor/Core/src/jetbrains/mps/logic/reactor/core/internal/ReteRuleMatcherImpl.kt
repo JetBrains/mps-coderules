@@ -55,10 +55,6 @@ internal class ReteRuleMatcherImpl(private val rule: Rule) : RuleMatcher
 
     override fun rule() = lookupRule()
 
-//    override fun setRuleLookup(ruleLookup: RuleLookup) { this.ruleLookup = ruleLookup }
-//
-//    override fun resetRuleLookup() { this.ruleLookup = null }
-
     override fun newProbe(): RuleMatchingProbe = ReteNetwork(head.size).also { probe = it }
 
     override fun probe(): RuleMatchingProbe = probe ?: newProbe()

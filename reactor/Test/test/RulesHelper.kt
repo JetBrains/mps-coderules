@@ -12,7 +12,7 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-class Builder(var rulesList: List<Rule>) : RuleLookup {
+class Builder(var rulesList: List<Rule>) {
 
     val tag2rule = LinkedHashMap<Any, Rule>()
 
@@ -25,8 +25,6 @@ class Builder(var rulesList: List<Rule>) : RuleLookup {
 
     val rules: List<Rule>
         get() = tag2rule.values.toList()
-
-    override fun lookupRuleByTag(tag: Any): Rule? = tag2rule[tag]
 
     fun ruleMatcher(): RuleMatcher = createRuleMatcher(rules.first())
 

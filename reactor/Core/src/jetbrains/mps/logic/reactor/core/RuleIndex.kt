@@ -41,7 +41,7 @@ fun emptyHeadBits() = BitSet()
  *
  * @author Fedor Isakov
  */
-class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : RuleLookup
+class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null)
 {
     private class OrderedRule(var order: Int, val rule: Rule)
 
@@ -63,8 +63,6 @@ class RuleIndex(rules: Iterable<Rule>, profiler: Profiler? = null) : RuleLookup
             buildIndexFromRules(rules)
         }
     }
-
-    override fun lookupRuleByTag(tag: Any): Rule? = tag2rule[tag]
 
     /**
      * Returns instances of [Rule] that can potentially match the specified [ConstraintOccurrence].
