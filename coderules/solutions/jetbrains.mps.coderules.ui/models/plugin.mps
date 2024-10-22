@@ -143,7 +143,6 @@
         <property id="6547237850567462620" name="caption" index="2XNbzY" />
         <child id="8096638938275469615" name="toolDisposeBlock" index="uR5co" />
         <child id="8096638938275469614" name="toolInitBlock" index="uR5cp" />
-        <child id="6547237850567462848" name="methodDeclaration" index="2XNbBy" />
       </concept>
       <concept id="4295816563224240545" name="jetbrains.mps.lang.plugin.structure.PinTabOperation" flags="ng" index="1kDqZ6">
         <child id="5386424596292315200" name="componentExpression" index="3PF$jx" />
@@ -540,7 +539,6 @@
       <concept id="1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" flags="ngI" index="2WEnae">
         <reference id="1205756909548" name="member" index="2WH_rO" />
       </concept>
-      <concept id="1205769003971" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" flags="ng" index="2XrIbr" />
     </language>
     <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
       <concept id="361130699826193249" name="jetbrains.mps.lang.modelapi.structure.ModulePointer" flags="ng" index="1dCxOk">
@@ -558,12 +556,6 @@
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
-      </concept>
-    </language>
-    <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
-      <concept id="3731567766880819155" name="jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation" flags="nn" index="NWUre">
-        <property id="3731567766880819160" name="methodName" index="NWUr5" />
-        <child id="3731567766880819158" name="returnType" index="NWUrb" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -14419,15 +14411,8 @@
               <ref role="3uigEE" to="jkny:~ToolWindow" resolve="ToolWindow" />
             </node>
             <node concept="2OqwBi" id="19OC8ZGVgr" role="33vP2m">
-              <node concept="1eOMI4" id="19OC8ZGVgs" role="2Oq$k0">
-                <node concept="10QFUN" id="19OC8ZGVgt" role="1eOMHV">
-                  <node concept="3uibUv" id="19OC8ZGVgu" role="10QFUM">
-                    <ref role="3uigEE" to="71xd:~BaseTabbedProjectTool" resolve="BaseTabbedProjectTool" />
-                  </node>
-                  <node concept="37vLTw" id="19OC8ZGVgX" role="10QFUP">
-                    <ref role="3cqZAo" node="19OC8ZGVgV" resolve="tool" />
-                  </node>
-                </node>
+              <node concept="37vLTw" id="1HzEUJkoBJ1" role="2Oq$k0">
+                <ref role="3cqZAo" node="19OC8ZGVgV" resolve="tool" />
               </node>
               <node concept="liA8E" id="19OC8ZGVgw" role="2OqNvi">
                 <ref role="37wK5l" to="71xd:~BaseTool.getToolWindow()" resolve="getToolWindow" />
@@ -27659,23 +27644,6 @@
   <node concept="2wDNrl" id="7kbj6I70U4u">
     <property role="TrG5h" value="CoderulesTool" />
     <property role="2XNbzY" value="Coderules" />
-    <node concept="2XrIbr" id="1PN9XOH5PQS" role="2XNbBy">
-      <property role="TrG5h" value="getContentManager" />
-      <node concept="3uibUv" id="1PN9XOH5RIb" role="3clF45">
-        <ref role="3uigEE" to="v7ux:~ContentManager" resolve="ContentManager" />
-      </node>
-      <node concept="3clFbS" id="1PN9XOH5PQU" role="3clF47">
-        <node concept="3clFbF" id="1PN9XOH6502" role="3cqZAp">
-          <node concept="NWUre" id="1PN9XOH64ZY" role="3clFbG">
-            <property role="NWUr5" value="getContentManager" />
-            <node concept="3uibUv" id="1PN9XOH6ddd" role="NWUrb">
-              <ref role="3uigEE" to="v7ux:~ContentManager" resolve="ContentManager" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tmbuc" id="1PN9XOH6YEl" role="1B3o_S" />
-    </node>
     <node concept="2xpIHi" id="7kbj6I70Ubk" role="uR5cp">
       <node concept="3clFbS" id="7kbj6I70Ubl" role="2VODD2">
         <node concept="3SKdUt" id="2p5jUSWixUT" role="3cqZAp">
