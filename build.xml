@@ -7,7 +7,7 @@
   <property name="build.layout" location="${build.dir}/artifacts/coderules" />
   <property name="ci.build.num" value="9999" />
   <property name="ci.build.tag" value="SNAPSHOT" />
-  <property name="ci.mps.release" value="241" />
+  <property name="ci.mps.release" value="243" />
   <property name="test.jvmargs" value="-Xss2048k -Xmx2048m" />
   <property name="mps.macro.coderules_home" location="${basedir}" />
   <property name="mps_home" location="${basedir}/MPS_HOME" />
@@ -1943,7 +1943,7 @@
         <id>jetbrains.mps.coderules</id>
         <name>MPS Coderules Typechecking</name>
         <description>Typechecking with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.8-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.9-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>com.intellij.modules.platform</depends>
         <depends>jetbrains.mps.core</depends>
@@ -1951,8 +1951,8 @@
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="241.17011" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.1 release of MPS</li><li>Updated Activation Trace View</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="243.21565" until-build="243.*" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.3 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
           <statusBarWidgetFactory implementation="jetbrains.mps.coderules.ideaplugin.TypecheckingWidget$Factory" id="TypecheckingWidget" order="before notificationsWidget"></statusBarWidgetFactory>
@@ -3503,7 +3503,7 @@
         <id>jetbrains.mps.coderules</id>
         <name>MPS Coderules Typechecking</name>
         <description>Typechecking with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.8-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.9-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>com.intellij.modules.platform</depends>
         <depends>jetbrains.mps.core</depends>
@@ -3511,8 +3511,8 @@
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="241.17011" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.1 release of MPS</li><li>Updated Activation Trace View</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="243.21565" until-build="243.*" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.3 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
           <statusBarWidgetFactory implementation="jetbrains.mps.coderules.ideaplugin.TypecheckingWidget$Factory" id="TypecheckingWidget" order="before notificationsWidget"></statusBarWidgetFactory>
