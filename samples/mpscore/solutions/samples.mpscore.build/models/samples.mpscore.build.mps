@@ -289,6 +289,12 @@
             <property role="2pMdty" value="241.17011" />
           </node>
         </node>
+        <node concept="2pNUuL" id="15dbMoXh_5$" role="2pNNFR">
+          <property role="2pNUuO" value="until-build" />
+          <node concept="2pMdtt" id="15dbMoXh_5_" role="2pMdts">
+            <property role="2pMdty" value="241.*" />
+          </node>
+        </node>
       </node>
       <node concept="2pNNFK" id="2fVm_54SZ$e" role="20twgj">
         <property role="2pNNFO" value="change-notes" />

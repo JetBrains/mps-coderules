@@ -5558,7 +5558,7 @@
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.kotlin</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="241.17011" />
+        <idea-version since-build="241.17011" until-build="241.*" />
         <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.1 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
         
         <extensions defaultExtensionNs="com.intellij">
