@@ -12,7 +12,6 @@
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
@@ -24,8 +23,6 @@
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="hq8m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.options(MPS.IDEA/)" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
-    <import index="ctgy" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.plugins(MPS.IDEA/)" />
-    <import index="9ti4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.extensions(MPS.IDEA/)" />
     <import index="j936" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.ui(MPS.IDEA/)" />
     <import index="jkny" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm(MPS.IDEA/)" />
     <import index="mnlj" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.beans(JDK/)" />
@@ -2294,7 +2291,7 @@
       </node>
       <node concept="3Tm6S6" id="39fX5EFCy4h" role="1B3o_S" />
     </node>
-    <node concept="2tJIrI" id="6TxWhg_Bo$b" role="jymVt" />
+    <node concept="2tJIrI" id="1x1Z3NicmCU" role="jymVt" />
     <node concept="312cEg" id="6TxWhg_Bq25" role="jymVt">
       <property role="TrG5h" value="panel" />
       <node concept="3Tm6S6" id="6TxWhg_Bq26" role="1B3o_S" />
@@ -3023,8 +3020,8 @@
                   <node concept="1rXfSq" id="6TxWhgA7CHg" role="37wK5m">
                     <ref role="37wK5l" node="6TxWhg_AqGF" resolve="getText" />
                   </node>
-                  <node concept="37vLTw" id="6TxWhgA7CHh" role="37wK5m">
-                    <ref role="3cqZAo" node="39fX5EFCsBQ" resolve="enabledIcon" />
+                  <node concept="1rXfSq" id="1x1Z3NidPkP" role="37wK5m">
+                    <ref role="37wK5l" node="1x1Z3NidiGN" resolve="getIcon" />
                   </node>
                   <node concept="10M0yZ" id="6TxWhgA7CHi" role="37wK5m">
                     <ref role="3cqZAo" to="dxuu:~SwingConstants.LEFT" resolve="LEFT" />
@@ -3219,20 +3216,8 @@
               </node>
               <node concept="liA8E" id="6TxWhgA86LR" role="2OqNvi">
                 <ref role="37wK5l" to="dxuu:~JLabel.setIcon(javax.swing.Icon)" resolve="setIcon" />
-                <node concept="3K4zz7" id="6TxWhgA8ewY" role="37wK5m">
-                  <node concept="37vLTw" id="6TxWhgA8jtN" role="3K4E3e">
-                    <ref role="3cqZAo" node="39fX5EFCsBQ" resolve="enabledIcon" />
-                  </node>
-                  <node concept="37vLTw" id="6TxWhgA8q5h" role="3K4GZi">
-                    <ref role="3cqZAo" node="39fX5EFCy4f" resolve="disabledIcon" />
-                  </node>
-                  <node concept="2YIFZM" id="4qPSkk6qx_R" role="3K4Cdx">
-                    <ref role="37wK5l" to="rfhd:~Registry.is(java.lang.String)" resolve="is" />
-                    <ref role="1Pybhc" to="rfhd:~Registry" resolve="Registry" />
-                    <node concept="Xl_RD" id="4qPSkk6qx_S" role="37wK5m">
-                      <property role="Xl_RC" value="mps.coderules.typechecking.enabled" />
-                    </node>
-                  </node>
+                <node concept="1rXfSq" id="1x1Z3NidTQF" role="37wK5m">
+                  <ref role="37wK5l" node="1x1Z3NidiGN" resolve="getIcon" />
                 </node>
               </node>
             </node>
@@ -3252,6 +3237,33 @@
           </node>
         </node>
         <node concept="3Tm6S6" id="6TxWhg_BKGI" role="1B3o_S" />
+      </node>
+      <node concept="2tJIrI" id="1x1Z3NidkSw" role="jymVt" />
+      <node concept="3clFb_" id="1x1Z3NidiGN" role="jymVt">
+        <property role="TrG5h" value="getIcon" />
+        <node concept="3Tm6S6" id="1x1Z3NidiGO" role="1B3o_S" />
+        <node concept="3uibUv" id="1x1Z3NidiGP" role="3clF45">
+          <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+        </node>
+        <node concept="3clFbS" id="1x1Z3NidiGt" role="3clF47">
+          <node concept="3clFbF" id="1x1Z3NieAIM" role="3cqZAp">
+            <node concept="3K4zz7" id="1x1Z3NidiGz" role="3clFbG">
+              <node concept="37vLTw" id="1x1Z3NieAIR" role="3K4E3e">
+                <ref role="3cqZAo" node="39fX5EFCsBQ" resolve="enabledIcon" />
+              </node>
+              <node concept="37vLTw" id="1x1Z3NieAIW" role="3K4GZi">
+                <ref role="3cqZAo" node="39fX5EFCy4f" resolve="disabledIcon" />
+              </node>
+              <node concept="2YIFZM" id="1x1Z3NidiGA" role="3K4Cdx">
+                <ref role="37wK5l" to="rfhd:~Registry.is(java.lang.String)" resolve="is" />
+                <ref role="1Pybhc" to="rfhd:~Registry" resolve="Registry" />
+                <node concept="Xl_RD" id="1x1Z3NidiGB" role="37wK5m">
+                  <property role="Xl_RC" value="mps.coderules.typechecking.enabled" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="2tJIrI" id="6TxWhgA8rcX" role="jymVt" />
       <node concept="3clFb_" id="6TxWhg_Egh4" role="jymVt">

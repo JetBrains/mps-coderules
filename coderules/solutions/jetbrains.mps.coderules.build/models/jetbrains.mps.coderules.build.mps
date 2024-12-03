@@ -3316,6 +3316,30 @@
                 </node>
               </node>
             </node>
+            <node concept="398223" id="1x1Z3NieIQ8" role="39821P">
+              <node concept="2HvfSZ" id="1x1Z3NieIQO" role="39821P">
+                <node concept="398BVA" id="1x1Z3NieIQP" role="2HvfZ0">
+                  <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+                  <node concept="2Ry0Ak" id="1x1Z3NieIQQ" role="iGT6I">
+                    <property role="2Ry0Am" value="coderules" />
+                    <node concept="2Ry0Ak" id="1x1Z3NieIQR" role="2Ry0An">
+                      <property role="2Ry0Am" value="solutions" />
+                      <node concept="2Ry0Ak" id="1x1Z3NieIQS" role="2Ry0An">
+                        <property role="2Ry0Am" value="jetbrains.mps.coderules.ideaplugin" />
+                        <node concept="2Ry0Ak" id="1x1Z3NieIQT" role="2Ry0An">
+                          <property role="2Ry0Am" value="icons" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3_J27D" id="1x1Z3NieIQa" role="Nbhlr">
+                <node concept="3Mxwew" id="1x1Z3NieIQK" role="3MwsjC">
+                  <property role="3MwjfP" value="icons" />
+                </node>
+              </node>
+            </node>
             <node concept="Saw0i" id="adIlSvk2_2" role="39821P">
               <ref role="Saw0g" node="adIlSu_N7G" resolve="coderules-ideaplugin" />
             </node>
@@ -3723,6 +3747,30 @@
                 <node concept="3_J27D" id="2CPBoDATIiY" role="Nbhlr">
                   <node concept="3Mxwew" id="2CPBoDATIiZ" role="3MwsjC">
                     <property role="3MwjfP" value="META-INF" />
+                  </node>
+                </node>
+              </node>
+              <node concept="398223" id="1x1Z3NifuvY" role="39821P">
+                <node concept="2HvfSZ" id="1x1Z3NifuvZ" role="39821P">
+                  <node concept="398BVA" id="1x1Z3Nifuw0" role="2HvfZ0">
+                    <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+                    <node concept="2Ry0Ak" id="1x1Z3Nifuw1" role="iGT6I">
+                      <property role="2Ry0Am" value="coderules" />
+                      <node concept="2Ry0Ak" id="1x1Z3Nifuw2" role="2Ry0An">
+                        <property role="2Ry0Am" value="solutions" />
+                        <node concept="2Ry0Ak" id="1x1Z3Nifuw3" role="2Ry0An">
+                          <property role="2Ry0Am" value="jetbrains.mps.coderules.ideaplugin" />
+                          <node concept="2Ry0Ak" id="1x1Z3Nifuw4" role="2Ry0An">
+                            <property role="2Ry0Am" value="icons" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3_J27D" id="1x1Z3Nifuw5" role="Nbhlr">
+                  <node concept="3Mxwew" id="1x1Z3Nifuw6" role="3MwsjC">
+                    <property role="3MwjfP" value="icons" />
                   </node>
                 </node>
               </node>
