@@ -1180,7 +1180,7 @@
           <node concept="2OqwBi" id="3GJd70pu30M" role="3clFbG">
             <node concept="2OqwBi" id="3GJd70ptPRO" role="2Oq$k0">
               <node concept="37vLTw" id="3GJd70ptKxI" role="2Oq$k0">
-                <ref role="3cqZAo" node="5Zr$fBYRFKG" resolve="usedLanguagesBySModelId" />
+                <ref role="3cqZAo" node="5Zr$fBYRFKG" resolve="usedLanguagesBySModelSystemId" />
               </node>
               <node concept="T8wYR" id="3GJd70ptWN5" role="2OqNvi" />
             </node>
@@ -1513,7 +1513,7 @@
             <node concept="3clFbF" id="3GJd70pl1LR" role="3cqZAp">
               <node concept="2OqwBi" id="3GJd70pl73I" role="3clFbG">
                 <node concept="37vLTw" id="3GJd70pl1LP" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5Zr$fBYRFKG" resolve="usedLanguagesBySModelId" />
+                  <ref role="3cqZAo" node="5Zr$fBYRFKG" resolve="usedLanguagesBySModelSystemId" />
                 </node>
                 <node concept="kI3uX" id="3GJd70pleKK" role="2OqNvi">
                   <node concept="2YIFZM" id="55vERwjti0G" role="kIiFs">
@@ -1526,7 +1526,7 @@
                       <node concept="1eOMI4" id="4nDRG5_Vsdh" role="2Oq$k0">
                         <node concept="10QFUN" id="4nDRG5_Vsdi" role="1eOMHV">
                           <node concept="3uibUv" id="4nDRG5_Vsdj" role="10QFUM">
-                            <ref role="3uigEE" node="3GJd70paCjO" resolve="UsedLanguagesCache" />
+                            <ref role="3uigEE" node="3GJd70paCjO" resolve="AspectLookup.UsedLanguagesCache" />
                           </node>
                           <node concept="37vLTw" id="4nDRG5_Vsdk" role="10QFUP">
                             <ref role="3cqZAo" node="3GJd70pfXD1" resolve="cached" />
@@ -1773,7 +1773,7 @@
                 <node concept="2ShNRf" id="4nDRG5_ZdgM" role="37vLTx">
                   <node concept="1pGfFk" id="4nDRG5_ZdgN" role="2ShVmc">
                     <property role="373rjd" value="true" />
-                    <ref role="37wK5l" node="3GJd70pcbpJ" />
+                    <ref role="37wK5l" node="3GJd70pcbpJ" resolve="AspectLookup.UsedLanguagesCache" />
                     <node concept="37vLTw" id="4nDRG5_ZdgO" role="37wK5m">
                       <ref role="3cqZAo" node="500mE4_sraF" resolve="model" />
                     </node>
@@ -1794,7 +1794,7 @@
               <node concept="37vLTI" id="5Zr$fBYTbPy" role="3clFbG">
                 <node concept="3EllGN" id="5Zr$fBYSSG6" role="37vLTJ">
                   <node concept="37vLTw" id="5Zr$fBYSFJb" role="3ElQJh">
-                    <ref role="3cqZAo" node="5Zr$fBYRFKG" resolve="usedLanguagesBySModelId" />
+                    <ref role="3cqZAo" node="5Zr$fBYRFKG" resolve="usedLanguagesBySModelSystemId" />
                   </node>
                   <node concept="2YIFZM" id="55vERwjtERu" role="3ElVtu">
                     <ref role="37wK5l" to="wyt6:~System.identityHashCode(java.lang.Object)" resolve="identityHashCode" />
@@ -2319,7 +2319,7 @@
                 </node>
                 <node concept="3dhRuq" id="1AsznI2A2FN" role="2OqNvi">
                   <node concept="37vLTw" id="4nDRG5zP0lh" role="25WWJ7">
-                    <ref role="3cqZAo" node="4nDRG5zP0ld" resolve="remove" />
+                    <ref role="3cqZAo" node="4nDRG5zP0ld" resolve="toRemove" />
                   </node>
                 </node>
               </node>
@@ -2391,7 +2391,7 @@
                 </node>
                 <node concept="TSZUe" id="1AsznI2AOuI" role="2OqNvi">
                   <node concept="37vLTw" id="4nDRG5zQG62" role="25WWJ7">
-                    <ref role="3cqZAo" node="4nDRG5zQG5Y" resolve="remove" />
+                    <ref role="3cqZAo" node="4nDRG5zQG5Y" resolve="toAdd" />
                   </node>
                 </node>
               </node>
@@ -2841,7 +2841,7 @@
             </node>
           </node>
           <node concept="2AHcQZ" id="4nDRG5A4B3r" role="2AJF6D">
-            <ref role="2AI5Lk" to="wyt6:~Override" />
+            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
           </node>
         </node>
       </node>
@@ -2858,7 +2858,7 @@
                   <node concept="liA8E" id="3GJd70phUfi" role="2OqNvi">
                     <ref role="37wK5l" to="w1kc:~SModelInternal.removeModelListener(jetbrains.mps.smodel.event.SModelListener)" resolve="removeModelListener" />
                     <node concept="37vLTw" id="4nDRG5_T_Sz" role="37wK5m">
-                      <ref role="3cqZAo" node="3GJd70piqj8" resolve="myModelListener" />
+                      <ref role="3cqZAo" node="3GJd70piqj8" resolve="modelListener" />
                     </node>
                   </node>
                   <node concept="1eOMI4" id="3GJd70pi72e" role="2Oq$k0">
@@ -2901,7 +2901,7 @@
               <node concept="2OqwBi" id="4nDRG5_SQAT" role="37vLTJ">
                 <node concept="Xjq3P" id="4nDRG5_SLHB" role="2Oq$k0" />
                 <node concept="2OwXpG" id="4nDRG5_SXT2" role="2OqNvi">
-                  <ref role="2Oxat5" node="3GJd70piqj8" resolve="myModelListener" />
+                  <ref role="2Oxat5" node="3GJd70piqj8" resolve="modelListener" />
                 </node>
               </node>
             </node>
@@ -4295,7 +4295,7 @@
             <node concept="2OqwBi" id="5vVBssDUUIK" role="37vLTJ">
               <node concept="Xjq3P" id="5vVBssDUUP$" role="2Oq$k0" />
               <node concept="2OwXpG" id="5vVBssDUUIN" role="2OqNvi">
-                <ref role="2Oxat5" node="5vVBssDUUhE" resolve="myPriority" />
+                <ref role="2Oxat5" node="5vVBssDUUhE" resolve="priority" />
               </node>
             </node>
             <node concept="37vLTw" id="5vVBssDUUhO" role="37vLTx">
@@ -5299,7 +5299,7 @@
             <node concept="3cpWs6" id="4nDRG5_gMF_" role="3cqZAp">
               <node concept="2ShNRf" id="4nDRG5_hgMK" role="3cqZAk">
                 <node concept="1pGfFk" id="4nDRG5_hgML" role="2ShVmc">
-                  <ref role="37wK5l" node="3KN3A4uXEXp" />
+                  <ref role="37wK5l" node="3KN3A4uXEXp" resolve="AspectClique" />
                   <node concept="37vLTw" id="4nDRG5_hgMM" role="37wK5m">
                     <ref role="3cqZAo" node="3KN3A4uWnnZ" resolve="aspects" />
                   </node>
@@ -5364,7 +5364,7 @@
               <node concept="3cpWs6" id="4nDRG5_hSsn" role="3cqZAp">
                 <node concept="2ShNRf" id="4nDRG5_i2bN" role="3cqZAk">
                   <node concept="1pGfFk" id="4nDRG5_i2bO" role="2ShVmc">
-                    <ref role="37wK5l" node="7u0sJ20M14I" />
+                    <ref role="37wK5l" node="7u0sJ20M14I" resolve="AspectClique" />
                   </node>
                 </node>
               </node>

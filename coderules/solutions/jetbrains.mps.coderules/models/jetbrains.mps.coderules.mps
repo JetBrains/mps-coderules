@@ -170,7 +170,7 @@
         <node concept="3clFbF" id="2r1jTXMuu0R" role="3cqZAp">
           <node concept="37vLTI" id="2r1jTXMuu0T" role="3clFbG">
             <node concept="37vLTw" id="2r1jTXMuu0W" role="37vLTJ">
-              <ref role="3cqZAo" node="2r1jTXMuu0N" resolve="myPlatform" />
+              <ref role="3cqZAo" node="2r1jTXMuu0N" resolve="mpsPlatform" />
             </node>
             <node concept="37vLTw" id="2r1jTXMuu0X" role="37vLTx">
               <ref role="3cqZAo" node="2OeoySeQews" resolve="platform" />

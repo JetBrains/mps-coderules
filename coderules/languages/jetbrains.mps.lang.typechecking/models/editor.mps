@@ -625,7 +625,7 @@
     <property role="3GE5qa" value="typeTerm" />
     <ref role="aqKnT" to="zfi7:1vAI4X$MkW8" resolve="FeatureReferenceExpression" />
     <node concept="3XHNnq" id="KkWtiMpv_M" role="3ft7WO">
-      <ref role="3XGfJA" to="zfi7:1vAI4X$MlAp" />
+      <ref role="3XGfJA" to="zfi7:1vAI4X$MlAp" resolve="feature" />
       <node concept="1WAQ3h" id="KkWtiMpv_R" role="1WZ6D9">
         <node concept="3clFbS" id="KkWtiMpv_T" role="2VODD2">
           <node concept="3clFbF" id="KkWtiMpvUz" role="3cqZAp">

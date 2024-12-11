@@ -1962,7 +1962,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
       <node concept="2AHcQZ" id="7DPseACbDQR" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2tJIrI" id="YGS68MDYlg" role="jymVt" />
@@ -2534,7 +2534,7 @@
                   <node concept="37vLTG" id="1uAGzk0z8yS" role="1bW2Oz">
                     <property role="TrG5h" value="record" />
                     <node concept="3uibUv" id="1uAGzk0z8yT" role="1tU5fm">
-                      <ref role="3uigEE" node="3wxtToDPbdf" resolve="Record" />
+                      <ref role="3uigEE" node="3wxtToDPbdf" resolve="Snapshot.History.Record" />
                       <node concept="3uibUv" id="1uAGzk0z8yU" role="11_B2D">
                         <ref role="3uigEE" to="w7la:~PredicateInvocation" resolve="PredicateInvocation" />
                       </node>
@@ -2606,7 +2606,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="1uAGzk0yUZ5" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="1uAGzk0z3Rl" role="jymVt" />
@@ -6939,7 +6939,7 @@
                 <ref role="3cqZAo" node="2ceN1hDbrAY" resolve="upto" />
               </node>
               <node concept="37vLTw" id="2ceN1hDbvh1" role="37wK5m">
-                <ref role="3cqZAo" node="2ceN1hDbrB0" resolve="selLogicals" />
+                <ref role="3cqZAo" node="2ceN1hDbrB0" resolve="logicalsToEmphasize" />
               </node>
               <node concept="2OqwBi" id="2ceN1hDbxo2" role="37wK5m">
                 <node concept="37vLTw" id="2ceN1hDbwPc" role="2Oq$k0">

@@ -418,7 +418,7 @@
       <property role="TrG5h" value="PROFILER" />
       <node concept="3Tm1VV" id="23Habm2dyBT" role="1B3o_S" />
       <node concept="3uibUv" id="23Habm2dyBU" role="1tU5fm">
-        <ref role="3uigEE" node="2daneBOX7Tv" resolve="Effect.ValueKey" />
+        <ref role="3uigEE" node="2daneBOX7Tv" resolve="ValueKey" />
         <node concept="3uibUv" id="23Habm2dyBV" role="11_B2D">
           <ref role="3uigEE" to="bid0:~Profiler" resolve="Profiler" />
         </node>
@@ -1699,7 +1699,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="1uAGzk0EKhC" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="74PwTvF1tk_" role="jymVt">
@@ -3544,7 +3544,7 @@
         <node concept="3clFbF" id="FQ_DItJKlh" role="3cqZAp">
           <node concept="37vLTI" id="FQ_DItJKlj" role="3clFbG">
             <node concept="37vLTw" id="FQ_DItJKlm" role="37vLTJ">
-              <ref role="3cqZAo" node="FQ_DItJKld" resolve="myScheduler" />
+              <ref role="3cqZAo" node="FQ_DItJKld" resolve="mySubscribeScheduler" />
             </node>
             <node concept="37vLTw" id="FQ_DItJKln" role="37vLTx">
               <ref role="3cqZAo" node="FQ_DIt9s3r" resolve="scheduler" />
@@ -3745,7 +3745,7 @@
                               <node concept="2ShNRf" id="FQ_DIum82D" role="37wK5m">
                                 <node concept="1pGfFk" id="FQ_DIumNhv" role="2ShVmc">
                                   <property role="373rjd" value="true" />
-                                  <ref role="37wK5l" node="FQ_DItKjeO" />
+                                  <ref role="37wK5l" node="FQ_DItKjeO" resolve="DefaultSingleObserver" />
                                   <node concept="3uibUv" id="FQ_DIum82H" role="1pMfVU">
                                     <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                                   </node>
@@ -3779,7 +3779,7 @@
                                           <node concept="3clFbF" id="FQ_DIum82X" role="3cqZAp">
                                             <node concept="2OqwBi" id="FQ_DIum82Y" role="3clFbG">
                                               <node concept="37vLTw" id="FQ_DIum82Z" role="2Oq$k0">
-                                                <ref role="3cqZAo" node="FQ_DItJLl2" resolve="myCurrentObserveSchedule" />
+                                                <ref role="3cqZAo" node="FQ_DItJLl2" resolve="myCurrentObserveScheduler" />
                                               </node>
                                               <node concept="liA8E" id="FQ_DIum830" role="2OqNvi">
                                                 <ref role="37wK5l" node="FQ_DItchB9" resolve="schedule" />
@@ -3840,7 +3840,7 @@
                                             <node concept="3clFbF" id="FQ_DIum83n" role="3cqZAp">
                                               <node concept="2OqwBi" id="FQ_DIum83o" role="3clFbG">
                                                 <node concept="37vLTw" id="FQ_DIum83p" role="2Oq$k0">
-                                                  <ref role="3cqZAo" node="FQ_DItJLl2" resolve="myCurrentObserveSchedule" />
+                                                  <ref role="3cqZAo" node="FQ_DItJLl2" resolve="myCurrentObserveScheduler" />
                                                 </node>
                                                 <node concept="liA8E" id="FQ_DIum83q" role="2OqNvi">
                                                   <ref role="37wK5l" node="FQ_DItchB9" resolve="schedule" />
@@ -3973,7 +3973,7 @@
                   <property role="2bfB8j" value="true" />
                   <property role="373rjd" value="true" />
                   <ref role="1Y3XeK" node="FQ_DItdPSf" resolve="SingleObserver" />
-                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" />
+                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                   <node concept="3Tm1VV" id="FQ_DIugDuM" role="1B3o_S" />
                   <node concept="16syzq" id="FQ_DIugDv4" role="2Ghqu4">
                     <ref role="16sUi3" node="FQ_DIt9szD" resolve="T" />
@@ -4004,7 +4004,7 @@
                       </node>
                     </node>
                     <node concept="2AHcQZ" id="FQ_DIugEdh" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" />
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                     </node>
                   </node>
                   <node concept="3clFb_" id="KkWtiKp65V" role="jymVt">
@@ -4053,7 +4053,7 @@
                       </node>
                     </node>
                     <node concept="2AHcQZ" id="KkWtiKp66c" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" />
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                     </node>
                   </node>
                 </node>
@@ -4141,7 +4141,7 @@
           <node concept="2ShNRf" id="FQ_DIue_e0" role="3clFbG">
             <node concept="1pGfFk" id="FQ_DIueCfG" role="2ShVmc">
               <property role="373rjd" value="true" />
-              <ref role="37wK5l" node="FQ_DIudES9" />
+              <ref role="37wK5l" node="FQ_DIudES9" resolve="Single" />
               <node concept="Xjq3P" id="FQ_DIueCUc" role="37wK5m" />
               <node concept="37vLTw" id="FQ_DIueE0L" role="37wK5m">
                 <ref role="3cqZAo" node="FQ_DIt9sJJ" resolve="mapper" />
@@ -4219,7 +4219,7 @@
         <node concept="3clFbF" id="FQ_DItKAwU" role="3cqZAp">
           <node concept="37vLTI" id="FQ_DItKAwW" role="3clFbG">
             <node concept="37vLTw" id="FQ_DItKAwZ" role="37vLTJ">
-              <ref role="3cqZAo" node="FQ_DItKAwQ" resolve="myT" />
+              <ref role="3cqZAo" node="FQ_DItKAwQ" resolve="mySingletonValue" />
             </node>
             <node concept="37vLTw" id="FQ_DItKAx0" role="37vLTx">
               <ref role="3cqZAo" node="FQ_DItKAlQ" resolve="t" />
@@ -4407,7 +4407,7 @@
           <node concept="1Y3b0j" id="FQ_DIuguhn" role="YeSDq">
             <property role="2bfB8j" value="true" />
             <property role="373rjd" value="true" />
-            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" />
+            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
             <ref role="1Y3XeK" node="FQ_DItchtg" resolve="Scheduler" />
             <node concept="3Tm1VV" id="FQ_DIuguho" role="1B3o_S" />
             <node concept="3clFb_" id="FQ_DIuguk7" role="jymVt">
@@ -4433,7 +4433,7 @@
                 </node>
               </node>
               <node concept="2AHcQZ" id="FQ_DIuguki" role="2AJF6D">
-                <ref role="2AI5Lk" to="wyt6:~Override" />
+                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
               </node>
             </node>
           </node>
@@ -4777,7 +4777,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="FQ_DItKiRb" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="FQ_DItKn$t" role="jymVt" />
@@ -4817,7 +4817,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="FQ_DItKiRj" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>
@@ -4968,7 +4968,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="5lpFZvNS7yS" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="5lpFZvNS8ua" role="jymVt" />
@@ -5049,7 +5049,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="5lpFZvNS7z2" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="5lpFZvNS7hD" role="jymVt" />
@@ -5068,7 +5068,7 @@
     <node concept="2YIFZL" id="36y_5CttgB5" role="jymVt">
       <property role="TrG5h" value="of" />
       <node concept="3uibUv" id="36y_5CttgB6" role="3clF45">
-        <ref role="3uigEE" node="36y_5CtsZff" resolve="Builder" />
+        <ref role="3uigEE" node="36y_5CtsZff" resolve="AbstractEffect.Builder" />
       </node>
       <node concept="3Tm1VV" id="36y_5CttgB7" role="1B3o_S" />
       <node concept="3clFbS" id="36y_5CttgB8" role="3clF47">
@@ -5231,7 +5231,7 @@
             <node concept="2ShNRf" id="36y_5Ctu6fq" role="3clFbG">
               <node concept="1pGfFk" id="36y_5Ctu6fr" role="2ShVmc">
                 <property role="373rjd" value="true" />
-                <ref role="37wK5l" node="6BMBBPCSWZy" />
+                <ref role="37wK5l" node="6BMBBPCSWZy" resolve="AbstractEffect.Some" />
                 <node concept="37vLTw" id="36y_5Ctu6fs" role="37wK5m">
                   <ref role="3cqZAo" node="36y_5CttzUo" resolve="info" />
                 </node>
@@ -5291,7 +5291,7 @@
               <node concept="2ShNRf" id="36y_5Cu2y0T" role="3K4E3e">
                 <node concept="1pGfFk" id="36y_5Cu2y0U" role="2ShVmc">
                   <property role="373rjd" value="true" />
-                  <ref role="37wK5l" node="6BMBBPCSWZy" />
+                  <ref role="37wK5l" node="6BMBBPCSWZy" resolve="AbstractEffect.Some" />
                   <node concept="37vLTw" id="36y_5Cu2y0V" role="37wK5m">
                     <ref role="3cqZAo" node="36y_5CttzUo" resolve="info" />
                   </node>
@@ -5307,7 +5307,7 @@
               <node concept="2ShNRf" id="36y_5Cu2y$x" role="3K4GZi">
                 <node concept="1pGfFk" id="36y_5Cu2y$y" role="2ShVmc">
                   <property role="373rjd" value="true" />
-                  <ref role="37wK5l" node="3bpBM3PNk9l" />
+                  <ref role="37wK5l" node="3bpBM3PNk9l" resolve="AbstractEffect.None" />
                   <node concept="37vLTw" id="36y_5Cu2y$z" role="37wK5m">
                     <ref role="3cqZAo" node="36y_5CttzUo" resolve="info" />
                   </node>
@@ -5334,7 +5334,7 @@
       <property role="TrG5h" value="compose" />
       <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="51ek2rQDq3S" role="3clF45">
-        <ref role="3uigEE" node="5lpFZvOkOLg" resolve="Effect.AbstractEffect" />
+        <ref role="3uigEE" node="5lpFZvOkOLg" resolve="AbstractEffect" />
       </node>
       <node concept="3Tm1VV" id="51ek2rQD9Pz" role="1B3o_S" />
       <node concept="3clFbS" id="51ek2rQD9P$" role="3clF47" />
@@ -5344,7 +5344,7 @@
           <ref role="3uigEE" to="82uw:~Supplier" resolve="Supplier" />
           <node concept="3qUE_q" id="51ek2rQKAV3" role="11_B2D">
             <node concept="3uibUv" id="51ek2rQKClG" role="3qUE_r">
-              <ref role="3uigEE" node="5lpFZvOkOLg" resolve="Effect.AbstractEffect" />
+              <ref role="3uigEE" node="5lpFZvOkOLg" resolve="AbstractEffect" />
             </node>
           </node>
         </node>

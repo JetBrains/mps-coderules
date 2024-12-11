@@ -610,7 +610,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="FQ_DIs05n3" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="FQ_DIs07Lz" role="jymVt" />
@@ -840,7 +840,7 @@
                   <node concept="2ShNRf" id="FQ_DIrv3sf" role="2HTEbv">
                     <node concept="1pGfFk" id="FQ_DIrv3sg" role="2ShVmc">
                       <property role="373rjd" value="true" />
-                      <ref role="37wK5l" to="uwx2:3gNap3fN2iv" />
+                      <ref role="37wK5l" to="uwx2:3gNap3fN2iv" resolve="LogicalValue" />
                       <node concept="10QFUN" id="FQ_DIrv3sh" role="37wK5m">
                         <node concept="37vLTw" id="FQ_DIrv3si" role="10QFUP">
                           <ref role="3cqZAo" node="1msb0mq8QXA" resolve="symbol" />
@@ -875,7 +875,7 @@
                     <node concept="2ShNRf" id="FQ_DIrv2su" role="2HTEbv">
                       <node concept="1pGfFk" id="FQ_DIrv2sv" role="2ShVmc">
                         <property role="373rjd" value="true" />
-                        <ref role="37wK5l" to="uwx2:3gNap3fNdxx" />
+                        <ref role="37wK5l" to="uwx2:3gNap3fNdxx" resolve="MetaLogicalValue" />
                         <node concept="10QFUN" id="FQ_DIrv2sw" role="37wK5m">
                           <node concept="37vLTw" id="FQ_DIrv2sx" role="10QFUP">
                             <ref role="3cqZAo" node="1msb0mq8QXA" resolve="symbol" />
@@ -883,7 +883,7 @@
                           <node concept="3uibUv" id="FQ_DIrv2sy" role="10QFUM">
                             <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
                             <node concept="3uibUv" id="FQ_DIrv2sz" role="11_B2D">
-                              <ref role="3uigEE" to="wyt6:~Object" />
+                              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                             </node>
                           </node>
                         </node>
@@ -908,7 +908,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="FQ_DIrufnp" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="FQ_DIruhkx" role="jymVt" />
@@ -1269,7 +1269,7 @@
             <ref role="3cqZAo" node="1msb0mq9vsN" resolve="value" />
           </node>
           <node concept="37vLTw" id="5BGv8yzwv56" role="37wK5m">
-            <ref role="3cqZAo" node="5BGv8yzwqg0" resolve="varCount" />
+            <ref role="3cqZAo" node="5BGv8yzwqg0" resolve="variables" />
           </node>
         </node>
       </node>
@@ -1986,7 +1986,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="FQ_DIs1Gg4" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="FQ_DIs24qR" role="jymVt" />
@@ -2122,7 +2122,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="FQ_DIrrqNc" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="FQ_DIs1_KQ" role="jymVt" />
@@ -2768,7 +2768,7 @@
             <ref role="3cqZAo" node="5JQSuNswPj8" resolve="terms" />
           </node>
           <node concept="37vLTw" id="5BGv8yzvKR2" role="37wK5m">
-            <ref role="3cqZAo" node="5BGv8yzvESG" resolve="varCount" />
+            <ref role="3cqZAo" node="5BGv8yzvESG" resolve="variables" />
           </node>
         </node>
       </node>
@@ -9317,7 +9317,7 @@
             <ref role="3cqZAo" node="6YPNC4NYoAq" resolve="child" />
           </node>
           <node concept="37vLTw" id="6YPNC4NYs2x" role="37wK5m">
-            <ref role="3cqZAo" node="6YPNC4NYoAt" resolve="varCount" />
+            <ref role="3cqZAo" node="6YPNC4NYoAt" resolve="variables" />
           </node>
         </node>
       </node>
@@ -10010,7 +10010,7 @@
             <ref role="3cqZAo" node="6YPNC4OEHuQ" resolve="list" />
           </node>
           <node concept="37vLTw" id="6YPNC4OEIy$" role="37wK5m">
-            <ref role="3cqZAo" node="6YPNC4OEHXA" resolve="varCount" />
+            <ref role="3cqZAo" node="6YPNC4OEHXA" resolve="variables" />
           </node>
         </node>
       </node>

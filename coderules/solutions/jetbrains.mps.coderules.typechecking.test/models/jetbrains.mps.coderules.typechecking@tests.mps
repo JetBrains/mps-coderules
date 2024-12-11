@@ -2868,7 +2868,7 @@
                                   <node concept="liA8E" id="7Aoa2yV_Lps" role="2OqNvi">
                                     <ref role="37wK5l" to="tj24:7z54$fPgk2E" resolve="getOrSet" />
                                     <node concept="10M0yZ" id="7Aoa2yV_Wn2" role="37wK5m">
-                                      <ref role="3cqZAo" to="tj24:7Aoa2yVefYI" resolve="REPORTED_TYPES" />
+                                      <ref role="3cqZAo" to="tj24:7Aoa2yVefYI" resolve="REPORT" />
                                       <ref role="1PxDUh" to="tj24:6v6oK27venk" resolve="AbstractCheckRequest" />
                                     </node>
                                     <node concept="1bVj0M" id="7Aoa2yV_Xqj" role="37wK5m">
@@ -3007,7 +3007,7 @@
                           <node concept="liA8E" id="7Aoa2yVBGZn" role="2OqNvi">
                             <ref role="37wK5l" to="tj24:7i3KM7g1KV4" resolve="get" />
                             <node concept="10M0yZ" id="7Aoa2yVBHd5" role="37wK5m">
-                              <ref role="3cqZAo" to="tj24:7Aoa2yVefYI" resolve="REPORTED_TYPES" />
+                              <ref role="3cqZAo" to="tj24:7Aoa2yVefYI" resolve="REPORT" />
                               <ref role="1PxDUh" to="tj24:6v6oK27venk" resolve="AbstractCheckRequest" />
                             </node>
                           </node>
@@ -3290,7 +3290,7 @@
                   </node>
                   <node concept="2ShNRf" id="5zsw4w31jsK" role="33vP2m">
                     <node concept="1pGfFk" id="5zsw4w31jsL" role="2ShVmc">
-                      <ref role="37wK5l" to="hano:7DvO2M9VeM1" resolve="RuleProcessingSession" />
+                      <ref role="37wK5l" to="hano:7DvO2M9VeM1" resolve="RulesProcessing" />
                       <node concept="37vLTw" id="zL5ZaNDPhd" role="37wK5m">
                         <ref role="3cqZAo" node="3KN3A4vAiqQ" resolve="ac" />
                       </node>
@@ -3350,7 +3350,7 @@
                   <node concept="2OqwBi" id="6OXbTD_oquj" role="33vP2m">
                     <node concept="2OqwBi" id="6OXbTD_oquk" role="2Oq$k0">
                       <node concept="37vLTw" id="6OXbTD_oqul" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="session" />
+                        <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="rulesProcessing" />
                       </node>
                       <node concept="liA8E" id="6OXbTD_oqum" role="2OqNvi">
                         <ref role="37wK5l" to="hano:7WKNeR9alW4" resolve="queryTemplates" />
@@ -3432,7 +3432,7 @@
                   </node>
                   <node concept="2ShNRf" id="61G6TdBqDRl" role="33vP2m">
                     <node concept="1pGfFk" id="3Pxu0s87EMf" role="2ShVmc">
-                      <ref role="37wK5l" to="ugy2:5yr01fEdYJE" />
+                      <ref role="37wK5l" to="ugy2:5yr01fEdYJE" resolve="TemplateApplicationSession" />
                       <node concept="37vLTw" id="5vVBssDPRQY" role="37wK5m">
                         <ref role="3cqZAo" node="6OXbTD_oHcp" resolve="repo" />
                       </node>
@@ -3456,7 +3456,7 @@
               <node concept="3clFbF" id="4LE1vMPaYTo" role="3cqZAp">
                 <node concept="2OqwBi" id="4LE1vMPaZHf" role="3clFbG">
                   <node concept="37vLTw" id="4LE1vMPaYTm" role="2Oq$k0">
-                    <ref role="3cqZAo" node="61G6TdBqDRk" resolve="macroProcessing" />
+                    <ref role="3cqZAo" node="61G6TdBqDRk" resolve="applicationSession" />
                   </node>
                   <node concept="liA8E" id="4LE1vMPb0OL" role="2OqNvi">
                     <ref role="37wK5l" to="ugy2:7DvO2M9IiMh" resolve="putParameter" />
@@ -3478,16 +3478,16 @@
                   </node>
                   <node concept="2ShNRf" id="6$7vuu2ugt4" role="33vP2m">
                     <node concept="1pGfFk" id="6$7vuu2ugt5" role="2ShVmc">
-                      <ref role="37wK5l" to="hano:5lpFZvO1gf1" />
+                      <ref role="37wK5l" to="hano:5lpFZvO1gf1" resolve="ProgramBuilder" />
                       <node concept="Xl_RD" id="6OXbTDxuaSu" role="37wK5m">
                         <property role="Xl_RC" value="test" />
                       </node>
                       <node concept="37vLTw" id="61G6TdBqDRI" role="37wK5m">
-                        <ref role="3cqZAo" node="61G6TdBqDRk" resolve="macroProcessing" />
+                        <ref role="3cqZAo" node="61G6TdBqDRk" resolve="applicationSession" />
                       </node>
                       <node concept="2OqwBi" id="5vVBssDNe$B" role="37wK5m">
                         <node concept="37vLTw" id="6OXbTD_oFoC" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="session" />
+                          <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="rulesProcessing" />
                         </node>
                         <node concept="liA8E" id="5vVBssDNf95" role="2OqNvi">
                           <ref role="37wK5l" to="hano:20Ay2VeR9qk" resolve="ruleTemplates" />
@@ -3498,7 +3498,7 @@
                       </node>
                       <node concept="2OqwBi" id="2sMBLui0DSV" role="37wK5m">
                         <node concept="37vLTw" id="2sMBLui0DSW" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="session" />
+                          <ref role="3cqZAo" node="6OXbTD_o6iv" resolve="rulesProcessing" />
                         </node>
                         <node concept="liA8E" id="2sMBLui0DSX" role="2OqNvi">
                           <ref role="37wK5l" to="hano:1Pi9pJ$57yb" resolve="planHandler" />
@@ -3607,7 +3607,7 @@
                             <property role="2bfB8j" value="true" />
                             <property role="373rjd" value="true" />
                             <ref role="1Y3XeK" to="hano:6RN9TdHmQLy" resolve="FeedbackConsumer" />
-                            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" />
+                            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                             <node concept="3Tm1VV" id="4nDRG5AZ8hb" role="1B3o_S" />
                           </node>
                         </node>

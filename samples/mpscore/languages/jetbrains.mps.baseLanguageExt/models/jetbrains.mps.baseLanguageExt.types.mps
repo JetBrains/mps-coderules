@@ -47011,7 +47011,7 @@
                   <ref role="3A2yKK" node="7gr_romnvxW" resolve="vref" />
                 </node>
                 <node concept="3TrEf2" id="1bodCZDMx_8" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:fzcqZ_w" />
+                  <ref role="3Tt5mk" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
                 </node>
               </node>
             </node>
