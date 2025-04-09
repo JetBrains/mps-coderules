@@ -5,6 +5,8 @@ import java.io.*
 import com.jetbrains.plugin.blockmap.core.BlockMap
 import com.jetbrains.plugin.blockmap.core.FileHash
 import com.fasterxml.jackson.databind.ObjectMapper
+import org.gradle.internal.os.OperatingSystem;
+
 
 buildscript {
     repositories {
@@ -36,26 +38,62 @@ repositories {
       url 'https://teamcity.jetbrains.com/guestAuth/repository/download'
       patternLayout {
         ivy '[module]/[revision]/teamcity-ivy.xml'
-        artifact '[module]/[revision]/[revision].[ext]'
+  //        artifact '[module]/[revision]/[revision].[ext]'
+  // using a simple hack here: a @zip artifact is mapped to macos dist,
+  // while a @tar.gz one -- to linux dist
+        artifact '[module]/[revision]/[revision]-linux.[ext]'
+        artifact '[module]/[revision]/[revision]-macos-aarch64.[ext]'
       }
   }
 }
 
 configurations {
-    mps
+    mps_linux
+    mps_macos_aarch64
 }
 
 dependencies {
   // MPS-related stuff declared as project properties
-  mps "org:${mpsBuildConfiguration}:${mpsBuildNumber}:${mpsBuildLabel}.tcbuildtag@zip"
+  mps_linux "org:${mpsBuildConfiguration}:${mpsBuildNumber}:${mpsBuildLabel}@tar.gz"
+  mps_macos_aarch64 "org:${mpsBuildConfiguration}:${mpsBuildNumber}:${mpsBuildLabel}macos-aarch64@zip"
 }
 
-task installMps(type: Copy)  {
+
+task installMps_macos(type: Copy)  {
   onlyIf {
-    ! file('MPS_HOME').exists()
+    OperatingSystem.current().isMacOsX()
   }
 
-  from zipTree(configurations.mps[0])
+  from zipTree(configurations.mps_macos_aarch64[0])
+  into 'MPS_HOME'
+
+  // Gradle woodoo for unzipping an archive
+  eachFile { FileCopyDetails fcp ->
+    // copy the contents of the directory named "MPS ${mpsRelease}"
+    if (fcp.relativePath.pathString.startsWith("MPS ${mpsRelease}.app/Contents/")) {
+      // remap the file to the root
+      def segments = fcp.relativePath.segments
+      def pathsegments = segments[2..-1] as String[]
+      fcp.relativePath = new RelativePath(!fcp.file.isDirectory(), pathsegments)
+
+    } else {
+      fcp.exclude()
+    }
+    // avoid overriding files
+    if (fcp.relativePath.getFile(destinationDir).exists()) {
+       it.exclude()
+    }
+  }
+  includeEmptyDirs = false
+}
+
+
+task installMps_linux(type: Copy)  {
+  onlyIf {
+    OperatingSystem.current().isLinux()
+  }
+
+  from tarTree(resources.gzip(configurations.mps_linux[0]))
   into 'MPS_HOME'
 
   // Gradle woodoo for unzipping an archive
@@ -76,6 +114,10 @@ task installMps(type: Copy)  {
     }
   }
   includeEmptyDirs = false
+}
+
+task installMps(dependsOn: [installMps_macos, installMps_linux]) {
+
 }
 
 task deleteMps(type: Delete) {
