@@ -1,3 +1,6 @@
+default: 
+	@just --list
+
 assemble:
 	./gradlew -x coderules-generate -x fitch-generate -x lambdac-generate -x mpscore-generate assemble
 
