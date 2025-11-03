@@ -5548,7 +5548,7 @@
         <id>jetbrains.mps.core.types</id>
         <name>MPS Coderules Core Types</name>
         <description>Types for core MPS languages with Coderules (experimental)</description>
-        <version>${ci.mps.release}-0.9.8-b${ci.build.num}</version>
+        <version>${ci.mps.release}-0.9.9-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         <depends>com.intellij.modules.mps</depends>
         <depends>jetbrains.mps.core</depends>
@@ -5556,8 +5556,8 @@
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.kotlin</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="252.23892" until-build="252.*" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.3 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="253.27864" until-build="253.*" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2025.3 release of MPS</li></ul>]]></change-notes>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />

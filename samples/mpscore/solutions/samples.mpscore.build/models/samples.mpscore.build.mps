@@ -260,7 +260,7 @@
           <ref role="3Mxwex" node="5Hdh9$IhmQ$" resolve="ci.mps.release" />
         </node>
         <node concept="3Mxwew" id="2BiN_P7R7Wi" role="3MwsjC">
-          <property role="3MwjfP" value="-0.9.8-b" />
+          <property role="3MwjfP" value="-0.9.9-b" />
         </node>
         <node concept="3Mxwey" id="2BiN_P7R81m" role="3MwsjC">
           <ref role="3Mxwex" node="2BiN_P7R7jO" resolve="ci.build.num" />
@@ -286,20 +286,20 @@
         <node concept="2pNUuL" id="1bhjPJMlp4b" role="2pNNFR">
           <property role="2pNUuO" value="since-build" />
           <node concept="2pMdtt" id="1bhjPJMlp4c" role="2pMdts">
-            <property role="2pMdty" value="252.23892" />
+            <property role="2pMdty" value="253.27864" />
           </node>
         </node>
         <node concept="2pNUuL" id="1bhjPJMlozs" role="2pNNFR">
           <property role="2pNUuO" value="until-build" />
           <node concept="2pMdtt" id="1bhjPJMlozt" role="2pMdts">
-            <property role="2pMdty" value="252.*" />
+            <property role="2pMdty" value="253.*" />
           </node>
         </node>
       </node>
       <node concept="2pNNFK" id="2fVm_54SZ$e" role="20twgj">
         <property role="2pNNFO" value="change-notes" />
         <node concept="2pNm8S" id="2p5jUSWfCr8" role="3o6s8t">
-          <property role="3o6aOc" value="&lt;ul&gt;&lt;li&gt;Compatible with upcoming 2024.3 release of MPS&lt;/li&gt;&lt;li&gt;Bugfixes and optimizations&lt;/li&gt;&lt;/ul&gt;" />
+          <property role="3o6aOc" value="&lt;ul&gt;&lt;li&gt;Compatible with upcoming 2025.3 release of MPS&lt;/li&gt;&lt;/ul&gt;" />
         </node>
       </node>
       <node concept="m$_yC" id="77GimjbRIwv" role="m$_yJ">

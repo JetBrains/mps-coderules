@@ -1949,8 +1949,8 @@
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="252.23892" until-build="252.*" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.3 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="253.27864" until-build="253.*" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2025.3 release of MPS</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
           <statusBarWidgetFactory implementation="jetbrains.mps.coderules.ideaplugin.TypecheckingWidget$Factory" id="TypecheckingWidget" order="before notificationsWidget"></statusBarWidgetFactory>
@@ -3510,8 +3510,8 @@
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.ide.java</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="252.23892" until-build="252.*" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2024.3 release of MPS</li><li>Bugfixes and optimizations</li></ul>]]></change-notes>
+        <idea-version since-build="253.27864" until-build="253.*" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2025.3 release of MPS</li></ul>]]></change-notes>
         <extensions defaultExtensionNs="com.intellij">          
           <applicationConfigurable groupId="other" groupWeight="200" instance="jetbrains.mps.coderules.ideaplugin.TypecheckingSettingsPage" id="preferences.typecheckingSettings" displayName="Typechecking" />
           <statusBarWidgetFactory implementation="jetbrains.mps.coderules.ideaplugin.TypecheckingWidget$Factory" id="TypecheckingWidget" order="before notificationsWidget"></statusBarWidgetFactory>
