@@ -2428,7 +2428,7 @@
                   <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication()" resolve="getApplication" />
                 </node>
                 <node concept="liA8E" id="4ot3PHR1CGu" role="2OqNvi">
-                  <ref role="37wK5l" to="1m72:~ComponentManager.getMessageBus()" resolve="getMessageBus" />
+                  <ref role="37wK5l" to="bd8o:~Application.getMessageBus()" resolve="getMessageBus" />
                 </node>
               </node>
               <node concept="liA8E" id="4ot3PHR1Ejs" role="2OqNvi">
