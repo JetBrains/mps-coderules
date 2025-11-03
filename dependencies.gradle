@@ -70,7 +70,7 @@ task installMps_macos(type: Copy)  {
   // Gradle woodoo for unzipping an archive
   eachFile { FileCopyDetails fcp ->
     // copy the contents of the directory named "MPS ${mpsRelease}"
-    if (fcp.relativePath.pathString.startsWith("MPS ${mpsRelease}.app/Contents/")) {
+    if (fcp.relativePath.pathString.startsWith("MPS.app/Contents/")) {
       // remap the file to the root
       def segments = fcp.relativePath.segments
       def pathsegments = segments[2..-1] as String[]
