@@ -33,6 +33,7 @@
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
     <import index="rbkg" ref="63b449db-0918-4a4a-a891-2c430ab133e4/java:org.junit.jupiter.api.extension(org.junit.junit5/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
+    <import index="jtsr" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.project(MPS.OpenAPI/)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -709,7 +710,7 @@
                         <ref role="3cqZAo" node="2r1jTXL$IJy" resolve="mpsProject" />
                       </node>
                       <node concept="liA8E" id="1Lr58WFTIHj" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~IProject.getProjectModules()" resolve="getProjectModules" />
+                        <ref role="37wK5l" to="jtsr:~Project.getProjectModules()" resolve="getProjectModules" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="1Lr58WFTIHk" role="2LFqv$">
