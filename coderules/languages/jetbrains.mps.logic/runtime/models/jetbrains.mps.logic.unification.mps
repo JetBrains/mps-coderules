@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="2" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -215,17 +215,11 @@
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331502" name="body" index="TZ5H$" />
-      </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
-        <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
-        <property id="8970989240999019144" name="text" index="1dT_AB" />
-      </concept>
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+      <concept id="5085607816302529296" name="jetbrains.mps.baseLanguage.javadoc.structure.IHoldCommentLines" flags="ngI" index="1VezTd">
+        <child id="5085607816302529587" name="commentBody" index="1Vez_I" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -580,9 +574,24 @@
       </node>
     </node>
     <node concept="3UR2Jj" id="1fvYCP_1sKm" role="lGtFl">
-      <node concept="TZ5HA" id="1fvYCP_1sKn" role="TZ5H$">
-        <node concept="1dT_AC" id="1fvYCP_1sKo" role="1dT_Ay">
-          <property role="1dT_AB" value="Serves as a prototype for LogicalDataForm." />
+      <node concept="1PaTwC" id="M_dau6Oh32" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6Oh33" role="1PaTwD">
+          <property role="3oM_SC" value="Serves" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh34" role="1PaTwD">
+          <property role="3oM_SC" value="as" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh35" role="1PaTwD">
+          <property role="3oM_SC" value="a" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh36" role="1PaTwD">
+          <property role="3oM_SC" value="prototype" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh37" role="1PaTwD">
+          <property role="3oM_SC" value="for" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh38" role="1PaTwD">
+          <property role="3oM_SC" value="LogicalDataForm." />
         </node>
       </node>
     </node>
@@ -1207,19 +1216,100 @@
       </node>
     </node>
     <node concept="3UR2Jj" id="1fvYCP_19C5" role="lGtFl">
-      <node concept="TZ5HA" id="1fvYCP_19C6" role="TZ5H$">
-        <node concept="1dT_AC" id="1fvYCP_19C7" role="1dT_Ay">
-          <property role="1dT_AB" value="Bridges any FUN dataform except Value, and logical variable. " />
+      <node concept="1PaTwC" id="M_dau6Oh39" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6Oh3a" role="1PaTwD">
+          <property role="3oM_SC" value="Bridges" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3b" role="1PaTwD">
+          <property role="3oM_SC" value="any" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3c" role="1PaTwD">
+          <property role="3oM_SC" value="FUN" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3d" role="1PaTwD">
+          <property role="3oM_SC" value="dataform" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3e" role="1PaTwD">
+          <property role="3oM_SC" value="except" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3f" role="1PaTwD">
+          <property role="3oM_SC" value="Value," />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3g" role="1PaTwD">
+          <property role="3oM_SC" value="and" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3h" role="1PaTwD">
+          <property role="3oM_SC" value="logical" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3i" role="1PaTwD">
+          <property role="3oM_SC" value="variable." />
         </node>
       </node>
-      <node concept="TZ5HA" id="1fvYCP_1bzx" role="TZ5H$">
-        <node concept="1dT_AC" id="1fvYCP_1bzy" role="1dT_Ay">
-          <property role="1dT_AB" value="Represents a Variable that turns into REF to the target when bound. " />
+      <node concept="1PaTwC" id="M_dau6Oh3j" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6Oh3k" role="1PaTwD">
+          <property role="3oM_SC" value="Represents" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3l" role="1PaTwD">
+          <property role="3oM_SC" value="a" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3m" role="1PaTwD">
+          <property role="3oM_SC" value="Variable" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3n" role="1PaTwD">
+          <property role="3oM_SC" value="that" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3o" role="1PaTwD">
+          <property role="3oM_SC" value="turns" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3p" role="1PaTwD">
+          <property role="3oM_SC" value="into" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3q" role="1PaTwD">
+          <property role="3oM_SC" value="REF" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3r" role="1PaTwD">
+          <property role="3oM_SC" value="to" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3s" role="1PaTwD">
+          <property role="3oM_SC" value="the" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3t" role="1PaTwD">
+          <property role="3oM_SC" value="target" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3u" role="1PaTwD">
+          <property role="3oM_SC" value="when" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3v" role="1PaTwD">
+          <property role="3oM_SC" value="bound." />
         </node>
       </node>
-      <node concept="TZ5HA" id="1fvYCP_1b_D" role="TZ5H$">
-        <node concept="1dT_AC" id="1fvYCP_1b_E" role="1dT_Ay">
-          <property role="1dT_AB" value="Has kind VAR when logical is unbound, otherwise REF." />
+      <node concept="1PaTwC" id="M_dau6Oh3w" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6Oh3x" role="1PaTwD">
+          <property role="3oM_SC" value="Has" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3y" role="1PaTwD">
+          <property role="3oM_SC" value="kind" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3z" role="1PaTwD">
+          <property role="3oM_SC" value="VAR" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3$" role="1PaTwD">
+          <property role="3oM_SC" value="when" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3_" role="1PaTwD">
+          <property role="3oM_SC" value="logical" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3A" role="1PaTwD">
+          <property role="3oM_SC" value="is" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3B" role="1PaTwD">
+          <property role="3oM_SC" value="unbound," />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3C" role="1PaTwD">
+          <property role="3oM_SC" value="otherwise" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3D" role="1PaTwD">
+          <property role="3oM_SC" value="REF." />
         </node>
       </node>
     </node>
@@ -1684,19 +1774,85 @@
       <property role="TrG5h" value="V" />
     </node>
     <node concept="3UR2Jj" id="1fvYCP$WC$0" role="lGtFl">
-      <node concept="TZ5HA" id="1fvYCP$WC$1" role="TZ5H$">
-        <node concept="1dT_AC" id="1fvYCP$WC$2" role="1dT_Ay">
-          <property role="1dT_AB" value="Bridges value dataform and logical variable." />
+      <node concept="1PaTwC" id="M_dau6Oh3E" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6Oh3F" role="1PaTwD">
+          <property role="3oM_SC" value="Bridges" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3G" role="1PaTwD">
+          <property role="3oM_SC" value="value" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3H" role="1PaTwD">
+          <property role="3oM_SC" value="dataform" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3I" role="1PaTwD">
+          <property role="3oM_SC" value="and" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3J" role="1PaTwD">
+          <property role="3oM_SC" value="logical" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3K" role="1PaTwD">
+          <property role="3oM_SC" value="variable." />
         </node>
       </node>
-      <node concept="TZ5HA" id="1fvYCP$WDMN" role="TZ5H$">
-        <node concept="1dT_AC" id="1fvYCP$WDMO" role="1dT_Ay">
-          <property role="1dT_AB" value="Represents a Variable that effectively turns into Value when bound." />
+      <node concept="1PaTwC" id="M_dau6Oh3L" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6Oh3M" role="1PaTwD">
+          <property role="3oM_SC" value="Represents" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3N" role="1PaTwD">
+          <property role="3oM_SC" value="a" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3O" role="1PaTwD">
+          <property role="3oM_SC" value="Variable" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3P" role="1PaTwD">
+          <property role="3oM_SC" value="that" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3Q" role="1PaTwD">
+          <property role="3oM_SC" value="effectively" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3R" role="1PaTwD">
+          <property role="3oM_SC" value="turns" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3S" role="1PaTwD">
+          <property role="3oM_SC" value="into" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3T" role="1PaTwD">
+          <property role="3oM_SC" value="Value" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3U" role="1PaTwD">
+          <property role="3oM_SC" value="when" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3V" role="1PaTwD">
+          <property role="3oM_SC" value="bound." />
         </node>
       </node>
-      <node concept="TZ5HA" id="1fvYCP$WDNb" role="TZ5H$">
-        <node concept="1dT_AC" id="1fvYCP$WDNc" role="1dT_Ay">
-          <property role="1dT_AB" value="Has kind VAR when logical is unbound, otherwise FUN. " />
+      <node concept="1PaTwC" id="M_dau6Oh3W" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6Oh3X" role="1PaTwD">
+          <property role="3oM_SC" value="Has" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3Y" role="1PaTwD">
+          <property role="3oM_SC" value="kind" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh3Z" role="1PaTwD">
+          <property role="3oM_SC" value="VAR" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh40" role="1PaTwD">
+          <property role="3oM_SC" value="when" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh41" role="1PaTwD">
+          <property role="3oM_SC" value="logical" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh42" role="1PaTwD">
+          <property role="3oM_SC" value="is" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh43" role="1PaTwD">
+          <property role="3oM_SC" value="unbound," />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh44" role="1PaTwD">
+          <property role="3oM_SC" value="otherwise" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh45" role="1PaTwD">
+          <property role="3oM_SC" value="FUN." />
         </node>
       </node>
     </node>
@@ -2042,9 +2198,24 @@
       <property role="TrG5h" value="V" />
     </node>
     <node concept="3UR2Jj" id="1fvYCP_1rlg" role="lGtFl">
-      <node concept="TZ5HA" id="1fvYCP_1rlh" role="TZ5H$">
-        <node concept="1dT_AC" id="1fvYCP_1rli" role="1dT_Ay">
-          <property role="1dT_AB" value="Serves as a prototype for LogicalValue. " />
+      <node concept="1PaTwC" id="M_dau6Oh46" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6Oh47" role="1PaTwD">
+          <property role="3oM_SC" value="Serves" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh48" role="1PaTwD">
+          <property role="3oM_SC" value="as" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh49" role="1PaTwD">
+          <property role="3oM_SC" value="a" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh4a" role="1PaTwD">
+          <property role="3oM_SC" value="prototype" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh4b" role="1PaTwD">
+          <property role="3oM_SC" value="for" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh4c" role="1PaTwD">
+          <property role="3oM_SC" value="LogicalValue." />
         </node>
       </node>
     </node>
@@ -2163,14 +2334,62 @@
         </node>
       </node>
       <node concept="P$JXv" id="1fvYCP_uAcD" role="lGtFl">
-        <node concept="TZ5HA" id="1fvYCP_uAcE" role="TZ5H$">
-          <node concept="1dT_AC" id="1fvYCP_uAcF" role="1dT_Ay">
-            <property role="1dT_AB" value="Wraps every MetaLogical from passed MultiMetaLogical into a MetaLogicalDataForm" />
+        <node concept="1PaTwC" id="M_dau6Oh4n" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh4o" role="1PaTwD">
+            <property role="3oM_SC" value="Wraps" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4p" role="1PaTwD">
+            <property role="3oM_SC" value="every" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4q" role="1PaTwD">
+            <property role="3oM_SC" value="MetaLogical" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4r" role="1PaTwD">
+            <property role="3oM_SC" value="from" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4s" role="1PaTwD">
+            <property role="3oM_SC" value="passed" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4t" role="1PaTwD">
+            <property role="3oM_SC" value="MultiMetaLogical" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4u" role="1PaTwD">
+            <property role="3oM_SC" value="into" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4v" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4w" role="1PaTwD">
+            <property role="3oM_SC" value="MetaLogicalDataForm" />
           </node>
         </node>
-        <node concept="TZ5HA" id="1fvYCP_uAvj" role="TZ5H$">
-          <node concept="1dT_AC" id="1fvYCP_uAvk" role="1dT_Ay">
-            <property role="1dT_AB" value="and returns an array of these as the result." />
+        <node concept="1PaTwC" id="M_dau6Oh4x" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh4y" role="1PaTwD">
+            <property role="3oM_SC" value="and" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4z" role="1PaTwD">
+            <property role="3oM_SC" value="returns" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4$" role="1PaTwD">
+            <property role="3oM_SC" value="an" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4_" role="1PaTwD">
+            <property role="3oM_SC" value="array" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4A" role="1PaTwD">
+            <property role="3oM_SC" value="of" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4B" role="1PaTwD">
+            <property role="3oM_SC" value="these" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4C" role="1PaTwD">
+            <property role="3oM_SC" value="as" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4D" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4E" role="1PaTwD">
+            <property role="3oM_SC" value="result." />
           </node>
         </node>
       </node>
@@ -2202,9 +2421,27 @@
         </node>
       </node>
       <node concept="P$JXv" id="1fvYCP_u$WH" role="lGtFl">
-        <node concept="TZ5HA" id="1fvYCP_u$WI" role="TZ5H$">
-          <node concept="1dT_AC" id="1fvYCP_u$WJ" role="1dT_Ay">
-            <property role="1dT_AB" value="Wraps a MetaLogical representing dataform into MetaLogicalDataForm. " />
+        <node concept="1PaTwC" id="M_dau6Oh4F" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh4G" role="1PaTwD">
+            <property role="3oM_SC" value="Wraps" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4H" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4I" role="1PaTwD">
+            <property role="3oM_SC" value="MetaLogical" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4J" role="1PaTwD">
+            <property role="3oM_SC" value="representing" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4K" role="1PaTwD">
+            <property role="3oM_SC" value="dataform" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4L" role="1PaTwD">
+            <property role="3oM_SC" value="into" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4M" role="1PaTwD">
+            <property role="3oM_SC" value="MetaLogicalDataForm." />
           </node>
         </node>
       </node>
@@ -2247,9 +2484,30 @@
         </node>
       </node>
       <node concept="P$JXv" id="1fvYCP_u_9_" role="lGtFl">
-        <node concept="TZ5HA" id="1fvYCP_u_9A" role="TZ5H$">
-          <node concept="1dT_AC" id="1fvYCP_u_9B" role="1dT_Ay">
-            <property role="1dT_AB" value="Wraps a Logical representing dataform into a LogicalDataForm." />
+        <node concept="1PaTwC" id="M_dau6Oh4N" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh4O" role="1PaTwD">
+            <property role="3oM_SC" value="Wraps" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4P" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4Q" role="1PaTwD">
+            <property role="3oM_SC" value="Logical" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4R" role="1PaTwD">
+            <property role="3oM_SC" value="representing" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4S" role="1PaTwD">
+            <property role="3oM_SC" value="dataform" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4T" role="1PaTwD">
+            <property role="3oM_SC" value="into" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4U" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4V" role="1PaTwD">
+            <property role="3oM_SC" value="LogicalDataForm." />
           </node>
         </node>
       </node>
@@ -2282,9 +2540,39 @@
         </node>
       </node>
       <node concept="P$JXv" id="4U$Q3dL0BAS" role="lGtFl">
-        <node concept="TZ5HA" id="4U$Q3dL0BAT" role="TZ5H$">
-          <node concept="1dT_AC" id="4U$Q3dL0BAU" role="1dT_Ay">
-            <property role="1dT_AB" value="An overload of same method accepting logical to support wrapping list." />
+        <node concept="1PaTwC" id="M_dau6Oh4W" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh4X" role="1PaTwD">
+            <property role="3oM_SC" value="An" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4Y" role="1PaTwD">
+            <property role="3oM_SC" value="overload" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh4Z" role="1PaTwD">
+            <property role="3oM_SC" value="of" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh50" role="1PaTwD">
+            <property role="3oM_SC" value="same" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh51" role="1PaTwD">
+            <property role="3oM_SC" value="method" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh52" role="1PaTwD">
+            <property role="3oM_SC" value="accepting" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh53" role="1PaTwD">
+            <property role="3oM_SC" value="logical" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh54" role="1PaTwD">
+            <property role="3oM_SC" value="to" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh55" role="1PaTwD">
+            <property role="3oM_SC" value="support" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh56" role="1PaTwD">
+            <property role="3oM_SC" value="wrapping" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh57" role="1PaTwD">
+            <property role="3oM_SC" value="list." />
           </node>
         </node>
       </node>
@@ -2310,9 +2598,39 @@
         </node>
       </node>
       <node concept="P$JXv" id="4U$Q3dKg$bX" role="lGtFl">
-        <node concept="TZ5HA" id="4U$Q3dKg$bY" role="TZ5H$">
-          <node concept="1dT_AC" id="4U$Q3dKg$bZ" role="1dT_Ay">
-            <property role="1dT_AB" value="An overload of same method accepting logical to support identity transformation." />
+        <node concept="1PaTwC" id="M_dau6Oh58" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh59" role="1PaTwD">
+            <property role="3oM_SC" value="An" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5a" role="1PaTwD">
+            <property role="3oM_SC" value="overload" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5b" role="1PaTwD">
+            <property role="3oM_SC" value="of" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5c" role="1PaTwD">
+            <property role="3oM_SC" value="same" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5d" role="1PaTwD">
+            <property role="3oM_SC" value="method" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5e" role="1PaTwD">
+            <property role="3oM_SC" value="accepting" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5f" role="1PaTwD">
+            <property role="3oM_SC" value="logical" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5g" role="1PaTwD">
+            <property role="3oM_SC" value="to" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5h" role="1PaTwD">
+            <property role="3oM_SC" value="support" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5i" role="1PaTwD">
+            <property role="3oM_SC" value="identity" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5j" role="1PaTwD">
+            <property role="3oM_SC" value="transformation." />
           </node>
         </node>
       </node>
@@ -2352,9 +2670,30 @@
         <property role="TrG5h" value="V" />
       </node>
       <node concept="P$JXv" id="1fvYCP_u_tJ" role="lGtFl">
-        <node concept="TZ5HA" id="1fvYCP_u_tK" role="TZ5H$">
-          <node concept="1dT_AC" id="1fvYCP_u_tL" role="1dT_Ay">
-            <property role="1dT_AB" value="Wraps a MetaLogical representing Object into a MetaLogicalValue. " />
+        <node concept="1PaTwC" id="M_dau6Oh5k" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh5l" role="1PaTwD">
+            <property role="3oM_SC" value="Wraps" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5m" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5n" role="1PaTwD">
+            <property role="3oM_SC" value="MetaLogical" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5o" role="1PaTwD">
+            <property role="3oM_SC" value="representing" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5p" role="1PaTwD">
+            <property role="3oM_SC" value="Object" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5q" role="1PaTwD">
+            <property role="3oM_SC" value="into" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5r" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5s" role="1PaTwD">
+            <property role="3oM_SC" value="MetaLogicalValue." />
           </node>
         </node>
       </node>
@@ -2394,9 +2733,30 @@
         <property role="TrG5h" value="V" />
       </node>
       <node concept="P$JXv" id="1fvYCP_u_Bj" role="lGtFl">
-        <node concept="TZ5HA" id="1fvYCP_u_Bk" role="TZ5H$">
-          <node concept="1dT_AC" id="1fvYCP_u_Bl" role="1dT_Ay">
-            <property role="1dT_AB" value="Wraps a Logical representing Object into a LogicalValue. " />
+        <node concept="1PaTwC" id="M_dau6Oh5t" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh5u" role="1PaTwD">
+            <property role="3oM_SC" value="Wraps" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5v" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5w" role="1PaTwD">
+            <property role="3oM_SC" value="Logical" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5x" role="1PaTwD">
+            <property role="3oM_SC" value="representing" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5y" role="1PaTwD">
+            <property role="3oM_SC" value="Object" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5z" role="1PaTwD">
+            <property role="3oM_SC" value="into" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5$" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5_" role="1PaTwD">
+            <property role="3oM_SC" value="LogicalValue." />
           </node>
         </node>
       </node>
@@ -2421,9 +2781,42 @@
         <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
       </node>
       <node concept="P$JXv" id="4U$Q3dKgVM9" role="lGtFl">
-        <node concept="TZ5HA" id="4U$Q3dKgVMa" role="TZ5H$">
-          <node concept="1dT_AC" id="4U$Q3dKgVMb" role="1dT_Ay">
-            <property role="1dT_AB" value="An overload of the same method accepting logical to support identity transformation." />
+        <node concept="1PaTwC" id="M_dau6Oh5A" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh5B" role="1PaTwD">
+            <property role="3oM_SC" value="An" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5C" role="1PaTwD">
+            <property role="3oM_SC" value="overload" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5D" role="1PaTwD">
+            <property role="3oM_SC" value="of" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5E" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5F" role="1PaTwD">
+            <property role="3oM_SC" value="same" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5G" role="1PaTwD">
+            <property role="3oM_SC" value="method" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5H" role="1PaTwD">
+            <property role="3oM_SC" value="accepting" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5I" role="1PaTwD">
+            <property role="3oM_SC" value="logical" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5J" role="1PaTwD">
+            <property role="3oM_SC" value="to" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5K" role="1PaTwD">
+            <property role="3oM_SC" value="support" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5L" role="1PaTwD">
+            <property role="3oM_SC" value="identity" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5M" role="1PaTwD">
+            <property role="3oM_SC" value="transformation." />
           </node>
         </node>
       </node>
@@ -2449,9 +2842,42 @@
         <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
       </node>
       <node concept="P$JXv" id="4U$Q3dLiFgA" role="lGtFl">
-        <node concept="TZ5HA" id="4U$Q3dLiFgB" role="TZ5H$">
-          <node concept="1dT_AC" id="4U$Q3dLiFgC" role="1dT_Ay">
-            <property role="1dT_AB" value="An overload of the same method accepting logical to support identity transformation." />
+        <node concept="1PaTwC" id="M_dau6Oh5N" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh5O" role="1PaTwD">
+            <property role="3oM_SC" value="An" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5P" role="1PaTwD">
+            <property role="3oM_SC" value="overload" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5Q" role="1PaTwD">
+            <property role="3oM_SC" value="of" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5R" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5S" role="1PaTwD">
+            <property role="3oM_SC" value="same" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5T" role="1PaTwD">
+            <property role="3oM_SC" value="method" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5U" role="1PaTwD">
+            <property role="3oM_SC" value="accepting" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5V" role="1PaTwD">
+            <property role="3oM_SC" value="logical" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5W" role="1PaTwD">
+            <property role="3oM_SC" value="to" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5X" role="1PaTwD">
+            <property role="3oM_SC" value="support" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5Y" role="1PaTwD">
+            <property role="3oM_SC" value="identity" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh5Z" role="1PaTwD">
+            <property role="3oM_SC" value="transformation." />
           </node>
         </node>
       </node>
@@ -2481,9 +2907,60 @@
         <ref role="3uigEE" to="cof4:1bm7a6EXvsP" resolve="DataForm" />
       </node>
       <node concept="P$JXv" id="4U$Q3dKt4OD" role="lGtFl">
-        <node concept="TZ5HA" id="4U$Q3dKt4OE" role="TZ5H$">
-          <node concept="1dT_AC" id="4U$Q3dKt4OF" role="1dT_Ay">
-            <property role="1dT_AB" value="An overload of the same method accepting logical or value to support wrapping any object into a value." />
+        <node concept="1PaTwC" id="M_dau6Oh60" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh61" role="1PaTwD">
+            <property role="3oM_SC" value="An" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh62" role="1PaTwD">
+            <property role="3oM_SC" value="overload" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh63" role="1PaTwD">
+            <property role="3oM_SC" value="of" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh64" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh65" role="1PaTwD">
+            <property role="3oM_SC" value="same" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh66" role="1PaTwD">
+            <property role="3oM_SC" value="method" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh67" role="1PaTwD">
+            <property role="3oM_SC" value="accepting" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh68" role="1PaTwD">
+            <property role="3oM_SC" value="logical" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh69" role="1PaTwD">
+            <property role="3oM_SC" value="or" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6a" role="1PaTwD">
+            <property role="3oM_SC" value="value" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6b" role="1PaTwD">
+            <property role="3oM_SC" value="to" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6c" role="1PaTwD">
+            <property role="3oM_SC" value="support" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6d" role="1PaTwD">
+            <property role="3oM_SC" value="wrapping" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6e" role="1PaTwD">
+            <property role="3oM_SC" value="any" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6f" role="1PaTwD">
+            <property role="3oM_SC" value="object" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6g" role="1PaTwD">
+            <property role="3oM_SC" value="into" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6h" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6i" role="1PaTwD">
+            <property role="3oM_SC" value="value." />
           </node>
         </node>
       </node>
@@ -2562,14 +3039,56 @@
       </node>
       <node concept="3Tm1VV" id="4TCblo5NkoK" role="1B3o_S" />
       <node concept="P$JXv" id="1fvYCP$W$Pe" role="lGtFl">
-        <node concept="TZ5HA" id="1fvYCP$W$Pf" role="TZ5H$">
-          <node concept="1dT_AC" id="1fvYCP$W$Pg" role="1dT_Ay">
-            <property role="1dT_AB" value="Instantiates logicals within a dataform by replacing all MetaLogicalValue and MetaLogicalDataForm" />
+        <node concept="1PaTwC" id="M_dau6Oh6j" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh6k" role="1PaTwD">
+            <property role="3oM_SC" value="Instantiates" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6l" role="1PaTwD">
+            <property role="3oM_SC" value="logicals" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6m" role="1PaTwD">
+            <property role="3oM_SC" value="within" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6n" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6o" role="1PaTwD">
+            <property role="3oM_SC" value="dataform" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6p" role="1PaTwD">
+            <property role="3oM_SC" value="by" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6q" role="1PaTwD">
+            <property role="3oM_SC" value="replacing" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6r" role="1PaTwD">
+            <property role="3oM_SC" value="all" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6s" role="1PaTwD">
+            <property role="3oM_SC" value="MetaLogicalValue" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6t" role="1PaTwD">
+            <property role="3oM_SC" value="and" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6u" role="1PaTwD">
+            <property role="3oM_SC" value="MetaLogicalDataForm" />
           </node>
         </node>
-        <node concept="TZ5HA" id="1fvYCP_246X" role="TZ5H$">
-          <node concept="1dT_AC" id="1fvYCP_246Y" role="1dT_Ay">
-            <property role="1dT_AB" value="with LogicalValue and LogicalDataForm respectively. " />
+        <node concept="1PaTwC" id="M_dau6Oh6v" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Oh6w" role="1PaTwD">
+            <property role="3oM_SC" value="with" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6x" role="1PaTwD">
+            <property role="3oM_SC" value="LogicalValue" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6y" role="1PaTwD">
+            <property role="3oM_SC" value="and" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6z" role="1PaTwD">
+            <property role="3oM_SC" value="LogicalDataForm" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oh6$" role="1PaTwD">
+            <property role="3oM_SC" value="respectively." />
           </node>
         </node>
       </node>
@@ -2797,9 +3316,33 @@
     <node concept="2tJIrI" id="4TCblo5NlYH" role="jymVt" />
     <node concept="3Tm1VV" id="677NV565N1y" role="1B3o_S" />
     <node concept="3UR2Jj" id="1fvYCP_FZrb" role="lGtFl">
-      <node concept="TZ5HA" id="1fvYCP_FZrc" role="TZ5H$">
-        <node concept="1dT_AC" id="1fvYCP_FZrd" role="1dT_Ay">
-          <property role="1dT_AB" value="Utility to provide bridge between dataforms and logical variables. " />
+      <node concept="1PaTwC" id="M_dau6Oh4d" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6Oh4e" role="1PaTwD">
+          <property role="3oM_SC" value="Utility" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh4f" role="1PaTwD">
+          <property role="3oM_SC" value="to" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh4g" role="1PaTwD">
+          <property role="3oM_SC" value="provide" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh4h" role="1PaTwD">
+          <property role="3oM_SC" value="bridge" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh4i" role="1PaTwD">
+          <property role="3oM_SC" value="between" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh4j" role="1PaTwD">
+          <property role="3oM_SC" value="dataforms" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh4k" role="1PaTwD">
+          <property role="3oM_SC" value="and" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh4l" role="1PaTwD">
+          <property role="3oM_SC" value="logical" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oh4m" role="1PaTwD">
+          <property role="3oM_SC" value="variables." />
         </node>
       </node>
     </node>

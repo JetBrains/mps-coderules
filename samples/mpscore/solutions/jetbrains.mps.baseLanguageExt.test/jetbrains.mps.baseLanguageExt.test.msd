@@ -32,7 +32,7 @@
     <language slang="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" version="2" />
     <language slang="l:c1f5ad88-21f4-4e0e-927c-48b1ca0c2334:jetbrains.mps.baseLanguage.collectionsExt" version="0" />
     <language slang="l:96eeb076-cd7e-4797-9c2a-348e3f826e65:jetbrains.mps.baseLanguage.function" version="0" />
-    <language slang="l:f2801650-65d5-424e-bb1b-463a8781b786:jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <language slang="l:f2801650-65d5-424e-bb1b-463a8781b786:jetbrains.mps.baseLanguage.javadoc" version="3" />
     <language slang="l:42d031fd-ccb3-45db-91ef-f9621eb0549e:jetbrains.mps.baseLanguage.javadocExt" version="0" />
     <language slang="l:760a0a8c-eabb-4521-8bfd-65db761a9ba3:jetbrains.mps.baseLanguage.logging" version="0" />
     <language slang="l:88dcbb14-19c3-4776-8f81-33611ca4d87c:jetbrains.mps.baseLanguage.sequence" version="0" />

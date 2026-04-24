@@ -20,6 +20,9 @@
     <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.coderules.behavior)" implicit="true" />
   </imports>
   <registry>
+    <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
+      <concept id="3235159848334022093" name="jetbrains.mps.lang.behavior.structure.Node_ConceptMethodCall" flags="nn" index="3zqWPK" />
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
@@ -141,7 +144,6 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -997,7 +999,7 @@
           <node concept="3fqX7Q" id="3swcsd3tmIk" role="3clFbG">
             <node concept="2OqwBi" id="3swcsd3tmIm" role="3fr31v">
               <node concept="2Sf5sV" id="3swcsd3tmIn" role="2Oq$k0" />
-              <node concept="2qgKlT" id="3swcsd3tmIo" role="2OqNvi">
+              <node concept="3zqWPK" id="M_dau6Og0I" role="2OqNvi">
                 <ref role="37wK5l" to="x5bw:3swcsd3qHV7" resolve="isConsistentParameters" />
               </node>
             </node>
@@ -1176,7 +1178,7 @@
           <node concept="3fqX7Q" id="3swcsd3tjHc" role="3clFbG">
             <node concept="2OqwBi" id="3swcsd3tjHe" role="3fr31v">
               <node concept="2Sf5sV" id="3swcsd3tjHf" role="2Oq$k0" />
-              <node concept="2qgKlT" id="3swcsd3tjHg" role="2OqNvi">
+              <node concept="3zqWPK" id="M_dau6Og0K" role="2OqNvi">
                 <ref role="37wK5l" to="x5bw:3swcsd3qO$G" resolve="isConsistentLogicals" />
               </node>
             </node>

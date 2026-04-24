@@ -15,6 +15,9 @@
     <import index="h103" ref="r:9c80bc3e-1982-4e7d-8fe4-1b25a1c02635(jetbrains.mps.lang.typechecking.behavior)" implicit="true" />
   </imports>
   <registry>
+    <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
+      <concept id="3235159848334022093" name="jetbrains.mps.lang.behavior.structure.Node_ConceptMethodCall" flags="nn" index="3zqWPK" />
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -44,7 +47,6 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -179,11 +181,11 @@
                             <node concept="3A2sRY" id="7LI_gNMXkT0" role="2Oq$k0">
                               <ref role="3A2yKK" node="3vih5250MoZ" resolve="tqp" />
                             </node>
-                            <node concept="2qgKlT" id="3vih5250XG3" role="2OqNvi">
+                            <node concept="3zqWPK" id="M_dau6Og7r" role="2OqNvi">
                               <ref role="37wK5l" to="h103:7lmP5gAYgVD" resolve="getTypecheckingQueryTemplate" />
                             </node>
                           </node>
-                          <node concept="2qgKlT" id="3vih5250Y3t" role="2OqNvi">
+                          <node concept="3zqWPK" id="M_dau6Og7t" role="2OqNvi">
                             <ref role="37wK5l" to="h103:3vih52511I4" resolve="getQueryClassfier" />
                           </node>
                         </node>

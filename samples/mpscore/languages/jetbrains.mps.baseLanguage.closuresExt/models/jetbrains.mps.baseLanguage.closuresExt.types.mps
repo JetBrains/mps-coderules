@@ -5,7 +5,7 @@
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="1" />
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="25" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="13" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
     <devkit ref="888618cf-7697-4adc-80cd-8c6ea3486ef7(jetbrains.mps.devkit.aspect.types)" />
   </languages>
@@ -34,6 +34,9 @@
         <child id="1238857764950" name="tuple" index="1LFl5Q" />
         <child id="1238857834412" name="index" index="1LF_Uc" />
       </concept>
+    </language>
+    <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
+      <concept id="3235159848334022093" name="jetbrains.mps.lang.behavior.structure.Node_ConceptMethodCall" flags="nn" index="3zqWPK" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
@@ -201,7 +204,6 @@
         <reference id="6832197706140518108" name="param" index="zr_51" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
@@ -209,11 +211,8 @@
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
       </concept>
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
-        <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
-        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      <concept id="5085607816302529296" name="jetbrains.mps.baseLanguage.javadoc.structure.IHoldCommentLines" flags="ngI" index="1VezTd">
+        <child id="5085607816302529587" name="commentBody" index="1Vez_I" />
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
@@ -268,7 +267,6 @@
         <child id="1803469493727536396" name="concept" index="hTh3Z" />
       </concept>
       <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
         <child id="7400021826774799510" name="ref" index="2tJFKM" />
       </concept>
@@ -1333,7 +1331,7 @@
                                         <node concept="37vLTw" id="1uV2bz2c2O3" role="2Oq$k0">
                                           <ref role="3cqZAo" node="6E5fMGvfKOS" resolve="it" />
                                         </node>
-                                        <node concept="2qgKlT" id="1uV2bz2c46O" role="2OqNvi">
+                                        <node concept="3zqWPK" id="M_dau6OgaA" role="2OqNvi">
                                           <ref role="37wK5l" to="tpek:Q$FjPqwIoN" resolve="needInference" />
                                         </node>
                                       </node>
@@ -1410,7 +1408,7 @@
                                         <node concept="37vLTw" id="1uV2bz2capC" role="2Oq$k0">
                                           <ref role="3cqZAo" node="6E5fMGvfKOU" resolve="it" />
                                         </node>
-                                        <node concept="2qgKlT" id="1uV2bz2caMT" role="2OqNvi">
+                                        <node concept="3zqWPK" id="M_dau6OgaC" role="2OqNvi">
                                           <ref role="37wK5l" to="tpek:Q$FjPqwIoN" resolve="needInference" />
                                         </node>
                                       </node>
@@ -1509,7 +1507,7 @@
                                         <node concept="37vLTw" id="1uV2bz2bJVQ" role="2Oq$k0">
                                           <ref role="3cqZAo" node="6E5fMGvfKOW" resolve="it" />
                                         </node>
-                                        <node concept="2qgKlT" id="1uV2bz2bJVR" role="2OqNvi">
+                                        <node concept="3zqWPK" id="M_dau6OgaE" role="2OqNvi">
                                           <ref role="37wK5l" to="tpek:Q$FjPqwIoN" resolve="needInference" />
                                         </node>
                                       </node>
@@ -1553,7 +1551,7 @@
                           <ref role="3cqZAo" node="6E5fMGvfKOY" resolve="it" />
                         </node>
                       </node>
-                      <node concept="2qgKlT" id="1aCOVac0y0X" role="2OqNvi">
+                      <node concept="3zqWPK" id="M_dau6OgaG" role="2OqNvi">
                         <ref role="37wK5l" to="tpek:Q$FjPqwIoN" resolve="needInference" />
                       </node>
                     </node>
@@ -2340,7 +2338,7 @@
                                   <node concept="37vLTw" id="1uV2bz28AQt" role="2Oq$k0">
                                     <ref role="3cqZAo" node="6E5fMGvfKP0" resolve="it" />
                                   </node>
-                                  <node concept="2qgKlT" id="1uV2bz28AQu" role="2OqNvi">
+                                  <node concept="3zqWPK" id="M_dau6OgaI" role="2OqNvi">
                                     <ref role="37wK5l" to="tpek:Q$FjPqwIoN" resolve="needInference" />
                                   </node>
                                 </node>
@@ -2683,7 +2681,7 @@
                         <node concept="3A2sRY" id="4S1mDSNQcAK" role="2Oq$k0">
                           <ref role="3A2yKK" node="4S1mDSNQcCb" resolve="inv" />
                         </node>
-                        <node concept="2qgKlT" id="4S1mDSNQjh8" role="2OqNvi">
+                        <node concept="3zqWPK" id="M_dau6OgaK" role="2OqNvi">
                           <ref role="37wK5l" to="tpek:hEwIP$m" resolve="getOperand" />
                         </node>
                       </node>
@@ -4177,7 +4175,7 @@
                   <ref role="cht4Q" to="tpee:fzclF8j" resolve="ExpressionStatement" />
                 </node>
                 <node concept="2OqwBi" id="7XyRbC9NJd" role="1m5AlR">
-                  <node concept="2qgKlT" id="7XyRbC9NJh" role="2OqNvi">
+                  <node concept="3zqWPK" id="M_dau6OgaM" role="2OqNvi">
                     <ref role="37wK5l" to="tpek:i2fhS7A" resolve="getLastStatement" />
                   </node>
                   <node concept="37vLTw" id="5jbgz$E60lB" role="2Oq$k0">
@@ -6060,19 +6058,107 @@
         <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
       </node>
       <node concept="P$JXv" id="3DgB4rOxmj1" role="lGtFl">
-        <node concept="TZ5HA" id="3DgB4rOxmj2" role="TZ5H$">
-          <node concept="1dT_AC" id="3DgB4rOxmj3" role="1dT_Ay">
-            <property role="1dT_AB" value="Looks up functional classifier by a key specifying function type." />
-          </node>
-        </node>
         <node concept="TUZQ0" id="3DgB4rOxmj4" role="3nqlJM">
-          <property role="TUZQ4" value="tuple specifying function: [is non-void return, number of arguments, number of throwed exceptions from signature]" />
+          <property role="TUZQ4" value="" />
           <node concept="zr_55" id="3DgB4rOxmj6" role="zr_5Q">
             <ref role="zr_51" node="3DgB4rOwVRI" resolve="functionTypeKey" />
           </node>
+          <node concept="1PaTwC" id="M_dau6OgTM" role="1Vez_I">
+            <node concept="3oM_SD" id="M_dau6OgTN" role="1PaTwD">
+              <property role="3oM_SC" value="tuple" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTO" role="1PaTwD">
+              <property role="3oM_SC" value="specifying" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTP" role="1PaTwD">
+              <property role="3oM_SC" value="function:" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTQ" role="1PaTwD">
+              <property role="3oM_SC" value="[is" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTR" role="1PaTwD">
+              <property role="3oM_SC" value="non-void" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTS" role="1PaTwD">
+              <property role="3oM_SC" value="return," />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTT" role="1PaTwD">
+              <property role="3oM_SC" value="number" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTU" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTV" role="1PaTwD">
+              <property role="3oM_SC" value="arguments," />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTW" role="1PaTwD">
+              <property role="3oM_SC" value="number" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTX" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTY" role="1PaTwD">
+              <property role="3oM_SC" value="throwed" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgTZ" role="1PaTwD">
+              <property role="3oM_SC" value="exceptions" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgU0" role="1PaTwD">
+              <property role="3oM_SC" value="from" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgU1" role="1PaTwD">
+              <property role="3oM_SC" value="signature]" />
+            </node>
+          </node>
         </node>
         <node concept="x79VA" id="3DgB4rOxmj7" role="3nqlJM">
-          <property role="x79VB" value="functional classifier or null" />
+          <property role="x79VB" value="" />
+          <node concept="1PaTwC" id="M_dau6OgU2" role="1Vez_I">
+            <node concept="3oM_SD" id="M_dau6OgU3" role="1PaTwD">
+              <property role="3oM_SC" value="functional" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgU4" role="1PaTwD">
+              <property role="3oM_SC" value="classifier" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgU5" role="1PaTwD">
+              <property role="3oM_SC" value="or" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgU6" role="1PaTwD">
+              <property role="3oM_SC" value="null" />
+            </node>
+          </node>
+        </node>
+        <node concept="1PaTwC" id="M_dau6OgTB" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6OgTC" role="1PaTwD">
+            <property role="3oM_SC" value="Looks" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgTD" role="1PaTwD">
+            <property role="3oM_SC" value="up" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgTE" role="1PaTwD">
+            <property role="3oM_SC" value="functional" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgTF" role="1PaTwD">
+            <property role="3oM_SC" value="classifier" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgTG" role="1PaTwD">
+            <property role="3oM_SC" value="by" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgTH" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgTI" role="1PaTwD">
+            <property role="3oM_SC" value="key" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgTJ" role="1PaTwD">
+            <property role="3oM_SC" value="specifying" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgTK" role="1PaTwD">
+            <property role="3oM_SC" value="function" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgTL" role="1PaTwD">
+            <property role="3oM_SC" value="type." />
+          </node>
         </node>
       </node>
     </node>
@@ -6121,19 +6207,89 @@
         <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
       </node>
       <node concept="P$JXv" id="64$y60zcFFQ" role="lGtFl">
-        <node concept="TZ5HA" id="64$y60zcFFR" role="TZ5H$">
-          <node concept="1dT_AC" id="64$y60zcFFS" role="1dT_Ay">
-            <property role="1dT_AB" value="Looks up functional classifier by a key specifying function type." />
-          </node>
-        </node>
         <node concept="TUZQ0" id="64$y60zcFFT" role="3nqlJM">
-          <property role="TUZQ4" value="tuple specifying function: [is non-void return, number of arguments]" />
+          <property role="TUZQ4" value="" />
           <node concept="zr_55" id="64$y60zcFFU" role="zr_5Q">
             <ref role="zr_51" node="64$y60zcFFE" resolve="functionTypeKey" />
           </node>
+          <node concept="1PaTwC" id="M_dau6OgUi" role="1Vez_I">
+            <node concept="3oM_SD" id="M_dau6OgUj" role="1PaTwD">
+              <property role="3oM_SC" value="tuple" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUk" role="1PaTwD">
+              <property role="3oM_SC" value="specifying" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUl" role="1PaTwD">
+              <property role="3oM_SC" value="function:" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUm" role="1PaTwD">
+              <property role="3oM_SC" value="[is" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUn" role="1PaTwD">
+              <property role="3oM_SC" value="non-void" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUo" role="1PaTwD">
+              <property role="3oM_SC" value="return," />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUp" role="1PaTwD">
+              <property role="3oM_SC" value="number" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUq" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUr" role="1PaTwD">
+              <property role="3oM_SC" value="arguments]" />
+            </node>
+          </node>
         </node>
         <node concept="x79VA" id="64$y60zcFFV" role="3nqlJM">
-          <property role="x79VB" value="functional classifier or null" />
+          <property role="x79VB" value="" />
+          <node concept="1PaTwC" id="M_dau6OgUs" role="1Vez_I">
+            <node concept="3oM_SD" id="M_dau6OgUt" role="1PaTwD">
+              <property role="3oM_SC" value="functional" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUu" role="1PaTwD">
+              <property role="3oM_SC" value="classifier" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUv" role="1PaTwD">
+              <property role="3oM_SC" value="or" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUw" role="1PaTwD">
+              <property role="3oM_SC" value="null" />
+            </node>
+          </node>
+        </node>
+        <node concept="1PaTwC" id="M_dau6OgU7" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6OgU8" role="1PaTwD">
+            <property role="3oM_SC" value="Looks" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgU9" role="1PaTwD">
+            <property role="3oM_SC" value="up" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUa" role="1PaTwD">
+            <property role="3oM_SC" value="functional" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUb" role="1PaTwD">
+            <property role="3oM_SC" value="classifier" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUc" role="1PaTwD">
+            <property role="3oM_SC" value="by" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUd" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUe" role="1PaTwD">
+            <property role="3oM_SC" value="key" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUf" role="1PaTwD">
+            <property role="3oM_SC" value="specifying" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUg" role="1PaTwD">
+            <property role="3oM_SC" value="function" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUh" role="1PaTwD">
+            <property role="3oM_SC" value="type." />
+          </node>
         </node>
       </node>
     </node>
@@ -15393,7 +15549,7 @@
                   </node>
                 </node>
                 <node concept="2OqwBi" id="3DgB4rOyq1Q" role="33vP2m">
-                  <node concept="2qgKlT" id="3DgB4rOyq1S" role="2OqNvi">
+                  <node concept="3zqWPK" id="M_dau6OgaO" role="2OqNvi">
                     <ref role="37wK5l" to="tpek:4_LVZ3pBKCn" resolve="methods" />
                   </node>
                   <node concept="37vLTw" id="3DgB4rOytpo" role="2Oq$k0">
@@ -15423,7 +15579,7 @@
                               <node concept="37vLTw" id="3DgB4rOyq25" role="2Oq$k0">
                                 <ref role="3cqZAo" node="6E5fMGvfKPc" resolve="m" />
                               </node>
-                              <node concept="2qgKlT" id="3DgB4rOyq26" role="2OqNvi">
+                              <node concept="3zqWPK" id="M_dau6OgaQ" role="2OqNvi">
                                 <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                               </node>
                             </node>
@@ -15545,13 +15701,69 @@
         </node>
       </node>
       <node concept="P$JXv" id="3DgB4rOyuH2" role="lGtFl">
-        <node concept="TZ5HA" id="3DgB4rOyuH3" role="TZ5H$">
-          <node concept="1dT_AC" id="3DgB4rOyuH4" role="1dT_Ay">
-            <property role="1dT_AB" value="Get method declaration for a functional interface." />
+        <node concept="x79VA" id="3DgB4rOyuH8" role="3nqlJM">
+          <property role="x79VB" value="" />
+          <node concept="1PaTwC" id="M_dau6OgUD" role="1Vez_I">
+            <node concept="3oM_SD" id="M_dau6OgUE" role="1PaTwD">
+              <property role="3oM_SC" value="method" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUF" role="1PaTwD">
+              <property role="3oM_SC" value="of" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUG" role="1PaTwD">
+              <property role="3oM_SC" value="this" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUH" role="1PaTwD">
+              <property role="3oM_SC" value="functional" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUI" role="1PaTwD">
+              <property role="3oM_SC" value="classifier" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUJ" role="1PaTwD">
+              <property role="3oM_SC" value="if" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUK" role="1PaTwD">
+              <property role="3oM_SC" value="it" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUL" role="1PaTwD">
+              <property role="3oM_SC" value="indeed" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUM" role="1PaTwD">
+              <property role="3oM_SC" value="is" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUN" role="1PaTwD">
+              <property role="3oM_SC" value="functional," />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUO" role="1PaTwD">
+              <property role="3oM_SC" value="or" />
+            </node>
+            <node concept="3oM_SD" id="M_dau6OgUP" role="1PaTwD">
+              <property role="3oM_SC" value="null" />
+            </node>
           </node>
         </node>
-        <node concept="x79VA" id="3DgB4rOyuH8" role="3nqlJM">
-          <property role="x79VB" value="method of this functional classifier if it indeed is functional, or null" />
+        <node concept="1PaTwC" id="M_dau6OgUx" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6OgUy" role="1PaTwD">
+            <property role="3oM_SC" value="Get" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUz" role="1PaTwD">
+            <property role="3oM_SC" value="method" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgU$" role="1PaTwD">
+            <property role="3oM_SC" value="declaration" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgU_" role="1PaTwD">
+            <property role="3oM_SC" value="for" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUA" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUB" role="1PaTwD">
+            <property role="3oM_SC" value="functional" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6OgUC" role="1PaTwD">
+            <property role="3oM_SC" value="interface." />
+          </node>
         </node>
       </node>
     </node>
@@ -15580,7 +15792,7 @@
               <node concept="3A2sRY" id="1aCOVac_PI9" role="2Oq$k0">
                 <ref role="3A2yKK" node="1aCOVac_Nu4" resolve="pd" />
               </node>
-              <node concept="2qgKlT" id="1aCOVac_PMl" role="2OqNvi">
+              <node concept="3zqWPK" id="M_dau6OgaS" role="2OqNvi">
                 <ref role="37wK5l" to="tpek:Q$FjPqwIoN" resolve="needInference" />
               </node>
             </node>

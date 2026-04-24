@@ -18,6 +18,9 @@
     <import index="tpfp" ref="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" implicit="true" />
   </imports>
   <registry>
+    <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
+      <concept id="3235159848334022093" name="jetbrains.mps.lang.behavior.structure.Node_ConceptMethodCall" flags="nn" index="3zqWPK" />
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
@@ -175,7 +178,6 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
@@ -561,7 +563,7 @@
                                         <ref role="cht4Q" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
                                       </node>
                                     </node>
-                                    <node concept="2qgKlT" id="6fXjIfxgfPO" role="2OqNvi">
+                                    <node concept="3zqWPK" id="M_dau6Ogd3" role="2OqNvi">
                                       <ref role="37wK5l" to="ha02:6YKq674fNYS" resolve="availableLogicalVariable" />
                                     </node>
                                   </node>
@@ -695,7 +697,7 @@
                                                 <node concept="37vLTw" id="5TXeSYSLjnX" role="2Oq$k0">
                                                   <ref role="3cqZAo" node="6E5fMGvfKNF" resolve="it" />
                                                 </node>
-                                                <node concept="2qgKlT" id="5TXeSYSLqFn" role="2OqNvi">
+                                                <node concept="3zqWPK" id="M_dau6Ogd5" role="2OqNvi">
                                                   <ref role="37wK5l" to="ha02:6YKq674fNYS" resolve="availableLogicalVariable" />
                                                 </node>
                                               </node>

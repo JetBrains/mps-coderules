@@ -14,6 +14,9 @@
     <import index="fa4b" ref="r:57e7708d-cfea-4f42-80e2-39fcd20eebc8(jetbrains.mps.baseLanguage.function.types)" />
   </imports>
   <registry>
+    <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
+      <concept id="3235159848334022093" name="jetbrains.mps.lang.behavior.structure.Node_ConceptMethodCall" flags="nn" index="3zqWPK" />
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
@@ -137,7 +140,6 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
@@ -389,9 +391,9 @@
               <node concept="35c_gC" id="7Ift4Hg3jdC" role="2Oq$k0">
                 <ref role="35c_gD" to="tpee:g7pOWCK" resolve="Classifier" />
               </node>
-              <node concept="2qgKlT" id="L_Hr3kExKk" role="2OqNvi">
+              <node concept="3zqWPK" id="M_dau6Og8R" role="2OqNvi">
                 <ref role="37wK5l" to="tpek:5mDmeD1aaq0" resolve="getContextClassifier" />
-                <node concept="3A2sRY" id="6ZRhjsG9qB3" role="37wK5m">
+                <node concept="3A2sRY" id="M_dau6Og8T" role="37wK5m">
                   <ref role="3A2yKK" node="6ZRhjsG9oAt" resolve="mrse" />
                 </node>
               </node>
@@ -420,7 +422,7 @@
                           <ref role="3cqZAo" node="4cxv$9$mkQL" resolve="contextClassifier" />
                         </node>
                       </node>
-                      <node concept="2qgKlT" id="6ZRhjsG9Ao4" role="2OqNvi">
+                      <node concept="3zqWPK" id="M_dau6Og8U" role="2OqNvi">
                         <ref role="37wK5l" to="tpek:i3H_lLu" resolve="getSuperclass" />
                       </node>
                     </node>

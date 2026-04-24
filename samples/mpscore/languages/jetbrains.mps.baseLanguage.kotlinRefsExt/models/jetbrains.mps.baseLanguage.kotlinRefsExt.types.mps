@@ -22,6 +22,9 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
+    <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
+      <concept id="3235159848334022093" name="jetbrains.mps.lang.behavior.structure.Node_ConceptMethodCall" flags="nn" index="3zqWPK" />
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
@@ -194,7 +197,6 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="4065387505485742749" name="jetbrains.mps.lang.smodel.structure.AbstractPointerResolveOperation" flags="ng" index="2yCiFS">
         <child id="3648723375513868575" name="repositoryArg" index="Vysub" />
       </concept>
@@ -828,7 +830,7 @@
                   <ref role="3Tt5mk" to="48vp:1t03WazhIic" resolve="constructor" />
                 </node>
               </node>
-              <node concept="2qgKlT" id="7doxVE4TbhY" role="2OqNvi">
+              <node concept="3zqWPK" id="M_dau6Og7d" role="2OqNvi">
                 <ref role="37wK5l" to="hez:7WpE6U5evQG" resolve="getConstructedClass" />
               </node>
             </node>
@@ -960,7 +962,7 @@
                   <node concept="3A2sRY" id="7doxVE4TmqI" role="2Oq$k0">
                     <ref role="3A2yKK" node="7doxVE4TkDA" resolve="fcall" />
                   </node>
-                  <node concept="2qgKlT" id="7doxVE4TmqJ" role="2OqNvi">
+                  <node concept="3zqWPK" id="M_dau6Og7f" role="2OqNvi">
                     <ref role="37wK5l" to="w8y0:UG7NftRxKM" resolve="getReceiver" />
                   </node>
                 </node>
@@ -991,7 +993,7 @@
                   <node concept="3A2sRY" id="1aCOVadpOOL" role="2Oq$k0">
                     <ref role="3A2yKK" node="7doxVE4TkDA" resolve="fcall" />
                   </node>
-                  <node concept="2qgKlT" id="1aCOVadpMFa" role="2OqNvi">
+                  <node concept="3zqWPK" id="M_dau6Og7h" role="2OqNvi">
                     <ref role="37wK5l" to="w8y0:UG7NftRy8a" resolve="getFunctionReturnType" />
                   </node>
                 </node>
@@ -1109,7 +1111,7 @@
                         <node concept="3A2sRY" id="1aCOVadrrfv" role="2Oq$k0">
                           <ref role="3A2yKK" node="7doxVE4TkDA" resolve="fcall" />
                         </node>
-                        <node concept="2qgKlT" id="1aCOVadrpKh" role="2OqNvi">
+                        <node concept="3zqWPK" id="M_dau6Og7j" role="2OqNvi">
                           <ref role="37wK5l" to="w8y0:1t03WaySlJT" resolve="getFunctionTypeParameters" />
                         </node>
                       </node>
@@ -1336,7 +1338,7 @@
                 <node concept="3j8tct" id="1aCOVadiSHl" role="2Oq$k0">
                   <ref role="3j8tcu" node="1aCOVadieIf" resolve="fcall" />
                 </node>
-                <node concept="2qgKlT" id="1aCOVadiSHm" role="2OqNvi">
+                <node concept="3zqWPK" id="M_dau6Og7l" role="2OqNvi">
                   <ref role="37wK5l" to="w8y0:1t03WaySlJT" resolve="getFunctionTypeParameters" />
                 </node>
               </node>
@@ -1910,7 +1912,7 @@
                   <node concept="3j8tct" id="1aCOVadjG28" role="2Oq$k0">
                     <ref role="3j8tcu" node="1aCOVadieIf" resolve="fcall" />
                   </node>
-                  <node concept="2qgKlT" id="UG7NftQqjI" role="2OqNvi">
+                  <node concept="3zqWPK" id="M_dau6Og7n" role="2OqNvi">
                     <ref role="37wK5l" to="w8y0:UG7NftR_2Q" resolve="getFunctionParameters" />
                   </node>
                 </node>
@@ -2047,7 +2049,7 @@
               <node concept="3j8tct" id="1aCOVadjTPp" role="2Oq$k0">
                 <ref role="3j8tcu" node="1aCOVadieIf" resolve="fcall" />
               </node>
-              <node concept="2qgKlT" id="UG7NftQFED" role="2OqNvi">
+              <node concept="3zqWPK" id="M_dau6Og7p" role="2OqNvi">
                 <ref role="37wK5l" to="w8y0:UG7NftRy8a" resolve="getFunctionReturnType" />
               </node>
             </node>

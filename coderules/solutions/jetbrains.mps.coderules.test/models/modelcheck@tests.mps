@@ -8,7 +8,7 @@
     <use id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="3" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="6" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
@@ -192,16 +192,10 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
-      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331502" name="body" index="TZ5H$" />
-      </concept>
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
-        <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
-        <property id="8970989240999019144" name="text" index="1dT_AB" />
-      </concept>
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+      <concept id="5085607816302529296" name="jetbrains.mps.baseLanguage.javadoc.structure.IHoldCommentLines" flags="ngI" index="1VezTd">
+        <child id="5085607816302529587" name="commentBody" index="1Vez_I" />
+      </concept>
     </language>
     <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
       <concept id="361130699826193248" name="jetbrains.mps.lang.modelapi.structure.ModelPointer" flags="ng" index="1dCxOl">
@@ -374,9 +368,39 @@
         <ref role="2AI5Lk" to="rbkg:~RegisterExtension" resolve="RegisterExtension" />
       </node>
       <node concept="z59LJ" id="RoBEH15PZQ" role="lGtFl">
-        <node concept="TZ5HA" id="RoBEH15PZR" role="TZ5H$">
-          <node concept="1dT_AC" id="RoBEH15PZS" role="1dT_Ay">
-            <property role="1dT_AB" value="Enables data sharing b/w invocations of tests in this test case." />
+        <node concept="1PaTwC" id="M_dau6Ogul" role="1Vez_I">
+          <node concept="3oM_SD" id="M_dau6Ogum" role="1PaTwD">
+            <property role="3oM_SC" value="Enables" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Ogun" role="1PaTwD">
+            <property role="3oM_SC" value="data" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oguo" role="1PaTwD">
+            <property role="3oM_SC" value="sharing" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Ogup" role="1PaTwD">
+            <property role="3oM_SC" value="b/w" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oguq" role="1PaTwD">
+            <property role="3oM_SC" value="invocations" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Ogur" role="1PaTwD">
+            <property role="3oM_SC" value="of" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Ogus" role="1PaTwD">
+            <property role="3oM_SC" value="tests" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Ogut" role="1PaTwD">
+            <property role="3oM_SC" value="in" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oguu" role="1PaTwD">
+            <property role="3oM_SC" value="this" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oguv" role="1PaTwD">
+            <property role="3oM_SC" value="test" />
+          </node>
+          <node concept="3oM_SD" id="M_dau6Oguw" role="1PaTwD">
+            <property role="3oM_SC" value="case." />
           </node>
         </node>
       </node>
@@ -1024,24 +1048,174 @@
       </node>
     </node>
     <node concept="3UR2Jj" id="1Lr58WFYqNs" role="lGtFl">
-      <node concept="TZ5HA" id="1Lr58WFYqNt" role="TZ5H$">
-        <node concept="1dT_AC" id="1Lr58WFYqNu" role="1dT_Ay">
-          <property role="1dT_AB" value="This tests launches ModelChecker with a default set of checkers on all modules in the project. " />
+      <node concept="1PaTwC" id="M_dau6Ogtr" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6Ogts" role="1PaTwD">
+          <property role="3oM_SC" value="This" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogtt" role="1PaTwD">
+          <property role="3oM_SC" value="tests" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogtu" role="1PaTwD">
+          <property role="3oM_SC" value="launches" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogtv" role="1PaTwD">
+          <property role="3oM_SC" value="ModelChecker" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogtw" role="1PaTwD">
+          <property role="3oM_SC" value="with" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogtx" role="1PaTwD">
+          <property role="3oM_SC" value="a" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogty" role="1PaTwD">
+          <property role="3oM_SC" value="default" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogtz" role="1PaTwD">
+          <property role="3oM_SC" value="set" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogt$" role="1PaTwD">
+          <property role="3oM_SC" value="of" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogt_" role="1PaTwD">
+          <property role="3oM_SC" value="checkers" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtA" role="1PaTwD">
+          <property role="3oM_SC" value="on" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtB" role="1PaTwD">
+          <property role="3oM_SC" value="all" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtC" role="1PaTwD">
+          <property role="3oM_SC" value="modules" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtD" role="1PaTwD">
+          <property role="3oM_SC" value="in" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtE" role="1PaTwD">
+          <property role="3oM_SC" value="the" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtF" role="1PaTwD">
+          <property role="3oM_SC" value="project." />
         </node>
       </node>
-      <node concept="TZ5HA" id="1Lr58WFY$qC" role="TZ5H$">
-        <node concept="1dT_AC" id="1Lr58WFY$qD" role="1dT_Ay">
-          <property role="1dT_AB" value="Errors are collected by ErrorCollector, so that all problems are reported at once." />
+      <node concept="1PaTwC" id="M_dau6OgtG" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6OgtH" role="1PaTwD">
+          <property role="3oM_SC" value="Errors" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtI" role="1PaTwD">
+          <property role="3oM_SC" value="are" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtJ" role="1PaTwD">
+          <property role="3oM_SC" value="collected" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtK" role="1PaTwD">
+          <property role="3oM_SC" value="by" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtL" role="1PaTwD">
+          <property role="3oM_SC" value="ErrorCollector," />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtM" role="1PaTwD">
+          <property role="3oM_SC" value="so" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtN" role="1PaTwD">
+          <property role="3oM_SC" value="that" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtO" role="1PaTwD">
+          <property role="3oM_SC" value="all" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtP" role="1PaTwD">
+          <property role="3oM_SC" value="problems" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtQ" role="1PaTwD">
+          <property role="3oM_SC" value="are" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtR" role="1PaTwD">
+          <property role="3oM_SC" value="reported" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtS" role="1PaTwD">
+          <property role="3oM_SC" value="at" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtT" role="1PaTwD">
+          <property role="3oM_SC" value="once." />
         </node>
       </node>
-      <node concept="TZ5HA" id="1Lr58WFYGfR" role="TZ5H$">
-        <node concept="1dT_AC" id="1Lr58WFYGfS" role="1dT_Ay">
-          <property role="1dT_AB" value="Only those issues reported that have severity MessageStatus.ERROR." />
+      <node concept="1PaTwC" id="M_dau6OgtU" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6OgtV" role="1PaTwD">
+          <property role="3oM_SC" value="Only" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtW" role="1PaTwD">
+          <property role="3oM_SC" value="those" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtX" role="1PaTwD">
+          <property role="3oM_SC" value="issues" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtY" role="1PaTwD">
+          <property role="3oM_SC" value="reported" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6OgtZ" role="1PaTwD">
+          <property role="3oM_SC" value="that" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogu0" role="1PaTwD">
+          <property role="3oM_SC" value="have" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogu1" role="1PaTwD">
+          <property role="3oM_SC" value="severity" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogu2" role="1PaTwD">
+          <property role="3oM_SC" value="MessageStatus.ERROR." />
         </node>
       </node>
-      <node concept="TZ5HA" id="1Lr58WG4Tcu" role="TZ5H$">
-        <node concept="1dT_AC" id="1Lr58WG4Tcv" role="1dT_Ay">
-          <property role="1dT_AB" value="This class mimics the behaviour of NodeTest in order to reuse MPS launching and project opening functionality." />
+      <node concept="1PaTwC" id="M_dau6Ogu3" role="1Vez_I">
+        <node concept="3oM_SD" id="M_dau6Ogu4" role="1PaTwD">
+          <property role="3oM_SC" value="This" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogu5" role="1PaTwD">
+          <property role="3oM_SC" value="class" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogu6" role="1PaTwD">
+          <property role="3oM_SC" value="mimics" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogu7" role="1PaTwD">
+          <property role="3oM_SC" value="the" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogu8" role="1PaTwD">
+          <property role="3oM_SC" value="behaviour" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogu9" role="1PaTwD">
+          <property role="3oM_SC" value="of" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogua" role="1PaTwD">
+          <property role="3oM_SC" value="NodeTest" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogub" role="1PaTwD">
+          <property role="3oM_SC" value="in" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oguc" role="1PaTwD">
+          <property role="3oM_SC" value="order" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogud" role="1PaTwD">
+          <property role="3oM_SC" value="to" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogue" role="1PaTwD">
+          <property role="3oM_SC" value="reuse" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oguf" role="1PaTwD">
+          <property role="3oM_SC" value="MPS" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogug" role="1PaTwD">
+          <property role="3oM_SC" value="launching" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oguh" role="1PaTwD">
+          <property role="3oM_SC" value="and" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Ogui" role="1PaTwD">
+          <property role="3oM_SC" value="project" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oguj" role="1PaTwD">
+          <property role="3oM_SC" value="opening" />
+        </node>
+        <node concept="3oM_SD" id="M_dau6Oguk" role="1PaTwD">
+          <property role="3oM_SC" value="functionality." />
         </node>
       </node>
     </node>
