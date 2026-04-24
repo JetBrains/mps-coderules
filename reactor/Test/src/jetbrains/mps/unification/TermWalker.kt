@@ -34,7 +34,7 @@ class TermWalker(vararg visitors: TermVisitor<out Term>) {
 
     class SimpleVisitor<T : Term?>(
         kind: Term.Kind,
-        private inline val f: (T) -> MutableCollection<out Term>
+        private val f: (T) -> MutableCollection<out Term>
     ) : TermVisitor<T>(kind) {
         override fun visit(t: T) = f(t)
     }
