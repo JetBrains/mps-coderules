@@ -16,7 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import gnu.trove.TIntObjectHashMap
+import gnu.trove.map.hash.TIntObjectHashMap
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.program.*

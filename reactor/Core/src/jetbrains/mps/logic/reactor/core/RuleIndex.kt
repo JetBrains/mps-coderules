@@ -16,7 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import gnu.trove.TIntObjectHashMap
+import gnu.trove.map.hash.TIntObjectHashMap
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
