@@ -65,7 +65,7 @@ task installMps_macos(type: Copy)  {
   }
 
   from zipTree(configurations.mps_macos_aarch64[0])
-  into 'MPS_HOME'
+  into '../MPS_HOME'
 
   // Gradle woodoo for unzipping an archive
   eachFile { FileCopyDetails fcp ->
@@ -94,7 +94,7 @@ task installMps_linux(type: Copy)  {
   }
 
   from tarTree(resources.gzip(configurations.mps_linux[0]))
-  into 'MPS_HOME'
+  into '../MPS_HOME'
 
   // Gradle woodoo for unzipping an archive
   eachFile { FileCopyDetails fcp ->
