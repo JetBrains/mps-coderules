@@ -20507,7 +20507,7 @@
                 <ref role="3A2yKK" node="3GLv42MyDYR" resolve="ncmc" />
               </node>
               <node concept="3TrEf2" id="3GLv42MyEnA" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp25:haqh4HH" resolve="conceptMethodDeclaration" />
+                <ref role="3Tt5mk" to="1i04:2N_AbRfz_AZ" resolve="conceptMethodDeclaration" />
               </node>
             </node>
           </node>
@@ -20853,7 +20853,7 @@
         <node concept="3clFbH" id="3GLv42MyGT6" role="3cqZAp" />
       </node>
       <node concept="2t___k" id="3GLv42MyDYQ" role="1nLNMg">
-        <ref role="2t_S0q" to="tp25:haqgKhF" resolve="Node_ConceptMethodCall" />
+        <ref role="2t_S0q" to="1i04:2N_AbRfz_nd" resolve="Node_ConceptMethodCall" />
         <node concept="3A20r5" id="3GLv42MyDYR" role="2t_VXX">
           <property role="TrG5h" value="ncmc" />
         </node>
