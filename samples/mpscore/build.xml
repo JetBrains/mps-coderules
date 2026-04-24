@@ -5556,8 +5556,8 @@
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.kotlin</depends>
         <depends>com.intellij.modules.platform</depends>
-        <idea-version since-build="253.27864" until-build="253.*" />
-        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2025.3 release of MPS</li></ul>]]></change-notes>
+        <idea-version since-build="261.23567" until-build="261.*" />
+        <change-notes><![CDATA[<ul><li>Compatible with upcoming 2026.1 release of MPS</li></ul>]]></change-notes>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
