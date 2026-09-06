@@ -1,7 +1,7 @@
 [![JetBrains team project](http://jb.gg/badges/team-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 # MPS CodeRules
 
-An experimental feature of [JetBrains MPS](https://jetbrains.com/mps), *Coderules* is collection of languages that allow to utilize logical programming approach for solving typechecking and related problems.
+An experimental feature of [JetBrains MPS](https://jetbrains.com/mps), *Coderules* is collection of languages that allow one to utilize logical programming approach for solving typechecking and related problems.
 
 [JetBrains MPS](https://www.jetbrains.com/mps/) is a project developed by [JetBrains](http://www.jetbrains.com/?fromFooter).
 
@@ -13,12 +13,12 @@ The [documentation](http://jetbrains.github.io/mps-coderules/) is available onli
 
 ### Install from Marketplace
 
-Add the the URL providing access to EAP channel to the list of Plugin Repositories:
+Add the URL providing access to EAP channel to the list of Plugin Repositories:
 
 1. Open Plugins section in the Welcome dialog
 2. Click the "cog" button at the top right and select `Manage Plugin Repositories...`
 3. Add the URL `https://plugins.jetbrains.com/plugins/eap/list`
-4. Search for these plugin in the Marketplace tab: 
+4. Search for these plugins in the Marketplace tab: 
 
 - MPS Coderules Typechecking
 - MPS Coderules Core Types
@@ -53,7 +53,7 @@ Analysis of source model with CodeRules can be described as a two-phase process.
 1. Collecting rule tables and applying rule templates.
 2. Processing constraint rules collected in the first stage.
 
-In the first phase, languages used by the model being analysed and surveyed for the appropriate CodeRules aspect model, which is types in case of type checking. *Coderules* allow for extensions to be provided by derived languages. Extensions have higher priority, so it’s easy to override the built-in behaviour.
+In the first phase, languages used by the model being analysed are surveyed for the appropriate CodeRules aspect model, which is types in case of type checking. *Coderules* allow for extensions to be provided by derived languages. Extensions have higher priority, so it’s easy to override the built-in behaviour.
 
 The outcome of this phase is a constraint rules program, which is a collection of rule tables, which in turn represent lists of constraint rules. This “program” however, exists in memory only as it does not have any textual representation.
 

@@ -13,13 +13,13 @@ Analysis of source model with CodeRules can be described as a two-phase process.
 1. Collecting rule tables and applying rule templates.
 2. Processing constraint rules collected in the first stage.
 
-In the first phase, languages used by the model being analysed and surveyed for the appropriate CodeRules aspect model, which is `types` in case of type checking.
+In the first phase, languages used by the model being analysed are surveyed for the appropriate CodeRules aspect model, which is `types` in case of type checking.
 
 The outcome of this phase is a *constraint rules program*, which is a collection of *rule tables*, which in turn represent lists of *constraint rules*. This “program” however, exists in memory only as it does not have any textual representation.
 
 In the second phase the constraints program that was created in phase one is evaluated. Evaluation starts with a query, which serves as an entry point to the program. 
 
-Queries correspond to usual procedures that analyse the source mode, such as `typeOf` or `convertsTo`, and are declared in the same aspect model.
+Queries correspond to usual procedures that analyse the source model, such as `typeOf` or `convertsTo`, and are declared in the same aspect model.
 
 ![](img/overview-typeofq-550.png)  
 _(example of a query)_
@@ -51,7 +51,7 @@ While constraints program is run, it is allowed to report feedback, such as assi
 
 Failures may be encountered during constraints program execution, such as a unification failure, and they are caught with the help of alternative body branches, when those are provided. An uncaught failure terminates program execution and is reported to the user.
 
-In the following example, a potential error is caught in the `else` branch and a corresponding errors is reported. Execution of constraints program is not terminated though, so other problems may still be reported.
+In the following example, a potential error is caught in the `else` branch and a corresponding error is reported. Execution of constraints program is not terminated though, so other problems may still be reported.
 
 ![](img/eval-alt-350.png)  
 _(example of using an alternative body branch)_
@@ -70,7 +70,7 @@ During execution of a constraints program all activation/suspension/deactivation
 ![](img/eval-proof-350.png)  
 _(sample proof in propositional logic)_
 
-Above is an example of a proof in propositional logic, the trace of checking which is provided below. The rows in the left pane correspond to events happening during constraints processing, such a constraint activated or suspended, or a constraint rule triggered. When a row in the left pane side selected, the right pane displays the contents of *constraints store* captured at the moment the event occurred.
+Above is an example of a proof in propositional logic, the trace of checking which is provided below. The rows in the left pane correspond to events happening during constraints processing, such as a constraint activated or suspended, or a constraint rule triggered. When a row in the left pane is selected, the right pane displays the contents of *constraints store* captured at the moment the event occurred.
 
 ![](img/eval-atrace-snapshot.png)  
 _(activation trace view)_
