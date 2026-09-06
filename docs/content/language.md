@@ -28,7 +28,7 @@ With help of [queries](querytable) one builds integration of CodeRules into the 
 
 #### Terms
 
-One important feature of CodeRules is the ability to abstract away from type structure defined by the language. For example, one may decide to represent all primitive types of BaseLanguage as a term `primitive(kind=<specific kind>)`. 
+One important feature of CodeRules is the ability to abstract away from the type structure defined by the language. For example, one may decide to represent all primitive types of BaseLanguage as a term `primitive(kind=<specific kind>)`. 
 
 [Term table](termtable) contains declarations of *terms* which are used as internal representation of types.
 

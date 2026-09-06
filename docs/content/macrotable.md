@@ -8,7 +8,7 @@ permalink: :basename
 
 ### Macro table
 
-The motivation behind using macros, and — in a wider context — behind using terms as datatype, is that sometimes it takes more than just an SNode to represent a type. For example, in order to find a solution for a type inference problem, a logical variable representing the inference variable requires a bound, implemented is a constraint on that variable. In other situations, a newly constructed type has to substitute type variables with some other types. It is only convenient to extract such functionality into a separate, reusable fragment.
+The motivation behind using macros, and — in a wider context — behind using terms as a datatype, is that sometimes it takes more than just an SNode to represent a type. For example, in order to find a solution for a type inference problem, a logical variable representing the inference variable requires a bound, implemented as a constraint on that variable. In other situations, a newly constructed type has to substitute type variables with some other types. It is only convenient to extract such functionality into a separate, reusable fragment.
 
 The two kinds of macros — `expand` and `call` — are provided to refactor portions of constraint rule templates by introducing reusable fragments. Both kinds of macros are only available in *body* part of constraint rule templates. 
 
@@ -41,7 +41,7 @@ _(example of a call macro declaration)_
 
 #### Macro table extensibility
 
-A macro table is able to extend other macro table in order to provide definitions of *expand* macros.
+A macro table is able to extend another macro table in order to provide definitions of *expand* macros.
 
 ![](img/macro-table-extends-550.png)  
 _(example of a macro table that extends another macro table)_

@@ -86,7 +86,7 @@ _(`convertsTo()` delegates to `promote()` for classifier type)_
 
 Resolution of `promote()` constraint, which represents subtyping among classifier types, is implemented around a simple idea of representing all subclass paths the root (Object) to a classifier as a set of lists. This representation deliberately ignores the class parameters. As a first step, the shortest path from supertype’s classifier to subtype’s one is selected. This path is then reversed and represented as a dataform list. This makes it possible to pattern-match on this list, since it is nothing more than a cons list represented as a dataform.
 
-Subtyping is a reflexive and transitive relation, so `promote()` is replaced with another constraint `dpromote()`, which triggers one of the two productions responsible for either aspect of the relation. Transitivity is solved by advancing up the supertype path keeping track of all type variables and ensuring all bounds on type parameter are satisfied. Reflexivity delegates to `containedIn()` to ensure parameters are within bounds, which in its turn delegates to `convertsTo()`.
+Subtyping is a reflexive and transitive relation, so `promote()` is replaced with another constraint `dpromote()`, which triggers one of the two productions responsible for either aspect of the relation. Transitivity is solved by advancing up the supertype path keeping track of all type variables and ensuring all bounds on type parameters are satisfied. Reflexivity delegates to `containedIn()` to ensure parameters are within bounds, which in its turn delegates to `convertsTo()`.
 
 Take a simple example of `Long` classifier type — the boxed `long`. Its superclasses are written as follows.
 
@@ -95,4 +95,4 @@ Take a simple example of `Long` classifier type — the boxed `long`. Its superc
   Long : Number : Serializable : Object
 ```
 
-Suppose we need to decide if `Long <: Serializable`, that is if `Long` is a subtype of `Serializable`. The shortest path between those consists of three nodes : `[Long, Number, Serializable]`. Constraint `dpromote()` is activated with this list as the  3rd parameter, and it requires two steps of inductive production and one step of reflexive to solve this relation.
+Suppose we need to decide if `Long <: Serializable`, that is if `Long` is a subtype of `Serializable`. The shortest path between those consists of three nodes : `[Long, Number, Serializable]`. Constraint `dpromote()` is activated with this list as the  3rd parameter, and it requires two steps of inductive production and one step of reflexive production to solve this relation.

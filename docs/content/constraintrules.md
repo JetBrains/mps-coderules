@@ -21,7 +21,7 @@ A constraint rule must include either a body or a head, no constraint rule can o
 
 Constraints in a constraint rule’s head can be declared as either *kept* or *replaced*. Replaced constraints are marked with a tilde `~`.
 
-There is a certain limitation as to what *constraints* can be used in rule’s head: it can only contain constraints defined by this rule table, or one of the rule tables it extends.[^headlimit] 
+There is a certain limitation as to what *constraints* can be used in a rule’s head: it can only contain constraints defined by this rule table, or one of the rule tables it extends.[^headlimit] 
 
 A constraint rule with an empty head, not declaring any constraints to serve as its input, is considered an *automatic* rule and is triggered automatically on start of constraint rules program execution.
 
@@ -43,7 +43,7 @@ Constraint rule’s body can contain any visible constraints declared by rule ta
 ![](img/language-unify-300.png)  
 _(`unifies` predicate used in the guard and in the body)_
 
-A body may contain two or more *alternative branches*, which essentialy capture the idea of evaluating constraint rules with backtracking. Namely, the evaluation starts with the first branch, and in case it is finished without failures, other branches are not evaluated. On failure the second branch is evaluated, etc.
+A body may contain two or more *alternative branches*, which essentially capture the idea of evaluating constraint rules with backtracking. Namely, the evaluation starts with the first branch, and in case it is finished without failures, other branches are not evaluated. On failure the second branch is evaluated, etc.
 
 ![](img/constraintrules-alt-500.png)  
 _(example of a constraint rule with alternative branches)_
